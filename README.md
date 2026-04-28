@@ -128,11 +128,23 @@ verification, Hercher bounds, Paparella nilpotency, and JSR variants.
 
 See `docs/PROJECT_JOURNEY.md` §12 for full problem statements.
 
+## License & Attribution
+
+MIT License (see [`LICENSE`](LICENSE)).
+
+**Attribution required.** If you use this framework, its derivatives, its
+empirical constants (including but not limited to **Jazz's constant** `J ≈
+0.0837`), or its computational artifacts in academic, commercial, or
+exploratory work, please cite the original author and this repository.
+
+Standard MIT attribution format:
+
+> Aijaz, M. (2026). *Collatz Renewal-Theoretic Framework.* GitHub repository.
+
 ## Citation
 
-If you use this framework or its empirical constants, please cite both
-the original handoff document and the technical writeup, and cite the
-underlying research papers in `docs/references/`:
+If you use this framework or its empirical constants, please cite this
+repository and the underlying research papers in `docs/references/`:
 
 - Tao, T. (2022). *Almost all orbits of the Collatz map attain almost
   bounded values.* Forum Math. Pi 10, e12.
@@ -142,3 +154,19 @@ underlying research papers in `docs/references/`:
   arXiv:2201.00406.
 - Paparella, P. (2024). *A matricial view of the Collatz conjecture.*
   arXiv:2406.08498.
+
+---
+
+## Provenance
+
+This is **Vibe-Math.** I was bored one night and started poking at the
+Collatz conjecture. Several iterations later, with non-trivial AI
+collaboration, this is what came out.
+
+It is not a proof. It is an honestly-calibrated computational framework
+with a triply-confirmed structural rate `3/4 = e^(log(3/4))`, an empirical
+constant `J ≈ 0.0837` stable across 11 decades of starting magnitude, and
+a complete five-projection synthesis of four published papers on the
+same underlying operator.
+
+If any of it ends up being useful, name it after me.
