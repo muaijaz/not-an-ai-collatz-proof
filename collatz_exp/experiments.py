@@ -23,6 +23,7 @@ from .constrained_jsr import (
     tail_aware_lte_closed_projective_jsr_report,
     tail_aware_projective_jsr_report,
 )
+from .constrained_karp import constrained_karp_jsr_report
 from .core import hardest_first_descent_under_power
 from .cycles import scan_near_balanced_cycles
 from .cycle_tower import cycle_exclusion_tower_report
@@ -98,6 +99,7 @@ from .reports import (
     format_certificate_cover_report,
     format_champion_report,
     format_christoffel_filtered_jsr_report,
+    format_constrained_karp_jsr_report,
     format_cover_mass_report,
     format_cover_parity_report,
     format_cover_survival_spectrum,
@@ -335,6 +337,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="scan bounded LTE-closed tail cycles through a Christoffel-compatible parity filter",
     )
     parser.add_argument(
+        "--constrained-karp-jsr",
+        action="store_true",
+        help="run Karp on the LTE-closed tail graph crossed with a finite balanced-word automaton",
+    )
+    parser.add_argument(
         "--tail-aware-levels",
         type=str,
         default="5:4,6:5,7:6,8:6,10:7",
@@ -342,6 +349,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--christoffel-max-cycle-edges", type=int, default=10)
     parser.add_argument("--christoffel-max-cycles-scanned", type=int, default=50000)
+    parser.add_argument("--constrained-karp-max-imbalance", type=int, default=1)
+    parser.add_argument("--constrained-karp-max-period", type=int, default=4)
     parser.add_argument("--lift-realizability-power", type=int, default=6)
     parser.add_argument("--lift-realizability-max-valuation", type=int, default=6)
     parser.add_argument("--lift-realizability-max-period", type=int, default=8)
@@ -1146,6 +1155,19 @@ def main(argv: list[str] | None = None) -> None:
                     max_valuation=args.jsr_max_valuation,
                     max_cycle_edges=args.christoffel_max_cycle_edges,
                     max_cycles_scanned=args.christoffel_max_cycles_scanned,
+                )
+            )
+        )
+
+    if args.constrained_karp_jsr:
+        print("\nAutomaton-constrained Karp tail JSR diagnostic:")
+        print(
+            format_constrained_karp_jsr_report(
+                constrained_karp_jsr_report(
+                    levels=_parse_pair_tuple(args.tail_aware_levels),
+                    max_valuation=args.jsr_max_valuation,
+                    max_imbalance=args.constrained_karp_max_imbalance,
+                    max_period=args.constrained_karp_max_period,
                 )
             )
         )

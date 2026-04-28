@@ -19,6 +19,7 @@ from .constrained_jsr import (
     TailAwareMarkovLyapunovReport,
     TailAwareProjectiveJSRReport,
 )
+from .constrained_karp import ConstrainedKarpReport
 from .cycles import CycleScanReport
 from .cycle_tower import CycleExclusionTowerReport
 from .cycles_eliahou import CycleLengthScreen
@@ -362,6 +363,20 @@ def format_christoffel_filtered_jsr_report(
         f"compatible={None if last is None else last.christoffel_compatible_cycles}, "
         f"exact_karp={None if last is None else last.exact_karp_factor}, "
         f"filtered_best={None if last is None else last.christoffel_filtered_best_factor}"
+    )
+
+
+def format_constrained_karp_jsr_report(result: ConstrainedKarpReport) -> str:
+    last = result.levels[-1] if result.levels else None
+    return (
+        f"status={result.status}, levels={len(result.levels)}, "
+        f"last_q={None if last is None else last.tail_unit_power}, "
+        f"last_Rmax={None if last is None else last.max_tail_depth}, "
+        f"last_product_states={None if last is None else last.product_states}, "
+        f"last_product_edges={None if last is None else last.product_edges}, "
+        f"last_factor={None if last is None else last.constrained_karp_factor}, "
+        f"within_cycle_filter_bound="
+        f"{None if last is None else last.within_cycle_filter_bound}"
     )
 
 

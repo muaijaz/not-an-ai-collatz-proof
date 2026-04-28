@@ -1,0 +1,48 @@
+{
+  "caveat": "The balanced-word automaton is period-capped, so this is a bounded finite diagnostic rather than a global statement.",
+  "construction": "Product graph equals the LTE-closed tail graph crossed with a finite balanced-word phase automaton. Edge labels are exact integer numerator/denominator growth factors, and Karp is run on their log2 weights.",
+  "levels": [
+    {
+      "automaton_max_period": 4,
+      "automaton_patterns": 5,
+      "automaton_states": 16,
+      "christoffel_cycle_filter_bound": 0.75,
+      "closed_overflow_edges": 11,
+      "constrained_karp_factor": 0.7499999999999879,
+      "constrained_karp_log2_slope": -0.415037499278867,
+      "exact_rational_factor": "3/4",
+      "max_imbalance": 1,
+      "max_tail_depth": 4,
+      "max_valuation": 12,
+      "product_edges": 509,
+      "product_states": 1024,
+      "status": "finite_product_graph_karp_diagnostic",
+      "tail_edges": 224,
+      "tail_states": 64,
+      "tail_unit_power": 5,
+      "within_cycle_filter_bound": true
+    },
+    {
+      "automaton_max_period": 4,
+      "automaton_patterns": 5,
+      "automaton_states": 16,
+      "christoffel_cycle_filter_bound": 0.75,
+      "closed_overflow_edges": 11,
+      "constrained_karp_factor": 0.7499999999999584,
+      "constrained_karp_log2_slope": -0.41503749927892386,
+      "exact_rational_factor": "3/4",
+      "max_imbalance": 1,
+      "max_tail_depth": 5,
+      "max_valuation": 12,
+      "product_edges": 1275,
+      "product_states": 2560,
+      "status": "finite_product_graph_karp_diagnostic",
+      "tail_edges": 480,
+      "tail_states": 160,
+      "tail_unit_power": 6,
+      "within_cycle_filter_bound": true
+    }
+  ],
+  "status": "finite_automaton_constrained_karp_diagnostic",
+  "type": "constrained_karp_tail_jsr"
+}
