@@ -17,6 +17,7 @@ from .cover_parity import analyze_cover_parity
 from .cover_spectrum import cover_survival_spectrum
 from .constrained_jsr import (
     christoffel_filtered_jsr_report,
+    christoffel_slope_constrained_jsr_report,
     constrained_jsr_report,
     constrained_projective_jsr_report,
     tail_aware_markov_lyapunov_report,
@@ -99,6 +100,7 @@ from .reports import (
     format_certificate_cover_report,
     format_champion_report,
     format_christoffel_filtered_jsr_report,
+    format_christoffel_slope_constrained_jsr_report,
     format_constrained_karp_jsr_report,
     format_cover_mass_report,
     format_cover_parity_report,
@@ -337,6 +339,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="scan bounded LTE-closed tail cycles through a Christoffel-compatible parity filter",
     )
     parser.add_argument(
+        "--christoffel-slope-constrained-jsr",
+        action="store_true",
+        help="scan bounded LTE-closed tail cycles through an upper-Christoffel slope window",
+    )
+    parser.add_argument(
         "--constrained-karp-jsr",
         action="store_true",
         help="run Karp on the LTE-closed tail graph crossed with a finite balanced-word automaton",
@@ -349,6 +356,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--christoffel-max-cycle-edges", type=int, default=10)
     parser.add_argument("--christoffel-max-cycles-scanned", type=int, default=50000)
+    parser.add_argument("--christoffel-slope-tolerance", type=float, default=0.5)
     parser.add_argument("--constrained-karp-max-imbalance", type=int, default=1)
     parser.add_argument("--constrained-karp-max-period", type=int, default=4)
     parser.add_argument("--lift-realizability-power", type=int, default=6)
@@ -1155,6 +1163,20 @@ def main(argv: list[str] | None = None) -> None:
                     max_valuation=args.jsr_max_valuation,
                     max_cycle_edges=args.christoffel_max_cycle_edges,
                     max_cycles_scanned=args.christoffel_max_cycles_scanned,
+                )
+            )
+        )
+
+    if args.christoffel_slope_constrained_jsr:
+        print("\nChristoffel slope-constrained tail JSR diagnostic:")
+        print(
+            format_christoffel_slope_constrained_jsr_report(
+                christoffel_slope_constrained_jsr_report(
+                    levels=_parse_pair_tuple(args.tail_aware_levels),
+                    max_valuation=args.jsr_max_valuation,
+                    max_cycle_edges=args.christoffel_max_cycle_edges,
+                    max_cycles_scanned=args.christoffel_max_cycles_scanned,
+                    tolerance=args.christoffel_slope_tolerance,
                 )
             )
         )

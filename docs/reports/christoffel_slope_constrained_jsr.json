@@ -1,0 +1,98 @@
+{
+  "caveat": "This is a bounded simple-cycle scan with a slope window. It is a stricter finite diagnostic layered on top of the primitive cyclic-balance scan.",
+  "filter_model": "Each parity word must be in an upper-Christoffel conjugacy class and have exact slope A/m within the configured tolerance of log2(3), where A is parity length and m is the number of one bits.",
+  "levels": [
+    {
+      "cycles_scanned": 2009,
+      "gap": 0.0,
+      "max_cycle_edges": 10,
+      "max_cycles_scanned": 200000,
+      "max_tail_depth": 4,
+      "max_valuation": 12,
+      "primitive_balanced_best_factor": 0.75,
+      "slope_constrained_best_factor": 0.75,
+      "slope_constrained_cycles": 1,
+      "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "tail_unit_power": 5,
+      "target_slope": 1.584962500721156,
+      "tolerance": 0.5,
+      "top_slope_constrained_cycles": [
+        {
+          "christoffel_slope": "2/1",
+          "edge_factor": 0.75,
+          "edge_mean_log2_slope": -0.4150374992788439,
+          "parity_word": [
+            1,
+            0
+          ],
+          "slope_distance": 0.4150374992788439,
+          "valuation_word": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "cycles_scanned": 10800,
+      "gap": 0.0,
+      "max_cycle_edges": 10,
+      "max_cycles_scanned": 200000,
+      "max_tail_depth": 5,
+      "max_valuation": 12,
+      "primitive_balanced_best_factor": 0.75,
+      "slope_constrained_best_factor": 0.75,
+      "slope_constrained_cycles": 1,
+      "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "tail_unit_power": 6,
+      "target_slope": 1.584962500721156,
+      "tolerance": 0.5,
+      "top_slope_constrained_cycles": [
+        {
+          "christoffel_slope": "2/1",
+          "edge_factor": 0.75,
+          "edge_mean_log2_slope": -0.4150374992788439,
+          "parity_word": [
+            1,
+            0
+          ],
+          "slope_distance": 0.4150374992788439,
+          "valuation_word": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "cycles_scanned": 37168,
+      "gap": 0.0,
+      "max_cycle_edges": 10,
+      "max_cycles_scanned": 200000,
+      "max_tail_depth": 6,
+      "max_valuation": 12,
+      "primitive_balanced_best_factor": 0.75,
+      "slope_constrained_best_factor": 0.75,
+      "slope_constrained_cycles": 1,
+      "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "tail_unit_power": 7,
+      "target_slope": 1.584962500721156,
+      "tolerance": 0.5,
+      "top_slope_constrained_cycles": [
+        {
+          "christoffel_slope": "2/1",
+          "edge_factor": 0.75,
+          "edge_mean_log2_slope": -0.4150374992788439,
+          "parity_word": [
+            1,
+            0
+          ],
+          "slope_distance": 0.4150374992788439,
+          "valuation_word": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "status": "bounded_finite_upper_christoffel_slope_diagnostic",
+  "type": "christoffel_slope_constrained_tail_jsr"
+}

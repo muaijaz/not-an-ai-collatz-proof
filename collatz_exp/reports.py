@@ -14,6 +14,7 @@ from .cover_parity import CoverParityReport
 from .cover_spectrum import CoverSurvivalSpectrumReport
 from .constrained_jsr import (
     ChristoffelFilteredJSRReport,
+    ChristoffelSlopeConstrainedJSRReport,
     ConstrainedJSRReport,
     ConstrainedProjectiveJSRReport,
     TailAwareMarkovLyapunovReport,
@@ -377,6 +378,22 @@ def format_constrained_karp_jsr_report(result: ConstrainedKarpReport) -> str:
         f"last_factor={None if last is None else last.constrained_karp_factor}, "
         f"within_cycle_filter_bound="
         f"{None if last is None else last.within_cycle_filter_bound}"
+    )
+
+
+def format_christoffel_slope_constrained_jsr_report(
+    result: ChristoffelSlopeConstrainedJSRReport,
+) -> str:
+    last = result.levels[-1] if result.levels else None
+    return (
+        f"status={result.status}, levels={len(result.levels)}, "
+        f"last_q={None if last is None else last.tail_unit_power}, "
+        f"last_Rmax={None if last is None else last.max_tail_depth}, "
+        f"cycles={None if last is None else last.cycles_scanned}, "
+        f"slope_cycles={None if last is None else last.slope_constrained_cycles}, "
+        f"primitive_best="
+        f"{None if last is None else last.primitive_balanced_best_factor}, "
+        f"slope_best={None if last is None else last.slope_constrained_best_factor}"
     )
 
 

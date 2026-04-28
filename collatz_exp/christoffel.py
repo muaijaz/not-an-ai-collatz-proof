@@ -8,7 +8,12 @@ arguments, but it is not itself a replacement for the full arithmetic theorem.
 
 from __future__ import annotations
 
+from fractions import Fraction
 from math import gcd
+from math import log2
+
+
+LOG2_3 = log2(3)
 
 
 def valuation_word_to_parity_bits(valuations: tuple[int, ...]) -> tuple[int, ...]:
@@ -84,3 +89,63 @@ def is_christoffel_compatible(bits: tuple[int, ...]) -> bool:
     if gcd(ones, zeros) != 1:
         return False
     return is_primitive_word(bits) and is_cyclically_balanced(bits)
+
+
+def _upper_mechanical_word(ones: int, length: int) -> tuple[int, ...]:
+    return tuple(
+        ((index + 1) * ones + length - 1) // length
+        - (index * ones + length - 1) // length
+        for index in range(length)
+    )
+
+
+def is_upper_christoffel(word: tuple[int, ...]) -> bool:
+    """Return whether ``word`` is the upper Christoffel representative."""
+
+    length = len(word)
+    if length < 2:
+        return False
+    if any(bit not in (0, 1) for bit in word):
+        return False
+    ones = sum(word)
+    zeros = length - ones
+    if ones == 0 or zeros == 0:
+        return False
+    if gcd(ones, zeros) != 1:
+        return False
+    return word == _upper_mechanical_word(ones, length)
+
+
+def is_upper_christoffel_conjugate(word: tuple[int, ...]) -> bool:
+    """Return whether a cyclic rotation of ``word`` is upper Christoffel."""
+
+    return any(
+        is_upper_christoffel(word[offset:] + word[:offset])
+        for offset in range(len(word))
+    )
+
+
+def christoffel_slope(word: tuple[int, ...]) -> Fraction:
+    """Return the exact valuation-per-accelerated-step slope ``A/m``."""
+
+    ones = sum(word)
+    if ones <= 0:
+        raise ValueError("Christoffel slope requires at least one one-bit")
+    return Fraction(len(word), ones)
+
+
+def slope_constrained_filter(
+    words: tuple[tuple[int, ...], ...],
+    target: float | Fraction = LOG2_3,
+    tolerance: float | Fraction = Fraction(1, 2),
+) -> tuple[tuple[int, ...], ...]:
+    """Filter upper-Christoffel conjugacy classes by slope proximity."""
+
+    target_value = float(target)
+    tolerance_value = float(tolerance)
+    return tuple(
+        word
+        for word in words
+        if is_upper_christoffel_conjugate(word)
+        and abs(float(christoffel_slope(word)) - target_value) <= tolerance_value
+    )

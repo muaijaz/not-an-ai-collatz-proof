@@ -8,7 +8,10 @@ from math import log2
 from typing import Any
 
 from .christoffel import (
+    LOG2_3,
+    christoffel_slope,
     is_christoffel_compatible,
+    is_upper_christoffel_conjugate,
     valuation_word_to_parity_bits,
 )
 from .core import accelerated_step, v2
@@ -311,6 +314,65 @@ class ChristoffelFilteredJSRReport:
             "caveat": self.caveat,
             "levels": [level.to_json_dict() for level in self.levels],
             "interpretation": self.interpretation,
+        }
+
+    def to_json(self) -> str:
+        return json.dumps(self.to_json_dict(), indent=2, sort_keys=True)
+
+
+@dataclass(frozen=True)
+class ChristoffelSlopeConstrainedCycle:
+    edge_factor: float
+    edge_mean_log2_slope: float
+    christoffel_slope: str
+    slope_distance: float
+    valuation_word: tuple[int, ...]
+    parity_word: tuple[int, ...]
+
+    def to_json_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class ChristoffelSlopeConstrainedLevel:
+    tail_unit_power: int
+    max_tail_depth: int
+    max_valuation: int
+    max_cycle_edges: int
+    max_cycles_scanned: int
+    cycles_scanned: int
+    primitive_balanced_best_factor: float | None
+    slope_constrained_best_factor: float | None
+    gap: float | None
+    slope_constrained_cycles: int
+    target_slope: float
+    tolerance: float
+    top_slope_constrained_cycles: tuple[ChristoffelSlopeConstrainedCycle, ...]
+    status: str
+
+    def to_json_dict(self) -> dict[str, Any]:
+        data = asdict(self)
+        data["top_slope_constrained_cycles"] = [
+            cycle.to_json_dict() for cycle in self.top_slope_constrained_cycles
+        ]
+        return data
+
+
+@dataclass(frozen=True)
+class ChristoffelSlopeConstrainedJSRReport:
+    type: str
+    status: str
+    filter_model: str
+    caveat: str
+    levels: tuple[ChristoffelSlopeConstrainedLevel, ...]
+
+    def to_json_dict(self) -> dict[str, Any]:
+        return {
+            "type": self.type,
+            "status": self.status,
+            "filter_model": self.filter_model,
+            "caveat": self.caveat,
+            "levels": [level.to_json_dict() for level in self.levels],
         }
 
     def to_json(self) -> str:
@@ -1361,5 +1423,115 @@ def christoffel_filtered_jsr_report(
             "against christoffel_filtered_best_factor. A drop below one would "
             "mean the bounded high-growth witnesses are filtered by the "
             "Christoffel-compatible parity constraint at that resolution."
+        ),
+    )
+
+
+def _slope_constrained_cycle(
+    cycle: ChristoffelFilteredCycle,
+    target_slope: float,
+) -> ChristoffelSlopeConstrainedCycle:
+    slope = christoffel_slope(cycle.parity_word)
+    slope_value = float(slope)
+    return ChristoffelSlopeConstrainedCycle(
+        edge_factor=cycle.edge_factor,
+        edge_mean_log2_slope=cycle.edge_mean_log2_slope,
+        christoffel_slope=f"{slope.numerator}/{slope.denominator}",
+        slope_distance=abs(slope_value - target_slope),
+        valuation_word=cycle.valuation_word,
+        parity_word=cycle.parity_word,
+    )
+
+
+def _christoffel_slope_constrained_level(
+    tail_unit_power: int,
+    max_tail_depth: int,
+    max_valuation: int,
+    max_cycle_edges: int,
+    max_cycles_scanned: int,
+    target_slope: float,
+    tolerance: float,
+    top_n: int,
+) -> ChristoffelSlopeConstrainedLevel:
+    base = _christoffel_filtered_level(
+        tail_unit_power=tail_unit_power,
+        max_tail_depth=max_tail_depth,
+        max_valuation=max_valuation,
+        max_cycle_edges=max_cycle_edges,
+        max_cycles_scanned=max_cycles_scanned,
+        top_n=max_cycles_scanned,
+    )
+    slope_filtered = tuple(
+        cycle
+        for cycle in base.top_unfiltered_cycles
+        if is_upper_christoffel_conjugate(cycle.parity_word)
+        and abs(float(christoffel_slope(cycle.parity_word)) - target_slope)
+        <= tolerance
+    )
+    best_slope = slope_filtered[0] if slope_filtered else None
+    primitive_best = base.christoffel_filtered_best_factor
+    slope_best = None if best_slope is None else best_slope.edge_factor
+    gap = (
+        None
+        if primitive_best is None or slope_best is None
+        else primitive_best - slope_best
+    )
+    return ChristoffelSlopeConstrainedLevel(
+        tail_unit_power=tail_unit_power,
+        max_tail_depth=max_tail_depth,
+        max_valuation=max_valuation,
+        max_cycle_edges=max_cycle_edges,
+        max_cycles_scanned=max_cycles_scanned,
+        cycles_scanned=base.cycles_scanned,
+        primitive_balanced_best_factor=primitive_best,
+        slope_constrained_best_factor=slope_best,
+        gap=gap,
+        slope_constrained_cycles=len(slope_filtered),
+        target_slope=target_slope,
+        tolerance=tolerance,
+        top_slope_constrained_cycles=tuple(
+            _slope_constrained_cycle(cycle, target_slope)
+            for cycle in slope_filtered[:top_n]
+        ),
+        status=base.status,
+    )
+
+
+def christoffel_slope_constrained_jsr_report(
+    levels: tuple[tuple[int, int], ...] = ((5, 4), (6, 5), (7, 6)),
+    max_valuation: int = 12,
+    max_cycle_edges: int = 10,
+    max_cycles_scanned: int = 200_000,
+    target_slope: float = LOG2_3,
+    tolerance: float = 0.5,
+    top_n: int = 8,
+) -> ChristoffelSlopeConstrainedJSRReport:
+    """Upper-Christoffel slope-constrained bounded tail-cycle scan."""
+
+    return ChristoffelSlopeConstrainedJSRReport(
+        type="christoffel_slope_constrained_tail_jsr",
+        status="bounded_finite_upper_christoffel_slope_diagnostic",
+        filter_model=(
+            "Each parity word must be in an upper-Christoffel conjugacy class "
+            "and have exact slope A/m within the configured tolerance of "
+            "log2(3), where A is parity length and m is the number of one bits."
+        ),
+        caveat=(
+            "This is a bounded simple-cycle scan with a slope window. It is a "
+            "stricter finite diagnostic layered on top of the primitive "
+            "cyclic-balance scan."
+        ),
+        levels=tuple(
+            _christoffel_slope_constrained_level(
+                q,
+                max_tail_depth,
+                max_valuation,
+                max_cycle_edges,
+                max_cycles_scanned,
+                target_slope,
+                tolerance,
+                top_n,
+            )
+            for q, max_tail_depth in levels
         ),
     )
