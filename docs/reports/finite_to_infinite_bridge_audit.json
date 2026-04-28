@@ -1,0 +1,43 @@
+{
+  "candidate_bridge_statement": "Every infinite compatible tail schedule over the LTE-closed graph must force either a high-valuation exit visible at some finite level or a Mersenne-style post-run descent event.",
+  "falsifiable_next_step": "Search for compatible product paths whose finite prefixes avoid both high-valuation exits and the Mersenne post-run descent marker; any persistent family would refocus the obstruction.",
+  "input_reports": [
+    "docs/reports/tail_aware_markov_lyapunov.json",
+    "docs/reports/constrained_karp_jsr.json",
+    "docs/reports/christoffel_slope_constrained_jsr.json",
+    "docs/reports/mersenne_post_run_descent.json"
+  ],
+  "observations": [
+    {
+      "finite_signal": "The largest saved LTE-closed tail graph has worst-case factor 1.2305030340113887 and lift-count typical factor 0.7516501240662575.",
+      "missing_implication": "A typical contraction does not exclude an individual compatible schedule that repeatedly selects high-growth edges.",
+      "name": "worst_typical_split",
+      "next_test": "Track whether high-growth product paths must eventually force a visible high-valuation exit in the tail coordinates.",
+      "source_reports": [
+        "docs/reports/tail_aware_markov_lyapunov.json"
+      ]
+    },
+    {
+      "finite_signal": "The constrained Karp product graph reports exact rational 3/4 at the largest saved product level, while the slope-constrained bounded scan has 1 survivor at its largest saved level.",
+      "missing_implication": "A period-capped balanced-word automaton does not cover every possible infinite compatible scheduler.",
+      "name": "compatible_product_graph",
+      "next_test": "Increase automaton period and slope precision together, and record whether non-elementary compatible cycles appear.",
+      "source_reports": [
+        "docs/reports/constrained_karp_jsr.json",
+        "docs/reports/christoffel_slope_constrained_jsr.json"
+      ]
+    },
+    {
+      "finite_signal": "The sampled Mersenne post-run table reaches descent below the start for R up to 90, with maximum measured post-run steps 155.",
+      "missing_implication": "Post-run descent rows do not contradict finite-depth all-one sieve survival, because they start measuring after the all-one branch has already been followed.",
+      "name": "mersenne_bypass_vs_post_run",
+      "next_test": "Attach each Mersenne post-run profile to the same compatibility coordinate used by the product graph, then check whether the forced post-run spike can be detected before descent.",
+      "source_reports": [
+        "docs/reports/mersenne_post_run_descent.json"
+      ]
+    }
+  ],
+  "status": "finite_obstruction_ledger_no_global_arithmetic_step",
+  "thesis": "The current diagnostics identify a single missing implication: finite or distributional contraction must be upgraded to exclusion of every individual infinite compatible schedule.",
+  "type": "finite_to_infinite_bridge_audit"
+}

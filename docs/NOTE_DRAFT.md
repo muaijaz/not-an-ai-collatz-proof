@@ -161,6 +161,33 @@ framework's `docs/CODEX_HANDOFF_*.md` chain serves a similar continuity and
 correction role. The relationship is methodological kinship, not a priority
 claim.
 
+## Bridge Candidate Audit
+
+The next bridge candidate is now recorded as an explicit finite obstruction
+ledger: every infinite compatible tail schedule over the LTE-closed graph would
+need to force either a visible high-valuation exit at some finite level or a
+Mersenne-style post-run descent event
+(`docs/reports/finite_to_infinite_bridge_audit.json`). This is a target
+statement, not a completed upgrade.
+
+The ledger separates three signals. First, the largest saved LTE-closed tail
+graph has worst-case factor `1.2305030340113887` and lift-count typical factor
+`0.7516501240662575`
+(`docs/reports/finite_to_infinite_bridge_audit.json`). Second, the constrained
+Karp product graph reports exact rational `3/4` at the largest saved product
+level, while the slope-constrained bounded scan has `1` survivor at its largest
+saved level (`docs/reports/finite_to_infinite_bridge_audit.json`). Third, the
+new Mersenne post-run table reaches descent below the start for sampled
+Mersenne exponents up to `90`, with maximum measured post-run length `155`
+(`docs/reports/mersenne_post_run_descent.json`,
+`docs/reports/finite_to_infinite_bridge_audit.json`).
+
+The audit's falsifiable next step is to search for compatible product paths
+whose finite prefixes avoid both high-valuation exits and the Mersenne post-run
+descent marker (`docs/reports/finite_to_infinite_bridge_audit.json`). A
+persistent family there would refocus the obstruction; failure to find one
+would make the bridge candidate sharper but still finite.
+
 ## Current Reading
 
 The strongest finite picture is consistent across three views: LTE-closed

@@ -1,0 +1,318 @@
+{
+  "interpretation": "Each sampled Mersenne start follows the initial all-one tail, then descends below its start in the measured post-run window. This does not address nonempty finite-depth sieve survival; it measures the post-run behavior after that all-one branch.",
+  "sample_R": [
+    32,
+    40,
+    56,
+    64,
+    72,
+    80,
+    88,
+    90
+  ],
+  "samples": [
+    {
+      "R": 32,
+      "first_spikes": [
+        [
+          1,
+          8
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          26,
+          5
+        ],
+        [
+          34,
+          6
+        ],
+        [
+          38,
+          4
+        ]
+      ],
+      "initial_debt": 18.13383752235584,
+      "initial_run_length": 31,
+      "landing_below_start": true,
+      "landing_debt": -0.6375874502402326,
+      "max_debt": 18.13383752235584,
+      "next_valuation_after_initial_run": 8,
+      "post_run_steps_to_descent": 38,
+      "post_run_valuation_to_descent": 79,
+      "spike_count": 5
+    },
+    {
+      "R": 40,
+      "first_spikes": [
+        [
+          1,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          23,
+          6
+        ],
+        [
+          26,
+          6
+        ],
+        [
+          32,
+          6
+        ],
+        [
+          36,
+          5
+        ]
+      ],
+      "initial_debt": 22.81353752812509,
+      "initial_run_length": 39,
+      "landing_below_start": true,
+      "landing_debt": -0.12781244591329255,
+      "max_debt": 22.81353752812509,
+      "next_valuation_after_initial_run": 6,
+      "post_run_steps_to_descent": 36,
+      "post_run_valuation_to_descent": 80,
+      "spike_count": 6
+    },
+    {
+      "R": 56,
+      "first_spikes": [
+        [
+          1,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          14,
+          5
+        ]
+      ],
+      "initial_debt": 32.17293753966358,
+      "initial_run_length": 55,
+      "landing_below_start": true,
+      "landing_debt": -0.44811244014405816,
+      "max_debt": 32.17293753966358,
+      "next_valuation_after_initial_run": 6,
+      "post_run_steps_to_descent": 28,
+      "post_run_valuation_to_descent": 77,
+      "spike_count": 7
+    },
+    {
+      "R": 64,
+      "first_spikes": [
+        [
+          1,
+          9
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          14,
+          4
+        ],
+        [
+          35,
+          4
+        ],
+        [
+          51,
+          4
+        ]
+      ],
+      "initial_debt": 36.85263754543283,
+      "initial_run_length": 63,
+      "landing_below_start": true,
+      "landing_debt": -2.7097624084131837,
+      "max_debt": 36.85263754543283,
+      "next_valuation_after_initial_run": 9,
+      "post_run_steps_to_descent": 64,
+      "post_run_valuation_to_descent": 141,
+      "spike_count": 10
+    },
+    {
+      "R": 72,
+      "first_spikes": [
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          32,
+          6
+        ],
+        [
+          41,
+          4
+        ],
+        [
+          48,
+          6
+        ]
+      ],
+      "initial_debt": 41.532337551202076,
+      "initial_run_length": 71,
+      "landing_below_start": true,
+      "landing_debt": -1.1413373781246037,
+      "max_debt": 41.532337551202076,
+      "next_valuation_after_initial_run": 6,
+      "post_run_steps_to_descent": 98,
+      "post_run_valuation_to_descent": 198,
+      "spike_count": 11
+    },
+    {
+      "R": 80,
+      "first_spikes": [
+        [
+          1,
+          7
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          31,
+          5
+        ],
+        [
+          32,
+          6
+        ],
+        [
+          35,
+          4
+        ]
+      ],
+      "initial_debt": 46.212037556971325,
+      "initial_run_length": 79,
+      "landing_below_start": true,
+      "landing_debt": -0.5202873983169809,
+      "max_debt": 46.212037556971325,
+      "next_valuation_after_initial_run": 7,
+      "post_run_steps_to_descent": 62,
+      "post_run_valuation_to_descent": 145,
+      "spike_count": 12
+    },
+    {
+      "R": 88,
+      "first_spikes": [
+        [
+          1,
+          6
+        ],
+        [
+          12,
+          4
+        ],
+        [
+          31,
+          4
+        ],
+        [
+          48,
+          4
+        ],
+        [
+          59,
+          5
+        ],
+        [
+          62,
+          4
+        ]
+      ],
+      "initial_debt": 50.89173756274059,
+      "initial_run_length": 87,
+      "landing_below_start": true,
+      "landing_debt": -5.778924828364836,
+      "max_debt": 50.89173756274059,
+      "next_valuation_after_initial_run": 6,
+      "post_run_steps_to_descent": 151,
+      "post_run_valuation_to_descent": 296,
+      "spike_count": 13
+    },
+    {
+      "R": 90,
+      "first_spikes": [
+        [
+          1,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          20,
+          4
+        ],
+        [
+          25,
+          4
+        ],
+        [
+          60,
+          4
+        ],
+        [
+          65,
+          4
+        ]
+      ],
+      "initial_debt": 52.06166256418288,
+      "initial_run_length": 89,
+      "landing_below_start": true,
+      "landing_debt": -0.26914982403792465,
+      "max_debt": 52.06166256418288,
+      "next_valuation_after_initial_run": 4,
+      "post_run_steps_to_descent": 155,
+      "post_run_valuation_to_descent": 298,
+      "spike_count": 20
+    }
+  ],
+  "source": "collatz_exp.mersenne.profile_mersenne",
+  "status": "finite_mersenne_family_post_run_diagnostic",
+  "type": "mersenne_post_run_descent"
+}
