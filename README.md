@@ -224,7 +224,7 @@ please cite:
   author       = {Aijaz, Mohammad},
   title        = {Collatz Renewal-Theoretic Framework},
   year         = {2026},
-  howpublished = {\url{https://github.com/muaijaz/collatz-renewal-framework}},
+  howpublished = {\url{https://github.com/muaijaz/not-an-ai-collatz-proof}},
   note         = {Vibe-Math. Empirical computational framework, not a proof.}
 }
 ```
