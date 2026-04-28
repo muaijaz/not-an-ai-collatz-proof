@@ -1,0 +1,31 @@
+{
+  "task": "tao_section_4_tv_decay",
+  "source": "claude_background_undersampled_calibration",
+  "status": "calibration_only_not_a_result",
+  "method": "200k uniform odd starts in [10^6, 10^9], compute â^(n)(N) tuple, bin by tuple, compute TV vs Geom(2)^n. Fit log_2(TV) vs n.",
+  "raw_TV_values": {
+    "n=1": 1.621960e-03,
+    "n=2": 4.507356e-03,
+    "n=3": 1.307701e-02,
+    "n=4": 2.807646e-02,
+    "n=5": 6.086917e-02,
+    "n=6": 1.198519e-01,
+    "n=7": 2.114449e-01,
+    "n=8": 3.391075e-01
+  },
+  "fitted_slope": 1.1002,
+  "empirical_c_naive": -1.10,
+  "interpretation": "TV is increasing, not decreasing. This contradicts Tao Prop 1.9's qualitative form but is an artifact of the experimental setup, not a real result.",
+  "two_artifacts_explaining_growth": [
+    {
+      "name": "alphabet_explosion",
+      "explanation": "Number of distinct â tuples grows as ~3^n. With 200k samples, by n=8 we have 76k distinct tuples, ~2.6 samples per tuple. Sampling noise floor scales as sqrt(K)/sqrt(N) where K=alphabet size, so noise ~ 3^(n/2)/sqrt(N). For n=8, N=200k: noise ~ 0.04. Observed TV: 0.34 (8x noise floor, suggesting some real signal but mostly sampling artifact)."
+    },
+    {
+      "name": "wrong_sampling_distribution",
+      "explanation": "Tao Prop 1.9 hypothesis requires N approximately uniform mod 2^(n') for n' >= (2+c_0)n. Uniform on [10^6, 10^9] is approximately uniform mod 2^k only for k <= 20. For n=8, n' ~ 32 needed but our range covers only mod 2^30. Logarithmic sampling on [y, y^alpha] as in Tao is not used here."
+    }
+  ],
+  "recommended_replacement_task": "Subsample 1M-orbit cache with logarithmic weights, compute TV at n=1..6 with validity check N_samples/3^n > 100. See task phi in conversation.",
+  "headline": "Calibration artifact: this test does NOT verify Tao's exponential TV decay because (a) sample size insufficient at n>=4 and (b) sampling distribution wrong. Tao's bound remains untested empirically; recommended task above provides correct method."
+}

@@ -1,0 +1,171 @@
+{
+  "bootstrap_q025": 0.08360260171293721,
+  "bootstrap_q975": 0.08384169894885218,
+  "closed_form_candidates": [
+    {
+      "ci_half_width_units": 8.098330783599218,
+      "difference_from_empirical": -0.000968144252941866,
+      "inside_bootstrap_ci": false,
+      "name": "log(4/3)^2",
+      "value": 0.08276097481015168
+    },
+    {
+      "ci_half_width_units": 3.3106675469971876,
+      "difference_from_empirical": -0.0003957857297602202,
+      "inside_bootstrap_ci": false,
+      "name": "1/12",
+      "value": 0.08333333333333333
+    },
+    {
+      "ci_half_width_units": 2.593422517688915,
+      "difference_from_empirical": -0.00031004007776953835,
+      "inside_bootstrap_ci": false,
+      "name": "log2(3)/19",
+      "value": 0.08341907898532401
+    },
+    {
+      "ci_half_width_units": 1.3638596103035703,
+      "difference_from_empirical": -0.00016304753149982976,
+      "inside_bootstrap_ci": false,
+      "name": "(log2(3)-1)/7",
+      "value": 0.08356607153159372
+    }
+  ],
+  "dominant_segment": "1",
+  "dominant_segment_percent_of_mgf": 64.00635058364243,
+  "empirical_cramer_rate": 0.08372911906309355,
+  "empirical_lambda": 0.2630610750809289,
+  "gaussian_candidate_name": "log(4/3)^2",
+  "gaussian_candidate_value": 0.08276097481015168,
+  "heavy_tail_correction": 0.000968144252941866,
+  "heavy_tail_relative_multiplier": 1.0116980769639643,
+  "interpolated_decomposition_mgf": 0.9198988452503337,
+  "interpolated_decomposition_rate": 0.08349156579893967,
+  "interpolation_caveat": "Per-spike MGFs are saved on a coarse lambda grid; this report log-linearly interpolates them to the bootstrap optimizer. The bootstrap histogram remains the source of the high-precision J value.",
+  "spike_contributions": [
+    {
+      "drift_contribution": 0.29612396999007967,
+      "excursions": 17898350,
+      "geometric_ratio_from_k4": null,
+      "interpolated_mgf_at_lambda": 1.1669481272573985,
+      "mean_delta_log2": 0.5868971152530564,
+      "percent_of_total_mgf": 64.00635058364243,
+      "probability": 0.5045585713305097,
+      "segment": "1",
+      "weighted_mgf_at_lambda": 0.5887936799058069
+    },
+    {
+      "drift_contribution": 0.006570162257006834,
+      "excursions": 5977483,
+      "geometric_ratio_from_k4": null,
+      "interpolated_mgf_at_lambda": 1.0127529357055012,
+      "mean_delta_log2": 0.038990531338867325,
+      "percent_of_total_mgf": 18.551557578132513,
+      "probability": 0.16850660997423836,
+      "segment": "2",
+      "weighted_mgf_at_lambda": 0.17065556393719178
+    },
+    {
+      "drift_contribution": -0.17109437934473118,
+      "excursions": 4511573,
+      "geometric_ratio_from_k4": null,
+      "interpolated_mgf_at_lambda": 0.715464719380975,
+      "mean_delta_log2": -1.3452690847280453,
+      "percent_of_total_mgf": 9.891786405383852,
+      "probability": 0.12718227251860098,
+      "segment": "3",
+      "weighted_mgf_at_lambda": 0.09099442891775554
+    },
+    {
+      "drift_contribution": -0.3499606915807301,
+      "excursions": 3545011,
+      "geometric_ratio_from_k4": 1.0,
+      "interpolated_mgf_at_lambda": 0.43499816437235667,
+      "mean_delta_log2": -3.5018947335397095,
+      "percent_of_total_mgf": 4.725671508357913,
+      "probability": 0.09993466914609121,
+      "segment": "4",
+      "weighted_mgf_at_lambda": 0.04347139763570847
+    },
+    {
+      "drift_contribution": -0.24678533235922281,
+      "excursions": 1856065,
+      "geometric_ratio_from_k4": 1.0471420257934319,
+      "interpolated_mgf_at_lambda": 0.31828376624069593,
+      "mean_delta_log2": -4.716583971250163,
+      "percent_of_total_mgf": 1.8103651797191334,
+      "probability": 0.05232289594831716,
+      "segment": "5",
+      "weighted_mgf_at_lambda": 0.016653528383050436
+    },
+    {
+      "drift_contribution": -0.13828650105788656,
+      "excursions": 835985,
+      "geometric_ratio_from_k4": 0.9432805709206543,
+      "interpolated_mgf_at_lambda": 0.2492230738982601,
+      "mean_delta_log2": -5.867900098302257,
+      "percent_of_total_mgf": 0.6384769915645462,
+      "probability": 0.023566607941722904,
+      "segment": "6",
+      "weighted_mgf_at_lambda": 0.005873342472591331
+    },
+    {
+      "drift_contribution": -0.0871385155262172,
+      "excursions": 424199,
+      "geometric_ratio_from_k4": 0.957286733383902,
+      "interpolated_mgf_at_lambda": 0.17918726341447733,
+      "mean_delta_log2": -7.286885154699628,
+      "percent_of_total_mgf": 0.23293529308142466,
+      "probability": 0.011958266622332835,
+      "segment": "7",
+      "weighted_mgf_at_lambda": 0.002142769071236506
+    },
+    {
+      "drift_contribution": -0.048770184189830694,
+      "excursions": 200009,
+      "geometric_ratio_from_k4": 0.9027176502414237,
+      "interpolated_mgf_at_lambda": 0.1295877153622193,
+      "mean_delta_log2": -8.649803975162909,
+      "percent_of_total_mgf": 0.07942768228831702,
+      "probability": 0.005638299356825848,
+      "segment": "8",
+      "weighted_mgf_at_lambda": 0.0007306543321793322
+    },
+    {
+      "drift_contribution": -0.025990822623120524,
+      "excursions": 97325,
+      "geometric_ratio_from_k4": 0.8785304192286003,
+      "interpolated_mgf_at_lambda": 0.10350087859808725,
+      "mean_delta_log2": -9.473206866626272,
+      "percent_of_total_mgf": 0.030869313191932198,
+      "probability": 0.002743613961887093,
+      "segment": "9",
+      "weighted_mgf_at_lambda": 0.0002839664555892932
+    },
+    {
+      "drift_contribution": -0.022137584625122487,
+      "excursions": 84258,
+      "geometric_ratio_from_k4": 1.5211552234957804,
+      "interpolated_mgf_at_lambda": 0.10030927741814033,
+      "mean_delta_log2": -9.320098371888582,
+      "percent_of_total_mgf": 0.025900656151706482,
+      "probability": 0.0023752522496859256,
+      "segment": "10",
+      "weighted_mgf_at_lambda": 0.00023825983685180744
+    },
+    {
+      "drift_contribution": -0.014930594766187777,
+      "excursions": 43027,
+      "geometric_ratio_from_k4": null,
+      "interpolated_mgf_at_lambda": 0.050500646699224085,
+      "mean_delta_log2": -12.309416026227424,
+      "percent_of_total_mgf": 0.00665880848623038,
+      "probability": 0.0012129409497879883,
+      "segment": ">10",
+      "weighted_mgf_at_lambda": 6.12543023722645e-05
+    }
+  ],
+  "status": "structural_decomposition_of_empirical_renewal_constant_not_collatz_proof",
+  "type": "jazz_constant_spike_decomposition",
+  "verdict": "Jazz's constant is best treated as a Khinchin-style renewal constant: the obvious elementary candidates are rejected by the tight bootstrap interval, while the spike decomposition gives the useful structural representation."
+}

@@ -1,0 +1,243 @@
+{
+  "R_max": 100,
+  "R_min": 2,
+  "levels": [
+    {
+      "R_max": 100,
+      "R_min": 2,
+      "base_states": 342144,
+      "descended_edges": 59665,
+      "distinct_reentry_pairs": 2477,
+      "elapsed_seconds": 5.768273115158081,
+      "estimated_transition_evals": 1368576,
+      "mod2_power": 8,
+      "mod3_power": 3,
+      "out_of_window_edges": 0,
+      "reentry_edges": 1308911,
+      "status": "completed_exact",
+      "targets": {
+        "1054/665": {
+          "appears": false,
+          "matches": 0,
+          "sample_edge": null
+        },
+        "19/12": {
+          "appears": true,
+          "matches": 613,
+          "sample_edge": {
+            "A_PE": 19,
+            "D_PE": -0.019550008653872908,
+            "landing": 1465291,
+            "m_PE": 12,
+            "n0": 1445567,
+            "source": {
+              "R": 6,
+              "u_mod2": 59,
+              "u_mod2_power": 8,
+              "u_mod3": 15,
+              "u_mod3_power": 3
+            },
+            "steps": 7,
+            "target": {
+              "R": 2,
+              "u_mod2": 243,
+              "u_mod2_power": 8,
+              "u_mod3": 14,
+              "u_mod3_power": 3
+            },
+            "u": 22587
+          }
+        },
+        "485/306": {
+          "appears": false,
+          "matches": 0,
+          "sample_edge": null
+        },
+        "84/53": {
+          "appears": false,
+          "matches": 0,
+          "sample_edge": null
+        }
+      },
+      "transitions_checked": 1368576
+    },
+    {
+      "R_max": 100,
+      "R_min": 2,
+      "base_states": 4105728,
+      "descended_edges": 714696,
+      "distinct_reentry_pairs": 2992,
+      "elapsed_seconds": 68.5980863571167,
+      "estimated_transition_evals": 16422912,
+      "mod2_power": 10,
+      "mod3_power": 4,
+      "out_of_window_edges": 0,
+      "reentry_edges": 15708216,
+      "status": "completed_exact",
+      "targets": {
+        "1054/665": {
+          "appears": false,
+          "matches": 0,
+          "sample_edge": null
+        },
+        "19/12": {
+          "appears": true,
+          "matches": 7382,
+          "sample_edge": {
+            "A_PE": 19,
+            "D_PE": -0.019550008653872908,
+            "landing": 9968347,
+            "m_PE": 12,
+            "n0": 9834175,
+            "source": {
+              "R": 6,
+              "u_mod2": 59,
+              "u_mod2_power": 10,
+              "u_mod3": 2,
+              "u_mod3_power": 4
+            },
+            "steps": 7,
+            "target": {
+              "R": 2,
+              "u_mod2": 695,
+              "u_mod2_power": 10,
+              "u_mod3": 41,
+              "u_mod3_power": 4
+            },
+            "u": 153659
+          }
+        },
+        "485/306": {
+          "appears": false,
+          "matches": 0,
+          "sample_edge": null
+        },
+        "84/53": {
+          "appears": true,
+          "matches": 8,
+          "sample_edge": {
+            "A_PE": 84,
+            "D_PE": -0.0030125382212702334,
+            "landing": 21024393195511891,
+            "m_PE": 53,
+            "n0": 20980537283837951,
+            "source": {
+              "R": 36,
+              "u_mod2": 155,
+              "u_mod2_power": 10,
+              "u_mod3": 18,
+              "u_mod3_power": 4
+            },
+            "steps": 18,
+            "target": {
+              "R": 2,
+              "u_mod2": 21,
+              "u_mod2_power": 10,
+              "u_mod3": 50,
+              "u_mod3_power": 4
+            },
+            "u": 305307
+          }
+        }
+      },
+      "transitions_checked": 16422912
+    },
+    {
+      "R_max": 100,
+      "R_min": 2,
+      "base_states": 16422912,
+      "descended_edges": 2858476,
+      "distinct_reentry_pairs": 3255,
+      "elapsed_seconds": 278.1497309207916,
+      "estimated_transition_evals": 65691648,
+      "mod2_power": 12,
+      "mod3_power": 4,
+      "out_of_window_edges": 0,
+      "reentry_edges": 62833172,
+      "status": "completed_exact",
+      "targets": {
+        "1054/665": {
+          "appears": false,
+          "matches": 0,
+          "sample_edge": null
+        },
+        "19/12": {
+          "appears": true,
+          "matches": 29524,
+          "sample_edge": {
+            "A_PE": 19,
+            "D_PE": -0.019550008653872908,
+            "landing": 33351751,
+            "m_PE": 12,
+            "n0": 32902847,
+            "source": {
+              "R": 6,
+              "u_mod2": 2107,
+              "u_mod2_power": 12,
+              "u_mod3": 0,
+              "u_mod3_power": 4
+            },
+            "steps": 7,
+            "target": {
+              "R": 3,
+              "u_mod2": 3337,
+              "u_mod2_power": 12,
+              "u_mod3": 61,
+              "u_mod3_power": 4
+            },
+            "u": 514107
+          }
+        },
+        "485/306": {
+          "appears": false,
+          "matches": 0,
+          "sample_edge": null
+        },
+        "84/53": {
+          "appears": true,
+          "matches": 27,
+          "sample_edge": {
+            "A_PE": 84,
+            "D_PE": -0.0030125382212702334,
+            "landing": 21024393195511891,
+            "m_PE": 53,
+            "n0": 20980537283837951,
+            "source": {
+              "R": 36,
+              "u_mod2": 2203,
+              "u_mod2_power": 12,
+              "u_mod3": 18,
+              "u_mod3_power": 4
+            },
+            "steps": 18,
+            "target": {
+              "R": 2,
+              "u_mod2": 2069,
+              "u_mod2_power": 12,
+              "u_mod3": 50,
+              "u_mod3_power": 4
+            },
+            "u": 305307
+          }
+        }
+      },
+      "transitions_checked": 65691648
+    },
+    {
+      "R_max": 100,
+      "R_min": 2,
+      "base_states": 197074944,
+      "capacity_note": "estimated transitions 788299776 exceeds limit 80000000",
+      "estimated_transition_evals": 788299776,
+      "mod2_power": 14,
+      "mod3_power": 5,
+      "status": "skipped_capacity_boundary",
+      "targets": {}
+    }
+  ],
+  "max_steps": 1000,
+  "sample_lift_power": 2,
+  "status": "exact_until_capacity_boundary",
+  "transition_limit": 80000000,
+  "type": "d_pe_convergent_atlas_resolution_sweep"
+}

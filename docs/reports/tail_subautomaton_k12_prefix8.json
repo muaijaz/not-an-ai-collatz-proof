@@ -1,0 +1,13 @@
+{
+  "modulus_power": 12,
+  "perron_eigenvalue": 0.5,
+  "prefix_ones": 8,
+  "row_denominator": 64,
+  "sample_lift_power": 6,
+  "status": "finite_tail_subblock_spectrum_not_tail_exclusion_proof",
+  "survival_mass_den": 2,
+  "survival_mass_num": 1,
+  "tail_states": 8,
+  "top_tail_residue": 511,
+  "type": "tail_prefixed_subautomaton_spectrum"
+}

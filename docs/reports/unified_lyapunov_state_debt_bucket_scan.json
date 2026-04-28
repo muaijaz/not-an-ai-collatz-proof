@@ -1,0 +1,57 @@
+{
+  "levels": [
+    {
+      "alpha": null,
+      "augmented_state_upper_bound": 16637184,
+      "beta": null,
+      "bucket_max": 0,
+      "bucket_min": -165,
+      "bucket_width": 0.1,
+      "epsilon": null,
+      "gamma": null,
+      "lp_success": false,
+      "status": "finite_bucketed_state_debt_lyapunov_infeasible_or_zero_margin"
+    },
+    {
+      "alpha": null,
+      "augmented_state_upper_bound": 33274368,
+      "beta": null,
+      "bucket_max": 0,
+      "bucket_min": -331,
+      "bucket_width": 0.05,
+      "epsilon": null,
+      "gamma": null,
+      "lp_success": false,
+      "status": "finite_bucketed_state_debt_lyapunov_infeasible_or_zero_margin"
+    },
+    {
+      "alpha": 0.0,
+      "augmented_state_upper_bound": 82885248,
+      "beta": 0.0,
+      "bucket_max": -1,
+      "bucket_min": -827,
+      "bucket_width": 0.02,
+      "epsilon": 0.30040871273616404,
+      "gamma": 16.0,
+      "lp_success": true,
+      "status": "finite_bucketed_state_debt_lyapunov_feasible_not_global_proof"
+    },
+    {
+      "alpha": 0.0,
+      "augmented_state_upper_bound": 165770496,
+      "beta": 0.0,
+      "bucket_max": -2,
+      "bucket_min": -1655,
+      "bucket_width": 0.01,
+      "epsilon": 0.30040871273616404,
+      "gamma": 16.0,
+      "lp_success": true,
+      "status": "finite_bucketed_state_debt_lyapunov_feasible_not_global_proof"
+    }
+  ],
+  "mod2_power": 8,
+  "mod3_power": 3,
+  "note": "Delta=0.1 and 0.05 erase the worst debt gap; Delta<=0.02 closes the finite LP.",
+  "status": "finite_bucket_width_scan_not_global_proof",
+  "type": "unified_lyapunov_state_debt_bucket_scan"
+}

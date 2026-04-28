@@ -1,0 +1,60 @@
+{
+  "height_mode": "raw_log2",
+  "include_debt_term": true,
+  "mod2_power": 8,
+  "mod3_power": 3,
+  "note": "Feasibility begins between gamma_bound=1 and 2; objective saturates gamma at the supplied upper bound.",
+  "scan": [
+    {
+      "epsilon": null,
+      "gamma": null,
+      "gamma_bound": 0.5,
+      "lp_success": false,
+      "relaxed_max_delta": 8.274437510817386
+    },
+    {
+      "epsilon": null,
+      "gamma": null,
+      "gamma_bound": 1.0,
+      "lp_success": false,
+      "relaxed_max_delta": 0.04382332548488499
+    },
+    {
+      "epsilon": 0.01950873004390985,
+      "gamma": 2.0,
+      "gamma_bound": 2.0,
+      "lp_success": true,
+      "relaxed_max_delta": -0.01950873004390985
+    },
+    {
+      "epsilon": 0.058608747351655666,
+      "gamma": 4.0,
+      "gamma_bound": 4.0,
+      "lp_success": true,
+      "relaxed_max_delta": -0.058608747351655666
+    },
+    {
+      "epsilon": 0.1368087819671473,
+      "gamma": 8.0,
+      "gamma_bound": 8.0,
+      "lp_success": true,
+      "relaxed_max_delta": -0.1368087819671473
+    },
+    {
+      "epsilon": 0.21500881658263893,
+      "gamma": 12.0,
+      "gamma_bound": 12.0,
+      "lp_success": true,
+      "relaxed_max_delta": -0.21500881658263893
+    },
+    {
+      "epsilon": 0.29320885119813056,
+      "gamma": 16.0,
+      "gamma_bound": 16.0,
+      "lp_success": true,
+      "relaxed_max_delta": -0.29320885119813056
+    }
+  ],
+  "status": "finite_edge_debt_threshold_scan_not_bucketed_state_proof",
+  "type": "unified_lyapunov_debt_gamma_scan"
+}

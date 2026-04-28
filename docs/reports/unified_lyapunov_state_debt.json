@@ -1,0 +1,53 @@
+{
+  "R_max": 30,
+  "R_min": 2,
+  "alpha": 0.0,
+  "augmented_state_upper_bound": 165770496,
+  "base_states": 100224,
+  "beta": 0.0,
+  "bucket_max": -2,
+  "bucket_min": -1655,
+  "bucket_width": 0.01,
+  "descended_samples": 59459,
+  "epsilon": 0.30040871273616404,
+  "gamma": 16.0,
+  "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "lp_status": 0,
+  "lp_success": true,
+  "max_delta_on_constraints": -0.30040871273616404,
+  "max_steps": 200,
+  "mod2_power": 8,
+  "mod3_power": 3,
+  "out_of_window_samples": 0,
+  "reentry_constraints": 341437,
+  "sample_lift_power": 2,
+  "status": "finite_bucketed_state_debt_lyapunov_feasible_not_global_proof",
+  "transitions_checked": 400896,
+  "type": "unified_lyapunov_state_debt",
+  "worst_constraint_state": {
+    "D_PE": -0.019550008653872908,
+    "D_bucket": -2,
+    "D_bucket_value": -0.02,
+    "R_delta": -9,
+    "landing": 35291,
+    "log_delta": 0.019591287263835966,
+    "n0": 34815,
+    "source": {
+      "R": 11,
+      "u_mod2": 17,
+      "u_mod2_power": 8,
+      "u_mod3": 17,
+      "u_mod3_power": 3
+    },
+    "steps": 2,
+    "target": {
+      "R": 2,
+      "u_mod2": 119,
+      "u_mod2_power": 8,
+      "u_mod3": 21,
+      "u_mod3_power": 3
+    },
+    "total_A": 19,
+    "u": 17
+  }
+}

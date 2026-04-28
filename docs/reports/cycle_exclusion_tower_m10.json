@@ -1,0 +1,358 @@
+{
+  "continued_fraction": {
+    "best_witness": {
+      "abs_error": 0.015037499278844013,
+      "approximation": "8/5",
+      "denominator_m": 5,
+      "numerator_A": 8,
+      "power_gap": 13,
+      "relation": "above_descent_threshold"
+    },
+    "max_m": 10,
+    "nearby_convergents": [
+      {
+        "abs_error": 0.5849625007211561,
+        "approximation": "1/1",
+        "denominator_m": 1,
+        "numerator_A": 1,
+        "power_gap": -1,
+        "relation": "below_descent_threshold"
+      },
+      {
+        "abs_error": 0.4150374992788439,
+        "approximation": "2/1",
+        "denominator_m": 1,
+        "numerator_A": 2,
+        "power_gap": 1,
+        "relation": "above_descent_threshold"
+      },
+      {
+        "abs_error": 0.08496250072115608,
+        "approximation": "3/2",
+        "denominator_m": 2,
+        "numerator_A": 3,
+        "power_gap": -1,
+        "relation": "below_descent_threshold"
+      },
+      {
+        "abs_error": 0.015037499278844013,
+        "approximation": "8/5",
+        "denominator_m": 5,
+        "numerator_A": 8,
+        "power_gap": 13,
+        "relation": "above_descent_threshold"
+      }
+    ],
+    "status": "research_artifact_not_eliahou_hercher_theorem; published constants are not encoded",
+    "type": "continued_fraction_cycle_screen"
+  },
+  "cycle_kinds": {
+    "noninteger_2adic_only": 30121,
+    "positive_integer_cycle": 4
+  },
+  "lattice": {
+    "best_A": 2,
+    "best_B_digits": 1,
+    "best_m": 1,
+    "best_power_gap_abs": 1,
+    "best_word": [
+      2
+    ],
+    "relations": [
+      {
+        "coefficients": [
+          -1,
+          0,
+          1
+        ],
+        "norm_squared": 2,
+        "residual": 0.0
+      },
+      {
+        "coefficients": [
+          -313,
+          276,
+          -312
+        ],
+        "norm_squared": 271489,
+        "residual": 129.99999617756748
+      },
+      {
+        "coefficients": [
+          -37,
+          -139,
+          -37
+        ],
+        "norm_squared": 22059,
+        "residual": 203.9999994863032
+      },
+      {
+        "coefficients": [
+          -227,
+          -64,
+          -227
+        ],
+        "norm_squared": 107154,
+        "residual": 385.0000064489742
+      }
+    ],
+    "scale": 100000000,
+    "status": "finite_lll_near_relation_not_cycle_proof",
+    "type": "cycle_lattice_lll_near_relation",
+    "words_scanned": 4442
+  },
+  "lift_realizability": {
+    "checks": [
+      {
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 8,
+        "cycle_classification": "negative_integer_cycle",
+        "cycle_value": "-1",
+        "cylinder_power": 2,
+        "cylinder_residue_count": 1,
+        "example_residue": 127,
+        "period": 1,
+        "quotient_start_residue": 63,
+        "total_A": 1,
+        "total_debt": 0.5849625007211561,
+        "word": [
+          1
+        ]
+      },
+      {
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 9,
+        "cycle_classification": "positive_integer_cycle",
+        "cycle_value": "1",
+        "cylinder_power": 3,
+        "cylinder_residue_count": 1,
+        "example_residue": 1,
+        "period": 1,
+        "quotient_start_residue": 1,
+        "total_A": 2,
+        "total_debt": -0.4150374992788439,
+        "word": [
+          2
+        ]
+      },
+      {
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 11,
+        "cycle_classification": "positive_integer_cycle",
+        "cycle_value": "1",
+        "cylinder_power": 5,
+        "cylinder_residue_count": 1,
+        "example_residue": 1,
+        "period": 2,
+        "quotient_start_residue": 1,
+        "total_A": 4,
+        "total_debt": -0.8300749985576878,
+        "word": [
+          2,
+          2
+        ]
+      },
+      {
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 13,
+        "cycle_classification": "positive_integer_cycle",
+        "cycle_value": "1",
+        "cylinder_power": 7,
+        "cylinder_residue_count": 1,
+        "example_residue": 1,
+        "period": 3,
+        "quotient_start_residue": 1,
+        "total_A": 6,
+        "total_debt": -1.2451124978365318,
+        "word": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 21,
+        "cycle_classification": "noninteger_2adic_only",
+        "cycle_value": "50783/9823",
+        "cylinder_power": 15,
+        "cylinder_residue_count": 1,
+        "example_residue": 221185,
+        "period": 8,
+        "quotient_start_residue": 1,
+        "total_A": 14,
+        "total_debt": -1.3202999942307514,
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 10,
+        "cycle_classification": "noninteger_2adic_only",
+        "cycle_value": "1/5",
+        "cylinder_power": 4,
+        "cylinder_residue_count": 1,
+        "example_residue": 205,
+        "period": 1,
+        "quotient_start_residue": 13,
+        "total_A": 3,
+        "total_debt": -1.415037499278844,
+        "word": [
+          3
+        ]
+      },
+      {
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 15,
+        "cycle_classification": "positive_integer_cycle",
+        "cycle_value": "1",
+        "cylinder_power": 9,
+        "cylinder_residue_count": 1,
+        "example_residue": 1,
+        "period": 4,
+        "quotient_start_residue": 1,
+        "total_A": 8,
+        "total_debt": -1.6601499971153757,
+        "word": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 20,
+        "cycle_classification": "noninteger_2adic_only",
+        "cycle_value": "14197/6005",
+        "cylinder_power": 14,
+        "cylinder_residue_count": 1,
+        "example_residue": 237569,
+        "period": 7,
+        "quotient_start_residue": 1,
+        "total_A": 13,
+        "total_debt": -1.9052624949519075,
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 17,
+        "cycle_classification": "positive_integer_cycle",
+        "cycle_value": "1",
+        "cylinder_power": 11,
+        "cylinder_residue_count": 1,
+        "example_residue": 1,
+        "period": 5,
+        "quotient_start_residue": 1,
+        "total_A": 10,
+        "total_debt": -2.0751874963942196,
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 22,
+        "cycle_classification": "noninteger_2adic_only",
+        "cycle_value": "58975/26207",
+        "cylinder_power": 16,
+        "cylinder_residue_count": 1,
+        "example_residue": 1015809,
+        "period": 8,
+        "quotient_start_residue": 1,
+        "total_A": 15,
+        "total_debt": -2.3202999942307514,
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 22,
+        "cycle_classification": "noninteger_2adic_only",
+        "cycle_value": "71263/26207",
+        "cylinder_power": 16,
+        "cylinder_residue_count": 1,
+        "example_residue": 1921025,
+        "period": 8,
+        "quotient_start_residue": 1,
+        "total_A": 15,
+        "total_debt": -2.3202999942307514,
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 22,
+        "cycle_classification": "noninteger_2adic_only",
+        "cycle_value": "50783/26207",
+        "cylinder_power": 16,
+        "cylinder_residue_count": 1,
+        "example_residue": 1810433,
+        "period": 8,
+        "quotient_start_residue": 1,
+        "total_A": 15,
+        "total_debt": -2.3202999942307514,
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          2
+        ]
+      }
+    ],
+    "max_period": 8,
+    "max_valuation": 6,
+    "modulus_power": 6,
+    "quotient_words_found": 400,
+    "status": "finite_lift_realizability_not_collatz_proof",
+    "type": "quotient_cycle_lift_realizability"
+  },
+  "max_m": 10,
+  "nonrealizing_positive_candidates": 0,
+  "nontrivial_positive_cycles": 0,
+  "slack": 1,
+  "status": "finite_baker_lll_pila_style_tower_not_cycle_proof",
+  "type": "cycle_exclusion_tower",
+  "valuation_max": 6,
+  "words_scanned": 30125
+}

@@ -1,0 +1,132 @@
+{
+  "levels": [
+    {
+      "components": 1,
+      "first_betti": 1726,
+      "harmonic_dimension": 1726,
+      "harmonic_projection_norm": 2.4193455280360574,
+      "harmonic_projection_ratio": 0.5409821061748747,
+      "indicator_edges": 20,
+      "indicator_norm": 4.47213595499958,
+      "mod2_power": 6,
+      "mod3_power": 3,
+      "obstruction_R": 2,
+      "obstruction_u_mod2": 7,
+      "obstruction_u_mod3_modulus": 9,
+      "obstruction_vertices": [
+        [
+          27,
+          26
+        ],
+        [
+          27,
+          8
+        ],
+        [
+          27,
+          17
+        ]
+      ],
+      "projection_method": "sparse_lsmr_gradient_residual",
+      "sample_lift_power": 2,
+      "status": "finite_mixed_graph_projection_not_global_hodge_proof",
+      "type": "mixed_harmonic_class_identification",
+      "undirected_edges": 2589,
+      "vertices": 864
+    },
+    {
+      "components": 1,
+      "first_betti": 6910,
+      "harmonic_dimension": 6910,
+      "harmonic_projection_norm": 3.7329667077875105e-09,
+      "harmonic_projection_ratio": 7.958711762319419e-10,
+      "indicator_edges": 22,
+      "indicator_norm": 4.69041575982343,
+      "mod2_power": 8,
+      "mod3_power": 3,
+      "obstruction_R": 2,
+      "obstruction_u_mod2": 7,
+      "obstruction_u_mod3_modulus": 9,
+      "obstruction_vertices": [
+        [
+          27,
+          26
+        ],
+        [
+          27,
+          8
+        ],
+        [
+          27,
+          17
+        ]
+      ],
+      "projection_method": "sparse_lsmr_gradient_residual",
+      "sample_lift_power": 2,
+      "status": "finite_mixed_graph_projection_not_global_hodge_proof",
+      "type": "mixed_harmonic_class_identification",
+      "undirected_edges": 10365,
+      "vertices": 3456
+    },
+    {
+      "components": 1,
+      "first_betti": 82940,
+      "harmonic_dimension": 82940,
+      "harmonic_projection_norm": 8.167734888614276e-09,
+      "harmonic_projection_ratio": 1.0373033681578998e-09,
+      "indicator_edges": 62,
+      "indicator_norm": 7.874007874011811,
+      "mod2_power": 10,
+      "mod3_power": 4,
+      "obstruction_R": 2,
+      "obstruction_u_mod2": 7,
+      "obstruction_u_mod3_modulus": 9,
+      "obstruction_vertices": [
+        [
+          27,
+          80
+        ],
+        [
+          27,
+          35
+        ],
+        [
+          27,
+          71
+        ],
+        [
+          27,
+          26
+        ],
+        [
+          27,
+          62
+        ],
+        [
+          27,
+          17
+        ],
+        [
+          27,
+          53
+        ],
+        [
+          27,
+          8
+        ],
+        [
+          27,
+          44
+        ]
+      ],
+      "projection_method": "sparse_lsmr_gradient_residual",
+      "sample_lift_power": 2,
+      "status": "finite_mixed_graph_projection_not_global_hodge_proof",
+      "type": "mixed_harmonic_class_identification",
+      "undirected_edges": 124411,
+      "vertices": 41472
+    }
+  ],
+  "status": "finite_mixed_harmonic_projection_ladder",
+  "type": "mixed_harmonic_class_ladder"
+}

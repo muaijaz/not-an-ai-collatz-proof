@@ -1,0 +1,1281 @@
+{
+  "R_max": 128,
+  "R_min": 2,
+  "all_match": true,
+  "blocks": [
+    {
+      "R": 2,
+      "block_A": 5,
+      "block_debt": -1.8300749985576878,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 1
+    },
+    {
+      "R": 3,
+      "block_A": 4,
+      "block_debt": 0.7548875021634682,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 7
+    },
+    {
+      "R": 4,
+      "block_A": 8,
+      "block_debt": -1.6601499971153757,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 3
+    },
+    {
+      "R": 5,
+      "block_A": 6,
+      "block_debt": 1.9248125036057804,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 61
+    },
+    {
+      "R": 6,
+      "block_A": 9,
+      "block_debt": 0.5097750043269365,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 23
+    },
+    {
+      "R": 7,
+      "block_A": 8,
+      "block_debt": 3.0947375050480925,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 547
+    },
+    {
+      "R": 8,
+      "block_A": 13,
+      "block_debt": -0.3202999942307514,
+      "c_actual": 5,
+      "c_lte": 5,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 103
+    },
+    {
+      "R": 9,
+      "block_A": 10,
+      "block_debt": 4.264662506490405,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 4921
+    },
+    {
+      "R": 10,
+      "block_A": 13,
+      "block_debt": 2.8496250072115608,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 3691
+    },
+    {
+      "R": 11,
+      "block_A": 12,
+      "block_debt": 5.434587507932719,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 44287
+    },
+    {
+      "R": 12,
+      "block_A": 16,
+      "block_debt": 3.019550008653873,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 6,
+      "next_u": 519
+    },
+    {
+      "R": 13,
+      "block_A": 14,
+      "block_debt": 6.604512509375027,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 398581
+    },
+    {
+      "R": 14,
+      "block_A": 17,
+      "block_debt": 5.189475010096185,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 4,
+      "next_u": 37367
+    },
+    {
+      "R": 15,
+      "block_A": 16,
+      "block_debt": 7.774437510817343,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 3587227
+    },
+    {
+      "R": 16,
+      "block_A": 22,
+      "block_debt": 3.359400011538497,
+      "c_actual": 6,
+      "c_lte": 6,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 336303
+    },
+    {
+      "R": 17,
+      "block_A": 18,
+      "block_debt": 8.944362512259652,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 32285041
+    },
+    {
+      "R": 18,
+      "block_A": 21,
+      "block_debt": 7.529325012980809,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 24213781
+    },
+    {
+      "R": 19,
+      "block_A": 20,
+      "block_debt": 10.114287513701967,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 290565367
+    },
+    {
+      "R": 20,
+      "block_A": 24,
+      "block_debt": 7.6992500144231215,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 108962013
+    },
+    {
+      "R": 21,
+      "block_A": 22,
+      "block_debt": 11.284212515144276,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 2615088301
+    },
+    {
+      "R": 22,
+      "block_A": 25,
+      "block_debt": 9.869175015865437,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 980658113
+    },
+    {
+      "R": 23,
+      "block_A": 24,
+      "block_debt": 12.454137516586592,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 23535794707
+    },
+    {
+      "R": 24,
+      "block_A": 29,
+      "block_debt": 9.039100017307746,
+      "c_actual": 5,
+      "c_lte": 5,
+      "matches_lte": true,
+      "next_R": 3,
+      "next_u": 1103240377
+    },
+    {
+      "R": 25,
+      "block_A": 26,
+      "block_debt": 13.6240625180289,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 211822152361
+    },
+    {
+      "R": 26,
+      "block_A": 29,
+      "block_debt": 12.209025018750054,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 158866614271
+    },
+    {
+      "R": 27,
+      "block_A": 28,
+      "block_debt": 14.793987519471216,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 1906399371247
+    },
+    {
+      "R": 28,
+      "block_A": 32,
+      "block_debt": 12.37895002019237,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 357449882109
+    },
+    {
+      "R": 29,
+      "block_A": 30,
+      "block_debt": 15.963912520913524,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 17157594341221
+    },
+    {
+      "R": 30,
+      "block_A": 33,
+      "block_debt": 14.548875021634686,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 3,
+      "next_u": 3217048938979
+    },
+    {
+      "R": 31,
+      "block_A": 32,
+      "block_debt": 17.13383752235584,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 154418349070987
+    },
+    {
+      "R": 32,
+      "block_A": 39,
+      "block_debt": 11.718800023076994,
+      "c_actual": 7,
+      "c_lte": 7,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 7238360112703
+    },
+    {
+      "R": 33,
+      "block_A": 34,
+      "block_debt": 18.30376252379815,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 1389765141638881
+    },
+    {
+      "R": 34,
+      "block_A": 37,
+      "block_debt": 16.888725024519303,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 1042323856229161
+    },
+    {
+      "R": 35,
+      "block_A": 36,
+      "block_debt": 19.473687525240464,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 12507886274749927
+    },
+    {
+      "R": 36,
+      "block_A": 40,
+      "block_debt": 17.05865002596162,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 4690457353031223
+    },
+    {
+      "R": 37,
+      "block_A": 38,
+      "block_debt": 20.643612526682773,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 112570976472749341
+    },
+    {
+      "R": 38,
+      "block_A": 41,
+      "block_debt": 19.228575027403934,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 42214116177281003
+    },
+    {
+      "R": 39,
+      "block_A": 40,
+      "block_debt": 21.81353752812509,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 1013138788254744067
+    },
+    {
+      "R": 40,
+      "block_A": 45,
+      "block_debt": 18.398500028846243,
+      "c_actual": 5,
+      "c_lte": 5,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 189963522797764513
+    },
+    {
+      "R": 41,
+      "block_A": 42,
+      "block_debt": 22.983462529567404,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 9118249094292696601
+    },
+    {
+      "R": 42,
+      "block_A": 45,
+      "block_debt": 21.56842503028855,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 6838686820719522451
+    },
+    {
+      "R": 43,
+      "block_A": 44,
+      "block_debt": 24.153387531009713,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 82064241848634269407
+    },
+    {
+      "R": 44,
+      "block_A": 48,
+      "block_debt": 21.738350031730874,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 3,
+      "next_u": 7693522673309462757
+    },
+    {
+      "R": 45,
+      "block_A": 46,
+      "block_debt": 25.32331253245202,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 738578176637708424661
+    },
+    {
+      "R": 46,
+      "block_A": 49,
+      "block_debt": 23.908275033173183,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 6,
+      "next_u": 17310426014946291203
+    },
+    {
+      "R": 47,
+      "block_A": 48,
+      "block_debt": 26.49323753389433,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 6647203589739375821947
+    },
+    {
+      "R": 48,
+      "block_A": 54,
+      "block_debt": 22.07820003461549,
+      "c_actual": 6,
+      "c_lte": 6,
+      "matches_lte": true,
+      "next_R": 3,
+      "next_u": 155793834134516620827
+    },
+    {
+      "R": 49,
+      "block_A": 50,
+      "block_debt": 27.663162535336653,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 59824832307654382397521
+    },
+    {
+      "R": 50,
+      "block_A": 53,
+      "block_debt": 26.2481250360578,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 44868624230740786798141
+    },
+    {
+      "R": 51,
+      "block_A": 52,
+      "block_debt": 28.83308753677896,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 538423490768889441577687
+    },
+    {
+      "R": 52,
+      "block_A": 56,
+      "block_debt": 26.41805003750011,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 201908809038333540591633
+    },
+    {
+      "R": 53,
+      "block_A": 54,
+      "block_debt": 30.00301253822127,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 4845811416920004974199181
+    },
+    {
+      "R": 54,
+      "block_A": 57,
+      "block_debt": 28.58797503894243,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 1817179281345001865324693
+    },
+    {
+      "R": 55,
+      "block_A": 56,
+      "block_debt": 31.17293753966358,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 43612302752280044767792627
+    },
+    {
+      "R": 56,
+      "block_A": 61,
+      "block_debt": 27.75790004038474,
+      "c_actual": 5,
+      "c_lte": 5,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 4088653383026254196980559
+    },
+    {
+      "R": 57,
+      "block_A": 58,
+      "block_debt": 32.3428625411059,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 392510724770520402910133641
+    },
+    {
+      "R": 58,
+      "block_A": 61,
+      "block_debt": 30.92782504182705,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 294383043577890302182600231
+    },
+    {
+      "R": 59,
+      "block_A": 60,
+      "block_debt": 33.51278754254821,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 3532596522934683626191202767
+    },
+    {
+      "R": 60,
+      "block_A": 64,
+      "block_debt": 31.09775004326937,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 662361848050253179910850519
+    },
+    {
+      "R": 61,
+      "block_A": 62,
+      "block_debt": 34.68271254399052,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 31793368706412152635720824901
+    },
+    {
+      "R": 62,
+      "block_A": 65,
+      "block_debt": 33.26767504471168,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 3,
+      "next_u": 5961256632452278619197654669
+    },
+    {
+      "R": 63,
+      "block_A": 64,
+      "block_debt": 35.85263754543283,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 286140318357709373721487424107
+    },
+    {
+      "R": 64,
+      "block_A": 72,
+      "block_debt": 29.43760004615399,
+      "c_actual": 8,
+      "c_lte": 8,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 6706413711508813446597361503
+    },
+    {
+      "R": 65,
+      "block_A": 66,
+      "block_debt": 37.02256254687515,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 2575262865219384363493386816961
+    },
+    {
+      "R": 66,
+      "block_A": 69,
+      "block_debt": 35.6075250475963,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 1931447148914538272620040112721
+    },
+    {
+      "R": 67,
+      "block_A": 68,
+      "block_debt": 38.19248754831746,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 23177365786974459271440481352647
+    },
+    {
+      "R": 68,
+      "block_A": 72,
+      "block_debt": 35.777450049038606,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 8691512170115422226790180507243
+    },
+    {
+      "R": 69,
+      "block_A": 70,
+      "block_debt": 39.36241254975977,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 208596292082770133442964332173821
+    },
+    {
+      "R": 70,
+      "block_A": 73,
+      "block_debt": 37.94737505048093,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 78223609531038800041111624565183
+    },
+    {
+      "R": 71,
+      "block_A": 72,
+      "block_debt": 40.532337551202076,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 1877366628744931200986678989564387
+    },
+    {
+      "R": 72,
+      "block_A": 77,
+      "block_debt": 37.11730005192324,
+      "c_actual": 5,
+      "c_lte": 5,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 352006242889674600185002310543323
+    },
+    {
+      "R": 73,
+      "block_A": 74,
+      "block_debt": 41.7022625526444,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 16896299658704380808880110906079481
+    },
+    {
+      "R": 74,
+      "block_A": 77,
+      "block_debt": 40.287225053365546,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 12672224744028285606660083179559611
+    },
+    {
+      "R": 75,
+      "block_A": 76,
+      "block_debt": 42.87218755408671,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 152066696928339427279920998154715327
+    },
+    {
+      "R": 76,
+      "block_A": 80,
+      "block_debt": 40.45715005480787,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 4,
+      "next_u": 7128126418515910653746296788502281
+    },
+    {
+      "R": 77,
+      "block_A": 78,
+      "block_debt": 44.042112555529016,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 1368600272355054845519288983392437941
+    },
+    {
+      "R": 78,
+      "block_A": 81,
+      "block_debt": 42.62707505625018,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 4,
+      "next_u": 128306275533286391767433342193041057
+    },
+    {
+      "R": 79,
+      "block_A": 80,
+      "block_debt": 45.212037556971325,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 12317402451195493609673600850531941467
+    },
+    {
+      "R": 80,
+      "block_A": 86,
+      "block_debt": 40.797000057692486,
+      "c_actual": 6,
+      "c_lte": 6,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 1154756479799577525906900079737369513
+    },
+    {
+      "R": 81,
+      "block_A": 82,
+      "block_debt": 46.38196255841365,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 110856622060759442487062407654787473201
+    },
+    {
+      "R": 82,
+      "block_A": 85,
+      "block_debt": 44.96692505913481,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 83142466545569581865296805741090604901
+    },
+    {
+      "R": 83,
+      "block_A": 84,
+      "block_debt": 47.55188755985594,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 997709598546834982383561668893087258807
+    },
+    {
+      "R": 84,
+      "block_A": 88,
+      "block_debt": 45.1368500605771,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 374141099455063118393835625834907722053
+    },
+    {
+      "R": 85,
+      "block_A": 86,
+      "block_debt": 48.721812561298265,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 8979386386921514841452055020037785329261
+    },
+    {
+      "R": 86,
+      "block_A": 89,
+      "block_debt": 47.306775062019426,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 3367269895095568065544520632514169498473
+    },
+    {
+      "R": 87,
+      "block_A": 88,
+      "block_debt": 49.89173756274059,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 80814477482293633573068495180340067963347
+    },
+    {
+      "R": 88,
+      "block_A": 93,
+      "block_debt": 46.47670006346175,
+      "c_actual": 5,
+      "c_lte": 5,
+      "matches_lte": true,
+      "next_R": 4,
+      "next_u": 1894089315991257036868792855789220342891
+    },
+    {
+      "R": 89,
+      "block_A": 90,
+      "block_debt": 51.06166256418288,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 727330297340642702157616456623060611670121
+    },
+    {
+      "R": 90,
+      "block_A": 93,
+      "block_debt": 49.64662506490404,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 545497723005482026618212342467295458752591
+    },
+    {
+      "R": 91,
+      "block_A": 92,
+      "block_debt": 52.231587565625205,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 6545972676065784319418548109607545505031087
+    },
+    {
+      "R": 92,
+      "block_A": 96,
+      "block_debt": 49.816550066346366,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 1227369876762334559890977770551414782193329
+    },
+    {
+      "R": 93,
+      "block_A": 94,
+      "block_debt": 53.40151256706753,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 58913754084592058874766932986467909545279781
+    },
+    {
+      "R": 94,
+      "block_A": 97,
+      "block_debt": 51.98647506778866,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 3,
+      "next_u": 11046328890861011039018799934962733039739959
+    },
+    {
+      "R": 95,
+      "block_A": 96,
+      "block_debt": 54.57143756850982,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 530223786761328529872902396878211185907518027
+    },
+    {
+      "R": 96,
+      "block_A": 103,
+      "block_debt": 49.15640006923098,
+      "c_actual": 7,
+      "c_lte": 7,
+      "matches_lte": true,
+      "next_R": 3,
+      "next_u": 6213560001109318709448074963416537334853727
+    },
+    {
+      "R": 97,
+      "block_A": 98,
+      "block_debt": 55.741362569952145,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 4772014080851956768856121571903900673167662241
+    },
+    {
+      "R": 98,
+      "block_A": 101,
+      "block_debt": 54.326325070673306,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 3579010560638967576642091178927925504875746681
+    },
+    {
+      "R": 99,
+      "block_A": 100,
+      "block_debt": 56.91128757139444,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 42948126727667610919705094147135106058508960167
+    },
+    {
+      "R": 100,
+      "block_A": 104,
+      "block_debt": 54.4962500721156,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 16105547522875354094889410305175664771940860063
+    },
+    {
+      "R": 101,
+      "block_A": 102,
+      "block_debt": 58.08121257283676,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 386533140549008498277345847324215954526580641501
+    },
+    {
+      "R": 102,
+      "block_A": 105,
+      "block_debt": 56.66617507355792,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 144949927705878186854004692746580982947467740563
+    },
+    {
+      "R": 103,
+      "block_A": 104,
+      "block_debt": 59.251137574279085,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 3478798264941076484496112625917943590739225773507
+    },
+    {
+      "R": 104,
+      "block_A": 109,
+      "block_debt": 55.83610007500022,
+      "c_actual": 5,
+      "c_lte": 5,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 652274674676451840843021117359614423263604832533
+    },
+    {
+      "R": 105,
+      "block_A": 106,
+      "block_debt": 60.42106257572138,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 31309184384469688360465013633261492316653031961561
+    },
+    {
+      "R": 106,
+      "block_A": 109,
+      "block_debt": 59.00602507644254,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 23481888288352266270348760224946119237489773971171
+    },
+    {
+      "R": 107,
+      "block_A": 108,
+      "block_debt": 61.5909875771637,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 281782659460227195244185122699353430849877287654047
+    },
+    {
+      "R": 108,
+      "block_A": 112,
+      "block_debt": 59.17595007788486,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 3,
+      "next_u": 26417124324396299554142355253064384142175995717567
+    },
+    {
+      "R": 109,
+      "block_A": 110,
+      "block_debt": 62.760912578606025,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 2536043935142044757197666104294180877648895588886421
+    },
+    {
+      "R": 110,
+      "block_A": 113,
+      "block_debt": 61.34587507932716,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 5,
+      "next_u": 118877059459783347993640598638789728639791980729051
+    },
+    {
+      "R": 111,
+      "block_A": 112,
+      "block_debt": 63.93083758004832,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 22824395416278402814778994938647627898840060299977787
+    },
+    {
+      "R": 112,
+      "block_A": 118,
+      "block_debt": 59.51580008076948,
+      "c_actual": 6,
+      "c_lte": 6,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 1069893535138050131942765387749107557758127826561459
+    },
+    {
+      "R": 113,
+      "block_A": 114,
+      "block_debt": 65.10076258149064,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 205419558746505625333010954447828651089560542699800081
+    },
+    {
+      "R": 114,
+      "block_A": 117,
+      "block_debt": 63.6857250822118,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 154064669059879218999758215835871488317170407024850061
+    },
+    {
+      "R": 115,
+      "block_A": 116,
+      "block_debt": 66.27068758293294,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 1848776028718550627997098590030457859806044884298200727
+    },
+    {
+      "R": 116,
+      "block_A": 120,
+      "block_debt": 63.8556500836541,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 693291010769456485498911971261421697427266831611825273
+    },
+    {
+      "R": 117,
+      "block_A": 118,
+      "block_debt": 67.44061258437526,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 16638984258466955651973887310274120738254403958683806541
+    },
+    {
+      "R": 118,
+      "block_A": 121,
+      "block_debt": 66.02557508509642,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 6239619096925108369490207741352795276845401484506427453
+    },
+    {
+      "R": 119,
+      "block_A": 120,
+      "block_debt": 68.61053758581758,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 149750858326202600867764985792467086644289635628154258867
+    },
+    {
+      "R": 120,
+      "block_A": 125,
+      "block_debt": 65.19550008653874,
+      "c_actual": 5,
+      "c_lte": 5,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 14039142968081493831352967418043789372902153340139461769
+    },
+    {
+      "R": 121,
+      "block_A": 122,
+      "block_debt": 69.78046258725988,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 1347757724935823407809884872132203779798606720653388329801
+    },
+    {
+      "R": 122,
+      "block_A": 125,
+      "block_debt": 68.36542508798104,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 1010818293701867555857413654099152834848955040490041247351
+    },
+    {
+      "R": 123,
+      "block_A": 124,
+      "block_debt": 70.9503875887022,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 12129819524422410670288963849189834018187460485880494968207
+    },
+    {
+      "R": 124,
+      "block_A": 128,
+      "block_debt": 68.53535008942336,
+      "c_actual": 4,
+      "c_lte": 4,
+      "matches_lte": true,
+      "next_R": 2,
+      "next_u": 2274341160829202000679180721723093878410148841102592806539
+    },
+    {
+      "R": 125,
+      "block_A": 126,
+      "block_debt": 72.12031259014452,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 109168375719801696032600674642708506163687144372924454713861
+    },
+    {
+      "R": 126,
+      "block_A": 129,
+      "block_debt": 70.70527509086565,
+      "c_actual": 3,
+      "c_lte": 3,
+      "matches_lte": true,
+      "next_R": 3,
+      "next_u": 20469070447462818006112626495507844905691339569923335258849
+    },
+    {
+      "R": 127,
+      "block_A": 128,
+      "block_debt": 73.29023759158682,
+      "c_actual": 1,
+      "c_lte": 1,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 982515381478215264293406071784376555473184299356320092424747
+    },
+    {
+      "R": 128,
+      "block_A": 137,
+      "block_debt": 65.87520009230798,
+      "c_actual": 9,
+      "c_lte": 9,
+      "matches_lte": true,
+      "next_R": 1,
+      "next_u": 11513852126697835128438352403723162759451378508081876083103
+    }
+  ],
+  "status": "finite_lte_identity_check_not_tail_exclusion_proof",
+  "type": "pure_mersenne_tail_lte_blocks",
+  "worst_block_debt": 73.29023759158682,
+  "worst_debt_R": 127
+}

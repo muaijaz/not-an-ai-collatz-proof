@@ -1,0 +1,80 @@
+{
+  "task": "jazz_constant_stress_test",
+  "source": "claude_background",
+  "context": "Stress-tests not covered by codex's prior artifacts: partition robustness, convergence with N, subfamily invariance.",
+
+  "partition_robustness": {
+    "method": "Same orbit cache, different excursion partitions; 30k orbits, 1.06M canonical excursions.",
+    "results": {
+      "tail_3mod4": {"J": 0.084125, "lambda_star": 0.260, "mean_delta": -0.8044},
+      "tail_v2(n+1)>=2": {"J": 0.084125, "lambda_star": 0.260, "mean_delta": -0.8044, "note": "equivalent to tail_3mod4"},
+      "every_step": {"J": 0.055567, "lambda_star": 0.310, "mean_delta": -0.4075, "note": "matches Geom(2) closed-form Cramer rate 0.0542 to 3%"},
+      "every_two_steps": {"J": 0.100736, "lambda_star": 0.290, "mean_delta": -0.7822, "note": "matches iid-Wald prediction 0.108 to 7%"}
+    },
+    "headline_finding": "J varies 30-80% with partition definition. The 'canonical' J=0.0837 is specific to tail-entry partition.",
+    "implication": "J is not a partition-independent universal constant."
+  },
+
+  "convergence_with_N": {
+    "method": "Subsample canonical excursions to N_sub, recompute J.",
+    "results": {
+      "N=1000": 0.075296,
+      "N=5000": 0.078702,
+      "N=20000": 0.084580,
+      "N=100000": 0.084011,
+      "N=500000": 0.083979,
+      "N=1061476_full": 0.084125
+    },
+    "headline_finding": "J converges from N=20k upward; codex 1M sample is well-converged."
+  },
+
+  "subfamily_invariance": {
+    "mersenne_like": {
+      "method": "n0 = 2^R*u - 1 for u in [1, 2000], 10^4 <= n0 <= 10^9.",
+      "results": {
+        "R=3": 0.063592,
+        "R=5": 0.049171,
+        "R=7": 0.042032,
+        "R=10": 0.034701,
+        "R=15": 0.028520
+      },
+      "headline_finding": "J monotone decreasing with R, factor 2-3 smaller than aggregate. Reflects forced-a=1 positive drift in deep tails."
+    },
+    "stratified_by_n0_mod_8": {
+      "results": {
+        "n0_eq_1_mod_8": 0.085590,
+        "n0_eq_3_mod_8": 0.086720,
+        "n0_eq_5_mod_8": 0.094299,
+        "n0_eq_7_mod_8": 0.072574
+      },
+      "spread": 0.0217,
+      "spread_relative": "22%",
+      "headline_finding": "Significant 2-adic structural dependence: range [0.073, 0.094]."
+    },
+    "stratified_by_n0_mod_9": {
+      "results": {
+        "n0_eq_1_mod_9": 0.081948,
+        "n0_eq_2_mod_9": 0.083514,
+        "n0_eq_4_mod_9": 0.083783,
+        "n0_eq_5_mod_9": 0.084346,
+        "n0_eq_7_mod_9": 0.084668,
+        "n0_eq_8_mod_9": 0.084254
+      },
+      "spread": 0.0027,
+      "spread_relative": "3%",
+      "headline_finding": "3-adic structure essentially invariant (3% spread, within sampling)."
+    }
+  },
+
+  "calibrated_definition_of_J": "J = 0.0837 is the Cramer rate of the Markov-renewal walk over accelerated Collatz orbits with tail-entry partition (excursion = run between consecutive n_t in 3 mod 4), evaluated over uniform odd n_0 in [10^4, 10^15]. It is partition-dependent and 2-adic-stratified; the partition-independent per-step rate has closed form ~0.0542 from the Geom(2) MGF.",
+
+  "candidate_for_universal_J_step": {
+    "definition": "Per-step Cramer rate = sup_lambda { log(2^(1+lambda) - 1) - lambda*log(3) }",
+    "closed_form": "0.0542 in nat log",
+    "lambda_star": "log_2(log(3)/log(3/2)) - 1 = 0.4385",
+    "empirical_match": "0.0556 from per-step partition, 3% off closed form",
+    "advantages": "partition-independent, closed-form, matches Geom(2) heuristic, theoretically motivated"
+  },
+
+  "recommendation": "Document J_renewal = 0.0837 as the Markov-renewal Cramer rate (specific partition), and J_step = 0.0542 as the partition-independent per-step Cramer rate (closed form via Geom(2) MGF). Stress-test data shows J_renewal is genuinely partition-dependent and 2-adic-stratified, while J_step is the universal sibling."
+}

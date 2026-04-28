@@ -1,0 +1,11 @@
+{
+  "R_max": 128,
+  "R_min": 2,
+  "all_match": true,
+  "cases_checked": 16256,
+  "first_failure": null,
+  "status": "exact_tail_internal_identity_checked",
+  "theorem_statement": "For every odd u and every R>=2, if n=2^R*u-1 then v2(3n+1)=1, S(n)=3*2^(R-1)*u-1, and v2(S(n)+1)=R-1.",
+  "type": "tail_internal_step_identity",
+  "u_mod_power": 8
+}

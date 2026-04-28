@@ -1,0 +1,50 @@
+{
+  "R_max": 30,
+  "R_min": 2,
+  "alpha": null,
+  "alpha_bound": 16.0,
+  "beta": null,
+  "beta_bound": 16.0,
+  "descended_samples": 59459,
+  "epsilon": null,
+  "lp_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+  "lp_status": 2,
+  "lp_success": false,
+  "max_delta_on_constraints": null,
+  "max_steps": 200,
+  "mod2_power": 8,
+  "mod3_power": 3,
+  "out_of_window_samples": 0,
+  "reentry_constraints": 341437,
+  "relaxed_alpha": 0.0,
+  "relaxed_beta": 0.0,
+  "relaxed_max_delta": 16.54887502163473,
+  "sample_lift_power": 2,
+  "states": 100224,
+  "status": "finite_unified_lyapunov_lp_infeasible_or_zero_margin",
+  "trajectory_check": null,
+  "transitions_checked": 400896,
+  "type": "unified_lyapunov_lp",
+  "worst_constraint_state": {
+    "R_delta": -27,
+    "landing": 720618962331271,
+    "log_delta": 16.548875021826632,
+    "n0": 7516192767,
+    "psi_delta": -5.627852892910179e-11,
+    "source": {
+      "R": 30,
+      "u_mod2": 7,
+      "u_mod2_power": 8,
+      "u_mod3": 7,
+      "u_mod3_power": 3
+    },
+    "target": {
+      "R": 3,
+      "u_mod2": 209,
+      "u_mod2_power": 8,
+      "u_mod3": 22,
+      "u_mod3_power": 3
+    },
+    "u": 7
+  }
+}

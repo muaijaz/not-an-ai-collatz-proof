@@ -1,0 +1,65 @@
+{
+  "best_integer_offset": -0.000868055555246537,
+  "centered_integer_fraction_1e8": 1.0,
+  "entries": 3456,
+  "fits": [
+    {
+      "coefficients": [
+        -0.00597646756110033,
+        0.00024167366967092025,
+        0.0025926438060727584,
+        0.0022007181559714063
+      ],
+      "features": [
+        "1",
+        "R_cap",
+        "v3(u)",
+        "v2(u2_minus_7)"
+      ],
+      "max_abs_residual": 0.9862354681438987,
+      "name": "intercept_plus_tail_depth_v3u_v2u_minus_7",
+      "r_squared": 0.013772646355440954,
+      "rms_residual": 0.029246486812865697,
+      "samples": 3456
+    },
+    {
+      "coefficients": [
+        -0.0008680555636974925,
+        3.0383964658500795e-12,
+        7.762644693709575e-13,
+        8.911001006094849e-13,
+        0.9999999999949069
+      ],
+      "features": [
+        "1",
+        "R_cap",
+        "v3(u)",
+        "v2(u2_minus_7)",
+        "obstruction"
+      ],
+      "max_abs_residual": 3.469943067688913e-10,
+      "name": "basic_plus_obstruction_indicator",
+      "r_squared": 1.0,
+      "rms_residual": 7.909122315527229e-11,
+      "samples": 3456
+    }
+  ],
+  "mod2_power": 8,
+  "mod3_power": 3,
+  "raw_integer_fraction_1e8": 0.0,
+  "rounded_value_histogram": [
+    [
+      0,
+      3453
+    ],
+    [
+      1,
+      3
+    ]
+  ],
+  "sample_lift_power": 2,
+  "status": "finite_hodge_potential_fit_not_closed_form_proof",
+  "type": "psi_symbolic_fit",
+  "value_max": 0.9991319444701142,
+  "value_min": -0.0008680558748808952
+}

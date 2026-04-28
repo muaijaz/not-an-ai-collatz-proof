@@ -1,0 +1,19 @@
+{
+  "caveat": "This is an iid random-switching model. Collatz valuation sequences are residue-constrained and weakly dependent; the report is a calibration baseline, not a proof for actual orbits.",
+  "closed_form_note": "The affine-coordinate exponent is E[log2(3/2^a)] = log2(3)-E[a]. For Geom(2), E[a]=2, giving log2(3/4).",
+  "exact_log_growth_affine_coordinate_base2": -0.4150374992788439,
+  "exact_log_growth_affine_coordinate_natural": -0.2876820724517809,
+  "exact_log_growth_homogeneous_coordinate_base2": 0.0,
+  "exact_typical_factor_affine_coordinate": 0.75,
+  "matrix_family": "affine accelerated Collatz matrices [[3/2^a, 1/2^a], [0, 1]]",
+  "monte_carlo_log_growth_base2": -0.41433249927592436,
+  "monte_carlo_projective_mean": 27.81128198610393,
+  "monte_carlo_projective_p05": 0.1708566073084324,
+  "monte_carlo_projective_p95": 36.75855555479943,
+  "monte_carlo_steps": 1000000,
+  "random_seed": 0,
+  "status": "closed_form_random_model_confirmed_not_collatz_proof",
+  "type": "furstenberg_random_product_lyapunov",
+  "valuation_cutoff": 64,
+  "valuation_law": "iid Geom(2), P(a=k)=2^-k"
+}

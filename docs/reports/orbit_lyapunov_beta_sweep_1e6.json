@@ -1,0 +1,470 @@
+{
+  "beta_values": [
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+  ],
+  "completed_orbits": 1000000,
+  "conventions": [
+    "reset_at_source",
+    "reset_at_target"
+  ],
+  "interpretation": "Best fraction_nonnegative is only barely below 0.5 and max/mean deltas remain positive for reset_at_source beta>=2; this does not provide a per-step Lyapunov candidate for full orbits.",
+  "max_steps_per_orbit": 10000,
+  "random_seed": 0,
+  "results": [
+    {
+      "beta": 1.0,
+      "convention": "reset_at_source",
+      "fraction_nonnegative": 1.0,
+      "max_delta": 0.09310940439148352,
+      "mean_delta": 0.0031558400183365905,
+      "min_delta": 2.220446049250313e-15,
+      "nonnegative_steps": 69939768,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 2.0,
+      "convention": "reset_at_source",
+      "fraction_nonnegative": 0.499945095614272,
+      "max_delta": 24.41503752077668,
+      "mean_delta": 0.4132873035757882,
+      "min_delta": -0.5849625007211527,
+      "nonnegative_steps": 34966044,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 4.0,
+      "convention": "reset_at_source",
+      "fraction_nonnegative": 0.499945095614272,
+      "max_delta": 73.24511251933437,
+      "mean_delta": 1.2335502306628694,
+      "min_delta": -1.754887502163465,
+      "nonnegative_steps": 34966044,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 8.0,
+      "convention": "reset_at_source",
+      "fraction_nonnegative": 0.499945095614272,
+      "max_delta": 170.90526251644974,
+      "mean_delta": 2.874076085359114,
+      "min_delta": -4.094737505048089,
+      "nonnegative_steps": 34966044,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 16.0,
+      "convention": "reset_at_source",
+      "fraction_nonnegative": 0.499945095614272,
+      "max_delta": 366.2255625106805,
+      "mean_delta": 6.155127794109517,
+      "min_delta": -8.774437510817338,
+      "nonnegative_steps": 34966044,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 32.0,
+      "convention": "reset_at_source",
+      "fraction_nonnegative": 0.499945095614272,
+      "max_delta": 756.8661624991421,
+      "mean_delta": 12.717231211341739,
+      "min_delta": -18.133837522355837,
+      "nonnegative_steps": 34966044,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 64.0,
+      "convention": "reset_at_source",
+      "fraction_nonnegative": 0.499945095614272,
+      "max_delta": 1538.1473624760652,
+      "mean_delta": 25.841438045700954,
+      "min_delta": -36.85263754543283,
+      "nonnegative_steps": 34966044,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 1.0,
+      "convention": "reset_at_target",
+      "fraction_nonnegative": 0.827932886480264,
+      "max_delta": 0.6520766965796931,
+      "mean_delta": -0.3337739019031955,
+      "min_delta": -29.977226090471845,
+      "nonnegative_steps": 57905434,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 2.0,
+      "convention": "reset_at_target",
+      "fraction_nonnegative": 0.5837888967547047,
+      "max_delta": 24.41503752077668,
+      "mean_delta": -0.2605721802475429,
+      "min_delta": -55.87277343059054,
+      "nonnegative_steps": 40830060,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 4.0,
+      "convention": "reset_at_target",
+      "fraction_nonnegative": 0.6294196171768829,
+      "max_delta": 73.24511251933437,
+      "mean_delta": -0.11416873696056164,
+      "min_delta": -109.34344841760974,
+      "nonnegative_steps": 44021462,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 8.0,
+      "convention": "reset_at_target",
+      "fraction_nonnegative": 0.6521349198641895,
+      "max_delta": 170.90526251644974,
+      "mean_delta": 0.17863814961892138,
+      "min_delta": -216.64064933610553,
+      "nonnegative_steps": 45610165,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 16.0,
+      "convention": "reset_at_target",
+      "fraction_nonnegative": 0.6676711595611813,
+      "max_delta": 366.2255625106805,
+      "mean_delta": 0.7642519228667516,
+      "min_delta": -432.0831285378693,
+      "nonnegative_steps": 46696766,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 32.0,
+      "convention": "reset_at_target",
+      "fraction_nonnegative": 0.670660731960106,
+      "max_delta": 756.8661624991421,
+      "mean_delta": 1.9354794690315857,
+      "min_delta": -863.7703283994074,
+      "nonnegative_steps": 46905856,
+      "total_steps": 69939768
+    },
+    {
+      "beta": 64.0,
+      "convention": "reset_at_target",
+      "fraction_nonnegative": 0.6710451484483049,
+      "max_delta": 1538.1473624760652,
+      "mean_delta": 4.277934561554667,
+      "min_delta": -1727.1447281224837,
+      "nonnegative_steps": 46932742,
+      "total_steps": 69939768
+    }
+  ],
+  "sample_count": 1000000,
+  "sample_orbits": [
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 0,
+      "max_delta_all_betas": {
+        "reset_at_source": 278.1473624562416,
+        "reset_at_target": 215.14736542122284
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 221,
+        "reset_at_target": 238
+      },
+      "start": 907691059,
+      "steps": 53
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 1,
+      "max_delta_all_betas": {
+        "reset_at_source": 278.1473728570551,
+        "reset_at_target": 215.15640759417016
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 288,
+        "reset_at_target": 362
+      },
+      "start": 414653999,
+      "steps": 72
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 2,
+      "max_delta_all_betas": {
+        "reset_at_source": 341.14736313301523,
+        "reset_at_target": 341.14736313301523
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 306,
+        "reset_at_target": 321
+      },
+      "start": 814847339,
+      "steps": 72
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 3,
+      "max_delta_all_betas": {
+        "reset_at_source": 530.1487720248218,
+        "reset_at_target": 530.1487720248218
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 378,
+        "reset_at_target": 413
+      },
+      "start": 956892129,
+      "steps": 96
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 4,
+      "max_delta_all_betas": {
+        "reset_at_source": 467.1473624556297,
+        "reset_at_target": 278.14826442086155
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 173,
+        "reset_at_target": 187
+      },
+      "start": 452585301,
+      "steps": 41
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 5,
+      "max_delta_all_betas": {
+        "reset_at_source": 278.14743055922605,
+        "reset_at_target": 215.15640759417016
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 149,
+        "reset_at_target": 160
+      },
+      "start": 44469773,
+      "steps": 35
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 6,
+      "max_delta_all_betas": {
+        "reset_at_source": 530.1474188109429,
+        "reset_at_target": 530.1474188109429
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 253,
+        "reset_at_target": 283
+      },
+      "start": 279009743,
+      "steps": 61
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 7,
+      "max_delta_all_betas": {
+        "reset_at_source": 467.1473674067088,
+        "reset_at_target": 467.1473674067088
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 354,
+        "reset_at_target": 402
+      },
+      "start": 549977049,
+      "steps": 90
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 8,
+      "max_delta_all_betas": {
+        "reset_at_source": 278.14808980272517,
+        "reset_at_target": 278.14736307411135
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 332,
+        "reset_at_target": 367
+      },
+      "start": 522760889,
+      "steps": 80
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 9,
+      "max_delta_all_betas": {
+        "reset_at_source": 341.1483874599679,
+        "reset_at_target": 278.14736245762555
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 258,
+        "reset_at_target": 280
+      },
+      "start": 435794719,
+      "steps": 60
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 10,
+      "max_delta_all_betas": {
+        "reset_at_source": 341.1473803736848,
+        "reset_at_target": 341.1473803736848
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 243,
+        "reset_at_target": 297
+      },
+      "start": 986946605,
+      "steps": 63
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 11,
+      "max_delta_all_betas": {
+        "reset_at_source": 278.1505863554415,
+        "reset_at_target": 278.1473677748767
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 204,
+        "reset_at_target": 207
+      },
+      "start": 842597327,
+      "steps": 48
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 12,
+      "max_delta_all_betas": {
+        "reset_at_source": 215.15640759417016,
+        "reset_at_target": 215.15640759417016
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 347,
+        "reset_at_target": 411
+      },
+      "start": 892047769,
+      "steps": 89
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 13,
+      "max_delta_all_betas": {
+        "reset_at_source": 341.1473660613093,
+        "reset_at_target": 341.1473660613093
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 531,
+        "reset_at_target": 668
+      },
+      "start": 326679555,
+      "steps": 141
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 14,
+      "max_delta_all_betas": {
+        "reset_at_source": 341.1473624574133,
+        "reset_at_target": 152.24047185895864
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 367,
+        "reset_at_target": 442
+      },
+      "start": 512742081,
+      "steps": 97
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 15,
+      "max_delta_all_betas": {
+        "reset_at_source": 341.14740435500835,
+        "reset_at_target": 341.14740435500835
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 170,
+        "reset_at_target": 164
+      },
+      "start": 385452587,
+      "steps": 38
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 16,
+      "max_delta_all_betas": {
+        "reset_at_source": 593.1473624546735,
+        "reset_at_target": 278.1473741891854
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 412,
+        "reset_at_target": 583
+      },
+      "start": 627401695,
+      "steps": 112
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 17,
+      "max_delta_all_betas": {
+        "reset_at_source": 278.1474608950872,
+        "reset_at_target": 278.1474608950872
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 291,
+        "reset_at_target": 296
+      },
+      "start": 958413343,
+      "steps": 63
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 18,
+      "max_delta_all_betas": {
+        "reset_at_source": 278.14743312121954,
+        "reset_at_target": 278.147363399452
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 179,
+        "reset_at_target": 208
+      },
+      "start": 976078789,
+      "steps": 41
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 19,
+      "max_delta_all_betas": {
+        "reset_at_source": 467.14736246201,
+        "reset_at_target": 341.1473639397511
+      },
+      "nonnegative_step_counts_all_betas": {
+        "reset_at_source": 262,
+        "reset_at_target": 328
+      },
+      "start": 235551095,
+      "steps": 70
+    }
+  ],
+  "start_max": 1000000000,
+  "start_min": 1000000,
+  "status": "actual_orbit_beta_sweep_near_coin_flip_no_per_step_lyapunov",
+  "total_accelerated_steps": 69939768,
+  "truncated_orbits": 0,
+  "type": "actual_orbit_lyapunov_beta_sweep"
+}

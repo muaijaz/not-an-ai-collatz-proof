@@ -1,0 +1,88 @@
+{
+  "R0": 20,
+  "beta": 0.04185446433722544,
+  "gamma": 1.1719250014423124,
+  "lte_drop_bound": 14,
+  "margin": 0.001,
+  "objective": 1.2137794657795378,
+  "spectral_gap": 0.5,
+  "spectral_ladder": {
+    "levels": [
+      {
+        "modulus_power": 12,
+        "perron_eigenvalue": 0.5,
+        "prefix_ones": 8,
+        "row_denominator": 64,
+        "sample_lift_power": 6,
+        "status": "finite_tail_subblock_spectrum_not_tail_exclusion_proof",
+        "survival_mass_den": 2,
+        "survival_mass_num": 1,
+        "tail_states": 8,
+        "top_tail_residue": 511,
+        "type": "tail_prefixed_subautomaton_spectrum"
+      },
+      {
+        "modulus_power": 14,
+        "perron_eigenvalue": 0.5,
+        "prefix_ones": 8,
+        "row_denominator": 64,
+        "sample_lift_power": 6,
+        "status": "finite_tail_subblock_spectrum_not_tail_exclusion_proof",
+        "survival_mass_den": 2,
+        "survival_mass_num": 1,
+        "tail_states": 32,
+        "top_tail_residue": 511,
+        "type": "tail_prefixed_subautomaton_spectrum"
+      },
+      {
+        "modulus_power": 16,
+        "perron_eigenvalue": 0.5,
+        "prefix_ones": 8,
+        "row_denominator": 64,
+        "sample_lift_power": 6,
+        "status": "finite_tail_subblock_spectrum_not_tail_exclusion_proof",
+        "survival_mass_den": 2,
+        "survival_mass_num": 1,
+        "tail_states": 128,
+        "top_tail_residue": 511,
+        "type": "tail_prefixed_subautomaton_spectrum"
+      },
+      {
+        "modulus_power": 18,
+        "perron_eigenvalue": 0.5,
+        "prefix_ones": 8,
+        "row_denominator": 64,
+        "sample_lift_power": 6,
+        "status": "finite_tail_subblock_spectrum_not_tail_exclusion_proof",
+        "survival_mass_den": 2,
+        "survival_mass_num": 1,
+        "tail_states": 512,
+        "top_tail_residue": 511,
+        "type": "tail_prefixed_subautomaton_spectrum"
+      },
+      {
+        "modulus_power": 20,
+        "perron_eigenvalue": 0.5,
+        "prefix_ones": 8,
+        "row_denominator": 64,
+        "sample_lift_power": 6,
+        "status": "finite_tail_subblock_spectrum_not_tail_exclusion_proof",
+        "survival_mass_den": 2,
+        "survival_mass_num": 1,
+        "tail_states": 2048,
+        "top_tail_residue": 511,
+        "type": "tail_prefixed_subautomaton_spectrum"
+      }
+    ],
+    "max_perron_eigenvalue": 0.5,
+    "max_survival_mass_den": 2,
+    "max_survival_mass_num": 1,
+    "prefix_ones": 8,
+    "sample_lift_power": 6,
+    "status": "finite_uniform_tail_spectral_check_not_global_proof",
+    "type": "tail_subautomaton_spectral_ladder"
+  },
+  "spectral_lambda_bound": 0.5,
+  "status": "finite_tail_lyapunov_lp_feasible_not_global_proof",
+  "type": "tail_lyapunov_two_variable_lp"
+}

@@ -1,0 +1,100 @@
+{
+  "frontier_classes": 2351,
+  "matrix_dimension": 2351,
+  "max_row_survival_den": 1,
+  "max_row_survival_num": 1,
+  "min_row_survival_den": 1,
+  "min_row_survival_num": 0,
+  "perron_eigenvalue": 0.5,
+  "row_denominator": 64,
+  "sample_lift_power": 6,
+  "slowest_state_index": 0,
+  "slowest_state_modulus_power": 16,
+  "slowest_state_residue": 32767,
+  "status": "finite_frontier_survival_spectrum_not_collatz_proof",
+  "top_survival_rows": [
+    {
+      "escape_count": 0,
+      "modulus_power": 16,
+      "residue": 65535,
+      "row_denominator": 64,
+      "state_index": 346,
+      "survival_count": 64
+    },
+    {
+      "escape_count": 0,
+      "modulus_power": 16,
+      "residue": 65383,
+      "row_denominator": 64,
+      "state_index": 80,
+      "survival_count": 64
+    },
+    {
+      "escape_count": 0,
+      "modulus_power": 16,
+      "residue": 65279,
+      "row_denominator": 64,
+      "state_index": 2219,
+      "survival_count": 64
+    },
+    {
+      "escape_count": 0,
+      "modulus_power": 16,
+      "residue": 65263,
+      "row_denominator": 64,
+      "state_index": 1068,
+      "survival_count": 64
+    },
+    {
+      "escape_count": 0,
+      "modulus_power": 16,
+      "residue": 65215,
+      "row_denominator": 64,
+      "state_index": 334,
+      "survival_count": 64
+    },
+    {
+      "escape_count": 0,
+      "modulus_power": 16,
+      "residue": 65151,
+      "row_denominator": 64,
+      "state_index": 197,
+      "survival_count": 64
+    },
+    {
+      "escape_count": 0,
+      "modulus_power": 16,
+      "residue": 65055,
+      "row_denominator": 64,
+      "state_index": 335,
+      "survival_count": 64
+    },
+    {
+      "escape_count": 0,
+      "modulus_power": 16,
+      "residue": 65023,
+      "row_denominator": 64,
+      "state_index": 199,
+      "survival_count": 64
+    },
+    {
+      "escape_count": 0,
+      "modulus_power": 16,
+      "residue": 64959,
+      "row_denominator": 64,
+      "state_index": 385,
+      "survival_count": 64
+    },
+    {
+      "escape_count": 0,
+      "modulus_power": 16,
+      "residue": 64927,
+      "row_denominator": 64,
+      "state_index": 399,
+      "survival_count": 64
+    }
+  ],
+  "type": "cover_frontier_substochastic_spectrum",
+  "weighted_survival_den": 65536,
+  "weighted_survival_num": 2351
+}

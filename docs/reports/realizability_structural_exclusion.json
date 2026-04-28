@@ -1,0 +1,239 @@
+{
+  "R_max": 100,
+  "R_min": 2,
+  "max_steps": 1000,
+  "mod2_power": 8,
+  "mod3_power": 3,
+  "sample_lift_power": 2,
+  "status": "finite_target_pairs_not_realized_as_reentry_edges",
+  "targets": [
+    {
+      "A": 84,
+      "candidates_checked": 732672,
+      "examples": {
+        "descended_after_target_m": {
+          "A_PE": 86,
+          "D_PE": 0.41202496105756836,
+          "landing": 22790112507306643,
+          "m_PE": 54,
+          "source": {
+            "R": 40,
+            "u_mod2": 187,
+            "u_mod2_power": 8,
+            "u_mod3": 12,
+            "u_mod3_power": 3
+          },
+          "status": "descended",
+          "target": null,
+          "u": 27579
+        },
+        "descended_at_target_m_wrong_A": {
+          "A_PE": 85,
+          "D_PE": 0.9969874617787298,
+          "landing": 30386816676408857,
+          "m_PE": 53,
+          "source": {
+            "R": 41,
+            "u_mod2": 187,
+            "u_mod2_power": 8,
+            "u_mod3": 12,
+            "u_mod3_power": 3
+          },
+          "status": "descended",
+          "target": null,
+          "u": 27579
+        },
+        "descended_before_target_m": {
+          "A_PE": 5,
+          "D_PE": 1.8300749985576878,
+          "landing": 577,
+          "m_PE": 2,
+          "source": {
+            "R": 2,
+            "u_mod2": 1,
+            "u_mod2_power": 8,
+            "u_mod3": 0,
+            "u_mod3_power": 3
+          },
+          "status": "descended",
+          "target": null,
+          "u": 513
+        },
+        "reentered_after_target_m": {
+          "A_PE": 87,
+          "D_PE": -0.17293753966357883,
+          "landing": 22790112507306643,
+          "m_PE": 55,
+          "source": {
+            "R": 41,
+            "u_mod2": 233,
+            "u_mod2_power": 8,
+            "u_mod3": 13,
+            "u_mod3_power": 3
+          },
+          "status": "reentered_tail",
+          "target": {
+            "R": 2,
+            "u_mod2": 165,
+            "u_mod2_power": 8,
+            "u_mod3": 8,
+            "u_mod3_power": 3
+          },
+          "u": 9193
+        },
+        "reentered_at_target_m_wrong_A": {
+          "A_PE": 82,
+          "D_PE": -2.0030125382212702,
+          "landing": 3727560795111343,
+          "m_PE": 53,
+          "source": {
+            "R": 35,
+            "u_mod2": 185,
+            "u_mod2_power": 8,
+            "u_mod3": 11,
+            "u_mod3_power": 3
+          },
+          "status": "reentered_tail",
+          "target": {
+            "R": 4,
+            "u_mod2": 251,
+            "u_mod2_power": 8,
+            "u_mod3": 17,
+            "u_mod3_power": 3
+          },
+          "u": 27065
+        },
+        "reentered_before_target_m": {
+          "A_PE": 3,
+          "D_PE": -0.16992500144231215,
+          "landing": 16159,
+          "m_PE": 2,
+          "source": {
+            "R": 2,
+            "u_mod2": 7,
+            "u_mod2_power": 8,
+            "u_mod3": 0,
+            "u_mod3_power": 3
+          },
+          "status": "reentered_tail",
+          "target": {
+            "R": 5,
+            "u_mod2": 249,
+            "u_mod2_power": 8,
+            "u_mod3": 19,
+            "u_mod3_power": 3
+          },
+          "u": 3591
+        }
+      },
+      "m": 53,
+      "status_counts": {
+        "descended_after_target_m": 13,
+        "descended_at_target_m_wrong_A": 1,
+        "descended_before_target_m": 59647,
+        "reentered_after_target_m": 27641,
+        "reentered_at_target_m_wrong_A": 13874,
+        "reentered_before_target_m": 631496
+      }
+    },
+    {
+      "A": 485,
+      "candidates_checked": 1368576,
+      "examples": {
+        "descended_before_target_m": {
+          "A_PE": 5,
+          "D_PE": 1.8300749985576878,
+          "landing": 577,
+          "m_PE": 2,
+          "source": {
+            "R": 2,
+            "u_mod2": 1,
+            "u_mod2_power": 8,
+            "u_mod3": 0,
+            "u_mod3_power": 3
+          },
+          "status": "descended",
+          "target": null,
+          "u": 513
+        },
+        "reentered_before_target_m": {
+          "A_PE": 3,
+          "D_PE": -0.16992500144231215,
+          "landing": 16159,
+          "m_PE": 2,
+          "source": {
+            "R": 2,
+            "u_mod2": 7,
+            "u_mod2_power": 8,
+            "u_mod3": 0,
+            "u_mod3_power": 3
+          },
+          "status": "reentered_tail",
+          "target": {
+            "R": 5,
+            "u_mod2": 249,
+            "u_mod2_power": 8,
+            "u_mod3": 19,
+            "u_mod3_power": 3
+          },
+          "u": 3591
+        }
+      },
+      "m": 306,
+      "status_counts": {
+        "descended_before_target_m": 59665,
+        "reentered_before_target_m": 1308911
+      }
+    },
+    {
+      "A": 1054,
+      "candidates_checked": 1368576,
+      "examples": {
+        "descended_before_target_m": {
+          "A_PE": 5,
+          "D_PE": 1.8300749985576878,
+          "landing": 577,
+          "m_PE": 2,
+          "source": {
+            "R": 2,
+            "u_mod2": 1,
+            "u_mod2_power": 8,
+            "u_mod3": 0,
+            "u_mod3_power": 3
+          },
+          "status": "descended",
+          "target": null,
+          "u": 513
+        },
+        "reentered_before_target_m": {
+          "A_PE": 3,
+          "D_PE": -0.16992500144231215,
+          "landing": 16159,
+          "m_PE": 2,
+          "source": {
+            "R": 2,
+            "u_mod2": 7,
+            "u_mod2_power": 8,
+            "u_mod3": 0,
+            "u_mod3_power": 3
+          },
+          "status": "reentered_tail",
+          "target": {
+            "R": 5,
+            "u_mod2": 249,
+            "u_mod2_power": 8,
+            "u_mod3": 19,
+            "u_mod3_power": 3
+          },
+          "u": 3591
+        }
+      },
+      "m": 665,
+      "status_counts": {
+        "descended_before_target_m": 59665,
+        "reentered_before_target_m": 1308911
+      }
+    }
+  ],
+  "type": "realizability_structural_exclusion"
+}

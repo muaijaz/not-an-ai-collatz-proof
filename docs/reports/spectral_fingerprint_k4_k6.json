@@ -1,0 +1,44 @@
+{
+  "k_max": 6,
+  "k_min": 4,
+  "levels": [
+    {
+      "first_betti": 17,
+      "harmonic_dimension": 17,
+      "max_plus_mean_debt": 0.5849625007211561,
+      "mixed_rank_23_vs_rest": 15,
+      "mixed_rank_2_vs_rest": 8,
+      "modulus_power": 4,
+      "sample_lift_power": 3,
+      "sandpile_forest_count": 16312,
+      "transfer_second_abs": 0.33117948931118596,
+      "walsh_above_threshold": 20
+    },
+    {
+      "first_betti": 42,
+      "harmonic_dimension": 42,
+      "max_plus_mean_debt": 0.5849625007211561,
+      "mixed_rank_23_vs_rest": 29,
+      "mixed_rank_2_vs_rest": 16,
+      "modulus_power": 5,
+      "sample_lift_power": 3,
+      "sandpile_forest_count": 101357621872,
+      "transfer_second_abs": 0.36488995014522385,
+      "walsh_above_threshold": 90
+    },
+    {
+      "first_betti": 86,
+      "harmonic_dimension": 86,
+      "max_plus_mean_debt": 0.5849625007211543,
+      "mixed_rank_23_vs_rest": null,
+      "mixed_rank_2_vs_rest": null,
+      "modulus_power": 6,
+      "sample_lift_power": 3,
+      "sandpile_forest_count": 882074119623730415736886,
+      "transfer_second_abs": 0.4290515739960651,
+      "walsh_above_threshold": 379
+    }
+  ],
+  "status": "finite_fingerprint_not_collatz_proof",
+  "type": "mixed_spectral_fingerprint"
+}

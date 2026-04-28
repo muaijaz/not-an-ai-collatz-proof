@@ -1,0 +1,494 @@
+{
+  "coordinate_model": "odd n represented as n = 2^R u - 1 with overflow R>Rmax compressed back to Rmax",
+  "finite_model_caveat": "Overflow closure is exact for the enumerated lifted residues and valuation cap. It makes the bounded tail-coordinate graph closed under deeper-tail reentry, but it remains a finite quotient rather than a proof for all positive integers.",
+  "levels": [
+    {
+      "affine_quotient_jsr": 1.0711220788237548,
+      "all_one_self_loop_detected": false,
+      "closed_overflow_edges": 11,
+      "edges": 224,
+      "max_cycle_mean_log2_slope": 0.09912291750801543,
+      "max_tail_depth": 4,
+      "max_valuation": 12,
+      "overflow_edges": 0,
+      "states": 64,
+      "status": "closed_lte_overflow_compressed_no_all_one_loop",
+      "tail_unit_power": 5,
+      "top_edges": [
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 1,
+          "target_tail_depth": 1,
+          "target_unit_residue": 3,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 3,
+          "target_tail_depth": 1,
+          "target_unit_residue": 9,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 5,
+          "target_tail_depth": 1,
+          "target_unit_residue": 15,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 7,
+          "target_tail_depth": 1,
+          "target_unit_residue": 21,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 9,
+          "target_tail_depth": 1,
+          "target_unit_residue": 27,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 11,
+          "target_tail_depth": 1,
+          "target_unit_residue": 1,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 13,
+          "target_tail_depth": 1,
+          "target_unit_residue": 7,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 15,
+          "target_tail_depth": 1,
+          "target_unit_residue": 13,
+          "valuation": 1,
+          "witness_count": 1
+        }
+      ],
+      "witness_tail_depth": 4,
+      "witness_unit_residue": 3
+    },
+    {
+      "affine_quotient_jsr": 1.0893171420857424,
+      "all_one_self_loop_detected": false,
+      "closed_overflow_edges": 11,
+      "edges": 480,
+      "max_cycle_mean_log2_slope": 0.12342403918269276,
+      "max_tail_depth": 5,
+      "max_valuation": 12,
+      "overflow_edges": 0,
+      "states": 160,
+      "status": "closed_lte_overflow_compressed_no_all_one_loop",
+      "tail_unit_power": 6,
+      "top_edges": [
+        {
+          "accelerated_steps": 3,
+          "slope_log2": 0.7548875021634682,
+          "source_tail_depth": 1,
+          "source_unit_residue": 21,
+          "target_tail_depth": 5,
+          "target_unit_residue": 9,
+          "valuation": 4,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 1,
+          "target_tail_depth": 1,
+          "target_unit_residue": 3,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 3,
+          "target_tail_depth": 1,
+          "target_unit_residue": 9,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 5,
+          "target_tail_depth": 1,
+          "target_unit_residue": 15,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 7,
+          "target_tail_depth": 1,
+          "target_unit_residue": 21,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 9,
+          "target_tail_depth": 1,
+          "target_unit_residue": 27,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 11,
+          "target_tail_depth": 1,
+          "target_unit_residue": 33,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 13,
+          "target_tail_depth": 1,
+          "target_unit_residue": 39,
+          "valuation": 1,
+          "witness_count": 1
+        }
+      ],
+      "witness_tail_depth": 3,
+      "witness_unit_residue": 15
+    },
+    {
+      "affine_quotient_jsr": 1.1905507889761504,
+      "all_one_self_loop_detected": false,
+      "closed_overflow_edges": 11,
+      "edges": 1024,
+      "max_cycle_mean_log2_slope": 0.25162916738782376,
+      "max_tail_depth": 6,
+      "max_valuation": 12,
+      "overflow_edges": 0,
+      "states": 384,
+      "status": "closed_lte_overflow_compressed_no_all_one_loop",
+      "tail_unit_power": 7,
+      "top_edges": [
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 1,
+          "target_tail_depth": 1,
+          "target_unit_residue": 3,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 3,
+          "target_tail_depth": 1,
+          "target_unit_residue": 9,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 5,
+          "target_tail_depth": 1,
+          "target_unit_residue": 15,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 7,
+          "target_tail_depth": 1,
+          "target_unit_residue": 21,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 9,
+          "target_tail_depth": 1,
+          "target_unit_residue": 27,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 11,
+          "target_tail_depth": 1,
+          "target_unit_residue": 33,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 13,
+          "target_tail_depth": 1,
+          "target_unit_residue": 39,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 15,
+          "target_tail_depth": 1,
+          "target_unit_residue": 45,
+          "valuation": 1,
+          "witness_count": 1
+        }
+      ],
+      "witness_tail_depth": 3,
+      "witness_unit_residue": 13
+    },
+    {
+      "affine_quotient_jsr": 1.2613446228805516,
+      "all_one_self_loop_detected": false,
+      "closed_overflow_edges": 22,
+      "edges": 2048,
+      "max_cycle_mean_log2_slope": 0.334962500721133,
+      "max_tail_depth": 6,
+      "max_valuation": 12,
+      "overflow_edges": 0,
+      "states": 768,
+      "status": "closed_lte_overflow_compressed_no_all_one_loop",
+      "tail_unit_power": 8,
+      "top_edges": [
+        {
+          "accelerated_steps": 4,
+          "slope_log2": 1.3398500028846243,
+          "source_tail_depth": 1,
+          "source_unit_residue": 85,
+          "target_tail_depth": 6,
+          "target_unit_residue": 27,
+          "valuation": 5,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 1,
+          "target_tail_depth": 1,
+          "target_unit_residue": 3,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 3,
+          "target_tail_depth": 1,
+          "target_unit_residue": 9,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 5,
+          "target_tail_depth": 1,
+          "target_unit_residue": 15,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 7,
+          "target_tail_depth": 1,
+          "target_unit_residue": 21,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 9,
+          "target_tail_depth": 1,
+          "target_unit_residue": 27,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 11,
+          "target_tail_depth": 1,
+          "target_unit_residue": 33,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 13,
+          "target_tail_depth": 1,
+          "target_unit_residue": 39,
+          "valuation": 1,
+          "witness_count": 1
+        }
+      ],
+      "witness_tail_depth": 2,
+      "witness_unit_residue": 167
+    },
+    {
+      "affine_quotient_jsr": 1.2305030340113887,
+      "all_one_self_loop_detected": false,
+      "closed_overflow_edges": 44,
+      "edges": 8704,
+      "max_cycle_mean_log2_slope": 0.29924821500679044,
+      "max_tail_depth": 7,
+      "max_valuation": 12,
+      "overflow_edges": 0,
+      "states": 3584,
+      "status": "closed_lte_overflow_compressed_no_all_one_loop",
+      "tail_unit_power": 10,
+      "top_edges": [
+        {
+          "accelerated_steps": 5,
+          "slope_log2": 1.9248125036057804,
+          "source_tail_depth": 1,
+          "source_unit_residue": 341,
+          "target_tail_depth": 7,
+          "target_unit_residue": 81,
+          "valuation": 6,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 3,
+          "slope_log2": 0.7548875021634682,
+          "source_tail_depth": 1,
+          "source_unit_residue": 341,
+          "target_tail_depth": 7,
+          "target_unit_residue": 9,
+          "valuation": 4,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 1,
+          "target_tail_depth": 1,
+          "target_unit_residue": 3,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 3,
+          "target_tail_depth": 1,
+          "target_unit_residue": 9,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 5,
+          "target_tail_depth": 1,
+          "target_unit_residue": 15,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 7,
+          "target_tail_depth": 1,
+          "target_unit_residue": 21,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 9,
+          "target_tail_depth": 1,
+          "target_unit_residue": 27,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 11,
+          "target_tail_depth": 1,
+          "target_unit_residue": 33,
+          "valuation": 1,
+          "witness_count": 1
+        }
+      ],
+      "witness_tail_depth": 2,
+      "witness_unit_residue": 81
+    }
+  ],
+  "next_step": "Use the closed graph as input to a Markov-weighted Lyapunov or multiple-potential certificate; worst-case JSR can remain above 1 while the stochastic/renewal operator contracts.",
+  "status": "finite_lte_overflow_closed_tail_coordinate_diagnostic_not_collatz_proof",
+  "type": "tail_aware_lte_closed_projective_jsr"
+}

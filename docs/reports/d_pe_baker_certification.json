@@ -1,0 +1,109 @@
+{
+  "levels": [
+    {
+      "R_max": 30,
+      "R_min": 2,
+      "baker_C": 1e-09,
+      "baker_kappa": 13.3,
+      "descended_edges": 59459,
+      "max_signed_D_over_baker_ratio": -376677752131274.3,
+      "max_steps": 200,
+      "min_baker_bound": 9.501810089250999e-34,
+      "min_observed_gap": 0.019550008653872908,
+      "min_observed_to_baker_ratio": 376677752131274.3,
+      "mod2_power": 8,
+      "mod3_power": 3,
+      "out_of_window_edges": 0,
+      "reentry_edges": 341437,
+      "sample_lift_power": 2,
+      "target_edge_A": 19,
+      "target_edge_baker_bound": 9.830533948842526e-27,
+      "target_edge_m": 12,
+      "target_edge_observed_gap": 0.019550008653872908,
+      "target_edge_ratio": 1.9887026234393686e+24,
+      "transitions_checked": 400896,
+      "worst_ratio_edge": {
+        "A_PE": 3,
+        "D_PE": -0.16992500144231215,
+        "abs_gap": 0.16992500144231215,
+        "baker_bound": 4.511150459002748e-16,
+        "landing": 16159,
+        "m_PE": 2,
+        "n0": 14363,
+        "observed_to_baker_ratio": 376677752131274.3,
+        "signed_D_over_baker_ratio": -376677752131274.3,
+        "source": {
+          "R": 2,
+          "u_mod2": 7,
+          "u_mod2_power": 8,
+          "u_mod3": 0,
+          "u_mod3_power": 3
+        },
+        "steps": 1,
+        "target": {
+          "R": 5,
+          "u_mod2": 249,
+          "u_mod2_power": 8,
+          "u_mod3": 19,
+          "u_mod3_power": 3
+        },
+        "total_A": 3,
+        "u": 3591
+      }
+    },
+    {
+      "R_max": 30,
+      "R_min": 2,
+      "baker_C": 1e-09,
+      "baker_kappa": 13.3,
+      "descended_edges": 712792,
+      "max_signed_D_over_baker_ratio": -376677752131274.3,
+      "max_steps": 200,
+      "min_baker_bound": 3.4938728276874848e-34,
+      "min_observed_gap": 0.019550008653872908,
+      "min_observed_to_baker_ratio": 376677752131274.3,
+      "mod2_power": 10,
+      "mod3_power": 4,
+      "out_of_window_edges": 0,
+      "reentry_edges": 4097960,
+      "sample_lift_power": 2,
+      "target_edge_A": 19,
+      "target_edge_baker_bound": 9.830533948842526e-27,
+      "target_edge_m": 12,
+      "target_edge_observed_gap": 0.019550008653872908,
+      "target_edge_ratio": 1.9887026234393686e+24,
+      "transitions_checked": 4810752,
+      "worst_ratio_edge": {
+        "A_PE": 3,
+        "D_PE": -0.16992500144231215,
+        "abs_gap": 0.16992500144231215,
+        "baker_bound": 4.511150459002748e-16,
+        "landing": 78367,
+        "m_PE": 2,
+        "n0": 69659,
+        "observed_to_baker_ratio": 376677752131274.3,
+        "signed_D_over_baker_ratio": -376677752131274.3,
+        "source": {
+          "R": 2,
+          "u_mod2": 7,
+          "u_mod2_power": 10,
+          "u_mod3": 0,
+          "u_mod3_power": 4
+        },
+        "steps": 1,
+        "target": {
+          "R": 5,
+          "u_mod2": 401,
+          "u_mod2_power": 10,
+          "u_mod3": 19,
+          "u_mod3_power": 4
+        },
+        "total_A": 3,
+        "u": 17415
+      }
+    }
+  ],
+  "source_note": "Uses configurable Baker-style constants for |A-m*log2(3)|. For published explicit two-logarithm bounds see Laurent, Mignotte, Nesterenko (JNT 1995) and Gouillon (JTNB 2006).",
+  "status": "finite_reentry_gaps_respect_configured_baker_floor_not_structural_proof",
+  "type": "d_pe_baker_certification"
+}

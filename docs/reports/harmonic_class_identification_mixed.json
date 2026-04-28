@@ -1,0 +1,33 @@
+{
+  "components": 1,
+  "first_betti": 1726,
+  "harmonic_dimension": 1726,
+  "harmonic_projection_norm": 2.4193455280360583,
+  "harmonic_projection_ratio": 0.540982106174875,
+  "indicator_edges": 20,
+  "indicator_norm": 4.47213595499958,
+  "mod2_power": 6,
+  "mod3_power": 3,
+  "obstruction_R": 2,
+  "obstruction_u_mod2": 7,
+  "obstruction_u_mod3_modulus": 9,
+  "obstruction_vertices": [
+    [
+      27,
+      26
+    ],
+    [
+      27,
+      8
+    ],
+    [
+      27,
+      17
+    ]
+  ],
+  "sample_lift_power": 2,
+  "status": "finite_mixed_graph_projection_not_global_hodge_proof",
+  "type": "mixed_harmonic_class_identification",
+  "undirected_edges": 2589,
+  "vertices": 864
+}

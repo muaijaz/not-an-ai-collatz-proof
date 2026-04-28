@@ -1,0 +1,494 @@
+{
+  "coordinate_model": "odd n represented as n = 2^R u - 1 with state (R, u mod 2^q)",
+  "finite_model_caveat": "The tracked subgraph is exact for visible target depths, and it removes the artificial all-a=1 n=-1 self-loop. Edges that jump to tail depth above R_max are counted as overflow exits, so this is not yet a global upper bound on positive integer dynamics.",
+  "levels": [
+    {
+      "affine_quotient_jsr": 1.0606601717798212,
+      "all_one_self_loop_detected": false,
+      "closed_overflow_edges": 0,
+      "edges": 213,
+      "max_cycle_mean_log2_slope": 0.08496250072115608,
+      "max_tail_depth": 4,
+      "max_valuation": 12,
+      "overflow_edges": 11,
+      "states": 64,
+      "status": "tracked_subgraph_exact_with_deeper_tail_overflow_exits",
+      "tail_unit_power": 5,
+      "top_edges": [
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 1,
+          "target_tail_depth": 1,
+          "target_unit_residue": 3,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 3,
+          "target_tail_depth": 1,
+          "target_unit_residue": 9,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 5,
+          "target_tail_depth": 1,
+          "target_unit_residue": 15,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 7,
+          "target_tail_depth": 1,
+          "target_unit_residue": 21,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 9,
+          "target_tail_depth": 1,
+          "target_unit_residue": 27,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 11,
+          "target_tail_depth": 1,
+          "target_unit_residue": 1,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 13,
+          "target_tail_depth": 1,
+          "target_unit_residue": 7,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 15,
+          "target_tail_depth": 1,
+          "target_unit_residue": 13,
+          "valuation": 1,
+          "witness_count": 1
+        }
+      ],
+      "witness_tail_depth": 1,
+      "witness_unit_residue": 9
+    },
+    {
+      "affine_quotient_jsr": 1.0893171420857424,
+      "all_one_self_loop_detected": false,
+      "closed_overflow_edges": 0,
+      "edges": 469,
+      "max_cycle_mean_log2_slope": 0.12342403918269276,
+      "max_tail_depth": 5,
+      "max_valuation": 12,
+      "overflow_edges": 11,
+      "states": 160,
+      "status": "tracked_subgraph_exact_with_deeper_tail_overflow_exits",
+      "tail_unit_power": 6,
+      "top_edges": [
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 1,
+          "target_tail_depth": 1,
+          "target_unit_residue": 3,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 3,
+          "target_tail_depth": 1,
+          "target_unit_residue": 9,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 5,
+          "target_tail_depth": 1,
+          "target_unit_residue": 15,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 7,
+          "target_tail_depth": 1,
+          "target_unit_residue": 21,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 9,
+          "target_tail_depth": 1,
+          "target_unit_residue": 27,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 11,
+          "target_tail_depth": 1,
+          "target_unit_residue": 33,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 13,
+          "target_tail_depth": 1,
+          "target_unit_residue": 39,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 15,
+          "target_tail_depth": 1,
+          "target_unit_residue": 45,
+          "valuation": 1,
+          "witness_count": 1
+        }
+      ],
+      "witness_tail_depth": 3,
+      "witness_unit_residue": 15
+    },
+    {
+      "affine_quotient_jsr": 1.1905507889761504,
+      "all_one_self_loop_detected": false,
+      "closed_overflow_edges": 0,
+      "edges": 1013,
+      "max_cycle_mean_log2_slope": 0.25162916738782376,
+      "max_tail_depth": 6,
+      "max_valuation": 12,
+      "overflow_edges": 11,
+      "states": 384,
+      "status": "tracked_subgraph_exact_with_deeper_tail_overflow_exits",
+      "tail_unit_power": 7,
+      "top_edges": [
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 1,
+          "target_tail_depth": 1,
+          "target_unit_residue": 3,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 3,
+          "target_tail_depth": 1,
+          "target_unit_residue": 9,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 5,
+          "target_tail_depth": 1,
+          "target_unit_residue": 15,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 7,
+          "target_tail_depth": 1,
+          "target_unit_residue": 21,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 9,
+          "target_tail_depth": 1,
+          "target_unit_residue": 27,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 11,
+          "target_tail_depth": 1,
+          "target_unit_residue": 33,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 13,
+          "target_tail_depth": 1,
+          "target_unit_residue": 39,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 15,
+          "target_tail_depth": 1,
+          "target_unit_residue": 45,
+          "valuation": 1,
+          "witness_count": 1
+        }
+      ],
+      "witness_tail_depth": 3,
+      "witness_unit_residue": 13
+    },
+    {
+      "affine_quotient_jsr": 1.2613446228805516,
+      "all_one_self_loop_detected": false,
+      "closed_overflow_edges": 0,
+      "edges": 2026,
+      "max_cycle_mean_log2_slope": 0.334962500721133,
+      "max_tail_depth": 6,
+      "max_valuation": 12,
+      "overflow_edges": 22,
+      "states": 768,
+      "status": "tracked_subgraph_exact_with_deeper_tail_overflow_exits",
+      "tail_unit_power": 8,
+      "top_edges": [
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 1,
+          "target_tail_depth": 1,
+          "target_unit_residue": 3,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 3,
+          "target_tail_depth": 1,
+          "target_unit_residue": 9,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 5,
+          "target_tail_depth": 1,
+          "target_unit_residue": 15,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 7,
+          "target_tail_depth": 1,
+          "target_unit_residue": 21,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 9,
+          "target_tail_depth": 1,
+          "target_unit_residue": 27,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 11,
+          "target_tail_depth": 1,
+          "target_unit_residue": 33,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 13,
+          "target_tail_depth": 1,
+          "target_unit_residue": 39,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 15,
+          "target_tail_depth": 1,
+          "target_unit_residue": 45,
+          "valuation": 1,
+          "witness_count": 1
+        }
+      ],
+      "witness_tail_depth": 2,
+      "witness_unit_residue": 167
+    },
+    {
+      "affine_quotient_jsr": 1.2305030340113887,
+      "all_one_self_loop_detected": false,
+      "closed_overflow_edges": 0,
+      "edges": 8660,
+      "max_cycle_mean_log2_slope": 0.29924821500679044,
+      "max_tail_depth": 7,
+      "max_valuation": 12,
+      "overflow_edges": 44,
+      "states": 3584,
+      "status": "tracked_subgraph_exact_with_deeper_tail_overflow_exits",
+      "tail_unit_power": 10,
+      "top_edges": [
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 1,
+          "target_tail_depth": 1,
+          "target_unit_residue": 3,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 3,
+          "target_tail_depth": 1,
+          "target_unit_residue": 9,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 5,
+          "target_tail_depth": 1,
+          "target_unit_residue": 15,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 7,
+          "target_tail_depth": 1,
+          "target_unit_residue": 21,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 9,
+          "target_tail_depth": 1,
+          "target_unit_residue": 27,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 11,
+          "target_tail_depth": 1,
+          "target_unit_residue": 33,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 13,
+          "target_tail_depth": 1,
+          "target_unit_residue": 39,
+          "valuation": 1,
+          "witness_count": 1
+        },
+        {
+          "accelerated_steps": 1,
+          "slope_log2": 0.5849625007211561,
+          "source_tail_depth": 2,
+          "source_unit_residue": 15,
+          "target_tail_depth": 1,
+          "target_unit_residue": 45,
+          "valuation": 1,
+          "witness_count": 1
+        }
+      ],
+      "witness_tail_depth": 2,
+      "witness_unit_residue": 81
+    }
+  ],
+  "next_step": "Turn overflow exits into a renormalized block transition instead of dropping them. That would make the tail-aware quotient closed and suitable for a genuine constrained product upper-bound test.",
+  "status": "bounded_tail_coordinate_diagnostic_not_collatz_proof",
+  "type": "tail_aware_projective_jsr"
+}

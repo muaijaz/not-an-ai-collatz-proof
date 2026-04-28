@@ -1,0 +1,11 @@
+{
+  "edges": 880,
+  "max_cycle_mean_debt": 0.5849625007211556,
+  "modulus_power": 8,
+  "positive_mean_detected": true,
+  "sample_lift_power": 6,
+  "states": 128,
+  "status": "finite_max_plus_quotient_not_collatz_proof",
+  "type": "truncated_max_plus_debt_cycle_mean",
+  "witness_residue": 1
+}

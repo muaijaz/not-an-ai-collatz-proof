@@ -1,0 +1,152 @@
+{
+  "R_max": 30,
+  "R_min": 2,
+  "entries": [
+    {
+      "A": 1,
+      "D_PE": -0.5849625007211561,
+      "abs_gap": 0.5849625007211561,
+      "appears_as_reentry_edge": false,
+      "m": 1,
+      "matching_reentry_edges": 0,
+      "sample_edge": null,
+      "side": "valuation_rich"
+    },
+    {
+      "A": 2,
+      "D_PE": 0.4150374992788439,
+      "abs_gap": 0.4150374992788439,
+      "appears_as_reentry_edge": false,
+      "m": 1,
+      "matching_reentry_edges": 0,
+      "sample_edge": null,
+      "side": "valuation_poor"
+    },
+    {
+      "A": 3,
+      "D_PE": -0.16992500144231215,
+      "abs_gap": 0.16992500144231215,
+      "appears_as_reentry_edge": true,
+      "m": 2,
+      "matching_reentry_edges": 3456,
+      "sample_edge": {
+        "A_PE": 3,
+        "D_PE": -0.16992500144231215,
+        "abs_gap": 0.16992500144231215,
+        "landing": 16159,
+        "m_PE": 2,
+        "n0": 14363,
+        "source": {
+          "R": 2,
+          "u_mod2": 7,
+          "u_mod2_power": 8,
+          "u_mod3": 0,
+          "u_mod3_power": 3
+        },
+        "steps": 1,
+        "target": {
+          "R": 5,
+          "u_mod2": 249,
+          "u_mod2_power": 8,
+          "u_mod3": 19,
+          "u_mod3_power": 3
+        },
+        "total_A": 3,
+        "u": 3591
+      },
+      "side": "valuation_rich"
+    },
+    {
+      "A": 8,
+      "D_PE": 0.07518749639421962,
+      "abs_gap": 0.07518749639421962,
+      "appears_as_reentry_edge": false,
+      "m": 5,
+      "matching_reentry_edges": 0,
+      "sample_edge": null,
+      "side": "valuation_poor"
+    },
+    {
+      "A": 19,
+      "D_PE": -0.019550008653872908,
+      "abs_gap": 0.019550008653872908,
+      "appears_as_reentry_edge": true,
+      "m": 12,
+      "matching_reentry_edges": 613,
+      "sample_edge": {
+        "A_PE": 19,
+        "D_PE": -0.019550008653872908,
+        "abs_gap": 0.019550008653872908,
+        "landing": 1465291,
+        "m_PE": 12,
+        "n0": 1445567,
+        "source": {
+          "R": 6,
+          "u_mod2": 59,
+          "u_mod2_power": 8,
+          "u_mod3": 15,
+          "u_mod3_power": 3
+        },
+        "steps": 7,
+        "target": {
+          "R": 2,
+          "u_mod2": 243,
+          "u_mod2_power": 8,
+          "u_mod3": 14,
+          "u_mod3_power": 3
+        },
+        "total_A": 19,
+        "u": 22587
+      },
+      "side": "valuation_rich"
+    },
+    {
+      "A": 65,
+      "D_PE": 0.01653747043259557,
+      "abs_gap": 0.01653747043259557,
+      "appears_as_reentry_edge": false,
+      "m": 41,
+      "matching_reentry_edges": 0,
+      "sample_edge": null,
+      "side": "valuation_poor"
+    },
+    {
+      "A": 84,
+      "D_PE": -0.0030125382212702334,
+      "abs_gap": 0.0030125382212702334,
+      "appears_as_reentry_edge": false,
+      "m": 53,
+      "matching_reentry_edges": 0,
+      "sample_edge": null,
+      "side": "valuation_rich"
+    },
+    {
+      "A": 485,
+      "D_PE": 0.0014747793262586129,
+      "abs_gap": 0.0014747793262586129,
+      "appears_as_reentry_edge": false,
+      "m": 306,
+      "matching_reentry_edges": 0,
+      "sample_edge": null,
+      "side": "valuation_poor"
+    },
+    {
+      "A": 1054,
+      "D_PE": -6.297956883827283e-05,
+      "abs_gap": 6.297956883827283e-05,
+      "appears_as_reentry_edge": false,
+      "m": 665,
+      "matching_reentry_edges": 0,
+      "sample_edge": null,
+      "side": "valuation_rich"
+    }
+  ],
+  "max_denominator": 1000,
+  "max_steps": 200,
+  "mod2_power": 8,
+  "mod3_power": 3,
+  "reentry_edge_pairs": 389,
+  "sample_lift_power": 2,
+  "status": "finite_convergent_atlas_built_not_scaling_proof",
+  "type": "d_pe_convergent_atlas"
+}

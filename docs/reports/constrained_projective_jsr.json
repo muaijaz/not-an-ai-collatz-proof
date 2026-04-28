@@ -1,0 +1,349 @@
+{
+  "homogeneous_caveat": "The full homogeneous triangular matrices always have an invariant constant coordinate, so their JSR is at least 1. Descent-relevant claims must be made on the affine-size quotient or another projectivized/renormalized coordinate.",
+  "levels": [
+    {
+      "affine_quotient_jsr_lower": 1.5,
+      "affine_quotient_jsr_upper": 1.5,
+      "edges": 128,
+      "homogeneous_jsr_lower": 1.5,
+      "homogeneous_jsr_upper": 1.5,
+      "max_cycle_mean_log2_slope": 0.5849625007211561,
+      "max_valuation": 16,
+      "modulus_power": 4,
+      "obstruction_kind": "negative_integer_cycle",
+      "obstruction_note": "The exact finite residue quotient is maximized by the Mersenne-tail 2-adic loop word (1), whose cycle value is n=-1. This is a real obstruction to naive finite residue JSR, not a positive integer cycle.",
+      "obstruction_value": "-1",
+      "obstruction_word": [
+        1
+      ],
+      "states": 8,
+      "tail_filtered": [
+        {
+          "affine_quotient_jsr": 0.75,
+          "edges": 60,
+          "max_cycle_mean_log2_slope": -0.4150374992788439,
+          "states": 4,
+          "tail_depth_cutoff": 2,
+          "witness_residue": 1
+        },
+        {
+          "affine_quotient_jsr": 1.0606601717798212,
+          "edges": 94,
+          "max_cycle_mean_log2_slope": 0.08496250072115608,
+          "states": 6,
+          "tail_depth_cutoff": 3,
+          "witness_residue": 3
+        },
+        {
+          "affine_quotient_jsr": 1.1905507889761495,
+          "edges": 111,
+          "max_cycle_mean_log2_slope": 0.25162916738782276,
+          "states": 7,
+          "tail_depth_cutoff": 4,
+          "witness_residue": 3
+        },
+        {
+          "affine_quotient_jsr": 1.5,
+          "edges": 128,
+          "max_cycle_mean_log2_slope": 0.5849625007211561,
+          "states": 8,
+          "tail_depth_cutoff": 5,
+          "witness_residue": 1
+        },
+        {
+          "affine_quotient_jsr": 1.5,
+          "edges": 128,
+          "max_cycle_mean_log2_slope": 0.5849625007211561,
+          "states": 8,
+          "tail_depth_cutoff": 6,
+          "witness_residue": 1
+        },
+        {
+          "affine_quotient_jsr": 1.5,
+          "edges": 128,
+          "max_cycle_mean_log2_slope": 0.5849625007211561,
+          "states": 8,
+          "tail_depth_cutoff": 8,
+          "witness_residue": 1
+        }
+      ],
+      "witness_residue": 1
+    },
+    {
+      "affine_quotient_jsr_lower": 1.499999999999998,
+      "affine_quotient_jsr_upper": 1.499999999999998,
+      "edges": 512,
+      "homogeneous_jsr_lower": 1.499999999999998,
+      "homogeneous_jsr_upper": 1.499999999999998,
+      "max_cycle_mean_log2_slope": 0.5849625007211543,
+      "max_valuation": 16,
+      "modulus_power": 6,
+      "obstruction_kind": "negative_integer_cycle",
+      "obstruction_note": "The exact finite residue quotient is maximized by the Mersenne-tail 2-adic loop word (1), whose cycle value is n=-1. This is a real obstruction to naive finite residue JSR, not a positive integer cycle.",
+      "obstruction_value": "-1",
+      "obstruction_word": [
+        1
+      ],
+      "states": 32,
+      "tail_filtered": [
+        {
+          "affine_quotient_jsr": 0.75,
+          "edges": 240,
+          "max_cycle_mean_log2_slope": -0.4150374992788439,
+          "states": 16,
+          "tail_depth_cutoff": 2,
+          "witness_residue": 1
+        },
+        {
+          "affine_quotient_jsr": 1.0606601717798212,
+          "edges": 376,
+          "max_cycle_mean_log2_slope": 0.08496250072115608,
+          "states": 24,
+          "tail_depth_cutoff": 3,
+          "witness_residue": 3
+        },
+        {
+          "affine_quotient_jsr": 1.1905507889761495,
+          "edges": 444,
+          "max_cycle_mean_log2_slope": 0.25162916738782276,
+          "states": 28,
+          "tail_depth_cutoff": 4,
+          "witness_residue": 3
+        },
+        {
+          "affine_quotient_jsr": 1.2613446228805718,
+          "edges": 478,
+          "max_cycle_mean_log2_slope": 0.3349625007211561,
+          "states": 30,
+          "tail_depth_cutoff": 5,
+          "witness_residue": 3
+        },
+        {
+          "affine_quotient_jsr": 1.3058258449441862,
+          "edges": 495,
+          "max_cycle_mean_log2_slope": 0.38496250072115606,
+          "states": 31,
+          "tail_depth_cutoff": 6,
+          "witness_residue": 15
+        },
+        {
+          "affine_quotient_jsr": 1.499999999999998,
+          "edges": 512,
+          "max_cycle_mean_log2_slope": 0.5849625007211543,
+          "states": 32,
+          "tail_depth_cutoff": 8,
+          "witness_residue": 1
+        }
+      ],
+      "witness_residue": 1
+    },
+    {
+      "affine_quotient_jsr_lower": 1.4999999999999993,
+      "affine_quotient_jsr_upper": 1.4999999999999993,
+      "edges": 2048,
+      "homogeneous_jsr_lower": 1.4999999999999993,
+      "homogeneous_jsr_upper": 1.4999999999999993,
+      "max_cycle_mean_log2_slope": 0.5849625007211556,
+      "max_valuation": 16,
+      "modulus_power": 8,
+      "obstruction_kind": "negative_integer_cycle",
+      "obstruction_note": "The exact finite residue quotient is maximized by the Mersenne-tail 2-adic loop word (1), whose cycle value is n=-1. This is a real obstruction to naive finite residue JSR, not a positive integer cycle.",
+      "obstruction_value": "-1",
+      "obstruction_word": [
+        1
+      ],
+      "states": 128,
+      "tail_filtered": [
+        {
+          "affine_quotient_jsr": 0.749999999999999,
+          "edges": 960,
+          "max_cycle_mean_log2_slope": -0.4150374992788457,
+          "states": 64,
+          "tail_depth_cutoff": 2,
+          "witness_residue": 1
+        },
+        {
+          "affine_quotient_jsr": 1.0606601717798212,
+          "edges": 1504,
+          "max_cycle_mean_log2_slope": 0.08496250072115608,
+          "states": 96,
+          "tail_depth_cutoff": 3,
+          "witness_residue": 3
+        },
+        {
+          "affine_quotient_jsr": 1.190550788976148,
+          "edges": 1776,
+          "max_cycle_mean_log2_slope": 0.251629167387821,
+          "states": 112,
+          "tail_depth_cutoff": 4,
+          "witness_residue": 3
+        },
+        {
+          "affine_quotient_jsr": 1.2613446228805703,
+          "edges": 1912,
+          "max_cycle_mean_log2_slope": 0.3349625007211543,
+          "states": 120,
+          "tail_depth_cutoff": 5,
+          "witness_residue": 15
+        },
+        {
+          "affine_quotient_jsr": 1.3058258449441844,
+          "edges": 1980,
+          "max_cycle_mean_log2_slope": 0.3849625007211543,
+          "states": 124,
+          "tail_depth_cutoff": 6,
+          "witness_residue": 1
+        },
+        {
+          "affine_quotient_jsr": 1.3585854963958583,
+          "edges": 2031,
+          "max_cycle_mean_log2_slope": 0.44210535786401145,
+          "states": 127,
+          "tail_depth_cutoff": 8,
+          "witness_residue": 63
+        }
+      ],
+      "witness_residue": 1
+    },
+    {
+      "affine_quotient_jsr_lower": 1.4999999999999758,
+      "affine_quotient_jsr_upper": 1.4999999999999758,
+      "edges": 8192,
+      "homogeneous_jsr_lower": 1.4999999999999758,
+      "homogeneous_jsr_upper": 1.4999999999999758,
+      "max_cycle_mean_log2_slope": 0.584962500721133,
+      "max_valuation": 16,
+      "modulus_power": 10,
+      "obstruction_kind": "negative_integer_cycle",
+      "obstruction_note": "The exact finite residue quotient is maximized by the Mersenne-tail 2-adic loop word (1), whose cycle value is n=-1. This is a real obstruction to naive finite residue JSR, not a positive integer cycle.",
+      "obstruction_value": "-1",
+      "obstruction_word": [
+        1
+      ],
+      "states": 512,
+      "tail_filtered": [
+        {
+          "affine_quotient_jsr": 0.7500000000000007,
+          "edges": 3840,
+          "max_cycle_mean_log2_slope": -0.4150374992788426,
+          "states": 256,
+          "tail_depth_cutoff": 2,
+          "witness_residue": 1
+        },
+        {
+          "affine_quotient_jsr": 1.0606601717798199,
+          "edges": 6016,
+          "max_cycle_mean_log2_slope": 0.0849625007211543,
+          "states": 384,
+          "tail_depth_cutoff": 3,
+          "witness_residue": 3
+        },
+        {
+          "affine_quotient_jsr": 1.1905507889761509,
+          "edges": 7104,
+          "max_cycle_mean_log2_slope": 0.2516291673878243,
+          "states": 448,
+          "tail_depth_cutoff": 4,
+          "witness_residue": 3
+        },
+        {
+          "affine_quotient_jsr": 1.261344622880574,
+          "edges": 7648,
+          "max_cycle_mean_log2_slope": 0.33496250072115874,
+          "states": 480,
+          "tail_depth_cutoff": 5,
+          "witness_residue": 15
+        },
+        {
+          "affine_quotient_jsr": 1.3058258449441889,
+          "edges": 7920,
+          "max_cycle_mean_log2_slope": 0.3849625007211592,
+          "states": 496,
+          "tail_depth_cutoff": 6,
+          "witness_residue": 15
+        },
+        {
+          "affine_quotient_jsr": 1.3585854963958632,
+          "edges": 8124,
+          "max_cycle_mean_log2_slope": 0.44210535786401667,
+          "states": 508,
+          "tail_depth_cutoff": 8,
+          "witness_residue": 7
+        }
+      ],
+      "witness_residue": 1
+    },
+    {
+      "affine_quotient_jsr_lower": 1.4999999999999167,
+      "affine_quotient_jsr_upper": 1.4999999999999167,
+      "edges": 32768,
+      "homogeneous_jsr_lower": 1.4999999999999167,
+      "homogeneous_jsr_upper": 1.4999999999999167,
+      "max_cycle_mean_log2_slope": 0.5849625007210761,
+      "max_valuation": 16,
+      "modulus_power": 12,
+      "obstruction_kind": "negative_integer_cycle",
+      "obstruction_note": "The exact finite residue quotient is maximized by the Mersenne-tail 2-adic loop word (1), whose cycle value is n=-1. This is a real obstruction to naive finite residue JSR, not a positive integer cycle.",
+      "obstruction_value": "-1",
+      "obstruction_word": [
+        1
+      ],
+      "states": 2048,
+      "tail_filtered": [
+        {
+          "affine_quotient_jsr": 0.7499999999999879,
+          "edges": 15360,
+          "max_cycle_mean_log2_slope": -0.415037499278867,
+          "states": 1024,
+          "tail_depth_cutoff": 2,
+          "witness_residue": 1
+        },
+        {
+          "affine_quotient_jsr": 1.0606601717798227,
+          "edges": 24064,
+          "max_cycle_mean_log2_slope": 0.08496250072115814,
+          "states": 1536,
+          "tail_depth_cutoff": 3,
+          "witness_residue": 3
+        },
+        {
+          "affine_quotient_jsr": 1.1905507889761304,
+          "edges": 28416,
+          "max_cycle_mean_log2_slope": 0.25162916738779967,
+          "states": 1792,
+          "tail_depth_cutoff": 4,
+          "witness_residue": 3
+        },
+        {
+          "affine_quotient_jsr": 1.2613446228805685,
+          "edges": 30592,
+          "max_cycle_mean_log2_slope": 0.33496250072115225,
+          "states": 1920,
+          "tail_depth_cutoff": 5,
+          "witness_residue": 15
+        },
+        {
+          "affine_quotient_jsr": 1.3058258449441904,
+          "edges": 31680,
+          "max_cycle_mean_log2_slope": 0.3849625007211607,
+          "states": 1984,
+          "tail_depth_cutoff": 6,
+          "witness_residue": 1
+        },
+        {
+          "affine_quotient_jsr": 1.3585854963958683,
+          "edges": 32496,
+          "max_cycle_mean_log2_slope": 0.4421053578640222,
+          "states": 2032,
+          "tail_depth_cutoff": 8,
+          "witness_residue": 31
+        }
+      ],
+      "witness_residue": 1
+    }
+  ],
+  "next_step": "Replace the naive residue quotient by a tail-aware state space that tracks v2(n+1) through the Mersenne manifold, so the negative 2-adic n=-1 loop cannot masquerade as a positive orbit cycle.",
+  "scalar_certificate_note": "For the affine-size quotient, the matrix product reduces to the scalar product of 3/2^a. Karp max-cycle-mean gives matching lower and upper bounds for each finite legal-residue graph.",
+  "status": "finite_scalar_quotient_exact_but_tail_obstructed_not_collatz_proof",
+  "type": "constrained_projective_jsr"
+}

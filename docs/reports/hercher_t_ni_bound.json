@@ -1,0 +1,63 @@
+{
+  "buckets": [
+    {
+      "analytic_ceiling": 1.0,
+      "bucket": "k=1",
+      "ceiling_gap": 0.0,
+      "max_T_times_n": 1.0,
+      "segments": 60796
+    },
+    {
+      "analytic_ceiling": 1.6666666666666667,
+      "bucket": "k=2",
+      "ceiling_gap": 3.774951462531817e-10,
+      "max_T_times_n": 1.6666666662891716,
+      "segments": 24636
+    },
+    {
+      "analytic_ceiling": 2.111111111111111,
+      "bucket": "k=3",
+      "ceiling_gap": 5.761865207176697e-09,
+      "max_T_times_n": 2.111111105349246,
+      "segments": 15817
+    },
+    {
+      "analytic_ceiling": 2.4074074074074074,
+      "bucket": "k=4",
+      "ceiling_gap": 4.367839867569501e-09,
+      "max_T_times_n": 2.4074074030395676,
+      "segments": 8576
+    },
+    {
+      "analytic_ceiling": 2.6049382716049383,
+      "bucket": "k=5",
+      "ceiling_gap": 5.11623854393406e-09,
+      "max_T_times_n": 2.6049382664886997,
+      "segments": 2741
+    },
+    {
+      "analytic_ceiling": 3.0,
+      "bucket": "k>5",
+      "ceiling_gap": 0.003054009759763776,
+      "max_T_times_n": 2.9969459902402362,
+      "segments": 4224
+    }
+  ],
+  "completed_orbits": 5000,
+  "hercher_97_54_note": "Hercher's 97/54 bound applies to hypothetical cycle members with n_i >= X0 (currently X0=2^68 in the paper context); it is not directly testable on small sampled orbits.",
+  "hercher_remark_7_note": "Directly testable sampled form of Hercher Remark 7: T(n_i) < 3/n_i, equivalently T(n_i)*n_i < 3.",
+  "local_minimum_segments": 116790,
+  "max_T_times_n": 2.9969459902402362,
+  "mean_T_times_n": 1.4944676298880113,
+  "p95_T_times_n": 2.60463470292531,
+  "p99_T_times_n": 2.8163427270097685,
+  "random_seed": 0,
+  "sample_count": 5000,
+  "start_max": 1000000,
+  "start_min": 100000,
+  "status": "hercher_universal_Tn_bound_passes_sample",
+  "total_shortcut_steps": 464905,
+  "truncated_orbits": 0,
+  "type": "hercher_t_ni_reciprocal_sum_diagnostic",
+  "universal_bound_3_passes": true
+}

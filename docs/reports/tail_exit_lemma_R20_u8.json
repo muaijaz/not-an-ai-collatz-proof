@@ -1,0 +1,334 @@
+{
+  "exited_count": 2735,
+  "initial_R": 20,
+  "initial_u_mod_power": 8,
+  "max_blocks": 12,
+  "max_terminal_debt": 23.852637545432827,
+  "max_u_mod_power": 24,
+  "nodes_processed": 100000,
+  "sample_transitions": [
+    {
+      "c": 1,
+      "next_R": 3,
+      "next_u_mod_power": 4,
+      "next_u_residue": 7,
+      "source": {
+        "R": 20,
+        "blocks": 0,
+        "total_A": 0,
+        "total_m": 0,
+        "u_mod_power": 8,
+        "u_residue": 255
+      },
+      "status": "forced",
+      "target": {
+        "R": 3,
+        "blocks": 1,
+        "total_A": 21,
+        "total_m": 20,
+        "u_mod_power": 4,
+        "u_residue": 7
+      }
+    },
+    {
+      "c": 2,
+      "next_R": null,
+      "next_u_mod_power": null,
+      "next_u_residue": null,
+      "source": {
+        "R": 3,
+        "blocks": 1,
+        "total_A": 21,
+        "total_m": 20,
+        "u_mod_power": 4,
+        "u_residue": 7
+      },
+      "status": "needs_split_for_next_R",
+      "target": null
+    },
+    {
+      "c": 2,
+      "next_R": 2,
+      "next_u_mod_power": 1,
+      "next_u_residue": 1,
+      "source": {
+        "R": 3,
+        "blocks": 1,
+        "total_A": 21,
+        "total_m": 20,
+        "u_mod_power": 5,
+        "u_residue": 23
+      },
+      "status": "forced",
+      "target": {
+        "R": 2,
+        "blocks": 2,
+        "total_A": 26,
+        "total_m": 23,
+        "u_mod_power": 1,
+        "u_residue": 1
+      }
+    },
+    {
+      "c": null,
+      "next_R": null,
+      "next_u_mod_power": null,
+      "next_u_residue": null,
+      "source": {
+        "R": 2,
+        "blocks": 2,
+        "total_A": 26,
+        "total_m": 23,
+        "u_mod_power": 1,
+        "u_residue": 1
+      },
+      "status": "needs_split_for_c",
+      "target": null
+    },
+    {
+      "c": 1,
+      "next_R": null,
+      "next_u_mod_power": null,
+      "next_u_residue": null,
+      "source": {
+        "R": 2,
+        "blocks": 2,
+        "total_A": 26,
+        "total_m": 23,
+        "u_mod_power": 2,
+        "u_residue": 3
+      },
+      "status": "needs_split_for_next_R",
+      "target": null
+    },
+    {
+      "c": 1,
+      "next_R": null,
+      "next_u_mod_power": null,
+      "next_u_residue": null,
+      "source": {
+        "R": 2,
+        "blocks": 2,
+        "total_A": 26,
+        "total_m": 23,
+        "u_mod_power": 3,
+        "u_residue": 7
+      },
+      "status": "needs_split_for_next_R",
+      "target": null
+    },
+    {
+      "c": 1,
+      "next_R": 2,
+      "next_u_mod_power": 1,
+      "next_u_residue": 1,
+      "source": {
+        "R": 2,
+        "blocks": 2,
+        "total_A": 26,
+        "total_m": 23,
+        "u_mod_power": 4,
+        "u_residue": 15
+      },
+      "status": "forced",
+      "target": {
+        "R": 2,
+        "blocks": 3,
+        "total_A": 29,
+        "total_m": 25,
+        "u_mod_power": 1,
+        "u_residue": 1
+      }
+    },
+    {
+      "c": null,
+      "next_R": null,
+      "next_u_mod_power": null,
+      "next_u_residue": null,
+      "source": {
+        "R": 2,
+        "blocks": 3,
+        "total_A": 29,
+        "total_m": 25,
+        "u_mod_power": 1,
+        "u_residue": 1
+      },
+      "status": "needs_split_for_c",
+      "target": null
+    },
+    {
+      "c": 1,
+      "next_R": null,
+      "next_u_mod_power": null,
+      "next_u_residue": null,
+      "source": {
+        "R": 2,
+        "blocks": 3,
+        "total_A": 29,
+        "total_m": 25,
+        "u_mod_power": 2,
+        "u_residue": 3
+      },
+      "status": "needs_split_for_next_R",
+      "target": null
+    },
+    {
+      "c": 1,
+      "next_R": null,
+      "next_u_mod_power": null,
+      "next_u_residue": null,
+      "source": {
+        "R": 2,
+        "blocks": 3,
+        "total_A": 29,
+        "total_m": 25,
+        "u_mod_power": 3,
+        "u_residue": 7
+      },
+      "status": "needs_split_for_next_R",
+      "target": null
+    },
+    {
+      "c": 1,
+      "next_R": 2,
+      "next_u_mod_power": 1,
+      "next_u_residue": 1,
+      "source": {
+        "R": 2,
+        "blocks": 3,
+        "total_A": 29,
+        "total_m": 25,
+        "u_mod_power": 4,
+        "u_residue": 15
+      },
+      "status": "forced",
+      "target": {
+        "R": 2,
+        "blocks": 4,
+        "total_A": 32,
+        "total_m": 27,
+        "u_mod_power": 1,
+        "u_residue": 1
+      }
+    },
+    {
+      "c": null,
+      "next_R": null,
+      "next_u_mod_power": null,
+      "next_u_residue": null,
+      "source": {
+        "R": 2,
+        "blocks": 4,
+        "total_A": 32,
+        "total_m": 27,
+        "u_mod_power": 1,
+        "u_residue": 1
+      },
+      "status": "needs_split_for_c",
+      "target": null
+    }
+  ],
+  "split_count": 34312,
+  "status": "finite_tail_exit_search_incomplete_not_collatz_proof",
+  "transition_count": 31419,
+  "type": "tail_exit_cylinder_lemma",
+  "unresolved": [
+    {
+      "R": 22,
+      "blocks": 11,
+      "total_A": 53,
+      "total_m": 41,
+      "u_mod_power": 24,
+      "u_residue": 16704553
+    },
+    {
+      "R": 22,
+      "blocks": 11,
+      "total_A": 53,
+      "total_m": 41,
+      "u_mod_power": 24,
+      "u_residue": 16368681
+    },
+    {
+      "R": 22,
+      "blocks": 11,
+      "total_A": 53,
+      "total_m": 41,
+      "u_mod_power": 24,
+      "u_residue": 15655977
+    },
+    {
+      "R": 22,
+      "blocks": 11,
+      "total_A": 53,
+      "total_m": 41,
+      "u_mod_power": 24,
+      "u_residue": 15613993
+    },
+    {
+      "R": 22,
+      "blocks": 11,
+      "total_A": 53,
+      "total_m": 41,
+      "u_mod_power": 24,
+      "u_residue": 14345257
+    },
+    {
+      "R": 22,
+      "blocks": 11,
+      "total_A": 53,
+      "total_m": 41,
+      "u_mod_power": 24,
+      "u_residue": 12966377
+    },
+    {
+      "R": 22,
+      "blocks": 11,
+      "total_A": 53,
+      "total_m": 41,
+      "u_mod_power": 24,
+      "u_residue": 11964969
+    },
+    {
+      "R": 22,
+      "blocks": 11,
+      "total_A": 53,
+      "total_m": 41,
+      "u_mod_power": 24,
+      "u_residue": 10641161
+    },
+    {
+      "R": 22,
+      "blocks": 11,
+      "total_A": 53,
+      "total_m": 41,
+      "u_mod_power": 24,
+      "u_residue": 10140457
+    },
+    {
+      "R": 22,
+      "blocks": 11,
+      "total_A": 53,
+      "total_m": 41,
+      "u_mod_power": 24,
+      "u_residue": 9478553
+    },
+    {
+      "R": 22,
+      "blocks": 11,
+      "total_A": 53,
+      "total_m": 41,
+      "u_mod_power": 24,
+      "u_residue": 8897249
+    },
+    {
+      "R": 22,
+      "blocks": 11,
+      "total_A": 53,
+      "total_m": 41,
+      "u_mod_power": 24,
+      "u_residue": 8606597
+    }
+  ],
+  "unresolved_count": 31705
+}

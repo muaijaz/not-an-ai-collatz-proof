@@ -1,0 +1,68 @@
+{
+  "absolute_difference": 0.000968144252941866,
+  "bootstrap_q025": 0.08360260171293721,
+  "bootstrap_q975": 0.08384169894885218,
+  "candidate_inside_bootstrap_ci": false,
+  "candidate_name": "log(4/3)^2",
+  "candidate_value": 0.08276097481015168,
+  "caveat": "The test uses the saved binned empirical renewal law. Exact binned convolutions are reported only where FFT support is small enough; large horizons use saddlepoint calibration. Rejection by bootstrap CI means the candidate is not the measured empirical-renewal rate, not that it cannot describe another idealized model.",
+  "empirical_cramer_rate": 0.08372911906309355,
+  "empirical_lambda": 0.2630610750809289,
+  "empirical_tilted_variance": 1.5745525157806122,
+  "relative_difference": 0.011562814272682447,
+  "sigma_units_from_ci_half_width": 8.098330783599218,
+  "status": "closed_form_hypothesis_stress_test_not_collatz_proof",
+  "tail_comparisons": [
+    {
+      "closed_crude_tail": 0.4370928005901526,
+      "closed_empirical_saddle_prefactor_log_tail": -1.7894573361532038,
+      "closed_empirical_saddle_prefactor_tail": 0.16705079750297497,
+      "closed_gaussian_prefactor_tail": 0.023396650692597522,
+      "closed_to_empirical_saddle_ratio": 1.0097284593017108,
+      "empirical_saddlepoint_log_tail": -1.7991387786826225,
+      "empirical_saddlepoint_rate_with_prefactor": 0.17991387786826224,
+      "empirical_saddlepoint_tail": 0.16544130846673455,
+      "exact_binned_empirical_tail": 0.1288898997030612,
+      "excursions": 10
+    },
+    {
+      "closed_crude_tail": 0.00025452856692710494,
+      "closed_empirical_saddle_prefactor_log_tail": -10.389237615563879,
+      "closed_empirical_saddle_prefactor_tail": 3.0761777910567545e-05,
+      "closed_gaussian_prefactor_tail": 4.308405486325162e-06,
+      "closed_to_empirical_saddle_ratio": 1.101655915178072,
+      "empirical_saddlepoint_log_tail": -10.486052040858064,
+      "empirical_saddlepoint_rate_with_prefactor": 0.10486052040858064,
+      "empirical_saddlepoint_tail": 2.792321766419708e-05,
+      "exact_binned_empirical_tail": 2.6796788739839238e-05,
+      "excursions": 100
+    },
+    {
+      "closed_crude_tail": 1.1412093547705766e-36,
+      "closed_empirical_saddle_prefactor_log_tail": -86.02540749119741,
+      "closed_empirical_saddle_prefactor_tail": 4.361543648737354e-38,
+      "closed_gaussian_prefactor_tail": 6.108651664964835e-39,
+      "closed_to_empirical_saddle_ratio": 2.6330536411485235,
+      "empirical_saddlepoint_log_tail": -86.99355174413928,
+      "empirical_saddlepoint_rate_with_prefactor": 0.08699355174413928,
+      "empirical_saddlepoint_tail": 1.6564583343751677e-38,
+      "exact_binned_empirical_tail": null,
+      "excursions": 1000
+    },
+    {
+      "closed_crude_tail": 0.0,
+      "closed_empirical_saddle_prefactor_log_tail": -832.0254733290597,
+      "closed_empirical_saddle_prefactor_tail": 0.0,
+      "closed_gaussian_prefactor_tail": 0.0,
+      "closed_to_empirical_saddle_ratio": 16017.58610879709,
+      "empirical_saddlepoint_log_tail": -841.7069158584783,
+      "empirical_saddlepoint_rate_with_prefactor": 0.08417069158584783,
+      "empirical_saddlepoint_tail": 0.0,
+      "exact_binned_empirical_tail": null,
+      "excursions": 10000
+    }
+  ],
+  "type": "jazz_constant_closed_form_test",
+  "variance_delta_log2": 5.554692931519525,
+  "verdict": "closed_form_candidate_rejected_by_bootstrap_ci"
+}

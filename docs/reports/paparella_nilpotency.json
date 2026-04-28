@@ -1,0 +1,69 @@
+{
+  "levels": [
+    {
+      "all_traces_zero": true,
+      "first_nonzero_trace_p": null,
+      "matrix_size": 62,
+      "max_escape_depth": 17,
+      "n": 64,
+      "nilpotent_by_escape_depth": true,
+      "nonzero_edges_inside": 50,
+      "p_max_tested": 64,
+      "verdict": "C_n_nilpotent_on_tested_truncation"
+    },
+    {
+      "all_traces_zero": true,
+      "first_nonzero_trace_p": null,
+      "matrix_size": 126,
+      "max_escape_depth": 22,
+      "n": 128,
+      "nilpotent_by_escape_depth": true,
+      "nonzero_edges_inside": 104,
+      "p_max_tested": 128,
+      "verdict": "C_n_nilpotent_on_tested_truncation"
+    },
+    {
+      "all_traces_zero": true,
+      "first_nonzero_trace_p": null,
+      "matrix_size": 254,
+      "max_escape_depth": 24,
+      "n": 256,
+      "nilpotent_by_escape_depth": true,
+      "nonzero_edges_inside": 210,
+      "p_max_tested": 200,
+      "verdict": "C_n_nilpotent_on_tested_truncation"
+    },
+    {
+      "all_traces_zero": true,
+      "first_nonzero_trace_p": null,
+      "matrix_size": 510,
+      "max_escape_depth": 32,
+      "n": 512,
+      "nilpotent_by_escape_depth": true,
+      "nonzero_edges_inside": 424,
+      "p_max_tested": 200,
+      "verdict": "C_n_nilpotent_on_tested_truncation"
+    },
+    {
+      "all_traces_zero": true,
+      "first_nonzero_trace_p": null,
+      "matrix_size": 1022,
+      "max_escape_depth": 52,
+      "n": 1024,
+      "nilpotent_by_escape_depth": true,
+      "nonzero_edges_inside": 850,
+      "p_max_tested": 200,
+      "verdict": "C_n_nilpotent_on_tested_truncation"
+    }
+  ],
+  "n_values": [
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "status": "paparella_traces_zero_and_escape_nilpotent",
+  "theorem_note": "Paparella Theorem 3 states that the aperiodic Collatz conjecture is equivalent to nilpotency of every finite C_n. This report is a finite diagnostic only.",
+  "type": "paparella_nilpotency_trace_diagnostic"
+}

@@ -1,0 +1,164 @@
+{
+  "caveat": "This is a finite quotient and a lift-count model, not a theorem about all Collatz orbits. Multiple recurrent components are reported separately; the headline uses the largest component.",
+  "interpretation": "Compare largest_component_average_log2_growth_per_accelerated_step with the worst_case_log2_slope. A negative Markov average alongside JSR>1 is the expected typical-versus-worst-case split.",
+  "levels": [
+    {
+      "closed_overflow_edges": 11,
+      "components": [
+        {
+          "average_accelerated_steps": 1.028954723289426,
+          "average_block_log2_growth": -0.4435287550104182,
+          "average_log2_growth_per_accelerated_step": -0.4310478828383411,
+          "component_index": 31,
+          "states": 33,
+          "stationary_iterations": 156,
+          "stationary_residual_l1": 9.22525944524466e-15,
+          "typical_factor_per_accelerated_step": 0.7417228488386747
+        }
+      ],
+      "edges": 224,
+      "largest_component_average_accelerated_steps": 1.028954723289426,
+      "largest_component_average_block_log2_growth": -0.4435287550104182,
+      "largest_component_average_log2_growth_per_accelerated_step": -0.4310478828383411,
+      "largest_component_typical_factor_per_accelerated_step": 0.7417228488386747,
+      "largest_recurrent_component_states": 33,
+      "max_tail_depth": 4,
+      "max_valuation": 12,
+      "recurrent_components": 1,
+      "row_weight_max": 112,
+      "row_weight_min": 1,
+      "states": 64,
+      "status": "finite_markov_stationary_measure_on_lte_closed_tail_graph",
+      "tail_unit_power": 5,
+      "worst_case_jsr_factor": 1.0711220788237548,
+      "worst_case_log2_slope": 0.09912291750801543
+    },
+    {
+      "closed_overflow_edges": 11,
+      "components": [
+        {
+          "average_accelerated_steps": 1.0201593669025957,
+          "average_block_log2_growth": -0.4351047800372457,
+          "average_log2_growth_per_accelerated_step": -0.4265066754798412,
+          "component_index": 91,
+          "states": 69,
+          "stationary_iterations": 189,
+          "stationary_residual_l1": 9.324572364244332e-15,
+          "typical_factor_per_accelerated_step": 0.7440612668678088
+        }
+      ],
+      "edges": 480,
+      "largest_component_average_accelerated_steps": 1.0201593669025957,
+      "largest_component_average_block_log2_growth": -0.4351047800372457,
+      "largest_component_average_log2_growth_per_accelerated_step": -0.4265066754798412,
+      "largest_component_typical_factor_per_accelerated_step": 0.7440612668678088,
+      "largest_recurrent_component_states": 69,
+      "max_tail_depth": 5,
+      "max_valuation": 12,
+      "recurrent_components": 1,
+      "row_weight_max": 192,
+      "row_weight_min": 1,
+      "states": 160,
+      "status": "finite_markov_stationary_measure_on_lte_closed_tail_graph",
+      "tail_unit_power": 6,
+      "worst_case_jsr_factor": 1.0893171420857424,
+      "worst_case_log2_slope": 0.12342403918269276
+    },
+    {
+      "closed_overflow_edges": 11,
+      "components": [
+        {
+          "average_accelerated_steps": 1.0082119285208067,
+          "average_block_log2_growth": -0.358488050378568,
+          "average_log2_growth_per_accelerated_step": -0.35556815014529936,
+          "component_index": 246,
+          "states": 138,
+          "stationary_iterations": 238,
+          "stationary_residual_l1": 8.823454120121532e-15,
+          "typical_factor_per_accelerated_step": 0.781561794358854
+        }
+      ],
+      "edges": 1024,
+      "largest_component_average_accelerated_steps": 1.0082119285208067,
+      "largest_component_average_block_log2_growth": -0.358488050378568,
+      "largest_component_average_log2_growth_per_accelerated_step": -0.35556815014529936,
+      "largest_component_typical_factor_per_accelerated_step": 0.781561794358854,
+      "largest_recurrent_component_states": 138,
+      "max_tail_depth": 6,
+      "max_valuation": 12,
+      "recurrent_components": 1,
+      "row_weight_max": 320,
+      "row_weight_min": 1,
+      "states": 384,
+      "status": "finite_markov_stationary_measure_on_lte_closed_tail_graph",
+      "tail_unit_power": 7,
+      "worst_case_jsr_factor": 1.1905507889761504,
+      "worst_case_log2_slope": 0.25162916738782376
+    },
+    {
+      "closed_overflow_edges": 22,
+      "components": [
+        {
+          "average_accelerated_steps": 1.0089996092637563,
+          "average_block_log2_growth": -0.31976670666831397,
+          "average_log2_growth_per_accelerated_step": -0.3169145991063766,
+          "component_index": 491,
+          "states": 277,
+          "stationary_iterations": 304,
+          "stationary_residual_l1": 9.997970333575079e-15,
+          "typical_factor_per_accelerated_step": 0.8027849084741097
+        }
+      ],
+      "edges": 2048,
+      "largest_component_average_accelerated_steps": 1.0089996092637563,
+      "largest_component_average_block_log2_growth": -0.31976670666831397,
+      "largest_component_average_log2_growth_per_accelerated_step": -0.3169145991063766,
+      "largest_component_typical_factor_per_accelerated_step": 0.8027849084741097,
+      "largest_recurrent_component_states": 277,
+      "max_tail_depth": 6,
+      "max_valuation": 12,
+      "recurrent_components": 1,
+      "row_weight_max": 512,
+      "row_weight_min": 1,
+      "states": 768,
+      "status": "finite_markov_stationary_measure_on_lte_closed_tail_graph",
+      "tail_unit_power": 8,
+      "worst_case_jsr_factor": 1.2613446228805516,
+      "worst_case_log2_slope": 0.334962500721133
+    },
+    {
+      "closed_overflow_edges": 44,
+      "components": [
+        {
+          "average_accelerated_steps": 1.0098621044932627,
+          "average_block_log2_growth": -0.41592869186866904,
+          "average_log2_growth_per_accelerated_step": -0.4118668182695867,
+          "component_index": 2471,
+          "states": 1113,
+          "stationary_iterations": 270,
+          "stationary_residual_l1": 9.145991560941761e-15,
+          "typical_factor_per_accelerated_step": 0.7516501240662575
+        }
+      ],
+      "edges": 8704,
+      "largest_component_average_accelerated_steps": 1.0098621044932627,
+      "largest_component_average_block_log2_growth": -0.41592869186866904,
+      "largest_component_average_log2_growth_per_accelerated_step": -0.4118668182695867,
+      "largest_component_typical_factor_per_accelerated_step": 0.7516501240662575,
+      "largest_recurrent_component_states": 1113,
+      "max_tail_depth": 7,
+      "max_valuation": 12,
+      "recurrent_components": 1,
+      "row_weight_max": 1024,
+      "row_weight_min": 1,
+      "states": 3584,
+      "status": "finite_markov_stationary_measure_on_lte_closed_tail_graph",
+      "tail_unit_power": 10,
+      "worst_case_jsr_factor": 1.2305030340113887,
+      "worst_case_log2_slope": 0.29924821500679044
+    }
+  ],
+  "probability_model": "At each finite state, outgoing LTE-closed edges are weighted by their enumerated lift counts and normalized to a row-stochastic Markov chain. Stationary averages are computed on recurrent components.",
+  "status": "finite_markov_average_contracts_while_worst_case_jsr_can_grow",
+  "type": "tail_aware_markov_lyapunov"
+}

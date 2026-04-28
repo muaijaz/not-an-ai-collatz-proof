@@ -1,0 +1,347 @@
+{
+  "dyadic_levels": [
+    {
+      "dimension": 256,
+      "modulus_power": 8,
+      "nonzero_entries": 384,
+      "operator_norm_l2": 1.2247448713915894,
+      "recurrent_components": 1,
+      "recurrent_states": 256,
+      "row_sum_max": 1.0,
+      "row_sum_min": 1.0,
+      "second_eigenvalue_abs": 0.5000000000000007,
+      "spectral_radius": 1.0,
+      "status": "lift_averaged_dyadic_mori_projection_not_theorem_spectrum_converged",
+      "strongly_connected_components": 1
+    },
+    {
+      "dimension": 1024,
+      "modulus_power": 10,
+      "nonzero_entries": 1536,
+      "operator_norm_l2": 1.224744871391589,
+      "recurrent_components": 1,
+      "recurrent_states": 1024,
+      "row_sum_max": 1.0,
+      "row_sum_min": 1.0,
+      "second_eigenvalue_abs": 0.5000000000001019,
+      "spectral_radius": 1.0,
+      "status": "lift_averaged_dyadic_mori_projection_not_theorem_spectrum_arpack_partial_no_convergence",
+      "strongly_connected_components": 1
+    },
+    {
+      "dimension": 4096,
+      "modulus_power": 12,
+      "nonzero_entries": 6144,
+      "operator_norm_l2": 1.2247448713915892,
+      "recurrent_components": 1,
+      "recurrent_states": 4096,
+      "row_sum_max": 1.0,
+      "row_sum_min": 1.0,
+      "second_eigenvalue_abs": null,
+      "spectral_radius": 1.0,
+      "status": "lift_averaged_dyadic_mori_projection_not_theorem_spectrum_arpack_partial_no_convergence",
+      "strongly_connected_components": 1
+    }
+  ],
+  "finite_model_caveat": "Division by two is not well-defined on Z/2^k; dyadic levels use a lift-averaged transfer quotient. Saved projections summarize separate finite experiments rather than proving an infinite operator theorem.",
+  "model_name": "lift_averaged_Mori_T1_plus_T2_with_Tao_Hercher_Paparella_PECM_projections",
+  "paparella_levels": [
+    {
+      "dimension": 62,
+      "max_escape_depth": 17,
+      "n": 64,
+      "nilpotent_by_escape_depth": true,
+      "nontrivial_cycle_found": false,
+      "nonzero_edges_inside": 50,
+      "status": "truncated_nontrivial_submatrix_nilpotent"
+    },
+    {
+      "dimension": 126,
+      "max_escape_depth": 22,
+      "n": 128,
+      "nilpotent_by_escape_depth": true,
+      "nontrivial_cycle_found": false,
+      "nonzero_edges_inside": 104,
+      "status": "truncated_nontrivial_submatrix_nilpotent"
+    },
+    {
+      "dimension": 254,
+      "max_escape_depth": 24,
+      "n": 256,
+      "nilpotent_by_escape_depth": true,
+      "nontrivial_cycle_found": false,
+      "nonzero_edges_inside": 210,
+      "status": "truncated_nontrivial_submatrix_nilpotent"
+    },
+    {
+      "dimension": 510,
+      "max_escape_depth": 32,
+      "n": 512,
+      "nilpotent_by_escape_depth": true,
+      "nontrivial_cycle_found": false,
+      "nonzero_edges_inside": 424,
+      "status": "truncated_nontrivial_submatrix_nilpotent"
+    }
+  ],
+  "saved_projections": [
+    {
+      "available": true,
+      "name": "tao_tv",
+      "path": "docs/reports/tao_syrac_empirical.json",
+      "summary": {
+        "max_tv_all_iterates_to_tao": 0.06846164509274151,
+        "max_tv_nth_iterate_to_tao": 0.002783968493717706,
+        "status": "tao_nth_iterate_tv_within_1_percent",
+        "type": "tao_syrac_empirical"
+      }
+    },
+    {
+      "available": true,
+      "name": "tao_characteristic_decay",
+      "path": "docs/reports/tao_characteristic_function_decay.json",
+      "summary": {
+        "fitted_empirical_power_exponent": 1.2862228742676554,
+        "status": "tao_empirical_characteristic_decay_exponent_at_least_1",
+        "type": "tao_characteristic_function_decay"
+      }
+    },
+    {
+      "available": true,
+      "name": "renewal_n0_stability",
+      "path": "docs/reports/orbit_renewal_n0_stability.json",
+      "summary": {
+        "cramer_rate_range_width": 0.008693990660807671,
+        "cramer_rate_slope_per_log10": 0.0007129238345858864,
+        "status": "n0_stability_rate_within_0p01",
+        "type": "orbit_renewal_n0_stability"
+      }
+    },
+    {
+      "available": true,
+      "name": "renewal_markov_cramer",
+      "path": "docs/reports/orbit_renewal_markov_cramer.json",
+      "summary": {
+        "best_iid_all_excursion_rate": 0.08358289238566816,
+        "best_markov_rate": 0.08188892278645328,
+        "status": "markov_cramer_exceeds_pair_iid_but_not_all_excursion_iid",
+        "type": "orbit_renewal_markov_cramer"
+      }
+    },
+    {
+      "available": true,
+      "name": "valuation_mi_lags",
+      "path": "docs/reports/valuation_mi_lags.json",
+      "summary": {
+        "best_debiased_mutual_information_bits": 0.028367841952639375,
+        "lag4_debiased_mutual_information_bits": 0.028367841952639375,
+        "status": "valuation_mi_lag4_is_global_peak",
+        "type": "valuation_mi_lags"
+      }
+    },
+    {
+      "available": true,
+      "name": "hercher_reciprocal_sum",
+      "path": "docs/reports/hercher_t_ni_bound.json",
+      "summary": {
+        "max_T_times_n": 2.9969459902402362,
+        "status": "hercher_universal_Tn_bound_passes_sample",
+        "type": "hercher_t_ni_reciprocal_sum_diagnostic",
+        "universal_bound_3_passes": true
+      }
+    },
+    {
+      "available": true,
+      "name": "paparella_nilpotency",
+      "path": "docs/reports/paparella_nilpotency.json",
+      "summary": {
+        "levels": 5,
+        "status": "paparella_traces_zero_and_escape_nilpotent",
+        "type": "paparella_nilpotency_trace_diagnostic"
+      }
+    },
+    {
+      "available": true,
+      "name": "mori_mixed_first_return",
+      "path": "docs/reports/mori_mixed_first_return_operator.json",
+      "summary": {
+        "finite_model_caveat": "Rows average over finitely many integer lifts of each residue. This resolves some division-by-two ambiguity but remains a finite quotient diagnostic, not an infinite-dimensional Mori theorem.",
+        "last_dimension": 12288,
+        "last_modulus_power2": 10,
+        "last_modulus_power3": 3,
+        "last_recurrent_components": 1,
+        "last_recurrent_states": 11520,
+        "last_second_eigenvalue_abs": 0.778997079594518,
+        "last_unresolved_lifts": 0,
+        "levels": 3,
+        "map_convention": "Original Collatz branch operator: odd n -> 3n+1, even n -> n/2. First-return set is N1={n mod 6 in {1,5}} union N2={3n+1: n in N1}.",
+        "status": "finite_lift_averaged_projection_not_collatz_proof",
+        "type": "mori_mixed_first_return_operator"
+      }
+    },
+    {
+      "available": true,
+      "name": "rigorous_bound_squeeze",
+      "path": "docs/reports/rigorous_bound_squeeze.json",
+      "summary": {
+        "empirical_envelope_entries": 12,
+        "high_confidence_entries": 7,
+        "status": "mixed_theorem_finite_and_empirical_bounds_not_collatz_proof",
+        "theorem_or_finite_entries": 12,
+        "type": "rigorous_bound_squeeze"
+      }
+    },
+    {
+      "available": true,
+      "name": "renewal_bootstrap_calibration",
+      "path": "docs/reports/renewal_bootstrap_calibration.json",
+      "summary": {
+        "bootstrap_repetitions": 500,
+        "cramer_lambda": 0.2630610750809289,
+        "cramer_rate_I0": 0.08372911906309355,
+        "status": "bootstrap_and_saddlepoint_calibration_not_collatz_proof",
+        "tilted_variance_at_lambda": 1.5745525157806122,
+        "type": "renewal_bootstrap_calibration"
+      }
+    },
+    {
+      "available": true,
+      "name": "projective_jsr_background",
+      "path": "docs/reports/projective_jsr_claude_background.json",
+      "summary": {
+        "headline_finding": "JSR(F) = 1.5 EXACTLY (rigorous squeeze: 1.5 \u2264 JSR \u2264 1.5 + 10^-6, both bounds mathematical).",
+        "key_caveat": "JSR > 1 means worst-case switching gives growth, NOT that Collatz orbits grow. Collatz dynamics constrains a-values via residues mod 2^k: a=1 \u27fa n \u2261 3 mod 4. The all-a=1 worst case is impossible because residues mix and force a\u22652 occasionally."
+      }
+    },
+    {
+      "available": true,
+      "name": "constrained_projective_jsr",
+      "path": "docs/reports/constrained_projective_jsr.json",
+      "summary": {
+        "homogeneous_caveat": "The full homogeneous triangular matrices always have an invariant constant coordinate, so their JSR is at least 1. Descent-relevant claims must be made on the affine-size quotient or another projectivized/renormalized coordinate.",
+        "last_affine_quotient_jsr_lower": 1.4999999999999167,
+        "last_affine_quotient_jsr_upper": 1.4999999999999167,
+        "last_homogeneous_jsr_lower": 1.4999999999999167,
+        "last_homogeneous_jsr_upper": 1.4999999999999167,
+        "last_modulus_power": 12,
+        "last_obstruction_kind": "negative_integer_cycle",
+        "last_obstruction_word": [
+          1
+        ],
+        "last_tail_cutoff_2_affine_jsr": 0.7499999999999879,
+        "levels": 5,
+        "next_step": "Replace the naive residue quotient by a tail-aware state space that tracks v2(n+1) through the Mersenne manifold, so the negative 2-adic n=-1 loop cannot masquerade as a positive orbit cycle.",
+        "scalar_certificate_note": "For the affine-size quotient, the matrix product reduces to the scalar product of 3/2^a. Karp max-cycle-mean gives matching lower and upper bounds for each finite legal-residue graph.",
+        "status": "finite_scalar_quotient_exact_but_tail_obstructed_not_collatz_proof",
+        "type": "constrained_projective_jsr"
+      }
+    },
+    {
+      "available": true,
+      "name": "tail_aware_projective_jsr",
+      "path": "docs/reports/tail_aware_projective_jsr.json",
+      "summary": {
+        "coordinate_model": "odd n represented as n = 2^R u - 1 with state (R, u mod 2^q)",
+        "finite_model_caveat": "The tracked subgraph is exact for visible target depths, and it removes the artificial all-a=1 n=-1 self-loop. Edges that jump to tail depth above R_max are counted as overflow exits, so this is not yet a global upper bound on positive integer dynamics.",
+        "last_affine_quotient_jsr": 1.2305030340113887,
+        "last_all_one_self_loop_detected": false,
+        "last_max_tail_depth": 7,
+        "last_overflow_edges": 44,
+        "last_tail_unit_power": 10,
+        "levels": 5,
+        "next_step": "Turn overflow exits into a renormalized block transition instead of dropping them. That would make the tail-aware quotient closed and suitable for a genuine constrained product upper-bound test.",
+        "status": "bounded_tail_coordinate_diagnostic_not_collatz_proof",
+        "type": "tail_aware_projective_jsr"
+      }
+    },
+    {
+      "available": true,
+      "name": "tail_aware_lte_closed_projective_jsr",
+      "path": "docs/reports/tail_aware_lte_closed_projective_jsr.json",
+      "summary": {
+        "coordinate_model": "odd n represented as n = 2^R u - 1 with overflow R>Rmax compressed back to Rmax",
+        "finite_model_caveat": "Overflow closure is exact for the enumerated lifted residues and valuation cap. It makes the bounded tail-coordinate graph closed under deeper-tail reentry, but it remains a finite quotient rather than a proof for all positive integers.",
+        "last_affine_quotient_jsr": 1.2305030340113887,
+        "last_all_one_self_loop_detected": false,
+        "last_max_tail_depth": 7,
+        "last_overflow_edges": 0,
+        "last_tail_unit_power": 10,
+        "levels": 5,
+        "next_step": "Use the closed graph as input to a Markov-weighted Lyapunov or multiple-potential certificate; worst-case JSR can remain above 1 while the stochastic/renewal operator contracts.",
+        "status": "finite_lte_overflow_closed_tail_coordinate_diagnostic_not_collatz_proof",
+        "type": "tail_aware_lte_closed_projective_jsr"
+      }
+    },
+    {
+      "available": true,
+      "name": "tail_aware_markov_lyapunov",
+      "path": "docs/reports/tail_aware_markov_lyapunov.json",
+      "summary": {
+        "last_largest_component_average_log2_growth_per_accelerated_step": -0.4118668182695867,
+        "last_largest_component_typical_factor_per_accelerated_step": 0.7516501240662575,
+        "last_largest_recurrent_component_states": 1113,
+        "last_max_tail_depth": 7,
+        "last_recurrent_components": 1,
+        "last_tail_unit_power": 10,
+        "last_worst_case_jsr_factor": 1.2305030340113887,
+        "levels": 5,
+        "status": "finite_markov_average_contracts_while_worst_case_jsr_can_grow",
+        "type": "tail_aware_markov_lyapunov"
+      }
+    },
+    {
+      "available": true,
+      "name": "christoffel_filtered_tail_jsr",
+      "path": "docs/reports/christoffel_filtered_jsr.json",
+      "summary": {
+        "last_max_tail_depth": 5,
+        "last_tail_unit_power": 6,
+        "levels": 2,
+        "status": "bounded_finite_cycle_filter_diagnostic_not_full_hercher_theorem",
+        "type": "christoffel_filtered_tail_jsr"
+      }
+    },
+    {
+      "available": true,
+      "name": "furstenberg_lyapunov",
+      "path": "docs/reports/lyapunov_furstenberg.json",
+      "summary": {
+        "exact_log_growth_affine_coordinate_base2": -0.4150374992788439,
+        "exact_typical_factor_affine_coordinate": 0.75,
+        "monte_carlo_log_growth_base2": -0.41433249927592436,
+        "status": "closed_form_random_model_confirmed_not_collatz_proof",
+        "type": "furstenberg_random_product_lyapunov"
+      }
+    },
+    {
+      "available": true,
+      "name": "jazz_constant_closed_form_test",
+      "path": "docs/reports/jazz_constant_closed_form_test.json",
+      "summary": {
+        "candidate_inside_bootstrap_ci": false,
+        "candidate_value": 0.08276097481015168,
+        "empirical_cramer_rate": 0.08372911906309355,
+        "status": "closed_form_hypothesis_stress_test_not_collatz_proof",
+        "type": "jazz_constant_closed_form_test",
+        "verdict": "closed_form_candidate_rejected_by_bootstrap_ci"
+      }
+    },
+    {
+      "available": true,
+      "name": "jazz_constant_spike_decomposition",
+      "path": "docs/reports/jazz_constant_spike_decomposition.json",
+      "summary": {
+        "dominant_segment": "1",
+        "dominant_segment_percent_of_mgf": 64.00635058364243,
+        "empirical_cramer_rate": 0.08372911906309355,
+        "heavy_tail_correction": 0.000968144252941866,
+        "heavy_tail_relative_multiplier": 1.0116980769639643,
+        "interpolated_decomposition_rate": 0.08349156579893967,
+        "status": "structural_decomposition_of_empirical_renewal_constant_not_collatz_proof",
+        "type": "jazz_constant_spike_decomposition",
+        "verdict": "Jazz's constant is best treated as a Khinchin-style renewal constant: the obvious elementary candidates are rejected by the tight bootstrap interval, while the spike decomposition gives the useful structural representation."
+      }
+    }
+  ],
+  "status": "finite_synthesis_not_collatz_proof",
+  "type": "unified_collatz_operator_finite_projection"
+}

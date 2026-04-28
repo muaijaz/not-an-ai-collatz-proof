@@ -1,0 +1,251 @@
+{
+  "checks": [
+    {
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 8,
+      "cycle_classification": "negative_integer_cycle",
+      "cycle_value": "-1",
+      "cylinder_power": 2,
+      "cylinder_residue_count": 1,
+      "example_residue": 127,
+      "period": 1,
+      "quotient_start_residue": 63,
+      "total_A": 1,
+      "total_debt": 0.5849625007211561,
+      "word": [
+        1
+      ]
+    },
+    {
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 20,
+      "cycle_classification": "noninteger_2adic_only",
+      "cycle_value": "40543/1631",
+      "cylinder_power": 14,
+      "cylinder_residue_count": 1,
+      "example_residue": 419841,
+      "period": 8,
+      "quotient_start_residue": 1,
+      "total_A": 13,
+      "total_debt": -0.3202999942307514,
+      "word": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 9,
+      "cycle_classification": "positive_integer_cycle",
+      "cycle_value": "1",
+      "cylinder_power": 3,
+      "cylinder_residue_count": 1,
+      "example_residue": 1,
+      "period": 1,
+      "quotient_start_residue": 1,
+      "total_A": 2,
+      "total_debt": -0.4150374992788439,
+      "word": [
+        2
+      ]
+    },
+    {
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 11,
+      "cycle_classification": "positive_integer_cycle",
+      "cycle_value": "1",
+      "cylinder_power": 5,
+      "cylinder_residue_count": 1,
+      "example_residue": 1,
+      "period": 2,
+      "quotient_start_residue": 1,
+      "total_A": 4,
+      "total_debt": -0.8300749985576878,
+      "word": [
+        2,
+        2
+      ]
+    },
+    {
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 19,
+      "cycle_classification": "noninteger_2adic_only",
+      "cycle_value": "12149/1909",
+      "cylinder_power": 13,
+      "cylinder_residue_count": 1,
+      "example_residue": 165889,
+      "period": 7,
+      "quotient_start_residue": 1,
+      "total_A": 12,
+      "total_debt": -0.9052624949519075,
+      "word": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 13,
+      "cycle_classification": "positive_integer_cycle",
+      "cycle_value": "1",
+      "cylinder_power": 7,
+      "cylinder_residue_count": 1,
+      "example_residue": 1,
+      "period": 3,
+      "quotient_start_residue": 1,
+      "total_A": 6,
+      "total_debt": -1.2451124978365318,
+      "word": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 21,
+      "cycle_classification": "noninteger_2adic_only",
+      "cycle_value": "50783/9823",
+      "cylinder_power": 15,
+      "cylinder_residue_count": 1,
+      "example_residue": 221185,
+      "period": 8,
+      "quotient_start_residue": 1,
+      "total_A": 14,
+      "total_debt": -1.3202999942307514,
+      "word": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 21,
+      "cycle_classification": "noninteger_2adic_only",
+      "cycle_value": "59999/9823",
+      "cylinder_power": 15,
+      "cylinder_residue_count": 1,
+      "example_residue": 900097,
+      "period": 8,
+      "quotient_start_residue": 1,
+      "total_A": 14,
+      "total_debt": -1.3202999942307514,
+      "word": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 21,
+      "cycle_classification": "noninteger_2adic_only",
+      "cycle_value": "40543/9823",
+      "cylinder_power": 15,
+      "cylinder_residue_count": 1,
+      "example_residue": 165889,
+      "period": 8,
+      "quotient_start_residue": 1,
+      "total_A": 14,
+      "total_debt": -1.3202999942307514,
+      "word": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 21,
+      "cycle_classification": "noninteger_2adic_only",
+      "cycle_value": "44639/9823",
+      "cylinder_power": 15,
+      "cylinder_residue_count": 1,
+      "example_residue": 817153,
+      "period": 8,
+      "quotient_start_residue": 1,
+      "total_A": 14,
+      "total_debt": -1.3202999942307514,
+      "word": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 10,
+      "cycle_classification": "noninteger_2adic_only",
+      "cycle_value": "1/5",
+      "cylinder_power": 4,
+      "cylinder_residue_count": 1,
+      "example_residue": 205,
+      "period": 1,
+      "quotient_start_residue": 13,
+      "total_A": 3,
+      "total_debt": -1.415037499278844,
+      "word": [
+        3
+      ]
+    },
+    {
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 18,
+      "cycle_classification": "noninteger_2adic_only",
+      "cycle_value": "3367/1319",
+      "cylinder_power": 12,
+      "cylinder_residue_count": 1,
+      "example_residue": 47105,
+      "period": 6,
+      "quotient_start_residue": 1,
+      "total_A": 11,
+      "total_debt": -1.4902249956730635,
+      "word": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ]
+    }
+  ],
+  "max_period": 8,
+  "max_valuation": 6,
+  "modulus_power": 6,
+  "quotient_words_found": 800,
+  "status": "finite_lift_realizability_not_collatz_proof",
+  "type": "quotient_cycle_lift_realizability"
+}

@@ -1,0 +1,51 @@
+{
+  "k_max": 6,
+  "k_min": 4,
+  "levels": [
+    {
+      "first_betti": 17,
+      "harmonic_dimension": 17,
+      "modulus_power": 4,
+      "sample_lift_power": 3,
+      "sandpile_components": 1,
+      "sandpile_forest_count": 16312,
+      "sandpile_invariant_factors": [
+        [
+          16312
+        ]
+      ],
+      "vertices": 8
+    },
+    {
+      "first_betti": 42,
+      "harmonic_dimension": 42,
+      "modulus_power": 5,
+      "sample_lift_power": 3,
+      "sandpile_components": 1,
+      "sandpile_forest_count": 101357621872,
+      "sandpile_invariant_factors": [
+        [
+          4,
+          25339405468
+        ]
+      ],
+      "vertices": 16
+    },
+    {
+      "first_betti": 86,
+      "harmonic_dimension": 86,
+      "modulus_power": 6,
+      "sample_lift_power": 3,
+      "sandpile_components": 1,
+      "sandpile_forest_count": 882074119623730415736886,
+      "sandpile_invariant_factors": [
+        [
+          882074119623730415736886
+        ]
+      ],
+      "vertices": 32
+    }
+  ],
+  "status": "finite_depth_tower_not_profinite_limit_proof",
+  "type": "profinite_cohomology_sandpile_tower"
+}

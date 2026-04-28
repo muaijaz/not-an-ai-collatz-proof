@@ -1,0 +1,12 @@
+{
+  "allowed_differences": 63,
+  "density_bound": 0.03125,
+  "dimension": 128,
+  "modulus_power": 8,
+  "objective_sum": 32.0,
+  "status": "finite_walsh_positive_lp_not_collatz_proof",
+  "type": "cohn_elkies_walsh_residue_lp",
+  "unresolved_density_den": 64,
+  "unresolved_density_num": 13,
+  "unresolved_points": 26
+}

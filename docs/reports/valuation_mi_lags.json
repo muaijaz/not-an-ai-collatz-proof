@@ -1,0 +1,200 @@
+{
+  "best_debiased_mutual_information_bits": 0.028367841952639375,
+  "best_lag": 4,
+  "completed_orbits": 1000000,
+  "lag4_debiased_mutual_information_bits": 0.028367841952639375,
+  "lag_reports": [
+    {
+      "debiased_mutual_information_bits": 0.015780575406782796,
+      "lag": 1,
+      "miller_madow_bias_bits": 1.0463445720392934e-06,
+      "mutual_information_bits": 0.015781621751354835,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 68939768
+    },
+    {
+      "debiased_mutual_information_bits": 0.007715432302466196,
+      "lag": 2,
+      "miller_madow_bias_bits": 1.0617456339334006e-06,
+      "mutual_information_bits": 0.007716494048100129,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 67939768
+    },
+    {
+      "debiased_mutual_information_bits": 0.012949222655248494,
+      "lag": 3,
+      "miller_madow_bias_bits": 1.0776068426835326e-06,
+      "mutual_information_bits": 0.012950300262091178,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 66939768
+    },
+    {
+      "debiased_mutual_information_bits": 0.028367841952639375,
+      "lag": 4,
+      "miller_madow_bias_bits": 1.0939491331611627e-06,
+      "mutual_information_bits": 0.028368935901772536,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 65939768
+    },
+    {
+      "debiased_mutual_information_bits": 0.013109726573964808,
+      "lag": 5,
+      "miller_madow_bias_bits": 1.1107946955224537e-06,
+      "mutual_information_bits": 0.013110837368660332,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 64939770
+    },
+    {
+      "debiased_mutual_information_bits": 0.005396666826658917,
+      "lag": 6,
+      "miller_madow_bias_bits": 1.128167070652766e-06,
+      "mutual_information_bits": 0.00539779499372957,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 63939778
+    },
+    {
+      "debiased_mutual_information_bits": 0.013871209129934963,
+      "lag": 7,
+      "miller_madow_bias_bits": 1.146091272656125e-06,
+      "mutual_information_bits": 0.01387235522120762,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 62939797
+    },
+    {
+      "debiased_mutual_information_bits": 0.009009874238338534,
+      "lag": 8,
+      "miller_madow_bias_bits": 1.164593943507017e-06,
+      "mutual_information_bits": 0.009011038832282041,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 61939831
+    },
+    {
+      "debiased_mutual_information_bits": 0.0059545646309795315,
+      "lag": 9,
+      "miller_madow_bias_bits": 1.1837034099595259e-06,
+      "mutual_information_bits": 0.005955748334389491,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 60939887
+    },
+    {
+      "debiased_mutual_information_bits": 0.0021721698012922897,
+      "lag": 10,
+      "miller_madow_bias_bits": 1.2034494974223165e-06,
+      "mutual_information_bits": 0.002173373250789712,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 59939991
+    },
+    {
+      "debiased_mutual_information_bits": 0.01004487538286032,
+      "lag": 11,
+      "miller_madow_bias_bits": 1.2238640178389746e-06,
+      "mutual_information_bits": 0.01004609924687816,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 58940169
+    },
+    {
+      "debiased_mutual_information_bits": 0.00349991338354092,
+      "lag": 12,
+      "miller_madow_bias_bits": 1.2449802717272746e-06,
+      "mutual_information_bits": 0.003501158363812647,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 57940478
+    },
+    {
+      "debiased_mutual_information_bits": 0.0042309158611151445,
+      "lag": 13,
+      "miller_madow_bias_bits": 1.2668332937270993e-06,
+      "mutual_information_bits": 0.004232182694408872,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 56940998
+    },
+    {
+      "debiased_mutual_information_bits": 0.0041528735367454975,
+      "lag": 14,
+      "miller_madow_bias_bits": 1.2894607363969275e-06,
+      "mutual_information_bits": 0.004154162997481894,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 55941798
+    },
+    {
+      "debiased_mutual_information_bits": 0.005142420004623452,
+      "lag": 15,
+      "miller_madow_bias_bits": 1.3129014224585155e-06,
+      "mutual_information_bits": 0.00514373290604591,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 54943007
+    },
+    {
+      "debiased_mutual_information_bits": 0.005609533078039318,
+      "lag": 16,
+      "miller_madow_bias_bits": 1.3371972391235388e-06,
+      "mutual_information_bits": 0.005610870275278441,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 53944736
+    },
+    {
+      "debiased_mutual_information_bits": 0.006643058417782732,
+      "lag": 17,
+      "miller_madow_bias_bits": 1.3623885826712863e-06,
+      "mutual_information_bits": 0.006644420806365404,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 52947267
+    },
+    {
+      "debiased_mutual_information_bits": 0.0037696642042912296,
+      "lag": 18,
+      "miller_madow_bias_bits": 1.3885234641628085e-06,
+      "mutual_information_bits": 0.0037710527277553924,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 51950690
+    },
+    {
+      "debiased_mutual_information_bits": 0.006986084282049454,
+      "lag": 19,
+      "miller_madow_bias_bits": 1.415646981830617e-06,
+      "mutual_information_bits": 0.0069874999290312845,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 50955325
+    },
+    {
+      "debiased_mutual_information_bits": 0.004548963126685305,
+      "lag": 20,
+      "miller_madow_bias_bits": 1.4438039111688193e-06,
+      "mutual_information_bits": 0.004550406930596474,
+      "nonzero_source_symbols": 11,
+      "nonzero_target_symbols": 11,
+      "pairs": 49961599
+    }
+  ],
+  "marginal_entropy_bits": 1.990341134361203,
+  "max_exact_valuation": 10,
+  "max_lag": 20,
+  "max_steps_per_orbit": 10000,
+  "random_seed": 0,
+  "sample_count": 1000000,
+  "start_max": 1000000000,
+  "start_min": 1000000,
+  "status": "valuation_mi_lag4_is_global_peak",
+  "total_accelerated_steps": 69939768,
+  "truncated_orbits": 0,
+  "type": "valuation_mi_lags"
+}

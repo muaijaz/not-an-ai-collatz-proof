@@ -1,0 +1,22 @@
+{
+  "caveat": "The k=6 transition graph is binary only. The obstruction's u == 0 mod 9 condition is invisible here; this projects only the binary shadow n == 27 mod 64 onto the finite cycle space.",
+  "first_betti": 86,
+  "harmonic_dimension": 86,
+  "harmonic_projection_norm": 1.701817426233366,
+  "harmonic_projection_ratio": 0.694764054941383,
+  "indicator_edges": 6,
+  "indicator_norm": 2.449489742783178,
+  "mod3_visible": false,
+  "modulus_power": 6,
+  "obstruction_R": 2,
+  "obstruction_u_mod2": 7,
+  "obstruction_u_mod2_power": 8,
+  "obstruction_u_mod3": 0,
+  "obstruction_u_mod3_power": 2,
+  "projected_residue": 27,
+  "sample_lift_power": 3,
+  "status": "finite_binary_shadow_projection_not_mixed_harmonic_proof",
+  "type": "harmonic_class_identification",
+  "undirected_edges": 117,
+  "vertices": 32
+}

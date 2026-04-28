@@ -1,0 +1,540 @@
+{
+  "R": 20,
+  "descended_count": 0,
+  "left_tail_count": 128,
+  "max_blocks": 20,
+  "max_steps": 9,
+  "max_total_debt": 14.888725024519303,
+  "samples": 128,
+  "status": "finite_tail_renormalization_family_not_collatz_proof",
+  "top_dangerous": [
+    {
+      "R": 20,
+      "descended": false,
+      "path": [
+        {
+          "R": 20,
+          "block_A": 21,
+          "block_debt": 10.699250014423122,
+          "block_m": 20,
+          "c": 1,
+          "n": 116391935,
+          "next_R": 4,
+          "next_n": 193516534255,
+          "next_u": 12094783391,
+          "u": 111
+        },
+        {
+          "R": 4,
+          "block_A": 5,
+          "block_debt": 1.3398500028846243,
+          "block_m": 4,
+          "c": 1,
+          "n": 193516534255,
+          "next_R": 3,
+          "next_n": 489838727335,
+          "next_u": 61229840917,
+          "u": 12094783391
+        },
+        {
+          "R": 3,
+          "block_A": 4,
+          "block_debt": 0.7548875021634682,
+          "block_m": 3,
+          "c": 1,
+          "n": 489838727335,
+          "next_R": 2,
+          "next_n": 826602852379,
+          "next_u": 206650713095,
+          "u": 61229840917
+        },
+        {
+          "R": 2,
+          "block_A": 3,
+          "block_debt": 0.16992500144231215,
+          "block_m": 2,
+          "c": 1,
+          "n": 826602852379,
+          "next_R": 5,
+          "next_n": 929928208927,
+          "next_u": 29060256529,
+          "u": 206650713095
+        },
+        {
+          "R": 5,
+          "block_A": 6,
+          "block_debt": 1.9248125036057804,
+          "block_m": 5,
+          "c": 1,
+          "n": 929928208927,
+          "next_R": 1,
+          "next_n": 3530821168273,
+          "next_u": 1765410584137,
+          "u": 29060256529
+        }
+      ],
+      "status": "finite_tail_renormalization_not_collatz_proof",
+      "steps": 5,
+      "total_A": 39,
+      "total_debt": 14.888725024519303,
+      "total_m": 34,
+      "type": "tail_renormalization_report",
+      "u_start": 111
+    },
+    {
+      "R": 20,
+      "descended": false,
+      "path": [
+        {
+          "R": 20,
+          "block_A": 21,
+          "block_debt": 10.699250014423122,
+          "block_m": 20,
+          "c": 1,
+          "n": 74448895,
+          "next_R": 2,
+          "next_n": 123780846235,
+          "next_u": 30945211559,
+          "u": 71
+        },
+        {
+          "R": 2,
+          "block_A": 3,
+          "block_debt": 0.16992500144231215,
+          "block_m": 2,
+          "c": 1,
+          "n": 123780846235,
+          "next_R": 4,
+          "next_n": 139253452015,
+          "next_u": 8703340751,
+          "u": 30945211559
+        },
+        {
+          "R": 4,
+          "block_A": 5,
+          "block_debt": 1.3398500028846243,
+          "block_m": 4,
+          "c": 1,
+          "n": 139253452015,
+          "next_R": 6,
+          "next_n": 352485300415,
+          "next_u": 5507582819,
+          "u": 8703340751
+        },
+        {
+          "R": 6,
+          "block_A": 7,
+          "block_debt": 2.5097750043269365,
+          "block_m": 6,
+          "c": 1,
+          "n": 352485300415,
+          "next_R": 1,
+          "next_n": 2007513937525,
+          "next_u": 1003756968763,
+          "u": 5507582819
+        }
+      ],
+      "status": "finite_tail_renormalization_not_collatz_proof",
+      "steps": 4,
+      "total_A": 36,
+      "total_debt": 14.718800023076994,
+      "total_m": 32,
+      "type": "tail_renormalization_report",
+      "u_start": 71
+    },
+    {
+      "R": 20,
+      "descended": false,
+      "path": [
+        {
+          "R": 20,
+          "block_A": 21,
+          "block_debt": 10.699250014423122,
+          "block_m": 20,
+          "c": 1,
+          "n": 149946367,
+          "next_R": 8,
+          "next_n": 249305084671,
+          "next_u": 973847987,
+          "u": 143
+        },
+        {
+          "R": 8,
+          "block_A": 9,
+          "block_debt": 3.6797000057692486,
+          "block_m": 8,
+          "c": 1,
+          "n": 249305084671,
+          "next_R": 1,
+          "next_n": 3194708321353,
+          "next_u": 1597354160677,
+          "u": 973847987
+        }
+      ],
+      "status": "finite_tail_renormalization_not_collatz_proof",
+      "steps": 2,
+      "total_A": 30,
+      "total_debt": 14.37895002019237,
+      "total_m": 28,
+      "type": "tail_renormalization_report",
+      "u_start": 143
+    },
+    {
+      "R": 20,
+      "descended": false,
+      "path": [
+        {
+          "R": 20,
+          "block_A": 21,
+          "block_debt": 10.699250014423122,
+          "block_m": 20,
+          "c": 1,
+          "n": 99614719,
+          "next_R": 3,
+          "next_n": 165622259047,
+          "next_u": 20702782381,
+          "u": 95
+        },
+        {
+          "R": 3,
+          "block_A": 4,
+          "block_debt": 0.7548875021634682,
+          "block_m": 3,
+          "c": 1,
+          "n": 165622259047,
+          "next_R": 5,
+          "next_n": 279487562143,
+          "next_u": 8733986317,
+          "u": 20702782381
+        },
+        {
+          "R": 5,
+          "block_A": 6,
+          "block_debt": 1.9248125036057804,
+          "block_m": 5,
+          "c": 1,
+          "n": 279487562143,
+          "next_R": 2,
+          "next_n": 1061179337515,
+          "next_u": 265294834379,
+          "u": 8733986317
+        },
+        {
+          "R": 2,
+          "block_A": 3,
+          "block_debt": 0.16992500144231215,
+          "block_m": 2,
+          "c": 1,
+          "n": 1061179337515,
+          "next_R": 1,
+          "next_n": 1193826754705,
+          "next_u": 596913377353,
+          "u": 265294834379
+        }
+      ],
+      "status": "finite_tail_renormalization_not_collatz_proof",
+      "steps": 4,
+      "total_A": 34,
+      "total_debt": 13.548875021634686,
+      "total_m": 30,
+      "type": "tail_renormalization_report",
+      "u_start": 95
+    },
+    {
+      "R": 20,
+      "descended": false,
+      "path": [
+        {
+          "R": 20,
+          "block_A": 21,
+          "block_debt": 10.699250014423122,
+          "block_m": 20,
+          "c": 1,
+          "n": 15728639,
+          "next_R": 6,
+          "next_n": 26150883007,
+          "next_u": 408607547,
+          "u": 15
+        },
+        {
+          "R": 6,
+          "block_A": 7,
+          "block_debt": 2.5097750043269365,
+          "block_m": 6,
+          "c": 1,
+          "n": 26150883007,
+          "next_R": 1,
+          "next_n": 148937450881,
+          "next_u": 74468725441,
+          "u": 408607547
+        }
+      ],
+      "status": "finite_tail_renormalization_not_collatz_proof",
+      "steps": 2,
+      "total_A": 28,
+      "total_debt": 13.209025018750054,
+      "total_m": 26,
+      "type": "tail_renormalization_report",
+      "u_start": 15
+    },
+    {
+      "R": 20,
+      "descended": false,
+      "path": [
+        {
+          "R": 20,
+          "block_A": 22,
+          "block_debt": 9.699250014423122,
+          "block_m": 20,
+          "c": 2,
+          "n": 30408703,
+          "next_R": 2,
+          "next_n": 25279186907,
+          "next_u": 6319796727,
+          "u": 29
+        },
+        {
+          "R": 2,
+          "block_A": 3,
+          "block_debt": 0.16992500144231215,
+          "block_m": 2,
+          "c": 1,
+          "n": 25279186907,
+          "next_R": 3,
+          "next_n": 28439085271,
+          "next_u": 3554885659,
+          "u": 6319796727
+        },
+        {
+          "R": 3,
+          "block_A": 6,
+          "block_debt": -1.2451124978365318,
+          "block_m": 3,
+          "c": 3,
+          "n": 28439085271,
+          "next_R": 2,
+          "next_n": 11997739099,
+          "next_u": 2999434775,
+          "u": 3554885659
+        },
+        {
+          "R": 2,
+          "block_A": 3,
+          "block_debt": 0.16992500144231215,
+          "block_m": 2,
+          "c": 1,
+          "n": 11997739099,
+          "next_R": 3,
+          "next_n": 13497456487,
+          "next_u": 1687182061,
+          "u": 2999434775
+        },
+        {
+          "R": 3,
+          "block_A": 4,
+          "block_debt": 0.7548875021634682,
+          "block_m": 3,
+          "c": 1,
+          "n": 13497456487,
+          "next_R": 7,
+          "next_n": 22776957823,
+          "next_u": 177944983,
+          "u": 1687182061
+        },
+        {
+          "R": 7,
+          "block_A": 9,
+          "block_debt": 2.0947375050480925,
+          "block_m": 7,
+          "c": 2,
+          "n": 22776957823,
+          "next_R": 6,
+          "next_n": 97291419455,
+          "next_u": 1520178429,
+          "u": 177944983
+        },
+        {
+          "R": 6,
+          "block_A": 8,
+          "block_debt": 1.5097750043269365,
+          "block_m": 6,
+          "c": 2,
+          "n": 97291419455,
+          "next_R": 1,
+          "next_n": 277052518685,
+          "next_u": 138526259343,
+          "u": 1520178429
+        }
+      ],
+      "status": "finite_tail_renormalization_not_collatz_proof",
+      "steps": 7,
+      "total_A": 55,
+      "total_debt": 13.153387531009713,
+      "total_m": 43,
+      "type": "tail_renormalization_report",
+      "u_start": 29
+    },
+    {
+      "R": 20,
+      "descended": false,
+      "path": [
+        {
+          "R": 20,
+          "block_A": 21,
+          "block_debt": 10.699250014423122,
+          "block_m": 20,
+          "c": 1,
+          "n": 217055231,
+          "next_R": 5,
+          "next_n": 360882185503,
+          "next_u": 11277568297,
+          "u": 207
+        },
+        {
+          "R": 5,
+          "block_A": 6,
+          "block_debt": 1.9248125036057804,
+          "block_m": 5,
+          "c": 1,
+          "n": 360882185503,
+          "next_R": 1,
+          "next_n": 1370224548085,
+          "next_u": 685112274043,
+          "u": 11277568297
+        }
+      ],
+      "status": "finite_tail_renormalization_not_collatz_proof",
+      "steps": 2,
+      "total_A": 27,
+      "total_debt": 12.6240625180289,
+      "total_m": 25,
+      "type": "tail_renormalization_report",
+      "u_start": 207
+    },
+    {
+      "R": 20,
+      "descended": false,
+      "path": [
+        {
+          "R": 20,
+          "block_A": 21,
+          "block_debt": 10.699250014423122,
+          "block_m": 20,
+          "c": 1,
+          "n": 250609663,
+          "next_R": 4,
+          "next_n": 416670735919,
+          "next_u": 26041920995,
+          "u": 239
+        },
+        {
+          "R": 4,
+          "block_A": 5,
+          "block_debt": 1.3398500028846243,
+          "block_m": 4,
+          "c": 1,
+          "n": 416670735919,
+          "next_R": 1,
+          "next_n": 1054697800297,
+          "next_u": 527348900149,
+          "u": 26041920995
+        }
+      ],
+      "status": "finite_tail_renormalization_not_collatz_proof",
+      "steps": 2,
+      "total_A": 26,
+      "total_debt": 12.039100017307746,
+      "total_m": 24,
+      "type": "tail_renormalization_report",
+      "u_start": 239
+    },
+    {
+      "R": 20,
+      "descended": false,
+      "path": [
+        {
+          "R": 20,
+          "block_A": 21,
+          "block_debt": 10.699250014423122,
+          "block_m": 20,
+          "c": 1,
+          "n": 233832447,
+          "next_R": 3,
+          "next_n": 388776460711,
+          "next_u": 48597057589,
+          "u": 223
+        },
+        {
+          "R": 3,
+          "block_A": 4,
+          "block_debt": 0.7548875021634682,
+          "block_m": 3,
+          "c": 1,
+          "n": 388776460711,
+          "next_R": 2,
+          "next_n": 656060277451,
+          "next_u": 164015069363,
+          "u": 48597057589
+        },
+        {
+          "R": 2,
+          "block_A": 3,
+          "block_debt": 0.16992500144231215,
+          "block_m": 2,
+          "c": 1,
+          "n": 656060277451,
+          "next_R": 1,
+          "next_n": 738067812133,
+          "next_u": 369033906067,
+          "u": 164015069363
+        }
+      ],
+      "status": "finite_tail_renormalization_not_collatz_proof",
+      "steps": 3,
+      "total_A": 28,
+      "total_debt": 11.6240625180289,
+      "total_m": 25,
+      "type": "tail_renormalization_report",
+      "u_start": 223
+    },
+    {
+      "R": 20,
+      "descended": false,
+      "path": [
+        {
+          "R": 20,
+          "block_A": 21,
+          "block_debt": 10.699250014423122,
+          "block_m": 20,
+          "c": 1,
+          "n": 82837503,
+          "next_R": 5,
+          "next_n": 137727983839,
+          "next_u": 4303999495,
+          "u": 79
+        },
+        {
+          "R": 5,
+          "block_A": 7,
+          "block_debt": 0.9248125036057804,
+          "block_m": 5,
+          "c": 2,
+          "n": 137727983839,
+          "next_R": 1,
+          "next_n": 261467969321,
+          "next_u": 130733984661,
+          "u": 4303999495
+        }
+      ],
+      "status": "finite_tail_renormalization_not_collatz_proof",
+      "steps": 2,
+      "total_A": 28,
+      "total_debt": 11.6240625180289,
+      "total_m": 25,
+      "type": "tail_renormalization_report",
+      "u_start": 79
+    }
+  ],
+  "type": "tail_renormalization_family_report",
+  "u_mod_power": 8
+}
