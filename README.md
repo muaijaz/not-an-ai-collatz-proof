@@ -6,11 +6,11 @@
 
 *Renewal Cramér rates · Joint Spectral Radius diagnostics · Five-projection operator synthesis*
 
-[![Tests](https://img.shields.io/badge/tests-141%20passing-brightgreen?style=flat-square)](.)
+[![Tests](https://img.shields.io/badge/tests-150%20passing-brightgreen?style=flat-square)](.)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-empirical-orange?style=flat-square)](.)
 [![Python](https://img.shields.io/badge/python-3.12-blue?style=flat-square)](.)
-[![Reproducible](https://img.shields.io/badge/artifacts-75%2B%20JSON-success?style=flat-square)](docs/reports)
+[![Reproducible](https://img.shields.io/badge/artifacts-91%20JSON-success?style=flat-square)](docs/reports)
 
 </div>
 
@@ -81,7 +81,7 @@ resolution:
 # Install dependencies
 uv sync
 
-# Run all 141 tests (≈1.3s)
+# Run all 150 tests (≈1.2s)
 uv run python -m pytest -q
 
 # Smoke test the experimental pipeline
@@ -128,16 +128,17 @@ collatz-renewal-framework/
 ├── pyproject.toml
 ├── uv.lock
 ├── collatz_certificate_search.py   ← original CLI compatibility wrapper
-├── collatz_exp/                    ← main package, 75+ modules
-├── tests/                          ← 141 passing tests
+├── collatz_exp/                    ← main package, 75 modules
+├── tests/                          ← 150 passing tests
 └── docs/
     ├── NOTABLE_RESULTS.md          ← running result catalog
     ├── PROJECT_JOURNEY.md          ← chronological narrative + audit log
     ├── RENEWAL_THEORETIC_NOTE.md   ← paper-shaped technical writeup
+    ├── NOTE_DRAFT.md               ← finite-diagnostics draft note
     ├── UNIFIED_MODEL.md            ← 5-projection operator synthesis
     ├── collatz_strategy.md         ← working strategy notes
-    ├── references/                 ← Tao, Mori, Hercher, Paparella PDFs
-    └── reports/                    ← 75+ JSON artifacts (one per result)
+    ├── references/                 ← Tao, Mori, Hercher, Paparella, Chang PDFs
+    └── reports/                    ← 91 JSON artifacts (one per result)
 ```
 
 ---
@@ -177,8 +178,12 @@ Named, not closed:
 
 1. **Markov/Lyapunov contraction on LTE-closed operator** — finite-resolution
    evidence of `Λ ≈ log(3/4)`; limit argument open.
-2. **Christoffel-word filter at higher resolution** — Path B verified at
-   `(q, R_max) ∈ {(5, 4), (6, 5)}`; convergence to 3/4 conjectured.
+2. **Christoffel-word filter at higher resolution** — Path B Christoffel-compatible
+   best stays pinned at `3/4` for `(q, R_max) ∈ {(5, 4), (6, 5), (7, 6)}` in the
+   bounded simple-cycle scan, in the automaton-constrained Karp product graph
+   (`(5, 4)`, `(6, 5)`), and under the stricter upper-Christoffel slope filter
+   (`(5, 4)`, `(6, 5)`, `(7, 6)`); scaling to higher levels and lifting the
+   bounded-cycle filter to a full Hercher-style theorem are open.
 3. **Profinite continuity** — finite quotients to limit operator on
    `ℓ²(ℤ_2 × ℤ_3)`.
 4. **Lifting PECM Lyapunov to per-orbit Lyapunov** — V5's gap.
@@ -196,9 +201,10 @@ statements.
   [`docs/reports/`](docs/reports).
 - Each artifact records method, parameters, sample size, bootstrap CI,
   and exact empirical value.
-- 141 passing tests cover core arithmetic, certificates, Mersenne tail
+- 150 passing tests cover core arithmetic, certificates, Mersenne tail
   dynamics, post-exit map, renewal Cramér computation, Tao verification,
-  Hercher bounds, Paparella nilpotency, and JSR variants.
+  Hercher bounds, Paparella nilpotency, JSR variants, automaton-constrained
+  Karp, and upper-Christoffel slope filtering.
 - Reference papers in [`docs/references/`](docs/references) for offline
   access.
 
@@ -243,6 +249,10 @@ please cite:
   [arXiv:2201.00406](https://arxiv.org/abs/2201.00406)
 - **Paparella, P.** (2024). *A matricial view of the Collatz conjecture.*
   [arXiv:2406.08498](https://arxiv.org/abs/2406.08498)
+- **Chang, E. Y.** (2026). *Exploring Collatz Dynamics with Human-LLM
+  Collaboration.* [arXiv:2603.11066](https://arxiv.org/abs/2603.11066)
+  (sibling LLM-collaboration framework; positioning in
+  [`docs/NOTE_DRAFT.md`](docs/NOTE_DRAFT.md))
 
 ---
 

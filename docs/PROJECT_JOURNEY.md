@@ -34,8 +34,8 @@ present the *results*; this document presents the *path*.
 
 **Initial state:** one Python file `collatz_certificate_search.py`, ~5 KB.
 
-**Final state:** `collatz_exp/` package with ~40 modules, 141 passing
-tests, ~30 JSON artifact reports, four integrated reference papers, and
+**Final state:** `collatz_exp/` package with 75 modules, 150 passing
+tests, 91 JSON artifact reports, five integrated reference papers, and
 a complete renewal-theoretic / operator-theoretic framework.
 
 ---
@@ -495,7 +495,7 @@ Saved artifacts:
 All results in this journey are reproducible:
 
 ```bash
-# Run the full test suite (currently 141 tests passing in ~1.3s)
+# Run the full test suite (currently 150 tests passing in ~1.2s)
 uv run python -m pytest -q
 
 # Reproduce any artifact in docs/reports/ via the corresponding CLI:
