@@ -100,6 +100,67 @@ The upper-Christoffel slope-constrained scan reports primitive-balanced best
 slope-window filter leaves `1` survivor per saved level
 (`docs/reports/christoffel_slope_constrained_jsr.json`).
 
+## Position Relative to Chang 2026
+
+Reference: Edward Y. Chang, "Exploring Collatz Dynamics with Human-LLM
+Collaboration," arXiv:2603.11066v6 [math.DS], April 22, 2026
+(`docs/references/chang_2026_human_llm_collatz_arxiv_2603.11066v6.pdf`).
+This is best read as a sibling LLM-collaboration artifact, not as evidence for
+this framework and not as a competing artifact.
+
+The two appearances of `3/4` are different objects. Chang's Theorem 3.1 is a
+`1/4` Persistent-Transition Law: among admissible mod-8 lifts of a persistent
+state, `1/4` have Syracuse successor again persistent, so `3/4` exit that
+class in that transition model
+(`docs/references/chang_2026_human_llm_collatz_arxiv_2603.11066v6.pdf`). This
+framework's `3/4` is a Christoffel-compatible bounded JSR factor and an
+automaton-constrained Karp product-graph factor on the LTE-closed tail graph
+(`docs/reports/christoffel_filtered_jsr_7_6.json`,
+`docs/reports/constrained_karp_jsr.json`). In plain language: Chang's number is
+a modular transition probability; this framework's number is a cycle-mean
+factor. They happen to evaluate to the same rational value, but no deeper
+equivalence is asserted here. The dominant compatible cycle in this framework
+is the elementary `valuation_word=[2]`, with edge factor `3/(2^2)=3/4`
+(`docs/reports/christoffel_slope_constrained_jsr.json`).
+
+| Chang route | Diagnostically aligned saved reports | Alignment |
+| --- | --- | --- |
+| (A) WMH / burst-gap | `docs/reports/orbit_renewal_spike_decomposition.json`, `docs/reports/orbit_renewal_markov_cramer.json`, `docs/reports/tail_aware_markov_lyapunov.json`, `docs/reports/tao_syrac_empirical.json` | Substantive for renewal/typical-drift observables; shallow for Chang's WMH machinery itself. |
+| (B) CIC / Carry Contamination | `docs/reports/christoffel_filtered_jsr_7_6.json`, `docs/reports/christoffel_slope_constrained_jsr.json`, `docs/reports/constrained_karp_jsr.json`, `docs/reports/lift_realizability_k6_a6_p8.json` | Substantive at the level of valuation/parity-word compatibility; not a check of Chang's CIC. |
+| (C) I2 spectral | `docs/reports/tail_spectral_ladder_k12_20_prefix8.json`, `docs/reports/tail_subautomaton_k12_prefix8.json`, `docs/reports/cohn_elkies_walsh_k8.json` | Mostly shallow: both use finite spectral diagnostics, but the state spaces and target observables differ. |
+| (D) C-2adic auxiliary | `docs/reports/tail_aware_lte_closed_projective_jsr.json`, `docs/reports/tail_lte_R2_R128.json`, `docs/reports/tail_internal_step_R2_R128_u8.json`, `docs/reports/tail_exit_lemma_R20_u8.json` | Substantive for 2-adic tail memory and LTE closure; not the same auxiliary-memory route. |
+| (E) cascade algebra | `docs/reports/valuation_mi_lags.json`, `docs/reports/obstruction_lyapunov_correction.json`, `docs/reports/unified_lyapunov_state_debt.json`, `docs/reports/post_exit_pecm_pointwise.json` | Mostly shallow: shared carry/post-exit vocabulary, unrelated algebraic organization. |
+| (F) cycle exclusion via discrete-log obstruction | `docs/reports/cycle_exclusion_tower_m10.json`, `docs/reports/d_pe_continued_fraction_certification.json`, `docs/reports/d_pe_baker_certification.json`, `docs/reports/realizability_structural_exclusion.json` | Substantive for cycle-exclusion diagnostics, shallow for the discrete-log target set. |
+
+The shared open problem is the same wall in different language. Chang calls it
+the distributional-to-pointwise upgrade; this framework calls it the upgrade
+from finite diagnostics to infinite arithmetic. These are not independent
+walls. They are two descriptions of the same missing bridge between ensemble or
+bounded finite behavior and every individual positive integer.
+
+There is also a Mersenne overlap. Chang's Section 13.1 says the family
+`2^L - 1` survives the running divergent-compatibility condition at every
+finite depth
+(`docs/references/chang_2026_human_llm_collatz_arxiv_2603.11066v6.pdf`). This
+framework has `collatz_exp/mersenne.py` and
+`collatz_exp/mersenne_continuation.py`, which profile the same all-one tail
+family after the initial run. The saved tail reports operate at a different
+level: finite LTE-closed tail-graph dynamics and tail subautomata
+(`docs/reports/tail_aware_lte_closed_projective_jsr.json`,
+`docs/reports/tail_spectral_ladder_k12_20_prefix8.json`). From the saved JSON
+artifacts alone, I do not read this as contradicting or confirming Chang's
+Mersenne bypass. The qualitative reconciliation is that Chang's bypass concerns
+survival of a finite-depth sieve condition, while this framework's Mersenne
+code studies post-run descent and tail closure after the all-one branch has
+been followed. Those can both be true because they ask different questions.
+
+Finally, the methodology is kin. Chang's Section 12 documents a three-party
+human/LLM workflow with error-correction logs and false-lemma case studies
+(`docs/references/chang_2026_human_llm_collatz_arxiv_2603.11066v6.pdf`). This
+framework's `docs/CODEX_HANDOFF_*.md` chain serves a similar continuity and
+correction role. The relationship is methodological kinship, not a priority
+claim.
+
 ## Current Reading
 
 The strongest finite picture is consistent across three views: LTE-closed
