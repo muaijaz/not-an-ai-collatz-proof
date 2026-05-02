@@ -20,7 +20,11 @@ from .constrained_jsr import (
     TailAwareMarkovLyapunovReport,
     TailAwareProjectiveJSRReport,
 )
-from .constrained_karp import ConstrainedKarpReport
+from .constrained_karp import (
+    ConstrainedKarpReport,
+    KarpSlopeJointSweepReport,
+    TailCycleRealizabilityReport,
+)
 from .cycles import CycleScanReport
 from .cycle_tower import CycleExclusionTowerReport
 from .cycles_eliahou import CycleLengthScreen
@@ -66,9 +70,13 @@ from .orbit_renewal import (
     OrbitRenewalN0StabilityReport,
     OrbitRenewalPerKMGFReport,
     RenewalDescentReport,
+    RenewalDriftPhaseDecomposedReport,
+    RenewalDriftPhaseN0StabilityReport,
+    RenewalDriftPerStepReport,
     RenewalSpikeDecompositionReport,
 )
 from .orbit_renewal_tda import OrbitRenewalTDAReport
+from .phase_lyapunov import PhaseLyapunovSearchReport
 from .post_exit_lasota_yorke import LasotaYorkeReport
 from .post_exit_baker import (
     BakerCertificationReport,
@@ -381,6 +389,41 @@ def format_constrained_karp_jsr_report(result: ConstrainedKarpReport) -> str:
     )
 
 
+def format_karp_slope_joint_sweep_report(
+    result: KarpSlopeJointSweepReport,
+) -> str:
+    last = result.levels[-1] if result.levels else None
+    obstruction = result.obstruction
+    return (
+        f"status={result.status}, levels={len(result.levels)}, "
+        f"last_q={None if last is None else last.tail_unit_power}, "
+        f"last_Rmax={None if last is None else last.max_tail_depth}, "
+        f"last_period={None if last is None else last.automaton_max_period}, "
+        f"last_tolerance={None if last is None else last.slope_tolerance}, "
+        f"survivors={None if last is None else last.survivor_count}, "
+        f"non_elementary="
+        f"{None if last is None else last.non_elementary_survivor_count}, "
+        f"obstruction_factor="
+        f"{None if obstruction is None else obstruction.survivor.edge_factor}"
+    )
+
+
+def format_tail_cycle_realizability_report(
+    result: TailCycleRealizabilityReport,
+) -> str:
+    last = result.levels[-1] if result.levels else None
+    return (
+        f"status={result.status}, levels={len(result.levels)}, "
+        f"last_q={None if last is None else last.tail_unit_power}, "
+        f"last_Rmax={None if last is None else last.max_tail_depth}, "
+        f"last_high_growth={None if last is None else last.high_growth_cycles}, "
+        f"realizable_karp={result.realizable_karp_factor}, "
+        f"classifications={result.classification_counts}, "
+        f"obstruction="
+        f"{None if result.obstruction is None else result.obstruction.cycle.edge_factor}"
+    )
+
+
 def format_christoffel_slope_constrained_jsr_report(
     result: ChristoffelSlopeConstrainedJSRReport,
 ) -> str:
@@ -589,6 +632,21 @@ def format_orbit_lyapunov_beta_sweep_report(
     )
 
 
+def format_phase_lyapunov_search_report(
+    result: PhaseLyapunovSearchReport,
+) -> str:
+    best = result.best_grid_candidate
+    return (
+        f"status={result.status}, samples={result.sample_count}, "
+        f"completed={result.completed_orbits}, truncated={result.truncated_orbits}, "
+        f"steps={result.total_accelerated_steps}, "
+        f"baseline_nondec={result.V5_baseline.total.fraction_nondecrease}, "
+        f"best_nondec={best.total.fraction_nondecrease}, "
+        f"best_params={best.params.to_json_dict()}, "
+        f"improvement={result.improvement_over_baseline}"
+    )
+
+
 def format_renewal_descent_report(result: RenewalDescentReport) -> str:
     return (
         f"status={result.status}, samples={result.sample_count}, "
@@ -596,6 +654,46 @@ def format_renewal_descent_report(result: RenewalDescentReport) -> str:
         f"excursions={result.total_excursions}, "
         f"mean_delta={result.mean_delta_log2}, "
         f"frac_nonneg={result.fraction_nonnegative_delta_log2}"
+    )
+
+
+def format_renewal_drift_per_step_report(
+    result: RenewalDriftPerStepReport,
+) -> str:
+    return (
+        f"status={result.status}, samples={result.sample_count}, "
+        f"excursions={result.total_excursions}, "
+        f"drift_step={result.mean_drift_per_step.estimate}, "
+        f"valuation_step={result.mean_valuation_per_step.estimate}, "
+        f"verdict={result.verdict}"
+    )
+
+
+def format_renewal_drift_phase_decomposed_report(
+    result: RenewalDriftPhaseDecomposedReport,
+) -> str:
+    return (
+        f"status={result.status}, samples={result.sample_count}, "
+        f"excursions={result.total_excursions}, "
+        f"w_tail={result.w_tail.estimate}, "
+        f"post_drift={result.mean_drift_per_step_post_exit.estimate}, "
+        f"post_valuation={result.mean_valuation_per_step_post_exit.estimate}, "
+        f"verdict={result.verdict}"
+    )
+
+
+def format_renewal_drift_phase_decomposed_n0_stability_report(
+    result: RenewalDriftPhaseN0StabilityReport,
+) -> str:
+    deepest = result.range_reports[-1] if result.range_reports else None
+    return (
+        f"status={result.status}, ranges={len(result.range_reports)}, "
+        f"samples_per_range={result.sample_count_per_range}, "
+        f"deepest_post_dev="
+        f"{None if deepest is None else deepest.post_exit_valuation_deviation}, "
+        f"deepest_drift_dev="
+        f"{None if deepest is None else deepest.total_drift_deviation}, "
+        f"verdict={result.verdict}"
     )
 
 
@@ -902,6 +1000,69 @@ def format_formal_artifact_report(result: FormalArtifactReport) -> str:
     return (
         f"status={result.status}, exported={result.exported}, "
         f"verified={result.verified}, lean={result.lean_skeleton_status}"
+    )
+
+
+def format_foster_drift_report(result: dict) -> str:
+    deepest = result["window_reports"][-1]
+    drift = deepest["marginal_drift"]
+    tail_fit = deepest["subexponential_tail_fit"]
+    hitting = deepest["hitting_time_distribution"]
+    tail_lambda = tail_fit["lambda"]
+    hit_q99 = hitting["quantile_0_99"]
+    trunc = hitting["hitting_time_truncated_fraction"]
+    drift_table = [
+        (
+            window["start_min"],
+            window["start_max"],
+            window["marginal_drift"]["estimate"],
+            window["marginal_drift"]["ci_low"],
+            window["marginal_drift"]["ci_high"],
+        )
+        for window in result["window_reports"]
+    ]
+    return (
+        f"verdict={result['verdict']}, "
+        f"deepest_drift={drift['estimate']} "
+        f"ci=({drift['ci_low']}, {drift['ci_high']}), "
+        f"deepest_tail_lambda={tail_lambda['estimate']} "
+        f"ci=({tail_lambda['ci_low']}, {tail_lambda['ci_high']}), "
+        f"ks_p={tail_fit['ks_p_value']}, "
+        f"hitting_q99={hit_q99['estimate']} "
+        f"ci=({hit_q99['ci_low']}, {hit_q99['ci_high']}), "
+        f"hitting_trunc={trunc['estimate']}, "
+        f"residue_obstructions="
+        f"{len(result['residue_obstruction_witnesses'])}, "
+        f"window_obstructions={len(result['window_obstruction_witnesses'])}, "
+        f"marginal_drift_table={drift_table}"
+    )
+
+
+def format_m_step_foster_drift_report(result: dict) -> str:
+    residual_table = [
+        (
+            item["m"],
+            item["max_window_residual"],
+            item["max_window_residual_ci_halfwidth"],
+        )
+        for item in result["m_step_drift_residual_table"]
+    ]
+    max_m = max(result["m_steps_grid"])
+    max_count = result["obstruction_count_at_max_m"]
+    smallest_count = result["obstruction_count_at_smallest_failing_m"]
+    return (
+        f"verdict={result['verdict']}, "
+        f"smallest_strict="
+        f"{result['smallest_m_uniform_negative_drift_by_residue']}, "
+        f"smallest_eps_0p1="
+        f"{result['smallest_m_uniform_negative_drift_by_residue_eps_0p1']}, "
+        f"smallest_marginal="
+        f"{result['smallest_m_uniform_negative_marginal_drift']}, "
+        f"m1_cross_check={result['m1_cross_check_passes']}, "
+        f"m1_max_disagreement={result['m1_max_disagreement']}, "
+        f"obstructions_at_failing_m={smallest_count}, "
+        f"obstructions_at_max_m={max_count} (m={max_m}), "
+        f"m_step_residual_table={residual_table}"
     )
 
 

@@ -73,6 +73,20 @@ def word_cylinder_residues(
         raise ValueError("precision_power must be positive")
     if precision_power > max_scan_power:
         raise ValueError("precision_power exceeds max_scan_power")
+    base_power = sum(word) + 1
+    if precision_power > base_power:
+        base_residues = word_cylinder_residues(
+            word,
+            precision_power=base_power,
+            max_scan_power=max_scan_power,
+        )
+        lift_step = 1 << base_power
+        return tuple(
+            residue + (lift << base_power)
+            for residue in base_residues
+            for lift in range(1 << (precision_power - base_power))
+            if residue + (lift << base_power) < (1 << precision_power)
+        )
     modulus = 1 << precision_power
     return tuple(
         residue
@@ -85,6 +99,7 @@ def exact_word_closures_mod_power(
     word: tuple[int, ...],
     modulus_power: int,
     precision_power: int | None = None,
+    max_scan_power: int = 24,
 ) -> tuple[int, ...]:
     """Return exact word-cylinder residues whose landing closes modulo ``2^k``."""
 
@@ -92,7 +107,11 @@ def exact_word_closures_mod_power(
         precision_power = max(sum(word) + 1, modulus_power + sum(word) + 1)
     modulus = 1 << modulus_power
     closing: list[int] = []
-    for residue in word_cylinder_residues(word, precision_power):
+    for residue in word_cylinder_residues(
+        word,
+        precision_power,
+        max_scan_power=max_scan_power,
+    ):
         landing = apply_word(residue, word)
         if landing % modulus == residue % modulus:
             closing.append(residue)

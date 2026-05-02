@@ -1,0 +1,296 @@
+{
+  "bootstrap_ci_method": "influence_function_normal_approximation_to_excursion_bootstrap",
+  "bootstrap_resamples": 1000,
+  "caveat": "Empirical finite-sample n0 sweep over phase-decomposed renewal drift. It does not prove an asymptotic identity or all-n Collatz descent.",
+  "deepest_window_post_exit_consistent": false,
+  "deepest_window_total_drift_consistent": false,
+  "post_exit_valuation_deviations": [
+    [
+      3.0,
+      -0.03473021694546086,
+      0.0014181506610770889
+    ],
+    [
+      5.0,
+      -0.015093029704936534,
+      0.0011015544840882185
+    ],
+    [
+      7.5,
+      -0.01075752326438062,
+      0.0009858479643369833
+    ],
+    [
+      10.5,
+      -0.00654181475711102,
+      0.0008506785271542583
+    ],
+    [
+      13.5,
+      -0.006503489706314536,
+      0.0008075862380447774
+    ]
+  ],
+  "post_exit_valuation_log_slope_per_decade": -0.06656531395656089,
+  "post_exit_valuation_monotone": true,
+  "post_exit_valuation_target": 3.0,
+  "random_seed": 0,
+  "range_reports": [
+    {
+      "completed_orbits": 200000,
+      "mean_drift_per_step_post_exit": {
+        "ci_high": -1.3694623590394968,
+        "ci_low": -1.3720401496645556,
+        "estimate": -1.3707274677381225
+      },
+      "mean_drift_per_step_tail": {
+        "ci_high": 0.5897514707230729,
+        "ci_low": 0.5897286796805917,
+        "estimate": 0.5897401670725527
+      },
+      "mean_drift_per_step_total": {
+        "ci_high": -0.38467517347983415,
+        "ci_low": -0.38668390400167013,
+        "estimate": -0.3857502483024223
+      },
+      "mean_valuation_per_step_post_exit": {
+        "ci_high": 2.9665659458788816,
+        "ci_low": 2.963851632393462,
+        "estimate": 2.965269783054539
+      },
+      "mean_valuation_per_step_tail": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "estimate": 1.0
+      },
+      "midpoint_log10_n": 3.0,
+      "post_exit_valuation_deviation": -0.03473021694546086,
+      "sample_count": 200000,
+      "start_max": 10000,
+      "start_min": 100,
+      "total_accelerated_steps": 6174557,
+      "total_drift_deviation": 0.029287250976421486,
+      "total_excursions": 3201879,
+      "truncated_orbits": 0,
+      "w_post_exit": 0.49758047419434304,
+      "w_tail": 0.502419525805657,
+      "weights_balanced": true
+    },
+    {
+      "completed_orbits": 200000,
+      "mean_drift_per_step_post_exit": {
+        "ci_high": -1.3924603993406053,
+        "ci_low": -1.394754854760079,
+        "estimate": -1.3935782931658494
+      },
+      "mean_drift_per_step_tail": {
+        "ci_high": 0.5881568247660324,
+        "ci_low": 0.5881402042096874,
+        "estimate": 0.5881480579613748
+      },
+      "mean_drift_per_step_total": {
+        "ci_high": -0.4011379205908725,
+        "ci_low": -0.40283793716017924,
+        "estimate": -0.40199711068304456
+      },
+      "mean_valuation_per_step_post_exit": {
+        "ci_high": 2.9859480984942968,
+        "ci_low": 2.9838054158109752,
+        "estimate": 2.9849069702950635
+      },
+      "mean_valuation_per_step_tail": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "estimate": 1.0
+      },
+      "midpoint_log10_n": 5.0,
+      "post_exit_valuation_deviation": -0.015093029704936534,
+      "sample_count": 200000,
+      "start_max": 1000000,
+      "start_min": 10000,
+      "total_accelerated_steps": 9230947,
+      "total_drift_deviation": 0.013040388595799257,
+      "total_excursions": 4718426,
+      "truncated_orbits": 0,
+      "w_post_exit": 0.49963768614422766,
+      "w_tail": 0.5003623138557723,
+      "weights_balanced": true
+    },
+    {
+      "completed_orbits": 200000,
+      "mean_drift_per_step_post_exit": {
+        "ci_high": -1.3991556246308066,
+        "ci_low": -1.401032796210954,
+        "estimate": -1.4000842097318125
+      },
+      "mean_drift_per_step_tail": {
+        "ci_high": 0.5870703030444638,
+        "ci_low": 0.5870590792642904,
+        "estimate": 0.5870645770094525
+      },
+      "mean_drift_per_step_total": {
+        "ci_high": -0.4055671469235493,
+        "ci_low": -0.40702080207377084,
+        "estimate": -0.406277122772003
+      },
+      "mean_valuation_per_step_post_exit": {
+        "ci_high": 2.990186654829988,
+        "ci_low": 2.9882566287712824,
+        "estimate": 2.9892424767356194
+      },
+      "mean_valuation_per_step_tail": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "estimate": 1.0
+      },
+      "midpoint_log10_n": 7.5,
+      "post_exit_valuation_deviation": -0.01075752326438062,
+      "sample_count": 200000,
+      "start_max": 1000000000,
+      "start_min": 1000000,
+      "total_accelerated_steps": 14013756,
+      "total_drift_deviation": 0.008760376506840806,
+      "total_excursions": 7108590,
+      "truncated_orbits": 0,
+      "w_post_exit": 0.4998829007726408,
+      "w_tail": 0.5001170992273591,
+      "weights_balanced": true
+    },
+    {
+      "completed_orbits": 200000,
+      "mean_drift_per_step_post_exit": {
+        "ci_high": -1.4044731278446605,
+        "ci_low": -1.4062215566055993,
+        "estimate": -1.405357566206929
+      },
+      "mean_drift_per_step_tail": {
+        "ci_high": 0.5865400833084848,
+        "ci_low": 0.586531924142001,
+        "estimate": 0.5865358342325622
+      },
+      "mean_drift_per_step_total": {
+        "ci_high": -0.4092313511911087,
+        "ci_low": -0.41049819541300264,
+        "estimate": -0.4098773122472291
+      },
+      "mean_valuation_per_step_post_exit": {
+        "ci_high": 2.9943088637700432,
+        "ci_low": 2.992644651582986,
+        "estimate": 2.993458185242889
+      },
+      "mean_valuation_per_step_tail": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "estimate": 1.0
+      },
+      "midpoint_log10_n": 10.5,
+      "post_exit_valuation_deviation": -0.00654181475711102,
+      "sample_count": 200000,
+      "start_max": 1000000000000,
+      "start_min": 1000000000,
+      "total_accelerated_steps": 18751150,
+      "total_drift_deviation": 0.005160187031614694,
+      "total_excursions": 9471279,
+      "truncated_orbits": 0,
+      "w_post_exit": 0.5002341723040987,
+      "w_tail": 0.49976582769590133,
+      "weights_balanced": true
+    },
+    {
+      "completed_orbits": 200000,
+      "mean_drift_per_step_post_exit": {
+        "ci_high": -1.4052377808024268,
+        "ci_low": -1.406857434015951,
+        "estimate": -1.4060447969159586
+      },
+      "mean_drift_per_step_tail": {
+        "ci_high": 0.5862138150682271,
+        "ci_low": 0.5862070995693398,
+        "estimate": 0.586210600362546
+      },
+      "mean_drift_per_step_total": {
+        "ci_high": -0.40906013075092723,
+        "ci_low": -0.41014609565557764,
+        "estimate": -0.40963122261923807
+      },
+      "mean_valuation_per_step_post_exit": {
+        "ci_high": 2.9943040965317302,
+        "ci_low": 2.992775781481255,
+        "estimate": 2.9934965102936855
+      },
+      "mean_valuation_per_step_tail": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "estimate": 1.0
+      },
+      "midpoint_log10_n": 13.5,
+      "post_exit_valuation_deviation": -0.006503489706314536,
+      "sample_count": 200000,
+      "start_max": 1000000000000000,
+      "start_min": 1000000000000,
+      "total_accelerated_steps": 23628253,
+      "total_drift_deviation": 0.0054062766596057465,
+      "total_excursions": 11917745,
+      "truncated_orbits": 0,
+      "w_post_exit": 0.4998565065305505,
+      "w_tail": 0.5001434934694495,
+      "weights_balanced": true
+    }
+  ],
+  "ranges": [
+    [
+      100,
+      10000
+    ],
+    [
+      10000,
+      1000000
+    ],
+    [
+      1000000,
+      1000000000
+    ],
+    [
+      1000000000,
+      1000000000000
+    ],
+    [
+      1000000000000,
+      1000000000000000
+    ]
+  ],
+  "sample_count_per_range": 200000,
+  "status": "empirical_phase_decomposed_n0_stability_non_monotone_or_flat",
+  "total_drift_deviations": [
+    [
+      3.0,
+      0.029287250976421486,
+      0.0010750748225881734
+    ],
+    [
+      5.0,
+      0.013040388595799257,
+      0.0008591900921720574
+    ],
+    [
+      7.5,
+      0.008760376506840806,
+      0.00074367930176783
+    ],
+    [
+      10.5,
+      0.005160187031614694,
+      0.0006459610561204143
+    ],
+    [
+      13.5,
+      0.0054062766596057465,
+      0.0005710918683108357
+    ]
+  ],
+  "total_drift_log_slope_per_decade": -0.06847123614237813,
+  "total_drift_monotone": false,
+  "total_drift_target": -0.4150374992788438,
+  "type": "renewal_drift_phase_decomposed_n0_stability",
+  "verdict": "non_monotone_or_flat"
+}

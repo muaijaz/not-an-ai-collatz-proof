@@ -1,0 +1,142 @@
+{
+  "caveat": "Cycle survivors are complete only for the bounded simple-cycle scan up to max_cycle_edges and max_cycles_scanned. The slope window is a finite diagnostic; it is not a full Hercher parity-vector theorem.",
+  "construction": "For each (q,Rmax), Karp is run on the LTE-closed tail graph crossed with a period-capped balanced-word automaton, while the same tail graph is scanned for bounded upper-Christoffel cycles inside the configured slope window.",
+  "levels": [
+    {
+      "automaton_max_period": 4,
+      "automaton_patterns": 5,
+      "automaton_states": 16,
+      "closed_overflow_edges": 11,
+      "constrained_karp_factor": 0.7499999999999879,
+      "cycles_scanned": 2009,
+      "exact_rational_factor": "3/4",
+      "level_index": 0,
+      "max_cycle_edges": 10,
+      "max_cycles_scanned": 200000,
+      "max_imbalance": 1,
+      "max_tail_depth": 4,
+      "max_valuation": 12,
+      "non_elementary_factor_ge_one": false,
+      "non_elementary_survivor_count": 0,
+      "product_edges": 509,
+      "product_states": 1024,
+      "slope_target": 1.584962500721156,
+      "slope_tolerance": 0.5,
+      "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "survivor_count": 1,
+      "survivors": [
+        {
+          "accelerated_steps": 1,
+          "christoffel_slope": "2/1",
+          "cycle_edges": 1,
+          "edge_factor": 0.75,
+          "edge_mean_log2_slope": -0.4150374992788439,
+          "non_elementary": false,
+          "parity_word": [
+            1,
+            0
+          ],
+          "slope_distance": 0.4150374992788439,
+          "valuation_word": [
+            2
+          ]
+        }
+      ],
+      "tail_edges": 224,
+      "tail_states": 64,
+      "tail_unit_power": 5
+    },
+    {
+      "automaton_max_period": 5,
+      "automaton_patterns": 9,
+      "automaton_states": 36,
+      "closed_overflow_edges": 11,
+      "constrained_karp_factor": 0.749999999999988,
+      "cycles_scanned": 10800,
+      "exact_rational_factor": "3/4",
+      "level_index": 1,
+      "max_cycle_edges": 10,
+      "max_cycles_scanned": 200000,
+      "max_imbalance": 1,
+      "max_tail_depth": 5,
+      "max_valuation": 12,
+      "non_elementary_factor_ge_one": false,
+      "non_elementary_survivor_count": 0,
+      "product_edges": 2869,
+      "product_states": 5760,
+      "slope_target": 1.584962500721156,
+      "slope_tolerance": 0.5,
+      "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "survivor_count": 1,
+      "survivors": [
+        {
+          "accelerated_steps": 1,
+          "christoffel_slope": "2/1",
+          "cycle_edges": 1,
+          "edge_factor": 0.75,
+          "edge_mean_log2_slope": -0.4150374992788439,
+          "non_elementary": false,
+          "parity_word": [
+            1,
+            0
+          ],
+          "slope_distance": 0.4150374992788439,
+          "valuation_word": [
+            2
+          ]
+        }
+      ],
+      "tail_edges": 480,
+      "tail_states": 160,
+      "tail_unit_power": 6
+    },
+    {
+      "automaton_max_period": 6,
+      "automaton_patterns": 11,
+      "automaton_states": 48,
+      "closed_overflow_edges": 11,
+      "constrained_karp_factor": 0.7500000000000513,
+      "cycles_scanned": 37168,
+      "exact_rational_factor": "3/4",
+      "level_index": 2,
+      "max_cycle_edges": 10,
+      "max_cycles_scanned": 200000,
+      "max_imbalance": 1,
+      "max_tail_depth": 6,
+      "max_valuation": 12,
+      "non_elementary_factor_ge_one": false,
+      "non_elementary_survivor_count": 0,
+      "product_edges": 9205,
+      "product_states": 18432,
+      "slope_target": 1.584962500721156,
+      "slope_tolerance": 0.5,
+      "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "survivor_count": 1,
+      "survivors": [
+        {
+          "accelerated_steps": 1,
+          "christoffel_slope": "2/1",
+          "cycle_edges": 1,
+          "edge_factor": 0.75,
+          "edge_mean_log2_slope": -0.4150374992788439,
+          "non_elementary": false,
+          "parity_word": [
+            1,
+            0
+          ],
+          "slope_distance": 0.4150374992788439,
+          "valuation_word": [
+            2
+          ]
+        }
+      ],
+      "tail_edges": 1024,
+      "tail_states": 384,
+      "tail_unit_power": 7
+    }
+  ],
+  "next_step": "If obstruction is null, widen both the automaton period cap and cycle-edge cap. If obstruction is present, inspect that survivor as the new finite-to-infinite bridge obstruction.",
+  "obstruction": null,
+  "status": "no_non_elementary_factor_ge_one_survivor_found",
+  "type": "karp_slope_joint_sweep"
+}

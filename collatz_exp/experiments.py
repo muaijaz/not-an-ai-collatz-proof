@@ -24,7 +24,11 @@ from .constrained_jsr import (
     tail_aware_lte_closed_projective_jsr_report,
     tail_aware_projective_jsr_report,
 )
-from .constrained_karp import constrained_karp_jsr_report
+from .constrained_karp import (
+    constrained_karp_jsr_report,
+    karp_slope_joint_sweep_report,
+    tail_cycle_realizability_sweep_report,
+)
 from .core import hardest_first_descent_under_power
 from .cycles import scan_near_balanced_cycles
 from .cycle_tower import cycle_exclusion_tower_report
@@ -32,6 +36,7 @@ from .cycles_eliahou import cycle_length_screen
 from .density_lp import density_bound
 from .divider_patterns import divider_pattern_report
 from .formal_artifacts import formal_artifact_report
+from .foster_drift import foster_drift_report, m_step_foster_drift_report
 from .frontier_analysis import analyze_cover_frontier
 from .furstenberg import furstenberg_lyapunov_report
 from .graph_curvature import ollivier_ricci_report
@@ -69,8 +74,17 @@ from .orbit_renewal import (
     orbit_renewal_n0_stability_report,
     orbit_renewal_per_k_mgf_report,
     orbit_renewal_spike_decomposition_report,
+    renewal_drift_phase_decomposed_report,
+    renewal_drift_phase_decomposed_n0_stability_report,
+    renewal_drift_per_step_report,
 )
 from .orbit_renewal_tda import orbit_renewal_tda_report
+from .phase_lyapunov import (
+    DEFAULT_ALPHA_GRID,
+    DEFAULT_BETA_GRID,
+    DEFAULT_GAMMA_DIFF_GRID,
+    phase_lyapunov_search_report,
+)
 from .renewal_bootstrap import renewal_bootstrap_calibration_report
 from .parity import parity_layer_report
 from .paparella import paparella_nilpotency_report
@@ -111,6 +125,7 @@ from .reports import (
     format_constrained_projective_jsr_report,
     format_tail_aware_projective_jsr_report,
     format_tail_aware_markov_lyapunov_report,
+    format_tail_cycle_realizability_report,
     format_convergent_atlas_report,
     format_continued_fraction_certification_report,
     format_cycle_scan_summary,
@@ -123,6 +138,8 @@ from .reports import (
     format_divider_pattern_report,
     format_dpe_structural_bound_report,
     format_formal_artifact_report,
+    format_foster_drift_report,
+    format_m_step_foster_drift_report,
     format_frontier_analysis_report,
     format_furstenberg_lyapunov_report,
     format_first_descent,
@@ -130,6 +147,7 @@ from .reports import (
     format_harmonic_class_identification_report,
     format_jazz_constant_closed_form_report,
     format_jazz_constant_decomposition_report,
+    format_karp_slope_joint_sweep_report,
     format_hercher_t_ni_report,
     format_lasota_yorke_report,
     format_lift_realizability_report,
@@ -146,6 +164,7 @@ from .reports import (
     format_orbit_renewal_n0_stability_report,
     format_orbit_renewal_per_k_mgf_report,
     format_orbit_renewal_tda_report,
+    format_phase_lyapunov_search_report,
     format_obstruction_lyapunov_correction_report,
     format_mersenne_tail_report,
     format_mersenne_continuation_graph,
@@ -159,6 +178,9 @@ from .reports import (
     format_power_ratio_report,
     format_renewal_bootstrap_calibration_report,
     format_renewal_descent_report,
+    format_renewal_drift_phase_decomposed_report,
+    format_renewal_drift_phase_decomposed_n0_stability_report,
+    format_renewal_drift_per_step_report,
     format_renewal_spike_decomposition_report,
     format_psi_symbolic_fit_report,
     format_post_exit_pointwise_ladder_report,
@@ -242,6 +264,10 @@ def _parse_pair_tuple(value: str) -> tuple[tuple[int, int], ...]:
             raise ValueError(f"expected pair like k:ell, got {stripped!r}")
         pairs.append((int(left), int(right)))
     return tuple(pairs)
+
+
+def _parse_float_tuple(value: str) -> tuple[float, ...]:
+    return tuple(float(item.strip()) for item in value.split(",") if item.strip())
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -349,6 +375,63 @@ def build_parser() -> argparse.ArgumentParser:
         help="run Karp on the LTE-closed tail graph crossed with a finite balanced-word automaton",
     )
     parser.add_argument(
+        "--karp-slope-joint-sweep",
+        action="store_true",
+        help="jointly sweep constrained Karp period caps and upper-Christoffel slope precision",
+    )
+    parser.add_argument(
+        "--tail-cycle-realizability",
+        action="store_true",
+        help="audit high-growth LTE-closed tail cycles against exact word lifting",
+    )
+    parser.add_argument(
+        "--karp-slope-joint-output",
+        type=str,
+        default="docs/reports/karp_slope_joint_sweep.json",
+        help="path for the joint Karp/slope sweep JSON artifact",
+    )
+    parser.add_argument(
+        "--karp-slope-levels",
+        type=str,
+        default="5:4,6:5,7:6",
+        help="comma-separated q:Rmax levels for the joint Karp/slope sweep",
+    )
+    parser.add_argument(
+        "--tail-cycle-realizability-output",
+        type=str,
+        default="docs/reports/tail_cycle_realizability.json",
+        help="path for the tail-cycle realizability JSON artifact",
+    )
+    parser.add_argument(
+        "--tail-cycle-realizability-levels",
+        type=str,
+        default="5:4,6:5,7:6",
+        help="comma-separated q:Rmax levels for the tail-cycle realizability audit",
+    )
+    parser.add_argument(
+        "--tail-cycle-factor-threshold",
+        type=float,
+        default=1.0,
+        help="minimum edge factor for cycles included in the realizability audit",
+    )
+    parser.add_argument(
+        "--tail-cycle-max-cycles-scanned",
+        type=int,
+        default=200_000,
+        help="maximum simple cycles scanned per level for tail-cycle realizability",
+    )
+    parser.add_argument(
+        "--tail-cycle-lift-max-scan-power",
+        type=int,
+        default=32,
+        help="maximum precision power allowed for tail-cycle cylinder closure checks",
+    )
+    parser.add_argument(
+        "--tail-cycle-audit-all-cycles",
+        action="store_true",
+        help="classify every scanned tail cycle, while recording high-growth and positive-integer witnesses",
+    )
+    parser.add_argument(
         "--tail-aware-levels",
         type=str,
         default="5:4,6:5,7:6,8:6,10:7",
@@ -359,6 +442,18 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--christoffel-slope-tolerance", type=float, default=0.5)
     parser.add_argument("--constrained-karp-max-imbalance", type=int, default=1)
     parser.add_argument("--constrained-karp-max-period", type=int, default=4)
+    parser.add_argument(
+        "--karp-slope-periods",
+        type=str,
+        default="4,5,6",
+        help="comma-separated automaton period caps for the joint sweep",
+    )
+    parser.add_argument(
+        "--karp-slope-tolerances",
+        type=str,
+        default="0.5",
+        help="comma-separated slope windows for the joint sweep",
+    )
     parser.add_argument("--lift-realizability-power", type=int, default=6)
     parser.add_argument("--lift-realizability-max-valuation", type=int, default=6)
     parser.add_argument("--lift-realizability-max-period", type=int, default=8)
@@ -766,9 +861,39 @@ def build_parser() -> argparse.ArgumentParser:
         help="sweep beta for running-debt Lyapunov candidates on actual orbits",
     )
     parser.add_argument(
+        "--phase-lyapunov-search",
+        action="store_true",
+        help="search phase-aware per-step Lyapunov candidates on actual orbits",
+    )
+    parser.add_argument(
+        "--foster-drift",
+        action="store_true",
+        help="audit Foster-style drift for V(n)=log2(n)+v2(n+1) on sampled windows",
+    )
+    parser.add_argument(
+        "--m-step-foster-drift",
+        action="store_true",
+        help="audit m-step Foster-style drift for V(n)=log2(n)+v2(n+1)",
+    )
+    parser.add_argument(
         "--orbit-renewal-descent",
         action="store_true",
         help="aggregate actual orbits into tail-entry renewal excursions",
+    )
+    parser.add_argument(
+        "--renewal-drift-per-step",
+        action="store_true",
+        help="bootstrap the per-step renewal drift identity on sampled excursions",
+    )
+    parser.add_argument(
+        "--renewal-drift-phase-decomposed",
+        action="store_true",
+        help="bootstrap tail-internal vs post-exit renewal drift phases",
+    )
+    parser.add_argument(
+        "--renewal-drift-phase-decomposed-n0",
+        action="store_true",
+        help="run phase-decomposed renewal drift across n0 windows",
     )
     parser.add_argument(
         "--orbit-renewal-spike-decomposition",
@@ -904,10 +1029,96 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--baker-kappa", type=float, default=13.3)
     parser.add_argument("--convergent-max-denominator", type=int, default=1000)
     parser.add_argument("--orbit-samples", type=int, default=1_000_000)
+    parser.add_argument("--phase-lyapunov-samples", type=int, default=100_000)
+    parser.add_argument("--phase-lyapunov-max-steps-per-orbit", type=int, default=10_000)
+    parser.add_argument(
+        "--phase-lyapunov-alpha-grid",
+        type=str,
+        default="",
+        help="optional comma-separated alpha grid; default is the phase Lyapunov anchor grid",
+    )
+    parser.add_argument(
+        "--phase-lyapunov-beta-grid",
+        type=str,
+        default="",
+        help="optional comma-separated beta grid; default is 0,1,4,8,16,32",
+    )
+    parser.add_argument(
+        "--phase-lyapunov-gamma-diff-grid",
+        type=str,
+        default="",
+        help="optional comma-separated gamma_PE-gamma_R grid",
+    )
+    parser.add_argument(
+        "--phase-lyapunov-output",
+        type=str,
+        default="docs/reports/phase_lyapunov_search.json",
+        help="path for the phase-aware Lyapunov search JSON artifact",
+    )
+    parser.add_argument(
+        "--foster-drift-output",
+        type=str,
+        default="docs/reports/phase_lyapunov_foster_drift.json",
+        help="path for the Foster-drift JSON artifact",
+    )
+    parser.add_argument(
+        "--foster-drift-ranges",
+        type=str,
+        default="100:10000,10000:1000000,1000000:1000000000,1000000000:1000000000000,1000000000000:1000000000000000",
+        help="comma-separated n_min:n_max ranges for --foster-drift",
+    )
+    parser.add_argument(
+        "--foster-drift-residue-powers",
+        type=str,
+        default="2,3,4,5,6",
+        help="comma-separated residue powers for --foster-drift",
+    )
+    parser.add_argument(
+        "--foster-drift-tail-thresholds",
+        type=str,
+        default="0.5,1.0,2.0,4.0,8.0,16.0",
+        help="comma-separated upper-tail thresholds for --foster-drift",
+    )
+    parser.add_argument("--foster-drift-hitting-max-steps", type=int, default=1000)
+    parser.add_argument("--foster-drift-hitting-threshold", type=float, default=1.0)
+    parser.add_argument(
+        "--m-step-foster-drift-output",
+        type=str,
+        default="docs/reports/m_step_foster_drift.json",
+        help="path for the m-step Foster-drift JSON artifact",
+    )
+    parser.add_argument(
+        "--m-step-foster-drift-grid",
+        type=str,
+        default="1,2,4,8,16,32,64",
+        help="comma-separated m values for --m-step-foster-drift",
+    )
+    parser.add_argument("--m-step-foster-epsilon", type=float, default=0.1)
     parser.add_argument("--orbit-range-samples", type=int, default=200_000)
     parser.add_argument("--orbit-seed", type=int, default=0)
+    parser.add_argument("--orbit-start-min", type=int, default=10**6)
+    parser.add_argument("--orbit-start-max", type=int, default=10**9)
     parser.add_argument("--orbit-renewal-histogram-bin-width", type=float, default=0.005)
     parser.add_argument("--renewal-bootstrap-repetitions", type=int, default=500)
+    parser.add_argument("--renewal-drift-bootstrap-resamples", type=int, default=1000)
+    parser.add_argument(
+        "--renewal-drift-output",
+        type=str,
+        default="docs/reports/renewal_drift_per_step.json",
+        help="path for the renewal per-step drift JSON artifact",
+    )
+    parser.add_argument(
+        "--renewal-drift-phase-output",
+        type=str,
+        default="docs/reports/renewal_drift_phase_decomposed.json",
+        help="path for the phase-decomposed renewal drift JSON artifact",
+    )
+    parser.add_argument(
+        "--renewal-drift-phase-n0-output",
+        type=str,
+        default="docs/reports/renewal_drift_phase_decomposed_n0_stability.json",
+        help="path for the phase-decomposed n0-stability JSON artifact",
+    )
     parser.add_argument("--orbit-renewal-tda-points", type=int, default=5000)
     parser.add_argument("--orbit-renewal-tda-null-replicates", type=int, default=8)
     parser.add_argument(
@@ -1193,6 +1404,45 @@ def main(argv: list[str] | None = None) -> None:
                 )
             )
         )
+
+    if args.karp_slope_joint_sweep:
+        from pathlib import Path
+
+        print("\nKarp/slope joint sweep diagnostic:")
+        joint_sweep = karp_slope_joint_sweep_report(
+            levels=_parse_pair_tuple(args.karp_slope_levels),
+            max_valuation=args.jsr_max_valuation,
+            max_imbalance=args.constrained_karp_max_imbalance,
+            automaton_max_periods=_parse_int_tuple(args.karp_slope_periods),
+            slope_tolerances=_parse_float_tuple(args.karp_slope_tolerances),
+            max_cycle_edges=args.christoffel_max_cycle_edges,
+            max_cycles_scanned=args.christoffel_max_cycles_scanned,
+        )
+        print(format_karp_slope_joint_sweep_report(joint_sweep))
+        output_path = Path(args.karp_slope_joint_output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(joint_sweep.to_json() + "\n")
+        print(f"saved={output_path}")
+
+    if args.tail_cycle_realizability:
+        from pathlib import Path
+
+        print("\nTail-cycle realizability audit:")
+        realizability = tail_cycle_realizability_sweep_report(
+            levels=_parse_pair_tuple(args.tail_cycle_realizability_levels),
+            max_valuation=args.jsr_max_valuation,
+            max_cycle_edges=args.christoffel_max_cycle_edges,
+            max_cycles_scanned=args.tail_cycle_max_cycles_scanned,
+            factor_threshold=args.tail_cycle_factor_threshold,
+            slope_tolerance=args.christoffel_slope_tolerance,
+            lift_max_scan_power=args.tail_cycle_lift_max_scan_power,
+            audit_all_cycles=args.tail_cycle_audit_all_cycles,
+        )
+        print(format_tail_cycle_realizability_report(realizability))
+        output_path = Path(args.tail_cycle_realizability_output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(realizability.to_json() + "\n")
+        print(f"saved={output_path}")
 
     if args.all_things:
         print("\nQuotient-cycle lift realizability:")
@@ -1644,16 +1894,144 @@ def main(argv: list[str] | None = None) -> None:
             )
         )
 
+    if args.phase_lyapunov_search:
+        from pathlib import Path
+
+        alpha_grid = (
+            _parse_float_tuple(args.phase_lyapunov_alpha_grid)
+            if args.phase_lyapunov_alpha_grid
+            else DEFAULT_ALPHA_GRID
+        )
+        beta_grid = (
+            _parse_float_tuple(args.phase_lyapunov_beta_grid)
+            if args.phase_lyapunov_beta_grid
+            else DEFAULT_BETA_GRID
+        )
+        gamma_diff_grid = (
+            _parse_float_tuple(args.phase_lyapunov_gamma_diff_grid)
+            if args.phase_lyapunov_gamma_diff_grid
+            else DEFAULT_GAMMA_DIFF_GRID
+        )
+        print("\nPhase-aware actual-orbit Lyapunov search:")
+        phase_lyapunov = phase_lyapunov_search_report(
+            sample_count=args.phase_lyapunov_samples,
+            start_min=args.orbit_start_min,
+            start_max=args.orbit_start_max,
+            random_seed=args.orbit_seed,
+            max_steps_per_orbit=args.phase_lyapunov_max_steps_per_orbit,
+            alpha_grid=alpha_grid,
+            beta_grid=beta_grid,
+            gamma_diff_grid=gamma_diff_grid,
+        )
+        print(format_phase_lyapunov_search_report(phase_lyapunov))
+        output_path = Path(args.phase_lyapunov_output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(phase_lyapunov.to_json() + "\n")
+        print(f"saved={output_path}")
+
+    if args.foster_drift:
+        from pathlib import Path
+        import json
+
+        print("\nPhase-aware Foster-drift diagnostic:")
+        foster = foster_drift_report(
+            ranges=_parse_pair_tuple(args.foster_drift_ranges),
+            sample_count_per_range=args.orbit_range_samples,
+            residue_powers=_parse_int_tuple(args.foster_drift_residue_powers),
+            tail_thresholds=_parse_float_tuple(args.foster_drift_tail_thresholds),
+            hitting_time_max_steps=args.foster_drift_hitting_max_steps,
+            hitting_time_threshold=args.foster_drift_hitting_threshold,
+            bootstrap_resamples=args.renewal_drift_bootstrap_resamples,
+            random_seed=args.orbit_seed,
+        )
+        print(format_foster_drift_report(foster))
+        output_path = Path(args.foster_drift_output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(json.dumps(foster, indent=2, sort_keys=True) + "\n")
+        print(f"saved={output_path}")
+
+    if args.m_step_foster_drift:
+        from pathlib import Path
+        import json
+
+        print("\nPhase-aware m-step Foster-drift diagnostic:")
+        m_step_foster = m_step_foster_drift_report(
+            ranges=_parse_pair_tuple(args.foster_drift_ranges),
+            sample_count_per_range=args.orbit_range_samples,
+            residue_powers=_parse_int_tuple(args.foster_drift_residue_powers),
+            m_steps_grid=_parse_int_tuple(args.m_step_foster_drift_grid),
+            foster_epsilon=args.m_step_foster_epsilon,
+            random_seed=args.orbit_seed,
+        )
+        print(format_m_step_foster_drift_report(m_step_foster))
+        output_path = Path(args.m_step_foster_drift_output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(
+            json.dumps(m_step_foster, indent=2, sort_keys=True) + "\n"
+        )
+        print(f"saved={output_path}")
+
     if args.orbit_renewal_descent:
         print("\nActual-orbit renewal descent:")
         print(
             format_renewal_descent_report(
                 orbit_renewal_descent_report(
                     sample_count=args.orbit_samples,
+                    start_min=args.orbit_start_min,
+                    start_max=args.orbit_start_max,
                     random_seed=args.orbit_seed,
                 )
             )
         )
+
+    if args.renewal_drift_per_step:
+        from pathlib import Path
+
+        print("\nRenewal per-step drift identity audit:")
+        drift_report = renewal_drift_per_step_report(
+            sample_count=args.orbit_samples,
+            start_min=args.orbit_start_min,
+            start_max=args.orbit_start_max,
+            random_seed=args.orbit_seed,
+            bootstrap_resamples=args.renewal_drift_bootstrap_resamples,
+        )
+        print(format_renewal_drift_per_step_report(drift_report))
+        output_path = Path(args.renewal_drift_output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(drift_report.to_json() + "\n")
+        print(f"saved={output_path}")
+
+    if args.renewal_drift_phase_decomposed:
+        from pathlib import Path
+
+        print("\nPhase-decomposed renewal drift audit:")
+        phase_report = renewal_drift_phase_decomposed_report(
+            sample_count=args.orbit_samples,
+            start_min=args.orbit_start_min,
+            start_max=args.orbit_start_max,
+            random_seed=args.orbit_seed,
+            bootstrap_resamples=args.renewal_drift_bootstrap_resamples,
+        )
+        print(format_renewal_drift_phase_decomposed_report(phase_report))
+        output_path = Path(args.renewal_drift_phase_output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(phase_report.to_json() + "\n")
+        print(f"saved={output_path}")
+
+    if args.renewal_drift_phase_decomposed_n0:
+        from pathlib import Path
+
+        print("\nPhase-decomposed renewal drift n0 stability:")
+        phase_n0 = renewal_drift_phase_decomposed_n0_stability_report(
+            sample_count_per_range=args.orbit_range_samples,
+            random_seed=args.orbit_seed,
+            bootstrap_resamples=args.renewal_drift_bootstrap_resamples,
+        )
+        print(format_renewal_drift_phase_decomposed_n0_stability_report(phase_n0))
+        output_path = Path(args.renewal_drift_phase_n0_output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(phase_n0.to_json() + "\n")
+        print(f"saved={output_path}")
 
     if args.orbit_renewal_spike_decomposition:
         print("\nActual-orbit renewal spike decomposition:")
@@ -1661,6 +2039,8 @@ def main(argv: list[str] | None = None) -> None:
             format_renewal_spike_decomposition_report(
                 orbit_renewal_spike_decomposition_report(
                     sample_count=args.orbit_samples,
+                    start_min=args.orbit_start_min,
+                    start_max=args.orbit_start_max,
                     random_seed=args.orbit_seed,
                     histogram_bin_width=args.orbit_renewal_histogram_bin_width,
                 )

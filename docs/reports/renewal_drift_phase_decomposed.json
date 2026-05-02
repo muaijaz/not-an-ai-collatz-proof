@@ -1,0 +1,71 @@
+{
+  "bootstrap_ci_method": "influence_function_normal_approximation_to_excursion_bootstrap",
+  "bootstrap_resamples": 1000,
+  "caveat": "Empirical phase-decomposed diagnostic at one start window only. It does not prove a per-step identity for all n. The tail-internal/post-exit phase classification is a finite diagnostic based on the sampled pre-step odd integers.",
+  "completed_orbits": 1000000,
+  "mean_drift_per_step_post_exit": {
+    "ci_high": -1.4007959424165812,
+    "ci_low": -1.4017007942401105,
+    "estimate": -1.4012385552677196
+  },
+  "mean_drift_per_step_tail": {
+    "ci_high": 0.587071427378508,
+    "ci_low": 0.5870662613339022,
+    "estimate": 0.5870689745643517
+  },
+  "mean_drift_per_step_total": {
+    "ci_high": -0.40666106900186333,
+    "ci_low": -0.4073106770600901,
+    "estimate": -0.4069756235520786
+  },
+  "mean_valuation_per_step_post_exit": {
+    "ci_high": 2.9908631814423243,
+    "ci_low": 2.9899838354312016,
+    "estimate": 2.9904064926532725
+  },
+  "mean_valuation_per_step_tail": {
+    "ci_high": 1.0,
+    "ci_low": 1.0,
+    "estimate": 1.0
+  },
+  "mean_valuation_per_step_total": {
+    "ci_high": 1.995425303105537,
+    "ci_low": 1.9947824240781553,
+    "estimate": 1.995093964280808
+  },
+  "post_exit_drift_consistent": false,
+  "post_exit_drift_target": -0.4150374992788438,
+  "post_exit_steps": 34966044,
+  "post_exit_valuation_consistent": false,
+  "post_exit_valuation_target": 2.0,
+  "random_seed": 0,
+  "reconciliation_residual": {
+    "ci_high": -3.958500194300996e-12,
+    "ci_low": -3.958500194300996e-12,
+    "estimate": -3.958500194300996e-12
+  },
+  "sample_count": 1000000,
+  "start_max": 1000000000,
+  "start_min": 1000000,
+  "status": "empirical_renewal_drift_phase_decomposed_neither_post_exit_consistent",
+  "tail_drift_consistent": false,
+  "tail_drift_target": 0.5849625007211562,
+  "tail_internal_steps": 34973724,
+  "tail_valuation_exact_check": true,
+  "total_accelerated_steps": 69939768,
+  "total_excursion_steps": 69939768,
+  "total_excursions": 35473285,
+  "truncated_orbits": 0,
+  "type": "renewal_drift_phase_decomposed",
+  "verdict": "neither_post_exit_consistent",
+  "w_post_exit": {
+    "ci_high": 0.5000548878302201,
+    "ci_low": 0.49982927821140255,
+    "estimate": 0.499945095614272
+  },
+  "w_tail": {
+    "ci_high": 0.5001701585077887,
+    "ci_low": 0.4999347739934743,
+    "estimate": 0.500054904385728
+  }
+}

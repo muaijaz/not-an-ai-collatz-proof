@@ -1,0 +1,398 @@
+{
+  "V5_baseline": {
+    "params": {
+      "alpha": 0.0,
+      "beta": 16.0,
+      "gamma_PE": 0.0,
+      "gamma_R": 0.0,
+      "gamma_diff": 0.0
+    },
+    "phases": {
+      "post_exit": {
+        "conditional_mean_positive_delta": 21.066703601515165,
+        "fraction_nondecrease": 1.0,
+        "fraction_positive": 1.0,
+        "max_delta": 291.2255625517218,
+        "mean_delta": 21.066703601515165,
+        "nondecrease_steps": 3499845,
+        "positive_steps": 3499845,
+        "total_steps": 3499845
+      },
+      "tail_internal": {
+        "conditional_mean_positive_delta": null,
+        "fraction_nondecrease": 0.0,
+        "fraction_positive": 0.0,
+        "max_delta": -8.707323314958805,
+        "mean_delta": -8.772330915059873,
+        "nondecrease_steps": 0,
+        "positive_steps": 0,
+        "total_steps": 3497976
+      }
+    },
+    "total": {
+      "conditional_mean_positive_delta": 21.066703601515165,
+      "fraction_nondecrease": 0.5001335415695829,
+      "fraction_positive": 0.5001335415695829,
+      "max_delta": 291.2255625517218,
+      "mean_delta": 6.151171094731827,
+      "nondecrease_steps": 3499845,
+      "positive_steps": 3499845,
+      "total_steps": 6997821
+    }
+  },
+  "V5_baseline_nondecrease_fraction": 0.5001335415695829,
+  "alpha_grid": [
+    0.0,
+    0.5849625007211562,
+    1.1699250014423124,
+    0.5,
+    1.0
+  ],
+  "anchor_candidate_V0": {
+    "params": {
+      "alpha": 0.5849625007211562,
+      "beta": 0.0,
+      "gamma_PE": 0.0,
+      "gamma_R": 0.0,
+      "gamma_diff": 0.0
+    },
+    "phases": {
+      "post_exit": {
+        "conditional_mean_positive_delta": 0.8022185976316288,
+        "fraction_nondecrease": 0.27449501335059123,
+        "fraction_positive": 0.27449501335059123,
+        "max_delta": 11.284212516161928,
+        "mean_delta": -0.8322032797695155,
+        "nondecrease_steps": 960690,
+        "positive_steps": 960690,
+        "total_steps": 3499845
+      },
+      "tail_internal": {
+        "conditional_mean_positive_delta": 0.00210659575746755,
+        "fraction_nondecrease": 1.0,
+        "fraction_positive": 1.0,
+        "max_delta": 0.06711419585853692,
+        "mean_delta": 0.00210659575746755,
+        "nondecrease_steps": 3497976,
+        "positive_steps": 3497976,
+        "total_steps": 3497976
+      }
+    },
+    "total": {
+      "conditional_mean_positive_delta": 0.1745033617588877,
+      "fraction_nondecrease": 0.6371506216006383,
+      "fraction_positive": 0.6371506216006383,
+      "max_delta": 11.284212516161928,
+      "mean_delta": -0.41515975705632036,
+      "nondecrease_steps": 4458666,
+      "positive_steps": 4458666,
+      "total_steps": 6997821
+    }
+  },
+  "best_candidate_nondecrease_fraction": 0.1655372436648494,
+  "best_grid_candidate": {
+    "params": {
+      "alpha": 1.0,
+      "beta": 0.0,
+      "gamma_PE": 0.0,
+      "gamma_R": 0.0,
+      "gamma_diff": 0.0
+    },
+    "phases": {
+      "post_exit": {
+        "conditional_mean_positive_delta": 1.5889511530125207,
+        "fraction_nondecrease": 0.33098608652668904,
+        "fraction_positive": 0.33098608652668904,
+        "max_delta": 19.584962501738804,
+        "mean_delta": -0.42937055794532447,
+        "nondecrease_steps": 1158400,
+        "positive_steps": 1158400,
+        "total_steps": 3499845
+      },
+      "tail_internal": {
+        "conditional_mean_positive_delta": null,
+        "fraction_nondecrease": 0.0,
+        "fraction_positive": 0.0,
+        "max_delta": -0.34792330342030686,
+        "mean_delta": -0.41293090352137624,
+        "nondecrease_steps": 0,
+        "positive_steps": 0,
+        "total_steps": 3497976
+      }
+    },
+    "total": {
+      "conditional_mean_positive_delta": 1.5889511530125207,
+      "fraction_nondecrease": 0.1655372436648494,
+      "fraction_positive": 0.1655372436648494,
+      "max_delta": 19.584962501738804,
+      "mean_delta": -0.4211529261106055,
+      "nondecrease_steps": 1158400,
+      "positive_steps": 1158400,
+      "total_steps": 6997821
+    }
+  },
+  "beta_grid": [
+    0.0,
+    1.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0
+  ],
+  "caveat": "Empirical search on a finite sampled orbit set and a modest parameter grid. A zero non-decrease fraction here would still require larger confirmation runs before any structural claim.",
+  "completed_orbits": 100000,
+  "gamma_diff_grid": [
+    -1.0,
+    -0.5,
+    0.0,
+    0.5,
+    1.0
+  ],
+  "gamma_parametrization": "gamma_R fixed to 0; gamma_PE=gamma_diff, since adding a common constant to gamma_R and gamma_PE is degenerate with V's additive constant.",
+  "grid_candidates_evaluated": 150,
+  "improvement_over_baseline": 0.3345962979047335,
+  "max_steps_per_orbit": 10000,
+  "random_seed": 0,
+  "running_debt_convention": "V5 reset_at_source convention: D_running is reset before steps whose source has v2(n+1)>=2, and each step contributes a-log2(3) to the next state.",
+  "sample_count": 100000,
+  "sample_orbits": [
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 0,
+      "post_exit_steps": 28,
+      "start": 907691059,
+      "steps": 53,
+      "tail_internal_steps": 25
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 1,
+      "post_exit_steps": 36,
+      "start": 414653999,
+      "steps": 72,
+      "tail_internal_steps": 36
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 2,
+      "post_exit_steps": 39,
+      "start": 814847339,
+      "steps": 72,
+      "tail_internal_steps": 33
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 3,
+      "post_exit_steps": 47,
+      "start": 956892129,
+      "steps": 96,
+      "tail_internal_steps": 49
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 4,
+      "post_exit_steps": 22,
+      "start": 452585301,
+      "steps": 41,
+      "tail_internal_steps": 19
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 5,
+      "post_exit_steps": 19,
+      "start": 44469773,
+      "steps": 35,
+      "tail_internal_steps": 16
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 6,
+      "post_exit_steps": 32,
+      "start": 279009743,
+      "steps": 61,
+      "tail_internal_steps": 29
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 7,
+      "post_exit_steps": 44,
+      "start": 549977049,
+      "steps": 90,
+      "tail_internal_steps": 46
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 8,
+      "post_exit_steps": 42,
+      "start": 522760889,
+      "steps": 80,
+      "tail_internal_steps": 38
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 9,
+      "post_exit_steps": 33,
+      "start": 435794719,
+      "steps": 60,
+      "tail_internal_steps": 27
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 10,
+      "post_exit_steps": 30,
+      "start": 986946605,
+      "steps": 63,
+      "tail_internal_steps": 33
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 11,
+      "post_exit_steps": 26,
+      "start": 842597327,
+      "steps": 48,
+      "tail_internal_steps": 22
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 12,
+      "post_exit_steps": 43,
+      "start": 892047769,
+      "steps": 89,
+      "tail_internal_steps": 46
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 13,
+      "post_exit_steps": 65,
+      "start": 326679555,
+      "steps": 141,
+      "tail_internal_steps": 76
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 14,
+      "post_exit_steps": 45,
+      "start": 512742081,
+      "steps": 97,
+      "tail_internal_steps": 52
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 15,
+      "post_exit_steps": 22,
+      "start": 385452587,
+      "steps": 38,
+      "tail_internal_steps": 16
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 16,
+      "post_exit_steps": 50,
+      "start": 627401695,
+      "steps": 112,
+      "tail_internal_steps": 62
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 17,
+      "post_exit_steps": 38,
+      "start": 958413343,
+      "steps": 63,
+      "tail_internal_steps": 25
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 18,
+      "post_exit_steps": 23,
+      "start": 976078789,
+      "steps": 41,
+      "tail_internal_steps": 18
+    },
+    {
+      "completed": true,
+      "ended_at": 1,
+      "index": 19,
+      "post_exit_steps": 32,
+      "start": 235551095,
+      "steps": 70,
+      "tail_internal_steps": 38
+    }
+  ],
+  "start_max": 1000000000,
+  "start_min": 1000000,
+  "status": "phase_lyapunov_search_grid_improves_v5_baseline",
+  "total_accelerated_steps": 6997821,
+  "truncated_orbits": 0,
+  "type": "phase_lyapunov_search",
+  "worst_positive_events": [
+    {
+      "R": 1,
+      "R_next": 21,
+      "delta_V": 19.584962501738804,
+      "n": 472558249,
+      "phase": "post_exit",
+      "target": 354418687,
+      "target_phase": "tail_internal",
+      "valuation": 2
+    },
+    {
+      "R": 1,
+      "R_next": 21,
+      "delta_V": 18.584962501540122,
+      "n": 587202557,
+      "phase": "post_exit",
+      "target": 220200959,
+      "target_phase": "tail_internal",
+      "valuation": 3
+    },
+    {
+      "R": 1,
+      "R_next": 19,
+      "delta_V": 17.584962536928035,
+      "n": 13281961,
+      "phase": "post_exit",
+      "target": 9961471,
+      "target_phase": "tail_internal",
+      "valuation": 2
+    },
+    {
+      "R": 1,
+      "R_next": 19,
+      "delta_V": 17.584962501130395,
+      "n": 1175104169,
+      "phase": "post_exit",
+      "target": 881328127,
+      "target_phase": "tail_internal",
+      "valuation": 2
+    },
+    {
+      "R": 1,
+      "R_next": 19,
+      "delta_V": 16.584962615376334,
+      "n": 4194301,
+      "phase": "post_exit",
+      "target": 1572863,
+      "target_phase": "tail_internal",
+      "valuation": 3
+    }
+  ]
+}

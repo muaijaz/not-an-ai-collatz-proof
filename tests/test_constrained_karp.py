@@ -2,8 +2,10 @@ from collatz_exp.constrained_karp import (
     BalancedWordAutomaton,
     constrained_karp_jsr,
     constrained_karp_jsr_report,
+    karp_slope_joint_sweep_report,
     lte_closed_tail_graph,
     product_graph,
+    tail_cycle_realizability_report,
 )
 
 
@@ -48,3 +50,57 @@ def test_constrained_karp_jsr_returns_rational_when_visible():
     result = constrained_karp_jsr(graph)
     assert result.constrained_factor is not None
     assert result.exact_rational_factor is not None
+
+
+def test_karp_slope_joint_sweep_records_every_survivor():
+    report = karp_slope_joint_sweep_report(
+        levels=((5, 4),),
+        max_valuation=8,
+        automaton_max_periods=(2,),
+        slope_tolerances=(0.5,),
+        max_cycle_edges=4,
+        max_cycles_scanned=10_000,
+    )
+    level = report.levels[0]
+    assert report.type == "karp_slope_joint_sweep"
+    assert level.survivor_count == len(level.survivors)
+    assert level.survivor_count >= 1
+    assert all(survivor.edge_factor is not None for survivor in level.survivors)
+    assert not level.non_elementary_factor_ge_one
+
+
+def test_tail_cycle_realizability_audits_high_growth_cycles():
+    report = tail_cycle_realizability_report(
+        5,
+        4,
+        max_cycle_edges=10,
+        max_cycles_scanned=10_000,
+        factor_threshold=1.0,
+        max_valuation=12,
+    )
+    level = report.levels[0]
+    assert report.type == "tail_cycle_realizability"
+    assert report.obstruction is None
+    assert level.high_growth_cycles == len(level.cycles)
+    assert level.classification_counts["noninteger_2adic_only"] >= 1
+    assert all(cycle.edge_factor >= 1.0 for cycle in level.cycles)
+    assert all(cycle.cycle_value is None for cycle in level.cycles)
+
+
+def test_tail_cycle_realizability_all_cycle_mode_reports_realizable_karp():
+    report = tail_cycle_realizability_report(
+        5,
+        4,
+        max_cycle_edges=10,
+        max_cycles_scanned=10_000,
+        factor_threshold=1.0,
+        max_valuation=12,
+        lift_max_scan_power=32,
+        audit_all_cycles=True,
+    )
+    level = report.levels[0]
+    assert report.realizable_karp_factor == 0.75
+    assert level.realizable_karp_factor == 0.75
+    assert level.realizable_karp_cycle is not None
+    assert level.realizable_karp_cycle.valuation_word == (2,)
+    assert level.closure_skipped_count == 0
