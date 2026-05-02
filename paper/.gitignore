@@ -1,0 +1,14 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.run.xml
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+main-blx.bib
+
+# arXiv tarball build output (regenerable via `make arxiv`)
+arxiv/

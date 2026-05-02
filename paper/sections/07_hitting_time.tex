@@ -1,0 +1,16 @@
+\section{Hitting-Time Diagnostic Already Present in the Foster Audit}
+
+The one-step Foster artifact also records a hitting-time diagnostic for
+\[
+  T_{\mathrm{descent}}(n)=\min\{m:V(\Syr^m(n))\leq V(n)-1\}
+\]
+with threshold \(1.0\) and maximum steps \(1000\).  In the deepest saved window
+\([10^{12},10^{15}]\), the hitting-time sample has finite hitting count
+\(50000\), truncation count \(0\), mean \(5.26878\) with CI
+\([5.21391,5.327361999999999]\), median \(3.0\), and \(0.99\)-quantile
+\(33.0\) with CI \([32.0,34.0]\)
+\(\artifact{phase_lyapunov_foster_drift.json}{phase\_lyapunov\_foster\_drift.json}\).
+
+This hitting-time table is not a uniform pointwise bound.  It is a sampled
+finite-window diagnostic attached to the Foster audit.  It motivates the open
+pointwise-descent question, but does not answer it.

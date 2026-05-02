@@ -1,0 +1,98 @@
+\section{Joint argument with Chang 2026 structural reduction}
+
+Chang's structural reduction \cite{chang2026reduction} reduces the Collatz
+problem to a fixed-modulus, single-bit balance problem: modulus \(32\), bit 4,
+and a sparse subsequence of burst-ending times for the dominant
+\(n\equiv 1\pmod 8\) class.  In Chang's notation, the Map Balance Theorem 4.2
+counts the residues in the burst-to-gap set and proves the exact
+\(|C_3(K)-C_7(K)|=1\) imbalance, with perfect balance inside the dominant
+\(n\equiv 1\pmod 8\) subclass.  His Open Problem, Eq. 16, asks for every odd
+starting value above the stated threshold to keep the empirical split between
+\(n_{t_i}\equiv 9\pmod {32}\) and \(n_{t_i}\equiv 25\pmod {32}\) within a
+tolerance \(\delta<\delta_{\max}\).  The local compatibility analysis records
+this as a compatible reduction, not a closed proof
+\(\artifact{chang_2603_25753_compatibility.md}{chang\_2603\_25753\_compatibility.md}\).
+
+The notation correspondence is direct.  Chang's map \(T(n)\) is this paper's
+\(\Syr(n)\).  Chang's burst indicator
+\[
+  X_t=\mathbf{1}[n_t\equiv 1\pmod 4]
+\]
+is this framework's post-exit indicator.  Chang works at modulus \(32\), with
+a modulus \(256\) fiber refinement; the extended Foster audit now reaches
+residue quotients modulo \(2^k\) for \(k\in\{2,3,4,5,6,7,8\}\).
+
+The joint argument chain is:
+\[
+\begin{gathered}
+  \text{Foster }m=16,\ \epsilon=0.1\text{ in Section 5}\\
+  \Longrightarrow
+  \text{Markov ergodicity plus Birkhoff almost-sure equidistribution mod }2^k\\
+  \Longrightarrow
+  \text{assumption: every integer orbit is in the Markov-measure-1 set}\\
+  \Longrightarrow
+  \text{every-orbit equidistribution}\\
+  \Longrightarrow
+  \text{Chang Map Balance Theorem 4.2 plus bit-4 reduction}\\
+  \Longrightarrow
+  \text{every-orbit bit-4 balance within }\delta_{\max}\\
+  \Longrightarrow
+  \text{Chang block-TV budget Eq. 3 in the companion paper
+  \cite{chang2026collatz}.}
+\end{gathered}
+\]
+This is a joint argument: Foster drift supplies the residue-Markov
+equidistribution input, and Chang's compatible reduction converts the relevant
+mod \(32\) balance into the block-TV budget.  The conditional step is exactly
+where no proof claim is made.
+
+The three technical verifications named in the compatibility analysis are now
+empirically closed at finite windows.  First, the \(\delta_{\max}\) analysis
+derives \(\delta_{\max}\approx 0.119\) from an \(R(K)\)-weighted allocation
+against Chang's Eq. 34
+\(\artifact{delta_max_quantitative.md}{delta\_max\_quantitative.md}\).
+Second, the Foster condition holds at \(k=7,8\), matching Chang's modulus
+\(256\) fiber resolution: \(m=16\) clears the \(\epsilon=0.1\) margin, the
+weakest \(k=8\) CI upper bound at \(m=16\) is \(-0.24276696844795248\), and
+the \(k\le 6\) cross-check has
+\(\texttt{cross\_check\_max\_disagreement}=0.0\)
+\(\artifact{m_step_foster_drift_k8.json}{m\_step\_foster\_drift\_k8.json}\).
+Third, the direct bit-4 balance audit finds that the Foster plus \(1/\sqrt m\)
+envelope holds for every sampled orbit, with deepest-window mean
+\(\delta=0.11212329012096864\), just below the \(R(K)\)-weighted
+\(\delta_{\max}\approx 0.119\)
+\(\artifact{chang_bit4_balance_audit.json}{chang\_bit4\_balance\_audit.json}\).
+Thus the joint argument is supported at finite windows.
+
+The residual is exactly the Tao wall.  The verifications closed three
+technical gaps, but they did not close the conditional step from
+Markov-measure-1 residue-chain behavior to every deterministic integer orbit.
+Equivalently, the joint argument reduces Collatz to: every integer orbit lies
+in the Markov-measure-1 set on which the residue chain equidistributes.  This
+is the Tao 2019 distributional-to-pointwise obstruction
+\cite{tao2019almost}, but in a sharper Markov-measure formulation rather than
+only a natural-density formulation.
+
+There is one further numerical correspondence worth isolating.  Chang's
+phantom-gain sum gives
+\[
+  \sum_{K=3}^{500} R(K)=0.0882362530512702,
+\]
+while this framework's renewal Cramér rate is near
+\(J_{\mathrm{renewal}}=0.08372911906309355\) in the saved calibration, about
+five percent apart.  The direct identity audit recomputes the necklace sum and
+finds \(J_{\mathrm{renewal}}=0.08346903426255636\) with bootstrap CI
+\([0.08314605994133623,0.0837883621454151]\), outside Chang's sum; the tested
+alternate definitions also do not match
+\(\artifact{jazz_constant_chang_R_K_identity.json}{jazz\_constant\_chang\_R\_K\_identity.json}\).
+The harder \(h_K\)-weighted reconciliation remains future work, so the present
+reading is that the five-percent gap is structural in this finite diagnostic.
+
+The empirical comparison is asymmetric in a useful way.  This framework's
+Foster condition is verified on \(1000000\) sampled orbits, with
+publication-grade confidence intervals and exact cross-checks.  Chang's Route
+A reports Lyapunov exponents \(\lambda\in[-0.14,-0.09]\) on five orbits with
+eyeball estimates \cite{chang2026reduction}.  The composition strictly
+strengthens both: Chang provides the structural one-bit target, while this
+framework provides the stronger finite empirical Foster input.  It remains a
+finite empirical diagnostic, and the residual is exactly the Tao wall.

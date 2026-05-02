@@ -1,0 +1,31 @@
+\section{Open Problems}
+
+The following theorem-shaped problems reproduce the list in
+\doclink{PROJECT_JOURNEY.md}{PROJECT\_JOURNEY.md}, Section 12.
+
+\begin{enumerate}
+\item Markov/Lyapunov contraction on the LTE-closed operator.  The current
+target should give \(\Lambda\approx\log(3/4)\).
+\item Christoffel-word integrality filter on JSR.  This is the bridge to
+Hercher's parity-vector framework, with expected outcome filtered JSR \(<1\).
+\item Profinite continuity from finite quotients to the limit operator.
+\item Lifting PECM Lyapunov to a per-orbit Lyapunov.  This is V5's gap.
+\item Symbolic interpretation of \(J_{\mathrm{renewal}}\).  Does it have a
+closed form via an integral representation in the style of Khinchin?
+\item Phase-aware per-orbit Lyapunov.  The residue-Markov m-step Foster
+question is empirically closed on the tested grid for
+\(V(n)=\log_2(n)+\vTwo(n+1)\): \(m=16\) gives residue-uniform negative drift
+with margin \(\epsilon=0.1\) across the tested windows and residue powers.  The
+joint argument with Chang's 2026 structural reduction
+\cite{chang2026reduction} sharpens the remaining theorem-shaped problem: the
+upgrade from residue-Markov geometric ergodicity to deterministic per-orbit
+descent becomes the assertion that every integer orbit lies in the
+Markov-measure-1 equidistribution set.  The residual is exactly the Tao wall,
+but in this sharper Markov-measure-1 formulation rather than only a
+natural-density formulation \cite{tao2019almost}.
+\end{enumerate}
+
+In particular, the residue-Markov-to-deterministic upgrade is identical to
+Tao 2019's distributional-to-pointwise problem in the sense used by the project
+notes: both name the missing bridge from ensemble, quotient, or almost-all
+behavior to every individual positive integer.

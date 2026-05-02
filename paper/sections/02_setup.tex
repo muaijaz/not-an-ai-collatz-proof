@@ -1,0 +1,39 @@
+\section{Finite Setup and Artifact Discipline}
+
+Odd integers in a tail are represented as
+\[
+  n = 2^R u - 1,
+\]
+with state coordinate \((R,u)\) and bounded unit precision.  The LTE closure
+compresses deeper-tail overflow back to the tracked maximum tail depth by
+following the forced valuation-one run.  At the largest saved LTE-closed level
+reported in the note, \((q,R_{\max})=(10,7)\) has \(3584\) states, \(8704\)
+edges, and \(44\) closed overflow edges
+\(\artifact{tail_aware_lte_closed_projective_jsr.json}{tail\_aware\_lte\_closed\_projective\_jsr.json}\).
+
+The finite graph still contains abstract high-growth switching.  The saved
+worst-case switching value at that level is JSR factor
+\[
+  1.2305030340113887,
+\]
+with max cycle mean \(0.29924821500679044\) in \(\log_2\) units
+\(\artifact{tail_aware_lte_closed_projective_jsr.json}{tail\_aware\_lte\_closed\_projective\_jsr.json}\).
+In contrast, the lift-count Markov model on the same level has one recurrent
+component with \(1113\) states and average \(\log_2\) growth
+\[
+  -0.4118668182695867,
+\]
+or typical factor \(0.7516501240662575\) per accelerated step
+\(\artifact{tail_aware_markov_lyapunov.json}{tail\_aware\_markov\_lyapunov.json}\).
+
+This worst-versus-typical split is the reason for the audit discipline.  The
+finite operator data are not read as a proof object.  They are paired with
+cycle-realizability, renewal, and residue-drift diagnostics.
+
+\begin{definition}
+For an odd \(n\), write \(R(n)=\vTwo(n+1)\).  The phase-aware Lyapunov candidate
+used below is
+\[
+  V(n)=\log_2(n)+R(n).
+\]
+\end{definition}

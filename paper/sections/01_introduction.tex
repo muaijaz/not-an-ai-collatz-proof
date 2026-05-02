@@ -1,0 +1,48 @@
+\section{Introduction}
+
+This paper records the public version of a closed audit chain: finite tail
+graphs, cycle realizability, phase-decomposed renewal drift, and
+Foster-Lyapunov residue diagnostics.  It is in the genre of computational
+mathematics and experimental mathematics.  It makes no claim of proving the
+Collatz conjecture, no descent theorem, and no theorem about deterministic
+per-orbit descent.
+
+The object is the accelerated odd Collatz map
+\[
+  \Syr(n)=\frac{3n+1}{2^{\vTwo(3n+1)}} ,
+\]
+applied to odd positive integers.  The project began as a certificate-search
+framework and ended as a reproducible finite diagnostic framework.  The audit
+history in \doclink{PROJECT_JOURNEY.md}{PROJECT\_JOURNEY.md} records several
+demoted claims: a per-step running-debt Lyapunov ansatz failed at roughly
+50 percent non-decrease, a structural Diophantine exclusion was a resolution
+artifact, and an early closed-form reading of the renewal constant was rejected.
+
+The current finite picture is narrower.  On tested LTE-closed tail graphs,
+bounded integer-realizable simple cycles are filtered down to the elementary
+\([2]\) cycle, whose factor is \(3/4\).  Independently, the phase-decomposed
+renewal drift audit finds the same value as a mean-step target after separating
+tail-internal and post-exit phases.  Finally, the Foster audit finds that
+\[
+  V(n)=\log_2(n)+\vTwo(n+1)
+\]
+does not give one-step residue-uniform negativity, but does give an \(m\)-step
+finite residue diagnostic at \(m=16\) on the tested windows.
+
+There are now two relevant Chang 2026 papers.  The human-LLM collaboration
+paper \cite{chang2026collatz} is a methodological and structural companion,
+while the later structural reduction \cite{chang2026reduction} reduces the
+Collatz question to a fixed-modulus, one-bit orbit-mixing problem.  The
+compatibility analysis in
+\artifact{chang_2603_25753_compatibility.md}{chang\_2603\_25753\_compatibility.md}
+reads the two efforts as addressing the same distributional-to-pointwise wall
+from complementary angles: Chang isolates a one-bit balance bottleneck, and
+this framework supplies an \(m=16\) Foster residue diagnostic that can be
+composed with that reduction as a joint argument.
+
+\begin{caveat}
+All quantitative statements below are tied to saved JSON artifacts.  The
+language ``finite empirical diagnostic'' is intentional: the computations are
+finite, sampled or bounded, and do not imply a global statement for all
+positive integers.
+\end{caveat}

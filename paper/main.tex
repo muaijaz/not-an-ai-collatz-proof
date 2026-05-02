@@ -1,0 +1,58 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=bibtex,style=alphabetic,maxbibnames=10]{biblatex}
+
+\addbibresource{references.bib}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{caveat}[theorem]{Caveat}
+
+\newcommand{\Syr}{S}
+\newcommand{\vTwo}{v_2}
+\newcommand{\artifact}[2]{\mbox{\href{https://github.com/muaijaz/not-an-ai-collatz-proof/blob/main/docs/reports/#1}{\texttt{docs/reports/#2}}}}
+\newcommand{\doclink}[2]{\mbox{\href{https://github.com/muaijaz/not-an-ai-collatz-proof/blob/main/docs/#1}{\texttt{docs/#2}}}}
+
+\title{An Empirical Bridge from Realizable Karp Factor to m-Step Foster Drift on Residue Quotients of the Collatz Map}
+\author{Mohammad Aijaz}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_setup}
+\input{sections/03_realizable_karp}
+\input{sections/04_renewal_drift}
+\input{sections/05_foster_lyapunov}
+\input{sections/06_chang_joint_argument}
+\input{sections/07_hitting_time}
+\input{sections/08_open_problems}
+\input{sections/09_reproducibility}
+
+\section*{Acknowledgments}
+This draft was prepared from a documented audit chain, with human direction by
+Mohammad Aijaz and iterative assistance from AI systems used for coding,
+checking, and exposition. The role of the AI assistance was Vibe-Math-grade
+exploration and drafting support, not independent mathematical certification.
+
+\nocite{mori2024operator,hercher2022cycles,paparella2024matricial}
+\printbibliography
+
+\end{document}

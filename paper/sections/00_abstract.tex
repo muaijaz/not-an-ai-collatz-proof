@@ -1,0 +1,25 @@
+We report a finite empirical diagnostic for the accelerated odd Collatz map
+\(\Syr(n)=(3n+1)/2^{\vTwo(3n+1)}\).  The diagnostic chain combines three saved
+computational audits: a bounded simple-cycle realizability audit on finite
+LTE-closed residue graphs, a phase-decomposed renewal drift audit, and a
+Foster-Lyapunov drift audit for \(V(n)=\log_2(n)+\vTwo(n+1)\) on residue
+quotients.  At the tested levels \((q,R_{\max})=(5,4),(6,5),(7,6)\), the only
+positive-integer simple-cycle realizer in the bounded audit is the elementary
+valuation word \([2]\), giving realizable Karp factor \(3/4\).  The finite
+renewal-window sweep is consistent with the phase identity
+\[
+  \mu_{\mathrm{step}}
+    = \frac12\log_2(3/2)+\frac12\log_2(3/4)=\log_2(3/4),
+\]
+with post-exit valuation deviation shrinking from
+\(-0.03473021694546086\) to \(-0.006503489706314536\).  The same candidate
+Lyapunov function has residue-uniform negative drift at the tested grid value
+\(m=16\), with margin \(\epsilon=0.1\), over the sampled windows
+\([10^2,10^4]\) through \([10^{12},10^{15}]\).  No proof claim is made:
+the artifacts do not control arbitrary infinite switching paths and do not
+give deterministic per-orbit descent.  Combining this framework's Foster
+condition with Chang's recent structural reduction
+(\texttt{arXiv:2603.25753}) gives a joint argument whose three named
+quantitative verifications are empirically closed at finite windows, leaving
+the residual exactly the Tao-style distributional-to-pointwise wall.  This is a
+finite empirical diagnostic; the Collatz conjecture remains open.

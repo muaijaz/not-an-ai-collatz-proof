@@ -1,0 +1,37 @@
+\section{Realizable Karp Factor}
+
+The bounded-cycle audit separates abstract cycles in the finite tail graph from
+cycle words that lift to positive integer orbits.  In the joint Karp/slope
+sweep at \((q,R_{\max})=(5,4),(6,5),(7,6)\), with the automaton period widened
+across the levels, the only slope-compatible survivor at each tested level is
+the elementary valuation word \([2]\), with factor \(3/4\)
+\(\artifact{karp_slope_joint_sweep.json}{karp\_slope\_joint\_sweep.json}\).
+
+The realizability extension audits all simple cycles up to
+\(\texttt{max\_cycle\_edges}=12\) at the same three levels.  It classifies
+\(226333\) simple cycles: \(226330\) are
+\(\texttt{noninteger\_2adic\_only}\), and the only \(3\)
+\(\texttt{positive\_integer\_cycle}\) entries are the elementary \([2]\) cycle,
+one per level
+\(\artifact{tail_cycle_realizability.json}{tail\_cycle\_realizability.json}\),
+\(\artifact{tail_cycle_realizability_extended.json}{tail\_cycle\_realizability\_extended.json}\).
+Thus the saved finite diagnostic has
+\[
+  \text{realizable Karp factor}
+  =
+  \text{slope-filtered Karp factor}
+  =
+  \frac34
+\]
+on these levels.
+
+This is a finite bounded-cycle fact, not a global statement about arbitrary
+infinite products.  The high-growth abstract cycles in the LTE-closed graph are
+not thereby eliminated from the infinite problem; the audit only records that,
+within the tested bounded simple-cycle regime, their cycle words do not lift to
+positive integer cycles.
+
+The value \(3/4\) should also be distinguished from the modular-transition
+number appearing in Chang's human-LLM Collatz manuscript
+\cite{chang2026collatz}.  In this framework it is a cycle-mean factor for an
+elementary valuation word, not a modular transition probability.
