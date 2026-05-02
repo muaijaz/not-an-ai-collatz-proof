@@ -287,6 +287,8 @@ class KarpSlopeJointSweepLevel:
     non_elementary_factor_ge_one: bool
     survivors: tuple[KarpSlopeSweepSurvivor, ...]
     status: str
+    cycle_cap_reached: bool = False
+    scan_completion_status: str = "bounded_simple_cycle_scan_complete_for_depth_cap"
 
     def to_json_dict(self) -> dict[str, Any]:
         data = asdict(self)
@@ -305,6 +307,8 @@ class KarpSlopeJointSweepReport:
     levels: tuple[KarpSlopeJointSweepLevel, ...]
     obstruction: KarpSlopeSweepObstruction | None
     next_step: str
+    deferred_levels: tuple[dict[str, Any], ...] = ()
+    scan_policy: dict[str, Any] | None = None
 
     def to_json_dict(self) -> dict[str, Any]:
         return {
@@ -317,6 +321,8 @@ class KarpSlopeJointSweepReport:
                 None if self.obstruction is None else self.obstruction.to_json_dict()
             ),
             "next_step": self.next_step,
+            "deferred_levels": list(self.deferred_levels),
+            "scan_policy": self.scan_policy,
         }
 
     def to_json(self) -> str:
@@ -384,6 +390,8 @@ class TailCycleRealizabilityLevel:
     realizable_karp_cycle: TailCycleRealizabilityCycle | None
     cycles: tuple[TailCycleRealizabilityCycle, ...]
     status: str
+    cycle_cap_reached: bool = False
+    scan_completion_status: str = "bounded_simple_cycle_scan_complete_for_depth_cap"
 
     def to_json_dict(self) -> dict[str, Any]:
         data = asdict(self)
@@ -407,6 +415,8 @@ class TailCycleRealizabilityReport:
     realizable_karp_factor: float | None
     realizable_karp_cycle: TailCycleRealizabilityObstruction | None
     obstruction: TailCycleRealizabilityObstruction | None
+    deferred_levels: tuple[dict[str, Any], ...] = ()
+    scan_policy: dict[str, Any] | None = None
 
     def to_json_dict(self) -> dict[str, Any]:
         return {
@@ -425,6 +435,8 @@ class TailCycleRealizabilityReport:
             "obstruction": (
                 None if self.obstruction is None else self.obstruction.to_json_dict()
             ),
+            "deferred_levels": list(self.deferred_levels),
+            "scan_policy": self.scan_policy,
         }
 
     def to_json(self) -> str:
@@ -650,6 +662,7 @@ def karp_slope_joint_sweep_report(
     max_cycle_edges: int = 10,
     max_cycles_scanned: int = 200_000,
     target_slope: float = LOG2_3,
+    deferred_levels: tuple[dict[str, Any], ...] = (),
 ) -> KarpSlopeJointSweepReport:
     """Jointly widen the balanced automaton and scan the slope window.
 
@@ -703,6 +716,12 @@ def karp_slope_joint_sweep_report(
             for survivor in survivors
             if survivor.non_elementary and survivor.edge_factor >= 1.0
         )
+        cycle_cap_reached = slope_level.status == "cycle_scan_hit_cap_bounded_diagnostic"
+        scan_completion_status = (
+            "cycle_cap_reached"
+            if cycle_cap_reached
+            else "bounded_simple_cycle_scan_complete_for_depth_cap"
+        )
         if non_elementary_bad and obstruction is None:
             obstruction = KarpSlopeSweepObstruction(
                 level_index=level_index,
@@ -744,8 +763,10 @@ def karp_slope_joint_sweep_report(
                 status=(
                     "obstruction_found_non_elementary_factor_ge_one"
                     if non_elementary_bad
-                    else slope_level.status
+                    else scan_completion_status
                 ),
+                cycle_cap_reached=cycle_cap_reached,
+                scan_completion_status=scan_completion_status,
             )
         )
         if obstruction is not None:
@@ -777,6 +798,16 @@ def karp_slope_joint_sweep_report(
             "cycle-edge cap. If obstruction is present, inspect that survivor "
             "as the new finite-to-infinite bridge obstruction."
         ),
+        deferred_levels=deferred_levels,
+        scan_policy={
+            "max_cycle_edges": max_cycle_edges,
+            "max_cycles_scanned": max_cycles_scanned,
+            "max_valuation": max_valuation,
+            "cycle_cap_status_values": [
+                "bounded_simple_cycle_scan_complete_for_depth_cap",
+                "cycle_cap_reached",
+            ],
+        },
     )
 
 
@@ -927,6 +958,12 @@ def _tail_cycle_realizability_level(
         ):
             realizable_karp_cycle = audited
         recorded.append(audited)
+    cycle_cap_reached = scanned.status == "cycle_scan_hit_cap_bounded_diagnostic"
+    scan_completion_status = (
+        "cycle_cap_reached"
+        if cycle_cap_reached
+        else "bounded_simple_cycle_scan_complete_for_depth_cap"
+    )
     return TailCycleRealizabilityLevel(
         level_index=level_index,
         tail_unit_power=q,
@@ -952,7 +989,9 @@ def _tail_cycle_realizability_level(
         ),
         realizable_karp_cycle=realizable_karp_cycle,
         cycles=tuple(recorded),
-        status=scanned.status,
+        status=scan_completion_status,
+        cycle_cap_reached=cycle_cap_reached,
+        scan_completion_status=scan_completion_status,
     )
 
 
@@ -968,6 +1007,7 @@ def tail_cycle_realizability_report(
     slope_tolerance: float = 0.5,
     lift_max_scan_power: int = 24,
     audit_all_cycles: bool = False,
+    deferred_levels: tuple[dict[str, Any], ...] = (),
 ) -> TailCycleRealizabilityReport:
     """Audit high-growth LTE-closed tail cycles against exact word lifting."""
 
@@ -981,6 +1021,7 @@ def tail_cycle_realizability_report(
         slope_tolerance=slope_tolerance,
         lift_max_scan_power=lift_max_scan_power,
         audit_all_cycles=audit_all_cycles,
+        deferred_levels=deferred_levels,
     )
 
 
@@ -994,6 +1035,7 @@ def tail_cycle_realizability_sweep_report(
     slope_tolerance: float = 0.5,
     lift_max_scan_power: int = 24,
     audit_all_cycles: bool = False,
+    deferred_levels: tuple[dict[str, Any], ...] = (),
 ) -> TailCycleRealizabilityReport:
     """Finite audit of whether high-growth tail cycles lift to integer cycles."""
 
@@ -1076,4 +1118,17 @@ def tail_cycle_realizability_sweep_report(
         ),
         realizable_karp_cycle=realizable_karp_cycle,
         obstruction=obstruction,
+        deferred_levels=deferred_levels,
+        scan_policy={
+            "max_cycle_edges": max_cycle_edges,
+            "max_cycles_scanned": max_cycles_scanned,
+            "max_valuation": max_valuation,
+            "factor_threshold": factor_threshold,
+            "lift_max_scan_power": lift_max_scan_power,
+            "audit_all_cycles": audit_all_cycles,
+            "cycle_cap_status_values": [
+                "bounded_simple_cycle_scan_complete_for_depth_cap",
+                "cycle_cap_reached",
+            ],
+        },
     )

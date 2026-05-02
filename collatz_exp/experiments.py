@@ -36,7 +36,13 @@ from .cycles_eliahou import cycle_length_screen
 from .density_lp import density_bound
 from .divider_patterns import divider_pattern_report
 from .formal_artifacts import formal_artifact_report
-from .foster_drift import foster_drift_report, m_step_foster_drift_report
+from .foster_drift import (
+    chang_bit4_balance_audit_report,
+    foster_drift_report,
+    m_step_foster_drift_k8_report,
+    m_step_foster_drift_report,
+    pointwise_descent_audit_report,
+)
 from .frontier_analysis import analyze_cover_frontier
 from .furstenberg import furstenberg_lyapunov_report
 from .graph_curvature import ollivier_ricci_report
@@ -48,6 +54,10 @@ from .lll_cycles import cycle_lattice_report
 from .jazz_constant import (
     jazz_constant_closed_form_report,
     jazz_constant_decomposition_report,
+)
+from .chang_phantom_gain import (
+    chang_R_K_identity_report,
+    jazz_constant_high_precision_from_identity_report,
 )
 from .lift_realizability import lift_realizability_report
 from .magnitude import magnitude_report
@@ -139,7 +149,10 @@ from .reports import (
     format_dpe_structural_bound_report,
     format_formal_artifact_report,
     format_foster_drift_report,
+    format_chang_bit4_balance_audit_report,
+    format_m_step_foster_drift_k8_report,
     format_m_step_foster_drift_report,
+    format_pointwise_descent_audit_report,
     format_frontier_analysis_report,
     format_furstenberg_lyapunov_report,
     format_first_descent,
@@ -147,6 +160,7 @@ from .reports import (
     format_harmonic_class_identification_report,
     format_jazz_constant_closed_form_report,
     format_jazz_constant_decomposition_report,
+    format_chang_R_K_identity_report,
     format_karp_slope_joint_sweep_report,
     format_hercher_t_ni_report,
     format_lasota_yorke_report,
@@ -876,6 +890,21 @@ def build_parser() -> argparse.ArgumentParser:
         help="audit m-step Foster-style drift for V(n)=log2(n)+v2(n+1)",
     )
     parser.add_argument(
+        "--m-step-foster-drift-k8",
+        action="store_true",
+        help="audit m-step Foster drift through residue power k=8 for Chang resolution",
+    )
+    parser.add_argument(
+        "--pointwise-descent-audit",
+        action="store_true",
+        help="search sampled pointwise hitting-time bounds for V(n)=log2(n)+v2(n+1)",
+    )
+    parser.add_argument(
+        "--chang-bit4-audit",
+        action="store_true",
+        help="audit Chang 2603.25753 bit-4 balance at burst-ending times",
+    )
+    parser.add_argument(
         "--orbit-renewal-descent",
         action="store_true",
         help="aggregate actual orbits into tail-entry renewal excursions",
@@ -979,6 +1008,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--jazz-constant-decomposition",
         action="store_true",
         help="summarize spike-stratified decomposition of the renewal Cramer constant",
+    )
+    parser.add_argument(
+        "--chang-R-K-identity",
+        action="store_true",
+        help="compare Chang's R(K) necklace sum with this framework's J_renewal",
     )
     parser.add_argument(
         "--hercher-t-ni",
@@ -1088,6 +1122,54 @@ def build_parser() -> argparse.ArgumentParser:
         help="path for the m-step Foster-drift JSON artifact",
     )
     parser.add_argument(
+        "--m-step-foster-drift-k8-output",
+        type=str,
+        default="docs/reports/m_step_foster_drift_k8.json",
+        help="path for the k<=8 m-step Foster-drift JSON artifact",
+    )
+    parser.add_argument(
+        "--pointwise-descent-audit-output",
+        type=str,
+        default="docs/reports/pointwise_descent_audit.json",
+        help="path for the pointwise descent audit JSON artifact",
+    )
+    parser.add_argument(
+        "--pointwise-descent-samples",
+        type=int,
+        default=1_000_000,
+        help="odd samples per n0 window for --pointwise-descent-audit",
+    )
+    parser.add_argument(
+        "--pointwise-descent-m-max-values",
+        type=str,
+        default="100,1000,10000,100000",
+        help="comma-separated staged m_max values for --pointwise-descent-audit",
+    )
+    parser.add_argument(
+        "--chang-bit4-audit-output",
+        type=str,
+        default="docs/reports/chang_bit4_balance_audit.json",
+        help="path for the Chang bit-4 balance audit JSON artifact",
+    )
+    parser.add_argument(
+        "--chang-bit4-samples",
+        type=int,
+        default=1_000_000,
+        help="odd samples per n0 window for --chang-bit4-audit",
+    )
+    parser.add_argument(
+        "--chang-bit4-bootstrap-resamples",
+        type=int,
+        default=200,
+        help="bootstrap resamples for --chang-bit4-audit delta summaries",
+    )
+    parser.add_argument(
+        "--chang-bit4-max-steps-per-orbit",
+        type=int,
+        default=10_000,
+        help="accelerated steps per orbit for --chang-bit4-audit",
+    )
+    parser.add_argument(
         "--m-step-foster-drift-grid",
         type=str,
         default="1,2,4,8,16,32,64",
@@ -1100,6 +1182,22 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--orbit-start-max", type=int, default=10**9)
     parser.add_argument("--orbit-renewal-histogram-bin-width", type=float, default=0.005)
     parser.add_argument("--renewal-bootstrap-repetitions", type=int, default=500)
+    parser.add_argument("--chang-R-K-K-max", type=int, default=200)
+    parser.add_argument("--chang-R-K-comparison-K-max", type=int, default=500)
+    parser.add_argument("--chang-R-K-target-excursions", type=int, default=5_000_000)
+    parser.add_argument("--chang-R-K-bootstrap-resamples", type=int, default=500)
+    parser.add_argument(
+        "--chang-R-K-identity-output",
+        type=str,
+        default="docs/reports/jazz_constant_chang_R_K_identity.json",
+        help="path for the Chang R(K) identity JSON artifact",
+    )
+    parser.add_argument(
+        "--jazz-constant-high-precision-output",
+        type=str,
+        default="docs/reports/jazz_constant_high_precision.json",
+        help="path for the high-precision J_renewal JSON artifact",
+    )
     parser.add_argument("--renewal-drift-bootstrap-resamples", type=int, default=1000)
     parser.add_argument(
         "--renewal-drift-output",
@@ -1971,6 +2069,62 @@ def main(argv: list[str] | None = None) -> None:
         )
         print(f"saved={output_path}")
 
+    if args.m_step_foster_drift_k8:
+        from pathlib import Path
+        import json
+
+        print("\nPhase-aware m-step Foster-drift diagnostic through k=8:")
+        m_step_foster_k8 = m_step_foster_drift_k8_report(
+            ranges=_parse_pair_tuple(args.foster_drift_ranges),
+            sample_count_per_range=args.orbit_range_samples,
+            residue_powers=(2, 3, 4, 5, 6, 7, 8),
+            m_steps_grid=_parse_int_tuple(args.m_step_foster_drift_grid),
+            foster_epsilon=args.m_step_foster_epsilon,
+            random_seed=args.orbit_seed,
+        )
+        print(format_m_step_foster_drift_k8_report(m_step_foster_k8))
+        output_path = Path(args.m_step_foster_drift_k8_output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(
+            json.dumps(m_step_foster_k8, indent=2, sort_keys=True) + "\n"
+        )
+        print(f"saved={output_path}")
+
+    if args.pointwise_descent_audit:
+        from pathlib import Path
+        import json
+
+        print("\nPointwise descent hitting-time audit:")
+        pointwise = pointwise_descent_audit_report(
+            ranges=_parse_pair_tuple(args.foster_drift_ranges),
+            sample_count_per_range=args.pointwise_descent_samples,
+            m_max_values=_parse_int_tuple(args.pointwise_descent_m_max_values),
+            random_seed=args.orbit_seed,
+        )
+        print(format_pointwise_descent_audit_report(pointwise))
+        output_path = Path(args.pointwise_descent_audit_output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(json.dumps(pointwise, indent=2, sort_keys=True) + "\n")
+        print(f"saved={output_path}")
+
+    if args.chang_bit4_audit:
+        from pathlib import Path
+        import json
+
+        print("\nChang bit-4 balance audit:")
+        chang_bit4 = chang_bit4_balance_audit_report(
+            ranges=_parse_pair_tuple(args.foster_drift_ranges),
+            sample_count_per_range=args.chang_bit4_samples,
+            random_seed=args.orbit_seed,
+            bootstrap_resamples=args.chang_bit4_bootstrap_resamples,
+            max_steps_per_orbit=args.chang_bit4_max_steps_per_orbit,
+        )
+        print(format_chang_bit4_balance_audit_report(chang_bit4))
+        output_path = Path(args.chang_bit4_audit_output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(json.dumps(chang_bit4, indent=2, sort_keys=True) + "\n")
+        print(f"saved={output_path}")
+
     if args.orbit_renewal_descent:
         print("\nActual-orbit renewal descent:")
         print(
@@ -2175,6 +2329,38 @@ def main(argv: list[str] | None = None) -> None:
     if args.jazz_constant_decomposition:
         print("\nJazz constant spike decomposition:")
         print(format_jazz_constant_decomposition_report(jazz_constant_decomposition_report()))
+
+    if args.chang_R_K_identity:
+        from pathlib import Path
+        import json
+
+        print("\nChang R(K) / Jazz constant identity diagnostic:")
+        identity = chang_R_K_identity_report(
+            K_max=args.chang_R_K_K_max,
+            comparison_K_max=args.chang_R_K_comparison_K_max,
+            target_renewal_excursions=args.chang_R_K_target_excursions,
+            start_min=args.orbit_start_min,
+            start_max=args.orbit_start_max,
+            random_seed=args.orbit_seed,
+            bootstrap_resamples=args.chang_R_K_bootstrap_resamples,
+            histogram_bin_width=args.orbit_renewal_histogram_bin_width,
+        )
+        print(format_chang_R_K_identity_report(identity))
+        identity_path = Path(args.chang_R_K_identity_output)
+        identity_path.parent.mkdir(parents=True, exist_ok=True)
+        identity_path.write_text(json.dumps(identity, indent=2, sort_keys=True) + "\n")
+        high_precision_path = Path(args.jazz_constant_high_precision_output)
+        high_precision_path.parent.mkdir(parents=True, exist_ok=True)
+        high_precision_path.write_text(
+            json.dumps(
+                jazz_constant_high_precision_from_identity_report(identity),
+                indent=2,
+                sort_keys=True,
+            )
+            + "\n"
+        )
+        print(f"saved={identity_path}")
+        print(f"saved={high_precision_path}")
 
     if args.hercher_t_ni:
         print("\nHercher T(n_i) reciprocal-sum diagnostic:")

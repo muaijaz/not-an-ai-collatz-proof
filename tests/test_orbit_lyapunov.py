@@ -2,12 +2,19 @@ import json
 import math
 
 from collatz_exp.foster_drift import (
+    CHANG_BIT4_BALANCE_CAVEAT,
+    CHANG_BIT4_BALANCE_VERDICTS,
     FOSTER_DRIFT_CAVEAT,
     M_STEP_FOSTER_DRIFT_CAVEAT,
     M_STEP_VERDICTS,
+    POINTWISE_DESCENT_CAVEAT,
+    POINTWISE_DESCENT_VERDICTS,
     VERDICTS,
+    chang_bit4_balance_audit_report,
     foster_drift_report,
+    m_step_foster_drift_k8_report,
     m_step_foster_drift_report,
+    pointwise_descent_audit_report,
 )
 from collatz_exp.orbit_lyapunov import orbit_lyapunov_beta_sweep_report
 from collatz_exp.phase_lyapunov import (
@@ -157,4 +164,125 @@ def test_m_step_foster_drift_smoke_artifact_shape():
     assert report["window_reports"][0]["seeds"]["sample_seed"] == 101
     assert report["m1_cross_check_passes"] is True
     _assert_ci_halfwidths_finite(report)
+    json.dumps(report, allow_nan=False)
+
+
+def test_m_step_foster_drift_k8_smoke_artifact_shape(tmp_path):
+    reference = m_step_foster_drift_report(
+        ranges=((10**4, 10**6),),
+        sample_count_per_range=1000,
+        residue_powers=(2, 3, 4, 5, 6),
+        m_steps_grid=(1, 2, 4),
+        foster_epsilon=0.1,
+        random_seed=0,
+    )
+    reference_path = tmp_path / "m_step_foster_drift.json"
+    reference_path.write_text(json.dumps(reference, sort_keys=True) + "\n")
+    report = m_step_foster_drift_k8_report(
+        ranges=((10**4, 10**6),),
+        sample_count_per_range=1000,
+        residue_powers=(2, 3, 4, 5, 6, 7, 8),
+        m_steps_grid=(1, 2, 4),
+        foster_epsilon=0.1,
+        random_seed=0,
+        cross_check_reference_path=str(reference_path),
+    )
+    assert report["type"] == "m_step_foster_drift_k8"
+    assert report["caveat"] == M_STEP_FOSTER_DRIFT_CAVEAT
+    assert report["verdict"] in M_STEP_VERDICTS
+    assert report["residue_powers"] == [2, 3, 4, 5, 6, 7, 8]
+    assert report["cross_check_against_k_le_6_passes"] is True
+    assert report["cross_check_max_disagreement"] == 0.0
+    assert report["foster_holds_at_chang_resolution_m16_eps_0p1"] in (True, False)
+    assert report["chang_resolution"]["fiber_refinement_power_256"] == 8
+    assert report["window_reports"][0]["seeds"]["sample_seed"] == 101
+    _assert_ci_halfwidths_finite(report)
+    json.dumps(report, allow_nan=False)
+
+
+def test_pointwise_descent_audit_smoke_artifact_shape():
+    report = pointwise_descent_audit_report(
+        ranges=((10**4, 10**6),),
+        sample_count_per_range=250,
+        m_max_values=(10, 100),
+        random_seed=0,
+    )
+    assert report["type"] == "pointwise_descent_audit"
+    assert report["caveat"] == POINTWISE_DESCENT_CAVEAT
+    assert report["verdict"] in POINTWISE_DESCENT_VERDICTS
+    for key in (
+        "definitions",
+        "references",
+        "numerics",
+        "window_reports",
+        "largest_t_descent_observed",
+        "largest_t_descent_witness",
+        "offending_witness",
+        "cross_window_scaling",
+        "all_windows_empirical_uniform_bound",
+    ):
+        assert key in report
+    window = report["window_reports"][0]
+    assert window["seeds"]["sample_seed"] == 101
+    assert window["m_max_values"] == [10, 100]
+    assert set(window["truncation_counts_by_m_max"]) == {"10", "100"}
+    dist = window["hitting_time_distribution"]
+    for key in (
+        "min",
+        "mean",
+        "median",
+        "quantile_0_99",
+        "quantile_0_999",
+        "quantile_0_9999",
+        "quantile_0_99999",
+        "max",
+    ):
+        assert key in dist
+    witness = report["offending_witness"]
+    assert witness is None or {"n", "R", "n_mod_64", "status"} <= set(witness)
+    json.dumps(report, allow_nan=False)
+
+
+def test_chang_bit4_balance_audit_smoke_artifact_shape():
+    report = chang_bit4_balance_audit_report(
+        ranges=((10**4, 10**6),),
+        sample_count_per_range=250,
+        random_seed=0,
+        bootstrap_resamples=8,
+        max_steps_per_orbit=1000,
+    )
+    assert report["type"] == "chang_bit4_balance_audit"
+    assert report["caveat"] == CHANG_BIT4_BALANCE_CAVEAT
+    assert report["verdict"] in CHANG_BIT4_BALANCE_VERDICTS
+    for key in (
+        "definitions",
+        "references",
+        "numerics",
+        "foster_rate_reference",
+        "window_reports",
+        "empirical_max_delta_at_window",
+        "empirical_max_delta_decreasing_with_window",
+        "foster_rate_envelope_holds",
+        "global_max_delta_witness",
+    ):
+        assert key in report
+    window = report["window_reports"][0]
+    assert window["seeds"]["sample_seed"] == 101
+    assert window["seeds"]["bootstrap_seed"] == 404
+    assert window["sample_count"] == 250
+    assert window["defined_delta_orbits"] + window["zero_denominator_orbits"] == 250
+    for key in (
+        "mean",
+        "median",
+        "quantile_0_99",
+        "max",
+        "mean_ci",
+        "median_ci",
+        "quantile_0_99_ci",
+    ):
+        assert key in window["delta_distribution"]
+    assert "median" in window["chang_m_distribution"]
+    assert window["delta_by_orbit_length_T_quantile"]
+    witness = report["global_max_delta_witness"]
+    assert witness is None or {"start", "chang_m", "delta"} <= set(witness)
     json.dumps(report, allow_nan=False)

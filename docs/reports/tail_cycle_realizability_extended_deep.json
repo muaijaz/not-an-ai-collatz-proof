@@ -1,0 +1,242 @@
+{
+  "caveat": "This is a finite diagnostic bounded by max_cycle_edges, max_cycles_scanned, max_valuation, and the lift scan precision. It does not prove Collatz descent or general realizability of the slope filter.",
+  "classification_counts": {
+    "noninteger_2adic_only": 15329,
+    "positive_integer_cycle": 1
+  },
+  "construction": "Simple cycles are enumerated in the LTE-closed tail graph. Cycles with edge factor at least factor_threshold are classified by the exact accelerated-word lift equation and, when feasible, checked against finite word-cylinder closure counts.",
+  "deferred_levels": [
+    {
+      "bound": "memory_bound",
+      "max_tail_depth": 8,
+      "reason": "deferred after probes including (9,8) and isolated (8,7) at widened automaton periods reached memory pressure (~49 GB RSS, ~1 GB available) before completion; the product-graph Karp pass is memory-bound in the current implementation",
+      "requested_automaton_max_period": 8,
+      "requested_max_cycle_edges": 10,
+      "requested_max_cycles_scanned": 200000,
+      "suggested_next_run": "use a memory-bounded Karp implementation or run smaller automaton/cycle caps before retrying (9,8)",
+      "tail_unit_power": 9
+    }
+  ],
+  "levels": [
+    {
+      "audited_cycles": 15330,
+      "classification_counts": {
+        "noninteger_2adic_only": 15329,
+        "positive_integer_cycle": 1
+      },
+      "closed_overflow_edges": 11,
+      "closure_skipped_count": 0,
+      "cycle_cap_reached": false,
+      "cycles": [
+        {
+          "christoffel_slope": "5/4",
+          "closes_mod_power_count": 2,
+          "closure_precision_power": 14,
+          "cycle_value": null,
+          "cylinder_power": 6,
+          "cylinder_residue_count": 1,
+          "edge_factor": 1.2613446228805718,
+          "edge_mean_log2_slope": 0.3349625007211561,
+          "graph_cycle_edges": 4,
+          "in_slope_window": true,
+          "lift_audit_status": "cylinder_closure_counted",
+          "lift_classification": "noninteger_2adic_only",
+          "parity_word": [
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "period": 4,
+          "slope_distance": 0.3349625007211561,
+          "valuation_word": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "christoffel_slope": "11/8",
+          "closes_mod_power_count": 2,
+          "closure_precision_power": 20,
+          "cycle_value": null,
+          "cylinder_power": 12,
+          "cylinder_residue_count": 1,
+          "edge_factor": 1.1566581190559555,
+          "edge_mean_log2_slope": 0.20996250072115608,
+          "graph_cycle_edges": 8,
+          "in_slope_window": false,
+          "lift_audit_status": "cylinder_closure_counted",
+          "lift_classification": "noninteger_2adic_only",
+          "parity_word": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "period": 8,
+          "slope_distance": 0.20996250072115608,
+          "valuation_word": [
+            2,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "christoffel_slope": "3/2",
+          "closes_mod_power_count": 2,
+          "closure_precision_power": 15,
+          "cycle_value": null,
+          "cylinder_power": 7,
+          "cylinder_residue_count": 1,
+          "edge_factor": 1.0606601717798212,
+          "edge_mean_log2_slope": 0.08496250072115608,
+          "graph_cycle_edges": 4,
+          "in_slope_window": false,
+          "lift_audit_status": "cylinder_closure_counted",
+          "lift_classification": "noninteger_2adic_only",
+          "parity_word": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "period": 4,
+          "slope_distance": 0.08496250072115608,
+          "valuation_word": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "christoffel_slope": "2/1",
+          "closes_mod_power_count": 2,
+          "closure_precision_power": 11,
+          "cycle_value": "1",
+          "cylinder_power": 3,
+          "cylinder_residue_count": 1,
+          "edge_factor": 0.75,
+          "edge_mean_log2_slope": -0.4150374992788439,
+          "graph_cycle_edges": 1,
+          "in_slope_window": true,
+          "lift_audit_status": "cylinder_closure_counted",
+          "lift_classification": "positive_integer_cycle",
+          "parity_word": [
+            1,
+            0
+          ],
+          "period": 1,
+          "slope_distance": 0.4150374992788439,
+          "valuation_word": [
+            2
+          ]
+        }
+      ],
+      "cycles_scanned": 15330,
+      "factor_threshold": 1.0,
+      "high_growth_cycles": 3,
+      "in_slope_window_count": 2,
+      "level_index": 0,
+      "max_cycle_edges": 8,
+      "max_cycles_scanned": 200000,
+      "max_tail_depth": 7,
+      "max_valuation": 12,
+      "realizable_karp_cycle": {
+        "christoffel_slope": "2/1",
+        "closes_mod_power_count": 2,
+        "closure_precision_power": 11,
+        "cycle_value": "1",
+        "cylinder_power": 3,
+        "cylinder_residue_count": 1,
+        "edge_factor": 0.75,
+        "edge_mean_log2_slope": -0.4150374992788439,
+        "graph_cycle_edges": 1,
+        "in_slope_window": true,
+        "lift_audit_status": "cylinder_closure_counted",
+        "lift_classification": "positive_integer_cycle",
+        "parity_word": [
+          1,
+          0
+        ],
+        "period": 1,
+        "slope_distance": 0.4150374992788439,
+        "valuation_word": [
+          2
+        ]
+      },
+      "realizable_karp_factor": 0.75,
+      "recorded_cycles": 4,
+      "scan_completion_status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "slope_target": 1.584962500721156,
+      "slope_tolerance": 0.5,
+      "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "tail_edges": 2176,
+      "tail_states": 896,
+      "tail_unit_power": 8
+    }
+  ],
+  "obstruction": null,
+  "outcome_interpretation": "At bounded deep level (8,7), the high-growth non-elementary slope-window survivor(s) classify as noninteger_2adic_only. The realizable Karp factor remains 3/4 with elementary valuation word [2] as the unique positive_integer_cycle recorded under the configured bounded scan.",
+  "realizable_karp_cycle": {
+    "cycle": {
+      "christoffel_slope": "2/1",
+      "closes_mod_power_count": 2,
+      "closure_precision_power": 11,
+      "cycle_value": "1",
+      "cylinder_power": 3,
+      "cylinder_residue_count": 1,
+      "edge_factor": 0.75,
+      "edge_mean_log2_slope": -0.4150374992788439,
+      "graph_cycle_edges": 1,
+      "in_slope_window": true,
+      "lift_audit_status": "cylinder_closure_counted",
+      "lift_classification": "positive_integer_cycle",
+      "parity_word": [
+        1,
+        0
+      ],
+      "period": 1,
+      "slope_distance": 0.4150374992788439,
+      "valuation_word": [
+        2
+      ]
+    },
+    "level_index": 0,
+    "max_tail_depth": 7,
+    "tail_unit_power": 8
+  },
+  "realizable_karp_factor": 0.75,
+  "scan_policy": {
+    "audit_all_cycles": true,
+    "cap_rationale": "Deep run uses shortened bounded caps after memory-bound probes: (8,7) executed with automaton_max_period=4 and max_cycle_edges=8; (9,8) deferred.",
+    "cycle_cap_status_values": [
+      "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "cycle_cap_reached"
+    ],
+    "factor_threshold": 1.0,
+    "lift_max_scan_power": 32,
+    "max_cycle_edges": 8,
+    "max_cycles_scanned": 200000,
+    "max_valuation": 12
+  },
+  "status": "no_positive_integer_high_growth_cycle_found",
+  "type": "tail_cycle_realizability"
+}

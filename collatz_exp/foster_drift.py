@@ -89,6 +89,58 @@ M_STEP_VERDICTS = (
     "m_step_drift_window_obstruction",
 )
 
+POINTWISE_DESCENT_CAVEAT = (
+    "This artifact is a finite empirical diagnostic on the accelerated Syracuse "
+    "map. It tests sampled hitting times T_descent(n) = min{m : "
+    "V(S^m(n)) <= V(n) - 1} for the candidate Lyapunov V(n) = log_2(n) + "
+    "v_2(n+1), across finite n0 windows and finite truncation depths. It is "
+    "not a proof of uniform pointwise descent for all n, not a deterministic "
+    "per-orbit Collatz descent theorem, and not a closure of the "
+    "residue-Markov-to-deterministic upgrade. The residual upgrade from "
+    "finite-window empirical behavior to every integer orbit is exactly the "
+    "Tao 2019 distributional-to-pointwise wall."
+)
+
+POINTWISE_DESCENT_DEFINITIONS = (
+    "Let S be the accelerated odd-to-odd Collatz map. Let R(n) = v_2(n+1) "
+    "and V(n) = log_2(n) + R(n). Define T_descent(n) = min{m >= 1 : "
+    "V(S^m(n)) <= V(n) - 1}. This report samples odd n in finite windows "
+    "and searches for T_descent(n) up to staged truncation depths."
+)
+
+POINTWISE_DESCENT_VERDICTS = (
+    "pointwise_descent_empirical_uniform_bound_stable",
+    "pointwise_descent_empirical_uniform_bound_growing",
+    "pointwise_descent_window_depth_growth_or_truncation",
+    "pointwise_descent_no_uniform_empirical_bound",
+)
+
+CHANG_BIT4_BALANCE_CAVEAT = (
+    "This artifact is a finite empirical diagnostic on sampled accelerated "
+    "Collatz orbits. It directly tests Chang 2026 arXiv:2603.25753 Eq. 16 "
+    "on finite n0 windows by measuring bit-4 balance at burst-ending times "
+    "inside the dominant n_t congruent to 1 mod 8 class. It does not prove "
+    "Chang's Eq. 16 for all n0, does not compute or certify Chang's delta_max, "
+    "and does not close the Tao 2019 distributional-to-pointwise wall."
+)
+
+CHANG_BIT4_BALANCE_DEFINITIONS = (
+    "Let S be the accelerated odd-to-odd Collatz map and let "
+    "X_t = 1[n_t congruent to 1 mod 4]. A burst-ending time is an index t "
+    "with X_t = 1 and X_{t+1} = 0. Restrict to burst-ending states with "
+    "n_t congruent to 1 mod 8. Chang's bit-4 balance statistic is "
+    "r(n0) = #{t_i : n_{t_i} congruent to 9 mod 32} / "
+    "#{t_i : n_{t_i} congruent to 9 or 25 mod 32}, and "
+    "delta(n0) = |r(n0) - 1/2|."
+)
+
+CHANG_BIT4_BALANCE_VERDICTS = (
+    "chang_bit4_balance_foster_envelope_supported",
+    "chang_bit4_balance_foster_envelope_deep_failure",
+    "chang_bit4_balance_foster_envelope_not_supported",
+    "chang_bit4_balance_insufficient_burst_endings",
+)
+
 DEFAULT_RANGES = (
     (10**2, 10**4),
     (10**4, 10**6),
@@ -97,8 +149,11 @@ DEFAULT_RANGES = (
     (10**12, 10**15),
 )
 DEFAULT_RESIDUE_POWERS = (2, 3, 4, 5, 6)
+DEFAULT_CHANG_RESOLUTION_RESIDUE_POWERS = (2, 3, 4, 5, 6, 7, 8)
 DEFAULT_TAIL_THRESHOLDS = (0.5, 1.0, 2.0, 4.0, 8.0, 16.0)
 DEFAULT_M_STEPS_GRID = (1, 2, 4, 8, 16, 32, 64)
+DEFAULT_POINTWISE_M_MAX_VALUES = (100, 1000, 10_000, 100_000)
+DEFAULT_CHANG_MAX_STEPS_PER_ORBIT = 10_000
 STRUCTURAL_DRIFT_TARGET = math.log2(3.0 / 4.0)
 Z_975 = 1.959963984540054
 
@@ -683,6 +738,784 @@ def _hitting_time_report(
     }
 
 
+def _distribution_summary_int(values: list[int]) -> dict[str, Any]:
+    if not values:
+        return {
+            "sample_size": 0,
+            "min": None,
+            "mean": None,
+            "median": None,
+            "quantile_0_99": None,
+            "quantile_0_999": None,
+            "quantile_0_9999": None,
+            "quantile_0_99999": None,
+            "max": None,
+        }
+    sorted_values = sorted(values)
+    return {
+        "sample_size": len(values),
+        "min": int(sorted_values[0]),
+        "mean": sum(sorted_values) / len(sorted_values),
+        "median": _quantile(sorted_values, 0.5),
+        "quantile_0_99": _quantile(sorted_values, 0.99),
+        "quantile_0_999": _quantile(sorted_values, 0.999),
+        "quantile_0_9999": _quantile(sorted_values, 0.9999),
+        "quantile_0_99999": _quantile(sorted_values, 0.99999),
+        "max": int(sorted_values[-1]),
+    }
+
+
+def _distribution_summary_float(values: list[float]) -> dict[str, Any]:
+    if not values:
+        return {
+            "sample_size": 0,
+            "min": None,
+            "mean": None,
+            "median": None,
+            "quantile_0_99": None,
+            "max": None,
+        }
+    sorted_values = sorted(values)
+    return {
+        "sample_size": len(values),
+        "min": sorted_values[0],
+        "mean": sum(sorted_values) / len(sorted_values),
+        "median": _quantile(sorted_values, 0.5),
+        "quantile_0_99": _quantile(sorted_values, 0.99),
+        "max": sorted_values[-1],
+    }
+
+
+def _bootstrap_metric_ci_capped(
+    values: list[float],
+    *,
+    bootstrap_resamples: int,
+    seed: int,
+    statistic: str,
+    max_observations: int = 50_000,
+) -> dict[str, Any]:
+    if not values:
+        return _estimate(None, None, None, method="bootstrap_percentile_capped")
+    if bootstrap_resamples < 1:
+        sorted_values = sorted(values)
+        estimate_value = {
+            "mean": sum(values) / len(values),
+            "median": _quantile(sorted_values, 0.5),
+            "q99": _quantile(sorted_values, 0.99),
+        }[statistic]
+        return _estimate(
+            estimate_value,
+            None,
+            None,
+            method="bootstrap_percentile_capped_no_resamples",
+        )
+
+    rng = np.random.default_rng(seed)
+    array = np.array(values, dtype=float)
+    original_size = len(array)
+    if original_size > max_observations:
+        array = array[rng.choice(original_size, size=max_observations, replace=False)]
+    size = len(array)
+    samples: list[float] = []
+    for _ in range(bootstrap_resamples):
+        resampled = array[rng.integers(0, size, size=size)]
+        if statistic == "mean":
+            samples.append(float(np.mean(resampled)))
+        elif statistic == "median":
+            samples.append(float(np.quantile(resampled, 0.5)))
+        elif statistic == "q99":
+            samples.append(float(np.quantile(resampled, 0.99)))
+        else:
+            raise ValueError(f"unknown bootstrap statistic {statistic!r}")
+    samples.sort()
+    estimate_value = {
+        "mean": float(np.mean(array)),
+        "median": float(np.quantile(array, 0.5)),
+        "q99": float(np.quantile(array, 0.99)),
+    }[statistic]
+    return _estimate(
+        estimate_value,
+        _quantile(samples, 0.025),
+        _quantile(samples, 0.975),
+        method=(
+            "bootstrap_percentile_capped"
+            if original_size > max_observations
+            else "bootstrap_percentile"
+        ),
+    )
+
+
+def _chang_bit4_orbit_stats(
+    start: int,
+    *,
+    max_steps_per_orbit: int,
+    foster_epsilon: float,
+    foster_m: int,
+) -> dict[str, Any]:
+    x = start
+    steps = 0
+    count_9 = 0
+    count_25 = 0
+    dominant_burst_endings = 0
+    unclassified_dominant_burst_endings = 0
+
+    while x != 1 and steps < max_steps_per_orbit:
+        current = x
+        current_burst = current % 4 == 1
+        x, _valuation = accelerated_step(current)
+        next_burst = x % 4 == 1
+        if current_burst and not next_burst and current % 8 == 1:
+            dominant_burst_endings += 1
+            residue = current % 32
+            if residue == 9:
+                count_9 += 1
+            elif residue == 25:
+                count_25 += 1
+            else:
+                unclassified_dominant_burst_endings += 1
+        steps += 1
+
+    chang_m = count_9 + count_25
+    ratio = None
+    delta = None
+    foster_rate = None
+    sqrt_concentration = None
+    envelope = None
+    envelope_holds = None
+    if chang_m > 0:
+        ratio = count_9 / chang_m
+        delta = abs(ratio - 0.5)
+        foster_rate = (1.0 - foster_epsilon) ** (chang_m / foster_m)
+        sqrt_concentration = 1.0 / math.sqrt(chang_m)
+        envelope = foster_rate + sqrt_concentration
+        envelope_holds = delta <= envelope
+
+    return {
+        "start": start,
+        "completed": x == 1,
+        "truncated": x != 1,
+        "orbit_length_T": steps,
+        "terminal_value": x if x == 1 else None,
+        "chang_m": chang_m,
+        "count_mod_9": count_9,
+        "count_mod_25": count_25,
+        "dominant_burst_endings": dominant_burst_endings,
+        "unclassified_dominant_burst_endings": unclassified_dominant_burst_endings,
+        "ratio_mod_9": ratio,
+        "delta": delta,
+        "foster_geometric_rate": foster_rate,
+        "sqrt_concentration_term": sqrt_concentration,
+        "foster_rate_plus_sqrt_envelope": envelope,
+        "foster_rate_envelope_holds": envelope_holds,
+    }
+
+
+def _chang_delta_by_orbit_length_quantile(
+    records: list[dict[str, Any]],
+    *,
+    bins: int = 5,
+) -> list[dict[str, Any]]:
+    if not records:
+        return []
+    sorted_records = sorted(records, key=lambda item: item["orbit_length_T"])
+    groups: list[dict[str, Any]] = []
+    count = len(sorted_records)
+    for group_index in range(bins):
+        start = (group_index * count) // bins
+        stop = ((group_index + 1) * count) // bins
+        if start >= stop:
+            continue
+        group = sorted_records[start:stop]
+        deltas = [
+            item["delta"]
+            for item in group
+            if item["delta"] is not None
+        ]
+        chang_ms = [item["chang_m"] for item in group]
+        lengths = [item["orbit_length_T"] for item in group]
+        groups.append(
+            {
+                "bin_index": group_index,
+                "quantile_range": [group_index / bins, (group_index + 1) / bins],
+                "orbit_count": len(group),
+                "defined_delta_count": len(deltas),
+                "T_min": min(lengths),
+                "T_max": max(lengths),
+                "T_mean": sum(lengths) / len(lengths),
+                "mean_chang_m": sum(chang_ms) / len(chang_ms),
+                "mean_delta": None if not deltas else sum(deltas) / len(deltas),
+            }
+        )
+    return groups
+
+
+def _chang_foster_rate_parameters() -> dict[str, Any]:
+    path = Path("docs/reports/m_step_foster_drift.json")
+    params = {
+        "source": str(path),
+        "source_status": "default_constants_used",
+        "foster_epsilon": 0.1,
+        "foster_m": 16,
+        "rate_formula": "(1 - foster_epsilon)^(m / foster_m)",
+    }
+    if not path.exists():
+        return params
+    try:
+        data = json.loads(path.read_text())
+    except Exception:
+        params["source_status"] = "default_constants_used_after_read_failure"
+        return params
+    epsilon = data.get("foster_epsilon")
+    foster_m = data.get("smallest_m_uniform_negative_drift_by_residue_eps_0p1")
+    if isinstance(epsilon, (int, float)) and isinstance(foster_m, int) and foster_m > 0:
+        params.update(
+            {
+                "source_status": "loaded_from_m_step_foster_drift_json",
+                "foster_epsilon": float(epsilon),
+                "foster_m": foster_m,
+            }
+        )
+    return params
+
+
+def _chang_bit4_window_report(
+    *,
+    window_index: int,
+    n_min: int,
+    n_max: int,
+    sample_count: int,
+    bootstrap_resamples: int,
+    seed_base: int,
+    max_steps_per_orbit: int,
+    foster_epsilon: float,
+    foster_m: int,
+) -> dict[str, Any]:
+    sample_seed = seed_base + 10_000 * window_index + 101
+    bootstrap_seed = seed_base + 10_000 * window_index + 404
+    samples = _odd_sample(
+        n_min=n_min,
+        n_max=n_max,
+        sample_count=sample_count,
+        seed=sample_seed,
+    )
+
+    deltas: list[float] = []
+    chang_ms: list[int] = []
+    records_for_bins: list[dict[str, Any]] = []
+    completed = 0
+    truncated = 0
+    zero_denominator = 0
+    envelope_violations = 0
+    worst_delta_record: dict[str, Any] | None = None
+    worst_envelope_record: dict[str, Any] | None = None
+    unclassified_dominant_burst_endings = 0
+
+    for start in samples:
+        stats_for_orbit = _chang_bit4_orbit_stats(
+            start,
+            max_steps_per_orbit=max_steps_per_orbit,
+            foster_epsilon=foster_epsilon,
+            foster_m=foster_m,
+        )
+        completed += 1 if stats_for_orbit["completed"] else 0
+        truncated += 1 if stats_for_orbit["truncated"] else 0
+        unclassified_dominant_burst_endings += stats_for_orbit[
+            "unclassified_dominant_burst_endings"
+        ]
+        records_for_bins.append(stats_for_orbit)
+        if stats_for_orbit["delta"] is None:
+            zero_denominator += 1
+            continue
+        deltas.append(stats_for_orbit["delta"])
+        chang_ms.append(stats_for_orbit["chang_m"])
+        if (
+            worst_delta_record is None
+            or stats_for_orbit["delta"] > worst_delta_record["delta"]
+        ):
+            worst_delta_record = stats_for_orbit
+        if not stats_for_orbit["foster_rate_envelope_holds"]:
+            envelope_violations += 1
+            excess = (
+                stats_for_orbit["delta"]
+                - stats_for_orbit["foster_rate_plus_sqrt_envelope"]
+            )
+            if (
+                worst_envelope_record is None
+                or excess > worst_envelope_record["envelope_excess"]
+            ):
+                worst_envelope_record = dict(stats_for_orbit)
+                worst_envelope_record["envelope_excess"] = excess
+
+    delta_summary = _distribution_summary_float(deltas)
+    chang_m_distribution = _distribution_summary_int(chang_ms)
+    envelope_holds = envelope_violations == 0
+    max_delta = delta_summary["max"]
+    return {
+        "window_index": window_index,
+        "start_min": n_min,
+        "start_max": n_max,
+        "midpoint_log10_n": (math.log10(n_min) + math.log10(n_max)) / 2.0,
+        "sample_count": sample_count,
+        "distinct_draws": len(set(samples)),
+        "seeds": {
+            "sample_seed": sample_seed,
+            "bootstrap_seed": bootstrap_seed,
+        },
+        "max_steps_per_orbit": max_steps_per_orbit,
+        "completed_orbits": completed,
+        "truncated_orbits": truncated,
+        "defined_delta_orbits": len(deltas),
+        "zero_denominator_orbits": zero_denominator,
+        "unclassified_dominant_burst_endings": unclassified_dominant_burst_endings,
+        "delta_distribution": {
+            **delta_summary,
+            "mean_ci": _bootstrap_metric_ci_capped(
+                deltas,
+                bootstrap_resamples=bootstrap_resamples,
+                seed=bootstrap_seed + 1,
+                statistic="mean",
+            ),
+            "median_ci": _bootstrap_metric_ci_capped(
+                deltas,
+                bootstrap_resamples=bootstrap_resamples,
+                seed=bootstrap_seed + 2,
+                statistic="median",
+            ),
+            "quantile_0_99_ci": _bootstrap_metric_ci_capped(
+                deltas,
+                bootstrap_resamples=bootstrap_resamples,
+                seed=bootstrap_seed + 3,
+                statistic="q99",
+            ),
+        },
+        "chang_m_distribution": chang_m_distribution,
+        "delta_by_orbit_length_T_quantile": _chang_delta_by_orbit_length_quantile(
+            records_for_bins
+        ),
+        "empirical_max_delta_at_window": max_delta,
+        "max_delta_witness": (
+            None
+            if worst_delta_record is None
+            else {
+                key: worst_delta_record[key]
+                for key in (
+                    "start",
+                    "orbit_length_T",
+                    "chang_m",
+                    "count_mod_9",
+                    "count_mod_25",
+                    "ratio_mod_9",
+                    "delta",
+                    "foster_geometric_rate",
+                    "sqrt_concentration_term",
+                    "foster_rate_plus_sqrt_envelope",
+                )
+            }
+        ),
+        "foster_rate_envelope_holds": envelope_holds,
+        "foster_rate_envelope_violation_count": envelope_violations,
+        "foster_rate_envelope_worst_violation": worst_envelope_record,
+    }
+
+
+def _pointwise_descent_window_report(
+    *,
+    window_index: int,
+    n_min: int,
+    n_max: int,
+    sample_count: int,
+    m_max_values: tuple[int, ...],
+    seed_base: int,
+) -> dict[str, Any]:
+    sample_seed = seed_base + 10_000 * window_index + 101
+    samples = _odd_sample(
+        n_min=n_min,
+        n_max=n_max,
+        sample_count=sample_count,
+        seed=sample_seed,
+    )
+    max_m = max(m_max_values)
+    finite_times: list[int] = []
+    truncation_counts = {m: 0 for m in m_max_values}
+    largest_time: int | None = None
+    largest_witness: dict[str, Any] | None = None
+    first_truncated_witness: dict[str, Any] | None = None
+
+    for start in samples:
+        start_V = _V(start)
+        x = start
+        hit: int | None = None
+        for step in range(1, max_m + 1):
+            x, _valuation = accelerated_step(x)
+            if _V(x) <= start_V - 1.0:
+                hit = step
+                break
+            if x == 1:
+                break
+
+        if hit is None:
+            for m in m_max_values:
+                truncation_counts[m] += 1
+            if first_truncated_witness is None:
+                first_truncated_witness = {
+                    "n": start,
+                    "R": v2(start + 1),
+                    "n_mod_64": start % 64,
+                    "status": "truncated",
+                    "t_descent": None,
+                    "searched_to_m_max": max_m,
+                    "lower_bound": max_m + 1,
+                }
+            continue
+
+        finite_times.append(hit)
+        for m in m_max_values:
+            if hit > m:
+                truncation_counts[m] += 1
+        if largest_time is None or hit > largest_time:
+            largest_time = hit
+            largest_witness = {
+                "n": start,
+                "R": v2(start + 1),
+                "n_mod_64": start % 64,
+                "status": "finite",
+                "t_descent": hit,
+                "searched_to_m_max": max_m,
+                "lower_bound": None,
+            }
+
+    deepest_truncation = truncation_counts[max_m]
+    distribution = _distribution_summary_int(finite_times)
+    empirical_uniform = (
+        deepest_truncation == 0
+        and distribution["max"] is not None
+        and distribution["max"] < max_m
+    )
+    worst_witness = (
+        first_truncated_witness
+        if first_truncated_witness is not None
+        else largest_witness
+    )
+    max_for_scaling = (
+        max_m
+        if deepest_truncation > 0
+        else distribution["max"]
+    )
+    return {
+        "window_index": window_index,
+        "start_min": n_min,
+        "start_max": n_max,
+        "midpoint_log10_n": (math.log10(n_min) + math.log10(n_max)) / 2.0,
+        "sample_count": sample_count,
+        "distinct_draws": len(set(samples)),
+        "seeds": {"sample_seed": sample_seed},
+        "m_max_values": list(m_max_values),
+        "hitting_time_distribution": distribution,
+        "finite_hitting_count": len(finite_times),
+        "truncation_counts_by_m_max": {
+            str(m): int(truncation_counts[m]) for m in m_max_values
+        },
+        "truncation_count_at_max_m": int(deepest_truncation),
+        "largest_t_descent_observed": largest_time,
+        "largest_t_descent_witness": largest_witness,
+        "offending_witness": worst_witness,
+        "empirical_uniform_bound_at_window": empirical_uniform,
+        "max_t_descent_for_scaling": max_for_scaling,
+    }
+
+
+def chang_bit4_balance_audit_report(
+    *,
+    ranges: tuple[tuple[int, int], ...] = DEFAULT_RANGES,
+    sample_count_per_range: int = 1_000_000,
+    random_seed: int = 0,
+    bootstrap_resamples: int = 200,
+    max_steps_per_orbit: int = DEFAULT_CHANG_MAX_STEPS_PER_ORBIT,
+) -> dict[str, Any]:
+    """Directly audit Chang's bit-4 balance statistic on sampled orbits."""
+
+    if sample_count_per_range < 1:
+        raise ValueError("sample_count_per_range must be positive")
+    if not ranges:
+        raise ValueError("ranges must be nonempty")
+    if bootstrap_resamples < 0:
+        raise ValueError("bootstrap_resamples must be nonnegative")
+    if max_steps_per_orbit < 1:
+        raise ValueError("max_steps_per_orbit must be positive")
+
+    foster_rate = _chang_foster_rate_parameters()
+    foster_epsilon = foster_rate["foster_epsilon"]
+    foster_m = foster_rate["foster_m"]
+    window_reports = [
+        _chang_bit4_window_report(
+            window_index=index,
+            n_min=n_min,
+            n_max=n_max,
+            sample_count=sample_count_per_range,
+            bootstrap_resamples=bootstrap_resamples,
+            seed_base=random_seed,
+            max_steps_per_orbit=max_steps_per_orbit,
+            foster_epsilon=foster_epsilon,
+            foster_m=foster_m,
+        )
+        for index, (n_min, n_max) in enumerate(ranges)
+    ]
+
+    max_deltas = [
+        report["empirical_max_delta_at_window"]
+        for report in window_reports
+    ]
+    defined_max_deltas = [
+        value for value in max_deltas if value is not None
+    ]
+    decreasing = (
+        len(defined_max_deltas) == len(max_deltas)
+        and len(defined_max_deltas) >= 2
+        and all(
+            defined_max_deltas[index] < defined_max_deltas[index - 1]
+            for index in range(1, len(defined_max_deltas))
+        )
+    )
+    envelope_by_window = [
+        bool(report["foster_rate_envelope_holds"])
+        for report in window_reports
+    ]
+    foster_rate_envelope_holds = all(envelope_by_window)
+    any_defined = any(report["defined_delta_orbits"] > 0 for report in window_reports)
+    if not any_defined:
+        verdict = "chang_bit4_balance_insufficient_burst_endings"
+    elif foster_rate_envelope_holds:
+        verdict = "chang_bit4_balance_foster_envelope_supported"
+    elif envelope_by_window and envelope_by_window[0] and not envelope_by_window[-1]:
+        verdict = "chang_bit4_balance_foster_envelope_deep_failure"
+    else:
+        verdict = "chang_bit4_balance_foster_envelope_not_supported"
+
+    worst_witnesses = [
+        report["max_delta_witness"]
+        for report in window_reports
+        if report["max_delta_witness"] is not None
+    ]
+    global_worst = (
+        max(worst_witnesses, key=lambda item: item["delta"])
+        if worst_witnesses
+        else None
+    )
+    total_violations = sum(
+        report["foster_rate_envelope_violation_count"]
+        for report in window_reports
+    )
+
+    return {
+        "type": "chang_bit4_balance_audit",
+        "status": f"finite_empirical_chang_bit4_balance_diagnostic_{verdict}",
+        "verdict": verdict,
+        "definitions": CHANG_BIT4_BALANCE_DEFINITIONS,
+        "caveat": CHANG_BIT4_BALANCE_CAVEAT,
+        "references": [
+            "docs/reports/chang_2603_25753_compatibility.md",
+            "docs/reports/m_step_foster_drift.json",
+            "Chang 2026, arXiv:2603.25753 Eq. 16",
+            "Chang 2026, arXiv:2603.11066 Eq. 3 block-TV budget",
+            "Tao 2019, arXiv:1909.03562",
+        ],
+        "numerics": {
+            "integer_arithmetic": "S(n), residues, burst indicators, and all iterates use exact Python int arithmetic via collatz_exp.core.",
+            "burst_ending_rule": "A burst-ending time is recorded when n_t mod 4 == 1 and S(n_t) mod 4 == 3; the Chang-dominant subclass additionally requires n_t mod 8 == 1.",
+            "bit4_classes": "Within the dominant burst-ending subclass, n_t mod 32 == 9 is counted as Chang bit 4 = 0 and n_t mod 32 == 25 is counted as Chang bit 4 = 1.",
+            "rng": "All random choices use numpy.random.default_rng with the same per-window sample seeds as the Foster audits.",
+            "bootstrap": "Bootstrap CIs for delta summaries are deterministic and cap the resampled empirical population at 50,000 observations for million-orbit runs.",
+        },
+        "ranges": [list(item) for item in ranges],
+        "sample_count_per_range": sample_count_per_range,
+        "random_seed": random_seed,
+        "bootstrap_resamples": bootstrap_resamples,
+        "max_steps_per_orbit": max_steps_per_orbit,
+        "foster_rate_reference": foster_rate,
+        "window_reports": window_reports,
+        "empirical_max_delta_at_window": [
+            {
+                "start_min": report["start_min"],
+                "start_max": report["start_max"],
+                "max_delta": report["empirical_max_delta_at_window"],
+            }
+            for report in window_reports
+        ],
+        "empirical_max_delta_decreasing_with_window": decreasing,
+        "foster_rate_envelope_holds": foster_rate_envelope_holds,
+        "foster_rate_envelope_holds_by_window": envelope_by_window,
+        "foster_rate_envelope_total_violation_count": total_violations,
+        "global_max_delta_witness": global_worst,
+        "outcome_interpretation": {
+            "chang_bit4_balance_foster_envelope_supported": (
+                "The Foster-rate plus sqrt-N envelope holds at every tested "
+                "window; this is finite empirical confirmation that the "
+                "framework's Foster condition supplies Chang's required delta "
+                "rate on the sampled orbit set, not a proof of Eq. 16"
+            ),
+            "chang_bit4_balance_foster_envelope_deep_failure": (
+                "The envelope holds at shallow windows but fails at deeper "
+                "windows; the joint argument would need a stronger quantitative "
+                "Lyapunov or a sharper concentration term"
+            ),
+            "chang_bit4_balance_foster_envelope_not_supported": (
+                "The envelope fails on the sampled finite windows; this is an "
+                "empirical obstruction to the proposed Foster-rate explanation"
+            ),
+            "chang_bit4_balance_insufficient_burst_endings": (
+                "No sampled orbit produced a defined Chang bit-4 denominator, "
+                "so this finite run cannot test Eq. 16"
+            ),
+        },
+    }
+
+
+def pointwise_descent_audit_report(
+    *,
+    ranges: tuple[tuple[int, int], ...] = DEFAULT_RANGES,
+    sample_count_per_range: int = 1_000_000,
+    m_max_values: Iterable[int] = DEFAULT_POINTWISE_M_MAX_VALUES,
+    random_seed: int = 0,
+) -> dict[str, Any]:
+    """Search sampled pointwise hitting times beyond the Foster quantile audit."""
+
+    if sample_count_per_range < 1:
+        raise ValueError("sample_count_per_range must be positive")
+    if not ranges:
+        raise ValueError("ranges must be nonempty")
+    m_values = tuple(sorted({int(value) for value in m_max_values}))
+    if not m_values or any(value < 1 for value in m_values):
+        raise ValueError("m_max_values must contain positive integers")
+
+    window_reports = [
+        _pointwise_descent_window_report(
+            window_index=index,
+            n_min=n_min,
+            n_max=n_max,
+            sample_count=sample_count_per_range,
+            m_max_values=m_values,
+            seed_base=random_seed,
+        )
+        for index, (n_min, n_max) in enumerate(ranges)
+    ]
+    scaling_points = [
+        (
+            report["midpoint_log10_n"],
+            math.log10(report["max_t_descent_for_scaling"]),
+        )
+        for report in window_reports
+        if report["max_t_descent_for_scaling"] is not None
+        and report["max_t_descent_for_scaling"] > 0
+    ]
+    slope = _least_squares_slope(scaling_points)
+    all_uniform = all(
+        report["empirical_uniform_bound_at_window"] for report in window_reports
+    )
+    any_uniform = any(
+        report["empirical_uniform_bound_at_window"] for report in window_reports
+    )
+    if all_uniform and slope is not None and abs(slope) <= 0.05:
+        verdict = "pointwise_descent_empirical_uniform_bound_stable"
+    elif all_uniform:
+        verdict = "pointwise_descent_empirical_uniform_bound_growing"
+    elif any_uniform:
+        verdict = "pointwise_descent_window_depth_growth_or_truncation"
+    else:
+        verdict = "pointwise_descent_no_uniform_empirical_bound"
+
+    finite_witnesses = [
+        report["largest_t_descent_witness"]
+        for report in window_reports
+        if report["largest_t_descent_witness"] is not None
+    ]
+    largest_finite_witness = (
+        max(finite_witnesses, key=lambda item: item["t_descent"])
+        if finite_witnesses
+        else None
+    )
+    offending_witnesses = [
+        report["offending_witness"]
+        for report in window_reports
+        if report["offending_witness"] is not None
+    ]
+    global_offending = None
+    if offending_witnesses:
+        global_offending = max(
+            offending_witnesses,
+            key=lambda item: (
+                1 if item["status"] == "truncated" else 0,
+                item["lower_bound"] or item["t_descent"] or -1,
+            ),
+        )
+
+    return {
+        "type": "pointwise_descent_audit",
+        "status": f"finite_empirical_pointwise_descent_diagnostic_{verdict}",
+        "verdict": verdict,
+        "definitions": POINTWISE_DESCENT_DEFINITIONS,
+        "caveat": POINTWISE_DESCENT_CAVEAT,
+        "references": [
+            "docs/reports/phase_lyapunov_foster_drift.json",
+            "docs/reports/m_step_foster_drift.json",
+            "Tao 2019, arXiv:1909.03562",
+            "Chang 2026, arXiv:2603.25753 Eq. 16 is a related distribution-balance target, not this hitting-time target",
+        ],
+        "numerics": {
+            "integer_arithmetic": "S(n), v_2(3n+1), R(n), and all iterates use exact Python int arithmetic via collatz_exp.core.",
+            "log2_precision": (
+                "log_2(n) is evaluated as (n.bit_length()-1) + "
+                "math.log2(n / (1 << (n.bit_length()-1))); numpy floats are "
+                "not used for log_2(n), including in the deepest window."
+            ),
+            "rng": "All random choices use numpy.random.default_rng with the same per-window sample seeds as the Foster audits.",
+            "staged_search": "Each orbit is iterated once up to max(m_max_values), and truncation counts are recorded for each staged cutoff.",
+        },
+        "ranges": [list(item) for item in ranges],
+        "sample_count_per_range": sample_count_per_range,
+        "m_max_values": list(m_values),
+        "random_seed": random_seed,
+        "window_reports": window_reports,
+        "all_windows_empirical_uniform_bound": all_uniform,
+        "largest_t_descent_observed": (
+            None if largest_finite_witness is None else largest_finite_witness["t_descent"]
+        ),
+        "largest_t_descent_witness": largest_finite_witness,
+        "offending_witness": global_offending,
+        "cross_window_scaling": {
+            "x": "midpoint_log10_n",
+            "y": "log10(max_t_descent_for_scaling)",
+            "points": [
+                [point[0], point[1]]
+                for point in scaling_points
+            ],
+            "slope": slope,
+            "interpretation": (
+                "slope > 0 indicates hitting-time growth with window depth; "
+                "slope approximately 0 indicates stability across tested windows"
+            ),
+        },
+        "outcome_interpretation": {
+            "pointwise_descent_empirical_uniform_bound_stable": (
+                "empirical_uniform_bound_at_window is true at all tested windows "
+                "and cross-window slope is approximately zero; strong empirical "
+                "pointwise descent at finite windows, materially stronger than Foster"
+            ),
+            "pointwise_descent_empirical_uniform_bound_growing": (
+                "all tested windows clear the finite cutoff, but max hitting time "
+                "grows with depth; document scaling rate"
+            ),
+            "pointwise_descent_window_depth_growth_or_truncation": (
+                "some tested windows clear the cutoff and some do not; document "
+                "depth dependence"
+            ),
+            "pointwise_descent_no_uniform_empirical_bound": (
+                "no tested window clears the empirical uniform-bound criterion; "
+                "the obstruction class needs separate study"
+            ),
+        },
+    }
+
+
 def _window_report(
     *,
     window_index: int,
@@ -1127,6 +1960,135 @@ def _m1_cross_check(
     }
 
 
+def _max_numeric_disagreement(
+    generated: Any,
+    reference: Any,
+) -> tuple[bool, float, int]:
+    if isinstance(generated, bool) or isinstance(reference, bool):
+        return generated == reference, 0.0, 1
+    if isinstance(generated, (int, float)) and isinstance(reference, (int, float)):
+        disagreement = abs(float(generated) - float(reference))
+        return disagreement <= 1e-12, disagreement, 1
+    if generated is None or reference is None:
+        return generated is reference, 0.0, 1
+    if isinstance(generated, str) or isinstance(reference, str):
+        return generated == reference, 0.0, 1
+    if isinstance(generated, list) and isinstance(reference, list):
+        passes = len(generated) == len(reference)
+        max_disagreement = 0.0
+        comparisons = 1
+        for gen_item, ref_item in zip(generated, reference, strict=False):
+            item_passes, item_disagreement, item_comparisons = (
+                _max_numeric_disagreement(gen_item, ref_item)
+            )
+            passes = passes and item_passes
+            max_disagreement = max(max_disagreement, item_disagreement)
+            comparisons += item_comparisons
+        return passes, max_disagreement, comparisons
+    if isinstance(generated, dict) and isinstance(reference, dict):
+        passes = set(generated) == set(reference)
+        max_disagreement = 0.0
+        comparisons = 1
+        for key in sorted(set(generated) & set(reference)):
+            item_passes, item_disagreement, item_comparisons = (
+                _max_numeric_disagreement(generated[key], reference[key])
+            )
+            passes = passes and item_passes
+            max_disagreement = max(max_disagreement, item_disagreement)
+            comparisons += item_comparisons
+        return passes, max_disagreement, comparisons
+    return generated == reference, 0.0, 1
+
+
+def _filter_m_step_report_to_residue_powers(
+    report: dict[str, Any],
+    residue_powers: set[int],
+) -> dict[str, Any]:
+    filtered_windows: list[dict[str, Any]] = []
+    for window in report.get("window_reports", []):
+        filtered_m_reports: list[dict[str, Any]] = []
+        for m_report in window.get("m_step_reports", []):
+            filtered_m_report = {
+                "m": m_report["m"],
+                "structural_prediction": m_report["structural_prediction"],
+                "marginal_drift": m_report["marginal_drift"],
+                "drift_residual_against_m_log2_3_over_4": m_report[
+                    "drift_residual_against_m_log2_3_over_4"
+                ],
+                "conditional_drift_by_residue": [
+                    residue_report
+                    for residue_report in m_report["conditional_drift_by_residue"]
+                    if residue_report["k"] in residue_powers
+                ],
+            }
+            filtered_m_reports.append(filtered_m_report)
+        filtered_windows.append(
+            {
+                "window_index": window["window_index"],
+                "start_min": window["start_min"],
+                "start_max": window["start_max"],
+                "midpoint_log10_n": window["midpoint_log10_n"],
+                "sample_count": window["sample_count"],
+                "distinct_draws": window["distinct_draws"],
+                "seeds": window["seeds"],
+                "m_step_reports": filtered_m_reports,
+            }
+        )
+    return {
+        "ranges": report.get("ranges"),
+        "sample_count_per_range": report.get("sample_count_per_range"),
+        "random_seed": report.get("random_seed"),
+        "m_steps_grid": report.get("m_steps_grid"),
+        "window_reports": filtered_windows,
+        "m_step_drift_residual_table": report.get("m_step_drift_residual_table"),
+    }
+
+
+def _m_step_k_le_6_cross_check(
+    generated: dict[str, Any],
+    *,
+    reference_path: str,
+) -> dict[str, Any]:
+    path = Path(reference_path)
+    if not path.exists():
+        return {
+            "cross_check_against_k_le_6_passes": False,
+            "cross_check_max_disagreement": None,
+            "cross_check_comparisons": 0,
+            "cross_check_reference": reference_path,
+            "cross_check_status": "reference_missing",
+        }
+    try:
+        reference = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {
+            "cross_check_against_k_le_6_passes": False,
+            "cross_check_max_disagreement": None,
+            "cross_check_comparisons": 0,
+            "cross_check_reference": reference_path,
+            "cross_check_status": "reference_json_decode_failed",
+        }
+    generated_filtered = _filter_m_step_report_to_residue_powers(
+        generated,
+        residue_powers={2, 3, 4, 5, 6},
+    )
+    reference_filtered = _filter_m_step_report_to_residue_powers(
+        reference,
+        residue_powers={2, 3, 4, 5, 6},
+    )
+    passes, max_disagreement, comparisons = _max_numeric_disagreement(
+        generated_filtered,
+        reference_filtered,
+    )
+    return {
+        "cross_check_against_k_le_6_passes": passes,
+        "cross_check_max_disagreement": max_disagreement,
+        "cross_check_comparisons": comparisons,
+        "cross_check_reference": reference_path,
+        "cross_check_status": "compared_filtered_k_le_6_subreport",
+    }
+
+
 def m_step_foster_drift_report(
     *,
     ranges: tuple[tuple[int, int], ...] = DEFAULT_RANGES,
@@ -1386,6 +2348,75 @@ def m_step_foster_drift_report(
             ),
         },
     }
+
+
+def m_step_foster_drift_k8_report(
+    *,
+    ranges: tuple[tuple[int, int], ...] = DEFAULT_RANGES,
+    sample_count_per_range: int = 200_000,
+    residue_powers: Iterable[int] = DEFAULT_CHANG_RESOLUTION_RESIDUE_POWERS,
+    m_steps_grid: Iterable[int] = DEFAULT_M_STEPS_GRID,
+    foster_epsilon: float = 0.1,
+    random_seed: int = 0,
+    cross_check_reference_path: str = "docs/reports/m_step_foster_drift.json",
+) -> dict[str, Any]:
+    """Run the m-step Foster audit at Chang's mod-256 fiber resolution."""
+
+    report = m_step_foster_drift_report(
+        ranges=ranges,
+        sample_count_per_range=sample_count_per_range,
+        residue_powers=residue_powers,
+        m_steps_grid=m_steps_grid,
+        foster_epsilon=foster_epsilon,
+        random_seed=random_seed,
+    )
+    cross_check = _m_step_k_le_6_cross_check(
+        report,
+        reference_path=cross_check_reference_path,
+    )
+    report["status"] = report["status"].replace(
+        "finite_empirical_m_step_foster_drift_diagnostic_",
+        "finite_empirical_m_step_foster_drift_k8_diagnostic_",
+    )
+    report["type"] = "m_step_foster_drift_k8"
+    report["references"] = [
+        *report["references"],
+        "Chang 2026, arXiv:2603.25753 mod 32 with mod 256 fiber refinement",
+        cross_check_reference_path,
+    ]
+    report["chang_resolution"] = {
+        "description": (
+            "Chang 2603.25753 works at modulus 32 with mod 256 fiber "
+            "refinement; this audit extends residue powers through k=8 "
+            "(odd classes modulo 256)."
+        ),
+        "modulus_power_32": 5,
+        "fiber_refinement_power_256": 8,
+        "extra_residue_powers_checked": [
+            k for k in report["residue_powers"] if k in (7, 8)
+        ],
+    }
+    report.update(cross_check)
+    report["outcome_interpretation_k8"] = {
+        "foster_matches_chang_resolution": (
+            "m=16 with epsilon=0.1 clears all tested residue powers through "
+            "k=8; this closes the joint argument's third technical "
+            "verification empirically at finite sampled windows, not as a "
+            "proof claim"
+        ),
+        "foster_fails_at_chang_resolution": (
+            "some k=7 or k=8 residue class fails the configured Foster "
+            "condition; the residue-Markov framework would only be verified "
+            "at coarser resolution in this finite diagnostic"
+        ),
+    }
+    report["foster_holds_at_chang_resolution_m16_eps_0p1"] = (
+        report["smallest_m_uniform_negative_drift_by_residue_eps_0p1"] is not None
+        and report["smallest_m_uniform_negative_drift_by_residue_eps_0p1"] <= 16
+        and 7 in report["residue_powers"]
+        and 8 in report["residue_powers"]
+    )
+    return report
 
 
 def foster_drift_report_json(**kwargs: Any) -> str:

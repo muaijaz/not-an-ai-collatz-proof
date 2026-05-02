@@ -867,6 +867,23 @@ def format_jazz_constant_decomposition_report(
     )
 
 
+def format_chang_R_K_identity_report(result: dict) -> str:
+    sigma = result["chang_sigma_R_K"]["comparison_value_used"]
+    renewal = result["j_renewal_high_precision"]
+    interval = renewal["bootstrap_ci"]
+    alternate_matches = result.get("alternate_definition_matches", [])
+    return (
+        f"verdict={result['verdict']}, "
+        f"sigma_R_K={sigma}, "
+        f"J_renewal={renewal['estimate']}, "
+        f"J_CI=({interval['q025']}, {interval['q975']}), "
+        f"identity_supported={result['identity_supported_at_high_precision']}, "
+        f"alternate_matches={alternate_matches}, "
+        f"sampled_orbits={result['sampling_config']['sampled_orbits']}, "
+        f"renewal_excursions={renewal['sample_count']}"
+    )
+
+
 def format_hercher_t_ni_report(result: HercherTNiReport) -> str:
     return (
         f"status={result.status}, samples={result.sample_count}, "
@@ -1063,6 +1080,73 @@ def format_m_step_foster_drift_report(result: dict) -> str:
         f"obstructions_at_failing_m={smallest_count}, "
         f"obstructions_at_max_m={max_count} (m={max_m}), "
         f"m_step_residual_table={residual_table}"
+    )
+
+
+def format_m_step_foster_drift_k8_report(result: dict) -> str:
+    base = format_m_step_foster_drift_report(result)
+    return (
+        f"{base}, "
+        f"foster_holds_at_chang_resolution_m16_eps_0p1="
+        f"{result['foster_holds_at_chang_resolution_m16_eps_0p1']}, "
+        f"cross_check_against_k_le_6_passes="
+        f"{result['cross_check_against_k_le_6_passes']}, "
+        f"cross_check_max_disagreement={result['cross_check_max_disagreement']}"
+    )
+
+
+def format_pointwise_descent_audit_report(result: dict) -> str:
+    slope = result["cross_window_scaling"]["slope"]
+    witness = result.get("offending_witness") or {}
+    largest = result.get("largest_t_descent_observed")
+    window_table = [
+        (
+            window["start_min"],
+            window["start_max"],
+            window["hitting_time_distribution"]["max"],
+            window["truncation_count_at_max_m"],
+            window["empirical_uniform_bound_at_window"],
+        )
+        for window in result["window_reports"]
+    ]
+    return (
+        f"verdict={result['verdict']}, "
+        f"largest_t_descent={largest}, "
+        f"offending_n={witness.get('n')}, "
+        f"offending_R={witness.get('R')}, "
+        f"offending_n_mod_64={witness.get('n_mod_64')}, "
+        f"offending_status={witness.get('status')}, "
+        f"cross_window_scaling_slope={slope}, "
+        f"window_table=(start_min,start_max,max_t,trunc_at_max,uniform)={window_table}"
+    )
+
+
+def format_chang_bit4_balance_audit_report(result: dict) -> str:
+    witness = result.get("global_max_delta_witness") or {}
+    window_table = [
+        (
+            window["start_min"],
+            window["start_max"],
+            window["empirical_max_delta_at_window"],
+            window["chang_m_distribution"]["median"],
+            window["foster_rate_envelope_holds"],
+            window["foster_rate_envelope_violation_count"],
+        )
+        for window in result["window_reports"]
+    ]
+    return (
+        f"verdict={result['verdict']}, "
+        f"foster_rate_envelope_holds={result['foster_rate_envelope_holds']}, "
+        f"empirical_max_delta_decreasing_with_window="
+        f"{result['empirical_max_delta_decreasing_with_window']}, "
+        f"total_envelope_violations="
+        f"{result['foster_rate_envelope_total_violation_count']}, "
+        f"max_delta={witness.get('delta')}, "
+        f"max_delta_start={witness.get('start')}, "
+        f"max_delta_m={witness.get('chang_m')}, "
+        f"max_delta_T={witness.get('orbit_length_T')}, "
+        f"window_table=(start_min,start_max,max_delta,median_m,envelope_holds,violations)="
+        f"{window_table}"
     )
 
 

@@ -1,0 +1,150 @@
+{
+  "caveat": "Cycle survivors are complete only for the bounded simple-cycle scan up to max_cycle_edges and max_cycles_scanned. The slope window is a finite diagnostic; it is not a full Hercher parity-vector theorem.",
+  "construction": "For each (q,Rmax), Karp is run on the LTE-closed tail graph crossed with a period-capped balanced-word automaton, while the same tail graph is scanned for bounded upper-Christoffel cycles inside the configured slope window.",
+  "deferred_levels": [
+    {
+      "bound": "memory_bound",
+      "max_tail_depth": 8,
+      "reason": "deferred after probes including (9,8) and isolated (8,7) at widened automaton periods reached memory pressure (~49 GB RSS, ~1 GB available) before completion; the product-graph Karp pass is memory-bound in the current implementation",
+      "requested_automaton_max_period": 8,
+      "requested_max_cycle_edges": 10,
+      "requested_max_cycles_scanned": 200000,
+      "suggested_next_run": "use a memory-bounded Karp implementation or run smaller automaton/cycle caps before retrying (9,8)",
+      "tail_unit_power": 9
+    }
+  ],
+  "levels": [
+    {
+      "automaton_max_period": 4,
+      "automaton_patterns": 5,
+      "automaton_states": 16,
+      "closed_overflow_edges": 11,
+      "constrained_karp_factor": 0.7500000000000441,
+      "cycle_cap_reached": false,
+      "cycles_scanned": 15330,
+      "exact_rational_factor": "3/4",
+      "level_index": 0,
+      "max_cycle_edges": 8,
+      "max_cycles_scanned": 200000,
+      "max_imbalance": 1,
+      "max_tail_depth": 7,
+      "max_valuation": 12,
+      "non_elementary_factor_ge_one": true,
+      "non_elementary_survivor_count": 2,
+      "product_edges": 7163,
+      "product_states": 14336,
+      "scan_completion_status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "slope_target": 1.584962500721156,
+      "slope_tolerance": 0.5,
+      "status": "obstruction_found_non_elementary_factor_ge_one",
+      "survivor_count": 3,
+      "survivors": [
+        {
+          "accelerated_steps": 4,
+          "christoffel_slope": "5/4",
+          "cycle_edges": 4,
+          "edge_factor": 1.2613446228805718,
+          "edge_mean_log2_slope": 0.3349625007211561,
+          "non_elementary": true,
+          "parity_word": [
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "slope_distance": 0.3349625007211561,
+          "valuation_word": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "accelerated_steps": 3,
+          "christoffel_slope": "5/3",
+          "cycle_edges": 3,
+          "edge_factor": 0.9449407874211548,
+          "edge_mean_log2_slope": -0.0817041659455106,
+          "non_elementary": true,
+          "parity_word": [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "slope_distance": 0.08170416594551067,
+          "valuation_word": [
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "accelerated_steps": 1,
+          "christoffel_slope": "2/1",
+          "cycle_edges": 1,
+          "edge_factor": 0.75,
+          "edge_mean_log2_slope": -0.4150374992788439,
+          "non_elementary": false,
+          "parity_word": [
+            1,
+            0
+          ],
+          "slope_distance": 0.4150374992788439,
+          "valuation_word": [
+            2
+          ]
+        }
+      ],
+      "tail_edges": 2176,
+      "tail_states": 896,
+      "tail_unit_power": 8
+    }
+  ],
+  "next_step": "If obstruction is null, widen both the automaton period cap and cycle-edge cap. If obstruction is present, inspect that survivor as the new finite-to-infinite bridge obstruction.",
+  "obstruction": {
+    "automaton_max_period": 4,
+    "level_index": 0,
+    "max_tail_depth": 7,
+    "slope_tolerance": 0.5,
+    "survivor": {
+      "accelerated_steps": 4,
+      "christoffel_slope": "5/4",
+      "cycle_edges": 4,
+      "edge_factor": 1.2613446228805718,
+      "edge_mean_log2_slope": 0.3349625007211561,
+      "non_elementary": true,
+      "parity_word": [
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "slope_distance": 0.3349625007211561,
+      "valuation_word": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    "tail_unit_power": 8
+  },
+  "outcome_interpretation": "At bounded deep level (8,7), constrained Karp remains 3/4, but the slope-window scan has non-elementary factor>=1 survivors under the shortened caps. This is a finite diagnostic deviation from the earlier (5,4)-(7,6) slope-filtered picture, not a proof claim.",
+  "scan_policy": {
+    "cap_rationale": "Deep run uses shortened bounded caps after memory-bound probes: (8,7) executed with automaton_max_period=4 and max_cycle_edges=8; (9,8) deferred.",
+    "cycle_cap_status_values": [
+      "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "cycle_cap_reached"
+    ],
+    "max_cycle_edges": 8,
+    "max_cycles_scanned": 200000,
+    "max_valuation": 12
+  },
+  "status": "obstruction_found_non_elementary_factor_ge_one",
+  "type": "karp_slope_joint_sweep"
+}

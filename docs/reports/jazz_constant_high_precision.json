@@ -1,0 +1,65 @@
+{
+  "caveat": "This artifact is a finite empirical diagnostic. Chang's R(K) necklace sum is computed exactly in its rational combinatorial coefficients and numerically after the log_2(3) weighting. J_renewal and alternate Cramer rates are finite sampled, binned empirical estimates. The report does not prove or disprove a symbolic identity.",
+  "chang_sigma_R_K_comparison_value": 0.0882362530512702,
+  "identity_supported_at_high_precision": false,
+  "j_renewal_high_precision": {
+    "bootstrap_ci": {
+      "estimate": 0.08346903426255636,
+      "q025": 0.08314605994133623,
+      "q500": 0.08346495356843597,
+      "q975": 0.0837883621454151,
+      "quantity": "cramer_rate_I0"
+    },
+    "bootstrap_intervals": [
+      {
+        "estimate": -0.8010391065575394,
+        "q025": -0.8032880158393019,
+        "q500": -0.8009829789055307,
+        "q975": -0.799106043067533,
+        "quantity": "mean_delta_log2"
+      },
+      {
+        "estimate": 5.552270912576209,
+        "q025": 5.537358304957011,
+        "q500": 5.552084524255003,
+        "q975": 5.567012289942148,
+        "quantity": "variance_delta_log2"
+      },
+      {
+        "estimate": 0.08346903426255636,
+        "q025": 0.08314605994133623,
+        "q500": 0.08346495356843597,
+        "q975": 0.0837883621454151,
+        "quantity": "cramer_rate_I0"
+      },
+      {
+        "estimate": 0.26266629636312555,
+        "q025": 0.26213417020488317,
+        "q500": 0.2626630049924744,
+        "q975": 0.2631527529576442,
+        "quantity": "cramer_lambda"
+      }
+    ],
+    "cramer_lambda": 0.26266629636312555,
+    "estimate": 0.08346903426255636,
+    "inside_ci_of_chang_sigma_R_K": false,
+    "mean_delta_log2": -0.8010391065575394,
+    "sample_count": 5000031,
+    "tilted_variance_at_lambda": 1.5750174114050812,
+    "variance_delta_log2": 5.552270912576209
+  },
+  "sampling_config": {
+    "bootstrap_resamples": 500,
+    "bootstrap_seed": 1,
+    "completed_orbits": 140730,
+    "histogram_bin_width": 0.005,
+    "max_steps_per_orbit": 10000,
+    "random_seed": 0,
+    "sampled_orbits": 140730,
+    "target_renewal_excursions": 5000000,
+    "total_accelerated_steps": 9857962,
+    "truncated_orbits": 0
+  },
+  "status": "finite_empirical_high_precision_renewal_cramer_diagnostic_not_collatz_proof",
+  "type": "jazz_constant_high_precision"
+}
