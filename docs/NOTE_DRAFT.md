@@ -188,6 +188,130 @@ descent marker (`docs/reports/finite_to_infinite_bridge_audit.json`). A
 persistent family there would refocus the obstruction; failure to find one
 would make the bridge candidate sharper but still finite.
 
+## Realizable Karp on the LTE-Closed Tail Graph
+
+The bounded-cycle audit now separates abstract tail-graph cycles from
+integer-realizable cycle words. In the joint Karp/slope sweep at
+`(q,Rmax)=(5,4),(6,5),(7,6)`, with automaton period widened across the levels,
+the only slope-compatible survivor at each tested level is the elementary
+valuation word `[2]`, with factor `3/4`
+(`docs/reports/karp_slope_joint_sweep.json`). The realizability extension then
+audits all simple cycles up to `max_cycle_edges=12` at the same three levels:
+`226,333` simple cycles are classified, `226,330` are
+`noninteger_2adic_only`, and the only `3` `positive_integer_cycle` entries are
+the elementary `[2]` cycle, one per level
+(`docs/reports/tail_cycle_realizability.json`,
+`docs/reports/tail_cycle_realizability_extended.json`). Thus the saved finite
+diagnostic has
+
+```text
+realizable Karp factor = slope-filtered Karp factor = 3/4
+```
+
+on these levels. This should be read as a finite bounded-cycle fact, not as a
+global statement about arbitrary infinite products.
+
+The renewal-scale drift data now has a compatible phase interpretation. Split
+accelerated steps by the pre-step odd integer modulo `4`: `n == 3 mod 4`
+(`v2(n+1) >= 2`) is tail-internal and has forced valuation `a=1`; `n == 1 mod
+4` is the post-exit phase (`docs/reports/renewal_drift_phase_decomposed.json`).
+The asymptotic post-exit valuation target in this convention is **`3`**, not
+`2`: it is the shifted-Geometric value seen after removing the deterministic
+tail-internal valuation-one steps. The symbolic mean-step identity suggested by
+the artifacts is therefore
+
+```text
+mu_step = (1/2) log2(3/2) + (1/2) log2(3/4) = log2(3/4),
+```
+
+with `E[a | tail] = 1` and asymptotic `E[a | post_exit] = 3`
+(`docs/reports/renewal_drift_per_step.json`,
+`docs/reports/renewal_drift_phase_decomposed.json`,
+`docs/reports/renewal_drift_phase_decomposed_n0_stability.json`).
+
+The finite-window n0 sweep is consistent with slow approach to this phase
+picture, but not yet with a completed asymptotic identification. Across
+`[10^2,10^4]` through `[10^12,10^15]`, the post-exit valuation deviation
+shrinks from `-0.03473021694546086` to `-0.006503489706314536`, with monotone
+absolute decrease and log10-slope `-0.06656531395656089` per decade
+(`docs/reports/renewal_drift_phase_decomposed_n0_stability.json`). From the
+`[10^6,10^9]` window onward the total drift deviation is below `0.01`, ending
+in the `0.005` range; it is not strictly monotone at the deepest window, moving
+from `0.005160187031614694` to `0.0054062766596057465`, a change smaller than
+the reported deepest-window CI halfwidth `0.0005710918683108357`
+(`docs/reports/renewal_drift_phase_decomposed_n0_stability.json`). Thus the
+saved verdict is `non_monotone_or_flat`, while the deepest-window deviations
+remain small finite-sample quantities rather than theorem-level residuals.
+
+The caveat is essential. These artifacts combine a finite audit of bounded
+simple cycles on finite LTE-closed tail graphs with finite-window empirical
+renewal drift estimates. They do not prove a global per-orbit Lyapunov
+function, do not control arbitrary infinite switching paths, and do not imply a
+Collatz descent theorem.
+
+## Foster-Lyapunov Drift Audit on V(n) = log₂(n) + v_2(n+1)
+
+The phase-aware Lyapunov search turns V5's failed running-debt ansatz into a
+more structured candidate. Over `100,000` sampled orbits in
+`[10^6,10^9]`, the best grid point in
+
+```text
+V(n; alpha, beta, gamma_diff)
+  = log2(n) + alpha R(n) + beta D_running(n) + phase offset
+```
+
+is `alpha = 1.0`, `beta = 0.0`, `gamma_diff = 0.0`, i.e.
+
+```text
+V(n) = log2(n) + v2(n+1).
+```
+
+This reduces the same-sample V5 non-decrease fraction from
+`0.5001335415695829` to `0.1655372436648494`; the tail-internal phase has
+`0.0` non-decrease, and the remaining positive jumps are post-exit steps with
+large `R' = v2(S(n)+1)` spikes (`docs/reports/phase_lyapunov_search.json`).
+
+The one-step Foster audit confirms the marginal drift but rejects uniform
+one-step residue negativity. Across the five windows
+`[10^2,10^4]` through `[10^12,10^15]`, the marginal drift of `V` is
+empirically consistent with `log2(3/4)`: the deepest-window estimate is
+`-0.4123424992788405` with CI
+`[-0.41856572879163634, -0.4061192697660446]`, and the saved one-step verdict
+is `drift_residue_obstruction`
+(`docs/reports/phase_lyapunov_foster_drift.json`). The m-step artifact
+cross-checks the `m=1` slice against this one-step audit with maximum
+disagreement `2.6645352591003757e-15`
+(`docs/reports/m_step_foster_drift.json`).
+
+The obstruction is arithmetic rather than marginal. At one step, residue
+conditional drift fails uniform negativity for every tested
+`k in {3,4,5,6}`, with `50` obstruction witnesses
+(`docs/reports/phase_lyapunov_foster_drift.json`). The visible cascade is
+
+```text
+n == 1  mod 8   : drift 0.5954199142013228,
+                  CI [0.5830610092394827, 0.6077788191631629]
+n == 9  mod 16  : drift 1.5919631928192652,
+                  CI [1.5747431836625472, 1.6091832019759833]
+n == 41 mod 64  : drift 3.557870295871902,
+                  CI [3.5249778818408877, 3.5907627099029162]
+```
+
+all in the first window `[10^2,10^4]`; the same `41 mod 64` class remains the
+largest obstruction across later windows
+(`docs/reports/phase_lyapunov_foster_drift.json`).
+
+The m-step audit closes this finite residue-Markov version of the question on
+the tested grid. For `m in {1,2,4,8,16,32,64}`, the smallest value with
+residue-conditional drift uniformly negative across all tested windows and
+residue powers is `m = 16`, and the same `m = 16` also clears the
+`epsilon = 0.1` margin. At `m = 64`, the obstruction count is `0`. The binding
+class before clearance is still `n == 41 mod 64`: it is the maximal
+obstruction at `m = 1,2,4,8`, then disappears at `m = 16`
+(`docs/reports/m_step_foster_drift.json`).
+
+The candidate Lyapunov satisfies the m-step Foster-Lyapunov drift condition (Meyn-Tweedie, Markov Chains and Stochastic Stability, ch. 11) on residue quotients mod 2^k for k ∈ {2,3,4,5,6} at sample windows n_0 ∈ [10², 10¹⁵], with smallest tested grid value m = 16 and geometric-ergodicity margin ε = 0.1. The Collatz orbit is deterministic, not a Markov chain; this is a finite empirical diagnostic on the residue Markov chain quotient, not a theorem about deterministic per-orbit descent.
+
 ## Current Reading
 
 The strongest finite picture is consistent across three views: LTE-closed

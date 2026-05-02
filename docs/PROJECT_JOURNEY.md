@@ -429,6 +429,16 @@ Saved artifacts:
 8. **Hercher T(n_i)** universal bound `< 3` empirically tight.
 9. **Paparella nilpotency** at `n ≤ 1024`.
 10. **Five-projection consistency** of unified operator M = T_1 + T_2.
+11. **Realizable Karp on tested LTE-closed tail graphs = `3/4`**:
+    bounded simple-cycle audit at `(5,4),(6,5),(7,6)` leaves only the
+    elementary `[2]` positive-integer realizer, while the high-growth
+    abstract cycles classify as `noninteger_2adic_only`
+    (`docs/reports/tail_cycle_realizability_extended.json`).
+12. **m-step Foster-Lyapunov drift for `V(n) = log₂(n) + v_2(n+1)`**:
+    on residue quotients mod `2^k` for `k ∈ {2,3,4,5,6}`, the finite audit
+    finds residue-uniform negative drift at the smallest tested grid value
+    `m = 16`, with margin `ε = 0.1`, over sample windows
+    `n₀ ∈ [10²,10¹⁵]` (`docs/reports/m_step_foster_drift.json`).
 
 **Demoted claims (audit-revealed):**
 
@@ -449,10 +459,176 @@ Saved artifacts:
 4. **Lifting PECM Lyapunov to per-orbit Lyapunov.** V5's gap.
 5. **Symbolic interpretation of `J_renewal`** — does it have a closed
    form via integral representation à la Khinchin?
+6. **Phase-aware per-orbit Lyapunov.** The residue-Markov m-step Foster
+   question is empirically closed on the tested grid for
+   `V(n) = log₂(n) + v_2(n+1)`: `m = 16` gives residue-uniform negative
+   drift with margin `ε = 0.1` across the tested windows and residue powers.
+   The remaining theorem-shaped problem is the upgrade from residue-Markov
+   geometric ergodicity to deterministic per-orbit descent, the same
+   distributional-to-pointwise wall that Tao 2019 works around in an
+   almost-all setting.
 
 ---
 
-## 13. Lessons learned
+## 13. Realizable-Karp / Renewal-Drift Bridge
+
+**Trigger:** the Christoffel and constrained-Karp artifacts kept returning
+`3/4`, while the LTE-closed tail graph still had abstract high-growth cycles.
+The open question became whether the gap was arithmetic or analytic: are the
+cycles filtered out by Christoffel/slope compatibility actually realizable by
+positive integer orbits?
+
+**Iteration 1 — joint Karp/slope sweep.** The product graph was swept across
+`(q,Rmax)=(5,4),(6,5),(7,6)` while increasing the balanced-word automaton
+period. The result was stable: exactly one slope-compatible survivor at each
+level, the elementary valuation word `[2]`, with factor `3/4`
+(`docs/reports/karp_slope_joint_sweep.json`).
+
+**Iteration 2 — cycle realizability.** The next audit classified the
+high-growth simple cycles by exact accelerated-word lifting. The obstruction
+did not appear: the high-growth witnesses classified as
+`noninteger_2adic_only`, not as positive integer cycles
+(`docs/reports/tail_cycle_realizability.json`).
+
+**Iteration 3 — extended realizable Karp.** The audit was widened to all
+simple cycles up to `max_cycle_edges=12` at the same three levels. It scanned
+`226,333` simple cycles; `226,330` classified as `noninteger_2adic_only`, and
+the only `3` `positive_integer_cycle` entries were the elementary `[2]` cycle,
+one per level. Therefore the finite diagnostic reads:
+
+```text
+realizable Karp = slope-filtered Karp = 3/4
+```
+
+at the tested levels (`docs/reports/tail_cycle_realizability_extended.json`).
+
+**Iteration 4 — renewal per-step drift audit.** The first renewal-scale
+identity check tested the naive per-step target
+`mean_valuation_per_step = 2` and `mean_drift_per_step = log2(3/4)`.
+At the standard `[10^6,10^9]` window both were outside the reported intervals:
+`mean_valuation_per_step = 1.995093964280808` and
+`mean_drift_per_step = -0.4069756235411483`
+(`docs/reports/renewal_drift_per_step.json`). This was the first correction:
+the bridge was not a one-phase Geom(2) story.
+
+**Iteration 5 — phase decomposition.** Splitting accelerated steps by
+pre-step odd residue clarified the structure. Tail-internal steps
+(`n == 3 mod 4`, equivalently `v2(n+1) >= 2`) have deterministic valuation
+`a=1`; post-exit steps (`n == 1 mod 4`) carry the shifted distribution. The
+initial back-of-envelope estimate `w_tail ≈ 0.008` was wrong by a factor of
+about `60`: the artifact gives `w_tail = 0.500054904385728` in the
+`[10^6,10^9]` window. The post-exit valuation target is therefore `3`, not
+`2` (`docs/reports/renewal_drift_phase_decomposed.json`).
+
+**Iteration 6 — n0 sweep.** The phase-decomposed n0 sweep tracks the slow
+finite-window approach to the shifted post-exit target. The post-exit
+valuation deviation shrinks monotonically from `-0.03473021694546086` to
+`-0.006503489706314536`, with log10-slope `-0.06656531395656089` per decade.
+The total drift deviation falls into the `0.005` range at the deepest windows,
+but is not strictly monotone: it moves from `0.005160187031614694` to
+`0.0054062766596057465`, a change smaller than the deepest CI halfwidth
+`0.0005710918683108357`. The saved verdict is therefore
+`non_monotone_or_flat`, not a closed asymptotic theorem
+(`docs/reports/renewal_drift_phase_decomposed_n0_stability.json`).
+
+**What was confirmed:** at the tested finite levels, the realizable bounded
+cycle maximizer is elementary `[2]` and has factor `3/4`. The renewal-scale
+mean-step identity has the right phase form:
+
+```text
+mu_step = (1/2) log2(3/2) + (1/2) log2(3/4),
+E[a | tail] = 1,     E[a | post_exit] -> 3.
+```
+
+**What was corrected:** the early one-phase reading `E[a] = 2` was the wrong
+quantity for the post-exit phase; the right asymptotic target after removing
+tail-internal forced steps is `E[a | PE] = 3`. The early mixing-weight
+explanation `w_tail ≈ 0.008` was also wrong; the sampled phase weights are
+balanced near `1/2`. The remaining deviations look like slow finite-window
+mixing effects, but the artifacts deliberately stop short of claiming this as
+a theorem.
+
+Saved artifacts:
+- `docs/reports/karp_slope_joint_sweep.json`
+- `docs/reports/tail_cycle_realizability.json`
+- `docs/reports/tail_cycle_realizability_extended.json`
+- `docs/reports/renewal_drift_per_step.json`
+- `docs/reports/renewal_drift_phase_decomposed.json`
+- `docs/reports/renewal_drift_phase_decomposed_n0_stability.json`
+
+---
+
+## 14. Foster-Lyapunov Drift Audit
+
+**Trigger:** the realizable-Karp / renewal-drift bridge made the old V5 failure
+more precise. The question was no longer whether
+`log₂ n + 16·D_running` decreases per accelerated step; V5 had already shown
+that it does not. The reformulated question was whether the `n mod 4` phase
+coordinate, and especially the tail depth `R(n)=v_2(n+1)`, supplies the missing
+state variable for a Foster-style drift statement on residue quotients.
+
+**Iteration 1 — phase Lyapunov search.** A grid search over
+`(α, β, γ_diff)` found the rank-zero candidate
+
+```text
+V(n) = log₂(n) + v_2(n+1)
+```
+
+as the best point in the tested family: `α = 1.0`, `β = 0.0`,
+`γ_diff = 0.0`. On the `100,000`-orbit sample, the non-decrease fraction fell
+from V5's same-sample baseline `0.5001335415695829` to
+`0.1655372436648494`. Tail-internal steps were locked at `0.0` non-decrease;
+the remaining violations were post-exit `R`-spike events, such as `R=1`
+landing at `R'=19` or `21` (`docs/reports/phase_lyapunov_search.json`). This
+was not a per-step Lyapunov closure, but it localized the obstruction.
+
+**Iteration 2 — one-step Foster audit.** The next pass used explicit
+Meyn-Tweedie language and tested the candidate on residue quotients. The
+marginal drift was right: across windows `[10²,10⁴]` through `[10¹²,10¹⁵]`,
+the drift of `V` was consistent with `log₂(3/4)`, with deepest-window estimate
+`-0.4123424992788405` and CI
+`[-0.41856572879163634, -0.4061192697660446]`. But residue uniformity failed
+decisively. The audit recorded `50` obstruction witnesses across
+`k ∈ {3,4,5,6}`, with the arithmetic cascade
+`n ≡ 1 mod 8` (drift `0.5954199142013228`),
+`n ≡ 9 mod 16` (drift `1.5919631928192652`), and
+`n ≡ 41 mod 64` (drift `3.557870295871902`)
+(`docs/reports/phase_lyapunov_foster_drift.json`). So the one-step Foster
+condition failed even though the marginal mean was already at the
+realizable-Karp value.
+
+**Iteration 3 — m-step Foster audit.** Foster-Lyapunov theory permits an
+m-step version, so the audit was repeated for
+`m ∈ {1,2,4,8,16,32,64}` using the same per-window samples. The `m=1`
+cross-check reproduced the one-step audit to machine precision:
+`m1_max_disagreement = 2.6645352591003757e-15`. The binding obstruction
+remained `n ≡ 41 mod 64` through the chain: it was the maximal obstruction at
+`m=1,2,4,8`. At `m=16`, residue-conditional drift became uniformly negative
+across every tested window and residue power, with margin `ε = 0.1`; at
+`m=64`, the obstruction count was `0`
+(`docs/reports/m_step_foster_drift.json`).
+
+This completes the finite diagnostic chain
+
+```text
+realizable Karp = 3/4
+renewal mean drift = log₂(3/4)
+m=16 Foster drift on residue quotients
+```
+
+at the tested levels and windows. It does not establish deterministic
+per-orbit descent. The remaining lift from residue-Markov geometric ergodicity
+to deterministic per-orbit descent is exactly the distributional-to-pointwise
+wall that Tao 2019 addresses at the almost-all level.
+
+Saved artifacts:
+- `docs/reports/phase_lyapunov_search.json`
+- `docs/reports/phase_lyapunov_foster_drift.json`
+- `docs/reports/m_step_foster_drift.json`
+
+---
+
+## 15. Lessons learned
 
 **What we got right:**
 
@@ -490,12 +666,12 @@ Saved artifacts:
 
 ---
 
-## 14. Reproducibility
+## 16. Reproducibility
 
 All results in this journey are reproducible:
 
 ```bash
-# Run the full test suite (currently 150 tests passing in ~1.2s)
+# Run the full test suite (currently 160 tests passing in ~2s)
 uv run python -m pytest -q
 
 # Reproduce any artifact in docs/reports/ via the corresponding CLI:
@@ -509,7 +685,7 @@ Reference papers are saved in `docs/references/` for offline access.
 
 ---
 
-## 15. Acknowledgments
+## 17. Acknowledgments
 
 The project was driven by an iterative human–AI collaboration. The
 human's intuition repeatedly produced productive starting points
