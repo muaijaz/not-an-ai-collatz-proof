@@ -6,11 +6,11 @@
 
 *Renewal Cramér rates · Joint Spectral Radius diagnostics · Five-projection operator synthesis*
 
-[![Tests](https://img.shields.io/badge/tests-150%20passing-brightgreen?style=flat-square)](.)
+[![Tests](https://img.shields.io/badge/tests-160%20passing-brightgreen?style=flat-square)](.)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-empirical-orange?style=flat-square)](.)
 [![Python](https://img.shields.io/badge/python-3.12-blue?style=flat-square)](.)
-[![Reproducible](https://img.shields.io/badge/artifacts-91%20JSON-success?style=flat-square)](docs/reports)
+[![Reproducible](https://img.shields.io/badge/artifacts-100%20JSON-success?style=flat-square)](docs/reports)
 
 </div>
 
@@ -19,19 +19,21 @@
 > **Status note.** The Collatz conjecture remains open. This project
 > does **not** claim a proof. It produces a calibrated map of approaches,
 > several verified empirical constants with rigorous confidence intervals,
-> and a clean structural number where three independent computations
-> converge.
+> and a clean structural number where four independent computations
+> converge — and where an explicit Lyapunov candidate satisfies an
+> m-step Foster condition on residue quotients with the same constant
+> as its per-step drift.
 
 ---
 
 ## Headline result
 
-Three independent operator-theoretic computations on the same finite
+Four independent operator-theoretic computations on the same finite
 operator all give the same value:
 
 <div align="center">
 
-`JSR_tail-filtered  =  Λ_Markov  =  JSR_Christoffel-filtered  =  3/4`
+`JSR_tail-filtered  =  Λ_Markov  =  JSR_Christoffel-filtered  =  Karp_realizable  =  3/4`
 
 </div>
 
@@ -40,9 +42,23 @@ operator all give the same value:
 | Tail-filtered JSR (finite R) | `0.7500` exact | rigorous structural |
 | Markov-Lyapunov on LTE-closed operator | `0.7517` (0.2% off) | empirical, finite resolution |
 | Christoffel-filtered worst-case JSR | `0.7500` exact | bounded resolution |
+| Realizable Karp (positive-integer cycles only) | `0.7500` exact | bounded simple cycles, integer-realizability classified |
 
 `3/4 = e^(log 3/4)` is the **per-step orbit growth rate** for Collatz orbits
-in this framework — the structural backbone result.
+in this framework — the structural backbone result. Of `226,333` simple
+cycles audited at `(q, R_max) ∈ {(5,4),(6,5),(7,6)}`, `226,330` classify
+as `noninteger_2adic_only`; the only positive-integer realizers are
+the elementary `[2]` cycle, one per level.
+
+The same constant surfaces as the per-step drift of an explicit Lyapunov
+candidate. `V(n) = log₂(n) + v_2(n+1)` satisfies the m-step Foster-Lyapunov
+condition (Meyn-Tweedie, *Markov Chains and Stochastic Stability*, ch. 11)
+on residue quotients `mod 2^k` for `k ∈ {2,3,4,5,6}` at sample windows
+`n₀ ∈ [10², 10¹⁵]`, with smallest tested grid value `m = 16` and
+geometric-ergodicity margin `ε = 0.1`. Marginal drift is empirically
+indistinguishable from `log₂(3/4) = −0.4150` per step. This is a finite
+empirical diagnostic on the residue Markov chain quotient, not a theorem
+about deterministic per-orbit descent.
 
 ---
 
@@ -55,6 +71,7 @@ in this framework — the structural backbone result.
 | Mean per-excursion drift `μ` | `−0.802 ± 0.001` | concentration bound |
 | Unconstrained projective JSR | `1.5` | rigorous, squeeze gap `< 10⁻⁶` |
 | Λ on LTE-closed operator | `−0.412` | Markov-Furstenberg |
+| Foster m-step drift, `V = log₂n + v₂(n+1)`, `m = 16` | uniform negative residue-conditional drift, ε = 0.1 | `m_step_foster_drift.json`; `k ∈ {2..6}`, `n₀ ∈ [10², 10¹⁵]` |
 
 Stable across `n₀ ∈ [10⁴, 10¹⁵]` with slope `< 0.001` per decade.
 
@@ -81,7 +98,7 @@ resolution:
 # Install dependencies
 uv sync
 
-# Run all 150 tests (≈1.2s)
+# Run all 160 tests (≈1.5s)
 uv run python -m pytest -q
 
 # Smoke test the experimental pipeline
@@ -129,7 +146,7 @@ collatz-renewal-framework/
 ├── uv.lock
 ├── collatz_certificate_search.py   ← original CLI compatibility wrapper
 ├── collatz_exp/                    ← main package, 75 modules
-├── tests/                          ← 150 passing tests
+├── tests/                          ← 160 passing tests
 └── docs/
     ├── NOTABLE_RESULTS.md          ← running result catalog
     ├── PROJECT_JOURNEY.md          ← chronological narrative + audit log
@@ -138,7 +155,7 @@ collatz-renewal-framework/
     ├── UNIFIED_MODEL.md            ← 5-projection operator synthesis
     ├── collatz_strategy.md         ← working strategy notes
     ├── references/                 ← Tao, Mori, Hercher, Paparella, Chang PDFs
-    └── reports/                    ← 91 JSON artifacts (one per result)
+    └── reports/                    ← 100 JSON artifacts (one per result)
 ```
 
 ---
@@ -186,7 +203,11 @@ Named, not closed:
    bounded-cycle filter to a full Hercher-style theorem are open.
 3. **Profinite continuity** — finite quotients to limit operator on
    `ℓ²(ℤ_2 × ℤ_3)`.
-4. **Lifting PECM Lyapunov to per-orbit Lyapunov** — V5's gap.
+4. **Lifting residue-Markov m-step Foster to per-orbit Lyapunov** —
+   `V(n) = log₂(n) + v_2(n+1)` satisfies the Foster condition at `m = 16`
+   with margin `ε = 0.1` on residue quotients `mod 2^k` for `k ∈ {2..6}`;
+   the deterministic per-orbit upgrade is the same wall as Tao 2019's
+   distributional-to-pointwise problem.
 5. **Symbolic representation of `J_renewal`** — Khinchin-style integral
    representation conjectured; no elementary closed form found.
 
@@ -201,10 +222,12 @@ statements.
   [`docs/reports/`](docs/reports).
 - Each artifact records method, parameters, sample size, bootstrap CI,
   and exact empirical value.
-- 150 passing tests cover core arithmetic, certificates, Mersenne tail
+- 160 passing tests cover core arithmetic, certificates, Mersenne tail
   dynamics, post-exit map, renewal Cramér computation, Tao verification,
   Hercher bounds, Paparella nilpotency, JSR variants, automaton-constrained
-  Karp, and upper-Christoffel slope filtering.
+  Karp, upper-Christoffel slope filtering, tail-cycle realizability,
+  phase-decomposed renewal drift, phase-aware Lyapunov search, and
+  m-step Foster-Lyapunov drift.
 - Reference papers in [`docs/references/`](docs/references) for offline
   access.
 
@@ -267,10 +290,11 @@ Several iterations later, with non-trivial AI collaboration, this is
 what came out.
 
 It is not a proof. It is an honestly-calibrated computational framework
-with a triply-confirmed structural rate `3/4 = e^(log 3/4)`, an empirical
-constant `J = 0.08372911906309355` stable across 11 decades of starting magnitude,
-and a five-projection synthesis of four published papers on the same
-underlying operator.
+with a quadruply-confirmed structural rate `3/4 = e^(log 3/4)`, the same
+constant surfacing as the per-step drift of an m=16 Foster-Lyapunov
+condition on residue quotients, an empirical constant `J = 0.08372911906309355`
+stable across 11 decades of starting magnitude, and a five-projection
+synthesis of four published papers on the same underlying operator.
 
 If any of it ends up being useful, name it after me.
 
