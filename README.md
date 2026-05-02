@@ -6,11 +6,11 @@
 
 *Renewal Cramér rates · Joint Spectral Radius diagnostics · Five-projection operator synthesis*
 
-[![Tests](https://img.shields.io/badge/tests-160%20passing-brightgreen?style=flat-square)](.)
+[![Tests](https://img.shields.io/badge/tests-164%20passing-brightgreen?style=flat-square)](.)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-empirical-orange?style=flat-square)](.)
 [![Python](https://img.shields.io/badge/python-3.12-blue?style=flat-square)](.)
-[![Reproducible](https://img.shields.io/badge/artifacts-100%20JSON-success?style=flat-square)](docs/reports)
+[![Reproducible](https://img.shields.io/badge/artifacts-107%20JSON-success?style=flat-square)](docs/reports)
 
 </div>
 
@@ -53,12 +53,20 @@ the elementary `[2]` cycle, one per level.
 The same constant surfaces as the per-step drift of an explicit Lyapunov
 candidate. `V(n) = log₂(n) + v_2(n+1)` satisfies the m-step Foster-Lyapunov
 condition (Meyn-Tweedie, *Markov Chains and Stochastic Stability*, ch. 11)
-on residue quotients `mod 2^k` for `k ∈ {2,3,4,5,6}` at sample windows
+on residue quotients `mod 2^k` for `k ∈ {2,3,4,5,6,7,8}` at sample windows
 `n₀ ∈ [10², 10¹⁵]`, with smallest tested grid value `m = 16` and
 geometric-ergodicity margin `ε = 0.1`. Marginal drift is empirically
 indistinguishable from `log₂(3/4) = −0.4150` per step. This is a finite
 empirical diagnostic on the residue Markov chain quotient, not a theorem
 about deterministic per-orbit descent.
+
+Combining this framework's m-step Foster condition with Chang's
+`arXiv:2603.25753` Map Balance Theorem gives a joint argument that reduces
+Collatz to the Tao distributional-to-pointwise wall. The three named technical
+verifications are empirically closed at finite windows: `δ_max ≈ 0.119`
+(`docs/reports/delta_max_quantitative.md`), Foster at `k=7,8`
+(`docs/reports/m_step_foster_drift_k8.json`), and direct bit-4 balance
+(`docs/reports/chang_bit4_balance_audit.json`).
 
 ---
 
@@ -71,7 +79,7 @@ about deterministic per-orbit descent.
 | Mean per-excursion drift `μ` | `−0.802 ± 0.001` | concentration bound |
 | Unconstrained projective JSR | `1.5` | rigorous, squeeze gap `< 10⁻⁶` |
 | Λ on LTE-closed operator | `−0.412` | Markov-Furstenberg |
-| Foster m-step drift, `V = log₂n + v₂(n+1)`, `m = 16` | uniform negative residue-conditional drift, ε = 0.1 | `m_step_foster_drift.json`; `k ∈ {2..6}`, `n₀ ∈ [10², 10¹⁵]` |
+| Foster m-step drift, `V = log₂n + v₂(n+1)`, `m = 16` | uniform negative residue-conditional drift, ε = 0.1 | `m_step_foster_drift_k8.json`; `k ∈ {2..8}`, `n₀ ∈ [10², 10¹⁵]` |
 
 Stable across `n₀ ∈ [10⁴, 10¹⁵]` with slope `< 0.001` per decade.
 
@@ -98,7 +106,7 @@ resolution:
 # Install dependencies
 uv sync
 
-# Run all 160 tests (≈1.5s)
+# Run all 164 tests (≈1.5s)
 uv run python -m pytest -q
 
 # Smoke test the experimental pipeline
@@ -146,7 +154,7 @@ collatz-renewal-framework/
 ├── uv.lock
 ├── collatz_certificate_search.py   ← original CLI compatibility wrapper
 ├── collatz_exp/                    ← main package, 75 modules
-├── tests/                          ← 160 passing tests
+├── tests/                          ← 164 passing tests
 └── docs/
     ├── NOTABLE_RESULTS.md          ← running result catalog
     ├── PROJECT_JOURNEY.md          ← chronological narrative + audit log
@@ -155,7 +163,7 @@ collatz-renewal-framework/
     ├── UNIFIED_MODEL.md            ← 5-projection operator synthesis
     ├── collatz_strategy.md         ← working strategy notes
     ├── references/                 ← Tao, Mori, Hercher, Paparella, Chang PDFs
-    └── reports/                    ← 100 JSON artifacts (one per result)
+    └── reports/                    ← 107 JSON artifacts (one per result)
 ```
 
 ---
@@ -205,11 +213,12 @@ Named, not closed:
    `ℓ²(ℤ_2 × ℤ_3)`.
 4. **Lifting residue-Markov m-step Foster to per-orbit Lyapunov** —
    `V(n) = log₂(n) + v_2(n+1)` satisfies the Foster condition at `m = 16`
-   with margin `ε = 0.1` on residue quotients `mod 2^k` for `k ∈ {2..6}`;
-   the deterministic per-orbit upgrade is the same wall as Tao 2019's
-   distributional-to-pointwise problem.
-5. **Symbolic representation of `J_renewal`** — Khinchin-style integral
-   representation conjectured; no elementary closed form found.
+   with margin `ε = 0.1` on residue quotients `mod 2^k` for `k ∈ {2..8}`.
+   Together with Chang `2603.25753`, the residual is the Tao
+   distributional-to-pointwise wall in a Markov-measure-1 formulation.
+5. **Symbolic representation of `J_renewal`** — the direct
+   `Σ R(K) ≈ J_renewal` identity test is not supported at high precision;
+   an explicit `h_K`-weighted reconciliation remains open.
 
 See [`docs/PROJECT_JOURNEY.md`](docs/PROJECT_JOURNEY.md) §12 for full problem
 statements.
@@ -222,12 +231,14 @@ statements.
   [`docs/reports/`](docs/reports).
 - Each artifact records method, parameters, sample size, bootstrap CI,
   and exact empirical value.
-- 160 passing tests cover core arithmetic, certificates, Mersenne tail
+- 164 passing tests cover core arithmetic, certificates, Mersenne tail
   dynamics, post-exit map, renewal Cramér computation, Tao verification,
   Hercher bounds, Paparella nilpotency, JSR variants, automaton-constrained
   Karp, upper-Christoffel slope filtering, tail-cycle realizability,
-  phase-decomposed renewal drift, phase-aware Lyapunov search, and
-  m-step Foster-Lyapunov drift.
+  phase-decomposed renewal drift, phase-aware Lyapunov search,
+  m-step Foster-Lyapunov drift, tail-cycle realizability at deeper levels,
+  pointwise descent audit, m-step Foster at `k=7,8`, and Chang bit-4 balance
+  audit.
 - Reference papers in [`docs/references/`](docs/references) for offline
   access.
 

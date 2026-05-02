@@ -34,8 +34,8 @@ present the *results*; this document presents the *path*.
 
 **Initial state:** one Python file `collatz_certificate_search.py`, ~5 KB.
 
-**Final state:** `collatz_exp/` package with 75 modules, 150 passing
-tests, 91 JSON artifact reports, five integrated reference papers, and
+**Final state:** `collatz_exp/` package with 75 modules, 164 passing
+tests, 107 JSON artifact reports, five integrated reference papers, and
 a complete renewal-theoretic / operator-theoretic framework.
 
 ---
@@ -435,10 +435,17 @@ Saved artifacts:
     abstract cycles classify as `noninteger_2adic_only`
     (`docs/reports/tail_cycle_realizability_extended.json`).
 12. **m-step Foster-Lyapunov drift for `V(n) = log₂(n) + v_2(n+1)`**:
-    on residue quotients mod `2^k` for `k ∈ {2,3,4,5,6}`, the finite audit
+    on residue quotients mod `2^k` for `k ∈ {2,3,4,5,6,7,8}`, the finite audit
     finds residue-uniform negative drift at the smallest tested grid value
     `m = 16`, with margin `ε = 0.1`, over sample windows
-    `n₀ ∈ [10²,10¹⁵]` (`docs/reports/m_step_foster_drift.json`).
+    `n₀ ∈ [10²,10¹⁵]` (`docs/reports/m_step_foster_drift_k8.json`).
+13. **Joint argument with Chang `arXiv:2603.25753` empirically supported at
+    finite windows.** Three named technical verifications closed:
+    `δ_max ≈ 0.119` (`docs/reports/delta_max_quantitative.md`), Foster
+    condition at `k=7,8` (`docs/reports/m_step_foster_drift_k8.json`), and
+    bit-4 balance Foster envelope holds for every sampled orbit
+    (`docs/reports/chang_bit4_balance_audit.json`). Residual: Tao
+    distributional-to-pointwise wall.
 
 **Demoted claims (audit-revealed):**
 
@@ -457,16 +464,21 @@ Saved artifacts:
    JSR < 1.
 3. **Profinite continuity** from finite quotients to limit operator.
 4. **Lifting PECM Lyapunov to per-orbit Lyapunov.** V5's gap.
-5. **Symbolic interpretation of `J_renewal`** — does it have a closed
-   form via integral representation à la Khinchin?
+5. **Symbolic interpretation of `J_renewal`** — the direct
+   `Σ R(K) ≈ J_renewal` identity test is not supported at high precision:
+   Chang's `Σ_{K=3}^{500} R(K) = 0.0882362530512702`, while the sampled
+   `J_renewal = 0.08346903426255636` has bootstrap CI
+   `[0.08314605994133623, 0.0837883621454151]`
+   (`docs/reports/jazz_constant_chang_R_K_identity.json`). The remaining
+   symbolic question is whether a different structural representation,
+   especially an explicit `h_K`-weighted one, matches the renewal constant.
 6. **Phase-aware per-orbit Lyapunov.** The residue-Markov m-step Foster
    question is empirically closed on the tested grid for
    `V(n) = log₂(n) + v_2(n+1)`: `m = 16` gives residue-uniform negative
-   drift with margin `ε = 0.1` across the tested windows and residue powers.
-   The remaining theorem-shaped problem is the upgrade from residue-Markov
-   geometric ergodicity to deterministic per-orbit descent, the same
-   distributional-to-pointwise wall that Tao 2019 works around in an
-   almost-all setting.
+   drift with margin `ε = 0.1` across the tested windows and residue powers
+   `k = 2..8`. The joint argument with Chang `2603.25753` reduces the
+   framework's residual to the Tao distributional-to-pointwise wall expressed
+   at Markov-measure-1, a sharper formulation than natural density.
 
 ---
 
@@ -628,7 +640,58 @@ Saved artifacts:
 
 ---
 
-## 15. Lessons learned
+## 15. Joint argument with Chang 2026b — three verifications empirically closed
+
+**Trigger:** the 2026 literature sweep returned with Chang `2603.25753`,
+which found the same wall as this framework. Chang reduced Collatz to a
+fixed-modulus, one-bit balance problem along burst-ending times; this
+framework had independently reached a residue-Markov Foster condition whose
+remaining gap was the deterministic pointwise upgrade.
+
+**Iteration 1 — compatibility analysis.** The first pass
+(`docs/reports/chang_2603_25753_compatibility.md`) translated notation:
+Chang's compressed map is this framework's accelerated map, his burst
+indicator is the post-exit indicator, and his mod-32 / mod-256 target sits
+inside this framework's residue quotient language. That analysis named three
+required verifications: compute a usable `δ_max`, extend Foster to `k=7,8`,
+and directly audit the bit-4 balance at burst-ending times.
+
+**Iteration 2 — bit-4 balance audit.** Prompt 4 implemented the direct
+orbit-level measurement of Chang's Eq. 16 statistic. The audit found that the
+Foster plus `1/sqrt(m)` envelope holds for every sampled orbit. The raw max
+`δ` remains `0.5` because tiny denominators occur, but the mean `δ` decreases
+with window depth and reaches `0.11212329012096864` in the deepest window
+(`docs/reports/chang_bit4_balance_audit.json`).
+
+**Iteration 3 — Foster at Chang's resolution.** Prompt 5 extended the m-step
+Foster audit to `k=7,8`, matching Chang's mod-256 fiber refinement. The result
+was stable: `m=16`, `ε=0.1` still holds, the weakest `k=8` CI upper bound at
+`m=16` is `-0.24276696844795248`, and the cross-check against the earlier
+`k≤6` artifact has max disagreement `0.0`
+(`docs/reports/m_step_foster_drift_k8.json`).
+
+**Iteration 4 — `δ_max` read.** The quantitative read of Chang `2603.11066`
+Eq. 34 derived `δ_max ≈ 0.119` under the `R(K)`-weighted allocation
+(`docs/reports/delta_max_quantitative.md`). That value puts the deepest-window
+mean `δ = 0.11212329012096864` just below the finite-window budget.
+
+**What was confirmed:** the joint argument is empirically supported at finite
+windows. The three named technical verifications are empirically closed at
+finite windows, and the Foster condition now matches Chang's working
+resolution.
+
+**What's still open:** the Tao distributional-to-pointwise wall remains the
+residual. The exact `δ_max` via Chang §9.7–§9.9 is still a careful-reading
+task, though the `R(K)`-weighted estimate is now numerically useful. The
+direct `Σ R(K) ↔ J_renewal` identity test did not support equality:
+`Σ_{K=3}^{500} R(K) = 0.0882362530512702` lies outside the high-precision
+`J_renewal` CI `[0.08314605994133623, 0.0837883621454151]`
+(`docs/reports/jazz_constant_chang_R_K_identity.json`). A more refined
+`h_K`-weighted reconciliation remains future work.
+
+---
+
+## 16. Lessons learned
 
 **What we got right:**
 
@@ -666,12 +729,12 @@ Saved artifacts:
 
 ---
 
-## 16. Reproducibility
+## 17. Reproducibility
 
 All results in this journey are reproducible:
 
 ```bash
-# Run the full test suite (currently 160 tests passing in ~2s)
+# Run the full test suite (currently 164 tests passing in ~2s)
 uv run python -m pytest -q
 
 # Reproduce any artifact in docs/reports/ via the corresponding CLI:
@@ -685,7 +748,7 @@ Reference papers are saved in `docs/references/` for offline access.
 
 ---
 
-## 17. Acknowledgments
+## 18. Acknowledgments
 
 The project was driven by an iterative human–AI collaboration. The
 human's intuition repeatedly produced productive starting points

@@ -310,7 +310,46 @@ class before clearance is still `n == 41 mod 64`: it is the maximal
 obstruction at `m = 1,2,4,8`, then disappears at `m = 16`
 (`docs/reports/m_step_foster_drift.json`).
 
-The candidate Lyapunov satisfies the m-step Foster-Lyapunov drift condition (Meyn-Tweedie, Markov Chains and Stochastic Stability, ch. 11) on residue quotients mod 2^k for k ∈ {2,3,4,5,6} at sample windows n_0 ∈ [10², 10¹⁵], with smallest tested grid value m = 16 and geometric-ergodicity margin ε = 0.1. The Collatz orbit is deterministic, not a Markov chain; this is a finite empirical diagnostic on the residue Markov chain quotient, not a theorem about deterministic per-orbit descent.
+The candidate Lyapunov satisfies the m-step Foster-Lyapunov drift condition (Meyn-Tweedie, Markov Chains and Stochastic Stability, ch. 11) on residue quotients mod 2^k for k ∈ {2,3,4,5,6,7,8} at sample windows n_0 ∈ [10², 10¹⁵], with smallest tested grid value m = 16 and geometric-ergodicity margin ε = 0.1. The Collatz orbit is deterministic, not a Markov chain; this is a finite empirical diagnostic on the residue Markov chain quotient, not a theorem about deterministic per-orbit descent.
+
+## Joint argument with Chang 2026b — three verifications empirically closed
+
+The compatibility analysis with Chang's structural reduction
+`arXiv:2603.25753` named three quantitative verifications needed for the joint
+argument. Those verifications are now empirically closed at finite windows.
+This does not create a proof claim; it sharpens the residual to exactly the
+Tao distributional-to-pointwise wall.
+
+First, the `δ_max` analysis derives `δ_max ≈ 0.119` from an `R(K)`-weighted
+allocation against Chang `2603.11066` Eq. 34
+(`docs/reports/delta_max_quantitative.md`). Second, the extended m-step
+Foster audit reaches Chang's mod-256 resolution: for
+`k ∈ {2,3,4,5,6,7,8}`, `m = 16` clears the `ε = 0.1` margin, the weakest
+`k=8` CI upper bound at `m=16` is `-0.24276696844795248`, and the cross-check
+against the original `k≤6` artifact has `cross_check_max_disagreement = 0.0`
+(`docs/reports/m_step_foster_drift_k8.json`). Third, the direct bit-4 balance
+audit finds that the Foster plus `1/sqrt(m)` envelope holds for every sampled
+orbit, with deepest-window mean `δ = 0.11212329012096864`, just below
+`δ_max ≈ 0.119` (`docs/reports/chang_bit4_balance_audit.json`).
+
+Thus the joint argument is supported at finite windows. The chain is:
+Foster `m=16`, `ε=0.1` on residue quotients through `k=8`; Markov
+ergodicity plus Birkhoff gives almost-sure equidistribution on the residue
+chain; Chang's Map Balance Theorem 4.2 plus the bit-4 reduction converts the
+mod-32 burst-ending balance into his block-TV budget. The remaining
+conditional step is still exactly the Tao wall: every integer orbit must lie in
+the Markov-measure-1 set on which the residue chain equidistributes. The
+verifications closed three technical gaps, but did not close that residual.
+
+The same pass also tested the numerical correspondence
+`Σ_{K=3}^{500} R(K) = 0.0882362530512702` from Chang's phantom-gain sum against
+this framework's renewal Cramér rate. The identity audit gives
+`J_renewal = 0.08346903426255636` with bootstrap CI
+`[0.08314605994133623, 0.0837883621454151]`, outside Chang's sum; the tested
+alternate definitions `J_step`, `J_per_2_step`, and `J_per_burst_end` also do
+not match (`docs/reports/jazz_constant_chang_R_K_identity.json`). The harder
+`h_K`-weighted reconciliation remains future work. The present finite
+diagnostic reads the five-percent gap as structural, not as sampling error.
 
 ## Current Reading
 
