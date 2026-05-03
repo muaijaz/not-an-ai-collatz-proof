@@ -1,0 +1,380 @@
+{
+  "caveat": "This is a finite empirical diagnostic bounded by levels, max_cycle_edges, max_cycles_scanned, and max_valuation; it is not a proof of global qn+1 dynamics or a proof of cycle absence.",
+  "comparison_to_q3": {
+    "factor_scope_note": "q5_realizable_karp_factor is over integer-realizable bounded tail-cycle words; the positive-only maximum is reported separately because positive cycles require 2^A > q^m.",
+    "predicted_q5_drift": 0.3219280948873622,
+    "q3_realizable_karp_factor": 0.75,
+    "q3_tail_forced_drop": 1,
+    "q5_minus_q3_drift": 0.7369655941662062,
+    "q5_positive_realizable_karp_factor": 0.9765625,
+    "q5_realizable_karp_factor": 0.9765625,
+    "q5_tail_forced_drop": 2
+  },
+  "construction": "Simple cycles are enumerated in a q-aware LTE-closed Mersenne-tail graph. Each valuation word is classified by the exact qn+1 affine cycle equation, and small positive cycles reached from n0 <= 100 are checked by direct accelerated simulation.",
+  "known_cycles_recovered": [
+    {
+      "edge_factor": 0.78125,
+      "orbit": [
+        1,
+        3
+      ],
+      "recovered_in_bounded_scan": true,
+      "word": [
+        1,
+        4
+      ]
+    },
+    {
+      "edge_factor": 0.9765625,
+      "orbit": [
+        13,
+        33,
+        83
+      ],
+      "recovered_in_bounded_scan": true,
+      "word": [
+        1,
+        1,
+        5
+      ]
+    },
+    {
+      "edge_factor": 0.9765625,
+      "orbit": [
+        17,
+        43,
+        27
+      ],
+      "recovered_in_bounded_scan": true,
+      "word": [
+        1,
+        3,
+        3
+      ]
+    }
+  ],
+  "levels": [
+    {
+      "audited_cycles": 82,
+      "classification_counts": {
+        "impossible_power_balance": 0,
+        "integer_but_not_positive_odd": 0,
+        "negative_integer_cycle": 0,
+        "noninteger_2adic_only": 79,
+        "positive_integer_cycle": 3,
+        "positive_integer_nonrealizing_candidate": 0
+      },
+      "closed_overflow_edges": 11,
+      "cycle_cap_reached": false,
+      "cycles_scanned": 82,
+      "elapsed_seconds": 0.0028451720136217773,
+      "exact_karp_factor_unclassified": 1.9842513149602485,
+      "level_index": 0,
+      "max_cycle_edges": 12,
+      "max_cycles_scanned": 200000,
+      "max_tail_depth": 4,
+      "max_valuation": 12,
+      "negative_integer_cycle_count": 0,
+      "positive_integer_cycle_count": 3,
+      "positive_integer_cycles": [
+        {
+          "accelerated_steps": 3,
+          "cycle_value": "13",
+          "edge_factor": 0.9765625,
+          "graph_cycle_edges": 3,
+          "log2_growth": -0.03421571533791301,
+          "orbit": [
+            13,
+            33,
+            83
+          ],
+          "word": [
+            1,
+            1,
+            5
+          ]
+        },
+        {
+          "accelerated_steps": 3,
+          "cycle_value": "17",
+          "edge_factor": 0.9765625,
+          "graph_cycle_edges": 3,
+          "log2_growth": -0.03421571533791301,
+          "orbit": [
+            17,
+            43,
+            27
+          ],
+          "word": [
+            1,
+            3,
+            3
+          ]
+        },
+        {
+          "accelerated_steps": 2,
+          "cycle_value": "1",
+          "edge_factor": 0.78125,
+          "graph_cycle_edges": 2,
+          "log2_growth": -0.35614381022527564,
+          "orbit": [
+            1,
+            3
+          ],
+          "word": [
+            1,
+            4
+          ]
+        }
+      ],
+      "q_param": 5,
+      "realizable_karp_factor_integer": 0.9765625,
+      "realizable_karp_factor_positive": 0.9765625,
+      "scan_completion_status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "tail_drop": 2,
+      "tail_edges": 208,
+      "tail_states": 64,
+      "tail_unit_power": 5
+    },
+    {
+      "audited_cycles": 906,
+      "classification_counts": {
+        "impossible_power_balance": 0,
+        "integer_but_not_positive_odd": 0,
+        "negative_integer_cycle": 0,
+        "noninteger_2adic_only": 903,
+        "positive_integer_cycle": 3,
+        "positive_integer_nonrealizing_candidate": 0
+      },
+      "closed_overflow_edges": 11,
+      "cycle_cap_reached": false,
+      "cycles_scanned": 906,
+      "elapsed_seconds": 0.017478344001574442,
+      "exact_karp_factor_unclassified": 2.5000000000000075,
+      "level_index": 1,
+      "max_cycle_edges": 12,
+      "max_cycles_scanned": 200000,
+      "max_tail_depth": 5,
+      "max_valuation": 12,
+      "negative_integer_cycle_count": 0,
+      "positive_integer_cycle_count": 3,
+      "positive_integer_cycles": [
+        {
+          "accelerated_steps": 3,
+          "cycle_value": "13",
+          "edge_factor": 0.9765625,
+          "graph_cycle_edges": 3,
+          "log2_growth": -0.03421571533791301,
+          "orbit": [
+            13,
+            33,
+            83
+          ],
+          "word": [
+            1,
+            1,
+            5
+          ]
+        },
+        {
+          "accelerated_steps": 3,
+          "cycle_value": "17",
+          "edge_factor": 0.9765625,
+          "graph_cycle_edges": 3,
+          "log2_growth": -0.03421571533791301,
+          "orbit": [
+            17,
+            43,
+            27
+          ],
+          "word": [
+            1,
+            3,
+            3
+          ]
+        },
+        {
+          "accelerated_steps": 2,
+          "cycle_value": "1",
+          "edge_factor": 0.78125,
+          "graph_cycle_edges": 2,
+          "log2_growth": -0.35614381022527564,
+          "orbit": [
+            1,
+            3
+          ],
+          "word": [
+            1,
+            4
+          ]
+        }
+      ],
+      "q_param": 5,
+      "realizable_karp_factor_integer": 0.9765625,
+      "realizable_karp_factor_positive": 0.9765625,
+      "scan_completion_status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "tail_drop": 2,
+      "tail_edges": 448,
+      "tail_states": 160,
+      "tail_unit_power": 6
+    },
+    {
+      "audited_cycles": 4196,
+      "classification_counts": {
+        "impossible_power_balance": 0,
+        "integer_but_not_positive_odd": 0,
+        "negative_integer_cycle": 0,
+        "noninteger_2adic_only": 4193,
+        "positive_integer_cycle": 3,
+        "positive_integer_nonrealizing_candidate": 0
+      },
+      "closed_overflow_edges": 11,
+      "cycle_cap_reached": false,
+      "cycles_scanned": 4196,
+      "elapsed_seconds": 0.16297256801044568,
+      "exact_karp_factor_unclassified": 1.6823752407904513,
+      "level_index": 2,
+      "max_cycle_edges": 12,
+      "max_cycles_scanned": 200000,
+      "max_tail_depth": 6,
+      "max_valuation": 12,
+      "negative_integer_cycle_count": 0,
+      "positive_integer_cycle_count": 3,
+      "positive_integer_cycles": [
+        {
+          "accelerated_steps": 3,
+          "cycle_value": "13",
+          "edge_factor": 0.9765625,
+          "graph_cycle_edges": 3,
+          "log2_growth": -0.03421571533791301,
+          "orbit": [
+            13,
+            33,
+            83
+          ],
+          "word": [
+            1,
+            1,
+            5
+          ]
+        },
+        {
+          "accelerated_steps": 3,
+          "cycle_value": "17",
+          "edge_factor": 0.9765625,
+          "graph_cycle_edges": 3,
+          "log2_growth": -0.03421571533791301,
+          "orbit": [
+            17,
+            43,
+            27
+          ],
+          "word": [
+            1,
+            3,
+            3
+          ]
+        },
+        {
+          "accelerated_steps": 2,
+          "cycle_value": "1",
+          "edge_factor": 0.78125,
+          "graph_cycle_edges": 2,
+          "log2_growth": -0.35614381022527564,
+          "orbit": [
+            1,
+            3
+          ],
+          "word": [
+            1,
+            4
+          ]
+        }
+      ],
+      "q_param": 5,
+      "realizable_karp_factor_integer": 0.9765625,
+      "realizable_karp_factor_positive": 0.9765625,
+      "scan_completion_status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+      "tail_drop": 2,
+      "tail_edges": 960,
+      "tail_states": 384,
+      "tail_unit_power": 7
+    }
+  ],
+  "q_param": 5,
+  "realizable_karp_factor_q5_max": 0.9765625,
+  "realizable_karp_factor_q5_positive_max": 0.9765625,
+  "scan_policy": {
+    "levels": [
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        7,
+        6
+      ]
+    ],
+    "max_cycle_edges": 12,
+    "max_cycles_scanned": 200000,
+    "max_valuation": 12,
+    "small_search_n_max": 100
+  },
+  "small_search_cycles": [
+    {
+      "edge_factor": 0.78125,
+      "orbit": [
+        1,
+        3
+      ],
+      "recovered_in_bounded_scan": true,
+      "word": [
+        1,
+        4
+      ]
+    },
+    {
+      "edge_factor": 0.9765625,
+      "orbit": [
+        13,
+        33,
+        83
+      ],
+      "recovered_in_bounded_scan": true,
+      "word": [
+        1,
+        1,
+        5
+      ]
+    },
+    {
+      "edge_factor": 0.9765625,
+      "orbit": [
+        17,
+        43,
+        27
+      ],
+      "recovered_in_bounded_scan": true,
+      "word": [
+        1,
+        3,
+        3
+      ]
+    }
+  ],
+  "status": "positive_integer_cycles_found",
+  "timing_and_memory": {
+    "elapsed_seconds": 0.2188996879849583,
+    "ru_maxrss_kb_after": 113776,
+    "ru_maxrss_kb_before": 110736,
+    "timing_note": "q=5 uses forced tail drops of two valuations, changing both edge compression and overflow closure relative to q=3."
+  },
+  "type": "qnp1_tail_cycle_realizability"
+}

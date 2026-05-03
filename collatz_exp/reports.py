@@ -424,6 +424,19 @@ def format_tail_cycle_realizability_report(
     )
 
 
+def format_qnp1_realizability_report(result) -> str:
+    last = result.levels[-1] if result.levels else None
+    return (
+        f"status={result.status}, q={result.q_param}, levels={len(result.levels)}, "
+        f"last_tail_q={None if last is None else last.tail_unit_power}, "
+        f"last_Rmax={None if last is None else last.max_tail_depth}, "
+        f"last_cycles={None if last is None else last.cycles_scanned}, "
+        f"known_recovered={len(result.known_cycles_recovered)}, "
+        f"positive_karp={result.realizable_karp_factor_q5_positive_max}, "
+        f"integer_karp={result.realizable_karp_factor_q5_max}"
+    )
+
+
 def format_christoffel_slope_constrained_jsr_report(
     result: ChristoffelSlopeConstrainedJSRReport,
 ) -> str:

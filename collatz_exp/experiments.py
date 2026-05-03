@@ -117,6 +117,7 @@ from .post_exit_map import (
     post_exit_super_eigen_report,
 )
 from .power_ratio import power_ratio_report
+from .qnp1_audit import qnp1_realizability_report
 from .reports import (
     format_cohomology_report,
     format_compact_trace_report,
@@ -190,6 +191,7 @@ from .reports import (
     format_parity_layer_report,
     format_paparella_nilpotency_report,
     format_power_ratio_report,
+    format_qnp1_realizability_report,
     format_renewal_bootstrap_calibration_report,
     format_renewal_descent_report,
     format_renewal_drift_phase_decomposed_report,
@@ -282,6 +284,20 @@ def _parse_pair_tuple(value: str) -> tuple[tuple[int, int], ...]:
 
 def _parse_float_tuple(value: str) -> tuple[float, ...]:
     return tuple(float(item.strip()) for item in value.split(",") if item.strip())
+
+
+def _parse_qnp1_param(value: str | None) -> int:
+    if value is None:
+        return 5
+    stripped = value.strip()
+    if not stripped:
+        return 5
+    if "=" in stripped:
+        name, raw = stripped.split("=", 1)
+        if name.strip() != "q":
+            raise ValueError(f"expected q=<odd integer>, got {value!r}")
+        stripped = raw.strip()
+    return int(stripped)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -444,6 +460,25 @@ def build_parser() -> argparse.ArgumentParser:
         "--tail-cycle-audit-all-cycles",
         action="store_true",
         help="classify every scanned tail cycle, while recording high-growth and positive-integer witnesses",
+    )
+    parser.add_argument(
+        "--qnp1-realizability",
+        nargs="?",
+        const="q=5",
+        default=None,
+        help="run the qn+1 realizability audit, e.g. --qnp1-realizability q=5",
+    )
+    parser.add_argument(
+        "--qnp1-realizability-output",
+        type=str,
+        default="docs/reports/qnp1_realizability_q5.json",
+        help="path for the qn+1 realizability JSON artifact",
+    )
+    parser.add_argument(
+        "--qnp1-realizability-levels",
+        type=str,
+        default="5:4,6:5,7:6",
+        help="comma-separated tail_unit_power:Rmax levels for the qn+1 audit",
     )
     parser.add_argument(
         "--tail-aware-levels",
@@ -1540,6 +1575,25 @@ def main(argv: list[str] | None = None) -> None:
         output_path = Path(args.tail_cycle_realizability_output)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(realizability.to_json() + "\n")
+        print(f"saved={output_path}")
+
+    if args.qnp1_realizability is not None:
+        from pathlib import Path
+
+        q_param = _parse_qnp1_param(args.qnp1_realizability)
+        print(f"\nqn+1 realizability audit (q={q_param}):")
+        realizability = qnp1_realizability_report(
+            q_param=q_param,
+            levels=_parse_pair_tuple(args.qnp1_realizability_levels),
+            max_valuation=args.jsr_max_valuation,
+            max_cycle_edges=args.christoffel_max_cycle_edges,
+            max_cycles_scanned=args.tail_cycle_max_cycles_scanned,
+        )
+        print(format_qnp1_realizability_report(realizability))
+        output_path = Path(args.qnp1_realizability_output)
+        if output_path == Path("docs/reports/qnp1_realizability_q5.json") and q_param != 5:
+            output_path = Path(f"docs/reports/qnp1_realizability_q{q_param}.json")
+        realizability.save(output_path)
         print(f"saved={output_path}")
 
     if args.all_things:
