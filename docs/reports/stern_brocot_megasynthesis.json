@@ -1,0 +1,2807 @@
+{
+  "caveat": "This is a finite empirical synthesis attempt across multiple recent Collatz frameworks. The unification claim is a structural hypothesis, not a theorem.",
+  "cf_convergents_log_2_3": [
+    {
+      "fraction": "1/1",
+      "index": 0,
+      "p": 1,
+      "partial_quotient": 1,
+      "q": 1,
+      "residual": -0.5849625007211561,
+      "side": "below"
+    },
+    {
+      "fraction": "2/1",
+      "index": 1,
+      "p": 2,
+      "partial_quotient": 1,
+      "q": 1,
+      "residual": 0.4150374992788439,
+      "side": "above"
+    },
+    {
+      "fraction": "3/2",
+      "index": 2,
+      "p": 3,
+      "partial_quotient": 1,
+      "q": 2,
+      "residual": -0.08496250072115608,
+      "side": "below"
+    },
+    {
+      "fraction": "8/5",
+      "index": 3,
+      "p": 8,
+      "partial_quotient": 2,
+      "q": 5,
+      "residual": 0.015037499278844013,
+      "side": "above"
+    },
+    {
+      "fraction": "19/12",
+      "index": 4,
+      "p": 19,
+      "partial_quotient": 2,
+      "q": 12,
+      "residual": -0.0016291673878228163,
+      "side": "below"
+    },
+    {
+      "fraction": "65/41",
+      "index": 5,
+      "p": 65,
+      "partial_quotient": 3,
+      "q": 41,
+      "residual": 0.00040335293738058553,
+      "side": "above"
+    },
+    {
+      "fraction": "84/53",
+      "index": 6,
+      "p": 84,
+      "partial_quotient": 1,
+      "q": 53,
+      "residual": -5.684034379749292e-05,
+      "side": "below"
+    },
+    {
+      "fraction": "485/306",
+      "index": 7,
+      "p": 485,
+      "partial_quotient": 5,
+      "q": 306,
+      "residual": 4.819540281753021e-06,
+      "side": "above"
+    },
+    {
+      "fraction": "1054/665",
+      "index": 8,
+      "p": 1054,
+      "partial_quotient": 2,
+      "q": 665,
+      "residual": -9.470611850304067e-08,
+      "side": "below"
+    },
+    {
+      "fraction": "24727/15601",
+      "index": 9,
+      "p": 24727,
+      "partial_quotient": 23,
+      "q": 15601,
+      "residual": 1.6825358883920671e-09,
+      "side": "above"
+    },
+    {
+      "fraction": "50508/31867",
+      "index": 10,
+      "p": 50508,
+      "partial_quotient": 2,
+      "q": 31867,
+      "residual": -3.289006844653386e-10,
+      "side": "below"
+    },
+    {
+      "fraction": "125743/79335",
+      "index": 11,
+      "p": 125743,
+      "partial_quotient": 2,
+      "q": 79335,
+      "residual": 6.664246932075457e-11,
+      "side": "above"
+    },
+    {
+      "fraction": "176251/111202",
+      "index": 12,
+      "p": 176251,
+      "partial_quotient": 1,
+      "q": 111202,
+      "residual": -4.670774877979511e-11,
+      "side": "below"
+    },
+    {
+      "fraction": "301994/190537",
+      "index": 13,
+      "p": 301994,
+      "partial_quotient": 1,
+      "q": 190537,
+      "residual": 4.884981308350689e-13,
+      "side": "above"
+    },
+    {
+      "fraction": "16785921/10590737",
+      "index": 14,
+      "p": 16785921,
+      "partial_quotient": 55,
+      "q": 10590737,
+      "residual": -7.105427357601002e-15,
+      "side": "below"
+    },
+    {
+      "fraction": "17087915/10781274",
+      "index": 15,
+      "p": 17087915,
+      "partial_quotient": 1,
+      "q": 10781274,
+      "residual": 1.7763568394002505e-15,
+      "side": "above"
+    },
+    {
+      "fraction": "68049666/42934559",
+      "index": 16,
+      "p": 68049666,
+      "partial_quotient": 3,
+      "q": 42934559,
+      "residual": -4.440892098500626e-16,
+      "side": "below"
+    },
+    {
+      "fraction": "85137581/53715833",
+      "index": 17,
+      "p": 85137581,
+      "partial_quotient": 1,
+      "q": 53715833,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "578875152/365229557",
+      "index": 18,
+      "p": 578875152,
+      "partial_quotient": 6,
+      "q": 365229557,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "664012733/418945390",
+      "index": 19,
+      "p": 664012733,
+      "partial_quotient": 1,
+      "q": 418945390,
+      "residual": 0.0,
+      "side": "exact"
+    }
+  ],
+  "cf_convergents_log_2_5": [
+    {
+      "fraction": "2/1",
+      "index": 0,
+      "p": 2,
+      "partial_quotient": 2,
+      "q": 1,
+      "residual": -0.3219280948873622,
+      "side": "below"
+    },
+    {
+      "fraction": "7/3",
+      "index": 1,
+      "p": 7,
+      "partial_quotient": 3,
+      "q": 3,
+      "residual": 0.0114052384459713,
+      "side": "above"
+    },
+    {
+      "fraction": "65/28",
+      "index": 2,
+      "p": 65,
+      "partial_quotient": 9,
+      "q": 28,
+      "residual": -0.0004995234587905628,
+      "side": "below"
+    },
+    {
+      "fraction": "137/59",
+      "index": 3,
+      "p": 137,
+      "partial_quotient": 2,
+      "q": 59,
+      "residual": 0.00010580341772259416,
+      "side": "above"
+    },
+    {
+      "fraction": "339/146",
+      "index": 4,
+      "p": 339,
+      "partial_quotient": 2,
+      "q": 146,
+      "residual": -1.0286668183923098e-05,
+      "side": "below"
+    },
+    {
+      "fraction": "1493/643",
+      "index": 5,
+      "p": 1493,
+      "partial_quotient": 4,
+      "q": 643,
+      "residual": 3.6545478421246003e-07,
+      "side": "above"
+    },
+    {
+      "fraction": "9297/4004",
+      "index": 6,
+      "p": 9297,
+      "partial_quotient": 6,
+      "q": 4004,
+      "residual": -2.2959290468804738e-08,
+      "side": "below"
+    },
+    {
+      "fraction": "20087/8651",
+      "index": 7,
+      "p": 20087,
+      "partial_quotient": 2,
+      "q": 8651,
+      "residual": 5.910233635830764e-09,
+      "side": "above"
+    },
+    {
+      "fraction": "29384/12655",
+      "index": 8,
+      "p": 29384,
+      "partial_quotient": 1,
+      "q": 12655,
+      "residual": -3.223988187528448e-09,
+      "side": "below"
+    },
+    {
+      "fraction": "49471/21306",
+      "index": 9,
+      "p": 49471,
+      "partial_quotient": 1,
+      "q": 21306,
+      "residual": 4.848335066753862e-10,
+      "side": "above"
+    },
+    {
+      "fraction": "177797/76573",
+      "index": 10,
+      "p": 177797,
+      "partial_quotient": 3,
+      "q": 76573,
+      "residual": -1.2811263161438546e-10,
+      "side": "below"
+    },
+    {
+      "fraction": "227268/97879",
+      "index": 11,
+      "p": 227268,
+      "partial_quotient": 1,
+      "q": 97879,
+      "residual": 5.311306949806749e-12,
+      "side": "above"
+    },
+    {
+      "fraction": "4268621/1838395",
+      "index": 12,
+      "p": 4268621,
+      "partial_quotient": 18,
+      "q": 1838395,
+      "residual": -2.460254222569347e-13,
+      "side": "below"
+    },
+    {
+      "fraction": "4495889/1936274",
+      "index": 13,
+      "p": 4495889,
+      "partial_quotient": 1,
+      "q": 1936274,
+      "residual": 3.5083047578154947e-14,
+      "side": "above"
+    },
+    {
+      "fraction": "31243955/13456039",
+      "index": 14,
+      "p": 31243955,
+      "partial_quotient": 6,
+      "q": 13456039,
+      "residual": -3.552713678800501e-15,
+      "side": "below"
+    },
+    {
+      "fraction": "35739844/15392313",
+      "index": 15,
+      "p": 35739844,
+      "partial_quotient": 1,
+      "q": 15392313,
+      "residual": 1.3322676295501878e-15,
+      "side": "above"
+    },
+    {
+      "fraction": "102723643/44240665",
+      "index": 16,
+      "p": 102723643,
+      "partial_quotient": 2,
+      "q": 44240665,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "960252631/413558298",
+      "index": 17,
+      "p": 960252631,
+      "partial_quotient": 9,
+      "q": 413558298,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "112452281470/48430561531",
+      "index": 18,
+      "p": 112452281470,
+      "partial_quotient": 117,
+      "q": 48430561531,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "113412534101/48844119829",
+      "index": 19,
+      "p": 113412534101,
+      "partial_quotient": 1,
+      "q": 48844119829,
+      "residual": 0.0,
+      "side": "exact"
+    }
+  ],
+  "cf_convergents_log_2_7": [
+    {
+      "fraction": "2/1",
+      "index": 0,
+      "p": 2,
+      "partial_quotient": 2,
+      "q": 1,
+      "residual": -0.8073549220576042,
+      "side": "below"
+    },
+    {
+      "fraction": "3/1",
+      "index": 1,
+      "p": 3,
+      "partial_quotient": 1,
+      "q": 1,
+      "residual": 0.19264507794239583,
+      "side": "above"
+    },
+    {
+      "fraction": "14/5",
+      "index": 2,
+      "p": 14,
+      "partial_quotient": 4,
+      "q": 5,
+      "residual": -0.007354922057604352,
+      "side": "below"
+    },
+    {
+      "fraction": "73/26",
+      "index": 3,
+      "p": 73,
+      "partial_quotient": 5,
+      "q": 26,
+      "residual": 0.0003373856347033133,
+      "side": "above"
+    },
+    {
+      "fraction": "306/109",
+      "index": 4,
+      "p": 306,
+      "partial_quotient": 4,
+      "q": 109,
+      "residual": -1.547251631972557e-05,
+      "side": "below"
+    },
+    {
+      "fraction": "1603/571",
+      "index": 5,
+      "p": 1603,
+      "partial_quotient": 5,
+      "q": 571,
+      "residual": 5.945798737805319e-07,
+      "side": "above"
+    },
+    {
+      "fraction": "6718/2393",
+      "index": 6,
+      "p": 6718,
+      "partial_quotient": 4,
+      "q": 2393,
+      "residual": -1.3726863645757703e-07,
+      "side": "below"
+    },
+    {
+      "fraction": "8321/2964",
+      "index": 7,
+      "p": 8321,
+      "partial_quotient": 1,
+      "q": 2964,
+      "residual": 3.718374053107709e-09,
+      "side": "above"
+    },
+    {
+      "fraction": "248027/88349",
+      "index": 8,
+      "p": 248027,
+      "partial_quotient": 29,
+      "q": 88349,
+      "residual": -1.003663818721634e-10,
+      "side": "below"
+    },
+    {
+      "fraction": "256348/91313",
+      "index": 9,
+      "p": 256348,
+      "partial_quotient": 1,
+      "q": 91313,
+      "residual": 2.3589130648815626e-11,
+      "side": "above"
+    },
+    {
+      "fraction": "1273419/453601",
+      "index": 10,
+      "p": 1273419,
+      "partial_quotient": 4,
+      "q": 453601,
+      "residual": -5.542233338928781e-13,
+      "side": "below"
+    },
+    {
+      "fraction": "10443700/3720121",
+      "index": 11,
+      "p": 10443700,
+      "partial_quotient": 8,
+      "q": 3720121,
+      "residual": 3.863576125695545e-14,
+      "side": "above"
+    },
+    {
+      "fraction": "11717119/4173722",
+      "index": 12,
+      "p": 11717119,
+      "partial_quotient": 1,
+      "q": 4173722,
+      "residual": -2.5757174171303632e-14,
+      "side": "below"
+    },
+    {
+      "fraction": "22160819/7893843",
+      "index": 13,
+      "p": 22160819,
+      "partial_quotient": 1,
+      "q": 7893843,
+      "residual": 4.440892098500626e-15,
+      "side": "above"
+    },
+    {
+      "fraction": "56038757/19961408",
+      "index": 14,
+      "p": 56038757,
+      "partial_quotient": 2,
+      "q": 19961408,
+      "residual": -1.7763568394002505e-15,
+      "side": "below"
+    },
+    {
+      "fraction": "78199576/27855251",
+      "index": 15,
+      "p": 78199576,
+      "partial_quotient": 1,
+      "q": 27855251,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "2245626885/799908436",
+      "index": 16,
+      "p": 2245626885,
+      "partial_quotient": 28,
+      "q": 799908436,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "2323826461/827763687",
+      "index": 17,
+      "p": 2323826461,
+      "partial_quotient": 1,
+      "q": 827763687,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "16188585651/5766490558",
+      "index": 18,
+      "p": 16188585651,
+      "partial_quotient": 6,
+      "q": 5766490558,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "18512412112/6594254245",
+      "index": 19,
+      "p": 18512412112,
+      "partial_quotient": 1,
+      "q": 6594254245,
+      "residual": 0.0,
+      "side": "exact"
+    }
+  ],
+  "cf_convergents_log_2_9": [
+    {
+      "fraction": "3/1",
+      "index": 0,
+      "p": 3,
+      "partial_quotient": 3,
+      "q": 1,
+      "residual": -0.16992500144231215,
+      "side": "below"
+    },
+    {
+      "fraction": "16/5",
+      "index": 1,
+      "p": 16,
+      "partial_quotient": 5,
+      "q": 5,
+      "residual": 0.030074998557688026,
+      "side": "above"
+    },
+    {
+      "fraction": "19/6",
+      "index": 2,
+      "p": 19,
+      "partial_quotient": 1,
+      "q": 6,
+      "residual": -0.0032583347756456327,
+      "side": "below"
+    },
+    {
+      "fraction": "149/47",
+      "index": 3,
+      "p": 149,
+      "partial_quotient": 7,
+      "q": 47,
+      "residual": 0.0002877645151344588,
+      "side": "above"
+    },
+    {
+      "fraction": "168/53",
+      "index": 4,
+      "p": 168,
+      "partial_quotient": 1,
+      "q": 53,
+      "residual": -0.00011368068759498584,
+      "side": "below"
+    },
+    {
+      "fraction": "485/153",
+      "index": 5,
+      "p": 485,
+      "partial_quotient": 2,
+      "q": 153,
+      "residual": 9.639080563506042e-06,
+      "side": "above"
+    },
+    {
+      "fraction": "2108/665",
+      "index": 6,
+      "p": 2108,
+      "partial_quotient": 4,
+      "q": 665,
+      "residual": -1.8941223700608134e-07,
+      "side": "below"
+    },
+    {
+      "fraction": "23673/7468",
+      "index": 7,
+      "p": 23673,
+      "partial_quotient": 11,
+      "q": 7468,
+      "residual": 1.1948154021723667e-08,
+      "side": "above"
+    },
+    {
+      "fraction": "25781/8133",
+      "index": 8,
+      "p": 25781,
+      "partial_quotient": 1,
+      "q": 8133,
+      "residual": -4.516208740312777e-09,
+      "side": "below"
+    },
+    {
+      "fraction": "75235/23734",
+      "index": 9,
+      "p": 75235,
+      "partial_quotient": 2,
+      "q": 23734,
+      "residual": 6.643703365227793e-10,
+      "side": "above"
+    },
+    {
+      "fraction": "176251/55601",
+      "index": 10,
+      "p": 176251,
+      "partial_quotient": 2,
+      "q": 55601,
+      "residual": -9.341549755959022e-11,
+      "side": "below"
+    },
+    {
+      "fraction": "603988/190537",
+      "index": 11,
+      "p": 603988,
+      "partial_quotient": 3,
+      "q": 190537,
+      "residual": 9.769962616701378e-13,
+      "side": "above"
+    },
+    {
+      "fraction": "16483927/5200100",
+      "index": 12,
+      "p": 16483927,
+      "partial_quotient": 27,
+      "q": 5200100,
+      "residual": -3.197442310920451e-14,
+      "side": "below"
+    },
+    {
+      "fraction": "17087915/5390637",
+      "index": 13,
+      "p": 17087915,
+      "partial_quotient": 1,
+      "q": 5390637,
+      "residual": 3.552713678800501e-15,
+      "side": "above"
+    },
+    {
+      "fraction": "153187247/48325196",
+      "index": 14,
+      "p": 153187247,
+      "partial_quotient": 8,
+      "q": 48325196,
+      "residual": -4.440892098500626e-16,
+      "side": "below"
+    },
+    {
+      "fraction": "170275162/53715833",
+      "index": 15,
+      "p": 170275162,
+      "partial_quotient": 1,
+      "q": 53715833,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "1515388543/478051860",
+      "index": 16,
+      "p": 1515388543,
+      "partial_quotient": 8,
+      "q": 478051860,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "54724262710/17263582793",
+      "index": 17,
+      "p": 54724262710,
+      "partial_quotient": 36,
+      "q": 17263582793,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "110963913963/35005217446",
+      "index": 18,
+      "p": 110963913963,
+      "partial_quotient": 2,
+      "q": 35005217446,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "165688176673/52268800239",
+      "index": 19,
+      "p": 165688176673,
+      "partial_quotient": 1,
+      "q": 52268800239,
+      "residual": 0.0,
+      "side": "exact"
+    }
+  ],
+  "scan_policy": {
+    "cf_depth": 20,
+    "chang_max_K": 80,
+    "publication_grade_caveat": "This is a finite empirical synthesis attempt across multiple recent Collatz frameworks. The unification claim is a structural hypothesis, not a theorem.",
+    "q_values": [
+      3,
+      5,
+      7,
+      9
+    ],
+    "rozier_n_max": 500,
+    "slope_artifact_paths": [
+      "docs/reports/karp_slope_joint_sweep.json",
+      "docs/reports/karp_slope_joint_sweep_extended.json",
+      "docs/reports/tail_cycle_realizability.json",
+      "docs/reports/tail_cycle_realizability_extended.json",
+      "docs/reports/tail_cycle_realizability_extended_deep.json"
+    ],
+    "tao_bootstrap_samples": 1000,
+    "tao_max_admissible": 500000,
+    "tao_max_m": 20,
+    "tao_random_count": 100
+  },
+  "six_reduction_table": {
+    "common_structural_parameter": "near-resonance between 2-adic valuation sums A and 3-adic multiplication length m, organized by Stern-Brocot approximation tiers of log2(3)",
+    "meta_claim_reason": "The table surfaces a shared candidate parameter, but Santana has no local artifact yet and the cross-paper identification remains a structural hypothesis rather than a verified theorem.",
+    "reductions": {
+      "Chang_2603_25753": {
+        "condition": "bit_4_balance_delta_lt_delta_max",
+        "core_2_adic_3_adic_parameter": "phantom-gain run length K and primitive-necklace weights for powers of 2 competing with powers of 3",
+        "our_evidence": [
+          "docs/reports/chang_bit4_balance_audit.json"
+        ],
+        "state_space": "burst_ending_subsequence",
+        "stern_brocot_cross_reference": "local R(K) oscillation is tested at numerator K=p of log2(3) convergents"
+      },
+      "Mori_2411_08084": {
+        "condition": "no_nontrivial_reducing_subspace",
+        "core_2_adic_3_adic_parameter": "mixed 2/3-adic operator orbits and reducing subspace tests",
+        "our_evidence": [
+          "docs/reports/unified_collatz_operator.json"
+        ],
+        "state_space": "C_star_T_1_T_2",
+        "stern_brocot_cross_reference": "near-resonant 2^a versus 3^m scales are the finite projection levels where operator mixing is most delicate"
+      },
+      "Santana_2601_03297": {
+        "condition": "unique_equilibrium_state",
+        "core_2_adic_3_adic_parameter": "thermodynamic weights for Collatz-compatible potentials",
+        "our_evidence": [],
+        "state_space": "custom_topology_continuous_potentials",
+        "stern_brocot_cross_reference": "candidate pressure plateaus should be compared against Stern-Brocot approximation tiers; no framework artifact yet"
+      },
+      "Siegel_2412_02902": {
+        "condition": "dense_Fourier_translate_span",
+        "core_2_adic_3_adic_parameter": "Fourier translate span for p-adic images of Collatz coding",
+        "our_evidence": [
+          "docs/reports/tao_siegel_chi_h_correspondence.md"
+        ],
+        "state_space": "chi_H_image_in_Q_intersect_Z_p",
+        "stern_brocot_cross_reference": "Tao characteristic decay is the visible 2-adic shadow of Siegel's Fourier-span condition"
+      },
+      "Tao_2019": {
+        "condition": "Syrac_distribution_decay",
+        "core_2_adic_3_adic_parameter": "decay of characteristic functions for affine 3x+1/2^a increments, indexed by 2-adic residue frequencies",
+        "our_evidence": [
+          "docs/reports/tao_syrac_empirical.json",
+          "docs/reports/tao_characteristic_function_decay.json"
+        ],
+        "state_space": "log_density_measure_on_N",
+        "stern_brocot_cross_reference": "convergents of log2(3) identify near-resonant a/m windows where anti-concentration is hardest"
+      },
+      "this_framework": {
+        "condition": "m_step_Foster_drift_uniform_negative",
+        "core_2_adic_3_adic_parameter": "valuation-word slope A/m and realizability in finite LTE-closed tail quotients",
+        "our_evidence": [
+          "docs/reports/m_step_foster_drift_k8.json"
+        ],
+        "state_space": "residue_Markov_quotient_mod_2_k",
+        "stern_brocot_cross_reference": "CF convergents match realizable slope survivors, while intermediate and non-convergent fractions produce boundary and high-growth ghosts in the tested scan"
+      }
+    },
+    "six_reduction_unification_meta_claim": false
+  },
+  "status": "finite_empirical_synthesis_complete",
+  "stern_brocot_alignment_table": [
+    {
+      "chang_link": {
+        "K": 1,
+        "local_maximum_at_K": null,
+        "neighbor_values": [],
+        "status": "K_below_chang_R_K_domain",
+        "theta_proxy": null
+      },
+      "convergent_index": 0,
+      "fraction": "1/1",
+      "p": 1,
+      "q": 1,
+      "residual": -0.5849625007211561,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": true,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 27.596250162902713,
+        "denominator_distance_proxy": 0,
+        "dominant_prime_power_base": 110921,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 12.309720695755692,
+        "n": 471,
+        "n_squared_plus_1_factors": {
+          "110921": 1,
+          "2": 1
+        }
+      },
+      "side": "below",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 2,
+        "local_maximum_at_K": null,
+        "neighbor_values": [],
+        "status": "K_below_chang_R_K_domain",
+        "theta_proxy": null
+      },
+      "convergent_index": 1,
+      "fraction": "2/1",
+      "p": 2,
+      "q": 1,
+      "residual": 0.4150374992788439,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": true,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 27.596250162902713,
+        "denominator_distance_proxy": 0,
+        "dominant_prime_power_base": 110921,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 12.309720695755692,
+        "n": 471,
+        "n_squared_plus_1_factors": {
+          "110921": 1,
+          "2": 1
+        }
+      },
+      "side": "above",
+      "slope_realizability_matches": [
+        {
+          "classification": "positive_integer_cycle",
+          "edge_factor": 0.75,
+          "edge_mean_log2_slope": -0.4150374992788439,
+          "level": [
+            5,
+            4
+          ],
+          "slope_A_over_m": "2/1",
+          "slope_filter_survivor": true,
+          "source_files": [
+            "docs/reports/karp_slope_joint_sweep.json",
+            "docs/reports/tail_cycle_realizability_extended.json"
+          ],
+          "valuation_word": [
+            2
+          ]
+        },
+        {
+          "classification": "positive_integer_cycle",
+          "edge_factor": 0.75,
+          "edge_mean_log2_slope": -0.4150374992788439,
+          "level": [
+            6,
+            5
+          ],
+          "slope_A_over_m": "2/1",
+          "slope_filter_survivor": true,
+          "source_files": [
+            "docs/reports/karp_slope_joint_sweep.json",
+            "docs/reports/tail_cycle_realizability_extended.json"
+          ],
+          "valuation_word": [
+            2
+          ]
+        },
+        {
+          "classification": "positive_integer_cycle",
+          "edge_factor": 0.75,
+          "edge_mean_log2_slope": -0.4150374992788439,
+          "level": [
+            7,
+            6
+          ],
+          "slope_A_over_m": "2/1",
+          "slope_filter_survivor": true,
+          "source_files": [
+            "docs/reports/karp_slope_joint_sweep.json",
+            "docs/reports/tail_cycle_realizability_extended.json"
+          ],
+          "valuation_word": [
+            2
+          ]
+        },
+        {
+          "classification": "positive_integer_cycle",
+          "edge_factor": 0.75,
+          "edge_mean_log2_slope": -0.4150374992788439,
+          "level": [
+            8,
+            7
+          ],
+          "slope_A_over_m": "2/1",
+          "slope_filter_survivor": true,
+          "source_files": [
+            "docs/reports/karp_slope_joint_sweep_extended.json",
+            "docs/reports/tail_cycle_realizability_extended_deep.json"
+          ],
+          "valuation_word": [
+            2
+          ]
+        }
+      ],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 3,
+        "local_maximum_at_K": false,
+        "neighbor_values": [
+          {
+            "K": 3,
+            "R_K": 0.01062031259014451,
+            "theta_proxy": 0.01062031259014451
+          },
+          {
+            "K": 4,
+            "R_K": 0.015726822961738926,
+            "theta_proxy": 0.015726822961738926
+          },
+          {
+            "K": 5,
+            "R_K": 0.010467578147536127,
+            "theta_proxy": 0.010467578147536127
+          }
+        ],
+        "note": "Theta_K is represented by |R(K)| from the local Chang phantom-gain module; this is a finite proxy for local oscillation, not a claim about Chang's full asymptotic difficulty profile.",
+        "status": "computed_abs_chang_R_K_proxy",
+        "theta_proxy": 0.01062031259014451
+      },
+      "convergent_index": 2,
+      "fraction": "3/2",
+      "p": 3,
+      "q": 2,
+      "residual": -0.08496250072115608,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": true,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 5.289703134587004,
+        "denominator_distance_proxy": 1,
+        "dominant_prime_power_base": 29,
+        "dominant_prime_power_exponent": 2,
+        "low_mu_score_log_minus_mu": 2.674148649426529,
+        "mu_n_squared_plus_1": 4.7535901911063645,
+        "n": 41,
+        "n_squared_plus_1_factors": {
+          "2": 1,
+          "29": 2
+        }
+      },
+      "side": "below",
+      "slope_realizability_matches": [
+        {
+          "classification": "noninteger_2adic_only",
+          "edge_factor": 1.0711220788237548,
+          "edge_mean_log2_slope": 0.09912291750801543,
+          "level": [
+            5,
+            4
+          ],
+          "slope_A_over_m": "3/2",
+          "slope_filter_survivor": false,
+          "source_files": [
+            "docs/reports/tail_cycle_realizability_extended.json"
+          ],
+          "valuation_word": [
+            2,
+            1,
+            1,
+            3,
+            1,
+            1,
+            1,
+            1,
+            4,
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "classification": "noninteger_2adic_only",
+          "edge_factor": 1.0606601717798212,
+          "edge_mean_log2_slope": 0.08496250072115608,
+          "level": [
+            5,
+            4
+          ],
+          "slope_A_over_m": "3/2",
+          "slope_filter_survivor": false,
+          "source_files": [
+            "docs/reports/tail_cycle_realizability.json",
+            "docs/reports/tail_cycle_realizability_extended.json"
+          ],
+          "valuation_word": [
+            2,
+            1,
+            1,
+            3,
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "classification": "noninteger_2adic_only",
+          "edge_factor": 1.0816871777305561,
+          "edge_mean_log2_slope": 0.11328333429487476,
+          "level": [
+            6,
+            5
+          ],
+          "slope_A_over_m": "3/2",
+          "slope_filter_survivor": false,
+          "source_files": [
+            "docs/reports/tail_cycle_realizability.json",
+            "docs/reports/tail_cycle_realizability_extended.json"
+          ],
+          "valuation_word": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "classification": "noninteger_2adic_only",
+          "edge_factor": 1.0606601717798212,
+          "edge_mean_log2_slope": 0.08496250072115608,
+          "level": [
+            7,
+            6
+          ],
+          "slope_A_over_m": "3/2",
+          "slope_filter_survivor": false,
+          "source_files": [
+            "docs/reports/tail_cycle_realizability.json",
+            "docs/reports/tail_cycle_realizability_extended.json"
+          ],
+          "valuation_word": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            3
+          ]
+        },
+        {
+          "classification": "noninteger_2adic_only",
+          "edge_factor": 1.0606601717798212,
+          "edge_mean_log2_slope": 0.08496250072115608,
+          "level": [
+            7,
+            6
+          ],
+          "slope_A_over_m": "3/2",
+          "slope_filter_survivor": false,
+          "source_files": [
+            "docs/reports/tail_cycle_realizability_extended.json"
+          ],
+          "valuation_word": [
+            3,
+            1,
+            1,
+            1,
+            4,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "classification": "noninteger_2adic_only",
+          "edge_factor": 1.0606601717798212,
+          "edge_mean_log2_slope": 0.08496250072115608,
+          "level": [
+            8,
+            7
+          ],
+          "slope_A_over_m": "3/2",
+          "slope_filter_survivor": false,
+          "source_files": [
+            "docs/reports/tail_cycle_realizability_extended_deep.json"
+          ],
+          "valuation_word": [
+            3,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 8,
+        "local_maximum_at_K": false,
+        "neighbor_values": [
+          {
+            "K": 6,
+            "R_K": 0.008670117221304188,
+            "theta_proxy": 0.008670117221304188
+          },
+          {
+            "K": 7,
+            "R_K": 0.007602994814202797,
+            "theta_proxy": 0.007602994814202797
+          },
+          {
+            "K": 8,
+            "R_K": 0.004675753359482348,
+            "theta_proxy": 0.004675753359482348
+          },
+          {
+            "K": 9,
+            "R_K": 0.004729722396951255,
+            "theta_proxy": 0.004729722396951255
+          },
+          {
+            "K": 10,
+            "R_K": 0.003603900642862694,
+            "theta_proxy": 0.003603900642862694
+          }
+        ],
+        "note": "Theta_K is represented by |R(K)| from the local Chang phantom-gain module; this is a finite proxy for local oscillation, not a claim about Chang's full asymptotic difficulty profile.",
+        "status": "computed_abs_chang_R_K_proxy",
+        "theta_proxy": 0.004675753359482348
+      },
+      "convergent_index": 3,
+      "fraction": "8/5",
+      "p": 8,
+      "q": 5,
+      "residual": 0.015037499278844013,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": true,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 2.631089159966082,
+        "denominator_distance_proxy": 0,
+        "dominant_prime_power_base": 5,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 4.440892098500626e-16,
+        "mu_n_squared_plus_1": 2.3025850929940455,
+        "n": 3,
+        "n_squared_plus_1_factors": {
+          "2": 1,
+          "5": 1
+        }
+      },
+      "side": "above",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 19,
+        "local_maximum_at_K": false,
+        "neighbor_values": [
+          {
+            "K": 17,
+            "R_K": 0.0011276387737366236,
+            "theta_proxy": 0.0011276387737366236
+          },
+          {
+            "K": 18,
+            "R_K": 0.000970228594348671,
+            "theta_proxy": 0.000970228594348671
+          },
+          {
+            "K": 19,
+            "R_K": 0.0007818868357495328,
+            "theta_proxy": 0.0007818868357495328
+          },
+          {
+            "K": 20,
+            "R_K": 0.0007494639572621833,
+            "theta_proxy": 0.0007494639572621833
+          },
+          {
+            "K": 21,
+            "R_K": 0.0006406553991819015,
+            "theta_proxy": 0.0006406553991819015
+          }
+        ],
+        "note": "Theta_K is represented by |R(K)| from the local Chang phantom-gain module; this is a finite proxy for local oscillation, not a claim about Chang's full asymptotic difficulty profile.",
+        "status": "computed_abs_chang_R_K_proxy",
+        "theta_proxy": 0.0007818868357495328
+      },
+      "convergent_index": 4,
+      "fraction": "19/12",
+      "p": 19,
+      "q": 12,
+      "residual": -0.0016291673878228163,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": false,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 27.596250162902713,
+        "denominator_distance_proxy": 5,
+        "dominant_prime_power_base": 110921,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 12.309720695755692,
+        "n": 471,
+        "n_squared_plus_1_factors": {
+          "110921": 1,
+          "2": 1
+        },
+        "rozier_239_reference": {
+          "alignment_to_denominator": false,
+          "dominant_prime_power_base": 13,
+          "n": 239,
+          "n_squared_plus_1_factors": {
+            "13": 4,
+            "2": 1
+          },
+          "note": "Rozier's n=239 family is retained as a reference family; the denominator relation is recorded without claiming a theorem."
+        }
+      },
+      "side": "below",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 65,
+        "local_maximum_at_K": false,
+        "neighbor_values": [
+          {
+            "K": 63,
+            "R_K": 1.5875917467867134e-05,
+            "theta_proxy": 1.5875917467867134e-05
+          },
+          {
+            "K": 64,
+            "R_K": 1.4886306124437844e-05,
+            "theta_proxy": 1.4886306124437844e-05
+          },
+          {
+            "K": 65,
+            "R_K": 1.3225927675212211e-05,
+            "theta_proxy": 1.3225927675212211e-05
+          },
+          {
+            "K": 66,
+            "R_K": 1.3044984845784384e-05,
+            "theta_proxy": 1.3044984845784384e-05
+          },
+          {
+            "K": 67,
+            "R_K": 1.2032619398572996e-05,
+            "theta_proxy": 1.2032619398572996e-05
+          }
+        ],
+        "note": "Theta_K is represented by |R(K)| from the local Chang phantom-gain module; this is a finite proxy for local oscillation, not a claim about Chang's full asymptotic difficulty profile.",
+        "status": "computed_abs_chang_R_K_proxy",
+        "theta_proxy": 1.3225927675212211e-05
+      },
+      "convergent_index": 5,
+      "fraction": "65/41",
+      "p": 65,
+      "q": 41,
+      "residual": 0.00040335293738058553,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": true,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 7.844879334108596,
+        "denominator_distance_proxy": 0,
+        "dominant_prime_power_base": 41,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 4.406719247264253,
+        "n": 9,
+        "n_squared_plus_1_factors": {
+          "2": 1,
+          "41": 1
+        },
+        "rozier_239_reference": {
+          "alignment_to_denominator": false,
+          "dominant_prime_power_base": 13,
+          "n": 239,
+          "n_squared_plus_1_factors": {
+            "13": 4,
+            "2": 1
+          },
+          "note": "Rozier's n=239 family is retained as a reference family; the denominator relation is recorded without claiming a theorem."
+        }
+      },
+      "side": "above",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 84,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 6,
+      "fraction": "84/53",
+      "p": 84,
+      "q": 53,
+      "residual": -5.684034379749292e-05,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": true,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 7.676769236059107,
+        "denominator_distance_proxy": 0,
+        "dominant_prime_power_base": 53,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 6.272877006546167,
+        "n": 23,
+        "n_squared_plus_1_factors": {
+          "2": 1,
+          "5": 1,
+          "53": 1
+        },
+        "rozier_239_reference": {
+          "alignment_to_denominator": false,
+          "dominant_prime_power_base": 13,
+          "n": 239,
+          "n_squared_plus_1_factors": {
+            "13": 4,
+            "2": 1
+          },
+          "note": "Rozier's n=239 family is retained as a reference family; the denominator relation is recorded without claiming a theorem."
+        }
+      },
+      "side": "below",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 485,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 7,
+      "fraction": "485/306",
+      "p": 485,
+      "q": 306,
+      "residual": 4.819540281753021e-06,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": true,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 4.836078386039002,
+        "denominator_distance_proxy": 0,
+        "dominant_prime_power_base": 17,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 5.135798437050262,
+        "n": 13,
+        "n_squared_plus_1_factors": {
+          "17": 1,
+          "2": 1,
+          "5": 1
+        }
+      },
+      "side": "above",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 1054,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 8,
+      "fraction": "1054/665",
+      "p": 1054,
+      "q": 665,
+      "residual": -9.470611850304067e-08,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": true,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 2.631089159966082,
+        "denominator_distance_proxy": 0,
+        "dominant_prime_power_base": 5,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 4.440892098500626e-16,
+        "mu_n_squared_plus_1": 2.3025850929940455,
+        "n": 3,
+        "n_squared_plus_1_factors": {
+          "2": 1,
+          "5": 1
+        }
+      },
+      "side": "below",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 24727,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 9,
+      "fraction": "24727/15601",
+      "p": 24727,
+      "q": 15601,
+      "residual": 1.6825358883920671e-09,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": false,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 27.596250162902713,
+        "denominator_distance_proxy": 1714,
+        "dominant_prime_power_base": 110921,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 12.309720695755692,
+        "n": 471,
+        "n_squared_plus_1_factors": {
+          "110921": 1,
+          "2": 1
+        }
+      },
+      "side": "above",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 50508,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 10,
+      "fraction": "50508/31867",
+      "p": 50508,
+      "q": 31867,
+      "residual": -3.289006844653386e-10,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": false,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 27.596250162902713,
+        "denominator_distance_proxy": 15320,
+        "dominant_prime_power_base": 110921,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 12.309720695755692,
+        "n": 471,
+        "n_squared_plus_1_factors": {
+          "110921": 1,
+          "2": 1
+        }
+      },
+      "side": "below",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 125743,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 11,
+      "fraction": "125743/79335",
+      "p": 125743,
+      "q": 79335,
+      "residual": 6.664246932075457e-11,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": true,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 7.844879334108596,
+        "denominator_distance_proxy": 0,
+        "dominant_prime_power_base": 41,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 4.406719247264253,
+        "n": 9,
+        "n_squared_plus_1_factors": {
+          "2": 1,
+          "41": 1
+        }
+      },
+      "side": "above",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 176251,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 12,
+      "fraction": "176251/111202",
+      "p": 176251,
+      "q": 111202,
+      "residual": -4.670774877979511e-11,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": true,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 4.9867978712824,
+        "denominator_distance_proxy": 0,
+        "dominant_prime_power_base": 13,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 3.258096538021482,
+        "n": 5,
+        "n_squared_plus_1_factors": {
+          "13": 1,
+          "2": 1
+        }
+      },
+      "side": "below",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 301994,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 13,
+      "fraction": "301994/190537",
+      "p": 301994,
+      "q": 190537,
+      "residual": 4.884981308350689e-13,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": false,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 27.596250162902713,
+        "denominator_distance_proxy": 79616,
+        "dominant_prime_power_base": 110921,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 12.309720695755692,
+        "n": 471,
+        "n_squared_plus_1_factors": {
+          "110921": 1,
+          "2": 1
+        }
+      },
+      "side": "above",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 16785921,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 14,
+      "fraction": "16785921/10590737",
+      "p": 16785921,
+      "q": 10590737,
+      "residual": -7.105427357601002e-15,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": false,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 27.596250162902713,
+        "denominator_distance_proxy": 53242,
+        "dominant_prime_power_base": 110921,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 12.309720695755692,
+        "n": 471,
+        "n_squared_plus_1_factors": {
+          "110921": 1,
+          "2": 1
+        }
+      },
+      "side": "below",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 17087915,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 15,
+      "fraction": "17087915/10781274",
+      "p": 17087915,
+      "q": 10781274,
+      "residual": 1.7763568394002505e-15,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": false,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 27.596250162902713,
+        "denominator_distance_proxy": 21937,
+        "dominant_prime_power_base": 110921,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 12.309720695755692,
+        "n": 471,
+        "n_squared_plus_1_factors": {
+          "110921": 1,
+          "2": 1
+        }
+      },
+      "side": "above",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 68049666,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 16,
+      "fraction": "68049666/42934559",
+      "p": 68049666,
+      "q": 42934559,
+      "residual": -4.440892098500626e-16,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": false,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 27.596250162902713,
+        "denominator_distance_proxy": 8132,
+        "dominant_prime_power_base": 110921,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 12.309720695755692,
+        "n": 471,
+        "n_squared_plus_1_factors": {
+          "110921": 1,
+          "2": 1
+        }
+      },
+      "side": "below",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 85137581,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 17,
+      "fraction": "85137581/53715833",
+      "p": 85137581,
+      "q": 53715833,
+      "residual": 0.0,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": false,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 27.596250162902713,
+        "denominator_distance_proxy": 30069,
+        "dominant_prime_power_base": 110921,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 12.309720695755692,
+        "n": 471,
+        "n_squared_plus_1_factors": {
+          "110921": 1,
+          "2": 1
+        }
+      },
+      "side": "exact",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 578875152,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 18,
+      "fraction": "578875152/365229557",
+      "p": 578875152,
+      "q": 365229557,
+      "residual": 0.0,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": false,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 27.596250162902713,
+        "denominator_distance_proxy": 77625,
+        "dominant_prime_power_base": 110921,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 12.309720695755692,
+        "n": 471,
+        "n_squared_plus_1_factors": {
+          "110921": 1,
+          "2": 1
+        }
+      },
+      "side": "exact",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    },
+    {
+      "chang_link": {
+        "K": 664012733,
+        "local_maximum_at_K": null,
+        "max_K": 80,
+        "neighbor_values": [],
+        "note": "Chang R(K) uses primitive-necklace sums that become expensive at large K; the megasynthesis records high convergents but bounds this local oscillation proxy.",
+        "status": "skipped_above_finite_chang_K_cap",
+        "theta_proxy": null
+      },
+      "convergent_index": 19,
+      "fraction": "664012733/418945390",
+      "p": 664012733,
+      "q": 418945390,
+      "residual": 0.0,
+      "rozier_link": {
+        "aligned_to_convergent_denominator": true,
+        "alignment_rule": "denominator equals/divides/is-divided-by dominant prime or equals its exponent",
+        "best_predicted_gain_k_2_to_20": 15.630806460717167,
+        "denominator_distance_proxy": 0,
+        "dominant_prime_power_base": 1277,
+        "dominant_prime_power_exponent": 1,
+        "low_mu_score_log_minus_mu": 0.0,
+        "mu_n_squared_plus_1": 9.454853949026585,
+        "n": 113,
+        "n_squared_plus_1_factors": {
+          "1277": 1,
+          "2": 1,
+          "5": 1
+        }
+      },
+      "side": "exact",
+      "slope_realizability_matches": [],
+      "triple_alignment_detected": false
+    }
+  ],
+  "tao_tier_test_results": {
+    "bootstrap_one_sided_p_value": 1.0,
+    "median_order_cf_lt_intermediate_lt_random": false,
+    "method_note": "The discrepancy is exact for candidate pairs below the admissible combination cap. Degenerate moduli and pairs above the cap are recorded as skipped to keep the finite audit bounded.",
+    "tao_tier_hypothesis_supported": false,
+    "tiers": {
+      "cf_convergent": {
+        "candidate_count": 3,
+        "computed_count": 2,
+        "median_discrepancy": 0.0,
+        "median_discrepancy_bootstrap_ci": {
+          "q025": 0.0,
+          "q500": 0.0,
+          "q975": 0.0
+        },
+        "rows": [
+          {
+            "a": 3,
+            "admissible_count": 2,
+            "discrepancy": null,
+            "fraction": "3/2",
+            "hit_count": null,
+            "m": 2,
+            "modulus": 1,
+            "status": "skipped_degenerate_modulus"
+          },
+          {
+            "a": 8,
+            "admissible_count": 35,
+            "discrepancy": 0.0,
+            "fraction": "8/5",
+            "hit_count": 0,
+            "m": 5,
+            "modulus": 13,
+            "status": "computed_exact"
+          },
+          {
+            "a": 19,
+            "admissible_count": 31824,
+            "discrepancy": 0.0,
+            "fraction": "19/12",
+            "hit_count": 0,
+            "m": 12,
+            "modulus": 7153,
+            "status": "computed_exact"
+          }
+        ],
+        "skipped_count": 1
+      },
+      "intermediate_fraction": {
+        "candidate_count": 4,
+        "computed_count": 2,
+        "median_discrepancy": 0.016666666666666666,
+        "median_discrepancy_bootstrap_ci": {
+          "q025": 0.0,
+          "q500": 0.016666666666666666,
+          "q975": 0.03333333333333333
+        },
+        "rows": [
+          {
+            "a": 3,
+            "admissible_count": 2,
+            "discrepancy": null,
+            "fraction": "3/2",
+            "hit_count": null,
+            "m": 2,
+            "modulus": 1,
+            "status": "skipped_degenerate_modulus"
+          },
+          {
+            "a": 5,
+            "admissible_count": 6,
+            "discrepancy": 0.0,
+            "fraction": "5/3",
+            "hit_count": 0,
+            "m": 3,
+            "modulus": 5,
+            "status": "computed_exact"
+          },
+          {
+            "a": 11,
+            "admissible_count": 210,
+            "discrepancy": 0.03333333333333333,
+            "fraction": "11/7",
+            "hit_count": 7,
+            "m": 7,
+            "modulus": 139,
+            "status": "computed_exact"
+          },
+          {
+            "a": 27,
+            "admissible_count": 5311735,
+            "discrepancy": null,
+            "fraction": "27/17",
+            "hit_count": null,
+            "m": 17,
+            "max_admissible": 500000,
+            "status": "skipped_admissible_count_cap"
+          }
+        ],
+        "skipped_count": 2
+      },
+      "random_rational": {
+        "candidate_count": 84,
+        "computed_count": 84,
+        "median_discrepancy": 0.0,
+        "median_discrepancy_bootstrap_ci": {
+          "q025": 0.0,
+          "q500": 0.0,
+          "q975": 0.0
+        },
+        "rows": [
+          {
+            "a": 18,
+            "admissible_count": 6188,
+            "discrepancy": 0.0,
+            "fraction": "18/13",
+            "hit_count": 0,
+            "m": 13,
+            "modulus": 1332179,
+            "status": "computed_exact"
+          },
+          {
+            "a": 33,
+            "admissible_count": 32,
+            "discrepancy": 0.0,
+            "fraction": "33/2",
+            "hit_count": 0,
+            "m": 2,
+            "modulus": 8589934583,
+            "status": "computed_exact"
+          },
+          {
+            "a": 17,
+            "admissible_count": 120,
+            "discrepancy": 0.0,
+            "fraction": "17/3",
+            "hit_count": 0,
+            "m": 3,
+            "modulus": 131045,
+            "status": "computed_exact"
+          },
+          {
+            "a": 18,
+            "admissible_count": 6188,
+            "discrepancy": 0.0,
+            "fraction": "18/6",
+            "hit_count": 0,
+            "m": 6,
+            "modulus": 261415,
+            "status": "computed_exact"
+          },
+          {
+            "a": 24,
+            "admissible_count": 490314,
+            "discrepancy": 0.0,
+            "fraction": "24/9",
+            "hit_count": 0,
+            "m": 9,
+            "modulus": 16757533,
+            "status": "computed_exact"
+          },
+          {
+            "a": 34,
+            "admissible_count": 237336,
+            "discrepancy": 0.0,
+            "fraction": "34/6",
+            "hit_count": 0,
+            "m": 6,
+            "modulus": 17179868455,
+            "status": "computed_exact"
+          },
+          {
+            "a": 25,
+            "admissible_count": 2024,
+            "discrepancy": 0.0,
+            "fraction": "25/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 33554351,
+            "status": "computed_exact"
+          },
+          {
+            "a": 20,
+            "admissible_count": 171,
+            "discrepancy": 0.0,
+            "fraction": "20/18",
+            "hit_count": 0,
+            "m": 18,
+            "modulus": 386371913,
+            "status": "computed_exact"
+          },
+          {
+            "a": 48,
+            "admissible_count": 47,
+            "discrepancy": 0.0,
+            "fraction": "48/2",
+            "hit_count": 0,
+            "m": 2,
+            "modulus": 281474976710647,
+            "status": "computed_exact"
+          },
+          {
+            "a": 22,
+            "admissible_count": 203490,
+            "discrepancy": 0.0,
+            "fraction": "22/9",
+            "hit_count": 0,
+            "m": 9,
+            "modulus": 4174621,
+            "status": "computed_exact"
+          },
+          {
+            "a": 27,
+            "admissible_count": 2600,
+            "discrepancy": 0.0,
+            "fraction": "27/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 134217647,
+            "status": "computed_exact"
+          },
+          {
+            "a": 23,
+            "admissible_count": 22,
+            "discrepancy": 0.0,
+            "fraction": "23/2",
+            "hit_count": 0,
+            "m": 2,
+            "modulus": 8388599,
+            "status": "computed_exact"
+          },
+          {
+            "a": 20,
+            "admissible_count": 3876,
+            "discrepancy": 0.0,
+            "fraction": "20/16",
+            "hit_count": 0,
+            "m": 16,
+            "modulus": 41998145,
+            "status": "computed_exact"
+          },
+          {
+            "a": 11,
+            "admissible_count": 210,
+            "discrepancy": 0.0,
+            "fraction": "11/5",
+            "hit_count": 0,
+            "m": 5,
+            "modulus": 1805,
+            "status": "computed_exact"
+          },
+          {
+            "a": 24,
+            "admissible_count": 100947,
+            "discrepancy": 0.0,
+            "fraction": "24/18",
+            "hit_count": 0,
+            "m": 18,
+            "modulus": 370643273,
+            "status": "computed_exact"
+          },
+          {
+            "a": 19,
+            "admissible_count": 3060,
+            "discrepancy": 0.0,
+            "fraction": "19/15",
+            "hit_count": 0,
+            "m": 15,
+            "modulus": 13824619,
+            "status": "computed_exact"
+          },
+          {
+            "a": 26,
+            "admissible_count": 480700,
+            "discrepancy": 0.0,
+            "fraction": "26/19",
+            "hit_count": 0,
+            "m": 19,
+            "modulus": 1095152603,
+            "status": "computed_exact"
+          },
+          {
+            "a": 37,
+            "admissible_count": 630,
+            "discrepancy": 0.0,
+            "fraction": "37/3",
+            "hit_count": 0,
+            "m": 3,
+            "modulus": 137438953445,
+            "status": "computed_exact"
+          },
+          {
+            "a": 14,
+            "admissible_count": 286,
+            "discrepancy": 0.0,
+            "fraction": "14/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 16303,
+            "status": "computed_exact"
+          },
+          {
+            "a": 23,
+            "admissible_count": 170544,
+            "discrepancy": 0.0,
+            "fraction": "23/8",
+            "hit_count": 0,
+            "m": 8,
+            "modulus": 8382047,
+            "status": "computed_exact"
+          },
+          {
+            "a": 16,
+            "admissible_count": 1365,
+            "discrepancy": 0.0,
+            "fraction": "16/12",
+            "hit_count": 0,
+            "m": 12,
+            "modulus": 465905,
+            "status": "computed_exact"
+          },
+          {
+            "a": 19,
+            "admissible_count": 816,
+            "discrepancy": 0.0,
+            "fraction": "19/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 524207,
+            "status": "computed_exact"
+          },
+          {
+            "a": 24,
+            "admissible_count": 23,
+            "discrepancy": 0.0,
+            "fraction": "24/2",
+            "hit_count": 0,
+            "m": 2,
+            "modulus": 16777207,
+            "status": "computed_exact"
+          },
+          {
+            "a": 12,
+            "admissible_count": 165,
+            "discrepancy": 0.0,
+            "fraction": "12/9",
+            "hit_count": 0,
+            "m": 9,
+            "modulus": 15587,
+            "status": "computed_exact"
+          },
+          {
+            "a": 24,
+            "admissible_count": 8855,
+            "discrepancy": 0.0,
+            "fraction": "24/20",
+            "hit_count": 0,
+            "m": 20,
+            "modulus": 3470007185,
+            "status": "computed_exact"
+          },
+          {
+            "a": 38,
+            "admissible_count": 7770,
+            "discrepancy": 0.0,
+            "fraction": "38/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 274877906863,
+            "status": "computed_exact"
+          },
+          {
+            "a": 18,
+            "admissible_count": 17,
+            "discrepancy": 0.0,
+            "fraction": "18/2",
+            "hit_count": 0,
+            "m": 2,
+            "modulus": 262135,
+            "status": "computed_exact"
+          },
+          {
+            "a": 50,
+            "admissible_count": 211876,
+            "discrepancy": 0.0,
+            "fraction": "50/5",
+            "hit_count": 0,
+            "m": 5,
+            "modulus": 1125899906842381,
+            "status": "computed_exact"
+          },
+          {
+            "a": 27,
+            "admissible_count": 65780,
+            "discrepancy": 0.0,
+            "fraction": "27/6",
+            "hit_count": 0,
+            "m": 6,
+            "modulus": 134216999,
+            "status": "computed_exact"
+          },
+          {
+            "a": 26,
+            "admissible_count": 300,
+            "discrepancy": 0.0,
+            "fraction": "26/3",
+            "hit_count": 0,
+            "m": 3,
+            "modulus": 67108837,
+            "status": "computed_exact"
+          },
+          {
+            "a": 20,
+            "admissible_count": 75582,
+            "discrepancy": 0.0,
+            "fraction": "20/12",
+            "hit_count": 0,
+            "m": 12,
+            "modulus": 517135,
+            "status": "computed_exact"
+          },
+          {
+            "a": 22,
+            "admissible_count": 352716,
+            "discrepancy": 2.835142154027603e-06,
+            "fraction": "22/11",
+            "hit_count": 1,
+            "m": 11,
+            "modulus": 4017157,
+            "status": "computed_exact"
+          },
+          {
+            "a": 50,
+            "admissible_count": 18424,
+            "discrepancy": 0.0,
+            "fraction": "50/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 1125899906842543,
+            "status": "computed_exact"
+          },
+          {
+            "a": 19,
+            "admissible_count": 48620,
+            "discrepancy": 0.0,
+            "fraction": "19/10",
+            "hit_count": 0,
+            "m": 10,
+            "modulus": 465239,
+            "status": "computed_exact"
+          },
+          {
+            "a": 24,
+            "admissible_count": 100947,
+            "discrepancy": 0.0,
+            "fraction": "24/7",
+            "hit_count": 0,
+            "m": 7,
+            "modulus": 16775029,
+            "status": "computed_exact"
+          },
+          {
+            "a": 7,
+            "admissible_count": 15,
+            "discrepancy": 0.0,
+            "fraction": "7/3",
+            "hit_count": 0,
+            "m": 3,
+            "modulus": 101,
+            "status": "computed_exact"
+          },
+          {
+            "a": 18,
+            "admissible_count": 680,
+            "discrepancy": 0.0,
+            "fraction": "18/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 262063,
+            "status": "computed_exact"
+          },
+          {
+            "a": 43,
+            "admissible_count": 861,
+            "discrepancy": 0.0,
+            "fraction": "43/3",
+            "hit_count": 0,
+            "m": 3,
+            "modulus": 8796093022181,
+            "status": "computed_exact"
+          },
+          {
+            "a": 34,
+            "admissible_count": 40920,
+            "discrepancy": 0.0,
+            "fraction": "34/5",
+            "hit_count": 0,
+            "m": 5,
+            "modulus": 17179868941,
+            "status": "computed_exact"
+          },
+          {
+            "a": 19,
+            "admissible_count": 153,
+            "discrepancy": 0.0,
+            "fraction": "19/17",
+            "hit_count": 0,
+            "m": 17,
+            "modulus": 128615875,
+            "status": "computed_exact"
+          },
+          {
+            "a": 33,
+            "admissible_count": 35960,
+            "discrepancy": 0.0,
+            "fraction": "33/5",
+            "hit_count": 0,
+            "m": 5,
+            "modulus": 8589934349,
+            "status": "computed_exact"
+          },
+          {
+            "a": 41,
+            "admissible_count": 91390,
+            "discrepancy": 0.0,
+            "fraction": "41/5",
+            "hit_count": 0,
+            "m": 5,
+            "modulus": 2199023255309,
+            "status": "computed_exact"
+          },
+          {
+            "a": 21,
+            "admissible_count": 15504,
+            "discrepancy": 0.0,
+            "fraction": "21/16",
+            "hit_count": 0,
+            "m": 16,
+            "modulus": 40949569,
+            "status": "computed_exact"
+          },
+          {
+            "a": 23,
+            "admissible_count": 497420,
+            "discrepancy": 0.0,
+            "fraction": "23/10",
+            "hit_count": 0,
+            "m": 10,
+            "modulus": 8329559,
+            "status": "computed_exact"
+          },
+          {
+            "a": 36,
+            "admissible_count": 52360,
+            "discrepancy": 0.0,
+            "fraction": "36/5",
+            "hit_count": 0,
+            "m": 5,
+            "modulus": 68719476493,
+            "status": "computed_exact"
+          },
+          {
+            "a": 48,
+            "admissible_count": 178365,
+            "discrepancy": 0.0,
+            "fraction": "48/5",
+            "hit_count": 0,
+            "m": 5,
+            "modulus": 281474976710413,
+            "status": "computed_exact"
+          },
+          {
+            "a": 11,
+            "admissible_count": 10,
+            "discrepancy": 0.0,
+            "fraction": "11/2",
+            "hit_count": 0,
+            "m": 2,
+            "modulus": 2039,
+            "status": "computed_exact"
+          },
+          {
+            "a": 30,
+            "admissible_count": 29,
+            "discrepancy": 0.0,
+            "fraction": "30/2",
+            "hit_count": 0,
+            "m": 2,
+            "modulus": 1073741815,
+            "status": "computed_exact"
+          },
+          {
+            "a": 26,
+            "admissible_count": 25,
+            "discrepancy": 0.0,
+            "fraction": "26/2",
+            "hit_count": 0,
+            "m": 2,
+            "modulus": 67108855,
+            "status": "computed_exact"
+          },
+          {
+            "a": 22,
+            "admissible_count": 1330,
+            "discrepancy": 0.0,
+            "fraction": "22/19",
+            "hit_count": 0,
+            "m": 19,
+            "modulus": 1158067163,
+            "status": "computed_exact"
+          },
+          {
+            "a": 23,
+            "admissible_count": 319770,
+            "discrepancy": 0.0,
+            "fraction": "23/9",
+            "hit_count": 0,
+            "m": 9,
+            "modulus": 8368925,
+            "status": "computed_exact"
+          },
+          {
+            "a": 48,
+            "admissible_count": 16215,
+            "discrepancy": 0.0,
+            "fraction": "48/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 281474976710575,
+            "status": "computed_exact"
+          },
+          {
+            "a": 10,
+            "admissible_count": 9,
+            "discrepancy": 0.0,
+            "fraction": "10/9",
+            "hit_count": 0,
+            "m": 9,
+            "modulus": 18659,
+            "status": "computed_exact"
+          },
+          {
+            "a": 33,
+            "admissible_count": 4960,
+            "discrepancy": 0.0,
+            "fraction": "33/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 8589934511,
+            "status": "computed_exact"
+          },
+          {
+            "a": 44,
+            "admissible_count": 903,
+            "discrepancy": 0.0,
+            "fraction": "44/3",
+            "hit_count": 0,
+            "m": 3,
+            "modulus": 17592186044389,
+            "status": "computed_exact"
+          },
+          {
+            "a": 21,
+            "admissible_count": 20,
+            "discrepancy": 0.0,
+            "fraction": "21/2",
+            "hit_count": 0,
+            "m": 2,
+            "modulus": 2097143,
+            "status": "computed_exact"
+          },
+          {
+            "a": 18,
+            "admissible_count": 24310,
+            "discrepancy": 4.113533525298231e-05,
+            "fraction": "18/9",
+            "hit_count": 1,
+            "m": 9,
+            "modulus": 242461,
+            "status": "computed_exact"
+          },
+          {
+            "a": 42,
+            "admissible_count": 41,
+            "discrepancy": 0.0,
+            "fraction": "42/2",
+            "hit_count": 0,
+            "m": 2,
+            "modulus": 4398046511095,
+            "status": "computed_exact"
+          },
+          {
+            "a": 21,
+            "admissible_count": 190,
+            "discrepancy": 0.0,
+            "fraction": "21/3",
+            "hit_count": 0,
+            "m": 3,
+            "modulus": 2097125,
+            "status": "computed_exact"
+          },
+          {
+            "a": 9,
+            "admissible_count": 56,
+            "discrepancy": 0.0,
+            "fraction": "9/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 431,
+            "status": "computed_exact"
+          },
+          {
+            "a": 46,
+            "admissible_count": 14190,
+            "discrepancy": 0.0,
+            "fraction": "46/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 70368744177583,
+            "status": "computed_exact"
+          },
+          {
+            "a": 20,
+            "admissible_count": 969,
+            "discrepancy": 0.0,
+            "fraction": "20/17",
+            "hit_count": 0,
+            "m": 17,
+            "modulus": 128091587,
+            "status": "computed_exact"
+          },
+          {
+            "a": 18,
+            "admissible_count": 17,
+            "discrepancy": 0.0,
+            "fraction": "18/17",
+            "hit_count": 0,
+            "m": 17,
+            "modulus": 128878019,
+            "status": "computed_exact"
+          },
+          {
+            "a": 25,
+            "admissible_count": 134596,
+            "discrepancy": 0.0,
+            "fraction": "25/19",
+            "hit_count": 0,
+            "m": 19,
+            "modulus": 1128707035,
+            "status": "computed_exact"
+          },
+          {
+            "a": 44,
+            "admissible_count": 123410,
+            "discrepancy": 0.0,
+            "fraction": "44/5",
+            "hit_count": 0,
+            "m": 5,
+            "modulus": 17592186044173,
+            "status": "computed_exact"
+          },
+          {
+            "a": 31,
+            "admissible_count": 30,
+            "discrepancy": 0.0,
+            "fraction": "31/2",
+            "hit_count": 0,
+            "m": 2,
+            "modulus": 2147483639,
+            "status": "computed_exact"
+          },
+          {
+            "a": 15,
+            "admissible_count": 91,
+            "discrepancy": 0.0,
+            "fraction": "15/13",
+            "hit_count": 0,
+            "m": 13,
+            "modulus": 1561555,
+            "status": "computed_exact"
+          },
+          {
+            "a": 22,
+            "admissible_count": 1330,
+            "discrepancy": 0.0,
+            "fraction": "22/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 4194223,
+            "status": "computed_exact"
+          },
+          {
+            "a": 26,
+            "admissible_count": 2300,
+            "discrepancy": 0.0,
+            "fraction": "26/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 67108783,
+            "status": "computed_exact"
+          },
+          {
+            "a": 25,
+            "admissible_count": 346104,
+            "discrepancy": 0.0,
+            "fraction": "25/8",
+            "hit_count": 0,
+            "m": 8,
+            "modulus": 33547871,
+            "status": "computed_exact"
+          },
+          {
+            "a": 49,
+            "admissible_count": 17296,
+            "discrepancy": 0.0,
+            "fraction": "49/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 562949953421231,
+            "status": "computed_exact"
+          },
+          {
+            "a": 9,
+            "admissible_count": 28,
+            "discrepancy": 0.0,
+            "fraction": "9/3",
+            "hit_count": 0,
+            "m": 3,
+            "modulus": 485,
+            "status": "computed_exact"
+          },
+          {
+            "a": 15,
+            "admissible_count": 364,
+            "discrepancy": 0.0,
+            "fraction": "15/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 32687,
+            "status": "computed_exact"
+          },
+          {
+            "a": 24,
+            "admissible_count": 490314,
+            "discrepancy": 4.0790187512492e-06,
+            "fraction": "24/16",
+            "hit_count": 2,
+            "m": 16,
+            "modulus": 26269505,
+            "status": "computed_exact"
+          },
+          {
+            "a": 6,
+            "admissible_count": 5,
+            "discrepancy": 0.0,
+            "fraction": "6/2",
+            "hit_count": 0,
+            "m": 2,
+            "modulus": 55,
+            "status": "computed_exact"
+          },
+          {
+            "a": 22,
+            "admissible_count": 5985,
+            "discrepancy": 0.0,
+            "fraction": "22/5",
+            "hit_count": 0,
+            "m": 5,
+            "modulus": 4194061,
+            "status": "computed_exact"
+          },
+          {
+            "a": 20,
+            "admissible_count": 11628,
+            "discrepancy": 0.0,
+            "fraction": "20/6",
+            "hit_count": 0,
+            "m": 6,
+            "modulus": 1047847,
+            "status": "computed_exact"
+          },
+          {
+            "a": 41,
+            "admissible_count": 9880,
+            "discrepancy": 0.0,
+            "fraction": "41/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 2199023255471,
+            "status": "computed_exact"
+          },
+          {
+            "a": 42,
+            "admissible_count": 10660,
+            "discrepancy": 0.0,
+            "fraction": "42/4",
+            "hit_count": 0,
+            "m": 4,
+            "modulus": 4398046511023,
+            "status": "computed_exact"
+          },
+          {
+            "a": 23,
+            "admissible_count": 74613,
+            "discrepancy": 0.0,
+            "fraction": "23/7",
+            "hit_count": 0,
+            "m": 7,
+            "modulus": 8386421,
+            "status": "computed_exact"
+          },
+          {
+            "a": 12,
+            "admissible_count": 330,
+            "discrepancy": 0.006060606060606061,
+            "fraction": "12/8",
+            "hit_count": 2,
+            "m": 8,
+            "modulus": 2465,
+            "status": "computed_exact"
+          },
+          {
+            "a": 12,
+            "admissible_count": 462,
+            "discrepancy": 0.0021645021645021645,
+            "fraction": "12/6",
+            "hit_count": 1,
+            "m": 6,
+            "modulus": 3367,
+            "status": "computed_exact"
+          },
+          {
+            "a": 14,
+            "admissible_count": 78,
+            "discrepancy": 0.0,
+            "fraction": "14/12",
+            "hit_count": 0,
+            "m": 12,
+            "modulus": 515057,
+            "status": "computed_exact"
+          },
+          {
+            "a": 6,
+            "admissible_count": 1,
+            "discrepancy": 1.0,
+            "fraction": "6/6",
+            "hit_count": 1,
+            "m": 6,
+            "modulus": 665,
+            "status": "computed_exact"
+          }
+        ],
+        "skipped_count": 0
+      }
+    }
+  },
+  "type": "stern_brocot_megasynthesis",
+  "verdict": {
+    "interpretation": "The finite synthesis preserves the Stern-Brocot tier hierarchy as a candidate organizing skeleton, while separating computed alignment from structural cross-paper hypotheses.",
+    "overall": "partial_or_negative_empirical_megasynthesis",
+    "six_reduction_unification_meta_claim": false,
+    "stern_brocot_alignment_distinct_convergents": 0,
+    "stern_brocot_alignment_supported": false,
+    "tao_tier_hypothesis_supported": false
+  }
+}

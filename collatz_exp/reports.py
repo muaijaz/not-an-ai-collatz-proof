@@ -476,6 +476,24 @@ def format_cf_convergent_slope_hypothesis_report(result) -> str:
     )
 
 
+def format_stern_brocot_megasynthesis_report(result) -> str:
+    verdict = result.verdict
+    tao = result.tao_tier_test_results
+    medians = {
+        tier: data["median_discrepancy"]
+        for tier, data in tao["tiers"].items()
+    }
+    return (
+        f"status={result.status}, overall={verdict['overall']}, "
+        f"triple_alignments="
+        f"{verdict['stern_brocot_alignment_distinct_convergents']}, "
+        f"tao_tier_supported={verdict['tao_tier_hypothesis_supported']}, "
+        f"six_reduction_meta="
+        f"{verdict['six_reduction_unification_meta_claim']}, "
+        f"median_discrepancies={medians}"
+    )
+
+
 def format_christoffel_slope_constrained_jsr_report(
     result: ChristoffelSlopeConstrainedJSRReport,
 ) -> str:

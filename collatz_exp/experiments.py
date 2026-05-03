@@ -121,6 +121,10 @@ from .power_ratio import power_ratio_report
 from .qnp1_audit import qnp1_realizability_report
 from .qnp1_phase_transition import Q_GRID, qnp1_phase_transition_report
 from .rozier_abc_audit import rozier_abc_audit_report
+from .stern_brocot_synthesis import (
+    save_megasynthesis_executive_summary,
+    stern_brocot_megasynthesis_report,
+)
 from .reports import (
     format_cohomology_report,
     format_compact_trace_report,
@@ -215,6 +219,7 @@ from .reports import (
     format_state_debt_lyapunov_report,
     format_spectral_fingerprint_report,
     format_cover_tail_report,
+    format_stern_brocot_megasynthesis_report,
     format_tail_family_report,
     format_tail_renormalization_family_report,
     format_tail_renormalization_report,
@@ -536,6 +541,29 @@ def build_parser() -> argparse.ArgumentParser:
         default="docs/reports/cf_convergent_slope_hypothesis.json",
         help="path for the CF-convergent slope hypothesis JSON artifact",
     )
+    parser.add_argument(
+        "--stern-brocot-megasynthesis",
+        action="store_true",
+        help="build the Stern-Brocot megasynthesis finite synthesis artifact",
+    )
+    parser.add_argument(
+        "--stern-brocot-megasynthesis-output",
+        type=str,
+        default="docs/reports/stern_brocot_megasynthesis.json",
+        help="path for the Stern-Brocot megasynthesis JSON artifact",
+    )
+    parser.add_argument(
+        "--stern-brocot-megasynthesis-summary-output",
+        type=str,
+        default="docs/reports/megasynthesis_executive_summary.md",
+        help="path for the human-readable megasynthesis summary",
+    )
+    parser.add_argument("--stern-brocot-cf-depth", type=int, default=20)
+    parser.add_argument("--stern-brocot-tao-max-m", type=int, default=20)
+    parser.add_argument("--stern-brocot-tao-random-count", type=int, default=100)
+    parser.add_argument("--stern-brocot-tao-bootstrap-samples", type=int, default=1000)
+    parser.add_argument("--stern-brocot-rozier-n-max", type=int, default=500)
+    parser.add_argument("--stern-brocot-chang-max-K", type=int, default=80)
     parser.add_argument(
         "--tail-aware-levels",
         type=str,
@@ -1693,6 +1721,26 @@ def main(argv: list[str] | None = None) -> None:
         output_path = Path(args.cf_convergent_slope_output)
         audit.save(output_path)
         print(f"saved={output_path}")
+
+    if args.stern_brocot_megasynthesis:
+        from pathlib import Path
+
+        print("\nStern-Brocot megasynthesis audit:")
+        audit = stern_brocot_megasynthesis_report(
+            cf_depth=args.stern_brocot_cf_depth,
+            tao_max_m=args.stern_brocot_tao_max_m,
+            tao_random_count=args.stern_brocot_tao_random_count,
+            tao_bootstrap_samples=args.stern_brocot_tao_bootstrap_samples,
+            rozier_n_max=args.stern_brocot_rozier_n_max,
+            chang_max_K=args.stern_brocot_chang_max_K,
+        )
+        print(format_stern_brocot_megasynthesis_report(audit))
+        output_path = Path(args.stern_brocot_megasynthesis_output)
+        audit.save(output_path)
+        summary_path = Path(args.stern_brocot_megasynthesis_summary_output)
+        save_megasynthesis_executive_summary(audit, summary_path)
+        print(f"saved={output_path}")
+        print(f"saved_summary={summary_path}")
 
     if args.all_things:
         print("\nQuotient-cycle lift realizability:")
