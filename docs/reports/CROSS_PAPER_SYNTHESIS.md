@@ -60,21 +60,11 @@ Format: **[arXiv ID] author year** — claim. **Method.** **Composition.** **Ope
 - ✅ Paper v0.5 with Chang joint-argument section
 - ✅ Documentation closure (NOTE_DRAFT, PROJECT_JOURNEY, README)
 - ✅ Four logical commits pushed to `main`
+- ✅ **P1.1 Tao ↔ Siegel correspondence** (`tao_siegel_chi_h_correspondence.md`): explicit translation. Tao's Proposition 1.17 = decay of Siegel's `φ_3(t)`. Our Tao verification artifacts are simultaneously Siegel-`χ_3` evidence at exponent 1.286 ≈ 1.289.
+- ✅ **P1.2 Presburger defensive audit** (`realizability_presburger_audit.md`): NOT AFFECTED. Our test uses Python Peano integer arithmetic; Dhiman-Pandey's obstruction rules out Presburger / finite-automaton routes only. Our `noninteger_2adic_only` classifications ARE the ghost cycles in their terminology.
+- ✅ **P1.3 Fu-Wang full read** (`fu_wang_binary_shift_compatibility.md`): "binary shift equivalence" is heuristic, NOT rigorous conjugacy. Logarithmic scaling matches our renewal mean drift. Negligible new content; drops off priority list.
 
-### Priority 1 — Single-session, AI-tractable, HIGH leverage
-
-**P1.1 Trace explicit Tao ↔ Siegel correspondence.**
-- Read Siegel §2.2 (Numen construction p.74) + p.81 (Tao discussion). Establish how χ_H factors through Tao's Syrac map. Reinterpret our `tao_syrac_empirical.json` and `tao_characteristic_function_decay.json` as empirical verifications of χ_H properties.
-- **Effort:** 1 reading session + 1 compatibility note. **Output:** `docs/reports/tao_siegel_chi_h_correspondence.md`.
-
-**P1.2 Defensive Presburger check on `lift_realizability.py`.**
-- Verify our cycle realizability classification (`positive_integer_cycle` vs `noninteger_2adic_only`) is not Presburger-definable in the sense of Dhiman-Pandey 2601.12772. Specifically: does our test reduce to checking `(2^A − 3^m) | C` for fixed `(A,m)`? If yes, ghost cycles in the 2-adic integers might pass our filter.
-- Brief check: reading `collatz_exp/lift_realizability.py` source + comparing classification logic to Dhiman-Pandey's `D_y` predicate.
-- **Effort:** 1 reading session + brief audit note. **Output:** `docs/reports/realizability_presburger_audit.md`.
-
-**P1.3 Fu-Wang full read (8pp tractable).**
-- Read all 8 pages. Trace the binary-shift conjugacy claim. Is it: (a) topological conjugacy (continuous bijection commuting with the dynamics), (b) measurable conjugacy (a.e. equivalence under measure), or (c) heuristic correspondence? If (a)-(b), this is the Markov-chain → orbit lifting we want.
-- **Effort:** 1 reading session + compatibility note. **Output:** `docs/reports/fu_wang_binary_shift_compatibility.md`.
+### Priority 1 — Single-session, AI-tractable, HIGH leverage (REMAINING)
 
 **P1.4 Direct empirical test of Chang Conj 9.50 (Spectral Diffusion).**
 - Compute `S_w(K) = (1/C(K,w)) Σ_{hw(ξ)=w} |μ̂_K(ξ)|²` along orbits in our cache for K ∈ {4..12}, w ∈ {1,2,3}. Fit `S_w(K) = C · 2^{-α_w K}`, compare empirical α_w to Foster-predicted ≥ 0.027.
