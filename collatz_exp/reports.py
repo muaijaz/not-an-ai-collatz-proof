@@ -464,6 +464,18 @@ def format_rozier_abc_audit_report(result) -> str:
     )
 
 
+def format_cf_convergent_slope_hypothesis_report(result) -> str:
+    tests = result.hypothesis_tests
+    return (
+        f"status={result.status}, verdict={result.verdict}, "
+        f"cycles={len(result.cycles)}, "
+        f"small_levels_supported="
+        f"{tests['hypothesis_supported_at_(5,4)..(7,6)']}, "
+        f"level_8_7_supported={tests['hypothesis_supported_at_(8,7)']}, "
+        f"word_2111={tests['word_[2,1,1,1]_classification']}"
+    )
+
+
 def format_christoffel_slope_constrained_jsr_report(
     result: ChristoffelSlopeConstrainedJSRReport,
 ) -> str:

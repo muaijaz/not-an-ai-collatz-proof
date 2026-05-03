@@ -1,0 +1,1294 @@
+{
+  "artifact_paths": [
+    "docs/reports/karp_slope_joint_sweep.json",
+    "docs/reports/karp_slope_joint_sweep_extended.json",
+    "docs/reports/tail_cycle_realizability.json",
+    "docs/reports/tail_cycle_realizability_extended.json",
+    "docs/reports/tail_cycle_realizability_extended_deep.json"
+  ],
+  "caveat": "This is a finite empirical diagnostic over existing JSON artifacts only. It tests a session-local structural hypothesis; it is not a proof about all Collatz slope filters or all realizability obstructions.",
+  "cf_convergents": [
+    {
+      "fraction": "1/1",
+      "index": 0,
+      "p": 1,
+      "partial_quotient": 1,
+      "q": 1,
+      "residual": -0.5849625007211561,
+      "side": "below"
+    },
+    {
+      "fraction": "2/1",
+      "index": 1,
+      "p": 2,
+      "partial_quotient": 1,
+      "q": 1,
+      "residual": 0.4150374992788439,
+      "side": "above"
+    },
+    {
+      "fraction": "3/2",
+      "index": 2,
+      "p": 3,
+      "partial_quotient": 1,
+      "q": 2,
+      "residual": -0.08496250072115608,
+      "side": "below"
+    },
+    {
+      "fraction": "8/5",
+      "index": 3,
+      "p": 8,
+      "partial_quotient": 2,
+      "q": 5,
+      "residual": 0.015037499278844013,
+      "side": "above"
+    },
+    {
+      "fraction": "19/12",
+      "index": 4,
+      "p": 19,
+      "partial_quotient": 2,
+      "q": 12,
+      "residual": -0.0016291673878228163,
+      "side": "below"
+    },
+    {
+      "fraction": "65/41",
+      "index": 5,
+      "p": 65,
+      "partial_quotient": 3,
+      "q": 41,
+      "residual": 0.00040335293738058553,
+      "side": "above"
+    },
+    {
+      "fraction": "84/53",
+      "index": 6,
+      "p": 84,
+      "partial_quotient": 1,
+      "q": 53,
+      "residual": -5.684034379749292e-05,
+      "side": "below"
+    },
+    {
+      "fraction": "485/306",
+      "index": 7,
+      "p": 485,
+      "partial_quotient": 5,
+      "q": 306,
+      "residual": 4.819540281753021e-06,
+      "side": "above"
+    },
+    {
+      "fraction": "1054/665",
+      "index": 8,
+      "p": 1054,
+      "partial_quotient": 2,
+      "q": 665,
+      "residual": -9.470611850304067e-08,
+      "side": "below"
+    },
+    {
+      "fraction": "24727/15601",
+      "index": 9,
+      "p": 24727,
+      "partial_quotient": 23,
+      "q": 15601,
+      "residual": 1.6825358883920671e-09,
+      "side": "above"
+    },
+    {
+      "fraction": "50508/31867",
+      "index": 10,
+      "p": 50508,
+      "partial_quotient": 2,
+      "q": 31867,
+      "residual": -3.289006844653386e-10,
+      "side": "below"
+    },
+    {
+      "fraction": "125743/79335",
+      "index": 11,
+      "p": 125743,
+      "partial_quotient": 2,
+      "q": 79335,
+      "residual": 6.664246932075457e-11,
+      "side": "above"
+    },
+    {
+      "fraction": "176251/111202",
+      "index": 12,
+      "p": 176251,
+      "partial_quotient": 1,
+      "q": 111202,
+      "residual": -4.670774877979511e-11,
+      "side": "below"
+    },
+    {
+      "fraction": "301994/190537",
+      "index": 13,
+      "p": 301994,
+      "partial_quotient": 1,
+      "q": 190537,
+      "residual": 4.884981308350689e-13,
+      "side": "above"
+    },
+    {
+      "fraction": "16785921/10590737",
+      "index": 14,
+      "p": 16785921,
+      "partial_quotient": 55,
+      "q": 10590737,
+      "residual": -7.105427357601002e-15,
+      "side": "below"
+    },
+    {
+      "fraction": "17087915/10781274",
+      "index": 15,
+      "p": 17087915,
+      "partial_quotient": 1,
+      "q": 10781274,
+      "residual": 1.7763568394002505e-15,
+      "side": "above"
+    },
+    {
+      "fraction": "68049666/42934559",
+      "index": 16,
+      "p": 68049666,
+      "partial_quotient": 3,
+      "q": 42934559,
+      "residual": -4.440892098500626e-16,
+      "side": "below"
+    },
+    {
+      "fraction": "85137581/53715833",
+      "index": 17,
+      "p": 85137581,
+      "partial_quotient": 1,
+      "q": 53715833,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "578875152/365229557",
+      "index": 18,
+      "p": 578875152,
+      "partial_quotient": 6,
+      "q": 365229557,
+      "residual": 0.0,
+      "side": "exact"
+    },
+    {
+      "fraction": "664012733/418945390",
+      "index": 19,
+      "p": 664012733,
+      "partial_quotient": 1,
+      "q": 418945390,
+      "residual": 0.0,
+      "side": "exact"
+    }
+  ],
+  "cross_tabulation": {
+    "by_classification": {
+      "noninteger_2adic_only": {
+        "cf_convergent": 6,
+        "intermediate_fraction": 3,
+        "non_convergent_rational": 7,
+        "total": 16
+      },
+      "positive_integer_cycle": {
+        "cf_convergent": 4,
+        "total": 4
+      }
+    },
+    "by_level": {
+      "(5,4)": {
+        "cf_convergent": 3,
+        "intermediate_fraction": 1,
+        "non_convergent_rational": 1,
+        "total": 5
+      },
+      "(6,5)": {
+        "cf_convergent": 2,
+        "intermediate_fraction": 1,
+        "non_convergent_rational": 1,
+        "total": 4
+      },
+      "(7,6)": {
+        "cf_convergent": 3,
+        "non_convergent_rational": 3,
+        "total": 6
+      },
+      "(8,7)": {
+        "cf_convergent": 2,
+        "intermediate_fraction": 1,
+        "non_convergent_rational": 2,
+        "total": 5
+      }
+    },
+    "by_level_and_classification": {
+      "(5,4)": {
+        "noninteger_2adic_only": {
+          "cf_convergent": 2,
+          "intermediate_fraction": 1,
+          "non_convergent_rational": 1,
+          "total": 4
+        },
+        "positive_integer_cycle": {
+          "cf_convergent": 1,
+          "total": 1
+        }
+      },
+      "(6,5)": {
+        "noninteger_2adic_only": {
+          "cf_convergent": 1,
+          "intermediate_fraction": 1,
+          "non_convergent_rational": 1,
+          "total": 3
+        },
+        "positive_integer_cycle": {
+          "cf_convergent": 1,
+          "total": 1
+        }
+      },
+      "(7,6)": {
+        "noninteger_2adic_only": {
+          "cf_convergent": 2,
+          "non_convergent_rational": 3,
+          "total": 5
+        },
+        "positive_integer_cycle": {
+          "cf_convergent": 1,
+          "total": 1
+        }
+      },
+      "(8,7)": {
+        "noninteger_2adic_only": {
+          "cf_convergent": 1,
+          "intermediate_fraction": 1,
+          "non_convergent_rational": 2,
+          "total": 4
+        },
+        "positive_integer_cycle": {
+          "cf_convergent": 1,
+          "total": 1
+        }
+      }
+    },
+    "slope_filtered_by_level_and_classification": {
+      "(5,4)": {
+        "positive_integer_cycle": {
+          "cf_convergent": 1,
+          "total": 1
+        }
+      },
+      "(6,5)": {
+        "positive_integer_cycle": {
+          "cf_convergent": 1,
+          "total": 1
+        }
+      },
+      "(7,6)": {
+        "positive_integer_cycle": {
+          "cf_convergent": 1,
+          "total": 1
+        }
+      },
+      "(8,7)": {
+        "noninteger_2adic_only": {
+          "intermediate_fraction": 1,
+          "non_convergent_rational": 1,
+          "total": 2
+        },
+        "positive_integer_cycle": {
+          "cf_convergent": 1,
+          "total": 1
+        }
+      }
+    }
+  },
+  "cycles": [
+    {
+      "cf_convergent_index": null,
+      "cf_convergent_match": false,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.0205925001307827,
+      "edge_mean_log2_slope": 0.02940694516560052,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": null,
+      "intermediate_fraction_match": false,
+      "level": [
+        5,
+        4
+      ],
+      "min_distance_to_convergent": "1/36",
+      "min_distance_to_convergent_float": 0.027777777777777776,
+      "non_convergent_rational": true,
+      "rational_class": "non_convergent_rational",
+      "slope_A": 14,
+      "slope_A_over_m": "14/9",
+      "slope_filter_survivor": false,
+      "slope_m": 9,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability.json",
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": 2,
+      "cf_convergent_match": true,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.0711220788237548,
+      "edge_mean_log2_slope": 0.09912291750801543,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": "3/2",
+      "intermediate_fraction_match": true,
+      "level": [
+        5,
+        4
+      ],
+      "min_distance_to_convergent": "0/1",
+      "min_distance_to_convergent_float": 0.0,
+      "non_convergent_rational": false,
+      "rational_class": "cf_convergent",
+      "slope_A": 21,
+      "slope_A_over_m": "3/2",
+      "slope_filter_survivor": false,
+      "slope_m": 14,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": 2,
+      "cf_convergent_match": true,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.0606601717798212,
+      "edge_mean_log2_slope": 0.08496250072115608,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": "3/2",
+      "intermediate_fraction_match": true,
+      "level": [
+        5,
+        4
+      ],
+      "min_distance_to_convergent": "0/1",
+      "min_distance_to_convergent_float": 0.0,
+      "non_convergent_rational": false,
+      "rational_class": "cf_convergent",
+      "slope_A": 12,
+      "slope_A_over_m": "3/2",
+      "slope_filter_survivor": false,
+      "slope_m": 8,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability.json",
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": null,
+      "cf_convergent_match": false,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.009425144474267,
+      "edge_mean_log2_slope": 0.013533929292584648,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": "11/7",
+      "intermediate_fraction_match": true,
+      "level": [
+        5,
+        4
+      ],
+      "min_distance_to_convergent": "1/84",
+      "min_distance_to_convergent_float": 0.011904761904761904,
+      "non_convergent_rational": false,
+      "rational_class": "intermediate_fraction",
+      "slope_A": 11,
+      "slope_A_over_m": "11/7",
+      "slope_filter_survivor": false,
+      "slope_m": 7,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability.json",
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2,
+        1,
+        1,
+        3,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": 1,
+      "cf_convergent_match": true,
+      "classification": "positive_integer_cycle",
+      "edge_factor": 0.75,
+      "edge_mean_log2_slope": -0.4150374992788439,
+      "high_growth": false,
+      "in_slope_window": true,
+      "intermediate_fraction": null,
+      "intermediate_fraction_match": false,
+      "level": [
+        5,
+        4
+      ],
+      "min_distance_to_convergent": "0/1",
+      "min_distance_to_convergent_float": 0.0,
+      "non_convergent_rational": false,
+      "rational_class": "cf_convergent",
+      "slope_A": 2,
+      "slope_A_over_m": "2/1",
+      "slope_filter_survivor": true,
+      "slope_m": 1,
+      "source_files": [
+        "docs/reports/karp_slope_joint_sweep.json",
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "karp_survivor",
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": null,
+      "cf_convergent_match": false,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.009425144474267,
+      "edge_mean_log2_slope": 0.013533929292584648,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": "11/7",
+      "intermediate_fraction_match": true,
+      "level": [
+        6,
+        5
+      ],
+      "min_distance_to_convergent": "1/84",
+      "min_distance_to_convergent_float": 0.011904761904761904,
+      "non_convergent_rational": false,
+      "rational_class": "intermediate_fraction",
+      "slope_A": 11,
+      "slope_A_over_m": "11/7",
+      "slope_filter_survivor": false,
+      "slope_m": 7,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability.json",
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        3,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": 2,
+      "cf_convergent_match": true,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.0816871777305561,
+      "edge_mean_log2_slope": 0.11328333429487476,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": "3/2",
+      "intermediate_fraction_match": true,
+      "level": [
+        6,
+        5
+      ],
+      "min_distance_to_convergent": "0/1",
+      "min_distance_to_convergent_float": 0.0,
+      "non_convergent_rational": false,
+      "rational_class": "cf_convergent",
+      "slope_A": 12,
+      "slope_A_over_m": "3/2",
+      "slope_filter_survivor": false,
+      "slope_m": 8,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability.json",
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": null,
+      "cf_convergent_match": false,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.0265535799816512,
+      "edge_mean_log2_slope": 0.03780892949862924,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": null,
+      "intermediate_fraction_match": false,
+      "level": [
+        6,
+        5
+      ],
+      "min_distance_to_convergent": "1/36",
+      "min_distance_to_convergent_float": 0.027777777777777776,
+      "non_convergent_rational": true,
+      "rational_class": "non_convergent_rational",
+      "slope_A": 14,
+      "slope_A_over_m": "14/9",
+      "slope_filter_survivor": false,
+      "slope_m": 9,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability.json",
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        4,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": 1,
+      "cf_convergent_match": true,
+      "classification": "positive_integer_cycle",
+      "edge_factor": 0.75,
+      "edge_mean_log2_slope": -0.4150374992788439,
+      "high_growth": false,
+      "in_slope_window": true,
+      "intermediate_fraction": null,
+      "intermediate_fraction_match": false,
+      "level": [
+        6,
+        5
+      ],
+      "min_distance_to_convergent": "0/1",
+      "min_distance_to_convergent_float": 0.0,
+      "non_convergent_rational": false,
+      "rational_class": "cf_convergent",
+      "slope_A": 2,
+      "slope_A_over_m": "2/1",
+      "slope_filter_survivor": true,
+      "slope_m": 1,
+      "source_files": [
+        "docs/reports/karp_slope_joint_sweep.json",
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "karp_survivor",
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": 2,
+      "cf_convergent_match": true,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.0606601717798212,
+      "edge_mean_log2_slope": 0.08496250072115608,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": "3/2",
+      "intermediate_fraction_match": true,
+      "level": [
+        7,
+        6
+      ],
+      "min_distance_to_convergent": "0/1",
+      "min_distance_to_convergent_float": 0.0,
+      "non_convergent_rational": false,
+      "rational_class": "cf_convergent",
+      "slope_A": 9,
+      "slope_A_over_m": "3/2",
+      "slope_filter_survivor": false,
+      "slope_m": 6,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability.json",
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "cf_convergent_index": null,
+      "cf_convergent_match": false,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.0305816077374779,
+      "edge_mean_log2_slope": 0.04345875079327168,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": null,
+      "intermediate_fraction_match": false,
+      "level": [
+        7,
+        6
+      ],
+      "min_distance_to_convergent": "5/132",
+      "min_distance_to_convergent_float": 0.03787878787878788,
+      "non_convergent_rational": true,
+      "rational_class": "non_convergent_rational",
+      "slope_A": 17,
+      "slope_A_over_m": "17/11",
+      "slope_filter_survivor": false,
+      "slope_m": 11,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability.json",
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "cf_convergent_index": null,
+      "cf_convergent_match": false,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.0277632385400928,
+      "edge_mean_log2_slope": 0.03950795526661062,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": null,
+      "intermediate_fraction_match": false,
+      "level": [
+        7,
+        6
+      ],
+      "min_distance_to_convergent": "5/132",
+      "min_distance_to_convergent_float": 0.03787878787878788,
+      "non_convergent_rational": true,
+      "rational_class": "non_convergent_rational",
+      "slope_A": 17,
+      "slope_A_over_m": "17/11",
+      "slope_filter_survivor": false,
+      "slope_m": 11,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": 2,
+      "cf_convergent_match": true,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.0606601717798212,
+      "edge_mean_log2_slope": 0.08496250072115608,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": "3/2",
+      "intermediate_fraction_match": true,
+      "level": [
+        7,
+        6
+      ],
+      "min_distance_to_convergent": "0/1",
+      "min_distance_to_convergent_float": 0.0,
+      "non_convergent_rational": false,
+      "rational_class": "cf_convergent",
+      "slope_A": 18,
+      "slope_A_over_m": "3/2",
+      "slope_filter_survivor": false,
+      "slope_m": 12,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        3,
+        1,
+        1,
+        1,
+        4,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cf_convergent_index": null,
+      "cf_convergent_match": false,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.0231962013660243,
+      "edge_mean_log2_slope": 0.033082813311300585,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": null,
+      "intermediate_fraction_match": false,
+      "level": [
+        7,
+        6
+      ],
+      "min_distance_to_convergent": "1/36",
+      "min_distance_to_convergent_float": 0.027777777777777776,
+      "non_convergent_rational": true,
+      "rational_class": "non_convergent_rational",
+      "slope_A": 14,
+      "slope_A_over_m": "14/9",
+      "slope_filter_survivor": false,
+      "slope_m": 9,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability.json",
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        4,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": 1,
+      "cf_convergent_match": true,
+      "classification": "positive_integer_cycle",
+      "edge_factor": 0.75,
+      "edge_mean_log2_slope": -0.4150374992788439,
+      "high_growth": false,
+      "in_slope_window": true,
+      "intermediate_fraction": null,
+      "intermediate_fraction_match": false,
+      "level": [
+        7,
+        6
+      ],
+      "min_distance_to_convergent": "0/1",
+      "min_distance_to_convergent_float": 0.0,
+      "non_convergent_rational": false,
+      "rational_class": "cf_convergent",
+      "slope_A": 2,
+      "slope_A_over_m": "2/1",
+      "slope_filter_survivor": true,
+      "slope_m": 1,
+      "source_files": [
+        "docs/reports/karp_slope_joint_sweep.json",
+        "docs/reports/tail_cycle_realizability_extended.json"
+      ],
+      "source_kinds": [
+        "karp_survivor",
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": null,
+      "cf_convergent_match": false,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.2613446228805718,
+      "edge_mean_log2_slope": 0.3349625007211561,
+      "high_growth": true,
+      "in_slope_window": true,
+      "intermediate_fraction": null,
+      "intermediate_fraction_match": false,
+      "level": [
+        8,
+        7
+      ],
+      "min_distance_to_convergent": "1/4",
+      "min_distance_to_convergent_float": 0.25,
+      "non_convergent_rational": true,
+      "rational_class": "non_convergent_rational",
+      "slope_A": 5,
+      "slope_A_over_m": "5/4",
+      "slope_filter_survivor": true,
+      "slope_m": 4,
+      "source_files": [
+        "docs/reports/karp_slope_joint_sweep_extended.json",
+        "docs/reports/tail_cycle_realizability_extended_deep.json"
+      ],
+      "source_kinds": [
+        "karp_survivor",
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cf_convergent_index": null,
+      "cf_convergent_match": false,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.1566581190559555,
+      "edge_mean_log2_slope": 0.20996250072115608,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": null,
+      "intermediate_fraction_match": false,
+      "level": [
+        8,
+        7
+      ],
+      "min_distance_to_convergent": "1/8",
+      "min_distance_to_convergent_float": 0.125,
+      "non_convergent_rational": true,
+      "rational_class": "non_convergent_rational",
+      "slope_A": 11,
+      "slope_A_over_m": "11/8",
+      "slope_filter_survivor": false,
+      "slope_m": 8,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability_extended_deep.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": null,
+      "cf_convergent_match": false,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 0.9449407874211548,
+      "edge_mean_log2_slope": -0.0817041659455106,
+      "high_growth": false,
+      "in_slope_window": false,
+      "intermediate_fraction": "5/3",
+      "intermediate_fraction_match": true,
+      "level": [
+        8,
+        7
+      ],
+      "min_distance_to_convergent": "1/15",
+      "min_distance_to_convergent_float": 0.06666666666666667,
+      "non_convergent_rational": false,
+      "rational_class": "intermediate_fraction",
+      "slope_A": 5,
+      "slope_A_over_m": "5/3",
+      "slope_filter_survivor": true,
+      "slope_m": 3,
+      "source_files": [
+        "docs/reports/karp_slope_joint_sweep_extended.json"
+      ],
+      "source_kinds": [
+        "karp_survivor"
+      ],
+      "valuation_word": [
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "cf_convergent_index": 2,
+      "cf_convergent_match": true,
+      "classification": "noninteger_2adic_only",
+      "edge_factor": 1.0606601717798212,
+      "edge_mean_log2_slope": 0.08496250072115608,
+      "high_growth": true,
+      "in_slope_window": false,
+      "intermediate_fraction": "3/2",
+      "intermediate_fraction_match": true,
+      "level": [
+        8,
+        7
+      ],
+      "min_distance_to_convergent": "0/1",
+      "min_distance_to_convergent_float": 0.0,
+      "non_convergent_rational": false,
+      "rational_class": "cf_convergent",
+      "slope_A": 6,
+      "slope_A_over_m": "3/2",
+      "slope_filter_survivor": false,
+      "slope_m": 4,
+      "source_files": [
+        "docs/reports/tail_cycle_realizability_extended_deep.json"
+      ],
+      "source_kinds": [
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        3,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cf_convergent_index": 1,
+      "cf_convergent_match": true,
+      "classification": "positive_integer_cycle",
+      "edge_factor": 0.75,
+      "edge_mean_log2_slope": -0.4150374992788439,
+      "high_growth": false,
+      "in_slope_window": true,
+      "intermediate_fraction": null,
+      "intermediate_fraction_match": false,
+      "level": [
+        8,
+        7
+      ],
+      "min_distance_to_convergent": "0/1",
+      "min_distance_to_convergent_float": 0.0,
+      "non_convergent_rational": false,
+      "rational_class": "cf_convergent",
+      "slope_A": 2,
+      "slope_A_over_m": "2/1",
+      "slope_filter_survivor": true,
+      "slope_m": 1,
+      "source_files": [
+        "docs/reports/karp_slope_joint_sweep_extended.json",
+        "docs/reports/tail_cycle_realizability_extended_deep.json"
+      ],
+      "source_kinds": [
+        "karp_survivor",
+        "tail_realizability_cycle"
+      ],
+      "valuation_word": [
+        2
+      ]
+    }
+  ],
+  "hypothesis_tests": {
+    "high_growth_obstruction_variant_supported_at_(8,7)": true,
+    "hypothesis_supported_at_(5,4)..(7,6)": true,
+    "hypothesis_supported_at_(8,7)": false,
+    "level_(8,7)_ghost_count": 2,
+    "level_(8,7)_ghosts_all_non_convergent": false,
+    "level_(8,7)_high_growth_ghost_count": 1,
+    "level_(8,7)_high_growth_ghosts_all_non_convergent": true,
+    "level_(8,7)_positive_integer_cycle_count": 1,
+    "level_(8,7)_positive_survivors_all_2_over_1_cf": true,
+    "small_level_cycle_count": 3,
+    "word_[2,1,1,1]_classification": "non_convergent_rational"
+  },
+  "intermediate_fractions": [
+    {
+      "between_convergent_indices": [
+        0,
+        1
+      ],
+      "fraction": "3/2",
+      "p": 3,
+      "q": 2,
+      "residual": -0.08496250072115608
+    },
+    {
+      "between_convergent_indices": [
+        1,
+        2
+      ],
+      "fraction": "5/3",
+      "p": 5,
+      "q": 3,
+      "residual": 0.08170416594551067
+    },
+    {
+      "between_convergent_indices": [
+        2,
+        3
+      ],
+      "fraction": "11/7",
+      "p": 11,
+      "q": 7,
+      "residual": -0.013533929292584679
+    },
+    {
+      "between_convergent_indices": [
+        3,
+        4
+      ],
+      "fraction": "27/17",
+      "p": 27,
+      "q": 17,
+      "residual": 0.0032727933964908917
+    },
+    {
+      "between_convergent_indices": [
+        4,
+        5
+      ],
+      "fraction": "84/53",
+      "p": 84,
+      "q": 53,
+      "residual": -5.684034379749292e-05
+    },
+    {
+      "between_convergent_indices": [
+        5,
+        6
+      ],
+      "fraction": "149/94",
+      "p": 149,
+      "q": 94,
+      "residual": 0.0001438822575672294
+    },
+    {
+      "between_convergent_indices": [
+        6,
+        7
+      ],
+      "fraction": "569/359",
+      "p": 569,
+      "q": 359,
+      "residual": -4.283450961040103e-06
+    },
+    {
+      "between_convergent_indices": [
+        7,
+        8
+      ],
+      "fraction": "1539/971",
+      "p": 1539,
+      "q": 971,
+      "residual": 1.4539647348321694e-06
+    },
+    {
+      "between_convergent_indices": [
+        8,
+        9
+      ],
+      "fraction": "25781/16266",
+      "p": 25781,
+      "q": 16266,
+      "residual": -2.2581043701563885e-09
+    },
+    {
+      "between_convergent_indices": [
+        9,
+        10
+      ],
+      "fraction": "75235/47468",
+      "p": 75235,
+      "q": 47468,
+      "residual": 3.3218516826138966e-10
+    },
+    {
+      "between_convergent_indices": [
+        10,
+        11
+      ],
+      "fraction": "176251/111202",
+      "p": 176251,
+      "q": 111202,
+      "residual": -4.670774877979511e-11
+    },
+    {
+      "between_convergent_indices": [
+        11,
+        12
+      ],
+      "fraction": "301994/190537",
+      "p": 301994,
+      "q": 190537,
+      "residual": 4.884981308350689e-13
+    },
+    {
+      "between_convergent_indices": [
+        12,
+        13
+      ],
+      "fraction": "478245/301739",
+      "p": 478245,
+      "q": 301739,
+      "residual": -1.6905143951362334e-11
+    },
+    {
+      "between_convergent_indices": [
+        13,
+        14
+      ],
+      "fraction": "17087915/10781274",
+      "p": 17087915,
+      "q": 10781274,
+      "residual": 1.7763568394002505e-15
+    },
+    {
+      "between_convergent_indices": [
+        14,
+        15
+      ],
+      "fraction": "33873836/21372011",
+      "p": 33873836,
+      "q": 21372011,
+      "residual": -2.6645352591003757e-15
+    },
+    {
+      "between_convergent_indices": [
+        15,
+        16
+      ],
+      "fraction": "85137581/53715833",
+      "p": 85137581,
+      "q": 53715833,
+      "residual": 0.0
+    },
+    {
+      "between_convergent_indices": [
+        16,
+        17
+      ],
+      "fraction": "153187247/96650392",
+      "p": 153187247,
+      "q": 96650392,
+      "residual": -2.220446049250313e-16
+    },
+    {
+      "between_convergent_indices": [
+        17,
+        18
+      ],
+      "fraction": "664012733/418945390",
+      "p": 664012733,
+      "q": 418945390,
+      "residual": 0.0
+    },
+    {
+      "between_convergent_indices": [
+        18,
+        19
+      ],
+      "fraction": "1242887885/784174947",
+      "p": 1242887885,
+      "q": 784174947,
+      "residual": 0.0
+    }
+  ],
+  "status": "finite_artifact_analysis_complete",
+  "type": "cf_convergent_slope_hypothesis",
+  "verdict": "cf_convergent_hypothesis_partially_supported"
+}

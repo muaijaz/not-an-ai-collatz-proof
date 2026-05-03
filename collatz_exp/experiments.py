@@ -7,6 +7,7 @@ import argparse
 from .branch_table import branch_table_report
 from .certificates import certificate_from_residue, verify_descent_certificate
 from .champions import champion_report
+from .cf_convergent_slope import cf_convergent_slope_hypothesis_report
 from .cohomology import cohomology_report
 from .cohomology_tower import cohomology_tower_report
 from .cohn_elkies import cohn_elkies_walsh_bound
@@ -146,6 +147,7 @@ from .reports import (
     format_cycle_lattice_report,
     format_cycle_exclusion_tower_report,
     format_certificate,
+    format_cf_convergent_slope_hypothesis_report,
     format_cover_summary,
     format_density_bound,
     format_divider_pattern_report,
@@ -523,6 +525,17 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--rozier-j-max", type=int, default=50)
     parser.add_argument("--rozier-orbit-samples", type=int, default=10_000)
     parser.add_argument("--rozier-orbit-time-budget", type=float, default=300.0)
+    parser.add_argument(
+        "--cf-convergent-slope-hypothesis",
+        action="store_true",
+        help="analyze existing slope-realizability artifacts against CF convergents of log2(3)",
+    )
+    parser.add_argument(
+        "--cf-convergent-slope-output",
+        type=str,
+        default="docs/reports/cf_convergent_slope_hypothesis.json",
+        help="path for the CF-convergent slope hypothesis JSON artifact",
+    )
     parser.add_argument(
         "--tail-aware-levels",
         type=str,
@@ -1668,6 +1681,16 @@ def main(argv: list[str] | None = None) -> None:
         )
         print(format_rozier_abc_audit_report(audit))
         output_path = Path(args.rozier_abc_output)
+        audit.save(output_path)
+        print(f"saved={output_path}")
+
+    if args.cf_convergent_slope_hypothesis:
+        from pathlib import Path
+
+        print("\nCF-convergent slope hypothesis audit:")
+        audit = cf_convergent_slope_hypothesis_report()
+        print(format_cf_convergent_slope_hypothesis_report(audit))
+        output_path = Path(args.cf_convergent_slope_output)
         audit.save(output_path)
         print(f"saved={output_path}")
 
