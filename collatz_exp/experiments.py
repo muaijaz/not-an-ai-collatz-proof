@@ -119,6 +119,7 @@ from .post_exit_map import (
 from .power_ratio import power_ratio_report
 from .qnp1_audit import qnp1_realizability_report
 from .qnp1_phase_transition import Q_GRID, qnp1_phase_transition_report
+from .rozier_abc_audit import rozier_abc_audit_report
 from .reports import (
     format_cohomology_report,
     format_compact_trace_report,
@@ -229,6 +230,7 @@ from .reports import (
     format_walsh_transfer_report,
     format_lyapunov_artifact,
     format_reverse_frontier_report,
+    format_rozier_abc_audit_report,
     format_rigorous_squeeze_report,
     format_tuple_merge_report,
     format_unified_collatz_operator_report,
@@ -506,6 +508,21 @@ def build_parser() -> argparse.ArgumentParser:
         help="comma-separated tail_unit_power:Rmax levels for --qnp1-phase-transition",
     )
     parser.add_argument("--qnp1-phase-m-max", type=int, default=100)
+    parser.add_argument(
+        "--rozier-abc-audit",
+        action="store_true",
+        help="run Rozier mu-hit and Collatz Theorem 4.1 finite diagnostics",
+    )
+    parser.add_argument(
+        "--rozier-abc-output",
+        type=str,
+        default="docs/reports/rozier_abc_collatz_audit.json",
+        help="path for the Rozier abc/Collatz JSON artifact",
+    )
+    parser.add_argument("--rozier-j-min", type=int, default=10)
+    parser.add_argument("--rozier-j-max", type=int, default=50)
+    parser.add_argument("--rozier-orbit-samples", type=int, default=10_000)
+    parser.add_argument("--rozier-orbit-time-budget", type=float, default=300.0)
     parser.add_argument(
         "--tail-aware-levels",
         type=str,
@@ -1637,6 +1654,21 @@ def main(argv: list[str] | None = None) -> None:
         print(format_qnp1_phase_transition_report(phase))
         output_path = Path(args.qnp1_phase_transition_output)
         phase.save(output_path)
+        print(f"saved={output_path}")
+
+    if args.rozier_abc_audit:
+        from pathlib import Path
+
+        print("\nRozier abc/Collatz mu-hit audit:")
+        audit = rozier_abc_audit_report(
+            j_min=args.rozier_j_min,
+            j_max=args.rozier_j_max,
+            orbit_sample_count=args.rozier_orbit_samples,
+            orbit_time_budget_seconds=args.rozier_orbit_time_budget,
+        )
+        print(format_rozier_abc_audit_report(audit))
+        output_path = Path(args.rozier_abc_output)
+        audit.save(output_path)
         print(f"saved={output_path}")
 
     if args.all_things:

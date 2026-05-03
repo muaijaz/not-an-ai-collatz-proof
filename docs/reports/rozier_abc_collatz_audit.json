@@ -1,0 +1,797 @@
+{
+  "caveat": "This is a finite empirical diagnostic and a finite sanity check of Rozier's Theorem 4.1, not a proof of Collatz or of any abc-type conjecture. Large n=239 family entries use bounded factorization certificates where complete factorization is infeasible.",
+  "n_239_family_extension": [
+    {
+      "c": "239^(2^2)",
+      "c_digits": 10,
+      "exact_digit_limit": 20,
+      "exact_gain": 1.1197722320914743,
+      "gain": 1.1197722320914743,
+      "gain_kind": "exact",
+      "k": 2,
+      "known_factors": {
+        "13": 4,
+        "17": 1,
+        "2": 6,
+        "3": 1,
+        "5": 1,
+        "7": 1
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": true,
+      "predicted_lower_bound": 1.11977223178499,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^3)",
+      "c_digits": 20,
+      "exact_digit_limit": 20,
+      "exact_gain": 0.9656215519577387,
+      "gain": 0.9656215519577387,
+      "gain_kind": "exact",
+      "k": 3,
+      "known_factors": {
+        "1217": 1,
+        "13": 4,
+        "1657": 1,
+        "17": 1,
+        "2": 7,
+        "3": 1,
+        "5": 1,
+        "7": 1,
+        "809": 1
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": true,
+      "predicted_lower_bound": 0.9656215519577318,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^4)",
+      "c_digits": 39,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": 0.8320901593332053,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 4,
+      "known_factors": {
+        "13": 4,
+        "2": 8
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": 0.8320901593332093,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^5)",
+      "c_digits": 77,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": 0.7143071236768606,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 5,
+      "known_factors": {
+        "13": 4,
+        "2": 9
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": 0.7143071236768255,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^6)",
+      "c_digits": 153,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": 0.6089466080189823,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 6,
+      "known_factors": {
+        "13": 4,
+        "2": 10
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": 0.6089466080189991,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^7)",
+      "c_digits": 305,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": 0.5136364282146815,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 7,
+      "known_factors": {
+        "13": 4,
+        "2": 11
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": 0.5136364282146744,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^8)",
+      "c_digits": 609,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": 0.42662505122507355,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 8,
+      "known_factors": {
+        "13": 4,
+        "2": 12
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": 0.4266250512250447,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^9)",
+      "c_digits": 1218,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": 0.34658234355129025,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 9,
+      "known_factors": {
+        "13": 4,
+        "2": 13
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": 0.3465823435515083,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^10)",
+      "c_digits": 2436,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": 0.27247437139885733,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 10,
+      "known_factors": {
+        "13": 4,
+        "2": 14
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": 0.27247437139778663,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^11)",
+      "c_digits": 4871,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": 0.20348149991150422,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 11,
+      "known_factors": {
+        "13": 4,
+        "2": 15
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": 0.20348149991083497,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^12)",
+      "c_digits": 9742,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": 0.1389429787741392,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 12,
+      "known_factors": {
+        "13": 4,
+        "2": 16
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": 0.1389429787732639,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^13)",
+      "c_digits": 19484,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": 0.07831835695833433,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 13,
+      "known_factors": {
+        "13": 4,
+        "2": 17
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": 0.07831835695682887,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^14)",
+      "c_digits": 38968,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": 0.02115994310588576,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 14,
+      "known_factors": {
+        "13": 4,
+        "2": 18
+      },
+      "mu_hit": true,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": 0.02115994311688052,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^15)",
+      "c_digits": 77936,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": -0.0329072781605646,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 15,
+      "known_factors": {
+        "13": 4,
+        "2": 19
+      },
+      "mu_hit": null,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": -0.032907278153395225,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^16)",
+      "c_digits": 155871,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": -0.0842005725717172,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 16,
+      "known_factors": {
+        "13": 4,
+        "2": 20
+      },
+      "mu_hit": null,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": -0.08420057254094582,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^17)",
+      "c_digits": 311742,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": -0.13299073663074523,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 17,
+      "known_factors": {
+        "13": 4,
+        "2": 21
+      },
+      "mu_hit": null,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": -0.13299073671037798,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^18)",
+      "c_digits": 623483,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": -0.1795107522048056,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 18,
+      "known_factors": {
+        "13": 4,
+        "2": 22
+      },
+      "mu_hit": null,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": -0.17951075234527103,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^19)",
+      "c_digits": 1246966,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": -0.22396251512691379,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 19,
+      "known_factors": {
+        "13": 4,
+        "2": 23
+      },
+      "mu_hit": null,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": -0.22396251491610464,
+      "predicted_lower_bound_holds": true
+    },
+    {
+      "c": "239^(2^20)",
+      "c_digits": 2493931,
+      "exact_digit_limit": 20,
+      "exact_gain": null,
+      "gain": -0.26652212906628847,
+      "gain_kind": "certified_lower_bound_from_known_divisibility",
+      "k": 20,
+      "known_factors": {
+        "13": 4,
+        "2": 24
+      },
+      "mu_hit": null,
+      "partial_factor_limit": 1000000,
+      "partial_factorization_complete": false,
+      "predicted_lower_bound": -0.2665221293349007,
+      "predicted_lower_bound_holds": true
+    }
+  ],
+  "orbit_mu_hits": [],
+  "scan_policy": {
+    "j_max": 50,
+    "j_min": 10,
+    "n239_factor_limit": 1000000,
+    "n239_k_max": 20,
+    "n239_k_min": 2,
+    "orbit_sample_count": 10000,
+    "orbit_time_budget_seconds": 300.0
+  },
+  "source_notes": {
+    "N_j_congruence": "Rozier arXiv:2306.15284v2 equation (7): n == -1 - (2/3)^k mod 2^j.",
+    "theorem_4_1_mu_hit_shift": "Theorem 4.1 uses (1,b,b+1) with b = T^k(n)+1; the prompt variant with b = T^k(n) is recorded separately inside theorem_4_1_check but is not the theorem predicate."
+  },
+  "status": "finite_empirical_diagnostic_complete",
+  "summary": {
+    "mu_hits_in_orbit_cache_count": 0,
+    "n239_exact_deeper_mu_hits_found_count": 0,
+    "n239_exact_status_note": "Exact mu-hit status is reported only when the bounded factorization finished; otherwise gain is a certified lower bound from partial factorization.",
+    "orbit_sample_count_completed": 10000,
+    "orbit_search_status": "sample_complete",
+    "predicted_lower_bound_holds_for_n239_family": true,
+    "theorem_4_1_holds_empirically": true,
+    "theorem_4_1_total_violations": 0
+  },
+  "theorem_4_1_results": {
+    "10": {
+      "both_count": 0,
+      "i_only_count": 10,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 10,
+      "mu_hit_found_count": 0,
+      "n_count": 10,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "11": {
+      "both_count": 0,
+      "i_only_count": 11,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 11,
+      "mu_hit_found_count": 0,
+      "n_count": 11,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "12": {
+      "both_count": 0,
+      "i_only_count": 12,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 12,
+      "mu_hit_found_count": 0,
+      "n_count": 12,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "13": {
+      "both_count": 0,
+      "i_only_count": 13,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 13,
+      "mu_hit_found_count": 0,
+      "n_count": 13,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "14": {
+      "both_count": 0,
+      "i_only_count": 14,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 14,
+      "mu_hit_found_count": 0,
+      "n_count": 14,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "15": {
+      "both_count": 0,
+      "i_only_count": 15,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 15,
+      "mu_hit_found_count": 0,
+      "n_count": 15,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "16": {
+      "both_count": 0,
+      "i_only_count": 16,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 16,
+      "mu_hit_found_count": 0,
+      "n_count": 16,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "17": {
+      "both_count": 0,
+      "i_only_count": 17,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 17,
+      "mu_hit_found_count": 0,
+      "n_count": 17,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "18": {
+      "both_count": 0,
+      "i_only_count": 18,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 18,
+      "mu_hit_found_count": 0,
+      "n_count": 18,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "19": {
+      "both_count": 1,
+      "i_only_count": 18,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 19,
+      "mu_hit_found_count": 1,
+      "n_count": 19,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "20": {
+      "both_count": 0,
+      "i_only_count": 20,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 20,
+      "mu_hit_found_count": 0,
+      "n_count": 20,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "21": {
+      "both_count": 0,
+      "i_only_count": 21,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 21,
+      "mu_hit_found_count": 0,
+      "n_count": 21,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "22": {
+      "both_count": 0,
+      "i_only_count": 22,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 22,
+      "mu_hit_found_count": 0,
+      "n_count": 22,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "23": {
+      "both_count": 0,
+      "i_only_count": 23,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 23,
+      "mu_hit_found_count": 0,
+      "n_count": 23,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "24": {
+      "both_count": 0,
+      "i_only_count": 24,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 24,
+      "mu_hit_found_count": 0,
+      "n_count": 24,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "25": {
+      "both_count": 0,
+      "i_only_count": 25,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 25,
+      "mu_hit_found_count": 0,
+      "n_count": 25,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "26": {
+      "both_count": 0,
+      "i_only_count": 26,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 26,
+      "mu_hit_found_count": 0,
+      "n_count": 26,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "27": {
+      "both_count": 0,
+      "i_only_count": 27,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 27,
+      "mu_hit_found_count": 0,
+      "n_count": 27,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "28": {
+      "both_count": 0,
+      "i_only_count": 28,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 28,
+      "mu_hit_found_count": 0,
+      "n_count": 28,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "29": {
+      "both_count": 0,
+      "i_only_count": 29,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 29,
+      "mu_hit_found_count": 0,
+      "n_count": 29,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "30": {
+      "both_count": 0,
+      "i_only_count": 30,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 30,
+      "mu_hit_found_count": 0,
+      "n_count": 30,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "31": {
+      "both_count": 0,
+      "i_only_count": 31,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 31,
+      "mu_hit_found_count": 0,
+      "n_count": 31,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "32": {
+      "both_count": 0,
+      "i_only_count": 32,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 32,
+      "mu_hit_found_count": 0,
+      "n_count": 32,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "33": {
+      "both_count": 0,
+      "i_only_count": 33,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 33,
+      "mu_hit_found_count": 0,
+      "n_count": 33,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "34": {
+      "both_count": 0,
+      "i_only_count": 34,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 34,
+      "mu_hit_found_count": 0,
+      "n_count": 34,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "35": {
+      "both_count": 0,
+      "i_only_count": 35,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 35,
+      "mu_hit_found_count": 0,
+      "n_count": 35,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "36": {
+      "both_count": 0,
+      "i_only_count": 36,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 36,
+      "mu_hit_found_count": 0,
+      "n_count": 36,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "37": {
+      "both_count": 0,
+      "i_only_count": 37,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 37,
+      "mu_hit_found_count": 0,
+      "n_count": 37,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "38": {
+      "both_count": 0,
+      "i_only_count": 38,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 38,
+      "mu_hit_found_count": 0,
+      "n_count": 38,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "39": {
+      "both_count": 0,
+      "i_only_count": 39,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 39,
+      "mu_hit_found_count": 0,
+      "n_count": 39,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "40": {
+      "both_count": 0,
+      "i_only_count": 40,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 40,
+      "mu_hit_found_count": 0,
+      "n_count": 40,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "41": {
+      "both_count": 0,
+      "i_only_count": 41,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 41,
+      "mu_hit_found_count": 0,
+      "n_count": 41,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "42": {
+      "both_count": 0,
+      "i_only_count": 42,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 42,
+      "mu_hit_found_count": 0,
+      "n_count": 42,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "43": {
+      "both_count": 0,
+      "i_only_count": 43,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 43,
+      "mu_hit_found_count": 0,
+      "n_count": 43,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "44": {
+      "both_count": 0,
+      "i_only_count": 44,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 44,
+      "mu_hit_found_count": 0,
+      "n_count": 44,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "45": {
+      "both_count": 0,
+      "i_only_count": 45,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 45,
+      "mu_hit_found_count": 0,
+      "n_count": 45,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "46": {
+      "both_count": 0,
+      "i_only_count": 46,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 46,
+      "mu_hit_found_count": 0,
+      "n_count": 46,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "47": {
+      "both_count": 0,
+      "i_only_count": 47,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 47,
+      "mu_hit_found_count": 0,
+      "n_count": 47,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "48": {
+      "both_count": 0,
+      "i_only_count": 48,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 48,
+      "mu_hit_found_count": 0,
+      "n_count": 48,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "49": {
+      "both_count": 0,
+      "i_only_count": 49,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 49,
+      "mu_hit_found_count": 0,
+      "n_count": 49,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    },
+    "50": {
+      "both_count": 0,
+      "i_only_count": 50,
+      "ii_only_count": 0,
+      "lower_bound_satisfied_count": 50,
+      "mu_hit_found_count": 0,
+      "n_count": 50,
+      "neither_count": 0,
+      "theorem_4_1_violation_count": 0
+    }
+  },
+  "theorem_4_1_violations": [],
+  "type": "rozier_abc_collatz_audit"
+}

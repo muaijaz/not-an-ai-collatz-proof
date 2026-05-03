@@ -450,6 +450,20 @@ def format_qnp1_phase_transition_report(result) -> str:
     return "\n".join(lines)
 
 
+def format_rozier_abc_audit_report(result) -> str:
+    summary = result.summary
+    return (
+        f"status={result.status}, "
+        f"theorem_holds={summary['theorem_4_1_holds_empirically']}, "
+        f"violations={summary['theorem_4_1_total_violations']}, "
+        f"n239_deeper_exact_hits="
+        f"{summary['n239_exact_deeper_mu_hits_found_count']}, "
+        f"orbit_hits={summary['mu_hits_in_orbit_cache_count']}, "
+        f"orbit_completed={summary['orbit_sample_count_completed']}, "
+        f"orbit_status={summary['orbit_search_status']}"
+    )
+
+
 def format_christoffel_slope_constrained_jsr_report(
     result: ChristoffelSlopeConstrainedJSRReport,
 ) -> str:
