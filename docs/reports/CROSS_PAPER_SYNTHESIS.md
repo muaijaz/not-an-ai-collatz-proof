@@ -24,7 +24,11 @@ Format: **[arXiv ID] author year** — claim. **Method.** **Composition.** **Ope
 
 ### Newly read this session (lighter analysis)
 
+**[2306.15284] Rozier 2023 (rev Oct 2025)** — *Are the Collatz and abc conjectures related?* **Theorem 2.1:** assuming abc, `n ≥ K(ε) · 2^{(1-ε)j}` for all `n ∈ N(j)` (integers with parity vector having exactly one even term in first j iterates). **Theorem 4.1:** for `n ∈ N(j)`, either (i) `n > 2^{j+1}/(3j²) − 1` or (ii) `(1, T^k(n)+1, T^k(n)+2)` is a μ-hit. **Method:** direct application of abc to Collatz cycle equation; introduces μ(n) = log rad(n) + Σ_{p|n} log v_p(n) as a finer invariant. **μ-hits are RARE**: 464 below 10¹⁸ vs 14M abc-hits. **Wieferich connection:** μ-hits and Wieferich primes both connected to high-power-prime questions. **Composition:** verified empirically in `rozier_abc_collatz_audit.json` — 0 violations across 1,230 N(j) elements (j=10..50); n=239 family confirmed at deeper k. **Status:** structural bridge established; clause (ii) regime (true Collatz-forced μ-hits) needs j ≥ 80+ to surface.
+
 **[2412.02902] Siegel 2024** (PhD diss, 467pp) — Numen `χ_H: Z_p → Z_q` with Correspondence Principle: x periodic ⟺ ∃z ∈ (Q∩Z_p)\N_0 with χ_H(z)=x. Tauberian Spectral Theorem (Thm 4.6, p.277): for quasi-integrable χ_H, periodicity ⟺ density of Fourier-translate spans. **Method:** non-archimedean (p,q)-adic Fourier + Wiener Tauberian. **Composition:** target for profinite continuity (our open Q3); supplies analytic infrastructure for Z_2 limit. **Tao link:** Siegel (p.81) notes Tao 2019 implicitly uses χ_H ⇒ our Tao verifications are implicit χ_H evidence. **Status:** §3.3.7 Wiener Tauberian (p.213) and §4.2 quasi-integrability (p.245) DEFERRED due to dissertation length. **Compatibility note:** `siegel_p_adic_compatibility.md`.
+
+**Tao 2011 blog post** — *The Collatz conjecture, Littlewood-Offord theory, and powers of 2 and 3.* Reformulates weak Collatz as: the set `{3^{k-1} 2^{a_1} + ... + 2^{a_k}}` must avoid 0 in `Z/qZ` where q = 2^a − 3^k. Anti-concentration via Littlewood-Offord could constrain this. **Tao's meta-statement:** any proof must use transcendence theory (Baker) OR develop new techniques creating exponential separation between 2-powers and 3-powers. **Erdős conjecture connection:** "for n>8, base-3 expansion of 2^n contains digit 2" is equivalent to "no solutions to 2^n = sum of distinct 3^a". **Status:** underexploited in mainstream Collatz work. Recent computational study (arXiv 2511.03861, Nov 2025) confirms uniform distribution of ternary digits empirically.
 
 **[2601.17030] Siegel 2026** — Generalizes Numen to Hydra maps on global field integer rings O_K. **Status:** technical manual, not Collatz-specific. Low priority for this framework.
 
@@ -60,9 +64,13 @@ Format: **[arXiv ID] author year** — claim. **Method.** **Composition.** **Ope
 - ✅ Paper v0.5 with Chang joint-argument section
 - ✅ Documentation closure (NOTE_DRAFT, PROJECT_JOURNEY, README)
 - ✅ Four logical commits pushed to `main`
-- ✅ **P1.1 Tao ↔ Siegel correspondence** (`tao_siegel_chi_h_correspondence.md`): explicit translation. Tao's Proposition 1.17 = decay of Siegel's `φ_3(t)`. Our Tao verification artifacts are simultaneously Siegel-`χ_3` evidence at exponent 1.286 ≈ 1.289.
-- ✅ **P1.2 Presburger defensive audit** (`realizability_presburger_audit.md`): NOT AFFECTED. Our test uses Python Peano integer arithmetic; Dhiman-Pandey's obstruction rules out Presburger / finite-automaton routes only. Our `noninteger_2adic_only` classifications ARE the ghost cycles in their terminology.
-- ✅ **P1.3 Fu-Wang full read** (`fu_wang_binary_shift_compatibility.md`): "binary shift equivalence" is heuristic, NOT rigorous conjugacy. Logarithmic scaling matches our renewal mean drift. Negligible new content; drops off priority list.
+- ✅ **Tao ↔ Siegel correspondence** (`tao_siegel_chi_h_correspondence.md`): Tao's Proposition 1.17 = decay of Siegel's `φ_3(t)`. Our Tao artifacts ARE Siegel-`χ_3` evidence at exponent 1.286 ≈ 1.289.
+- ✅ **Presburger defensive audit** (`realizability_presburger_audit.md`): NOT AFFECTED. Our test uses Python Peano integer arithmetic; Dhiman-Pandey's obstruction rules out Presburger/automaton routes only.
+- ✅ **Fu-Wang full read** (`fu_wang_binary_shift_compatibility.md`): "binary shift equivalence" is heuristic, NOT rigorous conjugacy. Negligible new content.
+- ✅ **5n+1 realizability audit** (`qnp1_realizability_q5.json`): recovered all 3 known small cycles ({1,3}, {13,33,83}, {17,43,27}). Realizable Karp = 125/128. Validates framework's q-generality.
+- ✅ **qn+1 phase-transition audit** (`qnp1_phase_transition.json`): swept q ∈ {3,5,7,9,11,13,17,19,21,25,27,31}. Mersenne-q pattern (q=3,7,31) gives fixed-point cycles; non-Mersenne q ∈ {9,11,13,17,19,21,25,27} no cycles in light scan.
+- ✅ **Rozier abc/μ-hit audit** (`rozier_abc_collatz_audit.json`): implemented μ-function, verified Theorem 4.1 across 1,230 N(j) elements (0 violations). Connects framework to abc-conjecture / Wieferich angle.
+- ✅ **Literature dig** surfaced underexploited connections: Tao 2011 Littlewood-Offord post, Erdős conjecture base-3 digits of 2^n (arXiv 2511.03861), Wieferich primes ↔ μ-hits, Rozier 2306.15284 abc bridge.
 
 ### Priority 1 — Single-session, AI-tractable, HIGH leverage (REMAINING)
 
@@ -125,11 +133,47 @@ Format: **[arXiv ID] author year** — claim. **Method.** **Composition.** **Ope
 ### Priority 5 — Documentation / closure / hygiene
 
 **P5.1 Update paper to incorporate all cross-paper compatibility findings.**
-- Add brief mentions of Siegel (profinite continuity language), Fu-Wang (binary shift conjugacy), Santana (equilibrium states) to paper's literature section.
+- Add brief mentions of Siegel (profinite continuity), Fu-Wang (binary shift), Santana (equilibrium states), Rozier abc bridge, qn+1 phase-transition family.
 - **Effort:** 1 Codex prompt.
 
 **P5.2 Synthesis update for `CROSS_PAPER_SYNTHESIS.md`.**
 - This file. Update as new papers read or tasks completed.
+
+---
+
+## Genuinely-new mathematical ideas (proposed but undeveloped)
+
+These were sketched this session but not pursued. Recording so they don't get lost.
+
+**N.1 CF-convergent slope hypothesis (own conjecture).** *The slope filter equals the realizability filter exactly when the bounded slope window contains only rationals that are CF convergents of `log_2(3)`; it diverges from realizability when the window admits non-convergent rationals.* Tested by examining the (8,7) divergence: the surviving non-realizable cycle `[2,1,1,1]` at slope 5/4 is NOT a CF convergent of log_2(3). Convergents from above: 2/1, 5/3, 19/12, ... — slope 5/4 = 1.25 is not in this sequence. This is concrete and testable in one Codex prompt.
+
+**N.2 Hausdorff dimension of integer-realizable cycles in Z_2.** Define the set of 2-adic positions corresponding to genuine integer cycles; box-count at scale 2^{-k}. Open question: is this set of dimension 0, positive dimension, or full dimension? Could distinguish "isolated cycles" from "fractal cycle structure". No prior work on this exact question.
+
+**N.3 Cheeger inequality on LTE-closed tail graph.** Compute the Cheeger constant `h = min_S |∂S|/|S|` directly. By Cheeger, `λ_1 ≥ h²/2` gives a graph-theoretic lower bound on Foster ε. Replaces empirical Foster with analytic.
+
+**N.4 Mihăilescu-aware cycle exclusion.** Use Mihăilescu's theorem (`|2^A − 3^m| = 1` only at (3,2)) plus next-smallest-value enumeration to hierarchically exclude cycle classes by value of `|2^A − 3^m|`. Combine with Hercher's Baker-style bounds.
+
+**N.5 Stern-Brocot / hyperbolic embedding.** Embed Collatz orbits via the Stern-Brocot tree into the hyperbolic plane; identify whether the dynamics becomes geodesic flow + cocycle. Speculative; no clear computational handle yet.
+
+**N.6 Transformer + mechanistic interpretability for Collatz.** Train a 100M-param transformer on `(parity_vector → orbit_length)`, apply sparse autoencoder probing to find candidate new invariants. Multi-day GPU project. No prior interpretability work on Collatz models.
+
+---
+
+## Underexplored from existing findings (deeper investigation, not new direction)
+
+These came up during the session but never got dug into.
+
+**U.1 The (8,7) slope-realizability divergence.** Slope filter admits non-elementary survivor `[2,1,1,1]` at factor 1.26; realizability still gives 3/4. **Why does slope filter let this through?** Connects to N.1 hypothesis. Single Codex prompt.
+
+**U.2 Σ R(K) vs J_renewal explicit weighting.** 5% gap is "weighting difference" per `chang_spectral_analysis_compatibility.md` §7. Find the explicit weighted version of J_renewal that EQUALS Σ R(K). Closes PROJECT_JOURNEY §12 item 5 (symbolic interpretation).
+
+**U.3 Theorem 4.1 clause (ii) regime.** All 1,230 N(j) elements at j=10..50 satisfied clause (i); never fired (ii). At what j does the smallest element of N(j) fall below `2^{j+1}/(3j²) − 1`? Pushing to j=80..150 should surface clause (ii) cases — actual Collatz-induced μ-hits.
+
+**U.4 Mersenne-q pattern q=2^k−1.** We confirmed q=3 (k=2), q=7 (k=3), q=31 (k=5). What about q=15 (k=4, composite), q=63 (k=6), q=127 (k=7, prime), q=255 (k=8)? Each gives factor (2^k−1)/2^k → 1. Test the framework's behavior across the Mersenne family.
+
+**U.5 Wieferich primes vs orbit cache.** The two known Wieferich primes are 1093 and 3511. Are these orbit values in our orbit cache? Are they connected to specific μ-hits? Direct empirical lookup.
+
+**U.6 Cancellation structure (Chang Remark 9.55).** The 500-1000× Cauchy-Schwarz overestimate in the spectral framework is the dominant analytic blocker on the spectral route. Empirical cancellation between Hamming-weight bands could surface a structural symmetry. Single Codex prompt.
 
 ---
 
