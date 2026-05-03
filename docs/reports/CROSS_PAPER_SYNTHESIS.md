@@ -145,7 +145,7 @@ Format: **[arXiv ID] author year** — claim. **Method.** **Composition.** **Ope
 
 These were sketched this session but not pursued. Recording so they don't get lost.
 
-**N.1 CF-convergent slope hypothesis (own conjecture).** *The slope filter equals the realizability filter exactly when the bounded slope window contains only rationals that are CF convergents of `log_2(3)`; it diverges from realizability when the window admits non-convergent rationals.* Tested by examining the (8,7) divergence: the surviving non-realizable cycle `[2,1,1,1]` at slope 5/4 is NOT a CF convergent of log_2(3). Convergents from above: 2/1, 5/3, 19/12, ... — slope 5/4 = 1.25 is not in this sequence. This is concrete and testable in one Codex prompt.
+**N.1 CF-convergent slope hypothesis (own conjecture; tested and refined).** *Strict form demoted.* The finite audit found that the binary prediction "CF convergent = realizable, non-CF = ghost" fails at `(8,7)` because `[2,1,2]` sits at the Stern-Brocot intermediate fraction `5/3`. The refined surviving picture is tiered: CF convergents → realizable survivors, intermediates → boundary ghosts, non-convergent rationals → high-growth ghosts (`cf_convergent_slope_hypothesis.json`).
 
 **N.2 Hausdorff dimension of integer-realizable cycles in Z_2.** Define the set of 2-adic positions corresponding to genuine integer cycles; box-count at scale 2^{-k}. Open question: is this set of dimension 0, positive dimension, or full dimension? Could distinguish "isolated cycles" from "fractal cycle structure". No prior work on this exact question.
 
@@ -163,7 +163,7 @@ These were sketched this session but not pursued. Recording so they don't get lo
 
 These came up during the session but never got dug into.
 
-**U.1 The (8,7) slope-realizability divergence.** Slope filter admits non-elementary survivor `[2,1,1,1]` at factor 1.26; realizability still gives 3/4. **Why does slope filter let this through?** Connects to N.1 hypothesis. Single Codex prompt.
+**U.1 The (8,7) slope-realizability divergence.** DONE at current depth. Slope filter admits non-elementary survivor `[2,1,1,1]` at factor 1.26 and boundary ghost `[2,1,2]` at slope `5/3`; realizability still gives 3/4. Explanation is the refined Stern-Brocot tier picture, not the original strict CF-only hypothesis (`cf_convergent_slope_hypothesis.json`).
 
 **U.2 Σ R(K) vs J_renewal explicit weighting.** 5% gap is "weighting difference" per `chang_spectral_analysis_compatibility.md` §7. Find the explicit weighted version of J_renewal that EQUALS Σ R(K). Closes PROJECT_JOURNEY §12 item 5 (symbolic interpretation).
 
@@ -174,6 +174,47 @@ These came up during the session but never got dug into.
 **U.5 Wieferich primes vs orbit cache.** The two known Wieferich primes are 1093 and 3511. Are these orbit values in our orbit cache? Are they connected to specific μ-hits? Direct empirical lookup.
 
 **U.6 Cancellation structure (Chang Remark 9.55).** The 500-1000× Cauchy-Schwarz overestimate in the spectral framework is the dominant analytic blocker on the spectral route. Empirical cancellation between Hamming-weight bands could surface a structural symmetry. Single Codex prompt.
+
+---
+
+## Negative results / refuted hypotheses
+
+These are useful outcomes, not failures. Each item records a strong claim that
+was plausible enough to test and is now demoted, refuted, or null at the saved
+finite resolution.
+
+1. **Raw `Σ R(K)` ↔ `J_renewal` identity rejected.** The high-precision
+   bootstrap test separates Chang's `Σ R(K) ≈ 0.0882` from
+   `J_renewal ≈ 0.0837`; the 5% gap is a structural weighting difference over
+   the same `Geom(1/2)` i.i.d. run-length source, not a missing closed form
+   (`jazz_constant_chang_R_K_identity.json`,
+   `chang_spectral_analysis_compatibility.md`).
+2. **Stern-Brocot triple alignment not supported.** The strict
+   Chang-spike + Rozier-μ-family + slope-realizability alignment criterion
+   found `0` matching CF convergents at the audited depth
+   (`stern_brocot_megasynthesis.json`).
+3. **Tao Littlewood-Offord tier ordering not supported.** The median
+   discrepancy for
+   `Σ 3^{m-1-i} 2^{σ_i} mod (2^a - 3^m)` did not satisfy the predicted
+   `CF < intermediate < random` order at tested levels
+   (`stern_brocot_megasynthesis.json`).
+4. **Six-reduction universal invariant remains hypothetical.** The
+   Tao/Chang/Mori/Santana/Siegel/Foster comparison table is retained as a
+   useful map, but no single empirically verified invariant emerged
+   (`stern_brocot_megasynthesis.json`).
+5. **Strict CF-convergent slope hypothesis falsified.** The `(8,7)` ghost
+   `[2,1,2]` at slope `5/3` is an intermediate Stern-Brocot fraction, not a
+   non-convergent; the refined tiered picture is the surviving finding
+   (`cf_convergent_slope_hypothesis.json`).
+6. **qn+1 light-scan nulls.** For
+   `q ∈ {9,11,13,17,19,21,25,27}`, the light bounded scan at `(5,4)` and
+   `(6,5)` found no positive integer cycles. This is a scan-depth limitation,
+   not a non-existence theorem (`qnp1_phase_transition.json`).
+7. **Megasynthesis overreach recorded.** The speculative claim that
+   Stern-Brocot tiers of `log₂(3)` universally organize three independent
+   paper-frameworks did not survive empirical scrutiny. What remains is the
+   narrower lesson that the frameworks measure different aspects of the same
+   2-adic/3-adic approximation problem (`stern_brocot_megasynthesis.json`).
 
 ---
 

@@ -6,11 +6,11 @@
 
 *Renewal Cramér rates · Joint Spectral Radius diagnostics · Five-projection operator synthesis*
 
-[![Tests](https://img.shields.io/badge/tests-164%20passing-brightgreen?style=flat-square)](.)
+[![Tests](https://img.shields.io/badge/tests-185%20passing-brightgreen?style=flat-square)](.)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-empirical-orange?style=flat-square)](.)
 [![Python](https://img.shields.io/badge/python-3.12-blue?style=flat-square)](.)
-[![Reproducible](https://img.shields.io/badge/artifacts-107%20JSON-success?style=flat-square)](docs/reports)
+[![Reproducible](https://img.shields.io/badge/artifacts-112%20JSON-success?style=flat-square)](docs/reports)
 
 </div>
 
@@ -68,6 +68,18 @@ verifications are empirically closed at finite windows: `δ_max ≈ 0.119`
 (`docs/reports/m_step_foster_drift_k8.json`), and direct bit-4 balance
 (`docs/reports/chang_bit4_balance_audit.json`).
 
+The framework now has a qn+1 sidecar diagnostic. Within the odd `q>1` grid,
+the classical `q=3` case is the unique tested member below the
+`log₂(q) = 2` drift threshold; `q=5` is already marginally positive. The
+audit recovers the Mersenne-q fixed-point pattern at `q = 3,7,31` and the
+small `5n+1` positive cycles `{1,3}`, `{13,33,83}`, and `{17,43,27}`. A
+separate finite artifact tests a
+Stern-Brocot slope picture: continued-fraction convergents of `log₂(3)` carry
+the realizable survivors in the tested artifacts, intermediate fractions mark
+boundary ghosts, and non-convergent rationals mark the high-growth ghost at
+`(8,7)`. These are finite empirical diagnostics at tested levels, not proof
+claims.
+
 ---
 
 ## Empirical constants
@@ -87,8 +99,7 @@ Stable across `n₀ ∈ [10⁴, 10¹⁵]` with slope `< 0.001` per decade.
 
 ## Verified literature
 
-Five empirical bridges to four published papers, all agreeing at finite
-resolution:
+Empirical bridges to published papers, all finite-resolution and caveated:
 
 | Source | Prediction | Empirical match |
 |---|---|---|
@@ -97,6 +108,8 @@ resolution:
 | **Hercher 2022** | `T(n_i) · n_i < 3` universal bound | empirical max 2.99 |
 | **Paparella 2024** | `tr(C_n^p) = 0` truncated nilpotency | verified at n ≤ 1024 |
 | **Mori 2025** | C*(T_1, T_2) ≅ Cuntz O_2 | implemented as unified operator |
+| **Chang 2026** | one-bit orbit-mixing reduction | finite compatibility checks closed |
+| **Rozier 2023/2025** | abc/μ-hit Collatz dichotomy | Theorem 4.1 checked for `j=10..50` |
 
 ---
 
@@ -106,7 +119,7 @@ resolution:
 # Install dependencies
 uv sync
 
-# Run all 164 tests (≈1.5s)
+# Run all 185 tests (≈2s)
 uv run python -m pytest -q
 
 # Smoke test the experimental pipeline
@@ -153,8 +166,8 @@ collatz-renewal-framework/
 ├── pyproject.toml
 ├── uv.lock
 ├── collatz_certificate_search.py   ← original CLI compatibility wrapper
-├── collatz_exp/                    ← main package, 75 modules
-├── tests/                          ← 164 passing tests
+├── collatz_exp/                    ← main package, 83 modules
+├── tests/                          ← 185 passing tests
 └── docs/
     ├── NOTABLE_RESULTS.md          ← running result catalog
     ├── PROJECT_JOURNEY.md          ← chronological narrative + audit log
@@ -163,7 +176,7 @@ collatz-renewal-framework/
     ├── UNIFIED_MODEL.md            ← 5-projection operator synthesis
     ├── collatz_strategy.md         ← working strategy notes
     ├── references/                 ← Tao, Mori, Hercher, Paparella, Chang PDFs
-    └── reports/                    ← 107 JSON artifacts (one per result)
+    └── reports/                    ← 112 JSON artifacts (one per result)
 ```
 
 ---
@@ -181,6 +194,7 @@ collatz-renewal-framework/
 - An honestly-calibrated empirical computational framework
 - A cross-validation of four published Collatz papers on a single 1M-orbit dataset
 - A demonstration that several "promising" approaches don't survive audit
+- An honest record of which strong hypotheses survived audit and which did not; see `PROJECT_JOURNEY.md` §12 demoted claims and §18 megasynthesis verdict
 - A clear naming of the remaining theorem-shaped gaps
 
 </td>
@@ -219,6 +233,11 @@ Named, not closed:
 5. **Symbolic representation of `J_renewal`** — the direct
    `Σ R(K) ≈ J_renewal` identity test is not supported at high precision;
    an explicit `h_K`-weighted reconciliation remains open.
+6. **abc-conditional lower bound bridge** — Rozier's Theorem 2.1 gives an
+   abc-conditional `ε`-improved lower bound for `N(j)` elements, while
+   Theorem 4.1 gives an unconditional lower-bound/μ-hit dichotomy. The finite
+   audit verifies Theorem 4.1 for `j=10..50`; closing the conditional route
+   requires the independent abc conjecture.
 
 See [`docs/PROJECT_JOURNEY.md`](docs/PROJECT_JOURNEY.md) §12 for full problem
 statements.
@@ -231,14 +250,15 @@ statements.
   [`docs/reports/`](docs/reports).
 - Each artifact records method, parameters, sample size, bootstrap CI,
   and exact empirical value.
-- 164 passing tests cover core arithmetic, certificates, Mersenne tail
+- 185 passing tests cover core arithmetic, certificates, Mersenne tail
   dynamics, post-exit map, renewal Cramér computation, Tao verification,
   Hercher bounds, Paparella nilpotency, JSR variants, automaton-constrained
   Karp, upper-Christoffel slope filtering, tail-cycle realizability,
   phase-decomposed renewal drift, phase-aware Lyapunov search,
   m-step Foster-Lyapunov drift, tail-cycle realizability at deeper levels,
   pointwise descent audit, m-step Foster at `k=7,8`, and Chang bit-4 balance
-  audit.
+  audit, qn+1 family realizability, qn+1 phase-transition, Rozier's abc
+  bridge with μ-hits, and the CF-convergent/Stern-Brocot slope hypothesis.
 - Reference papers in [`docs/references/`](docs/references) for offline
   access.
 
@@ -287,6 +307,11 @@ please cite:
   Collaboration.* [arXiv:2603.11066](https://arxiv.org/abs/2603.11066)
   (sibling LLM-collaboration framework; positioning in
   [`docs/NOTE_DRAFT.md`](docs/NOTE_DRAFT.md))
+- **Rozier, O.** (2023/2025). *Are the Collatz and abc conjectures related?*
+  [arXiv:2306.15284](https://arxiv.org/abs/2306.15284)
+- **Tao, T.** (2011). *The Littlewood-Offord problem and the Collatz
+  conjecture.* Blog note; recorded in the literature sweep as contextual
+  motivation rather than a theorem used by this framework.
 
 ---
 

@@ -34,8 +34,8 @@ present the *results*; this document presents the *path*.
 
 **Initial state:** one Python file `collatz_certificate_search.py`, ~5 KB.
 
-**Final state:** `collatz_exp/` package with 75 modules, 164 passing
-tests, 107 JSON artifact reports, five integrated reference papers, and
+**Final state:** `collatz_exp/` package with 83 modules, 185 passing
+tests, 112 JSON artifact reports, seven integrated reference-paper threads, and
 a complete renewal-theoretic / operator-theoretic framework.
 
 ---
@@ -446,6 +446,29 @@ Saved artifacts:
     bit-4 balance Foster envelope holds for every sampled orbit
     (`docs/reports/chang_bit4_balance_audit.json`). Residual: Tao
     distributional-to-pointwise wall.
+14. **Pointwise descent moonshot audit.** The finite pointwise descent audit
+    found an empirical uniform bound across tested windows with
+    `max_T_descent = 181` and `0%` truncation at `m_max = 100,000`
+    (`docs/reports/pointwise_descent_audit.json`). This is a finite
+    diagnostic over the tested windows, not a proof of global descent.
+15. **Realizable Karp generalizes to qn+1.** The q-parameterized audit
+    recovers the Mersenne-q fixed-point pattern at `q = 3,7,31`, where
+    `q = 2^k - 1` gives the positive fixed cycle `n=1` with word `[k]`
+    and factor `(2^k-1)/2^k`. In the small non-Mersenne grid, `5n+1` is
+    the exceptional case with recovered positive cycles `{1,3}` via
+    `[1,4]`, `{13,33,83}` via `[1,1,5]`, and `{17,43,27}` via `[1,3,3]`
+    (`docs/reports/qnp1_realizability_q5.json`,
+    `docs/reports/qnp1_phase_transition.json`).
+16. **Rozier abc bridge sanity check.** Rozier's μ-function and Theorem 4.1
+    were implemented and checked on the finite range `j=10..50`: all
+    `1,230` elements of `N(j)` satisfied the theorem dichotomy and there were
+    `0` violations (`docs/reports/rozier_abc_collatz_audit.json`).
+17. **Stern-Brocot slope structure.** The CF-convergent slope hypothesis is
+    partially supported: realizable survivors occupy the CF-convergent slope
+    `2/1`, the high-growth `(8,7)` ghost `[2,1,1,1]` occupies the
+    non-convergent rational `5/4`, and a boundary ghost `[2,1,2]` appears at
+    the intermediate fraction `5/3`
+    (`docs/reports/cf_convergent_slope_hypothesis.json`).
 
 **Demoted claims (audit-revealed):**
 
@@ -454,6 +477,41 @@ Saved artifacts:
 3. Structural Diophantine exclusion of `84/53` — resolution artifact.
 4. `J = log(4/3)²` — rejected at 8σ.
 5. Constrained JSR < 1 with naive residue automaton — fake n=-1 loop.
+6. **Raw `Σ R(K) ≈ J_renewal` identity.** Rejected at high-precision
+   bootstrap: Chang's `Σ R(K)` is about `0.0882`, while `J_renewal` is about
+   `0.0837`. The gap is structural, reflecting different weightings of the
+   same `Geom(1/2)` i.i.d. cycle structure rather than a missing closed form
+   (`docs/reports/jazz_constant_chang_R_K_identity.json`,
+   `docs/reports/chang_spectral_analysis_compatibility.md`).
+7. **Stern-Brocot triple alignment megasynthesis.** The strict claim that
+   Chang phantom-gain spikes, Rozier μ-hit families, and this framework's
+   slope-realizability cycles align at the same CF convergents of `log₂(3)`
+   found `0` matching convergents at the audited depth
+   (`docs/reports/stern_brocot_megasynthesis.json`).
+8. **Tao Littlewood-Offord tier ordering.** The predicted median discrepancy
+   order `CF convergent < intermediate fraction < random rational` did not
+   hold for the tested congruence sums modulo `2^a - 3^m`
+   (`docs/reports/stern_brocot_megasynthesis.json`).
+9. **Six-reduction universal invariant claim.** The cross-tabulation of Tao,
+   Chang, Mori, Santana, Siegel, and this framework is useful as a comparison
+   table, but no single empirically verified universal invariant emerged
+   (`docs/reports/stern_brocot_megasynthesis.json`).
+10. **Strict CF-convergent slope hypothesis.** The binary prediction
+    "realizable = CF convergent, non-realizable = non-convergent" failed at
+    `(8,7)` because the ghost `[2,1,2]` sits at the Stern-Brocot intermediate
+    fraction `5/3`; the refined tiered picture is the surviving claim
+    (`docs/reports/cf_convergent_slope_hypothesis.json`).
+11. **Small qn+1 cycle expectation outside the known patterns.** The light
+    phase-transition scan found no positive integer cycles for
+    `q ∈ {9,11,13,17,19,21,25,27}` at levels `(5,4)` and `(6,5)`. This is a
+    depth-limited null result, not a cycle-absence theorem
+    (`docs/reports/qnp1_phase_transition.json`).
+12. **Megasynthesis ambition as stated.** The session-level speculation that
+    Stern-Brocot tiers of `log₂(3)` form a universal organizing skeleton across
+    three independent papers was tested and did not survive the finite audit.
+    The methodological value is that the framework can attempt ambitious
+    unifications and record refutation cleanly
+    (`docs/reports/stern_brocot_megasynthesis.json`).
 
 **Open theorem-shaped problems:**
 
@@ -470,8 +528,11 @@ Saved artifacts:
    `J_renewal = 0.08346903426255636` has bootstrap CI
    `[0.08314605994133623, 0.0837883621454151]`
    (`docs/reports/jazz_constant_chang_R_K_identity.json`). The remaining
-   symbolic question is whether a different structural representation,
-   especially an explicit `h_K`-weighted one, matches the renewal constant.
+   symbolic question is no longer the rejected raw `Σ R(K)` identity. The
+   compatibility analysis reads Chang's `V` as a refinement of the same
+   underlying `Geom(1/2)` i.i.d. run-length structure with a definitional
+   weighting difference caused by run-length absorption
+   (`docs/reports/chang_spectral_analysis_compatibility.md`).
 6. **Phase-aware per-orbit Lyapunov.** The residue-Markov m-step Foster
    question is empirically closed on the tested grid for
    `V(n) = log₂(n) + v_2(n+1)`: `m = 16` gives residue-uniform negative
@@ -479,6 +540,17 @@ Saved artifacts:
    `k = 2..8`. The joint argument with Chang `2603.25753` reduces the
    framework's residual to the Tao distributional-to-pointwise wall expressed
    at Markov-measure-1, a sharper formulation than natural density.
+7. **Slope-realizability hierarchy via Stern-Brocot approximation tiers.**
+   The finite artifacts suggest a hierarchy: CF convergents of `log₂(3)` are
+   where realizable survivors currently sit, intermediate fractions are
+   boundary ghosts, and non-convergent rationals are high-growth ghosts. The
+   open problem is to test and prove, or falsify, this hierarchy at higher
+   `(q,Rmax)` levels.
+8. **abc-conditional lower bounds on `N(j)`.** Rozier Theorem 2.1 gives an
+   abc-conditional `ε`-improved lower bound for elements of `N(j)`, while
+   Theorem 4.1 gives an unconditional dichotomy between a concrete lower
+   bound and a rare μ-hit. Closing the conditional lower-bound route requires
+   the independent abc conjecture, not only Collatz-specific dynamics.
 
 ---
 
@@ -640,7 +712,7 @@ Saved artifacts:
 
 ---
 
-## 15. Joint argument with Chang 2026b — three verifications empirically closed
+### Chang 2026b compatibility closure — three verifications empirically closed
 
 **Trigger:** the 2026 literature sweep returned with Chang `2603.25753`,
 which found the same wall as this framework. Chang reduced Collatz to a
@@ -687,11 +759,194 @@ direct `Σ R(K) ↔ J_renewal` identity test did not support equality:
 `Σ_{K=3}^{500} R(K) = 0.0882362530512702` lies outside the high-precision
 `J_renewal` CI `[0.08314605994133623, 0.0837883621454151]`
 (`docs/reports/jazz_constant_chang_R_K_identity.json`). A more refined
-`h_K`-weighted reconciliation remains future work.
+`h_K`-weighted reconciliation remains future work. The follow-up compatibility
+analysis (`docs/reports/chang_spectral_analysis_compatibility.md`) clarifies
+that the mismatch is a definitional weighting difference on the same
+`Geom(1/2)` i.i.d. run-length structure, with Chang's drift signal refined by
+this framework's run-length absorption.
 
 ---
 
-## 16. Lessons learned
+## 15. qn+1 family extension
+
+**Trigger:** the q=3 realizable-Karp story had become too tailored to the
+classical map. The qn+1 pass asked whether the same exact affine
+classification could recover known small cycles in `5n+1`, where the mean
+accelerated drift is positive: `log₂(5)-2 ≈ 0.322`.
+
+**Iteration 1 — q-parameterized cycle arithmetic.** The new sidecar
+`collatz_exp/qnp1_family.py` generalizes the accelerated step, valuation
+words, affine word formula, and exact cycle classifier from `3n+1` to odd
+`qn+1`. The q=3 regression tests agree exactly with the old core functions.
+
+**Iteration 2 — q=5 realizability.** The bounded q=5 audit recovered the
+known `{1,3}` accelerated cycle from word `[1,4]`, and also found positive
+cycles `{13,33,83}` from `[1,1,5]` and `{17,43,27}` from `[1,3,3]`. The
+positive realized Karp factor at the tested levels is `125/128`, not greater
+than one: positive cycles require `2^A > 5^m`, so every positive integer
+cycle is contracting even though the typical drift of the `5n+1` accelerated
+map is positive (`docs/reports/qnp1_realizability_q5.json`).
+
+**Iteration 3 — phase transition over q.** The sweep
+`q ∈ {3,5,7,9,11,13,17,19,21,25,27,31}` separated two phenomena. The
+Diophantine upper bound on positive cycle factor approaches one along good
+approximants to `log₂(q)`. In this odd `q>1` grid, classical `q=3` is the
+unique tested case below the `log₂(q)=2` drift threshold; `q=5` is already in
+the positive-drift regime. The empirical bounded tail scan recovers the
+Mersenne-q fixed-point pattern at `q = 3,7,31`: when `q = 2^k - 1`, `n=1`
+has word `[k]` and factor `(2^k-1)/2^k`. Among the tested non-Mersenne small
+q values, `5n+1` is the only one with small positive cycles found in the
+bounded scan (`docs/reports/qnp1_phase_transition.json`).
+
+The qn+1 pass confirms framework q-generality at the cycle-classification
+level. It does not prove cycle absence for any q, nor does it turn positive
+typical drift into a positive cycle obstruction.
+
+Saved artifacts:
+- `docs/reports/qnp1_realizability_q5.json`
+- `docs/reports/qnp1_phase_transition.json`
+
+---
+
+## 16. abc-conjecture bridge (Rozier 2306.15284)
+
+**Trigger:** the May 2026 literature sweep surfaced Rozier's bridge between
+Collatz, abc-style invariants, and Wieferich primes. Rozier defines
+
+```text
+mu(n) = log rad(n) + log product_{p|n} nu_p(n)
+```
+
+and calls `(a,b,c)` a μ-hit when `a+b=c`, `gcd(a,b)=1`, and
+`log c > mu(abc)`. Theorem 4.1 gives an unconditional dichotomy for shortcut
+Collatz orbits whose first `j` iterates contain exactly one even term: either
+the starting value is already above `2^{j+1}/(3j^2)-1`, or the orbit
+produces a rare μ-hit of the form `(1,b,b+1)`.
+
+**Finite verification.** The audit implemented Rozier's congruence
+`n == -1 - (2/3)^k mod 2^j` for the set `N(j)`, then checked the Theorem 4.1
+dichotomy for every element with `j=10..50`. All `1,230` elements satisfied
+the theorem predicate and there were `0` violations
+(`docs/reports/rozier_abc_collatz_audit.json`). In this finite range the
+lower-bound side was always enough; the μ-hit escape clause was not needed.
+
+**Family extension.** The same artifact extends Rozier's `n=239` family
+`(1,239^{2^k}-1,239^{2^k})` through `k=20`. The certified gain lower bound
+matches Rozier's predicted expression through `k=20`; it is positive through
+`k=14` and negative from `k=15` onward, so no new exact deeper μ-hits are
+claimed without infeasible full factorization.
+
+This bridge is conditional in the appropriate place: Rozier's Theorem 2.1
+uses abc to obtain an `ε`-improved lower bound for `N(j)` elements, while
+Theorem 4.1 is checked here unconditionally at finite j. Neither statement is
+a Collatz proof.
+
+Saved artifacts and notes:
+- `docs/reports/rozier_abc_collatz_audit.json`
+- `docs/LITERATURE_SWEEP_2026_05.md`
+- Tao's 2011 Littlewood-Offord/Collatz blog connection, recorded as
+  literature context rather than a new theorem.
+
+---
+
+## 17. Stern-Brocot slope structure
+
+**Trigger:** the `(8,7)` artifacts showed a slope-realizability divergence:
+the slope filter admitted a high-growth nonrealizable survivor. The working
+hypothesis was that realizable survivors sit at continued-fraction
+convergents of `log₂(3)`, while non-realizable ghosts occupy less privileged
+rational approximants.
+
+**Finite test.** The analysis read only existing artifacts:
+`karp_slope_joint_sweep*.json` and `tail_cycle_realizability*.json`. It
+computed continued-fraction convergents of `log₂(3)` to depth 20 and compared
+every recorded survivor's slope `A/m` against CF convergents and
+Stern-Brocot intermediate fractions.
+
+**Outcome.** The strict hypothesis is partially supported, not fully proved.
+At `(5,4)`, `(6,5)`, and `(7,6)`, the slope-filtered survivor is the
+realizable elementary `[2]` cycle with slope `2/1`, a CF convergent. At
+`(8,7)`, the realizable survivor remains `[2]`, while the high-growth ghost
+`[2,1,1,1]` has slope `5/4`, a non-convergent rational. However, the same
+`(8,7)` slope-survivor set also contains `[2,1,2]` at slope `5/3`, an
+intermediate fraction. The refined structural picture is therefore tiered:
+
+```text
+CF convergents             -> realizable survivors in tested artifacts
+Stern-Brocot intermediates -> boundary ghosts
+non-convergent rationals   -> high-growth ghosts
+```
+
+This is a finite empirical diagnostic at tested levels, not a theorem about
+all slope filters. It is nevertheless a sharper explanation of the `(8,7)`
+divergence than the earlier binary "slope vs realizability" framing.
+
+Saved artifact:
+- `docs/reports/cf_convergent_slope_hypothesis.json`
+
+---
+
+## 18. The megasynthesis attempt and its negative verdict
+
+**Trigger:** midway through the session, a stronger unification hypothesis
+emerged. The idea was that the Stern-Brocot tier hierarchy of `log₂(3)` might
+be the universal skeleton organizing Chang's phantom-gain spikes, Rozier's
+μ-hit families, and this framework's slope-realizability tiers. This was an
+ambitious cross-paper claim, so it was turned into a direct finite audit rather
+than left as an attractive story.
+
+**Synthesis A — triple alignment.** For each CF convergent of `log₂(3)`, the
+audit asked whether three signals aligned at the same rational scale: a local
+Chang `R(K)` oscillation proxy at `K=p`, a slope-realizability survivor at
+`A/m=p/q`, and a Rozier-style low-μ family arithmetically tied to `q`. The
+strict criterion found `0` aligned convergents at the audited depth
+(`docs/reports/stern_brocot_megasynthesis.json`).
+
+**Synthesis B — Tao Littlewood-Offord tiering.** The audit tested whether the
+finite discrepancy
+
+```text
+#{sigma : sum_i 3^{m-1-i} 2^{sigma_i} == 0 mod (2^a - 3^m)} / #{sigma}
+```
+
+is ordered by Stern-Brocot tier, with CF convergents smallest, intermediate
+fractions in the middle, and random rationals largest. The tested medians did
+not satisfy that ordering (`docs/reports/stern_brocot_megasynthesis.json`).
+At this resolution, Tao-style anti-concentration is not simply
+Stern-Brocot-tier-ordered.
+
+**Synthesis C — six-reduction unification.** The audit also assembled a
+six-way comparison table for Tao, Chang, Mori, Santana, Siegel, and this
+framework. The table is useful: it names the state spaces, conditions, and
+2-adic/3-adic quantities each approach tracks. But it remains structural-only.
+No single empirically verified universal invariant emerged
+(`docs/reports/stern_brocot_megasynthesis.json`).
+
+**What survives.** The narrower q=3 slope-realizability picture still survives
+as a finite structural diagnostic: CF convergents contain the realizable
+survivors currently seen; Stern-Brocot intermediates appear as boundary ghosts;
+non-convergent rationals appear as high-growth ghosts
+(`docs/reports/cf_convergent_slope_hypothesis.json`). The six-reduction table
+also survives as a useful comparison scaffold. What does not survive is the
+strong claim that all three external frameworks are computing the same
+Stern-Brocot skeleton in different units.
+
+**Lesson:** cross-paper alignment through one Diophantine skeleton at
+`log₂(3)` is not empirically supported at the tested resolution. The better
+reading is more nuanced: these frameworks all touch the same 2-adic/3-adic
+near-resonance problem, but they measure different aspects of it. Recording
+that negative verdict is part of the framework's value, because it prevents
+the same attractive over-unification from being re-pursued as if it had not
+already been tested.
+
+Saved artifacts:
+- `docs/reports/stern_brocot_megasynthesis.json`
+- `docs/reports/megasynthesis_executive_summary.md`
+- `docs/reports/cf_convergent_slope_hypothesis.json`
+
+---
+
+## 19. Lessons learned
 
 **What we got right:**
 
@@ -729,12 +984,12 @@ direct `Σ R(K) ↔ J_renewal` identity test did not support equality:
 
 ---
 
-## 17. Reproducibility
+## 20. Reproducibility
 
 All results in this journey are reproducible:
 
 ```bash
-# Run the full test suite (currently 164 tests passing in ~2s)
+# Run the full test suite (currently 185 tests passing in ~2s)
 uv run python -m pytest -q
 
 # Reproduce any artifact in docs/reports/ via the corresponding CLI:
@@ -748,7 +1003,7 @@ Reference papers are saved in `docs/references/` for offline access.
 
 ---
 
-## 18. Acknowledgments
+## 21. Acknowledgments
 
 The project was driven by an iterative human–AI collaboration. The
 human's intuition repeatedly produced productive starting points
