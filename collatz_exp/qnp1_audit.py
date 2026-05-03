@@ -183,14 +183,10 @@ def _is_power_of_two(value: int) -> bool:
 def _tail_drop(q_param: int) -> int:
     if q_param <= 1 or q_param % 2 == 0:
         raise ValueError("q_param must be an odd integer greater than one")
-    if not _is_power_of_two(q_param - 1):
-        raise ValueError(
-            "the qn+1 tail audit currently requires q_param - 1 to be a power of two"
-        )
     return v2(q_param - 1)
 
 
-def qnp1_lte_closed_tail_graph(
+def _qnp1_power_tail_graph(
     tail_unit_power: int,
     max_tail_depth: int,
     max_valuation: int,
@@ -337,6 +333,152 @@ def qnp1_lte_closed_tail_graph(
         states=states,
         edges=edges,
         closed_overflow_edges=closed_overflow_edges,
+    )
+
+
+def _qnp1_sampled_tail_graph(
+    tail_unit_power: int,
+    max_tail_depth: int,
+    max_valuation: int,
+    q_param: int,
+    sample_lift_power: int | None = None,
+) -> QTailGraph:
+    """Sample witnessed tail transitions when q-1 is not a pure power of two.
+
+    The q=3 and q=5 publication-facing audits use the exact LTE closure above.
+    For general odd q, the Mersenne tail no longer has a deterministic forced
+    drop, so this fallback records a finite witnessed graph over lifted unit
+    residues. It is deliberately empirical.
+    """
+
+    tail_drop = _tail_drop(q_param)
+    if tail_unit_power < 2:
+        raise ValueError("tail_unit_power must be at least two")
+    if max_tail_depth < 1:
+        raise ValueError("max_tail_depth must be positive")
+    if max_tail_depth >= tail_unit_power:
+        raise ValueError("max_tail_depth must be smaller than tail_unit_power")
+    if max_valuation < 1:
+        raise ValueError("max_valuation must be positive")
+
+    lift_power = min(max_valuation, 8) if sample_lift_power is None else sample_lift_power
+    if lift_power < 0:
+        raise ValueError("sample_lift_power must be nonnegative")
+
+    modulus = 1 << tail_unit_power
+    odd_units = tuple(range(1, modulus, 2))
+    edge_counts: dict[tuple[int, int, int, int, tuple[int, ...], float], int] = {}
+    closed_overflow_edges = 0
+
+    def add_edge(
+        source_tail: int,
+        source_unit: int,
+        target_tail: int,
+        target_unit: int,
+        word: tuple[int, ...],
+    ) -> None:
+        slope = len(word) * log2(q_param) - sum(word)
+        key = (
+            source_tail,
+            source_unit,
+            target_tail,
+            target_unit,
+            word,
+            slope,
+        )
+        edge_counts[key] = edge_counts.get(key, 0) + 1
+
+    for source_tail in range(1, max_tail_depth + 1):
+        for source_unit in odd_units:
+            for lift in range(1 << lift_power):
+                unit = source_unit + (lift << tail_unit_power)
+                x = (1 << source_tail) * unit - 1
+                word: list[int] = []
+                overflow_seen = False
+                for _step in range(max_valuation):
+                    x, valuation = _accelerated_step_with_valuation_q(x, q_param)
+                    word.append(valuation)
+                    if sum(word) > max_valuation:
+                        break
+                    target_tail = v2(x + 1)
+                    if target_tail > max_tail_depth:
+                        overflow_seen = True
+                        continue
+                    target_unit = ((x + 1) >> target_tail) % modulus
+                    if overflow_seen:
+                        closed_overflow_edges += 1
+                    add_edge(
+                        source_tail,
+                        source_unit,
+                        target_tail,
+                        target_unit,
+                        tuple(word),
+                    )
+                    break
+
+    states = tuple(
+        (tail_depth, unit)
+        for tail_depth in range(1, max_tail_depth + 1)
+        for unit in odd_units
+    )
+    edges = tuple(
+        QTailEdge(
+            source_tail_depth=source_tail,
+            source_unit_residue=source_unit,
+            target_tail_depth=target_tail,
+            target_unit_residue=target_unit,
+            valuation=sum(word),
+            accelerated_steps=len(word),
+            valuation_word=word,
+            witness_count=count,
+            slope_log2=slope,
+        )
+        for (
+            source_tail,
+            source_unit,
+            target_tail,
+            target_unit,
+            word,
+            slope,
+        ), count in sorted(edge_counts.items())
+    )
+    return QTailGraph(
+        q_param=q_param,
+        tail_unit_power=tail_unit_power,
+        max_tail_depth=max_tail_depth,
+        max_valuation=max_valuation,
+        tail_drop=tail_drop,
+        states=states,
+        edges=edges,
+        closed_overflow_edges=closed_overflow_edges,
+    )
+
+
+def qnp1_lte_closed_tail_graph(
+    tail_unit_power: int,
+    max_tail_depth: int,
+    max_valuation: int,
+    q_param: int = 5,
+) -> QTailGraph:
+    """Enumerate a q-aware bounded tail graph.
+
+    When ``q - 1`` is a power of two this is the exact LTE-closed Mersenne-tail
+    graph used by the q=3 and q=5 audits. Otherwise it falls back to a finite
+    witnessed residue-lift graph.
+    """
+
+    if _is_power_of_two(q_param - 1):
+        return _qnp1_power_tail_graph(
+            tail_unit_power=tail_unit_power,
+            max_tail_depth=max_tail_depth,
+            max_valuation=max_valuation,
+            q_param=q_param,
+        )
+    return _qnp1_sampled_tail_graph(
+        tail_unit_power=tail_unit_power,
+        max_tail_depth=max_tail_depth,
+        max_valuation=max_valuation,
+        q_param=q_param,
     )
 
 

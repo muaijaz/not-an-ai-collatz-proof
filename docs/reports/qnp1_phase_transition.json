@@ -1,0 +1,1738 @@
+{
+  "argmax_m_by_q": {
+    "11": 37,
+    "13": 97,
+    "17": 80,
+    "19": 4,
+    "21": 79,
+    "25": 59,
+    "27": 49,
+    "3": 94,
+    "31": 22,
+    "5": 59,
+    "7": 26,
+    "9": 100
+  },
+  "argmax_m_vs_log_2_q_correlation": {
+    "method": "pearson_argmax_m_vs_negative_log10_gap_proxy",
+    "note": "The true irrationality measure of log2(q) is not computed; this finite proxy correlates argmax m with the bounded Diophantine gap depth.",
+    "value": -0.3191878369315971
+  },
+  "caveat": "The Diophantine column is an upper bound on positive integer cycle factor at bounded m. The empirical column records only positive integer cycles found in bounded tail-graph scans; it is not a proof of cycle absence or global qn+1 behavior.",
+  "diophantine_max_factor_by_q": {
+    "11": 0.9992862367169983,
+    "13": 0.9610295250264236,
+    "17": 0.9979416028063115,
+    "19": 0.9942703247070312,
+    "21": 0.9952124230064897,
+    "25": 0.9913835302014254,
+    "27": 0.9927398469153746,
+    "3": 0.9906690375161853,
+    "31": 0.9946899659775033,
+    "5": 0.9956824444577826,
+    "7": 0.9939381422111965,
+    "9": 0.9948149849565276
+  },
+  "entries": [
+    {
+      "cf_log_2_q_convergents": [
+        {
+          "denominator": 1,
+          "distance": -0.5849625007211561,
+          "index": 0,
+          "numerator": 1,
+          "partial_quotient": 1,
+          "value": 1.0
+        },
+        {
+          "denominator": 1,
+          "distance": 0.4150374992788439,
+          "index": 1,
+          "numerator": 2,
+          "partial_quotient": 1,
+          "value": 2.0
+        },
+        {
+          "denominator": 2,
+          "distance": -0.08496250072115608,
+          "index": 2,
+          "numerator": 3,
+          "partial_quotient": 1,
+          "value": 1.5
+        },
+        {
+          "denominator": 5,
+          "distance": 0.015037499278844013,
+          "index": 3,
+          "numerator": 8,
+          "partial_quotient": 2,
+          "value": 1.6
+        },
+        {
+          "denominator": 12,
+          "distance": -0.0016291673878228163,
+          "index": 4,
+          "numerator": 19,
+          "partial_quotient": 2,
+          "value": 1.5833333333333333
+        },
+        {
+          "denominator": 41,
+          "distance": 0.00040335293738058553,
+          "index": 5,
+          "numerator": 65,
+          "partial_quotient": 3,
+          "value": 1.5853658536585367
+        },
+        {
+          "denominator": 53,
+          "distance": -5.684034379749292e-05,
+          "index": 6,
+          "numerator": 84,
+          "partial_quotient": 1,
+          "value": 1.5849056603773586
+        },
+        {
+          "denominator": 306,
+          "distance": 4.819540281753021e-06,
+          "index": 7,
+          "numerator": 485,
+          "partial_quotient": 5,
+          "value": 1.5849673202614378
+        },
+        {
+          "denominator": 665,
+          "distance": -9.470611850304067e-08,
+          "index": 8,
+          "numerator": 1054,
+          "partial_quotient": 2,
+          "value": 1.5849624060150376
+        },
+        {
+          "denominator": 15601,
+          "distance": 1.6825358883920671e-09,
+          "index": 9,
+          "numerator": 24727,
+          "partial_quotient": 23,
+          "value": 1.584962502403692
+        }
+      ],
+      "diophantine_argmax_A": 149,
+      "diophantine_argmax_m": 94,
+      "diophantine_distance": 0.0001438822575672294,
+      "diophantine_gap_to_1": 0.009330962483814745,
+      "diophantine_max_factor": 0.9906690375161853,
+      "diophantine_max_factor_exact": "706965049015104706497203195837614914543357369/713623846352979940529142984724747568191373312",
+      "empirical_argmax_cycle_value": "1",
+      "empirical_argmax_orbit": [
+        1
+      ],
+      "empirical_argmax_word": [
+        2
+      ],
+      "empirical_elapsed_seconds": 0.7345953200128861,
+      "empirical_level_summaries": [
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 4492,
+            "positive_integer_cycle": 1,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 4493,
+          "level_index": 0,
+          "max_tail_depth": 4,
+          "realizable_karp_factor_positive": 0.75,
+          "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+          "tail_edges": 224,
+          "tail_unit_power": 5
+        },
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 39130,
+            "positive_integer_cycle": 1,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 39131,
+          "level_index": 1,
+          "max_tail_depth": 5,
+          "realizable_karp_factor_positive": 0.75,
+          "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+          "tail_edges": 480,
+          "tail_unit_power": 6
+        }
+      ],
+      "empirical_matches_diophantine_bound": false,
+      "empirical_realizable_karp_factor": 0.75,
+      "empirical_reason": null,
+      "empirical_status": "bounded_tail_graph_scan_complete",
+      "log_2_q": 1.584962500721156,
+      "q": 3
+    },
+    {
+      "cf_log_2_q_convergents": [
+        {
+          "denominator": 1,
+          "distance": -0.3219280948873622,
+          "index": 0,
+          "numerator": 2,
+          "partial_quotient": 2,
+          "value": 2.0
+        },
+        {
+          "denominator": 3,
+          "distance": 0.0114052384459713,
+          "index": 1,
+          "numerator": 7,
+          "partial_quotient": 3,
+          "value": 2.3333333333333335
+        },
+        {
+          "denominator": 28,
+          "distance": -0.0004995234587905628,
+          "index": 2,
+          "numerator": 65,
+          "partial_quotient": 9,
+          "value": 2.3214285714285716
+        },
+        {
+          "denominator": 59,
+          "distance": 0.00010580341772259416,
+          "index": 3,
+          "numerator": 137,
+          "partial_quotient": 2,
+          "value": 2.3220338983050848
+        },
+        {
+          "denominator": 146,
+          "distance": -1.0286668183923098e-05,
+          "index": 4,
+          "numerator": 339,
+          "partial_quotient": 2,
+          "value": 2.3219178082191783
+        },
+        {
+          "denominator": 643,
+          "distance": 3.6545478421246003e-07,
+          "index": 5,
+          "numerator": 1493,
+          "partial_quotient": 4,
+          "value": 2.3219284603421464
+        },
+        {
+          "denominator": 4004,
+          "distance": -2.2959290468804738e-08,
+          "index": 6,
+          "numerator": 9297,
+          "partial_quotient": 6,
+          "value": 2.3219280719280717
+        },
+        {
+          "denominator": 8651,
+          "distance": 5.910233635830764e-09,
+          "index": 7,
+          "numerator": 20087,
+          "partial_quotient": 2,
+          "value": 2.321928100797596
+        },
+        {
+          "denominator": 12655,
+          "distance": -3.223988187528448e-09,
+          "index": 8,
+          "numerator": 29384,
+          "partial_quotient": 1,
+          "value": 2.321928091663374
+        },
+        {
+          "denominator": 21306,
+          "distance": 4.848335066753862e-10,
+          "index": 9,
+          "numerator": 49471,
+          "partial_quotient": 1,
+          "value": 2.3219280953721957
+        }
+      ],
+      "diophantine_argmax_A": 137,
+      "diophantine_argmax_m": 59,
+      "diophantine_distance": 0.00010580341772259416,
+      "diophantine_gap_to_1": 0.004317555542217326,
+      "diophantine_max_factor": 0.9956824444577826,
+      "diophantine_max_factor_exact": "173472347597680709441192448139190673828125/174224571863520493293247799005065324265472",
+      "empirical_argmax_cycle_value": "13",
+      "empirical_argmax_orbit": [
+        13,
+        33,
+        83
+      ],
+      "empirical_argmax_word": [
+        1,
+        1,
+        5
+      ],
+      "empirical_elapsed_seconds": 0.061062950000632554,
+      "empirical_level_summaries": [
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 79,
+            "positive_integer_cycle": 3,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 82,
+          "level_index": 0,
+          "max_tail_depth": 4,
+          "realizable_karp_factor_positive": 0.9765625,
+          "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+          "tail_edges": 208,
+          "tail_unit_power": 5
+        },
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 903,
+            "positive_integer_cycle": 3,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 906,
+          "level_index": 1,
+          "max_tail_depth": 5,
+          "realizable_karp_factor_positive": 0.9765625,
+          "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+          "tail_edges": 448,
+          "tail_unit_power": 6
+        }
+      ],
+      "empirical_matches_diophantine_bound": false,
+      "empirical_realizable_karp_factor": 0.9765625,
+      "empirical_reason": null,
+      "empirical_status": "bounded_tail_graph_scan_complete",
+      "log_2_q": 2.321928094887362,
+      "q": 5
+    },
+    {
+      "cf_log_2_q_convergents": [
+        {
+          "denominator": 1,
+          "distance": -0.8073549220576042,
+          "index": 0,
+          "numerator": 2,
+          "partial_quotient": 2,
+          "value": 2.0
+        },
+        {
+          "denominator": 1,
+          "distance": 0.19264507794239583,
+          "index": 1,
+          "numerator": 3,
+          "partial_quotient": 1,
+          "value": 3.0
+        },
+        {
+          "denominator": 5,
+          "distance": -0.007354922057604352,
+          "index": 2,
+          "numerator": 14,
+          "partial_quotient": 4,
+          "value": 2.8
+        },
+        {
+          "denominator": 26,
+          "distance": 0.0003373856347033133,
+          "index": 3,
+          "numerator": 73,
+          "partial_quotient": 5,
+          "value": 2.8076923076923075
+        },
+        {
+          "denominator": 109,
+          "distance": -1.547251631972557e-05,
+          "index": 4,
+          "numerator": 306,
+          "partial_quotient": 4,
+          "value": 2.8073394495412844
+        },
+        {
+          "denominator": 571,
+          "distance": 5.945798737805319e-07,
+          "index": 5,
+          "numerator": 1603,
+          "partial_quotient": 5,
+          "value": 2.807355516637478
+        },
+        {
+          "denominator": 2393,
+          "distance": -1.3726863645757703e-07,
+          "index": 6,
+          "numerator": 6718,
+          "partial_quotient": 4,
+          "value": 2.8073547847889677
+        },
+        {
+          "denominator": 2964,
+          "distance": 3.718374053107709e-09,
+          "index": 7,
+          "numerator": 8321,
+          "partial_quotient": 1,
+          "value": 2.8073549257759782
+        },
+        {
+          "denominator": 88349,
+          "distance": -1.003663818721634e-10,
+          "index": 8,
+          "numerator": 248027,
+          "partial_quotient": 29,
+          "value": 2.807354921957238
+        },
+        {
+          "denominator": 91313,
+          "distance": 2.3589130648815626e-11,
+          "index": 9,
+          "numerator": 256348,
+          "partial_quotient": 1,
+          "value": 2.8073549220811933
+        }
+      ],
+      "diophantine_argmax_A": 73,
+      "diophantine_argmax_m": 26,
+      "diophantine_distance": 0.0003373856347033133,
+      "diophantine_gap_to_1": 0.006061857788803524,
+      "diophantine_max_factor": 0.9939381422111965,
+      "diophantine_max_factor_exact": "9387480337647754305649/9444732965739290427392",
+      "empirical_argmax_cycle_value": "1",
+      "empirical_argmax_orbit": [
+        1
+      ],
+      "empirical_argmax_word": [
+        3
+      ],
+      "empirical_elapsed_seconds": 9.403149432997452,
+      "empirical_level_summaries": [
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 199999,
+            "positive_integer_cycle": 1,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 0,
+          "max_tail_depth": 4,
+          "realizable_karp_factor_positive": 0.875,
+          "status": "cycle_cap_reached",
+          "tail_edges": 526,
+          "tail_unit_power": 5
+        },
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 199999,
+            "positive_integer_cycle": 1,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 1,
+          "max_tail_depth": 5,
+          "realizable_karp_factor_positive": 0.875,
+          "status": "cycle_cap_reached",
+          "tail_edges": 1212,
+          "tail_unit_power": 6
+        }
+      ],
+      "empirical_matches_diophantine_bound": false,
+      "empirical_realizable_karp_factor": 0.875,
+      "empirical_reason": null,
+      "empirical_status": "bounded_tail_graph_scan_complete",
+      "log_2_q": 2.807354922057604,
+      "q": 7
+    },
+    {
+      "cf_log_2_q_convergents": [
+        {
+          "denominator": 1,
+          "distance": -0.16992500144231215,
+          "index": 0,
+          "numerator": 3,
+          "partial_quotient": 3,
+          "value": 3.0
+        },
+        {
+          "denominator": 5,
+          "distance": 0.030074998557688026,
+          "index": 1,
+          "numerator": 16,
+          "partial_quotient": 5,
+          "value": 3.2
+        },
+        {
+          "denominator": 6,
+          "distance": -0.0032583347756456327,
+          "index": 2,
+          "numerator": 19,
+          "partial_quotient": 1,
+          "value": 3.1666666666666665
+        },
+        {
+          "denominator": 47,
+          "distance": 0.0002877645151344588,
+          "index": 3,
+          "numerator": 149,
+          "partial_quotient": 7,
+          "value": 3.1702127659574466
+        },
+        {
+          "denominator": 53,
+          "distance": -0.00011368068759498584,
+          "index": 4,
+          "numerator": 168,
+          "partial_quotient": 1,
+          "value": 3.169811320754717
+        },
+        {
+          "denominator": 153,
+          "distance": 9.639080563506042e-06,
+          "index": 5,
+          "numerator": 485,
+          "partial_quotient": 2,
+          "value": 3.1699346405228757
+        },
+        {
+          "denominator": 665,
+          "distance": -1.8941223700608134e-07,
+          "index": 6,
+          "numerator": 2108,
+          "partial_quotient": 4,
+          "value": 3.169924812030075
+        },
+        {
+          "denominator": 7468,
+          "distance": 1.1948154021723667e-08,
+          "index": 7,
+          "numerator": 23673,
+          "partial_quotient": 11,
+          "value": 3.169925013390466
+        },
+        {
+          "denominator": 8133,
+          "distance": -4.516208740312777e-09,
+          "index": 8,
+          "numerator": 25781,
+          "partial_quotient": 1,
+          "value": 3.1699249969261034
+        },
+        {
+          "denominator": 23734,
+          "distance": 6.643703365227793e-10,
+          "index": 9,
+          "numerator": 75235,
+          "partial_quotient": 2,
+          "value": 3.1699250021066825
+        }
+      ],
+      "diophantine_argmax_A": 317,
+      "diophantine_argmax_m": 100,
+      "diophantine_distance": 7.499855768777763e-05,
+      "diophantine_gap_to_1": 0.005185015043472394,
+      "diophantine_max_factor": 0.9948149849565276,
+      "diophantine_max_factor_exact": "265613988875874769338781322035779626829233452653394495974574961739092490901302182994384699044001/266998379490113760299377713271194014325338065294581596243380200977777465722580068752870260867072",
+      "empirical_argmax_cycle_value": null,
+      "empirical_argmax_orbit": null,
+      "empirical_argmax_word": null,
+      "empirical_elapsed_seconds": 0.10103665999486111,
+      "empirical_level_summaries": [
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 16,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 16,
+          "level_index": 0,
+          "max_tail_depth": 4,
+          "realizable_karp_factor_positive": null,
+          "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+          "tail_edges": 192,
+          "tail_unit_power": 5
+        },
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 28,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 28,
+          "level_index": 1,
+          "max_tail_depth": 5,
+          "realizable_karp_factor_positive": null,
+          "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+          "tail_edges": 416,
+          "tail_unit_power": 6
+        }
+      ],
+      "empirical_matches_diophantine_bound": false,
+      "empirical_realizable_karp_factor": null,
+      "empirical_reason": null,
+      "empirical_status": "no_positive_integer_cycle_found_in_bounded_scan",
+      "log_2_q": 3.169925001442312,
+      "q": 9
+    },
+    {
+      "cf_log_2_q_convergents": [
+        {
+          "denominator": 1,
+          "distance": -0.4594316186372973,
+          "index": 0,
+          "numerator": 3,
+          "partial_quotient": 3,
+          "value": 3.0
+        },
+        {
+          "denominator": 2,
+          "distance": 0.04056838136270269,
+          "index": 1,
+          "numerator": 7,
+          "partial_quotient": 2,
+          "value": 3.5
+        },
+        {
+          "denominator": 11,
+          "distance": -0.004886164091842726,
+          "index": 2,
+          "numerator": 38,
+          "partial_quotient": 5,
+          "value": 3.4545454545454546
+        },
+        {
+          "denominator": 13,
+          "distance": 0.002106842901164363,
+          "index": 3,
+          "numerator": 45,
+          "partial_quotient": 1,
+          "value": 3.4615384615384617
+        },
+        {
+          "denominator": 24,
+          "distance": -0.0010982853039638307,
+          "index": 4,
+          "numerator": 83,
+          "partial_quotient": 1,
+          "value": 3.4583333333333335
+        },
+        {
+          "denominator": 37,
+          "distance": 2.7840822162339407e-05,
+          "index": 5,
+          "numerator": 128,
+          "partial_quotient": 1,
+          "value": 3.4594594594594597
+        },
+        {
+          "denominator": 949,
+          "distance": -6.386583719653061e-07,
+          "index": 6,
+          "numerator": 3283,
+          "partial_quotient": 25,
+          "value": 3.4594309799789253
+        },
+        {
+          "denominator": 986,
+          "distance": 4.300442442151109e-07,
+          "index": 7,
+          "numerator": 3411,
+          "partial_quotient": 1,
+          "value": 3.4594320486815415
+        },
+        {
+          "denominator": 1935,
+          "distance": -9.40894935297365e-08,
+          "index": 8,
+          "numerator": 6694,
+          "partial_quotient": 1,
+          "value": 3.459431524547804
+        },
+        {
+          "denominator": 4856,
+          "distance": 1.233469593131531e-08,
+          "index": 9,
+          "numerator": 16799,
+          "partial_quotient": 2,
+          "value": 3.4594316309719932
+        }
+      ],
+      "diophantine_argmax_A": 128,
+      "diophantine_argmax_m": 37,
+      "diophantine_distance": 2.7840822162339407e-05,
+      "diophantine_gap_to_1": 0.0007137632830016599,
+      "diophantine_max_factor": 0.9992862367169983,
+      "diophantine_max_factor_exact": "340039485861577398992406882305761986971/340282366920938463463374607431768211456",
+      "empirical_argmax_cycle_value": null,
+      "empirical_argmax_orbit": null,
+      "empirical_argmax_word": null,
+      "empirical_elapsed_seconds": 9.082059167005355,
+      "empirical_level_summaries": [
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 200000,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 0,
+          "max_tail_depth": 4,
+          "realizable_karp_factor_positive": null,
+          "status": "cycle_cap_reached",
+          "tail_edges": 534,
+          "tail_unit_power": 5
+        },
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 200000,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 1,
+          "max_tail_depth": 5,
+          "realizable_karp_factor_positive": null,
+          "status": "cycle_cap_reached",
+          "tail_edges": 1204,
+          "tail_unit_power": 6
+        }
+      ],
+      "empirical_matches_diophantine_bound": false,
+      "empirical_realizable_karp_factor": null,
+      "empirical_reason": null,
+      "empirical_status": "no_positive_integer_cycle_found_in_bounded_scan",
+      "log_2_q": 3.4594316186372973,
+      "q": 11
+    },
+    {
+      "cf_log_2_q_convergents": [
+        {
+          "denominator": 1,
+          "distance": -0.7004397181410922,
+          "index": 0,
+          "numerator": 3,
+          "partial_quotient": 3,
+          "value": 3.0
+        },
+        {
+          "denominator": 1,
+          "distance": 0.2995602818589078,
+          "index": 1,
+          "numerator": 4,
+          "partial_quotient": 1,
+          "value": 4.0
+        },
+        {
+          "denominator": 3,
+          "distance": -0.033773051474425664,
+          "index": 2,
+          "numerator": 11,
+          "partial_quotient": 2,
+          "value": 3.6666666666666665
+        },
+        {
+          "denominator": 7,
+          "distance": 0.01384599614462223,
+          "index": 3,
+          "numerator": 26,
+          "partial_quotient": 2,
+          "value": 3.7142857142857144
+        },
+        {
+          "denominator": 10,
+          "distance": -0.0004397181410920048,
+          "index": 4,
+          "numerator": 37,
+          "partial_quotient": 1,
+          "value": 3.7
+        },
+        {
+          "denominator": 227,
+          "distance": 8.104932689434463e-07,
+          "index": 5,
+          "numerator": 840,
+          "partial_quotient": 22,
+          "value": 3.700440528634361
+        },
+        {
+          "denominator": 5231,
+          "distance": -3.165667239457548e-08,
+          "index": 6,
+          "numerator": 19357,
+          "partial_quotient": 23,
+          "value": 3.70043968648442
+        },
+        {
+          "denominator": 5458,
+          "distance": 3.368618273213997e-09,
+          "index": 7,
+          "numerator": 20197,
+          "partial_quotient": 1,
+          "value": 3.7004397215097105
+        },
+        {
+          "denominator": 54353,
+          "distance": -2.2590818105072685e-12,
+          "index": 8,
+          "numerator": 201130,
+          "partial_quotient": 9,
+          "value": 3.700439718138833
+        },
+        {
+          "denominator": 8104055,
+          "distance": 1.1102230246251565e-14,
+          "index": 9,
+          "numerator": 29988567,
+          "partial_quotient": 149,
+          "value": 3.7004397181411033
+        }
+      ],
+      "diophantine_argmax_A": 359,
+      "diophantine_argmax_m": 97,
+      "diophantine_distance": 0.0005912096939595379,
+      "diophantine_gap_to_1": 0.03897047497357642,
+      "diophantine_max_factor": 0.9610295250264236,
+      "diophantine_max_factor_exact": "1128509381413733515480688613898436566335354787380492102782061492674628447809729431114376724142003723346459533/1174271291386916613944740298394668513687841274454159935353645485766104512557304221731849499192384351515967488",
+      "empirical_argmax_cycle_value": null,
+      "empirical_argmax_orbit": null,
+      "empirical_argmax_word": null,
+      "empirical_elapsed_seconds": 8.422663717996329,
+      "empirical_level_summaries": [
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 200000,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 0,
+          "max_tail_depth": 4,
+          "realizable_karp_factor_positive": null,
+          "status": "cycle_cap_reached",
+          "tail_edges": 604,
+          "tail_unit_power": 5
+        },
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 200000,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 1,
+          "max_tail_depth": 5,
+          "realizable_karp_factor_positive": null,
+          "status": "cycle_cap_reached",
+          "tail_edges": 1368,
+          "tail_unit_power": 6
+        }
+      ],
+      "empirical_matches_diophantine_bound": false,
+      "empirical_realizable_karp_factor": null,
+      "empirical_reason": null,
+      "empirical_status": "no_positive_integer_cycle_found_in_bounded_scan",
+      "log_2_q": 3.700439718141092,
+      "q": 13
+    },
+    {
+      "cf_log_2_q_convergents": [
+        {
+          "denominator": 1,
+          "distance": -0.0874628412503391,
+          "index": 0,
+          "numerator": 4,
+          "partial_quotient": 4,
+          "value": 4.0
+        },
+        {
+          "denominator": 11,
+          "distance": 0.003446249658751732,
+          "index": 1,
+          "numerator": 45,
+          "partial_quotient": 11,
+          "value": 4.090909090909091
+        },
+        {
+          "denominator": 23,
+          "distance": -0.0005063195112082752,
+          "index": 2,
+          "numerator": 94,
+          "partial_quotient": 2,
+          "value": 4.086956521739131
+        },
+        {
+          "denominator": 80,
+          "distance": 3.7158749661259094e-05,
+          "index": 3,
+          "numerator": 327,
+          "partial_quotient": 3,
+          "value": 4.0875
+        },
+        {
+          "denominator": 263,
+          "distance": -1.0369767449169842e-05,
+          "index": 4,
+          "numerator": 1075,
+          "partial_quotient": 3,
+          "value": 4.08745247148289
+        },
+        {
+          "denominator": 343,
+          "distance": 7.156009731446034e-07,
+          "index": 5,
+          "numerator": 1402,
+          "partial_quotient": 1,
+          "value": 4.087463556851312
+        },
+        {
+          "denominator": 4036,
+          "distance": -6.760745741019036e-09,
+          "index": 6,
+          "numerator": 16497,
+          "partial_quotient": 11,
+          "value": 4.087462834489593
+        },
+        {
+          "denominator": 32631,
+          "distance": 8.323430833456769e-10,
+          "index": 7,
+          "numerator": 133378,
+          "partial_quotient": 8,
+          "value": 4.087462842082682
+        },
+        {
+          "denominator": 36667,
+          "distance": -3.4416913763379853e-12,
+          "index": 8,
+          "numerator": 149875,
+          "partial_quotient": 1,
+          "value": 4.087462841246897
+        },
+        {
+          "denominator": 7916036,
+          "distance": 3.552713678800501e-15,
+          "index": 9,
+          "numerator": 32356503,
+          "partial_quotient": 215,
+          "value": 4.087462841250343
+        }
+      ],
+      "diophantine_argmax_A": 327,
+      "diophantine_argmax_m": 80,
+      "diophantine_distance": 3.7158749661259094e-05,
+      "diophantine_gap_to_1": 0.0020583971936885353,
+      "diophantine_max_factor": 0.9979416028063115,
+      "diophantine_max_factor_exact": "272843561753653169767435615050624325866274580142388791900214521038955085904188409449281578168966401/273406340597876490546562778389702670669146178861651554553221325801244124899921990402939147127881728",
+      "empirical_argmax_cycle_value": null,
+      "empirical_argmax_orbit": null,
+      "empirical_argmax_word": null,
+      "empirical_elapsed_seconds": 0.15353808499639854,
+      "empirical_level_summaries": [
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 7,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 7,
+          "level_index": 0,
+          "max_tail_depth": 4,
+          "realizable_karp_factor_positive": null,
+          "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+          "tail_edges": 176,
+          "tail_unit_power": 5
+        },
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 13,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 13,
+          "level_index": 1,
+          "max_tail_depth": 5,
+          "realizable_karp_factor_positive": null,
+          "status": "bounded_simple_cycle_scan_complete_for_depth_cap",
+          "tail_edges": 384,
+          "tail_unit_power": 6
+        }
+      ],
+      "empirical_matches_diophantine_bound": false,
+      "empirical_realizable_karp_factor": null,
+      "empirical_reason": null,
+      "empirical_status": "no_positive_integer_cycle_found_in_bounded_scan",
+      "log_2_q": 4.087462841250339,
+      "q": 17
+    },
+    {
+      "cf_log_2_q_convergents": [
+        {
+          "denominator": 1,
+          "distance": -0.2479275134435852,
+          "index": 0,
+          "numerator": 4,
+          "partial_quotient": 4,
+          "value": 4.0
+        },
+        {
+          "denominator": 4,
+          "distance": 0.0020724865564147876,
+          "index": 1,
+          "numerator": 17,
+          "partial_quotient": 4,
+          "value": 4.25
+        },
+        {
+          "denominator": 117,
+          "distance": -6.426558033734153e-05,
+          "index": 2,
+          "numerator": 497,
+          "partial_quotient": 29,
+          "value": 4.247863247863248
+        },
+        {
+          "denominator": 121,
+          "distance": 6.370853935067089e-06,
+          "index": 3,
+          "numerator": 514,
+          "partial_quotient": 1,
+          "value": 4.24793388429752
+        },
+        {
+          "denominator": 1206,
+          "distance": -4.819344638917755e-07,
+          "index": 4,
+          "numerator": 5123,
+          "partial_quotient": 9,
+          "value": 4.247927031509121
+        },
+        {
+          "denominator": 1327,
+          "distance": 1.4292416139483066e-07,
+          "index": 5,
+          "numerator": 5637,
+          "partial_quotient": 1,
+          "value": 4.247927656367747
+        },
+        {
+          "denominator": 5187,
+          "distance": -2.3581794295068903e-09,
+          "index": 6,
+          "numerator": 22034,
+          "partial_quotient": 3,
+          "value": 4.247927511085406
+        },
+        {
+          "denominator": 79132,
+          "distance": 7.812506197524272e-11,
+          "index": 7,
+          "numerator": 336147,
+          "partial_quotient": 15,
+          "value": 4.24792751352171
+        },
+        {
+          "denominator": 84319,
+          "distance": -7.174705274337612e-11,
+          "index": 8,
+          "numerator": 358181,
+          "partial_quotient": 1,
+          "value": 4.247927513371838
+        },
+        {
+          "denominator": 163451,
+          "distance": 8.109068971862143e-13,
+          "index": 9,
+          "numerator": 694328,
+          "partial_quotient": 1,
+          "value": 4.247927513444396
+        }
+      ],
+      "diophantine_argmax_A": 17,
+      "diophantine_argmax_m": 4,
+      "diophantine_distance": 0.0020724865564147876,
+      "diophantine_gap_to_1": 0.00572967529296875,
+      "diophantine_max_factor": 0.9942703247070312,
+      "diophantine_max_factor_exact": "130321/131072",
+      "empirical_argmax_cycle_value": null,
+      "empirical_argmax_orbit": null,
+      "empirical_argmax_word": null,
+      "empirical_elapsed_seconds": 10.657968321000226,
+      "empirical_level_summaries": [
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 200000,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 0,
+          "max_tail_depth": 4,
+          "realizable_karp_factor_positive": null,
+          "status": "cycle_cap_reached",
+          "tail_edges": 558,
+          "tail_unit_power": 5
+        },
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 200000,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 1,
+          "max_tail_depth": 5,
+          "realizable_karp_factor_positive": null,
+          "status": "cycle_cap_reached",
+          "tail_edges": 1212,
+          "tail_unit_power": 6
+        }
+      ],
+      "empirical_matches_diophantine_bound": false,
+      "empirical_realizable_karp_factor": null,
+      "empirical_reason": null,
+      "empirical_status": "no_positive_integer_cycle_found_in_bounded_scan",
+      "log_2_q": 4.247927513443585,
+      "q": 19
+    },
+    {
+      "cf_log_2_q_convergents": [
+        {
+          "denominator": 1,
+          "distance": -0.3923174227787607,
+          "index": 0,
+          "numerator": 4,
+          "partial_quotient": 4,
+          "value": 4.0
+        },
+        {
+          "denominator": 2,
+          "distance": 0.1076825772212393,
+          "index": 1,
+          "numerator": 9,
+          "partial_quotient": 2,
+          "value": 4.5
+        },
+        {
+          "denominator": 3,
+          "distance": -0.058984089445427657,
+          "index": 2,
+          "numerator": 13,
+          "partial_quotient": 1,
+          "value": 4.333333333333333
+        },
+        {
+          "denominator": 5,
+          "distance": 0.0076825772212396615,
+          "index": 3,
+          "numerator": 22,
+          "partial_quotient": 1,
+          "value": 4.4
+        },
+        {
+          "denominator": 23,
+          "distance": -0.001013074952673776,
+          "index": 4,
+          "numerator": 101,
+          "partial_quotient": 4,
+          "value": 4.391304347826087
+        },
+        {
+          "denominator": 28,
+          "distance": 0.000539720078382544,
+          "index": 5,
+          "numerator": 123,
+          "partial_quotient": 1,
+          "value": 4.392857142857143
+        },
+        {
+          "denominator": 51,
+          "distance": -0.00016056003366227145,
+          "index": 6,
+          "numerator": 224,
+          "partial_quotient": 1,
+          "value": 4.392156862745098
+        },
+        {
+          "denominator": 79,
+          "distance": 8.76405123788615e-05,
+          "index": 7,
+          "numerator": 347,
+          "partial_quotient": 1,
+          "value": 4.3924050632911396
+        },
+        {
+          "denominator": 130,
+          "distance": -9.73047106800351e-06,
+          "index": 8,
+          "numerator": 571,
+          "partial_quotient": 1,
+          "value": 4.392307692307693
+        },
+        {
+          "denominator": 729,
+          "distance": 8.213913353927182e-07,
+          "index": 9,
+          "numerator": 3202,
+          "partial_quotient": 5,
+          "value": 4.392318244170096
+        }
+      ],
+      "diophantine_argmax_A": 347,
+      "diophantine_argmax_m": 79,
+      "diophantine_distance": 8.76405123788615e-05,
+      "diophantine_gap_to_1": 0.004787576993510267,
+      "diophantine_max_factor": 0.9952124230064897,
+      "diophantine_max_factor_exact": "285314789347688725757584742962351459822958852807024656576901361030703593433543339660166973341544122025981/286687326998758938951352611912760867599570623646035140467198604923365359511060601008752319138765710819328",
+      "empirical_argmax_cycle_value": null,
+      "empirical_argmax_orbit": null,
+      "empirical_argmax_word": null,
+      "empirical_elapsed_seconds": 9.108537466003327,
+      "empirical_level_summaries": [
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 200000,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 0,
+          "max_tail_depth": 4,
+          "realizable_karp_factor_positive": null,
+          "status": "cycle_cap_reached",
+          "tail_edges": 634,
+          "tail_unit_power": 5
+        },
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 200000,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 1,
+          "max_tail_depth": 5,
+          "realizable_karp_factor_positive": null,
+          "status": "cycle_cap_reached",
+          "tail_edges": 1382,
+          "tail_unit_power": 6
+        }
+      ],
+      "empirical_matches_diophantine_bound": false,
+      "empirical_realizable_karp_factor": null,
+      "empirical_reason": null,
+      "empirical_status": "no_positive_integer_cycle_found_in_bounded_scan",
+      "log_2_q": 4.392317422778761,
+      "q": 21
+    },
+    {
+      "cf_log_2_q_convergents": [
+        {
+          "denominator": 1,
+          "distance": -0.6438561897747244,
+          "index": 0,
+          "numerator": 4,
+          "partial_quotient": 4,
+          "value": 4.0
+        },
+        {
+          "denominator": 1,
+          "distance": 0.35614381022527564,
+          "index": 1,
+          "numerator": 5,
+          "partial_quotient": 1,
+          "value": 5.0
+        },
+        {
+          "denominator": 2,
+          "distance": -0.14385618977472436,
+          "index": 2,
+          "numerator": 9,
+          "partial_quotient": 1,
+          "value": 4.5
+        },
+        {
+          "denominator": 3,
+          "distance": 0.0228104768919426,
+          "index": 3,
+          "numerator": 14,
+          "partial_quotient": 1,
+          "value": 4.666666666666667
+        },
+        {
+          "denominator": 14,
+          "distance": -0.0009990469175811256,
+          "index": 4,
+          "numerator": 65,
+          "partial_quotient": 4,
+          "value": 4.642857142857143
+        },
+        {
+          "denominator": 59,
+          "distance": 0.00021160683544518832,
+          "index": 5,
+          "numerator": 274,
+          "partial_quotient": 4,
+          "value": 4.6440677966101696
+        },
+        {
+          "denominator": 73,
+          "distance": -2.0573336367846196e-05,
+          "index": 6,
+          "numerator": 339,
+          "partial_quotient": 1,
+          "value": 4.6438356164383565
+        },
+        {
+          "denominator": 643,
+          "distance": 7.309095684249201e-07,
+          "index": 7,
+          "numerator": 2986,
+          "partial_quotient": 8,
+          "value": 4.643856920684293
+        },
+        {
+          "denominator": 2002,
+          "distance": -4.5918580937609477e-08,
+          "index": 8,
+          "numerator": 9297,
+          "partial_quotient": 3,
+          "value": 4.643856143856143
+        },
+        {
+          "denominator": 10653,
+          "distance": 9.696670133507723e-10,
+          "index": 9,
+          "numerator": 49471,
+          "partial_quotient": 5,
+          "value": 4.643856190744391
+        }
+      ],
+      "diophantine_argmax_A": 274,
+      "diophantine_argmax_m": 59,
+      "diophantine_distance": 0.00021160683544518832,
+      "diophantine_gap_to_1": 0.008616469798574522,
+      "diophantine_max_factor": 0.9913835302014254,
+      "diophantine_max_factor_exact": "30092655381050560203999655352889489352157838253365440550624043680727481842041015625/30354201441027016733116592294117482916287606860189680019559568902170379456331382784",
+      "empirical_argmax_cycle_value": null,
+      "empirical_argmax_orbit": null,
+      "empirical_argmax_word": null,
+      "empirical_elapsed_seconds": 8.238340660027461,
+      "empirical_level_summaries": [
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 200000,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 0,
+          "max_tail_depth": 4,
+          "realizable_karp_factor_positive": null,
+          "status": "cycle_cap_reached",
+          "tail_edges": 708,
+          "tail_unit_power": 5
+        },
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 200000,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 1,
+          "max_tail_depth": 5,
+          "realizable_karp_factor_positive": null,
+          "status": "cycle_cap_reached",
+          "tail_edges": 1549,
+          "tail_unit_power": 6
+        }
+      ],
+      "empirical_matches_diophantine_bound": false,
+      "empirical_realizable_karp_factor": null,
+      "empirical_reason": null,
+      "empirical_status": "no_positive_integer_cycle_found_in_bounded_scan",
+      "log_2_q": 4.643856189774724,
+      "q": 25
+    },
+    {
+      "cf_log_2_q_convergents": [
+        {
+          "denominator": 1,
+          "distance": -0.7548875021634682,
+          "index": 0,
+          "numerator": 4,
+          "partial_quotient": 4,
+          "value": 4.0
+        },
+        {
+          "denominator": 1,
+          "distance": 0.24511249783653177,
+          "index": 1,
+          "numerator": 5,
+          "partial_quotient": 1,
+          "value": 5.0
+        },
+        {
+          "denominator": 4,
+          "distance": -0.004887502163468227,
+          "index": 2,
+          "numerator": 19,
+          "partial_quotient": 3,
+          "value": 4.75
+        },
+        {
+          "denominator": 49,
+          "distance": 0.00021453865285803175,
+          "index": 3,
+          "numerator": 233,
+          "partial_quotient": 12,
+          "value": 4.755102040816326
+        },
+        {
+          "denominator": 53,
+          "distance": -0.00017052103139292285,
+          "index": 4,
+          "numerator": 252,
+          "partial_quotient": 1,
+          "value": 4.754716981132075
+        },
+        {
+          "denominator": 102,
+          "distance": 1.4458620845481107e-05,
+          "index": 5,
+          "numerator": 485,
+          "partial_quotient": 1,
+          "value": 4.754901960784314
+        },
+        {
+          "denominator": 665,
+          "distance": -2.84118355509122e-07,
+          "index": 6,
+          "numerator": 3162,
+          "partial_quotient": 6,
+          "value": 4.754887218045113
+        },
+        {
+          "denominator": 4757,
+          "distance": 3.199671638753898e-08,
+          "index": 7,
+          "numerator": 22619,
+          "partial_quotient": 7,
+          "value": 4.754887534160185
+        },
+        {
+          "denominator": 5422,
+          "distance": -6.774312666379956e-09,
+          "index": 8,
+          "numerator": 25781,
+          "partial_quotient": 1,
+          "value": 4.754887495389156
+        },
+        {
+          "denominator": 26445,
+          "distance": 1.999271859176588e-10,
+          "index": 9,
+          "numerator": 125743,
+          "partial_quotient": 4,
+          "value": 4.754887502363395
+        }
+      ],
+      "diophantine_argmax_A": 233,
+      "diophantine_argmax_m": 49,
+      "diophantine_distance": 0.00021453865285803175,
+      "diophantine_gap_to_1": 0.007260153084625339,
+      "diophantine_max_factor": 0.9927398469153746,
+      "diophantine_max_factor_exact": "13703277223523221219433362313025801636536040755174924956117940937101787/13803492693581127574869511724554050904902217944340773110325048447598592",
+      "empirical_argmax_cycle_value": null,
+      "empirical_argmax_orbit": null,
+      "empirical_argmax_word": null,
+      "empirical_elapsed_seconds": 8.814268157992046,
+      "empirical_level_summaries": [
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 200000,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 0,
+          "max_tail_depth": 4,
+          "realizable_karp_factor_positive": null,
+          "status": "cycle_cap_reached",
+          "tail_edges": 534,
+          "tail_unit_power": 5
+        },
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 200000,
+            "positive_integer_cycle": 0,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 1,
+          "max_tail_depth": 5,
+          "realizable_karp_factor_positive": null,
+          "status": "cycle_cap_reached",
+          "tail_edges": 1204,
+          "tail_unit_power": 6
+        }
+      ],
+      "empirical_matches_diophantine_bound": false,
+      "empirical_realizable_karp_factor": null,
+      "empirical_reason": null,
+      "empirical_status": "no_positive_integer_cycle_found_in_bounded_scan",
+      "log_2_q": 4.754887502163468,
+      "q": 27
+    },
+    {
+      "cf_log_2_q_convergents": [
+        {
+          "denominator": 1,
+          "distance": -0.9541963103868749,
+          "index": 0,
+          "numerator": 4,
+          "partial_quotient": 4,
+          "value": 4.0
+        },
+        {
+          "denominator": 1,
+          "distance": 0.04580368961312509,
+          "index": 1,
+          "numerator": 5,
+          "partial_quotient": 1,
+          "value": 5.0
+        },
+        {
+          "denominator": 21,
+          "distance": -0.0018153580059223628,
+          "index": 2,
+          "numerator": 104,
+          "partial_quotient": 20,
+          "value": 4.9523809523809526
+        },
+        {
+          "denominator": 22,
+          "distance": 0.00034914415857922876,
+          "index": 3,
+          "numerator": 109,
+          "partial_quotient": 1,
+          "value": 4.954545454545454
+        },
+        {
+          "denominator": 109,
+          "distance": -6.787001990282704e-05,
+          "index": 4,
+          "numerator": 540,
+          "partial_quotient": 4,
+          "value": 4.954128440366972
+        },
+        {
+          "denominator": 131,
+          "distance": 2.1628955675367934e-06,
+          "index": 5,
+          "numerator": 649,
+          "partial_quotient": 1,
+          "value": 4.9541984732824424
+        },
+        {
+          "denominator": 3515,
+          "distance": -8.822151897902586e-09,
+          "index": 6,
+          "numerator": 17414,
+          "partial_quotient": 26,
+          "value": 4.954196301564723
+        },
+        {
+          "denominator": 31766,
+          "distance": 1.3380763164150267e-10,
+          "index": 7,
+          "numerator": 157375,
+          "partial_quotient": 9,
+          "value": 4.9541963105206825
+        },
+        {
+          "denominator": 225877,
+          "distance": -5.560885085742484e-12,
+          "index": 8,
+          "numerator": 1119039,
+          "partial_quotient": 7,
+          "value": 4.954196310381314
+        },
+        {
+          "denominator": 709397,
+          "distance": 6.794564910705958e-13,
+          "index": 9,
+          "numerator": 3514492,
+          "partial_quotient": 3,
+          "value": 4.954196310387554
+        }
+      ],
+      "diophantine_argmax_A": 109,
+      "diophantine_argmax_m": 22,
+      "diophantine_distance": 0.00034914415857922876,
+      "diophantine_gap_to_1": 0.005310034022496772,
+      "diophantine_max_factor": 0.9946899659775033,
+      "diophantine_max_factor_exact": "645590698195138073036733040138561/649037107316853453566312041152512",
+      "empirical_argmax_cycle_value": "1",
+      "empirical_argmax_orbit": [
+        1
+      ],
+      "empirical_argmax_word": [
+        5
+      ],
+      "empirical_elapsed_seconds": 7.963436352991266,
+      "empirical_level_summaries": [
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 199999,
+            "positive_integer_cycle": 1,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 0,
+          "max_tail_depth": 4,
+          "realizable_karp_factor_positive": 0.96875,
+          "status": "cycle_cap_reached",
+          "tail_edges": 526,
+          "tail_unit_power": 5
+        },
+        {
+          "classification_counts": {
+            "impossible_power_balance": 0,
+            "integer_but_not_positive_odd": 0,
+            "negative_integer_cycle": 0,
+            "noninteger_2adic_only": 199999,
+            "positive_integer_cycle": 1,
+            "positive_integer_nonrealizing_candidate": 0
+          },
+          "cycles_scanned": 200000,
+          "level_index": 1,
+          "max_tail_depth": 5,
+          "realizable_karp_factor_positive": 0.96875,
+          "status": "cycle_cap_reached",
+          "tail_edges": 1212,
+          "tail_unit_power": 6
+        }
+      ],
+      "empirical_matches_diophantine_bound": false,
+      "empirical_realizable_karp_factor": 0.96875,
+      "empirical_reason": null,
+      "empirical_status": "bounded_tail_graph_scan_complete",
+      "log_2_q": 4.954196310386875,
+      "q": 31
+    }
+  ],
+  "gap_to_1_by_q": {
+    "11": 0.0007137632830016599,
+    "13": 0.03897047497357642,
+    "17": 0.0020583971936885353,
+    "19": 0.00572967529296875,
+    "21": 0.004787576993510267,
+    "25": 0.008616469798574522,
+    "27": 0.007260153084625339,
+    "3": 0.009330962483814745,
+    "31": 0.005310034022496772,
+    "5": 0.004317555542217326,
+    "7": 0.006061857788803524,
+    "9": 0.005185015043472394
+  },
+  "levels": [
+    [
+      5,
+      4
+    ],
+    [
+      6,
+      5
+    ]
+  ],
+  "m_max": 100,
+  "q_grid": [
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    17,
+    19,
+    21,
+    25,
+    27,
+    31
+  ],
+  "scan_policy": {
+    "generic_q_tail_model": "exact LTE closure when q-1 is a power of two; otherwise a finite witnessed residue-lift graph",
+    "max_cycle_edges": 12,
+    "max_cycles_scanned": 200000,
+    "max_valuation": 12,
+    "timeout_seconds": 30.0
+  },
+  "status": "finite_empirical_diagnostic_complete",
+  "type": "qnp1_phase_transition"
+}

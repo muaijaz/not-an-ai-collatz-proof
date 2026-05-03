@@ -437,6 +437,19 @@ def format_qnp1_realizability_report(result) -> str:
     )
 
 
+def format_qnp1_phase_transition_report(result) -> str:
+    lines = [f"status={result.status}, m_max={result.m_max}, levels={result.levels}"]
+    lines.append("q  diophantine_bound  empirical_realizable")
+    for entry in result.entries:
+        empirical = entry["empirical_realizable_karp_factor"]
+        empirical_text = "null" if empirical is None else f"{empirical:.12g}"
+        lines.append(
+            f"{entry['q']:>2}  {entry['diophantine_max_factor']:.12g}  "
+            f"{empirical_text}"
+        )
+    return "\n".join(lines)
+
+
 def format_christoffel_slope_constrained_jsr_report(
     result: ChristoffelSlopeConstrainedJSRReport,
 ) -> str:
