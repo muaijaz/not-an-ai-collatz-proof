@@ -4,12 +4,11 @@
 "Do the things" — execute the recommended next steps from the repo survey: commit pending work, launch (16,6) streaming PECM run, Polli long-range-correlation audit, exact-rational Perron certification slice.
 
 ## Now
-Waiting on two background jobs: (a) GPU scaled-Perron at (16,5) then (14,6) via scripts/run_pecm_16_5_14_6_scaled_gpu.sh; (b) perron-certificate run at 8:2,10:3,12:4 writing docs/reports/pecm_perron_certificates.json.
+"Do the things" batch complete; all results committed locally (nothing pushed).
 
 ## Next
-1. When certification finishes: review artifact, then commit renewal_correlation + perron_certificate modules/tests/wiring + Polli artifacts + runner script.
-2. When GPU run finishes: review (16,5)/(14,6) artifacts, report results, commit docs/runs additions.
-3. Final summary to user (incl. Polli verdict + certified bounds + open outward-facing decisions).
+1. Candidate next step (not started): streaming SCC pass to extend exact Perron certificates to (14,5)/(16,5)/(16,6) — recurrent cores are tiny (<=984 states at (12,4)) so only block extraction needs to scale.
+2. Awaiting user: Chang/Siegel outreach emails, arXiv submission decision.
 
 ## Constraints
 - NEVER git push without asking in this conversation (CLAUDE.md hard rule 5).
@@ -32,7 +31,8 @@ Waiting on two background jobs: (a) GPU scaled-Perron at (16,5) then (14,6) via 
 - Commits 4ba7a91 (PECM streaming/GPU/checkpoint + frontier dashboard) and a66644d (scripts/ + docs/runs/ + STATE.md) — RESULT: working tree clean except .codex; 191 tests green before commit.
 - (16,6) feasibility check — RESULT: infeasible with current backends (streaming = ~2.77B pure-Python transitions/iteration at post_exit_map.py:930-967; gpu/dense cache = int64 ~22GB > 21.5GB free GPU / 34GB avail RAM). Running (16,5)+(14,6) flanks instead.
 - Polli long-range-correlation audit (collatz_exp/renewal_correlation.py, 6 tests) — RESULT: iid_consistent on all three series at 400-bit and 1000-bit windows; DFA alpha 0.52-0.53 vs surrogate 0.52-0.54; ACF maxima at null band. IID renewal model survives. Artifacts: docs/reports/renewal_correlation_polli_{400,1000}bit.json.
-- Exact-rational Perron certification (collatz_exp/perron_certificate.py, 4 tests) — RESULT: SCC-decomposed Collatz-Wielandt bounds; (8,2) certified rho <= 0.388056211 exact rational, contraction True, only 6 nontrivial blocks (largest 16 states) of 33408. Full suite 201 passed.
+- Exact-rational Perron certification (collatz_exp/perron_certificate.py, 4 tests) — RESULT: SCC-decomposed Collatz-Wielandt bounds; certified rho <= 0.3880562 (8,2), 0.3451143 (10,3), 0.3341154 (12,4), all contractions; recurrent cores tiny (<=984 of 4.81M states). Full suite 201 passed. Committed a75dcd0.
+- GPU scaled-Perron flanks (docs/runs/pecm_16_5_14_6_scaled_gpu_20260722_130030) — RESULT: (16,5) scale=0.336040 ratio_max=0.33627 inf=0; (14,6) scale=0.342979 ratio_max=0.34332 inf=0; both 80 iters, worst state R=2. Pointwise contraction candidates hold on both axes past (14,5).
 
 ## Open items
 - Chang/Siegel outreach emails (drafted in docs, unsent) — awaiting user decision.
