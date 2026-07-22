@@ -6,11 +6,11 @@
 
 *Renewal Cramér rates · Joint Spectral Radius diagnostics · Five-projection operator synthesis*
 
-[![Tests](https://img.shields.io/badge/tests-185%20passing-brightgreen?style=flat-square)](.)
+[![Tests](https://img.shields.io/badge/tests-201%20passing-brightgreen?style=flat-square)](.)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-empirical-orange?style=flat-square)](.)
 [![Python](https://img.shields.io/badge/python-3.12-blue?style=flat-square)](.)
-[![Reproducible](https://img.shields.io/badge/artifacts-112%20JSON-success?style=flat-square)](docs/reports)
+[![Reproducible](https://img.shields.io/badge/artifacts-115%20JSON-success?style=flat-square)](docs/reports)
 
 </div>
 
@@ -68,6 +68,21 @@ verifications are empirically closed at finite windows: `δ_max ≈ 0.119`
 (`docs/reports/m_step_foster_drift_k8.json`), and direct bit-4 balance
 (`docs/reports/chang_bit4_balance_audit.json`).
 
+Three PECM levels now carry **certified** spectral bounds: SCC
+decomposition plus Collatz-Wielandt in exact integer arithmetic gives
+`ρ ≤ 0.3880562` at `(8,2)`, `ρ ≤ 0.3451143` at `(10,3)`, and
+`ρ ≤ 0.3341154` at `(12,4)` — certified contractions with no floating
+point in the bound, matching the float scan to 6+ digits
+(`docs/reports/pecm_perron_certificates.json`). The GPU scaled-Perron
+scan extends to `(16,5)` and `(14,6)` (231M / 173M states): worst-case
+pointwise ratio collapses from `0.536` at `(14,5)` to `0.336` at
+`(16,5)`, converging onto the Perron scale itself. A defensive audit
+against Polli et al. 2024 finds **no long-range memory at excursion
+scale**: DFA exponents and autocorrelations are indistinguishable from
+shuffled surrogates at 400- and 1000-bit windows, supporting the IID
+renewal model behind `J_renewal`
+(`docs/reports/renewal_correlation_polli_1000bit.json`).
+
 The framework now has a qn+1 sidecar diagnostic. Within the odd `q>1` grid,
 the classical `q=3` case is the unique tested member below the
 `log₂(q) = 2` drift threshold; `q=5` is already marginally positive. The
@@ -119,7 +134,7 @@ Empirical bridges to published papers, all finite-resolution and caveated:
 # Install dependencies
 uv sync
 
-# Run all 185 tests (≈2s)
+# Run all 201 tests (≈3s)
 uv run python -m pytest -q
 
 # Smoke test the experimental pipeline
@@ -167,7 +182,7 @@ collatz-renewal-framework/
 ├── uv.lock
 ├── collatz_certificate_search.py   ← original CLI compatibility wrapper
 ├── collatz_exp/                    ← main package, 83 modules
-├── tests/                          ← 185 passing tests
+├── tests/                          ← 201 passing tests
 └── docs/
     ├── NOTABLE_RESULTS.md          ← running result catalog
     ├── PROJECT_JOURNEY.md          ← chronological narrative + audit log
@@ -176,7 +191,7 @@ collatz-renewal-framework/
     ├── UNIFIED_MODEL.md            ← 5-projection operator synthesis
     ├── collatz_strategy.md         ← working strategy notes
     ├── references/                 ← Tao, Mori, Hercher, Paparella, Chang PDFs
-    └── reports/                    ← 112 JSON artifacts (one per result)
+    └── reports/                    ← 115 JSON artifacts (one per result)
 ```
 
 ---
@@ -250,7 +265,7 @@ statements.
   [`docs/reports/`](docs/reports).
 - Each artifact records method, parameters, sample size, bootstrap CI,
   and exact empirical value.
-- 185 passing tests cover core arithmetic, certificates, Mersenne tail
+- 201 passing tests cover core arithmetic, certificates, Mersenne tail
   dynamics, post-exit map, renewal Cramér computation, Tao verification,
   Hercher bounds, Paparella nilpotency, JSR variants, automaton-constrained
   Karp, upper-Christoffel slope filtering, tail-cycle realizability,
@@ -258,7 +273,9 @@ statements.
   m-step Foster-Lyapunov drift, tail-cycle realizability at deeper levels,
   pointwise descent audit, m-step Foster at `k=7,8`, and Chang bit-4 balance
   audit, qn+1 family realizability, qn+1 phase-transition, Rozier's abc
-  bridge with μ-hits, and the CF-convergent/Stern-Brocot slope hypothesis.
+  bridge with μ-hits, the CF-convergent/Stern-Brocot slope hypothesis,
+  the Polli long-range-correlation audit, and exact-rational PECM Perron
+  certificates.
 - Reference papers in [`docs/references/`](docs/references) for offline
   access.
 

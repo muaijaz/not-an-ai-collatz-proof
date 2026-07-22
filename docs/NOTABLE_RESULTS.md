@@ -137,6 +137,31 @@ partition.
 
 ---
 
+### A.6 Certified PECM spectral bounds (exact rational Collatz-Wielandt)
+
+```
+(8,2):  rho <= 134070211/345491728 ≈ 0.3880562   (33,408 states)
+(10,3): rho <= 28432321/82385222  ≈ 0.3451143   (400,896 states)
+(12,4): rho <= 436753/1307192     ≈ 0.3341154   (4,810,752 states)
+```
+
+**Status:** computer-verified exact statements — SCC decomposition plus
+Collatz-Wielandt (`rho(A) <= max_i (Av)_i/v_i` for positive `v`) evaluated
+in pure integer arithmetic; no floating point appears in the bound.
+
+**Interpretation:** upgrades the floating-point scaled-Perron scan to
+certified contraction at three levels; the bounds match the float
+estimates to 6+ digits, cross-validating both. The recurrent cores are
+tiny (largest blocks 16 / 260 / 984 states), so certification scales far
+past the full-operator memory wall. Caveat per §12: a spectral statement
+about the averaged residue-quotient operator, not an orbit-descent
+certificate.
+
+**Artifact:** `docs/reports/pecm_perron_certificates.json`;
+module `collatz_exp/perron_certificate.py`.
+
+---
+
 ## B. Empirical constants with rigorous CIs
 
 ### B.1 Renewal Cramér rate `J_renewal`
@@ -402,6 +427,51 @@ ratio (observed/lower)    = 1.036
 Diophantine approximation theory.
 
 **Artifact:** `docs/reports/d_pe_continued_fraction_certification.json`.
+
+---
+
+### D.5 Scaled-Perron flanks (16,5) and (14,6): worst case converges to mean case
+
+```
+(14,5): scale = 0.33393, finite_ratio_max = 0.5357   (57.7M states)
+(16,5): scale = 0.33604, finite_ratio_max = 0.33627  (231M states)
+(14,6): scale = 0.34298, finite_ratio_max = 0.34332  (173M states)
+zero infinite-ratio rows at all three levels; worst state R=2 throughout
+```
+
+**Status:** empirical, finite resolution (80 GPU power iterations,
+checkpointed).
+
+**Interpretation:** deepening the 2-adic axis collapses the worst-case
+pointwise ratio from 0.536 onto the Perron scale itself (0.336) — the
+same worst-equals-mean signature the JSR family showed at 3/4, now on
+the PECM operator, with everything drifting toward ~1/3. The (16,6)
+joint level remains gated on a compressed operator (int64 cache ~22 GB).
+
+**Artifacts:** `docs/runs/pecm_16_5_14_6_scaled_gpu_20260722_130030/`.
+
+---
+
+### D.6 IID renewal model survives the Polli long-range-correlation threat
+
+```
+windows: 150 orbits × 400-bit and 150 × 1000-bit random odd starts
+series: excursion delta, excursion length, per-step valuation
+DFA alpha = 0.52–0.53 vs shuffle-surrogate 0.52–0.54 (indistinguishable)
+ACF maxima at the 1.96/sqrt(N) null band; verdict iid_consistent (all 6)
+```
+
+**Status:** empirical defensive audit at tested scale.
+
+**Interpretation:** Polli et al. (J. Phys. Complex. 2024) report
+long-range power-law correlations in hailstone sequences — flagged in
+the literature sweep as a threat to the IID renewal model underlying
+`J_renewal`. At excursion scale, over ~180k excursions per window, no
+such memory exists: all series match their within-orbit shuffled
+surrogates. Does not preclude correlations at longer scales.
+
+**Artifacts:** `docs/reports/renewal_correlation_polli_{400,1000}bit.json`;
+module `collatz_exp/renewal_correlation.py`.
 
 ---
 
