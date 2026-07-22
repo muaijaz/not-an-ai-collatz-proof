@@ -1,0 +1,48 @@
+{
+  "levels": [
+    {
+      "R_max": 30,
+      "R_min": 2,
+      "checkpoint_loaded_iteration": 0,
+      "checkpoint_path": "docs/runs/pecm_14_5_scaled_gpu_20260618_015521/scaled_perron_checkpoint.npz",
+      "checkpoint_saved_iteration": 80,
+      "chunk_rows": null,
+      "constant_weight_rho_max_den": 1,
+      "constant_weight_rho_max_num": 1,
+      "converged": false,
+      "descended_samples": 34212728,
+      "finite_ratio_max": 0.5357142857142854,
+      "finite_ratio_min": 0.11666666666666675,
+      "infinite_ratio_rows": 0,
+      "iterations": 80,
+      "max_steps": 200,
+      "mod2_power": 14,
+      "mod3_power": 5,
+      "operator_mode": "gpu_target_cache",
+      "out_of_range_reentry_samples": 0,
+      "power_scale_estimate": 0.3339271008531673,
+      "reentry_samples": 196703368,
+      "row_denominator": 4,
+      "sample_lift_power": 2,
+      "states": 57729024,
+      "target_cache_entries": 230916096,
+      "worst_ratio_state": {
+        "R": 2,
+        "u_mod2": 71,
+        "u_mod2_power": 14,
+        "u_mod3": 101,
+        "u_mod3_power": 5
+      },
+      "worst_state": {
+        "R": 2,
+        "u_mod2": 7,
+        "u_mod2_power": 14,
+        "u_mod3": 0,
+        "u_mod3_power": 5
+      },
+      "zero_weight_rows": 53886344
+    }
+  ],
+  "status": "finite_scaled_perron_pointwise_contraction_candidates",
+  "type": "post_exit_scaled_perron_report"
+}
