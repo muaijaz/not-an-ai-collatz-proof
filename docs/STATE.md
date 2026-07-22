@@ -4,14 +4,12 @@
 "Do the things" — execute the recommended next steps from the repo survey: commit pending work, launch (16,6) streaming PECM run, Polli long-range-correlation audit, exact-rational Perron certification slice.
 
 ## Now
-Committing pending working-tree changes in two logical commits (code, then run-harness/artifacts).
+Waiting on two background jobs: (a) GPU scaled-Perron at (16,5) then (14,6) via scripts/run_pecm_16_5_14_6_scaled_gpu.sh; (b) perron-certificate run at 8:2,10:3,12:4 writing docs/reports/pecm_perron_certificates.json.
 
 ## Next
-1. Commit code chunk (post_exit_map/experiments/reports/tests/pyproject/uv.lock + frontier_dashboard + its test).
-2. Commit scripts/ + docs/runs/ chunk.
-3. Launch (16,6) PECM scaled-Perron run in background (streaming or gpu mode per memory estimate), copying scripts/run_pecm_14_5_scaled_gpu.sh structure.
-4. New module: renewal-increment long-range-correlation audit (Polli defensive check) + CLI flag + formatter + test; run it; write docs/reports artifact.
-5. New module: exact-rational Collatz-Wielandt Perron certification at small PECM level + test; run; write artifact.
+1. When certification finishes: review artifact, then commit renewal_correlation + perron_certificate modules/tests/wiring + Polli artifacts + runner script.
+2. When GPU run finishes: review (16,5)/(14,6) artifacts, report results, commit docs/runs additions.
+3. Final summary to user (incl. Polli verdict + certified bounds + open outward-facing decisions).
 
 ## Constraints
 - NEVER git push without asking in this conversation (CLAUDE.md hard rule 5).
@@ -31,6 +29,10 @@ Committing pending working-tree changes in two logical commits (code, then run-h
 
 ## Done
 - Repo survey (2 Explore agents) — RESULT: full state + roadmap synthesis delivered to user; frontier = PECM (16,6) wall, Polli check open threat, paper v0.5 unsubmitted.
+- Commits 4ba7a91 (PECM streaming/GPU/checkpoint + frontier dashboard) and a66644d (scripts/ + docs/runs/ + STATE.md) — RESULT: working tree clean except .codex; 191 tests green before commit.
+- (16,6) feasibility check — RESULT: infeasible with current backends (streaming = ~2.77B pure-Python transitions/iteration at post_exit_map.py:930-967; gpu/dense cache = int64 ~22GB > 21.5GB free GPU / 34GB avail RAM). Running (16,5)+(14,6) flanks instead.
+- Polli long-range-correlation audit (collatz_exp/renewal_correlation.py, 6 tests) — RESULT: iid_consistent on all three series at 400-bit and 1000-bit windows; DFA alpha 0.52-0.53 vs surrogate 0.52-0.54; ACF maxima at null band. IID renewal model survives. Artifacts: docs/reports/renewal_correlation_polli_{400,1000}bit.json.
+- Exact-rational Perron certification (collatz_exp/perron_certificate.py, 4 tests) — RESULT: SCC-decomposed Collatz-Wielandt bounds; (8,2) certified rho <= 0.388056211 exact rational, contraction True, only 6 nontrivial blocks (largest 16 states) of 33408. Full suite 201 passed.
 
 ## Open items
 - Chang/Siegel outreach emails (drafted in docs, unsent) — awaiting user decision.

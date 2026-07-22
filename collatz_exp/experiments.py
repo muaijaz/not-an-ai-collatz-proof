@@ -100,7 +100,15 @@ from .phase_lyapunov import (
     DEFAULT_GAMMA_DIFF_GRID,
     phase_lyapunov_search_report,
 )
+from .perron_certificate import (
+    format_perron_certificate_report,
+    perron_certificate_report,
+)
 from .renewal_bootstrap import renewal_bootstrap_calibration_report
+from .renewal_correlation import (
+    format_renewal_correlation_report,
+    renewal_correlation_report,
+)
 from .parity import parity_layer_report
 from .paparella import paparella_nilpotency_report
 from .post_exit_baker import (
@@ -331,6 +339,64 @@ def build_parser() -> argparse.ArgumentParser:
         "--frontier-dashboard-dir",
         default="docs/reports",
         help="directory containing saved JSON reports for --frontier-dashboard",
+    )
+    parser.add_argument(
+        "--renewal-correlation",
+        action="store_true",
+        help="long-range correlation audit of renewal series (Polli check)",
+    )
+    parser.add_argument(
+        "--renewal-correlation-orbits",
+        type=int,
+        default=150,
+        help="orbit count for --renewal-correlation",
+    )
+    parser.add_argument(
+        "--renewal-correlation-bits",
+        type=int,
+        default=1000,
+        help="bit length of random odd starts for --renewal-correlation",
+    )
+    parser.add_argument(
+        "--renewal-correlation-max-lag",
+        type=int,
+        default=50,
+        help="maximum autocorrelation lag for --renewal-correlation",
+    )
+    parser.add_argument(
+        "--renewal-correlation-seed",
+        type=int,
+        default=0,
+        help="random seed for --renewal-correlation",
+    )
+    parser.add_argument(
+        "--renewal-correlation-output",
+        type=str,
+        default=None,
+        help="write --renewal-correlation JSON report to this path",
+    )
+    parser.add_argument(
+        "--perron-certificate",
+        action="store_true",
+        help="exact-rational Collatz-Wielandt PECM spectral certificates",
+    )
+    parser.add_argument(
+        "--perron-certificate-configs",
+        type=str,
+        default="8:2,10:3",
+        help="k:ell levels for --perron-certificate",
+    )
+    parser.add_argument(
+        "--perron-certificate-iterations",
+        type=int,
+        default=200,
+        help="float power iterations for --perron-certificate",
+    )
+    parser.add_argument(
+        "--perron-certificate-output",
+        type=str,
+        default=None,
+        help="write --perron-certificate JSON report to this path",
     )
     parser.add_argument(
         "--max-hardness-power",
@@ -2085,6 +2151,44 @@ def main(argv: list[str] | None = None) -> None:
                 )
             )
         )
+
+    if args.renewal_correlation:
+        print("\nRenewal long-range correlation audit (Polli check):")
+        correlation = renewal_correlation_report(
+            orbit_count=args.renewal_correlation_orbits,
+            start_bits=args.renewal_correlation_bits,
+            random_seed=args.renewal_correlation_seed,
+            max_lag=args.renewal_correlation_max_lag,
+        )
+        print(format_renewal_correlation_report(correlation))
+        if args.renewal_correlation_output:
+            from pathlib import Path
+
+            output_path = Path(args.renewal_correlation_output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(correlation.to_json() + "\n", encoding="utf-8")
+            print(f"saved={output_path}")
+
+    if args.perron_certificate:
+        print("\nExact-rational PECM Perron certificates:")
+        certificate_report = perron_certificate_report(
+            configurations=_parse_pair_tuple(args.perron_certificate_configs),
+            R_values=_parse_int_tuple(args.post_exit_R_values),
+            sample_lift_power=args.post_exit_sample_lift_power,
+            max_steps=args.post_exit_max_steps,
+            tail_reentry_min_R=args.post_exit_tail_reentry_min_R,
+            power_iterations=args.perron_certificate_iterations,
+        )
+        print(format_perron_certificate_report(certificate_report))
+        if args.perron_certificate_output:
+            from pathlib import Path
+
+            output_path = Path(args.perron_certificate_output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(
+                certificate_report.to_json() + "\n", encoding="utf-8"
+            )
+            print(f"saved={output_path}")
 
     if args.post_exit_scaled_perron:
         print("\nPost-exit scaled Perron scan:")

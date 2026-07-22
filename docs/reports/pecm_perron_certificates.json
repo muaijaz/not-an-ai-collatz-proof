@@ -1,0 +1,91 @@
+{
+  "configurations": [
+    [
+      8,
+      2
+    ],
+    [
+      10,
+      3
+    ],
+    [
+      12,
+      4
+    ]
+  ],
+  "levels": [
+    {
+      "certified_block_count": 6,
+      "certified_contraction": true,
+      "certified_upper_denominator": "345491728",
+      "certified_upper_float": 0.3880562112908243,
+      "certified_upper_numerator": "134070211",
+      "float_scale_estimate": 0.3880562105614719,
+      "largest_block_states": 16,
+      "mod2_power": 8,
+      "mod3_power": 2,
+      "power_iterations": 200,
+      "rational_grid_digits": 9,
+      "row_denominator": 4,
+      "scc_block_count": 33381,
+      "states": 33408,
+      "worst_row_state": {
+        "R": 2,
+        "u_mod2": 7,
+        "u_mod2_power": 8,
+        "u_mod3": 8,
+        "u_mod3_power": 2
+      }
+    },
+    {
+      "certified_block_count": 2,
+      "certified_contraction": true,
+      "certified_upper_denominator": "82385222",
+      "certified_upper_float": 0.34511433373329986,
+      "certified_upper_numerator": "28432321",
+      "float_scale_estimate": 0.34511432940332454,
+      "largest_block_states": 260,
+      "mod2_power": 10,
+      "mod3_power": 3,
+      "power_iterations": 200,
+      "rational_grid_digits": 9,
+      "row_denominator": 4,
+      "scc_block_count": 400637,
+      "states": 400896,
+      "worst_row_state": {
+        "R": 5,
+        "u_mod2": 647,
+        "u_mod2_power": 10,
+        "u_mod3": 10,
+        "u_mod3_power": 3
+      }
+    },
+    {
+      "certified_block_count": 2,
+      "certified_contraction": true,
+      "certified_upper_denominator": "1307192",
+      "certified_upper_float": 0.3341154168630163,
+      "certified_upper_numerator": "436753",
+      "float_scale_estimate": 0.3341149491416148,
+      "largest_block_states": 984,
+      "mod2_power": 12,
+      "mod3_power": 4,
+      "power_iterations": 200,
+      "rational_grid_digits": 9,
+      "row_denominator": 4,
+      "scc_block_count": 4809765,
+      "states": 4810752,
+      "worst_row_state": {
+        "R": 4,
+        "u_mod2": 2899,
+        "u_mod2_power": 12,
+        "u_mod3": 38,
+        "u_mod3_power": 4
+      }
+    }
+  ],
+  "max_steps": 200,
+  "note": "Certified via SCC decomposition + Collatz-Wielandt: rho(A) equals the max of rho over strongly connected diagonal blocks; within each block rho <= max_i (Av)_i/v_i for any positive v, evaluated in exact integer arithmetic. Spectral statement about the averaged residue-quotient operator only; not an orbit-descent certificate (PROJECT_JOURNEY \u00a712).",
+  "sample_lift_power": 2,
+  "tail_reentry_min_R": 2
+}
