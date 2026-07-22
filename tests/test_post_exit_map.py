@@ -1,10 +1,14 @@
+import pytest
+
 from collatz_exp.post_exit_map import (
     PostExitState,
     post_exit_landing,
     post_exit_pointwise_ladder_report,
     post_exit_pointwise_report,
+    post_exit_scaled_perron_level,
     post_exit_scaled_perron_report,
     post_exit_states,
+    post_exit_super_eigen_level,
     post_exit_super_eigen_report,
     post_exit_transition_sample,
 )
@@ -86,6 +90,98 @@ def test_post_exit_scaled_perron_report_smoke():
     assert level.finite_ratio_max is None or level.finite_ratio_max >= 0.0
 
 
+def test_post_exit_scaled_perron_streaming_matches_dense():
+    dense = post_exit_scaled_perron_level(
+        mod2_power=4,
+        mod3_power=1,
+        R_values=(2, 3, 4),
+        sample_lift_power=1,
+        max_steps=50,
+        iterations=4,
+        operator_mode="dense_target_cache",
+    )
+    streaming = post_exit_scaled_perron_level(
+        mod2_power=4,
+        mod3_power=1,
+        R_values=(2, 3, 4),
+        sample_lift_power=1,
+        max_steps=50,
+        iterations=4,
+        operator_mode="streaming",
+        chunk_rows=7,
+    )
+    assert streaming.operator_mode == "streaming"
+    assert streaming.states == dense.states
+    assert streaming.descended_samples == dense.descended_samples
+    assert streaming.reentry_samples == dense.reentry_samples
+    assert streaming.out_of_range_reentry_samples == dense.out_of_range_reentry_samples
+    assert streaming.constant_weight_rho_max_num == dense.constant_weight_rho_max_num
+    assert streaming.constant_weight_rho_max_den == dense.constant_weight_rho_max_den
+    assert streaming.finite_ratio_max == dense.finite_ratio_max
+
+
+def test_post_exit_scaled_perron_checkpoint_resume(tmp_path):
+    checkpoint = tmp_path / "scaled_perron.npz"
+    first = post_exit_scaled_perron_level(
+        mod2_power=4,
+        mod3_power=1,
+        R_values=(2, 3, 4),
+        sample_lift_power=1,
+        max_steps=50,
+        iterations=1,
+        checkpoint_path=checkpoint,
+    )
+    resumed = post_exit_scaled_perron_level(
+        mod2_power=4,
+        mod3_power=1,
+        R_values=(2, 3, 4),
+        sample_lift_power=1,
+        max_steps=50,
+        iterations=2,
+        checkpoint_path=checkpoint,
+    )
+    full = post_exit_scaled_perron_level(
+        mod2_power=4,
+        mod3_power=1,
+        R_values=(2, 3, 4),
+        sample_lift_power=1,
+        max_steps=50,
+        iterations=2,
+    )
+    assert first.checkpoint_saved_iteration == 1
+    assert resumed.checkpoint_loaded_iteration == 1
+    assert resumed.checkpoint_saved_iteration == 2
+    assert resumed.power_scale_estimate == full.power_scale_estimate
+    assert resumed.finite_ratio_max == full.finite_ratio_max
+
+
+def test_post_exit_scaled_perron_gpu_matches_dense_when_available():
+    pytest.importorskip("cupy")
+    dense = post_exit_scaled_perron_level(
+        mod2_power=4,
+        mod3_power=1,
+        R_values=(2, 3, 4),
+        sample_lift_power=1,
+        max_steps=50,
+        iterations=4,
+        operator_mode="dense_target_cache",
+    )
+    gpu = post_exit_scaled_perron_level(
+        mod2_power=4,
+        mod3_power=1,
+        R_values=(2, 3, 4),
+        sample_lift_power=1,
+        max_steps=50,
+        iterations=4,
+        operator_mode="gpu_target_cache",
+    )
+    assert gpu.operator_mode == "gpu_target_cache"
+    assert gpu.descended_samples == dense.descended_samples
+    assert gpu.reentry_samples == dense.reentry_samples
+    assert gpu.out_of_range_reentry_samples == dense.out_of_range_reentry_samples
+    assert gpu.finite_ratio_max == dense.finite_ratio_max
+
+
 def test_post_exit_super_eigen_report_smoke():
     report = post_exit_super_eigen_report(
         configurations=((4, 1),),
@@ -102,3 +198,36 @@ def test_post_exit_super_eigen_report_smoke():
     assert level.states == 3 * 8 * 3
     assert level.positive_min > 0.0
     assert level.lambda_super <= level.alpha
+
+
+def test_post_exit_super_eigen_streaming_matches_dense():
+    dense = post_exit_super_eigen_level(
+        mod2_power=4,
+        mod3_power=1,
+        R_values=(2, 3, 4),
+        sample_lift_power=1,
+        max_steps=50,
+        power_iterations=4,
+        extension_iterations=8,
+        alpha_margin=0.2,
+        scc_state_limit=1_000,
+        operator_mode="dense_target_cache",
+    )
+    streaming = post_exit_super_eigen_level(
+        mod2_power=4,
+        mod3_power=1,
+        R_values=(2, 3, 4),
+        sample_lift_power=1,
+        max_steps=50,
+        power_iterations=4,
+        extension_iterations=8,
+        alpha_margin=0.2,
+        scc_state_limit=1_000,
+        operator_mode="streaming",
+        chunk_rows=7,
+    )
+    assert streaming.operator_mode == "streaming"
+    assert streaming.descended_samples == dense.descended_samples
+    assert streaming.reentry_samples == dense.reentry_samples
+    assert streaming.lambda_super == dense.lambda_super
+    assert streaming.positive_min == dense.positive_min

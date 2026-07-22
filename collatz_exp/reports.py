@@ -1498,9 +1498,12 @@ def format_post_exit_scaled_perron_report(result: PostExitScaledPerronReport) ->
         )
         pieces.append(
             f"(k={level.mod2_power}, ell={level.mod3_power}, "
+            f"mode={level.operator_mode}, "
             f"scale={level.power_scale_estimate:.6f}, "
             f"ratio_max={level.finite_ratio_max}, "
             f"inf={level.infinite_ratio_rows}, "
+            f"ckpt={level.checkpoint_loaded_iteration}->"
+            f"{level.checkpoint_saved_iteration}, "
             f"rho={level.constant_weight_rho_max_num}/"
             f"{level.constant_weight_rho_max_den}, worst_ratio={worst})"
         )
@@ -1521,6 +1524,7 @@ def format_post_exit_super_eigen_report(result: PostExitSuperEigenReport) -> str
         )
         pieces.append(
             f"(k={level.mod2_power}, ell={level.mod3_power}, "
+            f"mode={level.operator_mode}, "
             f"lambda_super={level.lambda_super:.6f}, "
             f"alpha={level.alpha:.6f}, "
             f"closed_sccs={level.closed_sccs}, "

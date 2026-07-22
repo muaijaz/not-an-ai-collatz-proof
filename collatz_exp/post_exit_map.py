@@ -6,6 +6,7 @@ import json
 from dataclasses import asdict, dataclass
 from fractions import Fraction
 from math import log2
+from pathlib import Path
 from typing import Any
 
 from .core import accelerated_step, v2
@@ -155,6 +156,12 @@ class PostExitScaledPerronLevel:
     constant_weight_rho_max_den: int
     worst_state: PostExitState | None
     worst_ratio_state: PostExitState | None
+    operator_mode: str = "dense_target_cache"
+    chunk_rows: int | None = None
+    target_cache_entries: int | None = None
+    checkpoint_path: str | None = None
+    checkpoint_loaded_iteration: int = 0
+    checkpoint_saved_iteration: int | None = None
 
     def to_json_dict(self) -> dict[str, Any]:
         data = asdict(self)
@@ -217,6 +224,9 @@ class PostExitSuperEigenLevel:
     constant_weight_rho_max_den: int
     worst_state: PostExitState | None
     worst_transient_state: PostExitState | None
+    operator_mode: str = "dense_target_cache"
+    chunk_rows: int | None = None
+    target_cache_entries: int | None = None
 
     def to_json_dict(self) -> dict[str, Any]:
         data = asdict(self)
@@ -782,20 +792,232 @@ def _build_post_exit_target_array(
     return targets, descended, reentered, out_of_range, max_survival, worst_index
 
 
+def _load_scaled_perron_checkpoint(
+    checkpoint_path: str | Path | None,
+    state_count: int,
+):
+    if checkpoint_path is None:
+        return None, 0, 0.0
+    path = Path(checkpoint_path)
+    if not path.exists():
+        return None, 0, 0.0
+    import numpy as np
+
+    with np.load(path) as data:
+        vector = data["vector"].astype(np.float64, copy=False)
+        iteration = int(data["iteration"])
+        scale = float(data["scale"])
+    if vector.shape != (state_count,):
+        raise ValueError(
+            f"checkpoint vector shape {vector.shape} does not match "
+            f"state count {state_count}"
+        )
+    return vector.copy(), iteration, scale
+
+
+def _save_scaled_perron_checkpoint(
+    checkpoint_path: str | Path | None,
+    vector,
+    iteration: int,
+    scale: float,
+) -> None:
+    if checkpoint_path is None:
+        return
+    path = Path(checkpoint_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    import numpy as np
+
+    np.savez(path, vector=vector, iteration=iteration, scale=scale)
+
+
+def _should_save_checkpoint(
+    checkpoint_path: str | Path | None,
+    checkpoint_interval: int,
+    iteration: int,
+    final_iteration: int,
+) -> bool:
+    if checkpoint_path is None:
+        return False
+    if checkpoint_interval <= 0:
+        return iteration == final_iteration
+    return iteration == final_iteration or iteration % checkpoint_interval == 0
+
+
+class _StreamingPostExitOperator:
+    """Matrix-free PECM operator that materializes only row chunks."""
+
+    def __init__(
+        self,
+        mod2_power: int,
+        mod3_power: int,
+        R_values: tuple[int, ...],
+        sample_lift_power: int,
+        max_steps: int,
+        tail_reentry_min_R: int,
+        chunk_rows: int,
+    ) -> None:
+        if chunk_rows <= 0:
+            raise ValueError("chunk_rows must be positive")
+        self.mod2_power = mod2_power
+        self.mod3_power = mod3_power
+        self.R_values = R_values
+        self.sample_lift_power = sample_lift_power
+        self.max_steps = max_steps
+        self.tail_reentry_min_R = tail_reentry_min_R
+        self.chunk_rows = chunk_rows
+        self.denominator = 1 << sample_lift_power
+        self.states = _state_count(mod2_power, mod3_power, R_values)
+        self.modulus = (1 << mod2_power) * (3**mod3_power)
+        self.residues3 = 3**mod3_power
+        self.R_index = {R: i for i, R in enumerate(R_values)}
+        self.target_dtype = self._target_dtype()
+        self._stats: tuple[int, int, int, int, int | None] | None = None
+
+    def _target_dtype(self):
+        import numpy as np
+
+        return np.int64 if self.states >= (1 << 31) else np.int32
+
+    def _row_source(self, row: int) -> tuple[int, int]:
+        n2 = 1 << (self.mod2_power - 1)
+        per_R = n2 * self.residues3
+        r_index, rem = divmod(row, per_R)
+        u2_index, u3 = divmod(rem, self.residues3)
+        R = self.R_values[r_index]
+        u2 = 2 * u2_index + 1
+        base = _crt_mod_2_3(u2, self.mod2_power, u3, self.mod3_power)
+        return R, base
+
+    def _row_targets_and_counts(self, row: int):
+        import numpy as np
+
+        R, base = self._row_source(row)
+        targets = np.full(self.denominator, -1, dtype=self.target_dtype)
+        descended = 0
+        reentered = 0
+        out_of_range = 0
+        for lift in range(self.denominator):
+            status, target = _post_exit_transition_target_index(
+                R=R,
+                u=base + lift * self.modulus,
+                R_index=self.R_index,
+                mod2_power=self.mod2_power,
+                mod3_power=self.mod3_power,
+                max_steps=self.max_steps,
+                tail_reentry_min_R=self.tail_reentry_min_R,
+            )
+            if status == 0:
+                descended += 1
+            elif status == 1:
+                targets[lift] = target
+                reentered += 1
+            else:
+                out_of_range += 1
+        return targets, descended, reentered, out_of_range
+
+    def targets_chunk(self, row_start: int, row_stop: int):
+        import numpy as np
+
+        targets = np.full(
+            (row_stop - row_start, self.denominator),
+            -1,
+            dtype=self.target_dtype,
+        )
+        for local_row, row in enumerate(range(row_start, row_stop)):
+            targets[local_row], _, _, _ = self._row_targets_and_counts(row)
+        return targets
+
+    def iter_target_chunks(self):
+        for row_start in range(0, self.states, self.chunk_rows):
+            row_stop = min(self.states, row_start + self.chunk_rows)
+            yield row_start, row_stop, self.targets_chunk(row_start, row_stop)
+
+    def scan_stats(self) -> tuple[int, int, int, int, int | None]:
+        if self._stats is not None:
+            return self._stats
+        descended = 0
+        reentered = 0
+        out_of_range = 0
+        max_survival = 0
+        worst_index: int | None = None
+        for row in range(self.states):
+            _targets, row_descended, row_reentered, row_out = (
+                self._row_targets_and_counts(row)
+            )
+            descended += row_descended
+            reentered += row_reentered
+            out_of_range += row_out
+            if row_reentered > max_survival:
+                max_survival = row_reentered
+                worst_index = row
+        self._stats = (descended, reentered, out_of_range, max_survival, worst_index)
+        return self._stats
+
+    def apply(self, vector):
+        import numpy as np
+
+        image = np.zeros(self.states, dtype=np.float64)
+        for row_start, row_stop, targets in self.iter_target_chunks():
+            chunk_image = image[row_start:row_stop]
+            for col in range(targets.shape[1]):
+                target = targets[:, col]
+                mask = target >= 0
+                chunk_image[mask] += vector[target[mask]]
+            chunk_image /= self.denominator
+        return image
+
+    def scc_counts(self, state_limit: int):
+        if self.states > state_limit:
+            return None, None, True
+        targets = self.materialize_targets()
+        return _scc_counts(targets, state_limit=state_limit)
+
+    def materialize_targets(self):
+        import numpy as np
+
+        targets = np.full(
+            (self.states, self.denominator),
+            -1,
+            dtype=self.target_dtype,
+        )
+        for row_start, row_stop, chunk in self.iter_target_chunks():
+            targets[row_start:row_stop] = chunk
+        return targets
+
+
 def _right_power_scaled_ratios(
     targets,
     denominator: int,
     iterations: int,
     tolerance: float,
-) -> tuple[bool, float, float | None, float | None, int, int, int | None]:
+    checkpoint_path: str | Path | None = None,
+    checkpoint_interval: int = 1,
+) -> tuple[
+    bool,
+    float,
+    float | None,
+    float | None,
+    int,
+    int,
+    int | None,
+    int,
+    int | None,
+]:
     import numpy as np
 
     n = targets.shape[0]
-    vector = np.ones(n, dtype=np.float64)
-    scale = 0.0
+    vector, start_iteration, scale = _load_scaled_perron_checkpoint(
+        checkpoint_path,
+        n,
+    )
+    if vector is None:
+        vector = np.ones(n, dtype=np.float64)
+        scale = 0.0
+        start_iteration = 0
     converged = False
     previous_vector = vector
-    for _ in range(iterations):
+    saved_iteration: int | None = None
+    for iteration in range(start_iteration, iterations):
         image = np.zeros(n, dtype=np.float64)
         for col in range(targets.shape[1]):
             target = targets[:, col]
@@ -819,6 +1041,20 @@ def _right_power_scaled_ratios(
         vector = image
         previous_vector = image.copy()
         scale = next_scale
+        current_iteration = iteration + 1
+        if _should_save_checkpoint(
+            checkpoint_path,
+            checkpoint_interval,
+            current_iteration,
+            iterations,
+        ):
+            _save_scaled_perron_checkpoint(
+                checkpoint_path,
+                vector,
+                current_iteration,
+                scale,
+            )
+            saved_iteration = current_iteration
         if converged:
             break
 
@@ -849,6 +1085,101 @@ def _right_power_scaled_ratios(
         zero_weight_rows,
         infinite_ratio_rows,
         worst_ratio_index,
+        start_iteration,
+        saved_iteration,
+    )
+
+
+def _right_power_scaled_ratios_streaming(
+    operator: _StreamingPostExitOperator,
+    iterations: int,
+    tolerance: float,
+    checkpoint_path: str | Path | None = None,
+    checkpoint_interval: int = 1,
+) -> tuple[
+    bool,
+    float,
+    float | None,
+    float | None,
+    int,
+    int,
+    int | None,
+    int,
+    int | None,
+]:
+    import numpy as np
+
+    vector, start_iteration, scale = _load_scaled_perron_checkpoint(
+        checkpoint_path,
+        operator.states,
+    )
+    if vector is None:
+        vector = np.ones(operator.states, dtype=np.float64)
+        scale = 0.0
+        start_iteration = 0
+    converged = False
+    previous_vector = vector
+    saved_iteration: int | None = None
+    for iteration in range(start_iteration, iterations):
+        image = operator.apply(vector)
+        next_scale = float(image.max(initial=0.0))
+        if next_scale == 0.0:
+            vector = image
+            scale = 0.0
+            converged = True
+            break
+        image /= next_scale
+        vector_delta = float(np.max(np.abs(image - previous_vector), initial=0.0))
+        if (
+            scale
+            and abs(next_scale - scale) <= tolerance * max(1.0, abs(scale))
+            and vector_delta <= tolerance
+        ):
+            converged = True
+        vector = image
+        previous_vector = image.copy()
+        scale = next_scale
+        current_iteration = iteration + 1
+        if _should_save_checkpoint(
+            checkpoint_path,
+            checkpoint_interval,
+            current_iteration,
+            iterations,
+        ):
+            _save_scaled_perron_checkpoint(
+                checkpoint_path,
+                vector,
+                current_iteration,
+                scale,
+            )
+            saved_iteration = current_iteration
+        if converged:
+            break
+
+    image = operator.apply(vector)
+    nonzero = vector > 0.0
+    zero_weight_rows = int((~nonzero).sum())
+    infinite_ratio_rows = int(((~nonzero) & (image > 0.0)).sum())
+    if bool(nonzero.any()):
+        ratios = image[nonzero] / vector[nonzero]
+        finite_ratio_max = float(ratios.max(initial=0.0))
+        finite_ratio_min = float(ratios.min(initial=0.0))
+        nonzero_indices = np.flatnonzero(nonzero)
+        worst_ratio_index = int(nonzero_indices[int(ratios.argmax())])
+    else:
+        finite_ratio_max = None
+        finite_ratio_min = None
+        worst_ratio_index = None
+    return (
+        converged,
+        scale,
+        finite_ratio_max,
+        finite_ratio_min,
+        zero_weight_rows,
+        infinite_ratio_rows,
+        worst_ratio_index,
+        start_iteration,
+        saved_iteration,
     )
 
 
@@ -862,6 +1193,159 @@ def _apply_targets(targets, vector, denominator: int):
         image[mask] += vector[target[mask]]
     image /= denominator
     return image
+
+
+def _apply_targets_cupy(cp, targets_gpu, vector_gpu, denominator: int):
+    image = cp.zeros(targets_gpu.shape[0], dtype=cp.float64)
+    for col in range(targets_gpu.shape[1]):
+        target = targets_gpu[:, col]
+        mask = target >= 0
+        safe_target = cp.maximum(target, 0)
+        image += cp.where(mask, vector_gpu[safe_target], 0.0)
+    image /= denominator
+    return image
+
+
+def _right_power_scaled_ratios_gpu(
+    targets,
+    denominator: int,
+    iterations: int,
+    tolerance: float,
+    checkpoint_path: str | Path | None = None,
+    checkpoint_interval: int = 1,
+) -> tuple[
+    bool,
+    float,
+    float | None,
+    float | None,
+    int,
+    int,
+    int | None,
+    int,
+    int | None,
+]:
+    import numpy as np
+
+    try:
+        import cupy as cp
+    except Exception as error:  # pragma: no cover - depends on optional extra.
+        raise RuntimeError(
+            "operator_mode='gpu_target_cache' requires the optional gpu extra"
+        ) from error
+
+    n = targets.shape[0]
+    vector, start_iteration, scale = _load_scaled_perron_checkpoint(
+        checkpoint_path,
+        n,
+    )
+    vector_gpu = (
+        cp.ones(n, dtype=cp.float64)
+        if vector is None
+        else cp.asarray(vector, dtype=cp.float64)
+    )
+    if vector is None:
+        scale = 0.0
+        start_iteration = 0
+    targets_gpu = cp.asarray(targets)
+    converged = False
+    previous_vector = vector_gpu
+    saved_iteration: int | None = None
+    for iteration in range(start_iteration, iterations):
+        image = _apply_targets_cupy(cp, targets_gpu, vector_gpu, denominator)
+        next_scale = float(cp.max(image).get()) if image.size else 0.0
+        if next_scale == 0.0:
+            vector_gpu = image
+            scale = 0.0
+            converged = True
+            break
+        image /= next_scale
+        vector_delta = (
+            float(cp.max(cp.abs(image - previous_vector)).get()) if image.size else 0.0
+        )
+        if (
+            scale
+            and abs(next_scale - scale) <= tolerance * max(1.0, abs(scale))
+            and vector_delta <= tolerance
+        ):
+            converged = True
+        vector_gpu = image
+        previous_vector = image.copy()
+        scale = next_scale
+        current_iteration = iteration + 1
+        if _should_save_checkpoint(
+            checkpoint_path,
+            checkpoint_interval,
+            current_iteration,
+            iterations,
+        ):
+            _save_scaled_perron_checkpoint(
+                checkpoint_path,
+                cp.asnumpy(vector_gpu),
+                current_iteration,
+                scale,
+            )
+            saved_iteration = current_iteration
+        if converged:
+            break
+
+    image = _apply_targets_cupy(cp, targets_gpu, vector_gpu, denominator)
+    nonzero = vector_gpu > 0.0
+    zero_weight_rows = int(cp.count_nonzero(~nonzero).get())
+    infinite_ratio_rows = int(cp.count_nonzero((~nonzero) & (image > 0.0)).get())
+    if bool(cp.any(nonzero).get()):
+        ratios = image[nonzero] / vector_gpu[nonzero]
+        finite_ratio_max = float(cp.max(ratios).get())
+        finite_ratio_min = float(cp.min(ratios).get())
+        nonzero_indices = cp.nonzero(nonzero)[0]
+        worst_ratio_index = int(nonzero_indices[int(cp.argmax(ratios).get())].get())
+    else:
+        finite_ratio_max = None
+        finite_ratio_min = None
+        worst_ratio_index = None
+    cp.cuda.Stream.null.synchronize()
+    return (
+        converged,
+        scale,
+        finite_ratio_max,
+        finite_ratio_min,
+        zero_weight_rows,
+        infinite_ratio_rows,
+        worst_ratio_index,
+        start_iteration,
+        saved_iteration,
+    )
+
+
+def _positive_resolvent_super_vector_streaming(
+    operator: _StreamingPostExitOperator,
+    alpha: float,
+    iterations: int,
+    tolerance: float,
+):
+    import numpy as np
+
+    vector = np.ones(operator.states, dtype=np.float64)
+    residual = float("inf")
+    converged = False
+    for iteration in range(1, iterations + 1):
+        image = operator.apply(vector)
+        nxt = 1.0 + image / alpha
+        residual = float(np.max(np.abs(nxt - vector), initial=0.0))
+        vector = nxt
+        if residual <= tolerance * max(1.0, float(np.max(vector, initial=1.0))):
+            converged = True
+            break
+    image = operator.apply(vector)
+    ratios = image / vector
+    worst_index = int(np.argmax(ratios))
+    return (
+        vector,
+        ratios,
+        iteration,
+        converged,
+        residual,
+        worst_index,
+    )
 
 
 def _scc_counts(targets, state_limit: int):
@@ -940,6 +1424,11 @@ def post_exit_scaled_perron_level(
     tail_reentry_min_R: int = 2,
     iterations: int = 80,
     tolerance: float = 1e-10,
+    operator_mode: str = "dense_target_cache",
+    chunk_rows: int = 100_000,
+    dense_entry_limit: int = 50_000_000,
+    checkpoint_path: str | Path | None = None,
+    checkpoint_interval: int = 1,
 ) -> PostExitScaledPerronLevel:
     if mod2_power < 1:
         raise ValueError("mod2_power must be positive")
@@ -950,35 +1439,107 @@ def post_exit_scaled_perron_level(
     if any(R < 2 for R in R_values):
         raise ValueError("all R_values must be at least two")
     denominator = 1 << sample_lift_power
-    (
-        targets,
-        descended,
-        reentered,
-        out_of_range,
-        max_survival,
-        worst_index,
-    ) = _build_post_exit_target_array(
-        mod2_power=mod2_power,
-        mod3_power=mod3_power,
-        R_values=R_values,
-        sample_lift_power=sample_lift_power,
-        max_steps=max_steps,
-        tail_reentry_min_R=tail_reentry_min_R,
-    )
-    (
-        converged,
-        scale,
-        finite_ratio_max,
-        finite_ratio_min,
-        zero_weight_rows,
-        infinite_ratio_rows,
-        worst_ratio_index,
-    ) = _right_power_scaled_ratios(
-        targets=targets,
-        denominator=denominator,
-        iterations=iterations,
-        tolerance=tolerance,
-    )
+    state_count = _state_count(mod2_power, mod3_power, R_values)
+    if operator_mode not in {"dense_target_cache", "streaming", "gpu_target_cache", "auto"}:
+        raise ValueError(
+            "operator_mode must be dense_target_cache, streaming, "
+            "gpu_target_cache, or auto"
+        )
+    resolved_mode = operator_mode
+    if resolved_mode == "auto":
+        entries = state_count * denominator
+        resolved_mode = (
+            "streaming" if entries > dense_entry_limit else "dense_target_cache"
+        )
+
+    checkpoint_loaded_iteration = 0
+    checkpoint_saved_iteration: int | None = None
+    if resolved_mode == "streaming":
+        operator = _StreamingPostExitOperator(
+            mod2_power=mod2_power,
+            mod3_power=mod3_power,
+            R_values=R_values,
+            sample_lift_power=sample_lift_power,
+            max_steps=max_steps,
+            tail_reentry_min_R=tail_reentry_min_R,
+            chunk_rows=chunk_rows,
+        )
+        descended, reentered, out_of_range, max_survival, worst_index = (
+            operator.scan_stats()
+        )
+        (
+            converged,
+            scale,
+            finite_ratio_max,
+            finite_ratio_min,
+            zero_weight_rows,
+            infinite_ratio_rows,
+            worst_ratio_index,
+            checkpoint_loaded_iteration,
+            checkpoint_saved_iteration,
+        ) = _right_power_scaled_ratios_streaming(
+            operator=operator,
+            iterations=iterations,
+            tolerance=tolerance,
+            checkpoint_path=checkpoint_path,
+            checkpoint_interval=checkpoint_interval,
+        )
+        states = operator.states
+    else:
+        (
+            targets,
+            descended,
+            reentered,
+            out_of_range,
+            max_survival,
+            worst_index,
+        ) = _build_post_exit_target_array(
+            mod2_power=mod2_power,
+            mod3_power=mod3_power,
+            R_values=R_values,
+            sample_lift_power=sample_lift_power,
+            max_steps=max_steps,
+            tail_reentry_min_R=tail_reentry_min_R,
+        )
+        if resolved_mode == "gpu_target_cache":
+            (
+                converged,
+                scale,
+                finite_ratio_max,
+                finite_ratio_min,
+                zero_weight_rows,
+                infinite_ratio_rows,
+                worst_ratio_index,
+                checkpoint_loaded_iteration,
+                checkpoint_saved_iteration,
+            ) = _right_power_scaled_ratios_gpu(
+                targets=targets,
+                denominator=denominator,
+                iterations=iterations,
+                tolerance=tolerance,
+                checkpoint_path=checkpoint_path,
+                checkpoint_interval=checkpoint_interval,
+            )
+        else:
+            (
+                converged,
+                scale,
+                finite_ratio_max,
+                finite_ratio_min,
+                zero_weight_rows,
+                infinite_ratio_rows,
+                worst_ratio_index,
+                checkpoint_loaded_iteration,
+                checkpoint_saved_iteration,
+            ) = _right_power_scaled_ratios(
+                targets=targets,
+                denominator=denominator,
+                iterations=iterations,
+                tolerance=tolerance,
+                checkpoint_path=checkpoint_path,
+                checkpoint_interval=checkpoint_interval,
+            )
+        states = targets.shape[0]
     rho = Fraction(max_survival, denominator)
     return PostExitScaledPerronLevel(
         mod2_power=mod2_power,
@@ -987,7 +1548,7 @@ def post_exit_scaled_perron_level(
         R_max=max(R_values),
         sample_lift_power=sample_lift_power,
         max_steps=max_steps,
-        states=targets.shape[0],
+        states=states,
         row_denominator=denominator,
         iterations=iterations,
         converged=converged,
@@ -1012,6 +1573,12 @@ def post_exit_scaled_perron_level(
             mod3_power,
             R_values,
         ),
+        operator_mode=resolved_mode,
+        chunk_rows=chunk_rows if resolved_mode == "streaming" else None,
+        target_cache_entries=states * denominator,
+        checkpoint_path=None if checkpoint_path is None else str(checkpoint_path),
+        checkpoint_loaded_iteration=checkpoint_loaded_iteration,
+        checkpoint_saved_iteration=checkpoint_saved_iteration,
     )
 
 
@@ -1023,6 +1590,11 @@ def post_exit_scaled_perron_report(
     tail_reentry_min_R: int = 2,
     iterations: int = 80,
     tolerance: float = 1e-10,
+    operator_mode: str = "dense_target_cache",
+    chunk_rows: int = 100_000,
+    dense_entry_limit: int = 50_000_000,
+    checkpoint_path: str | Path | None = None,
+    checkpoint_interval: int = 1,
 ) -> PostExitScaledPerronReport:
     levels = tuple(
         post_exit_scaled_perron_level(
@@ -1034,6 +1606,11 @@ def post_exit_scaled_perron_report(
             tail_reentry_min_R=tail_reentry_min_R,
             iterations=iterations,
             tolerance=tolerance,
+            operator_mode=operator_mode,
+            chunk_rows=chunk_rows,
+            dense_entry_limit=dense_entry_limit,
+            checkpoint_path=checkpoint_path,
+            checkpoint_interval=checkpoint_interval,
         )
         for mod2_power, mod3_power in configurations
     )
@@ -1065,57 +1642,121 @@ def post_exit_super_eigen_level(
     alpha_margin: float = 0.02,
     tolerance: float = 1e-10,
     scc_state_limit: int = 1_000_000,
+    operator_mode: str = "dense_target_cache",
+    chunk_rows: int = 100_000,
+    dense_entry_limit: int = 50_000_000,
 ) -> PostExitSuperEigenLevel:
     denominator = 1 << sample_lift_power
-    (
-        targets,
-        descended,
-        reentered,
-        out_of_range,
-        max_survival,
-        worst_index,
-    ) = _build_post_exit_target_array(
-        mod2_power=mod2_power,
-        mod3_power=mod3_power,
-        R_values=R_values,
-        sample_lift_power=sample_lift_power,
-        max_steps=max_steps,
-        tail_reentry_min_R=tail_reentry_min_R,
-    )
-    (
-        _,
-        scale,
-        finite_ratio_max,
-        _,
-        zero_weight_rows,
-        _,
-        _,
-    ) = _right_power_scaled_ratios(
-        targets=targets,
-        denominator=denominator,
-        iterations=power_iterations,
-        tolerance=tolerance,
-    )
-    recurrent_ratio = max(scale, finite_ratio_max or 0.0)
-    alpha = min(0.999999, recurrent_ratio + alpha_margin)
-    (
-        vector,
-        ratios,
-        iterations_used,
-        converged,
-        residual,
-        worst_ratio_index,
-    ) = _positive_resolvent_super_vector(
-        targets=targets,
-        denominator=denominator,
-        alpha=alpha,
-        iterations=extension_iterations,
-        tolerance=tolerance,
-    )
-    recurrent_sccs, closed_sccs, sccs_skipped = _scc_counts(
-        targets,
-        state_limit=scc_state_limit,
-    )
+    state_count = _state_count(mod2_power, mod3_power, R_values)
+    if operator_mode not in {"dense_target_cache", "streaming", "auto"}:
+        raise ValueError("operator_mode must be dense_target_cache, streaming, or auto")
+    resolved_mode = operator_mode
+    if resolved_mode == "auto":
+        entries = state_count * denominator
+        resolved_mode = (
+            "streaming" if entries > dense_entry_limit else "dense_target_cache"
+        )
+
+    if resolved_mode == "streaming":
+        operator = _StreamingPostExitOperator(
+            mod2_power=mod2_power,
+            mod3_power=mod3_power,
+            R_values=R_values,
+            sample_lift_power=sample_lift_power,
+            max_steps=max_steps,
+            tail_reentry_min_R=tail_reentry_min_R,
+            chunk_rows=chunk_rows,
+        )
+        descended, reentered, out_of_range, max_survival, worst_index = (
+            operator.scan_stats()
+        )
+        (
+            _,
+            scale,
+            finite_ratio_max,
+            _,
+            zero_weight_rows,
+            _,
+            _,
+            _,
+            _,
+        ) = _right_power_scaled_ratios_streaming(
+            operator=operator,
+            iterations=power_iterations,
+            tolerance=tolerance,
+        )
+        recurrent_ratio = max(scale, finite_ratio_max or 0.0)
+        alpha = min(0.999999, recurrent_ratio + alpha_margin)
+        (
+            vector,
+            ratios,
+            iterations_used,
+            converged,
+            residual,
+            worst_ratio_index,
+        ) = _positive_resolvent_super_vector_streaming(
+            operator=operator,
+            alpha=alpha,
+            iterations=extension_iterations,
+            tolerance=tolerance,
+        )
+        recurrent_sccs, closed_sccs, sccs_skipped = operator.scc_counts(
+            state_limit=scc_state_limit,
+        )
+        states = operator.states
+    else:
+        (
+            targets,
+            descended,
+            reentered,
+            out_of_range,
+            max_survival,
+            worst_index,
+        ) = _build_post_exit_target_array(
+            mod2_power=mod2_power,
+            mod3_power=mod3_power,
+            R_values=R_values,
+            sample_lift_power=sample_lift_power,
+            max_steps=max_steps,
+            tail_reentry_min_R=tail_reentry_min_R,
+        )
+        (
+            _,
+            scale,
+            finite_ratio_max,
+            _,
+            zero_weight_rows,
+            _,
+            _,
+            _,
+            _,
+        ) = _right_power_scaled_ratios(
+            targets=targets,
+            denominator=denominator,
+            iterations=power_iterations,
+            tolerance=tolerance,
+        )
+        recurrent_ratio = max(scale, finite_ratio_max or 0.0)
+        alpha = min(0.999999, recurrent_ratio + alpha_margin)
+        (
+            vector,
+            ratios,
+            iterations_used,
+            converged,
+            residual,
+            worst_ratio_index,
+        ) = _positive_resolvent_super_vector(
+            targets=targets,
+            denominator=denominator,
+            alpha=alpha,
+            iterations=extension_iterations,
+            tolerance=tolerance,
+        )
+        recurrent_sccs, closed_sccs, sccs_skipped = _scc_counts(
+            targets,
+            state_limit=scc_state_limit,
+        )
+        states = targets.shape[0]
     rho = Fraction(max_survival, denominator)
     return PostExitSuperEigenLevel(
         mod2_power=mod2_power,
@@ -1124,7 +1765,7 @@ def post_exit_super_eigen_level(
         R_max=max(R_values),
         sample_lift_power=sample_lift_power,
         max_steps=max_steps,
-        states=targets.shape[0],
+        states=states,
         row_denominator=denominator,
         recurrent_ratio_estimate=recurrent_ratio,
         alpha=alpha,
@@ -1156,6 +1797,9 @@ def post_exit_super_eigen_level(
         )
         if zero_weight_rows
         else None,
+        operator_mode=resolved_mode,
+        chunk_rows=chunk_rows if resolved_mode == "streaming" else None,
+        target_cache_entries=states * denominator,
     )
 
 
@@ -1170,6 +1814,9 @@ def post_exit_super_eigen_report(
     alpha_margin: float = 0.02,
     tolerance: float = 1e-10,
     scc_state_limit: int = 1_000_000,
+    operator_mode: str = "dense_target_cache",
+    chunk_rows: int = 100_000,
+    dense_entry_limit: int = 50_000_000,
 ) -> PostExitSuperEigenReport:
     levels = tuple(
         post_exit_super_eigen_level(
@@ -1184,6 +1831,9 @@ def post_exit_super_eigen_report(
             alpha_margin=alpha_margin,
             tolerance=tolerance,
             scc_state_limit=scc_state_limit,
+            operator_mode=operator_mode,
+            chunk_rows=chunk_rows,
+            dense_entry_limit=dense_entry_limit,
         )
         for mod2_power, mod3_power in configurations
     )

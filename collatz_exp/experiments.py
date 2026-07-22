@@ -45,6 +45,10 @@ from .foster_drift import (
     pointwise_descent_audit_report,
 )
 from .frontier_analysis import analyze_cover_frontier
+from .frontier_dashboard import (
+    format_frontier_dashboard_report,
+    frontier_dashboard_report,
+)
 from .furstenberg import furstenberg_lyapunov_report
 from .graph_curvature import ollivier_ricci_report
 from .graph_tree import odd_tree_sibling_report
@@ -317,6 +321,16 @@ def build_parser() -> argparse.ArgumentParser:
         "--quick",
         action="store_true",
         help="run a short deterministic smoke experiment",
+    )
+    parser.add_argument(
+        "--frontier-dashboard",
+        action="store_true",
+        help="rank next proof-search attack surfaces from saved reports",
+    )
+    parser.add_argument(
+        "--frontier-dashboard-dir",
+        default="docs/reports",
+        help="directory containing saved JSON reports for --frontier-dashboard",
     )
     parser.add_argument(
         "--max-hardness-power",
@@ -929,6 +943,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="run the scaled target-cache PECM Perron/rate scan",
     )
     parser.add_argument(
+        "--post-exit-scaled-perron-output",
+        default=None,
+        help="optional path for the scaled PECM Perron JSON artifact",
+    )
+    parser.add_argument(
         "--post-exit-super-eigen",
         action="store_true",
         help="build a positive resolvent super-eigenvector for PECM",
@@ -969,9 +988,19 @@ def build_parser() -> argparse.ArgumentParser:
         help="solve the finite bucketed-state debt Lyapunov LP",
     )
     parser.add_argument(
+        "--state-debt-lyapunov-output",
+        default=None,
+        help="optional path for the bucketed state-debt Lyapunov JSON artifact",
+    )
+    parser.add_argument(
         "--dpe-structural-bound",
         action="store_true",
         help="enumerate PECM edge D_PE values and fit a finite debt envelope",
+    )
+    parser.add_argument(
+        "--dpe-structural-bound-output",
+        default=None,
+        help="optional path for the D_PE structural-bound JSON artifact",
     )
     parser.add_argument(
         "--dpe-baker-certification",
@@ -984,9 +1013,19 @@ def build_parser() -> argparse.ArgumentParser:
         help="compare PECM edge gaps with continued-fraction lower bounds",
     )
     parser.add_argument(
+        "--dpe-continued-fraction-output",
+        default=None,
+        help="optional path for the D_PE continued-fraction JSON artifact",
+    )
+    parser.add_argument(
         "--dpe-convergent-atlas",
         action="store_true",
         help="check which log2(3) convergents occur as PECM reentry edges",
+    )
+    parser.add_argument(
+        "--dpe-convergent-atlas-output",
+        default=None,
+        help="optional path for the D_PE convergent-atlas JSON artifact",
     )
     parser.add_argument(
         "--orbit-lyapunov-beta-sweep",
@@ -1157,6 +1196,35 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--post-exit-perron-iterations", type=int, default=80)
     parser.add_argument("--post-exit-extension-iterations", type=int, default=400)
     parser.add_argument("--post-exit-alpha-margin", type=float, default=0.02)
+    parser.add_argument(
+        "--post-exit-operator-mode",
+        choices=("dense_target_cache", "streaming", "gpu_target_cache", "auto"),
+        default="dense_target_cache",
+        help="PECM operator backend for Perron/super-eigen scans",
+    )
+    parser.add_argument(
+        "--post-exit-chunk-rows",
+        type=int,
+        default=100_000,
+        help="row chunk size for streaming PECM operator mode",
+    )
+    parser.add_argument(
+        "--post-exit-dense-entry-limit",
+        type=int,
+        default=50_000_000,
+        help="auto mode switches to streaming above this target-cache entry count",
+    )
+    parser.add_argument(
+        "--post-exit-checkpoint",
+        default=None,
+        help="path to save/resume scaled Perron vector checkpoints",
+    )
+    parser.add_argument(
+        "--post-exit-checkpoint-interval",
+        type=int,
+        default=1,
+        help="save scaled Perron checkpoint every N iterations; 0 saves only final",
+    )
     parser.add_argument("--lasota-samples", type=int, default=32)
     parser.add_argument("--lasota-iterates", type=int, default=10)
     parser.add_argument("--lasota-seed", type=int, default=0)
@@ -1356,6 +1424,14 @@ def main(argv: list[str] | None = None) -> None:
         powers.append(16)
     if not args.quick and args.max_hardness_power >= 20:
         powers.append(20)
+
+    if args.frontier_dashboard:
+        print("\nProof-search frontier dashboard:")
+        print(
+            format_frontier_dashboard_report(
+                frontier_dashboard_report(args.frontier_dashboard_dir)
+            )
+        )
 
     print("Hardest first-descent cases under powers of 2:")
     for K in powers:
@@ -2012,18 +2088,30 @@ def main(argv: list[str] | None = None) -> None:
 
     if args.post_exit_scaled_perron:
         print("\nPost-exit scaled Perron scan:")
-        print(
-            format_post_exit_scaled_perron_report(
-                post_exit_scaled_perron_report(
-                    configurations=_parse_pair_tuple(args.post_exit_configs),
-                    R_values=_parse_int_tuple(args.post_exit_R_values),
-                    sample_lift_power=args.post_exit_sample_lift_power,
-                    max_steps=args.post_exit_max_steps,
-                    tail_reentry_min_R=args.post_exit_tail_reentry_min_R,
-                    iterations=args.post_exit_perron_iterations,
-                )
-            )
+        scaled_perron = post_exit_scaled_perron_report(
+            configurations=_parse_pair_tuple(args.post_exit_configs),
+            R_values=_parse_int_tuple(args.post_exit_R_values),
+            sample_lift_power=args.post_exit_sample_lift_power,
+            max_steps=args.post_exit_max_steps,
+            tail_reentry_min_R=args.post_exit_tail_reentry_min_R,
+            iterations=args.post_exit_perron_iterations,
+            operator_mode=args.post_exit_operator_mode,
+            chunk_rows=args.post_exit_chunk_rows,
+            dense_entry_limit=args.post_exit_dense_entry_limit,
+            checkpoint_path=args.post_exit_checkpoint,
+            checkpoint_interval=args.post_exit_checkpoint_interval,
         )
+        print(format_post_exit_scaled_perron_report(scaled_perron))
+        if args.post_exit_scaled_perron_output:
+            from pathlib import Path
+
+            output_path = Path(args.post_exit_scaled_perron_output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(
+                scaled_perron.to_json() + "\n",
+                encoding="utf-8",
+            )
+            print(f"saved={output_path}")
 
     if args.post_exit_super_eigen:
         print("\nPost-exit positive super-eigenvector:")
@@ -2038,6 +2126,9 @@ def main(argv: list[str] | None = None) -> None:
                     power_iterations=args.post_exit_perron_iterations,
                     extension_iterations=args.post_exit_extension_iterations,
                     alpha_margin=args.post_exit_alpha_margin,
+                    operator_mode=args.post_exit_operator_mode,
+                    chunk_rows=args.post_exit_chunk_rows,
+                    dense_entry_limit=args.post_exit_dense_entry_limit,
                 )
             )
         )
@@ -2109,33 +2200,47 @@ def main(argv: list[str] | None = None) -> None:
         )
 
     if args.state_debt_lyapunov:
+        from pathlib import Path
+
         print("\nBucketed state-debt Lyapunov LP:")
-        print(
-            format_state_debt_lyapunov_report(
-                state_debt_lyapunov_report(
-                    mod2_power=args.post_exit_k,
-                    mod3_power=args.post_exit_ell,
-                    R_values=_parse_int_tuple(args.post_exit_R_values),
-                    sample_lift_power=args.post_exit_sample_lift_power,
-                    max_steps=args.post_exit_max_steps,
-                    bucket_width=args.debt_bucket_width,
-                )
-            )
+        state_debt = state_debt_lyapunov_report(
+            mod2_power=args.post_exit_k,
+            mod3_power=args.post_exit_ell,
+            R_values=_parse_int_tuple(args.post_exit_R_values),
+            sample_lift_power=args.post_exit_sample_lift_power,
+            max_steps=args.post_exit_max_steps,
+            bucket_width=args.debt_bucket_width,
         )
+        print(format_state_debt_lyapunov_report(state_debt))
+        if args.state_debt_lyapunov_output:
+            output_path = Path(args.state_debt_lyapunov_output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(
+                state_debt.to_json() + "\n",
+                encoding="utf-8",
+            )
+            print(f"saved={output_path}")
 
     if args.dpe_structural_bound:
+        from pathlib import Path
+
         print("\nD_PE structural bound scan:")
-        print(
-            format_dpe_structural_bound_report(
-                dpe_structural_bound_report(
-                    configurations=_parse_pair_tuple(args.post_exit_configs),
-                    R_values=_parse_int_tuple(args.post_exit_R_values),
-                    sample_lift_power=args.post_exit_sample_lift_power,
-                    max_steps=args.post_exit_max_steps,
-                    histogram_bin_width=args.debt_bucket_width,
-                )
-            )
+        dpe_structural = dpe_structural_bound_report(
+            configurations=_parse_pair_tuple(args.post_exit_configs),
+            R_values=_parse_int_tuple(args.post_exit_R_values),
+            sample_lift_power=args.post_exit_sample_lift_power,
+            max_steps=args.post_exit_max_steps,
+            histogram_bin_width=args.debt_bucket_width,
         )
+        print(format_dpe_structural_bound_report(dpe_structural))
+        if args.dpe_structural_bound_output:
+            output_path = Path(args.dpe_structural_bound_output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(
+                dpe_structural.to_json() + "\n",
+                encoding="utf-8",
+            )
+            print(f"saved={output_path}")
 
     if args.dpe_baker_certification:
         print("\nD_PE Baker certification scan:")
@@ -2153,33 +2258,47 @@ def main(argv: list[str] | None = None) -> None:
         )
 
     if args.dpe_continued_fraction_certification:
+        from pathlib import Path
+
         print("\nD_PE continued-fraction certification scan:")
-        print(
-            format_continued_fraction_certification_report(
-                dpe_continued_fraction_certification_report(
-                    configurations=_parse_pair_tuple(args.post_exit_configs),
-                    R_values=_parse_int_tuple(args.post_exit_R_values),
-                    sample_lift_power=args.post_exit_sample_lift_power,
-                    max_steps=args.post_exit_max_steps,
-                    max_denominator=args.convergent_max_denominator,
-                )
-            )
+        dpe_cf = dpe_continued_fraction_certification_report(
+            configurations=_parse_pair_tuple(args.post_exit_configs),
+            R_values=_parse_int_tuple(args.post_exit_R_values),
+            sample_lift_power=args.post_exit_sample_lift_power,
+            max_steps=args.post_exit_max_steps,
+            max_denominator=args.convergent_max_denominator,
         )
+        print(format_continued_fraction_certification_report(dpe_cf))
+        if args.dpe_continued_fraction_output:
+            output_path = Path(args.dpe_continued_fraction_output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(
+                dpe_cf.to_json() + "\n",
+                encoding="utf-8",
+            )
+            print(f"saved={output_path}")
 
     if args.dpe_convergent_atlas:
+        from pathlib import Path
+
         print("\nD_PE convergent atlas:")
-        print(
-            format_convergent_atlas_report(
-                dpe_convergent_atlas_report(
-                    mod2_power=args.post_exit_k,
-                    mod3_power=args.post_exit_ell,
-                    R_values=_parse_int_tuple(args.post_exit_R_values),
-                    sample_lift_power=args.post_exit_sample_lift_power,
-                    max_steps=args.post_exit_max_steps,
-                    max_denominator=args.convergent_max_denominator,
-                )
-            )
+        dpe_atlas = dpe_convergent_atlas_report(
+            mod2_power=args.post_exit_k,
+            mod3_power=args.post_exit_ell,
+            R_values=_parse_int_tuple(args.post_exit_R_values),
+            sample_lift_power=args.post_exit_sample_lift_power,
+            max_steps=args.post_exit_max_steps,
+            max_denominator=args.convergent_max_denominator,
         )
+        print(format_convergent_atlas_report(dpe_atlas))
+        if args.dpe_convergent_atlas_output:
+            output_path = Path(args.dpe_convergent_atlas_output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(
+                dpe_atlas.to_json() + "\n",
+                encoding="utf-8",
+            )
+            print(f"saved={output_path}")
 
     if args.orbit_lyapunov_beta_sweep:
         print("\nActual-orbit Lyapunov beta sweep:")

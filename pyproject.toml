@@ -10,6 +10,12 @@ dependencies = [
 [project.optional-dependencies]
 test = ["pytest>=8"]
 analysis = ["numpy>=1.26", "scipy>=1.11", "sympy>=1.12"]
+gpu = [
+    "cupy-cuda12x>=14.0.1",
+    "numba>=0.65.1",
+    "nvidia-cuda-nvrtc-cu12>=12.9.86",
+    "nvidia-cuda-runtime-cu12>=12.9.79",
+]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
