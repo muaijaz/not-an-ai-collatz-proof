@@ -42,6 +42,12 @@ Thumbs.db
 # (artifacts in docs/reports/ are tracked — they are the experimental record)
 # (references PDFs in docs/references/ are tracked — primary literature)
 
+# GPU power-iteration resume checkpoints: scratch state, can exceed GitHub's
+# 100 MB limit (the (16,5) vector alone is 1.8 GB). Keep local only; the JSON
+# artifacts carry all results. Two small pre-existing checkpoints remain
+# tracked from before this rule.
+docs/runs/**/scaled_perron_checkpoint*.npz
+
 # Internal handoff / strategy docs (kept local, not published)
 COLLATZ_CODEX_HANDOFF.md
 docs/CODEX_HANDOFF_*.md
