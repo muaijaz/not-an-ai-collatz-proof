@@ -475,6 +475,35 @@ module `collatz_exp/renewal_correlation.py`.
 
 ---
 
+### D.7 Galerkin PECM ladder separates average contraction from branches
+
+```
+levels: (4,0) -> (6,1) -> (8,2), R = 2..30, common alpha = 0.55
+unresolved finest samples: 0 / 133,632
+max(Mh/h): 0.465489, 0.502925, 0.529990
+E_mean: 0.189683 -> 0.362275
+max log lift spread: 1.921116 -> 2.923891
+max live target ratio: 5.267161 (Galerkin-induced) -> 1.995672 (finest sample)
+```
+
+**Status:** deterministic finite construction plus float64 vector diagnostic;
+not proof-eligible.
+
+**Interpretation:** one finest operator and exact sequential Galerkin
+coarsening remove the old sampling mismatch, but the raw positive vectors do
+not stabilize under the tested refinement and expanding surviving branches
+remain. Exact Galerkin compatibility is therefore strictly weaker than both
+pointwise projective compatibility and per-branch descent. This is a
+productive negative result: the next candidate needs tail/cusp
+renormalization or a genuinely branchwise potential, not merely a larger
+Perron computation. The displayed `max(Mh/h)` values are induced by the chosen
+common-`alpha` resolvent and are not independent spectral estimates.
+
+**Artifact:** `docs/reports/pecm_cross_resolution_consistency.json`; modules
+`collatz_exp/pecm_{vector_export,refinement,consistency}.py`.
+
+---
+
 ## E. Demoted hypotheses (honest record)
 
 ### E.1 ψ as "rich Lyapunov potential"
@@ -750,6 +779,5 @@ Stable across cross-validation; appropriate for citation.
 
 ---
 
-*Last updated: alongside Path A (Markov-Lyapunov on LTE-closed
-operator) landing. Update this document as Path B and subsequent
-results land.*
+*Last updated: alongside the first Galerkin-compatible cross-resolution PECM
+Lyapunov ladder. Continue appending positive and negative results.*

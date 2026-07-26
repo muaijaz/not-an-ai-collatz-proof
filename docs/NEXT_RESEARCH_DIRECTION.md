@@ -19,6 +19,57 @@ The immediate program is therefore to test whether the finite certificates are
 compatible across mixed `2`-adic/`3`-adic resolutions and whether they admit a
 low-complexity symbolic representation.
 
+## Implementation status: first Galerkin-compatible ladder
+
+Phases A-C now have an in-memory, deterministic implementation:
+
+- `collatz_exp/pecm_vector_export.py` exports common-`alpha` positive vectors,
+  state-order hashes, `Mh/h`, graph roles, numerical residuals, and separate
+  descent/reentry/unresolved counts.
+- `collatz_exp/pecm_refinement.py` implements exact mixed-adic parent maps,
+  legal fibers, prolongation, conditional averaging, sequential Galerkin
+  coarsening, and three distinct exact rational operator diagnostics.
+- `collatz_exp/pecm_consistency.py` builds one finest sampled operator,
+  derives the coarser ladder, solves matched resolvents, computes minimax
+  mean/min/max lift errors, and measures surviving-branch oscillation with the
+  cemetery survival correction retained.
+- `docs/reports/pecm_cross_resolution_consistency.json` records the first
+  reproducible smoke ladder.
+
+The first run uses `(4,0) -> (6,1) -> (8,2)`, `R = 2..30`, four CRT samples per
+finest row, and common `alpha = 0.55`. All `133,632` finest transition samples
+resolve. The result is mixed:
+
+| Quantity | `(4,0) -> (6,1)` | `(6,1) -> (8,2)` |
+|---|---:|---:|
+| `E_mean` | `0.189683` | `0.362275` |
+| `E_min` | `0.703883` | `0.787288` |
+| `E_max` | `0.486959` | `0.940103` |
+| maximum log lift spread | `1.921116` | `2.923891` |
+| maximum live target ratio | `5.267161` (Galerkin-induced) | `1.995672` (concrete finest sample) |
+
+The common-`alpha` resolvent gives numerical super-eigenvector ratios below
+`0.55` at every level; these are resolvent bounds, not independent spectral
+estimates. The raw cross-resolution errors grow and live target ratios still
+exceed one.
+This is therefore not evidence for raw pointwise stability at the tested
+levels and triggers the stated stop condition. It does not rule out eventual
+asymptotic stabilization. The negative finite signal pushes the next step
+toward cusp/tail renormalization, wavelet detail analysis, and a branchwise
+object.
+
+The exact Galerkin defect is zero by construction. The pointwise projective
+defect and the stronger full conditional-expectation defect are nonzero and
+are reported separately. Independently sampled legacy operators are also
+non-compatible at both adjacent pairs. None of these float64 results is marked
+proof-eligible.
+
+The production `(8,2) -> (10,3) -> (12,4)` ladder is intentionally not run by
+this in-memory implementation: `(12,4)` has `4,810,752` states, and converting
+its target array and fibers into Python objects would require multiple
+gigabytes. A chunked arithmetic-parent-map implementation is now a concrete
+prerequisite rather than an optional optimization.
+
 ## 0. Mathematical preflight
 
 Four issues must be handled before raw vector comparisons have proof-facing
@@ -343,42 +394,49 @@ pointwise theorem from it.
 
 ## 6. Average-to-pointwise collapse target
 
-For a coarse cylinder `C`, let
+For a coarse cylinder `C` with `D` sampled lifts, let
 
 ```text
 r(z) = H(F(z)) / H(z)
 ```
 
-over all surviving legal lifts `z` in `C`. Suppose the compatible transfer
-operator proves
+on every surviving legal lift `z`, and assign ratio zero to every killed
+descent lift. Let `p_C` be the fraction of surviving lifts. The killed transfer
+operator controls the unconditional row average
 
 ```text
-mean_C r <= lambda
+q_C = (1/D) sum_{z survives} r(z) <= lambda,
 ```
 
-and a uniform distortion estimate proves
+not the conditional live mean `q_C / p_C`. Suppose a uniform distortion
+estimate also proves
 
 ```text
 max_C log r - min_C log r <= omega.
 ```
 
-Then
+For `p_C > 0`, the correct bound is
 
 ```text
-max_C r <= exp(omega) * mean_C r
-        <= exp(omega) * lambda.
+max_C r <= exp(omega) * (q_C / p_C)
+        <= exp(omega) * (lambda / p_C).
 ```
 
-Therefore the averaged certificate becomes pointwise as soon as
+Rows with `p_C = 0` have no surviving branch and are vacuous. If
+`p_C >= p_min > 0` uniformly on all other rows, the averaged certificate
+becomes pointwise as soon as
 
 ```text
-lambda * exp(omega) < 1.
+lambda * exp(omega) / p_min < 1.
 ```
 
-This elementary inequality is the cleanest possible bridge from the existing
-PECM contraction to deterministic descent. The cross-resolution experiment
-should prioritize `omega`, because convergence of the vector alone does not
-imply it.
+The survival factor is essential: contracting killed siblings can hide an
+expanding live branch. If a future operator instead controls the conditional
+live mean directly, the `p_min` denominator disappears. This corrected
+inequality is the cleanest possible bridge from the existing PECM contraction
+to deterministic descent. The cross-resolution experiment should prioritize
+both `omega` and `p_min`, because convergence of the vector alone controls
+neither.
 
 If `omega` fails to shrink globally, partition the states into a regular class
 where the inequality closes and a persistent exceptional-cylinder tree to be
@@ -525,22 +583,33 @@ surviving exceptions into a nested exceptional-cylinder tree and measure their
 
 ## 11. Suggested implementation modules
 
-Potential new modules:
+Implemented modules:
 
 ```text
 collatz_exp/pecm_vector_export.py
 collatz_exp/pecm_refinement.py
 collatz_exp/pecm_consistency.py
+```
+
+Planned modules:
+
+```text
 collatz_exp/symbolic_lyapunov_fit.py
 collatz_exp/symbolic_branch_certificate.py
 collatz_exp/exceptional_cylinder_tree.py
 ```
 
-Potential tests:
+Implemented tests:
 
 ```text
+tests/test_pecm_vector_export.py
 tests/test_pecm_refinement.py
 tests/test_pecm_consistency.py
+```
+
+Planned tests:
+
+```text
 tests/test_symbolic_lyapunov_fit.py
 tests/test_symbolic_branch_certificate.py
 tests/test_exceptional_cylinder_tree.py

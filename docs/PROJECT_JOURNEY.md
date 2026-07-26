@@ -34,8 +34,8 @@ present the *results*; this document presents the *path*.
 
 **Initial state:** one Python file `collatz_certificate_search.py`, ~5 KB.
 
-**Final state:** `collatz_exp/` package with 83 modules, 185 passing
-tests, 112 JSON artifact reports, seven integrated reference-paper threads, and
+**Current state:** `collatz_exp/` package with 90 modules, 231 passing
+tests, 116 JSON artifact reports, seven integrated reference-paper threads, and
 a complete renewal-theoretic / operator-theoretic framework.
 
 ---
@@ -946,7 +946,73 @@ Saved artifacts:
 
 ---
 
-## 19. Lessons learned
+## 19. Cross-resolution Lyapunov experiment
+
+The exact-rational Perron bounds established contraction on several finite
+PECM quotients, but left a more important question unanswered: do their
+positive vectors approximate one object as the mixed `2`-adic/`3`-adic
+partition is refined?
+
+The first implementation uncovered a preflight problem. Independently
+building the old fixed-CRT-sample operator at each level does not give a
+projective ladder. Comparing those eigenvectors directly would mix genuine
+resolution effects with a changing sampling scheme. The replacement builds
+only the finest operator and obtains all coarser kernels by exact sequential
+Galerkin averaging. It also distinguishes three identities:
+
+```text
+K_f I = I K_c       pointwise/projective compatibility
+A K_f I = K_c       Galerkin compatibility on coarse observables
+A K_f = K_c A       full conditional-expectation compatibility
+```
+
+Only the middle identity is forced by construction. The other two defects are
+computed exactly as rational row norms.
+
+At the safe in-memory ladder `(4,0) -> (6,1) -> (8,2)`, with common
+`alpha = 0.55` and `R = 2..30`, all `133,632` finest samples resolve. The
+finite numerical vectors contract on average:
+
+```text
+max(Mh/h) = 0.465489, 0.502925, 0.529990.
+```
+
+Those ratios are induced by the chosen common-`alpha` resolvent; they are
+numerical upper ratios rather than independent spectral estimates.
+
+But the raw lift profiles move in the wrong direction:
+
+```text
+E_mean             = 0.189683 -> 0.362275
+maximum log spread = 1.921116 -> 2.923891
+maximum live target ratio =
+    5.267161 (Galerkin-induced) -> 1.995672 (finest sample)
+```
+
+Thus averaged contraction survives while raw vector stability and pointwise
+descent are not supported at these tested levels. This triggers the planned
+stop condition, but two adjacent comparisons do not rule out eventual
+asymptotic stabilization. The next candidate must absorb the Mersenne
+cusp/tail principal part, suppress high-frequency mixed-adic details, or work
+directly with a branchwise potential.
+
+The report is deliberately marked proof-ineligible: its vectors are float64,
+Galerkin compatibility is weaker than projective compatibility, and a finite
+averaged residue operator is not a per-orbit theorem. Unresolved and
+out-of-window transitions are rejected by default because they share the
+target-array sentinel with genuine descent.
+
+The requested `(8,2) -> (10,3) -> (12,4)` production ladder now has a precise
+engineering prerequisite. The `(12,4)` level contains `4,810,752` states, so
+Python tuple/fiber materialization would consume multiple gigabytes. Arithmetic
+parent maps, chunked coarsening, and streaming vector output must precede that
+run.
+
+Artifact: `docs/reports/pecm_cross_resolution_consistency.json`.
+
+---
+
+## 20. Lessons learned
 
 **What we got right:**
 
@@ -984,18 +1050,22 @@ Saved artifacts:
 
 ---
 
-## 20. Reproducibility
+## 21. Reproducibility
 
 All results in this journey are reproducible:
 
 ```bash
-# Run the full test suite (currently 185 tests passing in ~2s)
+# Run the full test suite (currently 231 tests passing in ~3s)
 uv run python -m pytest -q
 
 # Reproduce any artifact in docs/reports/ via the corresponding CLI:
 uv run python -m collatz_exp.experiments --quick        # smoke test
 uv run python -m collatz_exp.experiments --tao-syrac    # Tao verification
 uv run python -m collatz_exp.experiments --jazz-spike   # spike decomposition
+uv run python -m collatz_exp.experiments \
+  --pecm-cross-resolution \
+  --pecm-cross-resolution-output \
+    docs/reports/pecm_cross_resolution_consistency.json
 # ... see collatz_exp/experiments.py for the full flag list
 ```
 
@@ -1003,7 +1073,7 @@ Reference papers are saved in `docs/references/` for offline access.
 
 ---
 
-## 21. Acknowledgments
+## 22. Acknowledgments
 
 The project was driven by an iterative human–AI collaboration. The
 human's intuition repeatedly produced productive starting points

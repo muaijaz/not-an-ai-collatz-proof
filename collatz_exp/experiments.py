@@ -104,6 +104,11 @@ from .perron_certificate import (
     format_perron_certificate_report,
     perron_certificate_report,
 )
+from .pecm_consistency import (
+    format_pecm_cross_resolution_consistency_report,
+    pecm_cross_resolution_consistency_report,
+)
+from .pecm_vector_export import post_exit_common_alpha_vector_exports
 from .renewal_bootstrap import renewal_bootstrap_calibration_report
 from .renewal_correlation import (
     format_renewal_correlation_report,
@@ -397,6 +402,64 @@ def build_parser() -> argparse.ArgumentParser:
         type=str,
         default=None,
         help="write --perron-certificate JSON report to this path",
+    )
+    parser.add_argument(
+        "--pecm-vector-export",
+        action="store_true",
+        help="export common-alpha positive PECM resolvent vectors",
+    )
+    parser.add_argument(
+        "--pecm-vector-export-configs",
+        type=str,
+        default="4:0,6:1,8:2",
+        help="k:ell levels for --pecm-vector-export",
+    )
+    parser.add_argument(
+        "--pecm-common-alpha",
+        type=float,
+        default=0.55,
+        help="shared resolvent alpha for PECM vector/refinement reports",
+    )
+    parser.add_argument(
+        "--pecm-vector-export-output",
+        type=str,
+        default=None,
+        help="write --pecm-vector-export JSON report to this path",
+    )
+    parser.add_argument(
+        "--pecm-cross-resolution",
+        action="store_true",
+        help="compare a common-alpha exact-Galerkin PECM refinement ladder",
+    )
+    parser.add_argument(
+        "--pecm-cross-resolution-configs",
+        type=str,
+        default="4:0,6:1,8:2",
+        help="coarse-to-fine k:ell levels for --pecm-cross-resolution",
+    )
+    parser.add_argument(
+        "--pecm-cross-resolution-output",
+        type=str,
+        default=None,
+        help="write --pecm-cross-resolution JSON report to this path",
+    )
+    parser.add_argument(
+        "--pecm-max-materialized-states",
+        type=int,
+        default=250_000,
+        help=(
+            "safety limit for in-memory PECM vector/refinement diagnostics; "
+            "larger levels require a future streaming path"
+        ),
+    )
+    parser.add_argument(
+        "--pecm-max-materialized-transitions",
+        type=int,
+        default=2_000_000,
+        help=(
+            "target-entry budget for in-memory PECM vector/refinement "
+            "diagnostics"
+        ),
     )
     parser.add_argument(
         "--max-hardness-power",
@@ -2187,6 +2250,89 @@ def main(argv: list[str] | None = None) -> None:
             output_path.parent.mkdir(parents=True, exist_ok=True)
             output_path.write_text(
                 certificate_report.to_json() + "\n", encoding="utf-8"
+            )
+            print(f"saved={output_path}")
+
+    if args.pecm_vector_export:
+        print("\nCommon-alpha PECM positive-vector export:")
+        vector_exports = post_exit_common_alpha_vector_exports(
+            _parse_pair_tuple(args.pecm_vector_export_configs),
+            alpha=args.pecm_common_alpha,
+            R_values=_parse_int_tuple(args.post_exit_R_values),
+            sample_lift_power=args.post_exit_sample_lift_power,
+            max_steps=args.post_exit_max_steps,
+            tail_reentry_min_R=args.post_exit_tail_reentry_min_R,
+            extension_iterations=args.post_exit_extension_iterations,
+            max_materialized_states=args.pecm_max_materialized_states,
+            max_materialized_transitions=(
+                args.pecm_max_materialized_transitions
+            ),
+        )
+        for export in vector_exports:
+            print(
+                f"(k={export.mod2_power}, ell={export.mod3_power}, "
+                f"states={export.states}, alpha={export.alpha:.6f}, "
+                f"lambda={export.lambda_super:.6f}, "
+                f"converged={export.converged}, "
+                f"unresolved={export.unresolved_or_out_of_window_samples}, "
+                f"state_hash={export.state_order_hash[:12]})"
+            )
+        if args.pecm_vector_export_output:
+            import json
+            from pathlib import Path
+
+            output_path = Path(args.pecm_vector_export_output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(
+                json.dumps(
+                    {
+                        "type": "post_exit_common_alpha_vector_export",
+                        "alpha": args.pecm_common_alpha,
+                        "configurations": [
+                            list(configuration)
+                            for configuration in _parse_pair_tuple(
+                                args.pecm_vector_export_configs
+                            )
+                        ],
+                        "levels": [
+                            export.to_json_dict() for export in vector_exports
+                        ],
+                    },
+                    indent=2,
+                    sort_keys=True,
+                    allow_nan=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            print(f"saved={output_path}")
+
+    if args.pecm_cross_resolution:
+        print("\nCross-resolution PECM Lyapunov consistency:")
+        consistency = pecm_cross_resolution_consistency_report(
+            configurations=_parse_pair_tuple(
+                args.pecm_cross_resolution_configs
+            ),
+            alpha=args.pecm_common_alpha,
+            R_values=_parse_int_tuple(args.post_exit_R_values),
+            sample_lift_power=args.post_exit_sample_lift_power,
+            max_steps=args.post_exit_max_steps,
+            tail_reentry_min_R=args.post_exit_tail_reentry_min_R,
+            extension_iterations=args.post_exit_extension_iterations,
+            max_materialized_states=args.pecm_max_materialized_states,
+            max_materialized_transitions=(
+                args.pecm_max_materialized_transitions
+            ),
+        )
+        print(format_pecm_cross_resolution_consistency_report(consistency))
+        if args.pecm_cross_resolution_output:
+            from pathlib import Path
+
+            output_path = Path(args.pecm_cross_resolution_output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(
+                consistency.to_json() + "\n",
+                encoding="utf-8",
             )
             print(f"saved={output_path}")
 

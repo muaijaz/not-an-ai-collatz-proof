@@ -1,14 +1,24 @@
 # STATE
 
 ## Goal
-"Do the things" — execute the recommended next steps from the repo survey: commit pending work, launch (16,6) streaming PECM run, Polli long-range-correlation audit, exact-rational Perron certification slice.
+Determine whether finite PECM positive super-eigenvectors survive mixed-adic
+refinement as one stable Lyapunov object, without confusing averaged finite
+contraction with pointwise orbit descent.
 
 ## Now
-"Do the things" batch complete; all results committed locally (nothing pushed).
+Cross-resolution phases A-C implemented and the first Galerkin smoke ladder
+completed. Raw-vector stability is not supported at these tested levels:
+errors and lift spread grow at the second refinement, and expanding surviving
+branches remain.
 
 ## Next
-1. Candidate next step (not started): streaming SCC pass to extend exact Perron certificates to (14,5)/(16,5)/(16,6) — recurrent cores are tiny (<=984 states at (12,4)) so only block extraction needs to scale.
-2. Awaiting user: Chang/Siegel outreach emails, arXiv submission decision.
+1. Implement arithmetic parent maps plus chunked/streaming Galerkin passes for
+   the production `(8,2) -> (10,3) -> (12,4)` ladder.
+2. Fit and subtract the tail/cusp principal part; then inspect mixed-adic
+   Haar/Walsh detail coefficients instead of raw vectors alone.
+3. Isolate the worst expanding sampled branches and determine whether they
+   form a persistent positive-integer-realizable cylinder grammar.
+4. Awaiting user: Chang/Siegel outreach emails and arXiv submission decision.
 
 ## Constraints
 - NEVER git push without asking in this conversation (CLAUDE.md hard rule 5).
@@ -18,15 +28,47 @@
 ## Decisions
 - DECISION: two commits (code vs run-harness) — experiments.py contains both PECM flags and dashboard wiring, so code lands as one commit.
 - DECISION: skip outreach/arXiv items — outward-facing actions excluded from "do the things".
+- DECISION: construct every comparison level from one finest sampled operator
+  by exact sequential Galerkin coarsening; independently sampled levels are
+  reported only as a non-compatible legacy diagnostic.
+- DECISION: reject unresolved transition windows by default, label float64
+  vectors as numerical rather than exact, and cap in-memory work at `250,000`
+  states and `2,000,000` retained target entries.
 
 ## Facts
-- Tests: `uv run python -m pytest -q` → 191 passed (baseline, this session).
+- Tests: `uv run python -m pytest -q` with host CUDA access -> 231 passed in
+  2.37s.
+- Galerkin smoke ladder: `(4,0) -> (6,1) -> (8,2)`,
+  `R = 2..30`, common `alpha = 0.55`, 0 unresolved samples.
+- Numerical `max(Mh/h)`: `0.465489`, `0.502925`, `0.529990`.
+- Minimax `E_mean`: `0.189683`, then `0.362275`; maximum log lift
+  spread: `1.921116`, then `2.923891`.
+- Maximum live target ratio: `5.267161` on the Galerkin-induced middle
+  kernel, then `1.995672` on the concrete finest samples; averaged
+  contraction does not collapse to pointwise contraction.
+- Primary ladder has exact Galerkin identity only; pointwise projective and
+  full conditional-expectation defects remain nonzero. Both independently
+  sampled adjacent pairs are non-compatible.
+- Artifact:
+  `docs/reports/pecm_cross_resolution_consistency.json`.
 - GPU: RTX 3090 Ti 24564 MiB (~21.5 GB free), CuPy 14.0.1 OK.
 - (14,5) run completed 2026-06-18: 57.7M states, finite_ratio_max=0.5357, artifact docs/runs/pecm_14_5_scaled_gpu_20260618_015521/.
 - (16,6) estimate: ~692.7M states, ~2.77B transitions (docs/collatz_strategy.md).
 - CLI: `python -m collatz_exp.experiments --post-exit-scaled-perron --post-exit-configs K:L --post-exit-operator-mode {dense_target_cache,streaming,gpu_target_cache,auto} --post-exit-checkpoint <npz> --post-exit-scaled-perron-output <json>`.
 
 ## Done
+- Common-alpha PECM vector export (`collatz_exp/pecm_vector_export.py`) —
+  RESULT: deterministic state hashes and full per-state `h`, `Mh/h`, and graph
+  role records; unresolved windows rejected by default; float output explicitly
+  proof-ineligible; oversized materialized exports guarded.
+- Exact mixed-adic refinement (`collatz_exp/pecm_refinement.py`) — RESULT:
+  canonical parent/fiber maps, exact prolongation/averaging, associative
+  Galerkin coarsening, and separately named Galerkin, pointwise-projective, and
+  full conditional-expectation defects.
+- Cross-resolution consistency (`collatz_exp/pecm_consistency.py`) — RESULT:
+  common-alpha Galerkin ladder, exact minimax lift alignment, spread
+  quantiles, worst states, survival-corrected branch bounds, legacy sampling
+  comparison, deterministic JSON artifact.
 - Repo survey (2 Explore agents) — RESULT: full state + roadmap synthesis delivered to user; frontier = PECM (16,6) wall, Polli check open threat, paper v0.5 unsubmitted.
 - Commits 4ba7a91 (PECM streaming/GPU/checkpoint + frontier dashboard) and a66644d (scripts/ + docs/runs/ + STATE.md) — RESULT: working tree clean except .codex; 191 tests green before commit.
 - (16,6) feasibility check — RESULT: infeasible with current backends (streaming = ~2.77B pure-Python transitions/iteration at post_exit_map.py:930-967; gpu/dense cache = int64 ~22GB > 21.5GB free GPU / 34GB avail RAM). Running (16,5)+(14,6) flanks instead.

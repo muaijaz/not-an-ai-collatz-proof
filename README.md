@@ -6,11 +6,11 @@
 
 *Renewal Cramér rates · Joint Spectral Radius diagnostics · Five-projection operator synthesis*
 
-[![Tests](https://img.shields.io/badge/tests-201%20passing-brightgreen?style=flat-square)](.)
+[![Tests](https://img.shields.io/badge/tests-231%20passing-brightgreen?style=flat-square)](.)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-empirical-orange?style=flat-square)](.)
 [![Python](https://img.shields.io/badge/python-3.12-blue?style=flat-square)](.)
-[![Reproducible](https://img.shields.io/badge/artifacts-115%20JSON-success?style=flat-square)](docs/reports)
+[![Reproducible](https://img.shields.io/badge/artifacts-116%20JSON-success?style=flat-square)](docs/reports)
 
 </div>
 
@@ -44,11 +44,13 @@ operator all give the same value:
 | Christoffel-filtered worst-case JSR | `0.7500` exact | bounded resolution |
 | Realizable Karp (positive-integer cycles only) | `0.7500` exact | bounded simple cycles, integer-realizability classified |
 
-`3/4 = e^(log 3/4)` is the **per-step orbit growth rate** for Collatz orbits
-in this framework — the structural backbone result. Of `226,333` simple
-cycles audited at `(q, R_max) ∈ {(5,4),(6,5),(7,6)}`, `226,330` classify
-as `noninteger_2adic_only`; the only positive-integer realizers are
-the elementary `[2]` cycle, one per level.
+`3/4 = e^(log 3/4)` is the typical multiplicative factor under the
+geometric-valuation baseline, and it also appears in several finite
+constrained diagnostics. It is not a deterministic per-orbit growth rate. Of
+`226,333` simple cycles audited at
+`(q, R_max) ∈ {(5,4),(6,5),(7,6)}`, `226,330` classify as
+`noninteger_2adic_only`; the only positive-integer realizers are the elementary
+`[2]` cycle, one per level.
 
 The same constant surfaces as the per-step drift of an explicit Lyapunov
 candidate. `V(n) = log₂(n) + v_2(n+1)` satisfies the m-step Foster-Lyapunov
@@ -82,6 +84,18 @@ scale**: DFA exponents and autocorrelations are indistinguishable from
 shuffled surrogates at 400- and 1000-bit windows, supporting the IID
 renewal model behind `J_renewal`
 (`docs/reports/renewal_correlation_polli_1000bit.json`).
+
+The first cross-resolution PECM experiment now uses one finest sampled
+operator and exact sequential Galerkin coarsening, so its averaged refinement
+identity is structural rather than an accident of independently chosen CRT
+lifts. At `(4,0) → (6,1) → (8,2)` with common `alpha = 0.55`, all transition
+samples resolve and the numerical resolvent ratios remain below `0.53`
+(these are not independent spectral estimates). The harder result is
+negative: `E_mean` grows from `0.190` to `0.362`,
+maximum lift spread grows from `1.92` to `2.92`, and the worst surviving
+sampled branch ratio is `1.996` at the finest step. Thus the raw averaged
+vectors do not yet stabilize or imply pointwise descent
+([artifact](docs/reports/pecm_cross_resolution_consistency.json)).
 
 The framework now has a qn+1 sidecar diagnostic. Within the odd `q>1` grid,
 the classical `q=3` case is the unique tested member below the
@@ -134,7 +148,7 @@ Empirical bridges to published papers, all finite-resolution and caveated:
 # Install dependencies
 uv sync
 
-# Run all 201 tests (≈3s)
+# Run all 231 tests (≈3s)
 uv run python -m pytest -q
 
 # Smoke test the experimental pipeline
@@ -150,6 +164,12 @@ uv run python -m collatz_exp.experiments --jazz-spike
 uv run python -m collatz_exp.experiments \
   --christoffel-filtered-jsr \
   --tail-aware-levels 5:4,6:5
+
+# Reproduce the common-alpha Galerkin PECM refinement experiment
+uv run python -m collatz_exp.experiments \
+  --pecm-cross-resolution \
+  --pecm-cross-resolution-output \
+    docs/reports/pecm_cross_resolution_consistency.json
 ```
 
 Every quoted number has a corresponding JSON artifact under
@@ -181,8 +201,8 @@ collatz-renewal-framework/
 ├── pyproject.toml
 ├── uv.lock
 ├── collatz_certificate_search.py   ← original CLI compatibility wrapper
-├── collatz_exp/                    ← main package, 83 modules
-├── tests/                          ← 201 passing tests
+├── collatz_exp/                    ← main package, 90 modules
+├── tests/                          ← 231 passing tests
 └── docs/
     ├── NOTABLE_RESULTS.md          ← running result catalog
     ├── PROJECT_JOURNEY.md          ← chronological narrative + audit log
@@ -191,7 +211,7 @@ collatz-renewal-framework/
     ├── UNIFIED_MODEL.md            ← 5-projection operator synthesis
     ├── collatz_strategy.md         ← working strategy notes
     ├── references/                 ← Tao, Mori, Hercher, Paparella, Chang PDFs
-    └── reports/                    ← 115 JSON artifacts (one per result)
+    └── reports/                    ← 116 JSON artifacts (one per result)
 ```
 
 ---
@@ -245,10 +265,16 @@ Named, not closed:
    with margin `ε = 0.1` on residue quotients `mod 2^k` for `k ∈ {2..8}`.
    Together with Chang `2603.25753`, the residual is the Tao
    distributional-to-pointwise wall in a Markov-measure-1 formulation.
-5. **Symbolic representation of `J_renewal`** — the direct
+5. **Cross-resolution PECM Lyapunov stability** — the first
+   Galerkin-compatible ladder keeps average contraction but its raw vector
+   errors and
+   branch oscillation grow at the second refinement. Cusp/tail
+   renormalization, a streaming `(8,2) → (10,3) → (12,4)` ladder, and an
+   exact branchwise replacement remain open.
+6. **Symbolic representation of `J_renewal`** — the direct
    `Σ R(K) ≈ J_renewal` identity test is not supported at high precision;
    an explicit `h_K`-weighted reconciliation remains open.
-6. **abc-conditional lower bound bridge** — Rozier's Theorem 2.1 gives an
+7. **abc-conditional lower bound bridge** — Rozier's Theorem 2.1 gives an
    abc-conditional `ε`-improved lower bound for `N(j)` elements, while
    Theorem 4.1 gives an unconditional lower-bound/μ-hit dichotomy. The finite
    audit verifies Theorem 4.1 for `j=10..50`; closing the conditional route
@@ -263,9 +289,9 @@ statements.
 
 - Every quoted number → corresponding JSON artifact under
   [`docs/reports/`](docs/reports).
-- Each artifact records method, parameters, sample size, bootstrap CI,
-  and exact empirical value.
-- 201 passing tests cover core arithmetic, certificates, Mersenne tail
+- Each artifact records method, parameters, sample size, and the relevant
+  numerical or exact diagnostics; empirical CIs are included where applicable.
+- 231 passing tests cover core arithmetic, certificates, Mersenne tail
   dynamics, post-exit map, renewal Cramér computation, Tao verification,
   Hercher bounds, Paparella nilpotency, JSR variants, automaton-constrained
   Karp, upper-Christoffel slope filtering, tail-cycle realizability,
@@ -275,7 +301,8 @@ statements.
   audit, qn+1 family realizability, qn+1 phase-transition, Rozier's abc
   bridge with μ-hits, the CF-convergent/Stern-Brocot slope hypothesis,
   the Polli long-range-correlation audit, and exact-rational PECM Perron
-  certificates.
+  certificates, plus common-alpha vector export, exact mixed-adic refinement,
+  Galerkin/projective defect separation, and cross-resolution consistency.
 - Reference papers in [`docs/references/`](docs/references) for offline
   access.
 
