@@ -323,6 +323,80 @@ Implementation and artifact:
 - `collatz_exp/symbolic_higher_r_certificate.py`
 - `docs/reports/pecm_higher_r_affine_ghost.json`
 
+## Implementation status: exact repeat/resonance atlas slice
+
+The wordwise finite-repeat condition is now exact. For every nonempty
+valuation word `W`,
+
+```text
+W is exact at odd n
+  iff v2(|(3^M-2^A)n+B|) >= A+1,
+```
+
+with `v2(0)=infinity`. Hence an expanding word repeats exactly
+
+```text
+floor((v2(L_W(n))-1)/A)
+```
+
+times, leaving a residual depth `e in {1,...,A}`. Conditional odd 2-adic
+Haar mass gives
+
+```text
+P(e)=2^(A-e)/(2^A-1).
+```
+
+This is an exact cylinder measure, not a statement that one orbit samples
+independent residual depths.
+
+For a switch from expanding chart `W` to expanding chart `V`, define the
+integer ghost-gap numerator
+
+```text
+G_VW=B_V D_W-D_V B_W.
+```
+
+At a maximal `W` exit, unequal valuations
+`e != v2(|G_VW|)` force the target depth to their minimum. Equality permits
+2-adic cancellation and a larger target depth. Therefore every legal
+nonresonant maximal-exit edge has `A_V<A_W`; every directed chart cycle must
+contain a valuation resonance. This is a new well-founded component of the
+atlas, but it does not control how high a resonance can reset the next chart.
+
+The first node `W=(1,1,2)` is completely partitioned by
+
+```text
+11n+19=2^e z,  e=1,2,3,4.
+```
+
+The four residual masses are `8/15,4/15,2/15,1/15`. The only expanding exits
+are exactly `(1,2)`, `(1,1,1,1)`, `(1,1,1,2)`, and `(1,1,1,3)`; every other
+branch in this partition descends below the exhausted `W` state or is the
+terminal equality at `n=1`. These local descents are not claimed to lie below
+the pre-run chart entry.
+
+One exact resonant fixture produces a stronger local result. The complete
+13-step word is exact on the entire cylinder
+
+```text
+n=38119+2^22 t,  t>=0,
+```
+
+and its first descent is
+
+```text
+n -> 28981+2*3^13 t < n.
+```
+
+The mixed `3`-adic subfamily from the earlier higher-tail transfer is only
+provenance for reaching this cylinder; it is not needed for the local descent
+theorem.
+
+Implementation and artifact:
+
+- `collatz_exp/affine_ghost_atlas.py`
+- `docs/reports/pecm_affine_ghost_atlas.json`
+
 ## 0. Mathematical preflight
 
 Four issues must be handled before raw vector comparisons have proof-facing
@@ -917,18 +991,18 @@ function.
 Recommended allocation within the Collatz project:
 
 ```text
-40% exact affine-ghost chart-switch inequalities
-25% higher-R induced grammar with magnitude intervals
-20% cusp-renormalized PECM ranking of candidate charts
-10% exceptional-cylinder residue-rate search
+40% recursively partition the four expanding W112 exit charts
+25% bound or classify successive valuation resonances
+20% exact weighted inequalities on any finite closed atlas component
+10% cusp-renormalized PECM ranking of the next resonant charts
  5% unrelated diagnostics
 ```
 
 The next meaningful milestone is:
 
-> Construct a nontrivial exact induced grammar of affine-ghost charts and
-> either prove compatible contraction across every chart-switch edge or isolate
-> a persistent positive-integer-realizable switch family that obstructs it.
+> Recursively close the four expanding exits of the `(1,1,2)` chart and
+> establish either a bound on successive resonance depth, a finite closed
+> weighted component, or an explicit infinite resonant family.
 
 The cross-resolution vector lane remains useful for prioritizing charts and
 guessing edge weights, but exact branch identities and finite magnitude

@@ -784,6 +784,114 @@ checks; not a global Lyapunov function and not a Collatz proof.
 
 ---
 
+### D.11 Exact word repeats, switch resonances, and one descent cylinder
+
+**Exact word-cylinder theorem.** For every nonempty accelerated valuation
+word
+
+```text
+T_W(n)=(3^M n+B)/2^A,
+L_W(n)=(3^M-2^A)n+B,
+```
+
+the word is exact at positive odd `n` precisely when
+
+```text
+v2(|L_W(n)|)>=A+1,
+```
+
+where `v2(0)=infinity`. Equivalently, its domain is one unique odd residue
+modulo `2^(A+1)`. For an expanding word, `L_W(n)>0`, and its exact maximal
+repeat count is
+
+```text
+floor((v2(L_W(n))-1)/A).
+```
+
+After maximal repetition the residual depth is in `{1,...,A}`. Its
+conditional normalized odd 2-adic Haar masses are
+
+```text
+P(e)=2^(A-e)/(2^A-1).
+```
+
+No IID or typical-orbit claim is attached to this measure identity.
+
+**Chart-switch resonance theorem.** For expanding charts `W,V`, define
+
+```text
+G_VW=B_V D_W-D_V B_W.
+```
+
+After one exact `W` use, let `e` be the residual valuation in the source
+coordinate and `g=v2(|G_VW|)`. If `e!=g`, the target coordinate has valuation
+`min(e,g)`. If `e=g`, its two odd leading terms cancel and the valuation is
+strictly larger. At a maximal `W` exit, target exactness then implies:
+
+```text
+nonresonant legal edge => A_V < A_W.
+```
+
+Hence every directed cycle of maximal expanding charts contains a valuation
+resonance. This is a genuine well-founded component, but it is not a
+termination proof because the size of a resonant reset is not bounded.
+The special case `G=0` means the charts have the same ghost and is recorded
+separately from nonzero-gap resonance.
+
+**Complete first node.** For `W=(1,1,2)`,
+
+```text
+L_W(n)=11n+19,  A=4.
+```
+
+Writing `11n+19=2^e z` partitions every exhausted state into four exact cases.
+The `e=1` and `e=4` cases descend below that exhausted state; `e=2` either
+does the same or enters the `(1,2)` ghost; `e=3` either descends below the
+exhausted state or enters one of `(1,1,1,1)`, `(1,1,1,2)`, `(1,1,1,3)`.
+These are not pre-run descent claims. Their residual Haar masses are
+`8/15,4/15,2/15,1/15`.
+
+**Infinite exact first-descent cylinder.** One exact maximal-chart fixture is
+
+```text
+38119 --(1,1,2)^2--> 108553
+      --(2,1,1,2)--> 137389
+      --(3,2,2)----> 28981.
+```
+
+Its first switch is resonant: the residual source depth and `v2(810)` are both
+one, and cancellation raises the next chart depth to eight. The complete word
+has
+
+```text
+(M,A,B)=(13,21,3563675),
+3^M-2^A=-502829.
+```
+
+Its exact source domain is the full cylinder
+
+```text
+n=38119+2^22 t,  t>=0.
+```
+
+Every member has its first descent at step 13:
+
+```text
+T(n)=28981+3188646t,
+n-T(n)=9138+1005658t>0.
+```
+
+**Status.** Exact symbolic results with bounded formula regression. The
+exhausted `(1,1,2)` source partition is complete, but chart selection is not
+canonical, its four expanding targets are not recursively closed, and no
+bound on successive resonance depth, global Lyapunov function, or Collatz
+proof has been derived.
+
+**Artifact:** `docs/reports/pecm_affine_ghost_atlas.json`; module
+`collatz_exp/affine_ghost_atlas.py`.
+
+---
+
 ## E. Demoted hypotheses (honest record)
 
 ### E.1 ψ as "rich Lyapunov potential"

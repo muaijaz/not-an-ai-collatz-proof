@@ -1,30 +1,32 @@
 # STATE
 
 ## Goal
-Build an exact affine-ghost atlas for the higher-`R` induced grammar and
-determine whether its chart-switch edges admit one compatible Lyapunov
-inequality, without confusing wordwise contraction or finite repeat budgets
-with global Collatz descent.
+Recursively close the four expanding exits of the exact exhausted
+`(1,1,2)` partition and determine whether valuation resonances have bounded
+complexity or admit one compatible Lyapunov inequality, without confusing an
+infinite descent cylinder with a global Collatz proof.
 
 ## Now
-The `S_exit=3` higher-`R` handoff is now an exact mixed-residue family. If
-`u+1=2^(3m)w`, its word is `(1,2)^m`, its target is `4*9^m*w-5`, and the
-existing cusp contracts the complete phase by `(11979/12167)^m`. The first
-higher-`R` post stage and its descent cutoff are exact. The simple `-5` cusp
-then fails on `1051 -> 1183 -> 4495`, but every expanding exact word has its
-own negative rational affine ghost `g_W` and a local cusp whose valuation
-drops by the word's total power `A`. One word cannot repeat forever; the open
-problem is the additive ghost-gap term when the word changes.
+Exact word membership and repeat counts are now controlled by one affine
+linear form. An expanding word `W` is exact iff
+`v2(L_W(n))>=A_W+1`, and it repeats exactly
+`floor((v2(L_W(n))-1)/A_W)` times. At a maximal chart exit, every legal
+nonresonant switch strictly lowers `A`; any chart cycle must contain a 2-adic
+cancellation resonance. The `W=(1,1,2)` exit partition is complete and has
+four expanding target charts. One resonant path gives first descent at step
+13 for every `n=38119 mod 2^22`. No bound on successive resonances has been
+derived, and the induced chart graph is still open.
 
 ## Next
-1. Enumerate theorem-shaped higher-`R` chart switches, retaining exact
-   magnitude intervals wherever the affine slope contracts.
-2. Test edge potentials against the exact identity
-   `L_V(T_W(n))=a_VW L_W(n)+delta_VW`, where `delta_VW` is the ghost gap.
-3. Search for a well-founded combination of chart repeat budgets and
-   cross-chart weights; identify any persistent positive-integer obstruction.
-4. Run the rational max-times solver only on an exact closed induced
-   component; keep the countably infinite open family symbolic.
+1. Derive complete maximal-exit partitions for `(1,2)`, `(1,1,1,1)`,
+   `(1,1,1,2)`, and `(1,1,1,3)`.
+2. Store every integer ghost gap `G`, distinguish nonresonant strict
+   `A`-decrease from valuation resonance, and look for a second
+   well-founded quantity on resonance edges.
+3. Determine whether repeated resonance depth is bounded, eventually
+   periodic, or represented by an explicit infinite positive-integer family.
+4. On any exact finite closed component, solve rational weighted
+   chart-switch inequalities with explicit finite magnitude exceptions.
 5. Use cusp-renormalized PECM vectors only to rank candidate charts and
    edges, not as pointwise proof.
 6. Retain chunked/streaming Galerkin and mixed-adic wavelet work as numerical
@@ -66,9 +68,20 @@ problem is the additive ghost-gap term when the word changes.
 - DECISION: treat the additive ghost-gap term at chart switches as the next
   proof obstruction. Wordwise factors cannot be multiplied globally until
   compatible edge inequalities are proved.
+- DECISION: replace the old necessary repeat budget by the exact theorem
+  `floor((v2(L_W)-1)/A_W)`; retain `v2(0)=infinity` for contracting fixed
+  points.
+- DECISION: call `G=0` a same-ghost/zero-gap switch and reserve
+  "valuation resonance" for nonzero `G` with equal residual and gap
+  valuations.
+- DECISION: decompose induced paths into maximal expanding-word runs before
+  applying the strict nonresonant `A`-decrease corollary.
+- DECISION: treat `n=38119 mod 2^22` as a full binary first-descent cylinder;
+  its earlier mixed 3-adic subfamily is provenance, not a restriction on the
+  local theorem.
 
 ## Facts
-- Tests: `uv run python -m pytest -q` -> 284 passed.
+- Tests: `uv run python -m pytest -q` -> 325 passed.
 - Exact selected root: `(R,u mod 2^11,u mod 9)=(9,55,2)`.
 - Full word `(1^8,3,2,4)` has `(m,A,B)=(11,17,186875)` and exact slope
   `177147/131072 > 1`; its one-word affine fixed point is the noninteger
@@ -114,10 +127,25 @@ problem is the additive ghost-gap term when the word changes.
   `v2(L_W(T_W(n)))=v2(L_W(n))-A`.
 - Certified affine ghosts: `179n+211` with factor `15552/15625`, and
   `11n+19` with factor `64827/65536`.
-- Repeat budget: `r` consecutive uses of an expanding word require
-  `rA<=v2(L_W(n))`.
+- Universal exact-word theorem: `W` is exact at odd `n` iff
+  `v2(|L_W(n)|)>=A+1`, taking `v2(0)=infinity`.
+- Exact repeat count for expanding `W`:
+  `floor((v2(L_W(n))-1)/A)`.
 - Chart-switch identity has the additive term
-  `B_V-D_V*B_W/D_W`; cross-chart contraction remains open.
+  `B_V-D_V*B_W/D_W`; its integer numerator is
+  `G_VW=B_V D_W-D_V B_W`.
+- Maximal-exit resonance theorem: if residual depth and `v2(|G_VW|)` differ,
+  target depth is their minimum. Every legal nonresonant edge strictly lowers
+  `A`, so every maximal-chart cycle contains a resonance.
+- `W=(1,1,2)` exit residuals `e=1..4` have exact normalized masses
+  `8/15,4/15,2/15,1/15`; its expanding targets are exactly `(1,2)`,
+  `(1,1,1,1)`, `(1,1,1,2)`, and `(1,1,1,3)`.
+- Exact maximal-word fixture path:
+  `38119 --(1,1,2)^2--> 108553 --(2,1,1,2)--> 137389
+  --(3,2,2)--> 28981`.
+- The full 13-step word has `(M,A,B)=(13,21,3563675)` and is exact for
+  every `n=38119+2^22*t`. Its first descent is
+  `28981+2*3^13*t`, with gap `9138+1005658*t`.
 - Galerkin smoke ladder: `(4,0) -> (6,1) -> (8,2)`,
   `R = 2..30`, common `alpha = 0.55`, 0 unresolved samples.
 - Numerical `max(Mh/h)`: `0.465489`, `0.502925`, `0.529990`.
@@ -137,12 +165,21 @@ problem is the additive ghost-gap term when the word changes.
   `docs/reports/pecm_r2_recursive_tail_cusp.json`.
 - Exact higher-`R`/affine-ghost artifact:
   `docs/reports/pecm_higher_r_affine_ghost.json`.
+- Exact repeat/resonance atlas artifact:
+  `docs/reports/pecm_affine_ghost_atlas.json`.
 - GPU: RTX 3090 Ti 24564 MiB (~21.5 GB free), CuPy 14.0.1 OK.
 - (14,5) run completed 2026-06-18: 57.7M states, finite_ratio_max=0.5357, artifact docs/runs/pecm_14_5_scaled_gpu_20260618_015521/.
 - (16,6) estimate: ~692.7M states, ~2.77B transitions (docs/collatz_strategy.md).
 - CLI: `python -m collatz_exp.experiments --post-exit-scaled-perron --post-exit-configs K:L --post-exit-operator-mode {dense_target_cache,streaming,gpu_target_cache,auto} --post-exit-checkpoint <npz> --post-exit-scaled-perron-output <json>`.
 
 ## Done
+- Exact affine-ghost repeat/resonance atlas
+  (`collatz_exp/affine_ghost_atlas.py`) — RESULT: universal exact-word
+  cylinder theorem, exact maximal repeats, conditional Haar exit law,
+  integer-gap resonance lemma, strict nonresonant maximal-edge `A` decrease,
+  complete `(1,1,2)` residual partition, canonical resonant path, full
+  `38119 mod 2^22` first-descent cylinder, deterministic report, and explicit
+  open global atlas status.
 - Exact higher-`R` phase and affine-ghost certificate
   (`collatz_exp/symbolic_higher_r_certificate.py`) — RESULT: complete
   `(m,R)` transfer parametrization, target-fixed mixed-residue transport,

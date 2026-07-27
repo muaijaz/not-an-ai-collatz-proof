@@ -34,8 +34,8 @@ present the *results*; this document presents the *path*.
 
 **Initial state:** one Python file `collatz_certificate_search.py`, ~5 KB.
 
-**Current state:** `collatz_exp/` package with 93 modules, 284 passing
-tests, 119 JSON artifact reports, seven integrated reference-paper threads, and
+**Current state:** `collatz_exp/` package with 94 modules, 325 passing
+tests, 120 JSON artifact reports, seven integrated reference-paper threads, and
 a complete renewal-theoretic / operator-theoretic framework.
 
 ---
@@ -1220,6 +1220,103 @@ slope contracts.
 
 Artifact: `docs/reports/pecm_higher_r_affine_ghost.json`.
 
+### 19.4 Exact repeat grammar and the first resonant atlas slice
+
+The finite-use statement in the previous section was not sharp. For every
+nonempty valuation word `W`, with
+
+```text
+T_W(n)=(3^M n+B)/2^A,
+L_W(n)=(3^M-2^A)n+B,
+```
+
+there is exactly one odd source cylinder modulo `2^(A+1)`, and
+
+```text
+W is exact at n iff v2(|L_W(n)|)>=A+1,
+```
+
+where `v2(0)=infinity`. For an expanding word this turns the former necessary
+repeat budget into the exact formula
+
+```text
+repeats_W(n)=floor((v2(L_W(n))-1)/A).
+```
+
+The residual valuation after maximal repetition lies in `{1,...,A}`. Under
+normalized odd 2-adic Haar measure its exact conditional masses are
+`2^(A-e)/(2^A-1)`. This is a measure statement, not an independence or
+per-orbit frequency claim.
+
+The chart-switch obstruction also became discrete. For expanding charts `W`
+and `V`, put
+
+```text
+G_VW=B_V D_W-D_V B_W.
+```
+
+After the last `W` use, if the residual depth is `e` and
+`g=v2(|G_VW|)`, then unequal `e` and `g` force the new depth to
+`min(e,g)`. If `e=g`, the two odd leading terms cancel and the target depth
+can jump upward. This is a valuation resonance. It gives a useful exact
+complexity corollary:
+
+> Every legal nonresonant switch after a maximal expanding-word run has
+> `A_target < A_source`.
+
+Thus every directed cycle of maximal expanding charts needs a resonance.
+This does not prove termination because a resonance may reset both `A` and
+the repeat depth without a known bound.
+
+The first chart `W=(1,1,2)` now has a complete exit partition. Writing
+
+```text
+11n+19=2^e z,  z odd,  e in {1,2,3,4},
+```
+
+the `e=1` and `e=4` cases descend below the exhausted state, `e=2` either
+does the same or switches to the old `-5` chart, and `e=3` either descends
+below the exhausted state or switches to one of three explicit expanding
+ghosts. These local descents need not lie below the pre-run chart entry. Its
+normalized residual masses are
+`8/15,4/15,2/15,1/15`.
+
+The canonical obstruction is exactly resonant. The maximal-word grouping is
+
+```text
+38119 --(1,1,2)^2--> 108553
+      --(2,1,1,2)--> 137389
+      --(3,2,2)----> 28981.
+```
+
+At the last `(1,1,2)` source, the residual depth and `v2(810)` both equal
+one; cancellation raises the next chart depth to eight. The concatenated word
+has
+
+```text
+(M,A,B)=(13,21,3563675),
+3^M-2^A=-502829.
+```
+
+Its exact domain is the full binary cylinder
+
+```text
+n=38119+2^22 t,  t>=0,
+```
+
+and every member has its first descent at step 13:
+
+```text
+T(n)=28981+2*3^13 t,
+n-T(n)=9138+1005658t>0.
+```
+
+This is a theorem on an infinite positive cylinder, not a global cover. The
+four expanding exit charts still need recursive partitioning, and no bound on
+successive resonances has been proved.
+
+Artifact: `docs/reports/pecm_affine_ghost_atlas.json`.
+
 ---
 
 ## 20. Lessons learned
@@ -1265,7 +1362,7 @@ Artifact: `docs/reports/pecm_higher_r_affine_ghost.json`.
 All results in this journey are reproducible:
 
 ```bash
-# Run the full test suite (currently 284 tests passing in ~4s)
+# Run the full test suite (currently 325 tests passing)
 uv run python -m pytest -q
 
 # Reproduce any artifact in docs/reports/ via the corresponding CLI:
@@ -1277,6 +1374,7 @@ uv run python -m collatz_exp.experiments \
   --pecm-cross-resolution-output \
     docs/reports/pecm_cross_resolution_consistency.json
 uv run python -m collatz_exp.symbolic_higher_r_certificate --verbose
+uv run python -m collatz_exp.affine_ghost_atlas --verbose
 # ... see collatz_exp/experiments.py for the full flag list
 ```
 

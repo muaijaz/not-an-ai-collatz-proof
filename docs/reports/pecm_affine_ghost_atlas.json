@@ -1,0 +1,842 @@
+{
+  "atlas_path_fixtures": {
+    "exact_higher_tail_return_regrouping": {
+      "W1122_repeat": {
+        "chart": {
+          "A": 6,
+          "B": "73",
+          "D": "17",
+          "M": 4,
+          "exact_word_cylinder": {
+            "criterion": "v2(17*n + 73) >= 7",
+            "modulus": "128",
+            "residue": "71"
+          },
+          "ghost": {
+            "denominator": "17",
+            "numerator": "-73"
+          },
+          "linear_form": "17*n + 73",
+          "map": "T(n) = (3^4*n + 73) / 2^6",
+          "slope": {
+            "denominator": "64",
+            "numerator": "81"
+          },
+          "word": [
+            1,
+            1,
+            2,
+            2
+          ]
+        },
+        "landing_linear_value": "1384128",
+        "landing_n": "81415",
+        "repeat_count": 1,
+        "repeat_count_formula": "floor((source_linear_v2 - 1) / A)",
+        "residual_depth": 6,
+        "source_linear_v2": 12,
+        "source_linear_value": "1093632",
+        "source_n": "64327",
+        "word_is_exhausted_at_landing": true
+      },
+      "W112_chart": {
+        "A": 4,
+        "B": "19",
+        "D": "11",
+        "M": 3,
+        "exact_word_cylinder": {
+          "criterion": "v2(11*n + 19) >= 5",
+          "modulus": "32",
+          "residue": "7"
+        },
+        "ghost": {
+          "denominator": "11",
+          "numerator": "-19"
+        },
+        "linear_form": "11*n + 19",
+        "map": "T(n) = (3^3*n + 19) / 2^4",
+        "slope": {
+          "denominator": "16",
+          "numerator": "27"
+        },
+        "word": [
+          1,
+          1,
+          2
+        ]
+      },
+      "contracting_sibling": {
+        "D": "-47",
+        "descends_for_every_positive_exact_source_n_at_least_3": true,
+        "landing_n": "51521",
+        "map": "T(n)=(81*n+73)/128",
+        "positive_fixed_point": {
+          "denominator": "47",
+          "numerator": "73"
+        },
+        "source_n": "81415",
+        "word": [
+          1,
+          1,
+          2,
+          3
+        ]
+      },
+      "decomposition_role": "natural higher-tail returns; its W-to-W1122 switch occurs before W is maximally exhausted",
+      "macro_words": [
+        [
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          2,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ]
+      ],
+      "resonant_W112_to_W1122_switch": {
+        "after_source_n": "64327",
+        "gap_G": "480",
+        "gap_v2": 5,
+        "identity": {
+          "coordinate": "L_target(T_source(n)) = (D_target*3^M_source*2^residual*z + G) / D_source",
+          "integer_gap": "G = B_target*D_source - D_target*B_source",
+          "z": "L_source(n) / 2^source_linear_v2 is odd"
+        },
+        "residual_depth": 5,
+        "resonance_lift": 7,
+        "source_linear_v2": 9,
+        "source_n": "38119",
+        "source_word": [
+          1,
+          1,
+          2
+        ],
+        "target_linear_v2": 12,
+        "target_linear_value": "1093632",
+        "target_word": [
+          1,
+          1,
+          2,
+          2
+        ],
+        "target_word_exact": true,
+        "valuation_case": "resonance"
+      },
+      "values": [
+        "38119",
+        "64327",
+        "81415",
+        "51521",
+        "38641",
+        "28981"
+      ]
+    },
+    "induced_chart_selection_rule_complete": false,
+    "lands_below_original_source": true,
+    "maximal_word_decomposition": {
+      "V2112_repeat": {
+        "chart": {
+          "A": 6,
+          "B": "103",
+          "D": "17",
+          "M": 4,
+          "exact_word_cylinder": {
+            "criterion": "v2(17*n + 103) >= 7",
+            "modulus": "128",
+            "residue": "9"
+          },
+          "ghost": {
+            "denominator": "17",
+            "numerator": "-103"
+          },
+          "linear_form": "17*n + 103",
+          "map": "T(n) = (3^4*n + 103) / 2^6",
+          "slope": {
+            "denominator": "64",
+            "numerator": "81"
+          },
+          "word": [
+            2,
+            1,
+            1,
+            2
+          ]
+        },
+        "landing_linear_value": "2335716",
+        "landing_n": "137389",
+        "repeat_count": 1,
+        "repeat_count_formula": "floor((source_linear_v2 - 1) / A)",
+        "residual_depth": 2,
+        "source_linear_v2": 8,
+        "source_linear_value": "1845504",
+        "source_n": "108553",
+        "word_is_exhausted_at_landing": true
+      },
+      "V2112_to_C322_gap_v2": 2,
+      "V2112_to_C322_integer_gap": "11508",
+      "contracting_C322": {
+        "A": 7,
+        "B": "65",
+        "M": 3,
+        "all_positive_members_descend": true,
+        "contraction_gap": "101",
+        "descent_inequality": "101*n > 65",
+        "exact_cylinder": {
+          "modulus": "256",
+          "parameterization": "n = 173 + 256*t, t >= 0",
+          "residue": "173"
+        },
+        "positive_fixed_point": {
+          "denominator": "101",
+          "numerator": "65"
+        },
+        "slope": {
+          "denominator": "128",
+          "numerator": "27"
+        },
+        "witness_landing_n": "28981",
+        "witness_source_n": "137389",
+        "word": [
+          3,
+          2,
+          2
+        ]
+      },
+      "decomposition_role": "this maximal-word grouping supports the strict nonresonant A-decrease corollary",
+      "macro_words": [
+        [
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          2
+        ],
+        [
+          3,
+          2,
+          2
+        ]
+      ],
+      "resonant_W112_to_V2112_switch": {
+        "after_source_n": "108553",
+        "gap_G": "810",
+        "gap_v2": 1,
+        "identity": {
+          "coordinate": "L_target(T_source(n)) = (D_target*3^M_source*2^residual*z + G) / D_source",
+          "integer_gap": "G = B_target*D_source - D_target*B_source",
+          "z": "L_source(n) / 2^source_linear_v2 is odd"
+        },
+        "residual_depth": 1,
+        "resonance_lift": 7,
+        "source_linear_v2": 5,
+        "source_n": "64327",
+        "source_word": [
+          1,
+          1,
+          2
+        ],
+        "target_linear_v2": 8,
+        "target_linear_value": "1845504",
+        "target_word": [
+          2,
+          1,
+          1,
+          2
+        ],
+        "target_word_exact": true,
+        "valuation_case": "resonance"
+      },
+      "second_W_run": {
+        "chart": {
+          "A": 4,
+          "B": "19",
+          "D": "11",
+          "M": 3,
+          "exact_word_cylinder": {
+            "criterion": "v2(11*n + 19) >= 5",
+            "modulus": "32",
+            "residue": "7"
+          },
+          "ghost": {
+            "denominator": "11",
+            "numerator": "-19"
+          },
+          "linear_form": "11*n + 19",
+          "map": "T(n) = (3^3*n + 19) / 2^4",
+          "slope": {
+            "denominator": "16",
+            "numerator": "27"
+          },
+          "word": [
+            1,
+            1,
+            2
+          ]
+        },
+        "landing_linear_value": "1194102",
+        "landing_n": "108553",
+        "repeat_count": 1,
+        "repeat_count_formula": "floor((source_linear_v2 - 1) / A)",
+        "residual_depth": 1,
+        "source_linear_v2": 5,
+        "source_linear_value": "707616",
+        "source_n": "64327",
+        "word_is_exhausted_at_landing": true
+      },
+      "values": [
+        "38119",
+        "64327",
+        "108553",
+        "137389",
+        "28981"
+      ]
+    },
+    "status": "exact_itinerary_fixtures_not_a_complete_chart_selection_rule"
+  },
+  "chart_switch_resonance": {
+    "after_one_W": "v2(L_V(T_W(n))) = v2(D_V*3^M_W*2^r*z + G), r=v2(L_W(n))-A_W and z odd",
+    "canonical_W112_to_W1122": {
+      "after_source_n": "64327",
+      "gap_G": "480",
+      "gap_v2": 5,
+      "identity": {
+        "coordinate": "L_target(T_source(n)) = (D_target*3^M_source*2^residual*z + G) / D_source",
+        "integer_gap": "G = B_target*D_source - D_target*B_source",
+        "z": "L_source(n) / 2^source_linear_v2 is odd"
+      },
+      "residual_depth": 5,
+      "resonance_lift": 7,
+      "source_linear_v2": 9,
+      "source_n": "38119",
+      "source_word": [
+        1,
+        1,
+        2
+      ],
+      "target_linear_v2": 12,
+      "target_linear_value": "1093632",
+      "target_word": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "target_word_exact": true,
+      "valuation_case": "resonance"
+    },
+    "canonical_maximal_W112_to_V2112": {
+      "after_source_n": "108553",
+      "gap_G": "810",
+      "gap_v2": 1,
+      "identity": {
+        "coordinate": "L_target(T_source(n)) = (D_target*3^M_source*2^residual*z + G) / D_source",
+        "integer_gap": "G = B_target*D_source - D_target*B_source",
+        "z": "L_source(n) / 2^source_linear_v2 is odd"
+      },
+      "residual_depth": 1,
+      "resonance_lift": 7,
+      "source_linear_v2": 5,
+      "source_n": "64327",
+      "source_word": [
+        1,
+        1,
+        2
+      ],
+      "target_linear_v2": 8,
+      "target_linear_value": "1845504",
+      "target_word": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "target_word_exact": true,
+      "valuation_case": "resonance"
+    },
+    "integer_gap": "G = B_V*D_W - D_V*B_W",
+    "maximal_exit_complexity_corollary": {
+      "cycle_consequence": "every directed cycle of maximal expanding-word charts contains a resonance edge",
+      "global_termination_consequence": false,
+      "hypothesis": "W is used for its last possible copy, and V is exact immediately afterward",
+      "proof": "the post-W residual e lies in {1,...,A_W}; a nonresonant target has v2(L_V)=min(e,v2(G)), while exactness requires v2(L_V)>=A_V+1",
+      "result": "every nonresonant legal edge has A_V < A_W; every legal edge with A_V >= A_W is resonant"
+    },
+    "nonresonant_rule": "if r != v2(G), the new depth is min(r,v2(G)); if G=0 the new depth is r",
+    "resonant_rule": "if r=v2(G), the two odd leading terms cancel and the new depth is strictly greater than r",
+    "same_point_large_coordinate_lemma": {
+      "example_ratio_upper": {
+        "denominator": "1",
+        "numerator": "2"
+      },
+      "example_sufficient_L_W_threshold": "96",
+      "global_weighted_switch_bound_derived": false,
+      "identity": "L_V/L_W = D_V/D_W + (B_V-D_V*B_W/D_W)/L_W"
+    },
+    "status": "exact_theorem_for_two_expanding_charts"
+  },
+  "finite_verification": {
+    "digest_sha256": "8a7b744c3a4cf319630c1b4b8b1d4092fc369c6993fa368da7786456b5717daf",
+    "expanding_words_checked": 6,
+    "maximal_repeat_runs_checked": 2560,
+    "odd_inputs_per_word": 8192,
+    "passed": true,
+    "role": "bounded_regression_of_exact_formulas_not_proof_by_search",
+    "verification_power": 14,
+    "w112_exit_fixture_count": 8,
+    "word_membership_checks": 49152
+  },
+  "frontier": {
+    "W112_exhausted_exit_partition_complete": true,
+    "all_edge_strata_covered": false,
+    "all_expanding_exit_charts_recursively_closed": false,
+    "all_expanding_words_covered": false,
+    "closed_transition_graph": false,
+    "edge_composability_verified": false,
+    "every_maximal_chart_cycle_requires_a_resonance": true,
+    "finite_exceptional_set_derived": false,
+    "induced_chart_selection_rule_complete": false,
+    "next_exact_task": "recursively partition the four expanding W112 exit charts, track their integer gaps G, and determine whether a well-founded chart complexity or a closed weighted graph exists",
+    "number_of_reachable_ghost_charts_proved_finite": false,
+    "positive_integer_itinerary_coverage_complete": false,
+    "resonance_depth_reset_bound_derived": false,
+    "resonances_can_raise_2_adic_depth": true,
+    "weighted_chart_switch_inequalities_closed": false
+  },
+  "haar_exit_law": {
+    "W112_A": 4,
+    "W112_residual_masses": [
+      {
+        "mass": {
+          "denominator": "15",
+          "numerator": "8"
+        },
+        "residual_depth": 1
+      },
+      {
+        "mass": {
+          "denominator": "15",
+          "numerator": "4"
+        },
+        "residual_depth": 2
+      },
+      {
+        "mass": {
+          "denominator": "15",
+          "numerator": "2"
+        },
+        "residual_depth": 3
+      },
+      {
+        "mass": {
+          "denominator": "15",
+          "numerator": "1"
+        },
+        "residual_depth": 4
+      }
+    ],
+    "conditioning": "positive odd n lies in the exact W cylinder before maximal repetition; the single profinite ghost has Haar measure zero",
+    "formula": "P(e) = 2^(A-e)/(2^A-1), e=1,...,A",
+    "iid_or_orbit_independence_claim": false,
+    "status": "exact_conditional_odd_2_adic_measure_not_pointwise_rate"
+  },
+  "max_plus": {
+    "cycles": [],
+    "finite_karp_run": false,
+    "reason": "chart selection, edge strata, and recursive target coverage are not closed",
+    "status": "not_applicable_open_transition_graph"
+  },
+  "proof": {
+    "bounded_machine_regression_passed": true,
+    "canonical_input_frontier_link_verified": true,
+    "claim_kind": "exact_symbolic_theorems_with_bounded_formula_regression",
+    "exact_W112_exit_partition_derived": true,
+    "exact_chart_switch_resonance_lemma_derived": true,
+    "exact_conditional_haar_exit_law_derived": true,
+    "exact_maximal_repeat_formula_derived": true,
+    "exact_refined_descent_cylinder_derived": true,
+    "global_chart_atlas_closed": false,
+    "global_collatz_proof": false,
+    "global_cross_chart_lyapunov_derived": false,
+    "nonresonant_maximal_edges_strictly_decrease_A": true,
+    "potential_signal": "yes: repeat and switch behavior has a low-complexity exact 2-adic grammar; no: closure or global descent is not yet known",
+    "programmatically_exhausted_all_positive_integers": false,
+    "universal_exact_word_cylinder_theorem_derived": true
+  },
+  "provenance": {
+    "actual_sha256": "9ac0bd58a054911bd694b0ee96218c014aa842c679926dc020721a8e450d11db",
+    "artifact_content_validation": {
+      "affine_ghost_theorem_present": true,
+      "errors": [],
+      "exists": true,
+      "fully_verified": true,
+      "global_proof_disclaimed": true,
+      "json_parsed": true,
+      "open_cross_chart_gap_present": true,
+      "type_matches": true
+    },
+    "artifact_snapshot_match": true,
+    "canonical_prior_frontier_verified": true,
+    "expected_sha256": "9ac0bd58a054911bd694b0ee96218c014aa842c679926dc020721a8e450d11db",
+    "input_path": "docs/reports/pecm_higher_r_affine_ghost.json",
+    "scope_relation": "canonical_prior_frontier_verified"
+  },
+  "refined_descent_cylinder": {
+    "A": 21,
+    "B": "3563675",
+    "M": 13,
+    "all_positive_members_descend": true,
+    "all_proper_prefix_affine_D_positive": true,
+    "contraction_gap": "502829",
+    "descent_inequality": "502829*n > 3563675",
+    "exact_cylinder": {
+      "modulus": "4194304",
+      "parameterization": "n = 38119 + 4194304*t, t >= 0",
+      "residue": "38119"
+    },
+    "first_descent_is_exactly_step": 13,
+    "lift_formula": {
+      "landing": "28981 + 3188646*t",
+      "source": "38119 + 4194304*t",
+      "source_minus_landing": "9138 + 1005658*t",
+      "valid_for_every_integer_t_at_least_zero": true
+    },
+    "mixed_higher_tail_subfamily": {
+      "parameterization": "n = 38119 + 2^22*3^4*t, t >= 0",
+      "source_tail_depth_R": 3,
+      "source_unit_mod_3_power": {
+        "power": 4,
+        "residue": "67"
+      },
+      "why_extra_factor": "inside n=38119+2^22*s, preserving (n+1)/8 = 67 (mod 3^4) requires s=0 (mod 3^4)"
+    },
+    "positive_fixed_point": {
+      "denominator": "502829",
+      "numerator": "3563675"
+    },
+    "proper_prefix_count": 12,
+    "slope": {
+      "denominator": "2097152",
+      "numerator": "1594323"
+    },
+    "specific_word_precision": {
+      "claim": "2^22 precision is necessary to force this specific 13-step valuation word",
+      "counterexample_identity": "204007 = 38119 + 2^11*3^4",
+      "counterexample_source_n": "204007",
+      "counterexample_word_prefix": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        3
+      ],
+      "first_word_difference_step": 8,
+      "older_mixed_period": "2^11*3^4",
+      "other_coarse_cylinder_descent_proofs_excluded": false
+    },
+    "witness_landing_n": "28981",
+    "witness_source_n": "38119",
+    "word": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      3,
+      2,
+      2
+    ]
+  },
+  "repeat_grammar": {
+    "canonical_W112_run": {
+      "chart": {
+        "A": 4,
+        "B": "19",
+        "D": "11",
+        "M": 3,
+        "exact_word_cylinder": {
+          "criterion": "v2(11*n + 19) >= 5",
+          "modulus": "32",
+          "residue": "7"
+        },
+        "ghost": {
+          "denominator": "11",
+          "numerator": "-19"
+        },
+        "linear_form": "11*n + 19",
+        "map": "T(n) = (3^3*n + 19) / 2^4",
+        "slope": {
+          "denominator": "16",
+          "numerator": "27"
+        },
+        "word": [
+          1,
+          1,
+          2
+        ]
+      },
+      "landing_linear_value": "1194102",
+      "landing_n": "108553",
+      "repeat_count": 2,
+      "repeat_count_formula": "floor((source_linear_v2 - 1) / A)",
+      "residual_depth": 1,
+      "source_linear_v2": 9,
+      "source_linear_value": "419328",
+      "source_n": "38119",
+      "word_is_exhausted_at_landing": true
+    },
+    "coordinate_identity": "L_W(T_W(n)) = (3^M/2^A)*L_W(n)",
+    "fixed_expanding_word_repeats_forever": false,
+    "maximal_repeat_count": "floor((v2(L_W(n))-1)/A)",
+    "residual_depth": "e = v2(L_W(n)) mod A, represented in {1,...,A}",
+    "status": "exact_theorem_for_expanding_words",
+    "valuation_drop_per_copy": "A"
+  },
+  "status": "exact_repeat_and_resonance_theorems_with_first_open_atlas_slice",
+  "type": "pecm_exact_affine_ghost_repeat_atlas",
+  "universal_word_cylinder": {
+    "affine_map": "T_W(n) = (3^M*n+B)/2^A",
+    "equivalence": "W is exact at positive odd n iff v2(|L_W(n)|) >= A+1, with v2(0)=infinity",
+    "linear_form": "L_W(n) = (3^M-2^A)*n+B",
+    "proof_method": "the terminal congruence selects one odd residue; the standard backward valuation-cylinder construction selects the same unique residue",
+    "setting": "every nonempty positive accelerated valuation word W",
+    "status": "exact_theorem",
+    "terminal_congruence": "3^M*n+B = 2^A (mod 2^(A+1))",
+    "unique_cylinder": "one odd residue modulo 2^(A+1), because 3^M is invertible"
+  },
+  "w112_exit_partition": {
+    "branches": [
+      {
+        "e": 1,
+        "forced_word": "(1+q), q=v2(3*z-23)>=1",
+        "outcome": "descent below exhausted source for n>1; n=1 is terminal equality"
+      },
+      {
+        "e": 2,
+        "forced_word": "(1,1+q), q=v2(9*z-29)>=1",
+        "outcome": "q=1 switches to expanding ghost -5; q>=2 descends below exhausted source"
+      },
+      {
+        "e": 3,
+        "forced_word": "(1,1,1,q), q=v2(81*z-103)>=1",
+        "outcome": "q=1,2,3 switch to ghosts -1,-65/49,-65/17; q>=4 descends below exhausted source"
+      },
+      {
+        "e": 4,
+        "forced_word": "(1,1,2+q), q=v2(27*z-19)>=1",
+        "outcome": "descent below exhausted source"
+      }
+    ],
+    "chart": {
+      "A": 4,
+      "B": "19",
+      "D": "11",
+      "M": 3,
+      "exact_word_cylinder": {
+        "criterion": "v2(11*n + 19) >= 5",
+        "modulus": "32",
+        "residue": "7"
+      },
+      "ghost": {
+        "denominator": "11",
+        "numerator": "-19"
+      },
+      "linear_form": "11*n + 19",
+      "map": "T(n) = (3^3*n + 19) / 2^4",
+      "slope": {
+        "denominator": "16",
+        "numerator": "27"
+      },
+      "word": [
+        1,
+        1,
+        2
+      ]
+    },
+    "comparison_baseline": "source_n is the exhausted W112 state, not the pre-run chart entry",
+    "descent_below_pre_run_entry_claim": false,
+    "exact_fixtures": [
+      {
+        "branch_q": 1,
+        "exit_word": [
+          2
+        ],
+        "landing_n": "81415",
+        "odd_z": "597051",
+        "outcome": "descent_below_exhausted_source",
+        "residual_depth": 1,
+        "source_n": "108553",
+        "target_ghost": null
+      },
+      {
+        "branch_q": 3,
+        "exit_word": [
+          1,
+          4
+        ],
+        "landing_n": "1",
+        "odd_z": "13",
+        "outcome": "descent_below_exhausted_source",
+        "residual_depth": 2,
+        "source_n": "3",
+        "target_ghost": null
+      },
+      {
+        "branch_q": 1,
+        "exit_word": [
+          1,
+          2
+        ],
+        "landing_n": "13",
+        "odd_z": "35",
+        "outcome": "switch_to_expanding_ghost",
+        "residual_depth": 2,
+        "source_n": "11",
+        "target_ghost": {
+          "denominator": "1",
+          "numerator": "-5"
+        }
+      },
+      {
+        "branch_q": 1,
+        "exit_word": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "landing_n": "161",
+        "odd_z": "45",
+        "outcome": "switch_to_expanding_ghost",
+        "residual_depth": 3,
+        "source_n": "31",
+        "target_ghost": {
+          "denominator": "1",
+          "numerator": "-1"
+        }
+      },
+      {
+        "branch_q": 2,
+        "exit_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "landing_n": "121",
+        "odd_z": "67",
+        "outcome": "switch_to_expanding_ghost",
+        "residual_depth": 3,
+        "source_n": "47",
+        "target_ghost": {
+          "denominator": "49",
+          "numerator": "-65"
+        }
+      },
+      {
+        "branch_q": 3,
+        "exit_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "landing_n": "101",
+        "odd_z": "111",
+        "outcome": "switch_to_expanding_ghost",
+        "residual_depth": 3,
+        "source_n": "79",
+        "target_ghost": {
+          "denominator": "17",
+          "numerator": "-65"
+        }
+      },
+      {
+        "branch_q": 5,
+        "exit_word": [
+          1,
+          1,
+          1,
+          5
+        ],
+        "landing_n": "5",
+        "odd_z": "23",
+        "outcome": "descent_below_exhausted_source",
+        "residual_depth": 3,
+        "source_n": "15",
+        "target_ghost": null
+      },
+      {
+        "branch_q": 3,
+        "exit_word": [
+          1,
+          1,
+          5
+        ],
+        "landing_n": "5",
+        "odd_z": "17",
+        "outcome": "descent_below_exhausted_source",
+        "residual_depth": 4,
+        "source_n": "23",
+        "target_ghost": null
+      }
+    ],
+    "normal_form": "11*n+19 = 2^e*z with z odd and e in {1,2,3,4}",
+    "remaining_expanding_target_charts": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        1,
+        3
+      ]
+    ],
+    "status": "exact_complete_residual_partition"
+  }
+}

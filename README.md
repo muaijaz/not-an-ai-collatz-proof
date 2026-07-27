@@ -174,6 +174,40 @@ additive difference between the two ghosts appears, so the wordwise factors
 do not automatically telescope; controlling that term is the next exact gap
 ([artifact](docs/reports/pecm_higher_r_affine_ghost.json)).
 
+The first exact atlas slice sharpens that finite repeat budget to an
+if-and-only-if theorem. For every nonempty valuation word `W`,
+
+```text
+W is exact at odd n
+  iff v2(|(3^M-2^A)n+B|) >= A+1,
+```
+
+with `v2(0)=infinity`. Consequently, an expanding word repeats exactly
+`floor((v2(L_W(n))-1)/A)` times. At a switch `W -> V`, the single integer
+
+```text
+G_VW = B_V D_W - D_V B_W
+```
+
+controls the new 2-adic depth. Unequal residual and gap valuations give their
+minimum; equality permits a cancellation resonance. On a *maximal* chart
+exit, every legal nonresonant edge strictly lowers `A`, so every directed
+cycle of maximal expanding charts must contain a resonance. The first node
+`W=(1,1,2)` now has a complete four-case residual exit partition.
+
+One exact resonant path also yields a genuine infinite descent cylinder:
+every
+
+```text
+n = 38119 + 2^22 t,  t >= 0,
+```
+
+follows the same 13-step word and first descends to
+`28981 + 2*3^13 t`. This is an exact local theorem on one binary cylinder.
+It is a promising structural signal, but the reachable resonant atlas is not
+known to be finite or well founded, so it is not a global Collatz proof
+([artifact](docs/reports/pecm_affine_ghost_atlas.json)).
+
 The framework now has a qn+1 sidecar diagnostic. Within the odd `q>1` grid,
 the classical `q=3` case is the unique tested member below the
 `log₂(q) = 2` drift threshold; `q=5` is already marginally positive. The
@@ -225,7 +259,7 @@ Empirical bridges to published papers, all finite-resolution and caveated:
 # Install dependencies
 uv sync
 
-# Run all 284 tests (≈4s)
+# Run all 325 tests
 uv run python -m pytest -q
 
 # Smoke test the experimental pipeline
@@ -256,6 +290,9 @@ uv run python -m collatz_exp.symbolic_frontier_certificate --verbose
 
 # Reproduce the exact higher-R transfer and affine-ghost certificates
 uv run python -m collatz_exp.symbolic_higher_r_certificate --verbose
+
+# Reproduce the exact repeat/resonance ghost-atlas slice
+uv run python -m collatz_exp.affine_ghost_atlas --verbose
 ```
 
 Every quoted number has a corresponding JSON artifact under
@@ -287,8 +324,8 @@ collatz-renewal-framework/
 ├── pyproject.toml
 ├── uv.lock
 ├── collatz_certificate_search.py   ← original CLI compatibility wrapper
-├── collatz_exp/                    ← main package, 93 modules
-├── tests/                          ← 284 passing tests
+├── collatz_exp/                    ← main package, 94 modules
+├── tests/                          ← 325 passing tests
 └── docs/
     ├── NOTABLE_RESULTS.md          ← running result catalog
     ├── PROJECT_JOURNEY.md          ← chronological narrative + audit log
@@ -297,7 +334,7 @@ collatz-renewal-framework/
     ├── UNIFIED_MODEL.md            ← 5-projection operator synthesis
     ├── collatz_strategy.md         ← working strategy notes
     ├── references/                 ← Tao, Mori, Hercher, Paparella, Chang PDFs
-    └── reports/                    ← 119 JSON artifacts (one per result)
+    └── reports/                    ← 120 JSON artifacts (one per result)
 ```
 
 ---
@@ -358,7 +395,10 @@ Named, not closed:
    renormalization, a streaming `(8,2) → (10,3) → (12,4)` ladder, and an
    exact branchwise replacement remain open. The latest exact lane contracts
    the full `R=2 -> R>=3` handoff and identifies word-specific affine-ghost
-   cusps; compatibility across changing ghost charts remains open.
+   cusps. Its first atlas slice proves exact repeat counts, a chart-switch
+   resonance law, strict `A`-decrease on every nonresonant maximal edge, and
+   one infinite first-descent cylinder. Recursive control of resonance edges
+   remains open.
 6. **Symbolic representation of `J_renewal`** — the direct
    `Σ R(K) ≈ J_renewal` identity test is not supported at high precision;
    an explicit `h_K`-weighted reconciliation remains open.
@@ -379,7 +419,7 @@ statements.
   [`docs/reports/`](docs/reports).
 - Each artifact records method, parameters, sample size, and the relevant
   numerical or exact diagnostics; empirical CIs are included where applicable.
-- 284 passing tests cover core arithmetic, certificates, Mersenne tail
+- 325 passing tests cover core arithmetic, certificates, Mersenne tail
   dynamics, post-exit map, renewal Cramér computation, Tao verification,
   Hercher bounds, Paparella nilpotency, JSR variants, automaton-constrained
   Karp, upper-Christoffel slope filtering, tail-cycle realizability,
@@ -395,7 +435,9 @@ statements.
   rational max-times difference certificates, plus the exact recursive
   `R=2` frontier, finite mixed-state obstruction, nested cusp, and induced
   exit grammar, and the exact higher-`R` phase transfer, first-post cutoff,
-  mixed-residue transport, and affine-ghost cusp identities.
+  mixed-residue transport, affine-ghost cusp identities, universal exact-word
+  membership, exact maximal repeat counts, chart-switch resonance, the full
+  `(1,1,2)` exit partition, and the refined 13-step descent cylinder.
 - Reference papers in [`docs/references/`](docs/references) for offline
   access.
 
