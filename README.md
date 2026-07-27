@@ -17,12 +17,13 @@
 ---
 
 > **Status note.** The Collatz conjecture remains open. This project
-> does **not** claim a proof. It produces a calibrated map of approaches,
-> several verified empirical constants with rigorous confidence intervals,
-> and a clean structural number where four independent computations
-> converge — and where an explicit Lyapunov candidate satisfies an
-> m-step Foster condition on residue quotients with the same constant
-> as its per-step drift.
+> does **not** claim a proof. It combines calibrated empirical diagnostics
+> with exact symbolic certificates. The explicit infinite `J_m/K_m`
+> resonance ladder is now rigorously excluded from the ordinary integers by
+> an exact specialization of a published p-adic linear-independence theorem.
+> The proof frontier is completeness: classify every infinite resonant escape
+> in the recursive chart grammar, then prove that all potentially
+> non-descending positive orbits are covered.
 
 ---
 
@@ -273,6 +274,29 @@ It does not close the full recursive grammar or prove Collatz
 ([atlas](docs/reports/pecm_recursive_ghost_atlas.json);
 [exclusion certificate](docs/reports/pecm_tschakaloff_boundary_exclusion.json)).
 
+### Current theorem frontier
+
+The next phase is symbolic classification rather than a deeper finite scan:
+
+1. **Resonance normal form:** derive a canonical successor rule for every
+   parametric chart `P_(m,a)` and prove the recursive partition exhaustive
+   and disjoint.
+2. **Infinite-path classification:** prove every transition either strictly
+   decreases the affine exponent `A` or enters one of finitely many
+   parametric resonant rays.
+3. **Arithmetic or dynamical closure:** exclude each surviving ray through a
+   p-adic boundary theorem, or bundle it with its eventual exit and prove
+   exact descent.
+4. **Global coverage:** prove every potentially non-descending positive orbit
+   enters the classified subsystem. This final bridge is required before any
+   global Collatz conclusion.
+
+The acceptance criterion is a parameter-uniform symbolic theorem, not
+verification through a finite depth. See
+[`docs/STATE.md`](docs/STATE.md) and
+[`docs/NEXT_RESEARCH_DIRECTION.md`](docs/NEXT_RESEARCH_DIRECTION.md) for the
+active work order.
+
 The framework now has a qn+1 sidecar diagnostic. Within the odd `q>1` grid,
 the classical `q=3` case is the unique tested member below the
 `log₂(q) = 2` drift threshold; `q=5` is already marginally positive. The
@@ -472,8 +496,10 @@ Named, not closed:
    partitions, proves that every source-relative first-free edge is resonant
    with unbounded target depth, and separates a finite seven-state parser
    from the self-similar ladder `J_m -> K_m -> J_(m+1)`. The explicit nested
-   `2`-adic boundary must now be excluded from the nonnegative integers, or
-   controlled by a cylinder-depth-dependent Lyapunov function.
+   `2`-adic boundary has now been excluded from the ordinary integers using
+   the Väänänen–Wallisser p-adic theorem. The remaining target is to prove the
+   recursive grammar complete and classify or contract every other possible
+   infinite resonant escape.
 6. **Symbolic representation of `J_renewal`** — the direct
    `Σ R(K) ≈ J_renewal` identity test is not supported at high precision;
    an explicit `h_K`-weighted reconciliation remains open.
@@ -516,7 +542,9 @@ statements.
   all 18 source-relative recursive exit templates, all 19 expanding
   resonances, unbounded target-depth witnesses, the exact seven-state parser,
   parametric `J_m/K_m` ladder identities, nested positive prefix cylinders,
-  and the explicit infinite `2`-adic boundary invariants.
+  the explicit infinite `2`-adic boundary invariants, the exact
+  Väänänen–Wallisser cutoff specialization, termwise Tschakaloff
+  normalization, and rational affine exclusion of every ladder boundary.
 - Reference papers in [`docs/references/`](docs/references) for offline
   access.
 
