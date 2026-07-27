@@ -1,27 +1,33 @@
 # STATE
 
 ## Goal
-Convert the strongest PECM branches into exact mixed-adic symbolic
-inequalities, without confusing sample-based branch selection or an open
-finite graph with pointwise global Collatz descent.
+Resolve the higher-`R` branch of the exact nested PECM exit grammar and
+determine whether its induced returns admit a hierarchical Lyapunov function,
+without confusing a complete source cover, Haar average, or contracting
+subfamily with global Collatz descent.
 
 ## Now
-The worst concrete PECM branch has been promoted from a sampled lead into an
-exact `128`-child cylinder partition. Its ordinary size map expands, while
-the local tail-cusp formula `H(n,R)=n(23/22)^R` contracts exactly on the whole
-selected root. The `128` targets remain an open frontier.
+The complete `R=2, u mod 2^8 odd, u mod 9=2` target fiber has an exact
+symbolic outgoing cover: `96` states descend uniformly and `32` form a
+countable reentry family. The family exactly refutes finite mixed
+`2`-adic/`3`-adic state-only one-step corrections, but its nested same-`R`
+loop contracts under
+`K(n,u)=(n+5)(23/22)^v2(u+1)` by `11979/12167`. Maximal loop induction leaves
+`S_exit in {1,2,3}`: the first two values descend and the third reenters at
+`R_next>=3`. That higher-`R` family remains open.
 
 ## Next
-1. Expand the complete `R=2, u mod 2^8, u mod 9=2` target frontier into exact
-   target-fixed outgoing branches at compatible precision.
-2. Test whether one rational cusp base (starting with `23/22`) survives every
-   new legal branch; route failures into explicit exceptional cylinders.
-3. Close any finite exact components and run the rational max-times
-   difference solver; classify every noncontracting witness as a realizable
-   itinerary or a quotient ghost.
-4. Retain chunked/streaming Galerkin and mixed-adic wavelet work as numerical
+1. Parametrize the `S_exit=3` family using
+   `R_next=2+v2(9^(j+1)w-1)` and carry compatible target residues.
+2. Trace its induced returns to `R=2` or descent and search for the next
+   negative-fixed-point coordinate or a multi-return contraction.
+3. Run the rational max-times solver only on an exact closed induced
+   component; keep the countably infinite open family symbolic.
+4. Test whether the nested coordinate can be combined with the outer
+   `R`-cusp into one lexicographic or multiplicative potential across exits.
+5. Retain chunked/streaming Galerkin and mixed-adic wavelet work as numerical
    support, not the primary theorem-facing lane.
-5. Awaiting user: Chang/Siegel outreach emails and arXiv submission decision.
+6. Awaiting user: Chang/Siegel outreach emails and arXiv submission decision.
 
 ## Constraints
 - NEVER git push without asking in this conversation (CLAUDE.md hard rule 5).
@@ -41,9 +47,18 @@ selected root. The `128` targets remain an open frontier.
   `2`-adic bit for an exact valuation word and exact congruence coverage for
   every reported branch.
 - DECISION: do not run or quote Karp on an open exact target frontier.
+- DECISION: represent the outgoing `R=2` frontier as a countable parametric
+  family. Its required source precision grows with target depth, so no finite
+  adaptive cylinder enumeration can be complete.
+- DECISION: demote the global outer-only class `n^alpha c^R`; an exact
+  expanding `R=2 -> 2` branch refutes it for every `alpha>0`.
+- DECISION: promote `S=v2(u+1)=v2(n+5)-2` as a nested cusp coordinate, but
+  claim contraction only on consecutive same-`R` loops; the induced exit
+  grammar is exact, but no contraction across its higher-`R` branch is yet
+  claimed.
 
 ## Facts
-- Tests: `uv run python -m pytest -q` -> 246 passed in 3.14s.
+- Tests: `uv run python -m pytest -q` -> 262 passed in 3.63s.
 - Exact selected root: `(R,u mod 2^11,u mod 9)=(9,55,2)`.
 - Full word `(1^8,3,2,4)` has `(m,A,B)=(11,17,186875)` and exact slope
   `177147/131072 > 1`; its one-word affine fixed point is the noninteger
@@ -52,6 +67,25 @@ selected root. The `128` targets remain an open frontier.
   `128` odd target residues modulo `256` at `(R',u mod 9)=(2,2)`.
 - Exact local cusp bound:
   `H(F(n),2)/H(n,9) <= 7164821035427968/7236312975589017 < 1`.
+- Complete `R=2` mod-8 partition: `96/128` coarse states descend uniformly;
+  `32/128` form a countable reentry family with
+  `r=v2(9u+1)-1>=2`.
+- At each fixed `r`, the live family has exactly `128` target-fixed source
+  leaves and reaches every odd target residue modulo `256`.
+- Outer-tail obstruction: `u=47`, `187 -> 211`, with `R=2 -> 2`; hence
+  `n^alpha c^R` increases for every `alpha>0`, `c>0`.
+- Every finite mixed `2`-adic/`3`-adic resolution has a positive expanding
+  coarse self-loop.
+  Fixture `(k,ell)=(4,2)`: `u=1151`, `4603 -> 5179`, coarse state
+  `(R,u mod16,u mod9)=(2,15,8)` at both ends.
+- Nested cusp: `S=v2(u+1)` drops by `3`, `n+5` grows by `9/8`, and
+  `(n+5)(23/22)^S` contracts exactly by `11979/12167`.
+- Consecutive same-`R` loop count is exactly `floor((S-1)/3)`.
+- Maximal-loop exit grammar: `S_exit=1,2,3` gives first-post descent,
+  second-post descent, or higher-`R` reentry. Descent is relative to the
+  compressed exit source. Exact normalized Haar masses among odd 2-adic
+  units are `4/7`, `2/7`, and `1/7`; the last branch has
+  `R_next=2+v2(9^(j+1)w-1)>=3`.
 - Galerkin smoke ladder: `(4,0) -> (6,1) -> (8,2)`,
   `R = 2..30`, common `alpha = 0.55`, 0 unresolved samples.
 - Numerical `max(Mh/h)`: `0.465489`, `0.502925`, `0.529990`.
@@ -67,12 +101,20 @@ selected root. The `128` targets remain an open frontier.
   `docs/reports/pecm_cross_resolution_consistency.json`.
 - Exact branch artifact:
   `docs/reports/pecm_exact_selected_cylinder_pilot.json`.
+- Exact recursive-frontier artifact:
+  `docs/reports/pecm_r2_recursive_tail_cusp.json`.
 - GPU: RTX 3090 Ti 24564 MiB (~21.5 GB free), CuPy 14.0.1 OK.
 - (14,5) run completed 2026-06-18: 57.7M states, finite_ratio_max=0.5357, artifact docs/runs/pecm_14_5_scaled_gpu_20260618_015521/.
 - (16,6) estimate: ~692.7M states, ~2.77B transitions (docs/collatz_strategy.md).
 - CLI: `python -m collatz_exp.experiments --post-exit-scaled-perron --post-exit-configs K:L --post-exit-operator-mode {dense_target_cache,streaming,gpu_target_cache,auto} --post-exit-checkpoint <npz> --post-exit-scaled-perron-output <json>`.
 
 ## Done
+- Exact recursive `R=2` frontier
+  (`collatz_exp/symbolic_frontier_certificate.py`) — RESULT: exhaustive mod-8
+  source partition, exact countable target-depth parametrization, all odd
+  target residues at every fixed depth, realizable finite-state no-go
+  witnesses, exact nested-cusp contraction, exact maximal-loop exit grammar,
+  deterministic report, and explicit open higher-`R` status.
 - Exact selected-cylinder branch pilot
   (`collatz_exp/symbolic_branch_certificate.py`) — RESULT: correct
   `2^(A+1)` exact-word cylinders, exact post-exit precision carry, exhaustive
@@ -104,4 +146,8 @@ selected root. The `128` targets remain an open frontier.
 - (16,6) run results → update frontier dashboard artifact once complete.
 
 ## Failed attempts
-(none yet)
+- A single outer-tail potential `n^alpha c^R` cannot be global: the exact
+  `187 -> 211` branch expands while preserving `R=2`.
+- Positive corrections on any fixed finite mixed `2`-adic/`3`-adic residue
+  quotient cannot provide strict one-step descent: every such quotient
+  contains a realizable expanding coarse self-loop.

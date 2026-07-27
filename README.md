@@ -6,11 +6,11 @@
 
 *Renewal Cramér rates · Joint Spectral Radius diagnostics · Five-projection operator synthesis*
 
-[![Tests](https://img.shields.io/badge/tests-246%20passing-brightgreen?style=flat-square)](.)
+[![Tests](https://img.shields.io/badge/tests-262%20passing-brightgreen?style=flat-square)](.)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-empirical-orange?style=flat-square)](.)
 [![Python](https://img.shields.io/badge/python-3.12-blue?style=flat-square)](.)
-[![Reproducible](https://img.shields.io/badge/artifacts-116%20JSON-success?style=flat-square)](docs/reports)
+[![Reproducible](https://img.shields.io/badge/artifacts-118%20JSON-success?style=flat-square)](docs/reports)
 
 </div>
 
@@ -109,6 +109,36 @@ most
 this is a local symbolic certificate and explicitly not a Collatz proof
 ([artifact](docs/reports/pecm_exact_selected_cylinder_pilot.json)).
 
+The entire `R=2` target fiber from that pilot now has an exact symbolic
+outgoing cover. Of its `128` coarse residue states, `96` descend uniformly
+and the remaining `32` form a countable reentry family indexed by the next
+tail depth. That family contains the exact expanding branch `187 -> 211`,
+which preserves `R=2` and therefore refutes every global tail-only candidate
+`n^alpha c^R` with `alpha > 0`. More strongly, every finite mixed
+`2`-adic/`3`-adic resolution contains a realizable expanding self-loop, so a
+positive finite mixed-adic state correction cannot repair strict one-step
+descent. The witnesses depend on the resolution and converge profinitely to
+the negative point `u=-1`; they are not one positive orbit or cycle.
+
+The obstruction exposes a deeper exact coordinate rather than ending the
+search. On every consecutive `R=2 -> 2` loop, set
+`S=v2(u+1)=v2(n+5)-2`. Then `S` drops by exactly `3`, and
+
+```text
+K(n,u) = (n+5) (23/22)^S
+```
+
+contracts by the constant factor
+`11979/12167 < 1`. The maximal loop run can also be induced exactly. For
+`j=floor((S-1)/3)`, the residual `S_exit=S-3j` is `1`, `2`, or `3`, giving
+first-post descent, second-post descent, or higher-`R` reentry. Here descent
+is below the compressed exit source, not necessarily below the original
+pre-loop value. Their exact normalized Haar proportions among odd 2-adic
+units are `4/7`, `2/7`, and `1/7`; this is an average diagnostic, not
+pointwise descent. The higher-`R` reentry family remains countably infinite
+and open
+([artifact](docs/reports/pecm_r2_recursive_tail_cusp.json)).
+
 The framework now has a qn+1 sidecar diagnostic. Within the odd `q>1` grid,
 the classical `q=3` case is the unique tested member below the
 `log₂(q) = 2` drift threshold; `q=5` is already marginally positive. The
@@ -160,7 +190,7 @@ Empirical bridges to published papers, all finite-resolution and caveated:
 # Install dependencies
 uv sync
 
-# Run all 246 tests (≈3s)
+# Run all 262 tests (≈4s)
 uv run python -m pytest -q
 
 # Smoke test the experimental pipeline
@@ -185,6 +215,9 @@ uv run python -m collatz_exp.experiments \
 
 # Reproduce the exact selected-cylinder branch certificate
 uv run python -m collatz_exp.symbolic_branch_certificate --verbose
+
+# Reproduce the exact recursive R=2 frontier and nested-cusp certificate
+uv run python -m collatz_exp.symbolic_frontier_certificate --verbose
 ```
 
 Every quoted number has a corresponding JSON artifact under
@@ -216,8 +249,8 @@ collatz-renewal-framework/
 ├── pyproject.toml
 ├── uv.lock
 ├── collatz_certificate_search.py   ← original CLI compatibility wrapper
-├── collatz_exp/                    ← main package, 91 modules
-├── tests/                          ← 246 passing tests
+├── collatz_exp/                    ← main package, 92 modules
+├── tests/                          ← 262 passing tests
 └── docs/
     ├── NOTABLE_RESULTS.md          ← running result catalog
     ├── PROJECT_JOURNEY.md          ← chronological narrative + audit log
@@ -226,7 +259,7 @@ collatz-renewal-framework/
     ├── UNIFIED_MODEL.md            ← 5-projection operator synthesis
     ├── collatz_strategy.md         ← working strategy notes
     ├── references/                 ← Tao, Mori, Hercher, Paparella, Chang PDFs
-    └── reports/                    ← 117 JSON artifacts (one per result)
+    └── reports/                    ← 118 JSON artifacts (one per result)
 ```
 
 ---
@@ -306,7 +339,7 @@ statements.
   [`docs/reports/`](docs/reports).
 - Each artifact records method, parameters, sample size, and the relevant
   numerical or exact diagnostics; empirical CIs are included where applicable.
-- 246 passing tests cover core arithmetic, certificates, Mersenne tail
+- 262 passing tests cover core arithmetic, certificates, Mersenne tail
   dynamics, post-exit map, renewal Cramér computation, Tao verification,
   Hercher bounds, Paparella nilpotency, JSR variants, automaton-constrained
   Karp, upper-Christoffel slope filtering, tail-cycle realizability,
@@ -319,7 +352,9 @@ statements.
   certificates, plus common-alpha vector export, exact mixed-adic refinement,
   Galerkin/projective defect separation, cross-resolution consistency,
   exact-word cylinder precision, exact selected-branch partitioning, and
-  rational max-times difference certificates.
+  rational max-times difference certificates, plus the exact recursive
+  `R=2` frontier, finite mixed-state obstruction, nested cusp, and induced
+  exit grammar.
 - Reference papers in [`docs/references/`](docs/references) for offline
   access.
 

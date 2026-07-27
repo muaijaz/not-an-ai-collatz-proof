@@ -1,0 +1,434 @@
+{
+  "finite_state_obstruction": {
+    "excluded_candidate_class": "strict one-step H(n,state)=n^alpha*h(finite mixed state), alpha >= 0, h positive",
+    "fixture": {
+      "coarse_resolution": {
+        "mod2_power": 4,
+        "mod3_power": 2
+      },
+      "landing": "5179",
+      "least_positive_u": "1151",
+      "n0": "4603",
+      "post_word": [
+        2
+      ],
+      "refined_source": {
+        "R": 2,
+        "mod2_power": 7,
+        "mod3_power": 2,
+        "u_mod2": 127,
+        "u_mod3": 8
+      },
+      "same_coarse_state": true,
+      "size_expands": true,
+      "size_ratio": {
+        "denominator": "4603",
+        "numerator": "5179"
+      },
+      "source_coarse_state": {
+        "R": 2,
+        "mod2_power": 4,
+        "mod3_power": 2,
+        "u_mod2": 15,
+        "u_mod3": 8
+      },
+      "source_lift_modulus": "1152",
+      "target_coarse_state": {
+        "R": 2,
+        "mod2_power": 4,
+        "mod3_power": 2,
+        "u_mod2": 15,
+        "u_mod3": 8
+      },
+      "target_unit": "1295"
+    },
+    "general_construction": {
+      "coarse_state": "(R,u mod2^k,u mod3^ell) = (2,-1,-1)",
+      "refined_source_leaf": "u == -1 mod 2^(k+3), u == -1 mod 3^ell",
+      "same_state_identities": [
+        "T(u)+1 = 9*(u+1)/8 == 0 mod 2^k",
+        "T(u) == -1 mod 3^ell"
+      ],
+      "size_behavior": "4*T(u)-1 > 4*u-1",
+      "target_unit": "T(u) = (9*u+1)/8"
+    },
+    "negative_fixed_point": {
+      "n_fixed_point": "-5",
+      "n_map": "F(n) = (9*n+5)/8",
+      "positive_cycle_claimed": false,
+      "unit_fixed_point": "-1",
+      "unit_map": "T(u) = (9*u+1)/8"
+    },
+    "reason": "The state correction cancels on the exact coarse self-loop; size grows for alpha>0 and equality remains for alpha=0. This excludes finite mixed 2-adic/3-adic state corrections, not arbitrary history variables or residues at other primes.",
+    "scope_relation": {
+      "canonical_fixture_resolution": {
+        "mod2_power": 4,
+        "mod3_power": 2
+      },
+      "default_frontier_relation": "the canonical u mod 9 = -1 fixture lies in the R=2, u mod 9 = 8 next-generation fiber reached by the current r=2 family",
+      "profinite_limit": "u = -1, n = -5",
+      "role": "global candidate-class obstruction, not asserted to be a direct edge of the requested source fiber",
+      "single_positive_orbit_or_cycle": false,
+      "witness_depends_on_resolution": true
+    },
+    "status": "exact_realizable_self_loop_at_every_finite_resolution"
+  },
+  "finite_verification": {
+    "floor_loop_chains_verified": 8,
+    "induced_exit_counts": {
+      "exit_S_1_first_post_descent": 1170,
+      "exit_S_2_second_post_descent": 585,
+      "exit_S_3_higher_R_reentry": 293
+    },
+    "induced_exit_representatives_replayed": 2048,
+    "induced_exit_sha256": "64a1ec8681a8d681217b5a671e09567a6f79b9f61775a746a08b0e5e1ba525d2",
+    "maximum_chain_length_verified": 8,
+    "parametric_instance_sha256": "1d3ff6c632bf7ef8b1fff42a5c9cb19352e85fdd664d86d4bdc9df78a1b560d4",
+    "parametric_instances_verified": 2432,
+    "parametric_target_R_max": 20,
+    "parametric_target_R_min": 2,
+    "role": "regression_only_not_basis_of_symbolic_proof",
+    "source_class_counts": {
+      "first_post_descent_u_mod8_1": 512,
+      "first_post_descent_u_mod8_5": 512,
+      "first_post_reentry_u_mod8_7": 512,
+      "second_post_descent_u_mod8_3": 512
+    },
+    "source_replay_power": 12,
+    "source_representatives_replayed": 2048
+  },
+  "frontier": {
+    "closed_transition_graph": false,
+    "live_target_depths": "every integer r >= 2",
+    "live_target_nodes_finite": false,
+    "ordinary_integer_sources_unresolved": 0,
+    "source_cover_complete": true,
+    "status": "symbolic_countable_open_family"
+  },
+  "induced_exit_grammar": {
+    "Haar_mass_derivation": "For normalized Haar measure on odd Z_2, P(v2(u+1)=s)=2^(-s). Summing over s mod 3 gives 4/7, 2/7, and 1/7.",
+    "branches": [
+      {
+        "S_exit": 1,
+        "conditional_odd_unit_2adic_Haar_mass": {
+          "denominator": "7",
+          "numerator": "4"
+        },
+        "exit_u_mod8": [
+          1,
+          5
+        ],
+        "initial_S_congruence": "S == 1 mod 3",
+        "outcome": "descent_at_first_post_step"
+      },
+      {
+        "S_exit": 2,
+        "conditional_odd_unit_2adic_Haar_mass": {
+          "denominator": "7",
+          "numerator": "2"
+        },
+        "exit_u_mod8": [
+          3
+        ],
+        "initial_S_congruence": "S == 2 mod 3",
+        "outcome": "descent_at_second_post_step"
+      },
+      {
+        "S_exit": 3,
+        "conditional_odd_unit_2adic_Haar_mass": {
+          "denominator": "7",
+          "numerator": "1"
+        },
+        "exit_u_mod8": [
+          7
+        ],
+        "initial_S_congruence": "S == 0 mod 3",
+        "next_target_R": "2 + v2(9^(j+1)*w - 1) >= 3",
+        "odd_part": "w = (u+1)/2^S",
+        "outcome": "higher_R_tail_reentry"
+      }
+    ],
+    "closed_form": "u_j + 1 = 9^j*(u+1)/8^j; n_j + 5 = 9^j*(n+5)/8^j",
+    "conditional_odd_unit_aggregate_2adic_Haar_mass": {
+      "descent": {
+        "denominator": "7",
+        "numerator": "6"
+      },
+      "higher_R_reentry": {
+        "denominator": "7",
+        "numerator": "1"
+      }
+    },
+    "maximal_loop_count": "j = floor((S-1)/3)",
+    "measure_caveat": "These Haar proportions are an average renewal diagnostic, not a pointwise contraction statement. Descent is below the post-compression exit source, not necessarily below the original pre-loop value.",
+    "remaining_open_family": "S_exit=3 higher-R targets and their subsequent induced returns",
+    "residual_coordinate": "S_exit = S-3*j in {1,2,3}",
+    "status": "exact_maximal_floor_loop_exit_partition"
+  },
+  "input_frontier": {
+    "artifact": "docs/reports/pecm_exact_selected_cylinder_pilot.json",
+    "artifact_content_validation": {
+      "actual_distinct_target_count": 128,
+      "actual_edge_count": 128,
+      "artifact_type_matches": true,
+      "edge_records_valid": true,
+      "errors": [],
+      "exists": true,
+      "expected_target_count": 128,
+      "frontier_metadata_matches": true,
+      "fully_verified": true,
+      "json_parsed": true,
+      "prior_exact_partition_claim_present": true,
+      "root_partition_claim_matches": true,
+      "target_fiber_matches_requested_scope": true
+    },
+    "artifact_sha256": "8e70f4224cc379361de62675cb2b25028d95892c80523c51aadd2d52dd4948a1",
+    "artifact_snapshot_match": true,
+    "canonical_prior_frontier_verified": true,
+    "expected_artifact_sha256": "8e70f4224cc379361de62675cb2b25028d95892c80523c51aadd2d52dd4948a1",
+    "requested_source_scope": {
+      "R": 2,
+      "all_odd_u_mod2_power": 8,
+      "mod3_power": 2,
+      "states": 128,
+      "u_mod3": 2
+    },
+    "scope_relation": "canonical_prior_target_fiber_verified"
+  },
+  "max_plus": {
+    "cycles": [],
+    "exact_finite_state_obstruction_recorded_instead": true,
+    "finite_karp_run": false,
+    "status": "not_applicable_countably_infinite_open_frontier"
+  },
+  "nested_cusp": {
+    "base": {
+      "denominator": "22",
+      "numerator": "23"
+    },
+    "candidate": "K(n,u) = (n+5) * c^S",
+    "consecutive_loop_criterion": "at least j loops iff S >= 3*j+1, equivalently u == -1 mod 2^(3*j+1)",
+    "contracts": true,
+    "coordinate_update": "S(T(u)) = S(u) - 3",
+    "exact_ratio": "(9/8) * c^(-3)",
+    "exact_run_length": "floor((S-1)/3)",
+    "factor": {
+      "denominator": "12167",
+      "numerator": "11979"
+    },
+    "interpretation": "A finite mixed 2-adic/3-adic state correction cannot resolve the profinite self-loop. An unbounded cusp measuring distance to the negative fixed point n=-5 can resolve each consecutive same-R loop.",
+    "iterated_identities": [
+      "T^j(u)+1 = (9/8)^j * (u+1)",
+      "F^j(n)+5 = (9/8)^j * (n+5)",
+      "K_j/K_0 = ((9/8)*c^(-3))^j"
+    ],
+    "loop_condition": "u == -1 mod 16, equivalently S >= 4",
+    "margin_to_one": {
+      "denominator": "12167",
+      "numerator": "188"
+    },
+    "nearest_consecutive_base_with_numerator_at_most_64": {
+      "base": {
+        "denominator": "24",
+        "numerator": "25"
+      },
+      "factor": {
+        "denominator": "15625",
+        "numerator": "15552"
+      },
+      "margin_to_one": {
+        "denominator": "15625",
+        "numerator": "73"
+      }
+    },
+    "secondary_coordinate": "S = v2(u+1) = v2(n+5)-2",
+    "shifted_size_identity": "F(n)+5 = 9*(n+5)/8",
+    "status": "exact_contraction_on_every_R2_to_R2_floor_loop",
+    "unit_map": "T(u) = (9*u+1)/8",
+    "unit_shift_identity": "T(u)+1 = 9*(u+1)/8"
+  },
+  "outer_tail_candidate_audit": {
+    "H_ratio": "(211/187)^alpha > 1",
+    "c_factor": "c^(2-2) = 1",
+    "candidate_class": "H(n,R) = n^alpha * c^R",
+    "global_23_over_22_outer_cusp_verified": false,
+    "interpretation": "Tail depth paid for the selected R=9 to R=2 expansion, but cannot pay for an expanding branch that preserves R.",
+    "parameter_domain": "alpha > 0 and c > 0",
+    "prior_23_over_22_local_certificate_remains_valid": true,
+    "ratio_monotonicity": "F(n)/n = 9/8 + 5/(8*n) is strictly decreasing for n>0; the least positive lift is the cylinder maximum",
+    "source_R": 2,
+    "status": "exactly_refuted_on_same_R_reentry",
+    "target_R": 2,
+    "uniform_cylinder_ratio_upper": {
+      "denominator": "187",
+      "numerator": "211"
+    },
+    "witness": {
+      "landing": "211",
+      "least_lift_size_ratio_upper": {
+        "denominator": "187",
+        "numerator": "211"
+      },
+      "least_positive_u": "47",
+      "n0": "187",
+      "ratio_upper_reason": "F(n)/n = 9/8 + 5/(8*n) is strictly decreasing for n>0",
+      "source": {
+        "R": 2,
+        "mod2_power": 11,
+        "mod3_power": 2,
+        "u_mod2": 47,
+        "u_mod3": 2
+      },
+      "source_lift_modulus": "18432",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 4,
+        "u_mod2": 53,
+        "u_mod3": 53
+      },
+      "target_R": 2,
+      "target_mod2_power": 8,
+      "target_u_mod2": 53,
+      "target_unit": "53"
+    },
+    "witness_size_ratio": {
+      "denominator": "187",
+      "numerator": "211"
+    },
+    "witness_source_u": "47",
+    "witness_transition": "187 -> 211"
+  },
+  "proof": {
+    "bounded_machine_regression_passed": true,
+    "canonical_input_frontier_link_verified": true,
+    "claim_kind": "exact_symbolic_derivation_with_bounded_regression_checks",
+    "global_collatz_proof": false,
+    "global_recursive_lyapunov_derived": false,
+    "next_gap": "Resolve the S_exit=3 higher-R family and determine the next negative-fixed-point coordinate or a contracting multi-return grammar across its induced returns.",
+    "programmatically_exhausted_all_positive_integers": false,
+    "symbolic_R2_source_partition_derived": true,
+    "symbolic_countable_reentry_family_derived": true,
+    "symbolic_finite_mixed_state_pointwise_no_go_derived": true,
+    "symbolic_maximal_floor_loop_exit_grammar_derived": true,
+    "symbolic_nested_cusp_subfamily_contraction_derived": true,
+    "symbolic_outer_tail_candidate_refutation_derived": true
+  },
+  "reentry_family": {
+    "available_target_mod3_power": 4,
+    "event_source_residue": "u == (2^(r+1) - 1) * 9^(-1) mod 2^(r+2)",
+    "finite_refinement_terminates": false,
+    "landing": "F(4*u-1) = (9*u-1)/2",
+    "nontermination_reason": "target precision r+k+1 is unbounded as r grows; the residual 2-adic cylinder approaches u=-1/9",
+    "parameter": "integer target_R = r >= 2",
+    "persistent_coarse_spine": {
+      "formula": "-9^(-1) mod 2^k",
+      "mod2_power": 8,
+      "u_mod2": 199,
+      "valid_for_r_at_least": 7
+    },
+    "retained_mod9_cycle": [
+      {
+        "representative_target_R": 2,
+        "retained_target_u_mod_9": 8,
+        "target_R_mod_6": 2
+      },
+      {
+        "representative_target_R": 3,
+        "retained_target_u_mod_9": 4,
+        "target_R_mod_6": 3
+      },
+      {
+        "representative_target_R": 4,
+        "retained_target_u_mod_9": 2,
+        "target_R_mod_6": 4
+      },
+      {
+        "representative_target_R": 5,
+        "retained_target_u_mod_9": 1,
+        "target_R_mod_6": 5
+      },
+      {
+        "representative_target_R": 6,
+        "retained_target_u_mod_9": 5,
+        "target_R_mod_6": 0
+      },
+      {
+        "representative_target_R": 7,
+        "retained_target_u_mod_9": 7,
+        "target_R_mod_6": 1
+      }
+    ],
+    "source_mod3": {
+      "power": 2,
+      "residue": 2
+    },
+    "target_2adic_map": "bijection onto all 128 odd residues mod 2^8",
+    "target_fixed_leaves_per_r": 128,
+    "target_fixed_source_power": "r + 9",
+    "target_fixed_source_residue": "u == (2^(r+1)*b - 1) * 9^(-1) mod 2^(r+9), b odd mod 2^8",
+    "target_identity": "F(4*u-1) = 2^r*v - 1",
+    "target_mod2_power": 8,
+    "target_mod3_formula": "(9*source_u_mod3 + 1) * 2^(-(r+1)) mod 3^4",
+    "target_unit": "v = (9*u+1)/2^(r+1)"
+  },
+  "source_partition": {
+    "classification_kind": "exact_symbolic_not_sampled",
+    "complete_mod8_partition": [
+      {
+        "coarse_states": 32,
+        "exact_positive_gap_lower": "(23*u - 7)/8",
+        "landing_upper": "(9*u - 1)/8",
+        "post_valuation_lower_bound": 4,
+        "status": "descended_at_first_post_step",
+        "u_mod8": 1
+      },
+      {
+        "coarse_states": 32,
+        "exact_positive_gap": "(7*u - 3)/4",
+        "landing": "(9*u - 1)/4",
+        "post_valuation": 3,
+        "status": "descended_at_first_post_step",
+        "u_mod8": 5
+      },
+      {
+        "coarse_states": 32,
+        "exact_positive_gap_lower": "(5*u - 7)/8",
+        "first_landing": "(9*u - 1)/2",
+        "first_landing_minus_n": "(u + 1)/2",
+        "first_landing_tail_depth": 1,
+        "first_post_valuation": 2,
+        "second_landing_upper": "(27*u - 1)/8",
+        "second_post_valuation_lower_bound": 2,
+        "status": "descended_at_second_post_step",
+        "u_mod8": 3
+      },
+      {
+        "coarse_states": 32,
+        "full_word": [
+          1,
+          2
+        ],
+        "landing": "(9*u - 1)/2",
+        "landing_minus_n": "(u + 1)/2",
+        "post_valuation": 2,
+        "status": "tail_reentry_parametric_family",
+        "target_R": "v2(9*u + 1) - 1 >= 2",
+        "u_mod8": 7
+      }
+    ],
+    "live_family_coarse_states": 32,
+    "scope": {
+      "R": 2,
+      "coarse_mod2_power": 8,
+      "coarse_states": 128,
+      "mod3_power": 2,
+      "u_mod3": 2,
+      "u_parity": "odd"
+    },
+    "uniformly_descending_coarse_states": 96,
+    "unresolved_positive_integer_sources": 0
+  },
+  "status": "outer_tail_candidate_exactly_refuted_nested_recursive_cusp_exact_open_frontier",
+  "type": "pecm_r2_exact_recursive_tail_cusp"
+}

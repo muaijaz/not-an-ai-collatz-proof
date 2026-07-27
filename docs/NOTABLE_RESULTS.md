@@ -554,6 +554,96 @@ that the displayed base works globally.
 
 ---
 
+### D.9 Exact recursive `R=2` frontier and nested-cusp obstruction
+
+**Complete source cover.** The `128` targets left open by D.8 collectively
+represent every odd unit with
+
+```text
+R=2,  u mod 9=2.
+```
+
+For `n=4u-1`, their outgoing behavior has an exact mod-8 partition. The
+classes `u=1,5 mod 8` descend at the first post-exit step, and `u=3 mod 8`
+descends at the second. These are `96` uniformly descending coarse states.
+The remaining `32`, with `u=7 mod 8`, form the exact family
+
+```text
+r = v2(9u+1)-1 >= 2
+v = (9u+1)/2^(r+1)
+F(n) = 2^r v - 1.
+```
+
+For each `r>=2`, fixing `v mod 2^8` produces `128` source leaves and reaches
+all odd target residues modulo `256`. The source cover is complete, but the
+target depth and required source precision are unbounded, so the outgoing
+graph is countably infinite rather than finite.
+
+**Exact no-go theorem for finite mixed-adic state corrections.** The `r=2`
+subfamily preserves `R=2` and expands size. Its least witness in the current
+`u mod 9=2` domain is `187 -> 211`, which refutes every global
+`n^alpha c^R` candidate with `alpha>0`. At every finite mixed resolution,
+there is also a positive refined leaf returning to the same coarse
+`(R,u mod 2^k,u mod 3^ell)=(2,-1,-1)` state while increasing `n`. The fixture
+
+```text
+u=1151,  n=4603 -> 5179,
+(R,u mod 16,u mod 9)=(2,15,8) -> (2,15,8)
+```
+
+therefore excludes strict one-step
+`n^alpha h(finite mixed 2-adic/3-adic state)` candidates for `alpha>=0` and
+positive `h`. The witness changes with the chosen resolution and converges
+profinitely to `u=-1`; it is not one positive orbit. The limiting fixed points
+`u=-1` and `n=-5` are negative, so no positive cycle is being claimed.
+
+**Nested-cusp certificate.** The same obstruction supplies a deeper
+coordinate. On every consecutive `R=2 -> 2` loop,
+
+```text
+S = v2(u+1) = v2(n+5)-2,
+S' = S-3,
+n'+5 = 9(n+5)/8.
+```
+
+Hence
+
+```text
+K(n,u) = (n+5)(23/22)^S
+```
+
+has the exact constant ratio
+
+```text
+(9/8)(22/23)^3 = 11979/12167 < 1.
+```
+
+There are exactly `j=floor((S-1)/3)` consecutive floor loops. After their
+maximal compression,
+
+```text
+S_exit = S-3j in {1,2,3}.
+```
+
+These residual values give first-post descent, second-post descent, and
+higher-`R` reentry respectively. The descents are below the compressed exit
+source, not necessarily below the original pre-loop value. Their exact
+normalized Haar masses among odd 2-adic units are `4/7`, `2/7`, and `1/7`.
+In the last branch, if `u+1=2^S w`, then
+
+```text
+R_next = 2 + v2(9^(j+1)w - 1) >= 3.
+```
+
+The Haar split is average-only. The nested loop contraction and exit
+classification are exact pointwise statements, but the higher-`R` return
+family is still open.
+
+**Artifact:** `docs/reports/pecm_r2_recursive_tail_cusp.json`; module
+`collatz_exp/symbolic_frontier_certificate.py`.
+
+---
+
 ## E. Demoted hypotheses (honest record)
 
 ### E.1 ψ as "rich Lyapunov potential"

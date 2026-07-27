@@ -34,8 +34,8 @@ present the *results*; this document presents the *path*.
 
 **Initial state:** one Python file `collatz_certificate_search.py`, ~5 KB.
 
-**Current state:** `collatz_exp/` package with 91 modules, 246 passing
-tests, 117 JSON artifact reports, seven integrated reference-paper threads, and
+**Current state:** `collatz_exp/` package with 92 modules, 262 passing
+tests, 118 JSON artifact reports, seven integrated reference-paper threads, and
 a complete renewal-theoretic / operator-theoretic framework.
 
 ---
@@ -1053,6 +1053,91 @@ closed.
 
 Artifact: `docs/reports/pecm_exact_selected_cylinder_pilot.json`.
 
+### 19.2 The open fiber becomes an exact recursive cusp
+
+Expanding the `128` targets did not produce another finite quotient graph.
+Instead, it exposed a cleaner symbolic structure. Every target has `R=2`,
+so write `n=4u-1`. The complete odd-unit domain splits by `u mod 8`: three
+classes descend in at most two post-exit steps, while `u=7 mod 8` reenters
+through `(1,2)` with
+
+```text
+F(n) = (9n+5)/8 = (9u-1)/2.
+```
+
+The reentry depth is
+
+```text
+r = v2(9u+1)-1 >= 2.
+```
+
+For each fixed `r`, exact target refinement again reaches all `128` odd
+residues modulo `256`. But the source precision is `r+9`, so it grows without
+bound. The correct completion is a countable parametric branch family, not a
+larger finite enumeration. This was a useful methodological correction:
+ordinary positive source integers are completely classified even though the
+resulting target grammar is infinite and open.
+
+The first candidate then failed for an exact reason. The depth-2 member
+
+```text
+u=47,  n=187 -> 211
+```
+
+keeps `R=2`. No choice of the outer tail base can offset an expanding branch
+when the outer tail coordinate does not change. A stronger construction
+showed that every finite mixed `2`-adic/`3`-adic residue resolution contains
+such a realizable expanding self-loop. The witnesses vary with resolution
+and converge profinitely to `u=-1`; they are not one positive orbit. This
+rules out a whole candidate class:
+
+```text
+n^alpha h(R,u mod 2^k,u mod 3^ell),
+alpha >= 0, h > 0 finite-state.
+```
+
+The failure was informative rather than terminal. The same-`R` map on units
+is
+
+```text
+T(u) = (9u+1)/8,
+T(u)+1 = 9(u+1)/8.
+```
+
+The new coordinate `S=v2(u+1)` falls by exactly three on every repetition,
+while `n+5` grows by `9/8`. Thus the nested potential
+
+```text
+K(n,u) = (n+5)(23/22)^S
+```
+
+contracts exactly by `11979/12167`. Arbitrarily long positive expanding
+chains exist, but no positive integer can stay in this subfamily forever:
+`S` loses three units per loop. The negative fixed point `n=-5` is a
+2-adic organizing center, not a positive Collatz cycle.
+
+The maximal run could then be induced without sampling. With
+`j=floor((S-1)/3)`, the residual `S_exit=S-3j` is exactly `1`, `2`, or `3`.
+Those cases descend at the first post step, descend at the second post step,
+or reenter at a higher tail depth. The descents are below the compressed exit
+source, not necessarily below the original pre-loop value. Their normalized
+Haar proportions among odd 2-adic units are `4/7`, `2/7`, and `1/7`. For the
+last branch, writing `u+1=2^S w` gives the exact next depth
+
+```text
+R_next = 2 + v2(9^(j+1)w - 1) >= 3.
+```
+
+The `6/7` descent mass is an average diagnostic and does not replace the
+pointwise problem.
+
+This changed the research picture from “fit one finite residue table” to
+“discover a hierarchy of cusp coordinates and induce over their exits.” The
+next exact target is the higher-`R` branch selected by `S_exit=3` and its
+multi-return grammar.
+
+Artifact: `docs/reports/pecm_r2_recursive_tail_cusp.json`.
+
 ---
 
 ## 20. Lessons learned
@@ -1098,7 +1183,7 @@ Artifact: `docs/reports/pecm_exact_selected_cylinder_pilot.json`.
 All results in this journey are reproducible:
 
 ```bash
-# Run the full test suite (currently 246 tests passing in ~3s)
+# Run the full test suite (currently 262 tests passing in ~4s)
 uv run python -m pytest -q
 
 # Reproduce any artifact in docs/reports/ via the corresponding CLI:

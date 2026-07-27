@@ -130,6 +130,118 @@ Implementation and artifact:
 - `collatz_exp/symbolic_branch_certificate.py`
 - `docs/reports/pecm_exact_selected_cylinder_pilot.json`
 
+## Implementation status: exact recursive `R=2` frontier
+
+The `128` open targets from the selected-cylinder pilot have now been
+expanded as a complete symbolic source cover. Writing `n=4u-1`, the odd
+source units split exactly by `u mod 8`:
+
+- `u=1 mod 8` descends at the first post-exit step;
+- `u=5 mod 8` descends at the first post-exit step;
+- `u=3 mod 8` expands once and descends at the second post-exit step;
+- `u=7 mod 8` reenters through the full word `(1,2)`.
+
+Thus `96` of the `128` coarse states descend uniformly. The final `32` do not
+form a finite next layer. They are the exact countable family
+
+```text
+r = v2(9u+1)-1 >= 2,
+v = (9u+1)/2^(r+1),
+F(4u-1) = 2^r v - 1.
+```
+
+For every fixed `r` and every odd target `b mod 2^k`, the unique source
+cylinder is
+
+```text
+u = (2^(r+1)b - 1) 9^(-1) mod 2^(r+k+1).
+```
+
+At `k=8`, each depth therefore has `128` target-fixed leaves and reaches all
+odd target residues modulo `256`. Required source precision grows with `r`,
+so no finite adaptive residue refinement can close this cover honestly.
+There are no unresolved positive source integers; the *target grammar* is
+what remains infinite and open.
+
+This expansion exactly refutes the first outer-tail candidate class. The
+`r=2` subfamily preserves `R=2` while increasing ordinary size; its least
+current-domain witness is
+
+```text
+187 -> 211.
+```
+
+Consequently, `H(n,R)=n^alpha c^R` fails for every `alpha>0` and `c>0`.
+Moreover, at every finite resolution `(k,ell)`, the coarse state
+`(R,u mod 2^k,u mod 3^ell)=(2,-1,-1)` has a positive refined expanding
+self-loop. This excludes strict one-step candidates
+`n^alpha h(finite mixed 2-adic/3-adic state)` for `alpha>=0` and positive
+`h`. The positive witnesses depend on `(k,ell)` and converge profinitely to
+`u=-1`; they are not a single positive orbit or cycle.
+
+The obstruction also identifies a secondary cusp. On an `R=2 -> 2` loop,
+
+```text
+T(u) = (9u+1)/8,
+S = v2(u+1) = v2(n+5)-2,
+S(T(u)) = S(u)-3,
+F(n)+5 = 9(n+5)/8.
+```
+
+Therefore
+
+```text
+K(n,u) = (n+5) (23/22)^S
+```
+
+contracts on every such loop by the exact factor
+
+```text
+(9/8)(22/23)^3 = 11979/12167 < 1.
+```
+
+The maximal run now has an exact induced exit grammar as well. If
+
+```text
+j = floor((S-1)/3),
+```
+
+then
+
+```text
+u_j+1 = 9^j(u+1)/8^j,
+S_exit = S-3j in {1,2,3}.
+```
+
+The residual coordinate completely determines the next event:
+
+| `S_exit` | Exact event | Conditional Haar mass on odd `Z_2` |
+|---:|---|---:|
+| `1` | first-post descent | `4/7` |
+| `2` | second-post descent | `2/7` |
+| `3` | higher-`R` reentry | `1/7` |
+
+For the reentry branch, writing `u+1=2^S w` with `w` odd gives
+
+```text
+R_next = 2 + v2(9^(j+1)w - 1) >= 3.
+```
+
+In the first two rows, descent is below the post-compression exit source, not
+necessarily below the original pre-loop value. The `6/7` versus `1/7` split
+is a normalized odd-unit Haar-average renewal diagnostic, not a pointwise
+Lyapunov inequality.
+
+This is evidence for a *hierarchy of unbounded cusp coordinates*, not a
+global Lyapunov theorem. The next theorem-facing task is to resolve the
+`S_exit=3` higher-`R` family and determine whether its induced returns admit
+another exact coordinate or a contracting multi-return potential.
+
+Implementation and artifact:
+
+- `collatz_exp/symbolic_frontier_certificate.py`
+- `docs/reports/pecm_r2_recursive_tail_cusp.json`
+
 ## 0. Mathematical preflight
 
 Four issues must be handled before raw vector comparisons have proof-facing
@@ -649,13 +761,14 @@ Implemented modules:
 collatz_exp/pecm_vector_export.py
 collatz_exp/pecm_refinement.py
 collatz_exp/pecm_consistency.py
+collatz_exp/symbolic_branch_certificate.py
+collatz_exp/symbolic_frontier_certificate.py
 ```
 
 Planned modules:
 
 ```text
 collatz_exp/symbolic_lyapunov_fit.py
-collatz_exp/symbolic_branch_certificate.py
 collatz_exp/exceptional_cylinder_tree.py
 ```
 
@@ -665,13 +778,14 @@ Implemented tests:
 tests/test_pecm_vector_export.py
 tests/test_pecm_refinement.py
 tests/test_pecm_consistency.py
+tests/test_symbolic_branch_certificate.py
+tests/test_symbolic_frontier_certificate.py
 ```
 
 Planned tests:
 
 ```text
 tests/test_symbolic_lyapunov_fit.py
-tests/test_symbolic_branch_certificate.py
 tests/test_exceptional_cylinder_tree.py
 ```
 
