@@ -641,6 +641,15 @@ does not claim a proof of the Collatz conjecture.
   splitter has to deepen.
 - Keep 2-adic cycle candidates instead of discarding them. Classify them as
   positive integer, negative integer, nonordinary 2-adic, or already-descending.
+- The exact `S_exit=3` handoff is now
+  `2^(3m+2)w-5 --(1,2)^m--> 4*9^m*w-5`, and the nested cusp contracts the
+  full phase by `(11979/12167)^m`. The subsequent simple-cusp obstruction
+  leads to word-specific affine ghosts
+  `L_W(n)=(3^M-2^A)n+B`, whose valuation loses exactly `A` under word `W`.
+  Prioritize an induced ghost-atlas graph. Its exact edge relation has an
+  additive ghost-gap term, so retain signed rational offsets and finite
+  magnitude intervals rather than multiplying local contraction factors as if
+  they telescoped.
 
 ## Sources
 

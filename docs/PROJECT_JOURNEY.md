@@ -34,8 +34,8 @@ present the *results*; this document presents the *path*.
 
 **Initial state:** one Python file `collatz_certificate_search.py`, ~5 KB.
 
-**Current state:** `collatz_exp/` package with 92 modules, 262 passing
-tests, 118 JSON artifact reports, seven integrated reference-paper threads, and
+**Current state:** `collatz_exp/` package with 93 modules, 284 passing
+tests, 119 JSON artifact reports, seven integrated reference-paper threads, and
 a complete renewal-theoretic / operator-theoretic framework.
 
 ---
@@ -1138,6 +1138,88 @@ multi-return grammar.
 
 Artifact: `docs/reports/pecm_r2_recursive_tail_cusp.json`.
 
+### 19.3 The higher-tail branch becomes an affine-ghost atlas
+
+The `S_exit=3` family did not require another broad computation. Writing
+`S=3m` and `u+1=2^(3m)w` exposed the whole transition:
+
+```text
+n0 = 2^(3m+2)w-5,
+W_m = (1,2)^m,
+n1 = 4*9^m*w-5.
+```
+
+The next tail depth is `R=2+v2(9^m*w-1)`. Fixing `m`, `R`, and any odd target
+unit modulo `2^k` gives an explicit unique source residue modulo
+`2^(3m+R+k-2)`. Carrying a source residue modulo `3^ell` determines the
+target modulo `3^(ell+2m)`. This closes the former higher-tail *handoff* as
+an exact mixed-residue family, although the subsequent stopping grammar
+remains open.
+
+The most encouraging identity was that no new base was needed at the seam.
+The existing nested cusp contracts the complete word by
+
+```text
+[(9/8)(22/23)^3]^m = (11979/12167)^m.
+```
+
+So the `-5` coordinate pays for every same-`R` loop and the final jump into
+`R>=3`. The failure happens one phase later. The exact chain
+
+```text
+1051 -> 1183 -> 4495
+```
+
+has zero `-5` cusp exponent at the last two endpoints and expands the simple
+candidate by `125/33`, independently of its base.
+
+That failure revealed a more general object. Every expanding exact affine
+word
+
+```text
+T_W(n)=(3^M n+B)/2^A
+```
+
+has a negative rational fixed point
+`g_W=-B/(3^M-2^A)`. Its linear distance
+
+```text
+L_W(n)=(3^M-2^A)n+B
+```
+
+obeys
+
+```text
+L_W(T_W(n))=(3^M/2^A)L_W(n).
+```
+
+On an exact word cylinder, `v2(L_W)` therefore loses exactly `A`. Weighting
+that valuation produces a word-specific contracting cusp whenever
+`c^A>3^M/2^A`. The obstruction word gives `L=179n+211` and factor
+`15552/15625`; a second higher-tail word gives `L=11n+19` and factor
+`64827/65536`.
+
+There is a useful finiteness corollary: `r` consecutive repetitions of one
+expanding word require `rA<=v2(L_W(n))`. A positive orbit cannot remain in a
+single expanding chart forever. The hard part is therefore not persistence
+inside one word but switching between words.
+
+The chart-switch calculation isolates that difficulty:
+
+```text
+L_V(T_W(n))
+  = [D_V*3^M_W/(2^A_W*D_W)]L_W(n)
+    + B_V-D_V*B_W/D_W.
+```
+
+The new additive term is exactly the gap between the two negative ghosts.
+Local contractions do not telescope until that term is controlled. This
+reframed the next research problem as constructing a ghost atlas with exact
+edge inequalities, including finite magnitude intervals where the affine
+slope contracts.
+
+Artifact: `docs/reports/pecm_higher_r_affine_ghost.json`.
+
 ---
 
 ## 20. Lessons learned
@@ -1183,7 +1265,7 @@ Artifact: `docs/reports/pecm_r2_recursive_tail_cusp.json`.
 All results in this journey are reproducible:
 
 ```bash
-# Run the full test suite (currently 262 tests passing in ~4s)
+# Run the full test suite (currently 284 tests passing in ~4s)
 uv run python -m pytest -q
 
 # Reproduce any artifact in docs/reports/ via the corresponding CLI:
@@ -1194,6 +1276,7 @@ uv run python -m collatz_exp.experiments \
   --pecm-cross-resolution \
   --pecm-cross-resolution-output \
     docs/reports/pecm_cross_resolution_consistency.json
+uv run python -m collatz_exp.symbolic_higher_r_certificate --verbose
 # ... see collatz_exp/experiments.py for the full flag list
 ```
 

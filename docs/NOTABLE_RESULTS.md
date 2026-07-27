@@ -644,6 +644,146 @@ family is still open.
 
 ---
 
+### D.10 Exact higher-`R` transfer and affine-ghost cusp hierarchy
+
+**The formerly open handoff is now parametrized.** Put `m>=1` and write
+
+```text
+u+1 = 2^(3m)w,  w odd,
+n0 = 4u-1 = 2^(3m+2)w-5.
+```
+
+The full maximal `R=2` loop run together with its higher-`R` exit has exact
+valuation word `(1,2)^m` and landing
+
+```text
+n1 = 4*9^m*w-5,
+n1+5 = (9/8)^m(n0+5).
+```
+
+If `t=v2(9^m*w-1)`, then
+
+```text
+R = t+2 >= 3,
+v = (9^m*w-1)/2^t,
+n1 = 2^R*v-1.
+```
+
+For every `m>=1`, `R>=3`, odd target `b mod 2^k`, and source
+`a mod 3^ell`, there is one mixed source cylinder
+
+```text
+u mod 2^(3m+R+k-2),  u=a mod 3^ell
+```
+
+whose target has `v=b mod 2^k`. The target 3-adic residue is determined
+modulo `3^(ell+2m)`, so the handoff gains exactly `2m` available 3-adic
+digits. In particular, every higher tail depth and every odd target 2-adic
+residue occur; this is an exact infinite family rather than a finite scan.
+
+**The old cusp pays for the complete handoff.** With
+
+```text
+E2(n) = (n+5)c^(v2(n+5)-2),  EH(n)=n+5,
+```
+
+the exact ratio is
+
+```text
+EH(n1)/E2(n0) = [(9/8)c^(-3)]^m.
+```
+
+At `c=23/22`, this is
+
+```text
+(11979/12167)^m < 1.
+```
+
+Thus the `-5` cusp contracts not only each consecutive `R=2 -> 2` loop, but
+the entire maximal phase including its final `R>=3` exit.
+
+**The next higher-`R` stage is exact but not uniformly descending.** From
+`N=2^R v-1`, let `q=v2(3^R v-1)`. After the forced `R-1` valuation-one
+steps and the next valuation `q+1`,
+
+```text
+Z = (3^R v-1)/2^q
+  = [3^R N+(3^R-2^R)]/2^(R+q).
+```
+
+Its precise descent criterion relative to `N` is
+
+```text
+(2^(R+q)-3^R)v > 2^q-1.
+```
+
+If the branch remains live, its next tail/continuation depth and every
+target-fixed mixed residue cylinder also have explicit inverse formulas.
+Magnitude must be retained on contracting-slope branches; residues alone do
+not decide the cutoff.
+
+**A simple cusp is not global.** The canonical exact chain
+
+```text
+1051 --(1,2)--> 1183 --(1,1,1,1,2)--> 4495
+```
+
+has cusp exponent `v2(n+5)-2=0` at the last two endpoints. Consequently
+`(n+5)c^(v2(n+5)-2)` expands there by `125/33` for every `c`. The witness
+lies in an infinite exact cylinder; cylinder ratios vary with the lift but
+remain greater than one.
+
+**Affine-ghost theorem.** Let an exact expanding valuation word satisfy
+
+```text
+T_W(n) = (3^M n+B)/2^A,  3^M>2^A,
+L_W(n) = (3^M-2^A)n+B.
+```
+
+Then `g_W=-B/(3^M-2^A)` is its negative rational fixed point and
+
+```text
+L_W(T_W(n)) = (3^M/2^A)L_W(n),
+v2(L_W(T_W(n))) = v2(L_W(n))-A.
+```
+
+Therefore the word-specific cusp
+
+```text
+K_W,c(n)=L_W(n)c^v2(L_W(n))
+```
+
+has constant factor `(3^M/2^A)c^(-A)` and contracts exactly when
+`c^A>3^M/2^A`. Two certified fixtures are:
+
+- `(1,1,1,1,2)`, `L=179n+211`, factor `15552/15625` at `c=5/4`;
+- `(1,1,2)`, `L=11n+19`, factor `64827/65536` at `c=8/7`.
+
+There is also a finite-use theorem: if the same expanding word repeats `r`
+times, then `rA<=v2(L_W(n))`. No positive orbit can remain in one expanding
+word forever.
+
+The remaining global obstruction is now explicit. Switching from chart `W`
+to chart `V` gives
+
+```text
+L_V(T_W(n))
+  = [D_V*3^M_W/(2^A_W*D_W)]L_W(n)
+    + B_V-D_V*B_W/D_W.
+```
+
+The additive ghost-gap term prevents the local multiplicative contractions
+from telescoping automatically. Controlling those chart-switch terms on the
+exact induced grammar is the next proof-facing problem.
+
+**Status.** Exact symbolic infinite-family result with bounded regression
+checks; not a global Lyapunov function and not a Collatz proof.
+
+**Artifact:** `docs/reports/pecm_higher_r_affine_ghost.json`; module
+`collatz_exp/symbolic_higher_r_certificate.py`.
+
+---
+
 ## E. Demoted hypotheses (honest record)
 
 ### E.1 ψ as "rich Lyapunov potential"

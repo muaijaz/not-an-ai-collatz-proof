@@ -6,11 +6,11 @@
 
 *Renewal Cramér rates · Joint Spectral Radius diagnostics · Five-projection operator synthesis*
 
-[![Tests](https://img.shields.io/badge/tests-262%20passing-brightgreen?style=flat-square)](.)
+[![Tests](https://img.shields.io/badge/tests-284%20passing-brightgreen?style=flat-square)](.)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-empirical-orange?style=flat-square)](.)
 [![Python](https://img.shields.io/badge/python-3.12-blue?style=flat-square)](.)
-[![Reproducible](https://img.shields.io/badge/artifacts-118%20JSON-success?style=flat-square)](docs/reports)
+[![Reproducible](https://img.shields.io/badge/artifacts-119%20JSON-success?style=flat-square)](docs/reports)
 
 </div>
 
@@ -139,6 +139,41 @@ pointwise descent. The higher-`R` reentry family remains countably infinite
 and open
 ([artifact](docs/reports/pecm_r2_recursive_tail_cusp.json)).
 
+That higher-`R` handoff now has an exact two-parameter form. If
+`u+1=2^(3m)w` with `m>=1` and `w` odd, the complete accelerated word is
+`(1,2)^m` and
+
+```text
+n0 = 2^(3m+2)w-5  ->  n1 = 4*9^m*w-5,
+R_next = 2+v2(9^m*w-1).
+```
+
+It reaches every `R_next>=3` and every odd target residue at each fixed
+2-adic precision. More importantly, the nested `-5` cusp contracts the
+*entire* handoff—not just its same-`R` loops—by
+`(11979/12167)^m`. The simple cusp then fails on the next higher-`R` macro:
+`1051 -> 1183 -> 4495` gives the base-independent expansion `125/33`.
+
+The failure exposes a reusable exact structure. For any expanding valuation
+word
+
+```text
+T_W(n) = (3^M n+B)/2^A,
+L_W(n) = (3^M-2^A)n+B,
+```
+
+the negative rational fixed point is `-B/(3^M-2^A)` and
+`v2(L_W(T_W(n)))=v2(L_W(n))-A`. Thus the word-specific potential
+`L_W(n)c^v2(L_W(n))` has constant exact factor
+`(3^M/2^A)c^(-A)`. Two higher-`R` fixtures contract exactly in these
+coordinates: `179n+211` by `15552/15625`, and `11n+19` by
+`64827/65536`. A fixed expanding word cannot repeat forever: `r`
+consecutive uses require `rA <= v2(L_W(n))`. This is evidence for an
+affine-ghost cusp hierarchy, not a global Collatz proof. At a chart switch an
+additive difference between the two ghosts appears, so the wordwise factors
+do not automatically telescope; controlling that term is the next exact gap
+([artifact](docs/reports/pecm_higher_r_affine_ghost.json)).
+
 The framework now has a qn+1 sidecar diagnostic. Within the odd `q>1` grid,
 the classical `q=3` case is the unique tested member below the
 `log₂(q) = 2` drift threshold; `q=5` is already marginally positive. The
@@ -190,7 +225,7 @@ Empirical bridges to published papers, all finite-resolution and caveated:
 # Install dependencies
 uv sync
 
-# Run all 262 tests (≈4s)
+# Run all 284 tests (≈4s)
 uv run python -m pytest -q
 
 # Smoke test the experimental pipeline
@@ -218,6 +253,9 @@ uv run python -m collatz_exp.symbolic_branch_certificate --verbose
 
 # Reproduce the exact recursive R=2 frontier and nested-cusp certificate
 uv run python -m collatz_exp.symbolic_frontier_certificate --verbose
+
+# Reproduce the exact higher-R transfer and affine-ghost certificates
+uv run python -m collatz_exp.symbolic_higher_r_certificate --verbose
 ```
 
 Every quoted number has a corresponding JSON artifact under
@@ -249,8 +287,8 @@ collatz-renewal-framework/
 ├── pyproject.toml
 ├── uv.lock
 ├── collatz_certificate_search.py   ← original CLI compatibility wrapper
-├── collatz_exp/                    ← main package, 92 modules
-├── tests/                          ← 262 passing tests
+├── collatz_exp/                    ← main package, 93 modules
+├── tests/                          ← 284 passing tests
 └── docs/
     ├── NOTABLE_RESULTS.md          ← running result catalog
     ├── PROJECT_JOURNEY.md          ← chronological narrative + audit log
@@ -259,7 +297,7 @@ collatz-renewal-framework/
     ├── UNIFIED_MODEL.md            ← 5-projection operator synthesis
     ├── collatz_strategy.md         ← working strategy notes
     ├── references/                 ← Tao, Mori, Hercher, Paparella, Chang PDFs
-    └── reports/                    ← 118 JSON artifacts (one per result)
+    └── reports/                    ← 119 JSON artifacts (one per result)
 ```
 
 ---
@@ -318,7 +356,9 @@ Named, not closed:
    errors and
    branch oscillation grow at the second refinement. Cusp/tail
    renormalization, a streaming `(8,2) → (10,3) → (12,4)` ladder, and an
-   exact branchwise replacement remain open.
+   exact branchwise replacement remain open. The latest exact lane contracts
+   the full `R=2 -> R>=3` handoff and identifies word-specific affine-ghost
+   cusps; compatibility across changing ghost charts remains open.
 6. **Symbolic representation of `J_renewal`** — the direct
    `Σ R(K) ≈ J_renewal` identity test is not supported at high precision;
    an explicit `h_K`-weighted reconciliation remains open.
@@ -339,7 +379,7 @@ statements.
   [`docs/reports/`](docs/reports).
 - Each artifact records method, parameters, sample size, and the relevant
   numerical or exact diagnostics; empirical CIs are included where applicable.
-- 262 passing tests cover core arithmetic, certificates, Mersenne tail
+- 284 passing tests cover core arithmetic, certificates, Mersenne tail
   dynamics, post-exit map, renewal Cramér computation, Tao verification,
   Hercher bounds, Paparella nilpotency, JSR variants, automaton-constrained
   Karp, upper-Christoffel slope filtering, tail-cycle realizability,
@@ -354,7 +394,8 @@ statements.
   exact-word cylinder precision, exact selected-branch partitioning, and
   rational max-times difference certificates, plus the exact recursive
   `R=2` frontier, finite mixed-state obstruction, nested cusp, and induced
-  exit grammar.
+  exit grammar, and the exact higher-`R` phase transfer, first-post cutoff,
+  mixed-residue transport, and affine-ghost cusp identities.
 - Reference papers in [`docs/references/`](docs/references) for offline
   access.
 

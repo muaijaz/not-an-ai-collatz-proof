@@ -1,33 +1,35 @@
 # STATE
 
 ## Goal
-Resolve the higher-`R` branch of the exact nested PECM exit grammar and
-determine whether its induced returns admit a hierarchical Lyapunov function,
-without confusing a complete source cover, Haar average, or contracting
-subfamily with global Collatz descent.
+Build an exact affine-ghost atlas for the higher-`R` induced grammar and
+determine whether its chart-switch edges admit one compatible Lyapunov
+inequality, without confusing wordwise contraction or finite repeat budgets
+with global Collatz descent.
 
 ## Now
-The complete `R=2, u mod 2^8 odd, u mod 9=2` target fiber has an exact
-symbolic outgoing cover: `96` states descend uniformly and `32` form a
-countable reentry family. The family exactly refutes finite mixed
-`2`-adic/`3`-adic state-only one-step corrections, but its nested same-`R`
-loop contracts under
-`K(n,u)=(n+5)(23/22)^v2(u+1)` by `11979/12167`. Maximal loop induction leaves
-`S_exit in {1,2,3}`: the first two values descend and the third reenters at
-`R_next>=3`. That higher-`R` family remains open.
+The `S_exit=3` higher-`R` handoff is now an exact mixed-residue family. If
+`u+1=2^(3m)w`, its word is `(1,2)^m`, its target is `4*9^m*w-5`, and the
+existing cusp contracts the complete phase by `(11979/12167)^m`. The first
+higher-`R` post stage and its descent cutoff are exact. The simple `-5` cusp
+then fails on `1051 -> 1183 -> 4495`, but every expanding exact word has its
+own negative rational affine ghost `g_W` and a local cusp whose valuation
+drops by the word's total power `A`. One word cannot repeat forever; the open
+problem is the additive ghost-gap term when the word changes.
 
 ## Next
-1. Parametrize the `S_exit=3` family using
-   `R_next=2+v2(9^(j+1)w-1)` and carry compatible target residues.
-2. Trace its induced returns to `R=2` or descent and search for the next
-   negative-fixed-point coordinate or a multi-return contraction.
-3. Run the rational max-times solver only on an exact closed induced
+1. Enumerate theorem-shaped higher-`R` chart switches, retaining exact
+   magnitude intervals wherever the affine slope contracts.
+2. Test edge potentials against the exact identity
+   `L_V(T_W(n))=a_VW L_W(n)+delta_VW`, where `delta_VW` is the ghost gap.
+3. Search for a well-founded combination of chart repeat budgets and
+   cross-chart weights; identify any persistent positive-integer obstruction.
+4. Run the rational max-times solver only on an exact closed induced
    component; keep the countably infinite open family symbolic.
-4. Test whether the nested coordinate can be combined with the outer
-   `R`-cusp into one lexicographic or multiplicative potential across exits.
-5. Retain chunked/streaming Galerkin and mixed-adic wavelet work as numerical
+5. Use cusp-renormalized PECM vectors only to rank candidate charts and
+   edges, not as pointwise proof.
+6. Retain chunked/streaming Galerkin and mixed-adic wavelet work as numerical
    support, not the primary theorem-facing lane.
-6. Awaiting user: Chang/Siegel outreach emails and arXiv submission decision.
+7. Awaiting user: Chang/Siegel outreach emails and arXiv submission decision.
 
 ## Constraints
 - NEVER git push without asking in this conversation (CLAUDE.md hard rule 5).
@@ -53,12 +55,20 @@ loop contracts under
 - DECISION: demote the global outer-only class `n^alpha c^R`; an exact
   expanding `R=2 -> 2` branch refutes it for every `alpha>0`.
 - DECISION: promote `S=v2(u+1)=v2(n+5)-2` as a nested cusp coordinate, but
-  claim contraction only on consecutive same-`R` loops; the induced exit
-  grammar is exact, but no contraction across its higher-`R` branch is yet
-  claimed.
+  claim it only on consecutive same-`R` loops and their complete `(1,2)^m`
+  higher-`R` handoff, with exact factor `(11979/12167)^m`; no contraction is
+  claimed for the subsequent higher-`R` macro.
+- DECISION: demote the single global `-5` cusp after the exact
+  `1183 -> 4495` obstruction; retain it as the correct `R=2` phase chart.
+- DECISION: represent each expanding exact valuation word by its own affine
+  ghost `g_W=-B/(3^M-2^A)` and valuation coordinate
+  `L_W=(3^M-2^A)n+B`.
+- DECISION: treat the additive ghost-gap term at chart switches as the next
+  proof obstruction. Wordwise factors cannot be multiplied globally until
+  compatible edge inequalities are proved.
 
 ## Facts
-- Tests: `uv run python -m pytest -q` -> 262 passed in 3.63s.
+- Tests: `uv run python -m pytest -q` -> 284 passed.
 - Exact selected root: `(R,u mod 2^11,u mod 9)=(9,55,2)`.
 - Full word `(1^8,3,2,4)` has `(m,A,B)=(11,17,186875)` and exact slope
   `177147/131072 > 1`; its one-word affine fixed point is the noninteger
@@ -86,6 +96,28 @@ loop contracts under
   compressed exit source. Exact normalized Haar masses among odd 2-adic
   units are `4/7`, `2/7`, and `1/7`; the last branch has
   `R_next=2+v2(9^(j+1)w-1)>=3`.
+- Higher-`R` transfer: for `m>=1`,
+  `2^(3m+2)w-5 --(1,2)^m--> 4*9^m*w-5`, with every `R>=3` and every odd
+  target 2-adic residue represented.
+- Transfer precision: fixing target `v mod 2^k` at depth `R` requires source
+  `u mod 2^(3m+R+k-2)`; source precision `mod 3^ell` determines target
+  precision `mod 3^(ell+2m)`.
+- Full-phase cusp ratio:
+  `EH(n1)/E2(n0)=(11979/12167)^m<1`.
+- First higher-`R` stage:
+  `Z=(3^R v-1)/2^q`, `q=v2(3^R v-1)`, and
+  `Z<N iff (2^(R+q)-3^R)v>2^q-1`.
+- Simple-cusp obstruction: `1051 -> 1183 -> 4495`; the last transition has
+  shifted ratio `125/33>1` for every base.
+- Affine-ghost theorem:
+  `L_W(T_W(n))=(3^M/2^A)L_W(n)` and
+  `v2(L_W(T_W(n)))=v2(L_W(n))-A`.
+- Certified affine ghosts: `179n+211` with factor `15552/15625`, and
+  `11n+19` with factor `64827/65536`.
+- Repeat budget: `r` consecutive uses of an expanding word require
+  `rA<=v2(L_W(n))`.
+- Chart-switch identity has the additive term
+  `B_V-D_V*B_W/D_W`; cross-chart contraction remains open.
 - Galerkin smoke ladder: `(4,0) -> (6,1) -> (8,2)`,
   `R = 2..30`, common `alpha = 0.55`, 0 unresolved samples.
 - Numerical `max(Mh/h)`: `0.465489`, `0.502925`, `0.529990`.
@@ -103,12 +135,21 @@ loop contracts under
   `docs/reports/pecm_exact_selected_cylinder_pilot.json`.
 - Exact recursive-frontier artifact:
   `docs/reports/pecm_r2_recursive_tail_cusp.json`.
+- Exact higher-`R`/affine-ghost artifact:
+  `docs/reports/pecm_higher_r_affine_ghost.json`.
 - GPU: RTX 3090 Ti 24564 MiB (~21.5 GB free), CuPy 14.0.1 OK.
 - (14,5) run completed 2026-06-18: 57.7M states, finite_ratio_max=0.5357, artifact docs/runs/pecm_14_5_scaled_gpu_20260618_015521/.
 - (16,6) estimate: ~692.7M states, ~2.77B transitions (docs/collatz_strategy.md).
 - CLI: `python -m collatz_exp.experiments --post-exit-scaled-perron --post-exit-configs K:L --post-exit-operator-mode {dense_target_cache,streaming,gpu_target_cache,auto} --post-exit-checkpoint <npz> --post-exit-scaled-perron-output <json>`.
 
 ## Done
+- Exact higher-`R` phase and affine-ghost certificate
+  (`collatz_exp/symbolic_higher_r_certificate.py`) — RESULT: complete
+  `(m,R)` transfer parametrization, target-fixed mixed-residue transport,
+  full-phase cusp contraction, exact first-post cutoff and reentry transport,
+  simple-cusp obstruction, general affine-ghost theorem, finite repeat
+  budget, exact chart-switch identity, deterministic report, and explicit
+  open cross-chart status.
 - Exact recursive `R=2` frontier
   (`collatz_exp/symbolic_frontier_certificate.py`) — RESULT: exhaustive mod-8
   source partition, exact countable target-depth parametrization, all odd
@@ -151,3 +192,7 @@ loop contracts under
 - Positive corrections on any fixed finite mixed `2`-adic/`3`-adic residue
   quotient cannot provide strict one-step descent: every such quotient
   contains a realizable expanding coarse self-loop.
+- The single shifted cusp `(n+5)c^(v2(n+5)-2)` cannot survive all higher-`R`
+  phases: the exact `1183 -> 4495` word preserves its cusp exponent and
+  expands its shifted size by `125/33`. Word-specific affine ghosts replace
+  it locally, but their chart-switch compatibility is not yet proved.

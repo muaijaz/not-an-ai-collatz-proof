@@ -1,0 +1,418 @@
+{
+  "affine_ghost_theorem": {
+    "algebraic_chart_switch_fixture_not_itinerary_claim": {
+      "additive_ghost_gap": {
+        "denominator": "179",
+        "numerator": "1080"
+      },
+      "identity": "L_target(T_source(n)) = linear_multiplier*L_source(n) + additive_ghost_gap",
+      "linear_multiplier": {
+        "denominator": "11456",
+        "numerator": "2673"
+      },
+      "source_linear_form": "179*n + 211",
+      "source_word": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "target_linear_form": "11*n + 19",
+      "target_word": [
+        1,
+        1,
+        2
+      ]
+    },
+    "candidate": "K_W,c(n)=L_W(n)*c^v2(L_W(n))",
+    "canonical_certificates": [
+      {
+        "affine": {
+          "A": 6,
+          "B": "211",
+          "M": 5,
+          "map": "T(n) = (3^5*n + 211) / 2^6",
+          "slope": {
+            "denominator": "64",
+            "numerator": "243"
+          }
+        },
+        "base": {
+          "denominator": "4",
+          "numerator": "5"
+        },
+        "contracts": true,
+        "linear_form": {
+          "D": "179",
+          "expression": "179*n + 211",
+          "ghost": {
+            "denominator": "179",
+            "numerator": "-211"
+          }
+        },
+        "potential_factor": {
+          "denominator": "15625",
+          "numerator": "15552"
+        },
+        "valuation_word": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "witness": {
+          "repeat_budget": {
+            "cost_per_exact_word": 6,
+            "initial_valuation_units": 10,
+            "maximum_possible_consecutive_uses": 1,
+            "necessary_not_sufficient": true
+          },
+          "source_linear_v2": 10,
+          "source_linear_value": "211968",
+          "source_n": "1183",
+          "target_linear_v2": 4,
+          "target_linear_value": "804816",
+          "target_n": "4495",
+          "valuation_drop": 6
+        }
+      },
+      {
+        "affine": {
+          "A": 4,
+          "B": "19",
+          "M": 3,
+          "map": "T(n) = (3^3*n + 19) / 2^4",
+          "slope": {
+            "denominator": "16",
+            "numerator": "27"
+          }
+        },
+        "base": {
+          "denominator": "7",
+          "numerator": "8"
+        },
+        "contracts": true,
+        "linear_form": {
+          "D": "11",
+          "expression": "11*n + 19",
+          "ghost": {
+            "denominator": "11",
+            "numerator": "-19"
+          }
+        },
+        "potential_factor": {
+          "denominator": "65536",
+          "numerator": "64827"
+        },
+        "valuation_word": [
+          1,
+          1,
+          2
+        ],
+        "witness": {
+          "repeat_budget": {
+            "cost_per_exact_word": 4,
+            "initial_valuation_units": 9,
+            "maximum_possible_consecutive_uses": 2,
+            "necessary_not_sufficient": true
+          },
+          "source_linear_v2": 9,
+          "source_linear_value": "419328",
+          "source_n": "38119",
+          "target_linear_v2": 5,
+          "target_linear_value": "707616",
+          "target_n": "64327",
+          "valuation_drop": 4
+        }
+      }
+    ],
+    "chart_switch_identity": "T_W(n)-g_V = (3^M_W/2^A_W)*(n-g_W) + (g_W-g_V)",
+    "chart_switch_linear_form_identity": "L_V(T_W(n)) = [D_V*3^M_W/(2^A_W*D_W)]*L_W(n) + B_V-D_V*B_W/D_W",
+    "chart_switch_obstruction": "the additive ghost-gap term prevents the wordwise multiplicative factors from telescoping automatically",
+    "conjugacy_identity": "L_W(T(n))=(3^M/2^A)*L_W(n)",
+    "contraction_condition": "c^A > 3^M/2^A",
+    "cross_word_compatibility_verified": false,
+    "domain": "any exact expanding accelerated word T(n)=(3^M*n+B)/2^A with 3^M>2^A",
+    "exact_factor": "(3^M/2^A)*c^(-A)",
+    "finite_repeat_budget": "if W repeats r consecutive times, then r*A <= v2(L_W(n)); one expanding word cannot repeat forever on a positive orbit",
+    "interpretation": "Persistent expanding words are organized by distances to their own negative rational affine fixed points. The next global problem is a compatible grammar between these charts.",
+    "linear_form": "L_W(n)=(3^M-2^A)*n+B",
+    "negative_rational_ghost": "-B/(3^M-2^A)",
+    "valuation_update": "v2(L_W(T(n)))=v2(L_W(n))-A",
+    "word_specific": true
+  },
+  "finite_verification": {
+    "block_count_max": 4,
+    "block_count_min": 1,
+    "first_post_stage_counts": {
+      "continuing_post_exit_branch": 428,
+      "descent_below_higher_R_source": 168,
+      "tail_reentry": 428
+    },
+    "first_post_stage_sha256": "8b2a7062226815505ff00556a8865a4d8fd2cd4bac87764679d35c723812b0e1",
+    "first_post_unit_mod2_power": 8,
+    "nonleast_lift_per_instance_verified": 1,
+    "role": "regression_only_not_basis_of_symbolic_derivation",
+    "target_R_max": 10,
+    "target_R_min": 3,
+    "target_mod2_power": 8,
+    "transfer_instance_sha256": "8de5c11877f1fc3234a48c21629f17ae7a8516cce4267586d5ed169653c5148e",
+    "transfer_instances_verified": 4096
+  },
+  "first_higher_r_stage": {
+    "affine_identity": "Z = (3^R*N + (3^R-2^R))/2^(R+q)",
+    "always_expanding_condition": "2^(R+q) <= 3^R",
+    "comparison_baseline": "the higher-R source N",
+    "exact_descent_test": "(2^(R+q)-3^R)*v > 2^q-1",
+    "forced_tail": "R-1 valuation-one steps",
+    "full_word": "(1^(R-1), q+1)",
+    "landing": "Z = (3^R*v - 1)/2^q",
+    "nonuniform_case": "when the affine slope contracts but the cutoff is positive, only a finite interval of source lifts remains live",
+    "post_q": "q = v2(3^R*v - 1) >= 1",
+    "reentry_depth_if_not_descended": "rho = v2(3^R*v + 2^q - 1)-q",
+    "reentry_rule": "rho>=2 gives a tail reentry; rho=1 continues post-exit",
+    "reentry_target_fixed_source": "v == 3^(-R)*(2^(q+rho)*b-(2^q-1)) mod 2^(q+rho+k)",
+    "reentry_target_mod3_gain": "source target-unit precision + R",
+    "reentry_target_unit": "y = (3^R*v + 2^q - 1)/2^(q+rho)",
+    "source": "N = 2^R*v - 1, R>=3, v odd",
+    "target_fixed_helpers": [
+      "higher_r_reentry_source_residue",
+      "higher_r_reentry_target_mod3"
+    ],
+    "uniform_descent_condition": "2^q*(2^R-1) > 3^R-1"
+  },
+  "frontier": {
+    "affine_ghost_chart_count_finite": false,
+    "first_post_stage_exact": true,
+    "full_post_exit_stopping_grammar_closed": false,
+    "source_family_parametrized": true,
+    "status": "countable_two_parameter_open_higher_R_family",
+    "target_2adic_fibers": "all odd target residues at every (m,R)",
+    "target_depths": "every integer R>=3",
+    "target_fixed_residue_transport_exact": true
+  },
+  "higher_r_transfer": {
+    "fixtures": [
+      {
+        "block_count": 1,
+        "intermediate_tail_depths": [
+          3
+        ],
+        "least_positive_u": "119",
+        "phase_base": {
+          "denominator": "22",
+          "numerator": "23"
+        },
+        "phase_ratio": {
+          "denominator": "12167",
+          "numerator": "11979"
+        },
+        "source": {
+          "R": 2,
+          "mod2_power": 12,
+          "mod3_power": 2,
+          "u_mod2": 119,
+          "u_mod3": 2
+        },
+        "source_lift_modulus": "36864",
+        "source_n": "475",
+        "source_w": "15",
+        "target": {
+          "R": 3,
+          "mod2_power": 8,
+          "mod3_power": 4,
+          "u_mod2": 67,
+          "u_mod3": 67
+        },
+        "target_R": 3,
+        "target_mod2_power": 8,
+        "target_n": "535",
+        "target_u_mod2": 67,
+        "target_unit": "67",
+        "valuation_word": [
+          1,
+          2
+        ]
+      },
+      {
+        "block_count": 2,
+        "intermediate_tail_depths": [
+          2,
+          3
+        ],
+        "least_positive_u": "191",
+        "phase_base": {
+          "denominator": "22",
+          "numerator": "23"
+        },
+        "phase_ratio": {
+          "denominator": "148035889",
+          "numerator": "143496441"
+        },
+        "source": {
+          "R": 2,
+          "mod2_power": 15,
+          "mod3_power": 2,
+          "u_mod2": 191,
+          "u_mod3": 2
+        },
+        "source_lift_modulus": "294912",
+        "source_n": "763",
+        "source_w": "3",
+        "target": {
+          "R": 3,
+          "mod2_power": 8,
+          "mod3_power": 6,
+          "u_mod2": 121,
+          "u_mod3": 121
+        },
+        "target_R": 3,
+        "target_mod2_power": 8,
+        "target_n": "967",
+        "target_u_mod2": 121,
+        "target_unit": "121",
+        "valuation_word": [
+          1,
+          2,
+          1,
+          2
+        ]
+      }
+    ],
+    "floor_loops": "m-1",
+    "full_word": "(1,2)^m",
+    "inverse_positive_integer_condition": "2^(R-2)*v is congruent to -1 mod 9^m",
+    "inverse_source": "w = (2^(R-2)*v + 1)/9^m; u = 2^(3*m)*w - 1",
+    "next_depth": "R = 2 + v2(9^m*w - 1) >= 3",
+    "parameter": "integer block_count m >= 1",
+    "shift_identity": "n1+5 = (9/8)^m * (n0+5)",
+    "source_coordinate": "v2(u+1)=3*m; u+1=2^(3*m)*w with w odd",
+    "source_n": "n0 = 2^(3*m+2)*w - 5",
+    "target_n": "n1 = 4*9^m*w - 5",
+    "target_unit": "v = (9^m*w - 1) / 2^(R-2)"
+  },
+  "max_plus": {
+    "cycles": [],
+    "finite_karp_run": false,
+    "status": "not_applicable_open_cross_chart_grammar"
+  },
+  "mixed_residue_transport": {
+    "available_target_mod3_power": "source ell + 2*m",
+    "lift_difference": "Delta w=2^(R+k-2)*3^ell*t implies Delta v=2^k*3^(ell+2*m)*t",
+    "source_precision": "3*m + R + k - 2",
+    "source_u_residue": "u == 2^(3*m)*w - 1 mod 2^(3*m+R+k-2)",
+    "source_w_residue": "w == (1 + 2^(R-2)*b) * 9^(-m) mod 2^(R+k-2)",
+    "target_2adic_map": "bijection onto all 128 odd residues mod 2^8 for every (m,R)",
+    "target_fixed_leaves_per_m_R": 128,
+    "target_mod2_power": 8,
+    "target_mod3_formula": "v == 2^(-(R-2)) * (9^m*2^(-3*m)*(source_u+1) - 1) mod 3^(ell+2*m)"
+  },
+  "phase_energy": {
+    "R2_phase_energy": "E2(n) = (n+5)*c^(v2(n+5)-2)",
+    "base": {
+      "denominator": "22",
+      "numerator": "23"
+    },
+    "contracts_entire_higher_R_handoff": true,
+    "full_transfer_ratio": "EH(n1)/E2(n0) = (11979/12167)^m",
+    "global_lyapunov": false,
+    "higher_R_base_energy": "EH(n) = n+5",
+    "scope": "the maximal (1,2)^m phase including its final R>=3 exit",
+    "single_block_factor": {
+      "denominator": "12167",
+      "numerator": "11979"
+    },
+    "uniform_upper": {
+      "denominator": "12167",
+      "numerator": "11979"
+    }
+  },
+  "proof": {
+    "bounded_machine_regression_passed": true,
+    "canonical_input_frontier_link_verified": true,
+    "claim_kind": "exact_symbolic_derivation_with_bounded_regression_checks",
+    "global_collatz_proof": false,
+    "global_cross_chart_lyapunov_derived": false,
+    "next_gap": "Construct compatible inequalities when an orbit changes from one affine-ghost chart to another, retaining exact magnitude intervals on contracting-slope branches.",
+    "programmatically_exhausted_all_positive_integers": false,
+    "symbolic_affine_ghost_theorem_derived": true,
+    "symbolic_chart_switch_identity_derived": true,
+    "symbolic_finite_repeat_budget_derived": true,
+    "symbolic_first_higher_R_stage_derived": true,
+    "symbolic_full_phase_energy_contraction_derived": true,
+    "symbolic_higher_R_transfer_derived": true,
+    "symbolic_mixed_residue_transport_derived": true,
+    "symbolic_simple_cusp_obstruction_derived": true
+  },
+  "provenance": {
+    "artifact": "docs/reports/pecm_r2_recursive_tail_cusp.json",
+    "artifact_content_validation": {
+      "bounded_regression_passed": true,
+      "errors": [],
+      "exists": true,
+      "exit_grammar_present": true,
+      "fully_verified": true,
+      "global_proof_disclaimed": true,
+      "json_parsed": true,
+      "type_matches": true
+    },
+    "artifact_sha256": "5ec3952845b37cea83dc20f3bdb3cafb5fa0b6e57e70abf9c274a562ffab9f13",
+    "artifact_snapshot_match": true,
+    "canonical_prior_frontier_verified": true,
+    "expected_artifact_sha256": "5ec3952845b37cea83dc20f3bdb3cafb5fa0b6e57e70abf9c274a562ffab9f13",
+    "requested_source_scope": {
+      "R": 2,
+      "all_odd_u_mod2_power": 8,
+      "mod3_power": 2,
+      "u_mod3": 2
+    },
+    "scope_relation": "canonical_prior_frontier_verified"
+  },
+  "simple_cusp_obstruction": {
+    "candidate": "K_c(n) = (n+5)*c^(v2(n+5)-2)",
+    "candidate_ratio_value": "125/33 > 1",
+    "canonical_source_chain": {
+      "R2_source_n": "1051",
+      "R2_source_u": "263",
+      "fixture_scope": {
+        "source_mod3_power": 2,
+        "source_u_mod3": 2,
+        "target_mod2_power": 8
+      },
+      "next_target_n": "4495",
+      "next_word": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "phase_target_R": 5,
+      "phase_target_n": "1183",
+      "phase_target_unit": "37"
+    },
+    "canonical_witness_ratio_for_every_c": {
+      "denominator": "33",
+      "numerator": "125"
+    },
+    "endpoint_cusp_exponents": {
+      "source": 0,
+      "target": 0
+    },
+    "infinite_cylinder_not_isolated_integer": true,
+    "infinite_obstruction_cylinder": {
+      "endpoint_cusp_exponents": "both zero",
+      "next_target": "T(N) = (243*v-1)/2",
+      "next_word": "(1,1,1,1,2)",
+      "ratio": "(243*v+9)/(64*v+8) > 1 for v>0",
+      "ratio_constant_over_cylinder": false,
+      "source_tail_state": "N = 2^5*v-1, v == 37 mod 2^8, v == 37 mod 3^4"
+    },
+    "interpretation": "The -5 cusp pays for entrance to the higher-R phase, but does not pay for its next expanding affine word.",
+    "status": "exactly_refuted_after_higher_R_arrival"
+  },
+  "status": "exact_higher_r_phase_transfer_and_affine_ghost_hierarchy_open_cross_chart",
+  "type": "pecm_higher_r_affine_ghost_phase_transfer"
+}

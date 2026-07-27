@@ -233,14 +233,95 @@ is a normalized odd-unit Haar-average renewal diagnostic, not a pointwise
 Lyapunov inequality.
 
 This is evidence for a *hierarchy of unbounded cusp coordinates*, not a
-global Lyapunov theorem. The next theorem-facing task is to resolve the
-`S_exit=3` higher-`R` family and determine whether its induced returns admit
-another exact coordinate or a contracting multi-return potential.
+global Lyapunov theorem. The next section records the exact resolution of
+the `S_exit=3` handoff and the new obstruction exposed after it.
 
 Implementation and artifact:
 
 - `collatz_exp/symbolic_frontier_certificate.py`
 - `docs/reports/pecm_r2_recursive_tail_cusp.json`
+
+## Implementation status: higher-`R` phase and affine-ghost atlas
+
+The `S_exit=3` handoff is now exact. Put `m>=1` and
+
+```text
+u+1=2^(3m)w,  w odd.
+```
+
+The full valuation word through the higher-tail exit is `(1,2)^m`, with
+
+```text
+n0=2^(3m+2)w-5,
+n1=4*9^m*w-5,
+R_next=2+v2(9^m*w-1).
+```
+
+For every `m>=1`, `R>=3`, odd target `b mod 2^k`, and source class
+`a mod 3^ell`, an explicit mixed source cylinder lands in that target fiber.
+Its source 2-adic precision is `3m+R+k-2`, and the target gains exactly `2m`
+3-adic digits. The existing cusp satisfies the exact full-phase inequality
+
+```text
+EH(n1)/E2(n0)=(11979/12167)^m<1.
+```
+
+The first higher-`R` post stage is also exact. For `N=2^R v-1` and
+`q=v2(3^R v-1)`,
+
+```text
+Z=(3^R v-1)/2^q,
+Z<N iff (2^(R+q)-3^R)v>2^q-1.
+```
+
+Every tail-reentry or continuing target fiber has an explicit inverse
+2-adic residue, and the stage gains `R` further 3-adic digits. Contracting
+affine slopes require exact magnitude intervals in addition to residues.
+
+The single `-5` cusp is nevertheless not global:
+
+```text
+1051 -> 1183 -> 4495
+```
+
+expands it by `125/33` for every cusp base. The replacement is a local
+affine-ghost chart. For an expanding exact word
+
+```text
+T_W(n)=(3^M n+B)/2^A,
+D_W=3^M-2^A,
+L_W(n)=D_W n+B,
+g_W=-B/D_W,
+```
+
+one has
+
+```text
+L_W(T_W(n))=(3^M/2^A)L_W(n),
+v2(L_W(T_W(n)))=v2(L_W(n))-A.
+```
+
+Thus `L_W(n)c^v2(L_W(n))` contracts iff `c^A>3^M/2^A`. A fixed expanding
+word can repeat only finitely often: `r` repetitions require
+`rA<=v2(L_W(n))`.
+
+The exact chart switch from word `W` to word `V` is
+
+```text
+L_V(T_W(n))
+  = [D_V*3^M_W/(2^A_W*D_W)]L_W(n)
+    + B_V-D_V*B_W/D_W.
+```
+
+The additive ghost-gap term is now the primary proof obstruction. The next
+theorem-facing task is to build the induced ghost-atlas graph and prove
+compatible edge inequalities, or identify a persistent chart-switch family
+that prevents them.
+
+Implementation and artifact:
+
+- `collatz_exp/symbolic_higher_r_certificate.py`
+- `docs/reports/pecm_higher_r_affine_ghost.json`
 
 ## 0. Mathematical preflight
 
@@ -836,22 +917,22 @@ function.
 Recommended allocation within the Collatz project:
 
 ```text
-35% projectively compatible operator/refinement ladder
-25% cusp-renormalized vector and wavelet stability
-20% branch-ratio oscillation and exact certification
-15% exceptional-cylinder residue-rate search
+40% exact affine-ghost chart-switch inequalities
+25% higher-R induced grammar with magnitude intervals
+20% cusp-renormalized PECM ranking of candidate charts
+10% exceptional-cylinder residue-rate search
  5% unrelated diagnostics
 ```
 
 The next meaningful milestone is:
 
-> Establish or refute cross-resolution stability of compatible, common-alpha,
-> cusp-renormalized PECM super-eigenvectors, and determine whether their
-> branch-ratio oscillation is small enough to collapse averaged contraction to
-> pointwise contraction.
+> Construct a nontrivial exact induced grammar of affine-ghost charts and
+> either prove compatible contraction across every chart-switch edge or isolate
+> a persistent positive-integer-realizable switch family that obstructs it.
 
-If that collapse fails on a structured exceptional family, the next milestone
-is an explicit positive lower bound on its `2`-adic/`3`-adic residue rate.
+The cross-resolution vector lane remains useful for prioritizing charts and
+guessing edge weights, but exact branch identities and finite magnitude
+cutoffs remain the proof-facing acceptance test.
 
 ## 15. Definition of a publishable result
 
@@ -869,6 +950,8 @@ A worthwhile computational research result would be any one of the following:
   converge to a bounded-distortion profinite function;
 - identification of one persistent exceptional-cylinder family together with
   an exact reduced dynamical system governing it;
+- an exact affine-ghost atlas on a nontrivial induced family, with certified
+  chart-switch inequalities and a well-founded repeat budget;
 - a residue-rate gap theorem excluding every persistent exceptional path from
   the positive integers.
 
