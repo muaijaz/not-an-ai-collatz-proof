@@ -397,7 +397,7 @@ Implementation and artifact:
 - `collatz_exp/affine_ghost_atlas.py`
 - `docs/reports/pecm_affine_ghost_atlas.json`
 
-## Implementation status: recursive parser and infinite resonant boundary
+## Implementation status: recursive parser and theorem-backed boundary exclusion
 
 The four expanding targets left open above are now fully partitioned under a
 source-relative first-free rule. At an exhausted source
@@ -470,28 +470,57 @@ T_q(z)=sum_(k>=0) z^k q^(-k(k-1)/2)
 reduces rationality of every boundary in this family to the single `Q_2`
 target `T_(9/4)(2)`.
 
-The classical real irrationality theorem for Tschakaloff values does not
-close this target. Zudilin's criterion for rational `q=q1/q2` assumes
-`log|q2|/log|q1| < (3-sqrt(5))/2`; for `q=9/4`, the left side is about
-`0.6309`, above the `0.3820` cutoff. More fundamentally, irrationality of the
-real limit would not automatically determine the value of the same rational
-partial sums in `Q_2`. A genuinely 2-adic argument or a stronger
-all-completions theorem is needed
-([Zudilin 2005](https://arxiv.org/abs/math/0506086)).
+The required genuinely p-adic result is available: the linear-independence
+theorem of
+[Väänänen and Wallisser (1989)](https://doi.org/10.1007/BF01168299).
+Their function
 
-Its status as an ordinary nonnegative integer is open. Proving non-integrality
-would exclude the infinite increasing ladder. If it is positive, it would be
-a divergent chart-boundary orbit, so no such claim is made without proof.
+```text
+f(x)=sum_(n>=0) q^(-n(n+1)/2)x^n
+```
+
+satisfies `T_q(z)=f(qz)`. Specialize their parameters to
+
+```text
+(r,s,h,p,ell,sigma,alpha)=(9,4,9,2,1,0,9/2).
+```
+
+The only nontrivial numerical cutoff is certified without floating point:
+
+```text
+gamma=1-log(2)/log(3) < 3/8 < (3-sqrt(5))/2.
+```
+
+Indeed, the left inequality follows from `2^8>3^5`, and the right from
+`9^2>16*5`. The published theorem therefore makes `1` and `f(9/2)`
+linearly independent over `Q` in `Q_2`, so
+`T_(9/4)(2)=f(9/2)` is irrational.
+
+Iterating `T_q(z)=1+zT_q(z/q)` writes every boundary exactly as
+
+```text
+xi_m=c_m+d_m*T_(9/4)(2),  c_m,d_m in Q,  d_m != 0.
+```
+
+Thus every `xi_m` is irrational and cannot be an ordinary nonnegative
+integer. This excludes the explicit infinite increasing `J_m/K_m` ladder.
+It does not remove any finite positive prefix cylinder, prove that the
+recursive grammar is complete, construct a global Lyapunov function, or
+prove Collatz. The repository machine-checks the theorem specialization,
+elementary hypotheses, normalization, and boundary propagation; the
+published 1989 proof remains an external dependency.
 
 Implementation and artifact:
 
 - `collatz_exp/recursive_ghost_atlas.py`
 - `docs/reports/pecm_recursive_ghost_atlas.json`
+- `collatz_exp/tschakaloff_boundary.py`
+- `docs/reports/pecm_tschakaloff_boundary_exclusion.json`
 
-The primary theorem-shaped target is now narrower than recursive chart
-enumeration: exclude this explicit 2-adic boundary from the nonnegative
-integers, or construct a coercive `(m,resonance depth)` Lyapunov term that
-controls escape along it.
+The primary theorem-shaped target has therefore moved outward: prove the
+recursive grammar complete and show that every possible infinite resonant
+escape either reduces to an excluded irrational boundary or is controlled by
+a coercive exact Lyapunov inequality.
 
 ## 0. Mathematical preflight
 
@@ -1091,18 +1120,18 @@ function.
 Recommended allocation within the Collatz project:
 
 ```text
-40% exclude the explicit 2-adic ladder boundary from nonnegative integers
-25% construct coercive (m,resonance-depth) symbolic weights
-20% bundle ladder prefixes with their eventual contracting exits
+40% prove recursive-grammar completeness and classify infinite escapes
+25% reduce any new boundary families to exact p-adic obstructions
+20% construct coercive parameter-and-depth symbolic weights
 10% cusp-renormalized PECM ranking of competing exceptional rays
  5% unrelated diagnostics
 ```
 
 The next meaningful milestone is:
 
-> Prove that the explicit `J_m/K_m` nested 2-adic boundary is not an ordinary
-> nonnegative integer, or derive a coercive exact inequality that controls its
-> escape to `m=infinity`.
+> Prove that the recursive chart grammar has no infinite ordinary-integer
+> escape beyond boundary families that can be excluded arithmetically, or
+> derive a coercive exact inequality that controls every remaining family.
 
 The cross-resolution vector lane remains useful for prioritizing charts and
 guessing edge weights, but exact branch identities and finite magnitude

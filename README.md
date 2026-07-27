@@ -6,11 +6,11 @@
 
 *Renewal Cramér rates · Joint Spectral Radius diagnostics · Five-projection operator synthesis*
 
-[![Tests](https://img.shields.io/badge/tests-460%20passing-brightgreen?style=flat-square)](.)
+[![Tests](https://img.shields.io/badge/tests-537%20passing-brightgreen?style=flat-square)](.)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-empirical-orange?style=flat-square)](.)
 [![Python](https://img.shields.io/badge/python-3.12-blue?style=flat-square)](.)
-[![Reproducible](https://img.shields.io/badge/artifacts-121%20JSON-success?style=flat-square)](docs/reports)
+[![Reproducible](https://img.shields.io/badge/artifacts-122%20JSON-success?style=flat-square)](docs/reports)
 
 </div>
 
@@ -252,10 +252,26 @@ Equivalently, with
 single `Q_2` rationality target `T_(9/4)(2)`. The report verifies the series
 against every stored finite prefix residue.
 
-Whether this point is an ordinary positive integer is open. Thus the result
-isolates a theorem-shaped non-integrality target; it does not construct a
-divergent positive orbit or prove Collatz
-([artifact](docs/reports/pecm_recursive_ghost_atlas.json)).
+That target is now closed by the p-adic linear-independence theorem of
+[Väänänen and Wallisser (1989)](https://doi.org/10.1007/BF01168299). Their
+function
+`f(x)=sum_(n>=0) q^(-n(n+1)/2)x^n` satisfies `T_q(z)=f(qz)`, so the required
+value is `T_(9/4)(2)=f(9/2)`. The specialization
+`(r,s,h,p,ell,sigma,alpha)=(9,4,9,2,1,0,9/2)` meets the theorem's cutoff
+without floating point:
+
+```text
+gamma = 1-log(2)/log(3) < 3/8 < (3-sqrt(5))/2,
+2^8 > 3^5,  9^2 > 16*5.
+```
+
+Consequently `T_(9/4)(2)` is irrational over `Q` in `Q_2`. Every boundary
+`xi_m` is a nonconstant rational affine form in that master value, so no
+`xi_m` is an ordinary integer. This excludes the explicit infinite
+`J_m/K_m` ladder, while preserving every finite positive prefix cylinder.
+It does not close the full recursive grammar or prove Collatz
+([atlas](docs/reports/pecm_recursive_ghost_atlas.json);
+[exclusion certificate](docs/reports/pecm_tschakaloff_boundary_exclusion.json)).
 
 The framework now has a qn+1 sidecar diagnostic. Within the odd `q>1` grid,
 the classical `q=3` case is the unique tested member below the
@@ -288,9 +304,10 @@ Stable across `n₀ ∈ [10⁴, 10¹⁵]` with slope `< 0.001` per decade.
 
 ## Verified literature
 
-Empirical bridges to published papers, all finite-resolution and caveated:
+Published-paper integrations, with empirical and exact results explicitly
+scoped:
 
-| Source | Prediction | Empirical match |
+| Source | Published result | Repository result |
 |---|---|---|
 | **Tao 2019** | `Syrac(ℤ/3ⁿℤ)` distribution | TV ≤ 0.3% (n ≤ 4) |
 | **Tao 2019** | Char. function decay exponent | 1.286 vs 1.289 (0.2%) |
@@ -299,6 +316,7 @@ Empirical bridges to published papers, all finite-resolution and caveated:
 | **Mori 2025** | C*(T_1, T_2) ≅ Cuntz O_2 | implemented as unified operator |
 | **Chang 2026** | one-bit orbit-mixing reduction | finite compatibility checks closed |
 | **Rozier 2023/2025** | abc/μ-hit Collatz dichotomy | Theorem 4.1 checked for `j=10..50` |
+| **Väänänen–Wallisser 1989** | p-adic linear independence of Tschakaloff values | exact `q=9/4`, `p=2` specialization excludes the explicit infinite ladder |
 
 ---
 
@@ -308,7 +326,7 @@ Empirical bridges to published papers, all finite-resolution and caveated:
 # Install dependencies
 uv sync
 
-# Run all 460 tests
+# Run all 537 tests
 uv run python -m pytest -q
 
 # Smoke test the experimental pipeline
@@ -345,6 +363,9 @@ uv run python -m collatz_exp.affine_ghost_atlas --verbose
 
 # Reproduce the recursive parser, resonance, and infinite-ladder atlas
 uv run python -m collatz_exp.recursive_ghost_atlas --verbose
+
+# Reproduce the theorem-backed 2-adic boundary exclusion
+uv run python -m collatz_exp.tschakaloff_boundary --verbose
 ```
 
 Every quoted number has a corresponding JSON artifact under
@@ -376,8 +397,8 @@ collatz-renewal-framework/
 ├── pyproject.toml
 ├── uv.lock
 ├── collatz_certificate_search.py   ← original CLI compatibility wrapper
-├── collatz_exp/                    ← main package, 95 modules
-├── tests/                          ← 460 passing tests
+├── collatz_exp/                    ← main package, 96 modules
+├── tests/                          ← 537 passing tests
 └── docs/
     ├── NOTABLE_RESULTS.md          ← running result catalog
     ├── PROJECT_JOURNEY.md          ← chronological narrative + audit log
@@ -386,7 +407,7 @@ collatz-renewal-framework/
     ├── UNIFIED_MODEL.md            ← 5-projection operator synthesis
     ├── collatz_strategy.md         ← working strategy notes
     ├── references/                 ← Tao, Mori, Hercher, Paparella, Chang PDFs
-    └── reports/                    ← 121 JSON artifacts (one per result)
+    └── reports/                    ← 122 JSON artifacts (one per result)
 ```
 
 ---
@@ -473,7 +494,7 @@ statements.
   [`docs/reports/`](docs/reports).
 - Each artifact records method, parameters, sample size, and the relevant
   numerical or exact diagnostics; empirical CIs are included where applicable.
-- 460 passing tests cover core arithmetic, certificates, Mersenne tail
+- 537 passing tests cover core arithmetic, certificates, Mersenne tail
   dynamics, post-exit map, renewal Cramér computation, Tao verification,
   Hercher bounds, Paparella nilpotency, JSR variants, automaton-constrained
   Karp, upper-Christoffel slope filtering, tail-cycle realizability,

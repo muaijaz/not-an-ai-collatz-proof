@@ -1,0 +1,270 @@
+{
+  "boundary_family": {
+    "all_start_m_at_least_two_covered_symbolically": true,
+    "atlas_formula": "xi_m=-1-(9/4)^(-m)*T_(9/4)(2*(9/4)^(-(m+1)))",
+    "every_boundary_irrational_over_Q_in_Q_2": true,
+    "finite_positive_prefix_cylinders_invalidated": false,
+    "functional_equation_reduction": "xi_m=c_m+d_m*T_(9/4)(2), with c_m,d_m in Q and d_m nonzero",
+    "nonnegative_integer_infinite_ladder_realizability": "excluded",
+    "ordinary_integer_boundary_excluded": true,
+    "representative_reductions": [
+      {
+        "constant": {
+          "denominator": "32",
+          "numerator": "11"
+        },
+        "master_coefficient": {
+          "denominator": "32",
+          "numerator": "-9"
+        },
+        "master_coefficient_nonzero": true,
+        "master_prefix": {
+          "denominator": "9",
+          "numerator": "43"
+        },
+        "shifted_argument": {
+          "denominator": "729",
+          "numerator": "128"
+        },
+        "start_m": 2,
+        "tail_multiplier": {
+          "denominator": "729",
+          "numerator": "512"
+        }
+      },
+      {
+        "constant": {
+          "denominator": "1024",
+          "numerator": "2971"
+        },
+        "master_coefficient": {
+          "denominator": "1024",
+          "numerator": "-729"
+        },
+        "master_coefficient_nonzero": true,
+        "master_prefix": {
+          "denominator": "729",
+          "numerator": "3995"
+        },
+        "shifted_argument": {
+          "denominator": "6561",
+          "numerator": "512"
+        },
+        "start_m": 3,
+        "tail_multiplier": {
+          "denominator": "531441",
+          "numerator": "65536"
+        }
+      },
+      {
+        "constant": {
+          "denominator": "131072",
+          "numerator": "2846819"
+        },
+        "master_coefficient": {
+          "denominator": "131072",
+          "numerator": "-531441"
+        },
+        "master_coefficient_nonzero": true,
+        "master_prefix": {
+          "denominator": "531441",
+          "numerator": "2977891"
+        },
+        "shifted_argument": {
+          "denominator": "59049",
+          "numerator": "2048"
+        },
+        "start_m": 4,
+        "tail_multiplier": {
+          "denominator": "3486784401",
+          "numerator": "33554432"
+        }
+      },
+      {
+        "constant": {
+          "denominator": "67108864",
+          "numerator": "19504388419"
+        },
+        "master_coefficient": {
+          "denominator": "67108864",
+          "numerator": "-3486784401"
+        },
+        "master_coefficient_nonzero": true,
+        "master_prefix": {
+          "denominator": "3486784401",
+          "numerator": "19571497283"
+        },
+        "shifted_argument": {
+          "denominator": "531441",
+          "numerator": "8192"
+        },
+        "start_m": 5,
+        "tail_multiplier": {
+          "denominator": "205891132094649",
+          "numerator": "68719476736"
+        }
+      }
+    ]
+  },
+  "exact_cutoff_witness": {
+    "floating_point_used": false,
+    "gamma_identity": "gamma=1+log(|4|_2)/log(9)=1-log(2)/log(3)",
+    "gamma_upper_bound": {
+      "equivalent_witness": "2^8 > 3^5",
+      "left": 256,
+      "right": 243,
+      "statement": "gamma < 3/8",
+      "verified": true
+    },
+    "paper_cutoff": "Gamma(1,0)=(3-sqrt(5))/2",
+    "paper_cutoff_lower_bound": {
+      "equivalent_witness": "9^2 > 16*5",
+      "left": 81,
+      "right": 80,
+      "statement": "3/8 < (3-sqrt(5))/2",
+      "verified": true
+    },
+    "separating_rational": {
+      "denominator": "8",
+      "numerator": "3"
+    },
+    "strict_cutoff_verified_exactly": true
+  },
+  "finite_verification": {
+    "all_boundary_affine_identities_verified": true,
+    "boundary_reductions_checked": 31,
+    "boundary_start_m_max": 32,
+    "boundary_start_m_min": 2,
+    "floating_point_checks": 0,
+    "normalization_terms_checked": 32
+  },
+  "master_value": {
+    "ambient_field": "Q_2",
+    "irrational_over_Q": true,
+    "reason": "published linear independence of f(0)=1 and f(9/2)",
+    "value": "T_(9/4)(2)=f(9/2)"
+  },
+  "proof": {
+    "all_parametric_ladder_boundaries_irrational": true,
+    "canonical_input_atlas_link_verified": true,
+    "claim_kind": "published_theorem_instantiation_and_exact_boundary_propagation",
+    "divergent_positive_collatz_orbit_constructed": false,
+    "global_collatz_proof": false,
+    "global_recursive_grammar_closed": false,
+    "master_tschakaloff_value_irrational": true,
+    "positive_integer_infinite_ladder_excluded": true,
+    "published_p_adic_theorem_instantiated": true,
+    "theorem_cutoff_verified_without_floats": true
+  },
+  "provenance": {
+    "actual_sha256": "7f7653877704ad788608f4050dad5f300d89a13d7d06cb6fb5c2b5894cc36fd3",
+    "artifact_content_validation": {
+      "errors": [],
+      "exists": true,
+      "explicit_boundary_present": true,
+      "finite_prefix_compatibility_preserved": true,
+      "fully_verified": true,
+      "global_proof_disclaimed": true,
+      "json_parsed": true,
+      "tschakaloff_reduction_present": true,
+      "type_matches": true
+    },
+    "artifact_snapshot_match": true,
+    "canonical_recursive_atlas_verified": true,
+    "expected_sha256": "7f7653877704ad788608f4050dad5f300d89a13d7d06cb6fb5c2b5894cc36fd3",
+    "input_path": "docs/reports/pecm_recursive_ghost_atlas.json",
+    "scope_relation": "canonical_recursive_atlas_verified"
+  },
+  "published_source": {
+    "authors": [
+      "K. V\u00e4\u00e4n\u00e4nen",
+      "R. Wallisser"
+    ],
+    "doi": "10.1007/BF01168299",
+    "doi_url": "https://doi.org/10.1007/BF01168299",
+    "function_definition_printed_page": 199,
+    "journal": "Manuscripta Mathematica",
+    "pages": "199-212",
+    "paper_proof_formalized_in_repository": false,
+    "primary_scan_url": "https://gdz.sub.uni-goettingen.de/download/pdf/PPN365956996_0065/PPN365956996_0065.pdf",
+    "research_scan_sha256": "33d6870dba004ac09023ab8356466a5e3ef36bfd9db9e94d08cded8b60ab2",
+    "source_pdf_redistributed": false,
+    "theorem_printed_pages": "200-201",
+    "title": "Zu einem Satz von Skolem \u00fcber lineare Unabh\u00e4ngigkeit von Werten gewisser Thetareihen",
+    "volume": 65,
+    "year": 1989
+  },
+  "scope_and_limits": {
+    "closes": "the explicit infinite J_m/K_m resonance ladder boundary derived by the recursive atlas",
+    "does_not_close": [
+      "the full recursive chart grammar",
+      "all possible infinite Collatz itineraries",
+      "a global cross-chart Lyapunov function",
+      "the Collatz conjecture"
+    ],
+    "finite_prefix_statement": "every stored finite ladder prefix still has a positive exact cylinder; only their infinite intersection is excluded from ordinary integers",
+    "proof_surface": "the theorem statement, specialization, elementary hypotheses, cutoff, normalization, and boundary propagation are machine-checked; the 1989 proof is cited"
+  },
+  "series_normalization": {
+    "identity": "T_q(z)=f(q*z)",
+    "identity_verified": true,
+    "q": {
+      "denominator": "4",
+      "numerator": "9"
+    },
+    "q_times_z": {
+      "denominator": "2",
+      "numerator": "9"
+    },
+    "repository_definition": "T_q(z)=sum_(n>=0) z^n*q^(-n*(n-1)/2)",
+    "terms_checked_exactly": 32,
+    "z": {
+      "denominator": "1",
+      "numerator": "2"
+    }
+  },
+  "status": "published_p_adic_theorem_instantiated_and_infinite_resonance_ladder_excluded",
+  "theorem_instantiation": {
+    "elementary_hypotheses": {
+      "all_elementary_hypotheses_verified": true,
+      "checks": {
+        "absolute_r_greater_than_one": true,
+        "alpha_matches_q_times_z": true,
+        "alpha_nonzero": true,
+        "ell_nonnegative": true,
+        "h_is_max_absolute_r_s": true,
+        "one_point_ratio_condition_vacuous": true,
+        "p_adic_q_absolute_value_greater_than_one": true,
+        "p_is_prime": true,
+        "q_matches_repository": true,
+        "r_s_coprime": true,
+        "s_at_least_one": true,
+        "sigma_nonnegative": true,
+        "strict_gamma_cutoff": true
+      },
+      "distinct_point_condition": "vacuous because ell=1; there are no i!=j point ratios"
+    },
+    "external_theorem_dependency": true,
+    "function": "f(x)=sum_(n>=0) q^(-n*(n+1)/2)*x^n",
+    "functional_equation": "f(q*x)=x*f(x)+1",
+    "linear_form_specialization": "ell=1 and sigma=0 gives integer linear forms in f(0)=1 and f(9/2)",
+    "parameters": {
+      "alpha_1": {
+        "denominator": "2",
+        "numerator": "9"
+      },
+      "ell": 1,
+      "h": 9,
+      "p": 2,
+      "q": {
+        "denominator": "4",
+        "numerator": "9"
+      },
+      "r": 9,
+      "s": 4,
+      "sigma": 0
+    },
+    "published_conclusion": "1 and f(9/2) are linearly independent over Q in Q_2"
+  },
+  "type": "pecm_tschakaloff_2_adic_boundary_exclusion"
+}

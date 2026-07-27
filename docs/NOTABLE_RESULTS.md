@@ -1032,11 +1032,8 @@ For `m0=4`, every extension lies in
 xi=767 (mod 1024).
 ```
 
-Whether `xi_m0` is an ordinary nonnegative integer is open. Proving it is not
-would exclude this entire infinite increasing ladder. If it were positive,
-it would yield an unbounded chart-boundary orbit, so no such claim is made.
-The obstruction has moved from a finite resonant cycle to escape at infinite
-macro complexity.
+The recursive-atlas milestone left open whether `xi_m0` was an ordinary
+nonnegative integer. The next certificate closes that exact target.
 
 **Status.** Exact symbolic grammar and parametric obstruction with bounded
 formula regression; no positive infinite itinerary, global Lyapunov
@@ -1044,6 +1041,55 @@ function, or Collatz proof has been derived.
 
 **Artifact:** `docs/reports/pecm_recursive_ghost_atlas.json`; module
 `collatz_exp/recursive_ghost_atlas.py`.
+
+### D.12 A published p-adic theorem excludes the infinite ladder boundary
+
+[Väänänen and Wallisser (1989)](https://doi.org/10.1007/BF01168299) prove a
+p-adic linear-independence theorem for
+
+```text
+f(x)=sum_(n>=0) q^(-n(n+1)/2)x^n.
+```
+
+The repository normalization is termwise exact:
+
+```text
+T_q(z)=f(qz),  T_(9/4)(2)=f(9/2).
+```
+
+Use the theorem parameters
+
+```text
+(r,s,h,p,ell,sigma,alpha)=(9,4,9,2,1,0,9/2).
+```
+
+Their cutoff is satisfied by an exact rational sandwich:
+
+```text
+gamma=1-log(2)/log(3) < 3/8 < (3-sqrt(5))/2,
+2^8>3^5,  9^2>16*5.
+```
+
+The published conclusion makes `1` and `f(9/2)` linearly independent over
+`Q` in `Q_2`; hence `T_(9/4)(2)` is irrational. Repeated use of
+`T_q(z)=1+zT_q(z/q)` gives, for every `m>=2`,
+
+```text
+xi_m=c_m+d_m*T_(9/4)(2),  c_m,d_m in Q,  d_m!=0.
+```
+
+Every infinite ladder boundary is therefore irrational and cannot be an
+ordinary integer. This invalidates no finite positive prefix: those cylinders
+remain exact and nonempty, but their nested infinite intersection contains no
+ordinary integer.
+
+**Status.** The explicit `J_m/K_m` infinite ladder is excluded. The full
+recursive grammar, all possible infinite Collatz itineraries, and the Collatz
+conjecture remain open. The repository checks the published theorem's
+specialization and its propagation, not the 1989 proof itself.
+
+**Artifact:** `docs/reports/pecm_tschakaloff_boundary_exclusion.json`; module
+`collatz_exp/tschakaloff_boundary.py`.
 
 ---
 

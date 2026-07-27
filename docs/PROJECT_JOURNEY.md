@@ -34,8 +34,8 @@ present the *results*; this document presents the *path*.
 
 **Initial state:** one Python file `collatz_certificate_search.py`, ~5 KB.
 
-**Current state:** `collatz_exp/` package with 95 modules, 460 passing
-tests, 121 JSON artifact reports, seven integrated reference-paper threads, and
+**Current state:** `collatz_exp/` package with 96 modules, 537 passing
+tests, 122 JSON artifact reports, eight integrated reference-paper threads, and
 a complete renewal-theoretic / operator-theoretic framework.
 
 ---
@@ -1419,15 +1419,55 @@ reduces the whole family to the single rationality problem
 `T_(9/4)(2) in Q_2`, through `T_q(z)=1+z T_q(z/q)`.
 
 For the branch reached from the prior `(1,1,2)` atlas, `m0=4` and
-`xi=767 mod 1024`. The next proof-facing question is exact and narrow:
-prove that this partial-theta-type 2-adic value is not an ordinary
-nonnegative integer, or construct an `m`- and depth-dependent coercive
-Lyapunov function controlling escape along the ray.
-
-This is a real structural signal, but it is not yet one positive infinite
-orbit. The Collatz conjecture remains open.
+`xi=767 mod 1024`. This made non-integrality of the partial-theta-type value
+the next exact proof-facing question. The recursive-atlas artifact itself
+records that question as open; the following milestone closes it.
 
 Artifact: `docs/reports/pecm_recursive_ghost_atlas.json`.
+
+### 19.6 A p-adic Tschakaloff theorem excludes the explicit infinite ray
+
+The relevant published result is not the classical real irrationality
+criterion. Väänänen and Wallisser's 1989 theorem is p-adic and applies
+directly to
+
+```text
+f(x)=sum_(n>=0) q^(-n(n+1)/2)x^n.
+```
+
+The identity `T_q(z)=f(qz)` sends the atlas target to
+`T_(9/4)(2)=f(9/2)`. With
+
+```text
+(r,s,h,p,ell,sigma,alpha)=(9,4,9,2,1,0,9/2),
+gamma=1-log(2)/log(3),
+```
+
+the theorem cutoff has a fully exact witness:
+
+```text
+gamma < 3/8 < (3-sqrt(5))/2,
+2^8>3^5,  9^2>16*5.
+```
+
+The published linear-independence conclusion makes `T_(9/4)(2)`
+irrational over `Q` in `Q_2`. The functional equation then produces exact
+rationals `c_m,d_m`, with `d_m!=0`, such that
+
+```text
+xi_m=c_m+d_m*T_(9/4)(2).
+```
+
+No `xi_m` can therefore be an ordinary integer. This excludes the explicit
+infinite `J_m/K_m` ray while leaving every finite positive prefix cylinder
+intact. The certificate verifies the source-artifact snapshot, theorem
+parameters, elementary hypotheses, series normalization, cutoff, and affine
+propagation. It cites rather than formalizes the 1989 proof.
+
+This closes one explicit infinite resonant escape, not the full recursive
+grammar. No positive divergent orbit or proof of Collatz has been produced.
+
+Artifact: `docs/reports/pecm_tschakaloff_boundary_exclusion.json`.
 
 ---
 
@@ -1440,7 +1480,7 @@ Artifact: `docs/reports/pecm_recursive_ghost_atlas.json`.
   spike decomposition) gave concordant numbers.
 - Reproducible JSON artifacts for every claim.
 - Pulling and reading primary literature (Tao, Mori, Hercher,
-  Paparella) before claiming originality.
+  Paparella, Väänänen–Wallisser) before claiming originality.
 - Distinguishing empirical from rigorous: empirical evidence with
   bootstrap CIs ≠ proof.
 
@@ -1474,7 +1514,7 @@ Artifact: `docs/reports/pecm_recursive_ghost_atlas.json`.
 All results in this journey are reproducible:
 
 ```bash
-# Run the full test suite (currently 460 tests passing)
+# Run the full test suite (currently 537 tests passing)
 uv run python -m pytest -q
 
 # Reproduce any artifact in docs/reports/ via the corresponding CLI:
@@ -1488,6 +1528,7 @@ uv run python -m collatz_exp.experiments \
 uv run python -m collatz_exp.symbolic_higher_r_certificate --verbose
 uv run python -m collatz_exp.affine_ghost_atlas --verbose
 uv run python -m collatz_exp.recursive_ghost_atlas --verbose
+uv run python -m collatz_exp.tschakaloff_boundary --verbose
 # ... see collatz_exp/experiments.py for the full flag list
 ```
 

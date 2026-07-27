@@ -1,10 +1,11 @@
 # STATE
 
 ## Goal
-Exclude the explicit infinite `J_m/K_m` resonance ladder from the ordinary
-nonnegative integers, or construct a coercive cylinder-depth-dependent
-Lyapunov function that controls its escape to `m=infinity`, without confusing
-finite positive prefix cylinders with one infinite positive Collatz orbit.
+Extend the theorem-backed exclusion of the explicit infinite `J_m/K_m`
+resonance ladder to the full recursive chart grammar: prove the grammar
+complete, classify any remaining infinite resonant escape families, and
+exclude or contract them without confusing finite positive prefix cylinders
+with one infinite positive Collatz orbit.
 
 ## Now
 The four open `(1,1,2)` exit charts now have all `18` source-relative
@@ -17,18 +18,23 @@ static node-only contraction. Renormalization exposes the acyclic parametric
 ray `J_m -> K_m -> J_(m+1)` with word concatenation
 `J_m || K_m=K_(2m)`. Every finite prefix has a
 positive exact cylinder; the infinite intersection is one explicit 2-adic
-partial-theta value with `v2(xi_m0+1)=2m0`. Its positive-integer status is
-open.
+partial-theta value with `v2(xi_m0+1)=2m0`. The Väänänen–Wallisser 1989
+p-adic linear-independence theorem applies at
+`(q,p,alpha)=(9/4,2,9/2)`: an exact `3/8` cutoff sandwich proves its
+hypothesis, `T_(9/4)(2)=f(9/2)` is irrational, and every ladder boundary is
+a nonconstant rational affine form in this value. The explicit infinite
+ladder is therefore excluded from ordinary integers. This does not invalidate
+any finite prefix cylinder or close the full recursive grammar.
 
 ## Next
-1. Study the explicit nested boundary
-   `xi_m0=-1-(1/2)sum 2^(m^2-m0^2)/3^(m(m-1)-m0(m0-1))` and seek an exact
-   non-integrality/nonnegativity obstruction.
-2. Track canonical binary representatives of its finite cylinders and prove
-   a positive residue-height rate, or identify a known 2-adic partial-theta
-   irrationality theorem that applies.
-3. Extend the symbolic state by `(m, target depth)` and test coercive rational
-   weights that can control the acyclic `m -> m+1` escape.
+1. Prove completeness of the source-relative recursive grammar, or derive
+   every additional parametric infinite escape family from the four open
+   exit charts.
+2. Reduce any additional infinite boundaries to published p-adic
+   irrationality results where possible; otherwise state the exact new
+   arithmetic obstruction.
+3. Extend the symbolic state by `(chart family, parameter, target depth)` and
+   test coercive rational weights outside the now-excluded `J_m/K_m` ray.
 4. Bundle each resonant ray segment with its eventual contracting exit and
    seek exact descent below the segment entry, with finite exceptions listed.
 5. Use cusp-renormalized PECM vectors only to rank candidate charts and
@@ -94,11 +100,24 @@ open.
   edge cylinder need not take the next edge without refinement.
 - DECISION: demote every uniform resonance-depth-cap strategy. Exact target
   cylinders exist at arbitrary prescribed depth on every legal resonant edge.
-- DECISION: make non-integrality of the explicit nested 2-adic boundary, or a
-  coercive `(m,depth)` Lyapunov weight, the primary theorem-facing target.
+- DECISION (completed by the theorem certificate below): make non-integrality
+  of the explicit nested 2-adic boundary, or a coercive `(m,depth)` Lyapunov
+  weight, the primary theorem-facing target.
+- DECISION: use the genuinely p-adic Väänänen–Wallisser 1989 theorem, not a
+  real-only Tschakaloff irrationality result, for the `Q_2` target.
+- DECISION: verify the theorem cutoff exactly through
+  `gamma<3/8<(3-sqrt(5))/2`, witnessed by `2^8>3^5` and `9^2>16*5`;
+  do not use a floating-point cutoff as proof.
+- DECISION: cite the published theorem as an external dependency. The
+  repository checks its statement specialization, elementary hypotheses,
+  series normalization, and boundary propagation, but does not formalize the
+  1989 proof.
+- DECISION: exclude only the infinite intersection of the `J_m/K_m`
+  cylinders. Every finite positive prefix remains valid, the full recursive
+  grammar remains open, and no global Collatz proof is claimed.
 
 ## Facts
-- Tests: `uv run python -m pytest -q` -> 460 passed.
+- Tests: `uv run python -m pytest -q` -> 537 passed.
 - Exact selected root: `(R,u mod 2^11,u mod 9)=(9,55,2)`.
 - Full word `(1^8,3,2,4)` has `(m,A,B)=(11,17,186875)` and exact slope
   `177147/131072 > 1`; its one-word affine fixed point is the noninteger
@@ -199,8 +218,14 @@ open.
 - With `T_q(z)=sum z^k q^(-k(k-1)/2)`, the boundary family reduces through
   `T_q(z)=1+zT_q(z/q)` to the single `Q_2` rationality target
   `T_(9/4)(2)`.
-- Positive-integer realizability of the infinite boundary is open; no
-  divergent positive orbit has been constructed.
+- The Väänänen–Wallisser specialization
+  `(r,s,h,p,ell,sigma,alpha)=(9,4,9,2,1,0,9/2)` proves
+  `T_(9/4)(2)=f(9/2)` irrational over `Q` in `Q_2`.
+- Every ladder boundary has the exact form
+  `xi_m=c_m+d_m*T_(9/4)(2)` with rational `c_m` and nonzero rational `d_m`.
+  Thus ordinary-integer realizability of the infinite ladder is excluded;
+  no finite prefix cylinder is invalidated and no divergent positive orbit
+  has been constructed.
 - Galerkin smoke ladder: `(4,0) -> (6,1) -> (8,2)`,
   `R = 2..30`, common `alpha = 0.55`, 0 unresolved samples.
 - Numerical `max(Mh/h)`: `0.465489`, `0.502925`, `0.529990`.
@@ -224,20 +249,29 @@ open.
   `docs/reports/pecm_affine_ghost_atlas.json`.
 - Exact recursive parser/ladder artifact:
   `docs/reports/pecm_recursive_ghost_atlas.json`.
+- Theorem-backed ladder-exclusion artifact:
+  `docs/reports/pecm_tschakaloff_boundary_exclusion.json`.
 - GPU: RTX 3090 Ti 24564 MiB (~21.5 GB free), CuPy 14.0.1 OK.
 - (14,5) run completed 2026-06-18: 57.7M states, finite_ratio_max=0.5357, artifact docs/runs/pecm_14_5_scaled_gpu_20260618_015521/.
 - (16,6) estimate: ~692.7M states, ~2.77B transitions (docs/collatz_strategy.md).
 - CLI: `python -m collatz_exp.experiments --post-exit-scaled-perron --post-exit-configs K:L --post-exit-operator-mode {dense_target_cache,streaming,gpu_target_cache,auto} --post-exit-checkpoint <npz> --post-exit-scaled-perron-output <json>`.
 
 ## Done
+- Tschakaloff 2-adic boundary exclusion
+  (`collatz_exp/tschakaloff_boundary.py`) — RESULT: exact specialization of
+  the Väänänen–Wallisser p-adic theorem, integer-only cutoff witness, exact
+  `T_q(z)=f(qz)` normalization, rational affine reduction of every
+  `J_m/K_m` boundary to `T_(9/4)(2)`, deterministic provenance-linked report,
+  and explicit preservation of finite prefixes and global-proof limits.
 - Recursive affine-ghost parser and ladder
   (`collatz_exp/recursive_ghost_atlas.py`) — RESULT: complete source-relative
   first-free partitions for the four open charts, universal induced-resonance
   theorem, exact unbounded target-depth witnesses, closed seven-node
   shortest parser, static node-weight cycle obstruction, parametric
   `J_m/K_m` ladder and renormalization, nested positive prefix cylinders,
-  explicit 2-adic partial-theta boundary, deterministic report, and explicit
-  open positive-integer/global-proof status.
+  explicit 2-adic partial-theta boundary, deterministic report, and the
+  positive-integer question subsequently closed by the theorem certificate
+  above; its global-proof status remains open.
 - Exact affine-ghost repeat/resonance atlas
   (`collatz_exp/affine_ghost_atlas.py`) — RESULT: universal exact-word
   cylinder theorem, exact maximal repeats, conditional Haar exit law,
