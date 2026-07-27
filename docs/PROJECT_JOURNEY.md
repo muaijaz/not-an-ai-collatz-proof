@@ -34,8 +34,8 @@ present the *results*; this document presents the *path*.
 
 **Initial state:** one Python file `collatz_certificate_search.py`, ~5 KB.
 
-**Current state:** `collatz_exp/` package with 90 modules, 231 passing
-tests, 116 JSON artifact reports, seven integrated reference-paper threads, and
+**Current state:** `collatz_exp/` package with 91 modules, 246 passing
+tests, 117 JSON artifact reports, seven integrated reference-paper threads, and
 a complete renewal-theoretic / operator-theoretic framework.
 
 ---
@@ -1010,6 +1010,49 @@ run.
 
 Artifact: `docs/reports/pecm_cross_resolution_consistency.json`.
 
+### 19.1 From a sampled obstruction to an exact local inequality
+
+The worst concrete live-target ratio selected a source at
+`(R,u mod 2^8,u mod 9)=(9,55,2)` and sampled unit `u=4151`. Sampling stopped
+there. Exact replay found the post word `(3,2,4)`, hence full macro
+`(1^8,3,2,4)` and affine identity
+
+```text
+F(n) = (177147 n + 186875) / 131072.
+```
+
+The branch is genuinely expanding, with `2125311 -> 2872411`. The exact-word
+condition uses the often-missed final valuation bit:
+`n = 28159 mod 2^18`. The post-exit form needs `u mod 2^9` for the word,
+`u mod 2^11` for exact reentry at `R'=2`, and `u mod 2^18` to carry eight
+target bits.
+
+Partitioning the selected `u mod 2^11` root into its `128` children at
+`2^18` was exhaustive. Every child has the same word and reentry depth, and
+the targets cover all odd classes modulo `256` at `u mod 9=2`. The fixed-point
+equation gives the noninteger value `-7475/1843`; this rules out a one-word
+periodic integer cycle, but not an expanding itinerary through new cylinders.
+
+The productive surprise was the cusp correction. The exact local formula
+
+```text
+H(n,R) = n (23/22)^R
+```
+
+contracts throughout the selected infinite root with worst factor
+
+```text
+7164821035427968 / 7236312975589017 < 1.
+```
+
+This is the first exact symbolic branch inequality in the PECM lane. It is
+still local: all `128` targets are an open frontier, so the report refuses to
+run Karp or claim a global certificate. An exact rational max-times
+difference-constraint solver was added for the point when that graph becomes
+closed.
+
+Artifact: `docs/reports/pecm_exact_selected_cylinder_pilot.json`.
+
 ---
 
 ## 20. Lessons learned
@@ -1055,7 +1098,7 @@ Artifact: `docs/reports/pecm_cross_resolution_consistency.json`.
 All results in this journey are reproducible:
 
 ```bash
-# Run the full test suite (currently 231 tests passing in ~3s)
+# Run the full test suite (currently 246 tests passing in ~3s)
 uv run python -m pytest -q
 
 # Reproduce any artifact in docs/reports/ via the corresponding CLI:

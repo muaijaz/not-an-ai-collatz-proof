@@ -6,7 +6,7 @@
 
 *Renewal Cramér rates · Joint Spectral Radius diagnostics · Five-projection operator synthesis*
 
-[![Tests](https://img.shields.io/badge/tests-231%20passing-brightgreen?style=flat-square)](.)
+[![Tests](https://img.shields.io/badge/tests-246%20passing-brightgreen?style=flat-square)](.)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-empirical-orange?style=flat-square)](.)
 [![Python](https://img.shields.io/badge/python-3.12-blue?style=flat-square)](.)
@@ -97,6 +97,18 @@ sampled branch ratio is `1.996` at the finest step. Thus the raw averaged
 vectors do not yet stabilize or imply pointwise descent
 ([artifact](docs/reports/pecm_cross_resolution_consistency.json)).
 
+The worst concrete branch from that run has now been lifted into an exact
+selected-cylinder calculation. The cylinder
+`(R,u mod 2^11,u mod 9) = (9,55,2)` splits into `128` target-fixed branches;
+all share the exact expanding macro
+`F(n) = (177147n + 186875)/131072` and collectively hit every odd target
+class modulo `256` at `R'=2`. Ordinary size expands, but the exact local
+candidate `H(n,R)=n(23/22)^R` contracts on the whole selected cylinder by at
+most
+`7164821035427968/7236312975589017 < 1`. Its target frontier remains open, so
+this is a local symbolic certificate and explicitly not a Collatz proof
+([artifact](docs/reports/pecm_exact_selected_cylinder_pilot.json)).
+
 The framework now has a qn+1 sidecar diagnostic. Within the odd `q>1` grid,
 the classical `q=3` case is the unique tested member below the
 `log₂(q) = 2` drift threshold; `q=5` is already marginally positive. The
@@ -148,7 +160,7 @@ Empirical bridges to published papers, all finite-resolution and caveated:
 # Install dependencies
 uv sync
 
-# Run all 231 tests (≈3s)
+# Run all 246 tests (≈3s)
 uv run python -m pytest -q
 
 # Smoke test the experimental pipeline
@@ -170,6 +182,9 @@ uv run python -m collatz_exp.experiments \
   --pecm-cross-resolution \
   --pecm-cross-resolution-output \
     docs/reports/pecm_cross_resolution_consistency.json
+
+# Reproduce the exact selected-cylinder branch certificate
+uv run python -m collatz_exp.symbolic_branch_certificate --verbose
 ```
 
 Every quoted number has a corresponding JSON artifact under
@@ -201,8 +216,8 @@ collatz-renewal-framework/
 ├── pyproject.toml
 ├── uv.lock
 ├── collatz_certificate_search.py   ← original CLI compatibility wrapper
-├── collatz_exp/                    ← main package, 90 modules
-├── tests/                          ← 231 passing tests
+├── collatz_exp/                    ← main package, 91 modules
+├── tests/                          ← 246 passing tests
 └── docs/
     ├── NOTABLE_RESULTS.md          ← running result catalog
     ├── PROJECT_JOURNEY.md          ← chronological narrative + audit log
@@ -211,7 +226,7 @@ collatz-renewal-framework/
     ├── UNIFIED_MODEL.md            ← 5-projection operator synthesis
     ├── collatz_strategy.md         ← working strategy notes
     ├── references/                 ← Tao, Mori, Hercher, Paparella, Chang PDFs
-    └── reports/                    ← 116 JSON artifacts (one per result)
+    └── reports/                    ← 117 JSON artifacts (one per result)
 ```
 
 ---
@@ -291,7 +306,7 @@ statements.
   [`docs/reports/`](docs/reports).
 - Each artifact records method, parameters, sample size, and the relevant
   numerical or exact diagnostics; empirical CIs are included where applicable.
-- 231 passing tests cover core arithmetic, certificates, Mersenne tail
+- 246 passing tests cover core arithmetic, certificates, Mersenne tail
   dynamics, post-exit map, renewal Cramér computation, Tao verification,
   Hercher bounds, Paparella nilpotency, JSR variants, automaton-constrained
   Karp, upper-Christoffel slope filtering, tail-cycle realizability,
@@ -302,7 +317,9 @@ statements.
   bridge with μ-hits, the CF-convergent/Stern-Brocot slope hypothesis,
   the Polli long-range-correlation audit, and exact-rational PECM Perron
   certificates, plus common-alpha vector export, exact mixed-adic refinement,
-  Galerkin/projective defect separation, and cross-resolution consistency.
+  Galerkin/projective defect separation, cross-resolution consistency,
+  exact-word cylinder precision, exact selected-branch partitioning, and
+  rational max-times difference certificates.
 - Reference papers in [`docs/references/`](docs/references) for offline
   access.
 

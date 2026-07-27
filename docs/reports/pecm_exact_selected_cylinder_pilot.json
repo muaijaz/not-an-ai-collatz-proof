@@ -1,0 +1,7030 @@
+{
+  "edges": [
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 0,
+      "integer_realizable": true,
+      "landing": "181436587",
+      "least_lift_size_ratio_upper": {
+        "denominator": "134245887",
+        "numerator": "181436587"
+      },
+      "least_n": "134245887",
+      "least_positive_u": "262199",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "457083812212686489",
+        "numerator": "452567781955248256"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 55,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 55 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 43,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 1,
+      "integer_realizable": true,
+      "landing": "908447875",
+      "least_lift_size_ratio_upper": {
+        "denominator": "5377323",
+        "numerator": "7267583"
+      },
+      "least_n": "672165375",
+      "least_positive_u": "1312823",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "18308846187138381",
+        "numerator": "18127952982744704"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 2103,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 2103 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 33,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 2,
+      "integer_realizable": true,
+      "landing": "2872411",
+      "least_lift_size_ratio_upper": {
+        "denominator": "2125311",
+        "numerator": "2872411"
+      },
+      "least_n": "2125311",
+      "least_positive_u": "4151",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "7236312975589017",
+        "numerator": "7164821035427968"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 4151,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 4151 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 23,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 3,
+      "integer_realizable": true,
+      "landing": "729883699",
+      "least_lift_size_ratio_upper": {
+        "denominator": "540044799",
+        "numerator": "729883699"
+      },
+      "least_n": "540044799",
+      "least_positive_u": "1054775",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1838758274155200153",
+        "numerator": "1820591161923267712"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 6199,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 6199 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 13,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 4,
+      "integer_realizable": true,
+      "landing": "1456894987",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1077964287",
+        "numerator": "1456894987"
+      },
+      "least_n": "1077964287",
+      "least_positive_u": "2105399",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3670280235334811289",
+        "numerator": "3634017502811107456"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 8247,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 8247 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 3,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 5,
+      "integer_realizable": true,
+      "landing": "551319523",
+      "least_lift_size_ratio_upper": {
+        "denominator": "407924223",
+        "numerator": "551319523"
+      },
+      "least_n": "407924223",
+      "least_positive_u": "796727",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1388910774918102681",
+        "numerator": "1375188201003447424"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 10295,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 10295 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 249,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 6,
+      "integer_realizable": true,
+      "landing": "1278330811",
+      "least_lift_size_ratio_upper": {
+        "denominator": "945843711",
+        "numerator": "1278330811"
+      },
+      "least_n": "945843711",
+      "least_positive_u": "1847351",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3220432736097713817",
+        "numerator": "3188614541891287168"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 12343,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 12343 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 239,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 7,
+      "integer_realizable": true,
+      "landing": "372755347",
+      "least_lift_size_ratio_upper": {
+        "denominator": "275803647",
+        "numerator": "372755347"
+      },
+      "least_n": "275803647",
+      "least_positive_u": "538679",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "939063275681005209",
+        "numerator": "929785240083627136"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 14391,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 14391 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 229,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 8,
+      "integer_realizable": true,
+      "landing": "1099766635",
+      "least_lift_size_ratio_upper": {
+        "denominator": "162744627",
+        "numerator": "219953327"
+      },
+      "least_n": "813723135",
+      "least_positive_u": "1589303",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "554117047372123269",
+        "numerator": "548642316194293376"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 16439,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 16439 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 219,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 9,
+      "integer_realizable": true,
+      "landing": "194191171",
+      "least_lift_size_ratio_upper": {
+        "denominator": "143683071",
+        "numerator": "194191171"
+      },
+      "least_n": "143683071",
+      "least_positive_u": "280631",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "489215776443907737",
+        "numerator": "484382279163806848"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 18487,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 18487 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 209,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 10,
+      "integer_realizable": true,
+      "landing": "921202459",
+      "least_lift_size_ratio_upper": {
+        "denominator": "681602559",
+        "numerator": "921202459"
+      },
+      "least_n": "681602559",
+      "least_positive_u": "1331255",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "19179650724161313",
+        "numerator": "18990153884724352"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 20535,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 20535 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 199,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 11,
+      "integer_realizable": true,
+      "landing": "15626995",
+      "least_lift_size_ratio_upper": {
+        "denominator": "2312499",
+        "numerator": "3125399"
+      },
+      "least_n": "11562495",
+      "least_positive_u": "22583",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "7873655441362053",
+        "numerator": "7795863648797312"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 22583,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 22583 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 189,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 12,
+      "integer_realizable": true,
+      "landing": "742638283",
+      "least_lift_size_ratio_upper": {
+        "denominator": "23890521",
+        "numerator": "32288621"
+      },
+      "least_n": "549481983",
+      "least_positive_u": "1073207",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "81343053842887887",
+        "numerator": "80539376483992448"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 24631,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 24631 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 179,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 13,
+      "integer_realizable": true,
+      "landing": "1469649571",
+      "least_lift_size_ratio_upper": {
+        "denominator": "83646267",
+        "numerator": "113049967"
+      },
+      "least_n": "1087401471",
+      "least_positive_u": "2123831",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "284800938428156349",
+        "numerator": "281987076924589696"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 26679,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 26679 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 169,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 14,
+      "integer_realizable": true,
+      "landing": "564074107",
+      "least_lift_size_ratio_upper": {
+        "denominator": "417361407",
+        "numerator": "564074107"
+      },
+      "least_n": "417361407",
+      "least_positive_u": "815159",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1421042739149323929",
+        "numerator": "1407002698212006016"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 28727,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 28727 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 159,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 15,
+      "integer_realizable": true,
+      "landing": "1291085395",
+      "least_lift_size_ratio_upper": {
+        "denominator": "191056179",
+        "numerator": "258217079"
+      },
+      "least_n": "955280895",
+      "least_positive_u": "1865783",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "650512940065787013",
+        "numerator": "644085807819969152"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 30775,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 30775 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 149,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 16,
+      "integer_realizable": true,
+      "landing": "385509931",
+      "least_lift_size_ratio_upper": {
+        "denominator": "285240831",
+        "numerator": "385509931"
+      },
+      "least_n": "285240831",
+      "least_positive_u": "557111",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "971195239912226457",
+        "numerator": "961599737292185728"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 32823,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 32823 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 139,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 17,
+      "integer_realizable": true,
+      "landing": "1112521219",
+      "least_lift_size_ratio_upper": {
+        "denominator": "823160319",
+        "numerator": "1112521219"
+      },
+      "least_n": "823160319",
+      "least_positive_u": "1607735",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2802717201091837593",
+        "numerator": "2775026078180025472"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 34871,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 34871 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 129,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 18,
+      "integer_realizable": true,
+      "landing": "206945755",
+      "least_lift_size_ratio_upper": {
+        "denominator": "30624051",
+        "numerator": "41389151"
+      },
+      "least_n": "153120255",
+      "least_positive_u": "299063",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "104269548135025797",
+        "numerator": "103239355274473088"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 36919,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 36919 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 119,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 19,
+      "integer_realizable": true,
+      "landing": "933957043",
+      "least_lift_size_ratio_upper": {
+        "denominator": "691039743",
+        "numerator": "933957043"
+      },
+      "least_n": "691039743",
+      "least_positive_u": "1349687",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2352869701854740121",
+        "numerator": "2329623117260205184"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 38967,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 38967 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 109,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 20,
+      "integer_realizable": true,
+      "landing": "28381579",
+      "least_lift_size_ratio_upper": {
+        "denominator": "20999679",
+        "numerator": "28381579"
+      },
+      "least_n": "20999679",
+      "least_positive_u": "41015",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "71500241438031513",
+        "numerator": "70793815452545152"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 41015,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 41015 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 99,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 21,
+      "integer_realizable": true,
+      "landing": "755392867",
+      "least_lift_size_ratio_upper": {
+        "denominator": "558919167",
+        "numerator": "755392867"
+      },
+      "least_n": "558919167",
+      "least_positive_u": "1091639",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1903022202617642649",
+        "numerator": "1884220156340384896"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 43063,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 43063 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 89,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 22,
+      "integer_realizable": true,
+      "landing": "1482404155",
+      "least_lift_size_ratio_upper": {
+        "denominator": "219367731",
+        "numerator": "296480831"
+      },
+      "least_n": "1096838655",
+      "least_positive_u": "2142263",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "67900802978131887",
+        "numerator": "67229936313240448"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 45111,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 45111 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 79,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 23,
+      "integer_realizable": true,
+      "landing": "576828691",
+      "least_lift_size_ratio_upper": {
+        "denominator": "426798591",
+        "numerator": "576828691"
+      },
+      "least_n": "426798591",
+      "least_positive_u": "833591",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1453174703380545177",
+        "numerator": "1438817195420564608"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 47159,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 47159 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 69,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 24,
+      "integer_realizable": true,
+      "landing": "1303839979",
+      "least_lift_size_ratio_upper": {
+        "denominator": "74209083",
+        "numerator": "100295383"
+      },
+      "least_n": "964718079",
+      "least_positive_u": "1884215",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "252668974196935101",
+        "numerator": "250172579716031104"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 49207,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 49207 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 59,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 25,
+      "integer_realizable": true,
+      "landing": "398264515",
+      "least_lift_size_ratio_upper": {
+        "denominator": "58935603",
+        "numerator": "79652903"
+      },
+      "least_n": "294678015",
+      "least_positive_u": "575543",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "200665440828689541",
+        "numerator": "198682846900148864"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 51255,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 51255 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 49,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 26,
+      "integer_realizable": true,
+      "landing": "1125275803",
+      "least_lift_size_ratio_upper": {
+        "denominator": "832597503",
+        "numerator": "1125275803"
+      },
+      "least_n": "832597503",
+      "least_positive_u": "1626167",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2834849165323058841",
+        "numerator": "2806840575388584064"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 53303,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 53303 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 39,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 27,
+      "integer_realizable": true,
+      "landing": "219700339",
+      "least_lift_size_ratio_upper": {
+        "denominator": "162557439",
+        "numerator": "219700339"
+      },
+      "least_n": "162557439",
+      "least_positive_u": "317495",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "50316336809668203",
+        "numerator": "49819206689174912"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 55351,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 55351 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 29,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 28,
+      "integer_realizable": true,
+      "landing": "946711627",
+      "least_lift_size_ratio_upper": {
+        "denominator": "700476927",
+        "numerator": "946711627"
+      },
+      "least_n": "700476927",
+      "least_positive_u": "1368119",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2385001666085961369",
+        "numerator": "2361437614468763776"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 57399,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 57399 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 19,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 29,
+      "integer_realizable": true,
+      "landing": "41136163",
+      "least_lift_size_ratio_upper": {
+        "denominator": "30436863",
+        "numerator": "41136163"
+      },
+      "least_n": "30436863",
+      "least_positive_u": "59447",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "103632205669252761",
+        "numerator": "102608312661103744"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 59447,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 59447 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 9,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 30,
+      "integer_realizable": true,
+      "landing": "768147451",
+      "least_lift_size_ratio_upper": {
+        "denominator": "568356351",
+        "numerator": "768147451"
+      },
+      "least_n": "568356351",
+      "least_positive_u": "1110071",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1935154166848863897",
+        "numerator": "1916034653548943488"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 61495,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 61495 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 255,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 31,
+      "integer_realizable": true,
+      "landing": "1495158739",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1106275839",
+        "numerator": "1495158739"
+      },
+      "least_n": "1106275839",
+      "least_positive_u": "2160695",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3766676128028475033",
+        "numerator": "3729460994436783232"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 63543,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 63543 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 245,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 32,
+      "integer_realizable": true,
+      "landing": "589583275",
+      "least_lift_size_ratio_upper": {
+        "denominator": "17449431",
+        "numerator": "23583331"
+      },
+      "least_n": "436235775",
+      "least_positive_u": "852023",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "59412266704470657",
+        "numerator": "58825267705164928"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 65591,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 65591 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 235,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 33,
+      "integer_realizable": true,
+      "landing": "1316594563",
+      "least_lift_size_ratio_upper": {
+        "denominator": "974155263",
+        "numerator": "1316594563"
+      },
+      "least_n": "974155263",
+      "least_positive_u": "1902647",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3316828628791377561",
+        "numerator": "3284058033516962944"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 67639,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 67639 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 225,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 34,
+      "integer_realizable": true,
+      "landing": "411019099",
+      "least_lift_size_ratio_upper": {
+        "denominator": "304115199",
+        "numerator": "411019099"
+      },
+      "least_n": "304115199",
+      "least_positive_u": "593975",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1035459168374668953",
+        "numerator": "1025228731709302912"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 69687,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 69687 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 215,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 35,
+      "integer_realizable": true,
+      "landing": "1138030387",
+      "least_lift_size_ratio_upper": {
+        "denominator": "64771899",
+        "numerator": "87540799"
+      },
+      "least_n": "842034687",
+      "least_positive_u": "1644599",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "220537009965713853",
+        "numerator": "218358082507472512"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 71735,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 71735 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 205,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 36,
+      "integer_realizable": true,
+      "landing": "232454923",
+      "least_lift_size_ratio_upper": {
+        "denominator": "171994623",
+        "numerator": "232454923"
+      },
+      "least_n": "171994623",
+      "least_positive_u": "335927",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "585611669137571481",
+        "numerator": "579825770789482624"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 73783,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 73783 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 195,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 37,
+      "integer_realizable": true,
+      "landing": "959466211",
+      "least_lift_size_ratio_upper": {
+        "denominator": "709914111",
+        "numerator": "959466211"
+      },
+      "least_n": "709914111",
+      "least_positive_u": "1386551",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2417133630317182617",
+        "numerator": "2393252111677322368"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 75831,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 75831 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 185,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 38,
+      "integer_realizable": true,
+      "landing": "53890747",
+      "least_lift_size_ratio_upper": {
+        "denominator": "39874047",
+        "numerator": "53890747"
+      },
+      "least_n": "39874047",
+      "least_positive_u": "77879",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "135764169900474009",
+        "numerator": "134422809869662336"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 77879,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 77879 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 175,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 39,
+      "integer_realizable": true,
+      "landing": "780902035",
+      "least_lift_size_ratio_upper": {
+        "denominator": "115558707",
+        "numerator": "156180407"
+      },
+      "least_n": "577793535",
+      "least_positive_u": "1128503",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "35768838746910639",
+        "numerator": "35415439104681856"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 79927,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 79927 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 165,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 40,
+      "integer_realizable": true,
+      "landing": "1507913323",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1115713023",
+        "numerator": "1507913323"
+      },
+      "least_n": "1115713023",
+      "least_positive_u": "2179127",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3798808092259696281",
+        "numerator": "3761275491645341824"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 81975,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 81975 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 155,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 41,
+      "integer_realizable": true,
+      "landing": "602337859",
+      "least_lift_size_ratio_upper": {
+        "denominator": "445672959",
+        "numerator": "602337859"
+      },
+      "least_n": "445672959",
+      "least_positive_u": "870455",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1517438631842987673",
+        "numerator": "1502446189837681792"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 84023,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 84023 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 145,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 42,
+      "integer_realizable": true,
+      "landing": "1329349147",
+      "least_lift_size_ratio_upper": {
+        "denominator": "42764889",
+        "numerator": "57797789"
+      },
+      "least_n": "983592447",
+      "least_positive_u": "1921079",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "145606982305330383",
+        "numerator": "144168370901109632"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 86071,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 86071 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 135,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 43,
+      "integer_realizable": true,
+      "landing": "423773683",
+      "least_lift_size_ratio_upper": {
+        "denominator": "313552383",
+        "numerator": "423773683"
+      },
+      "least_n": "313552383",
+      "least_positive_u": "612407",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1067591132605890201",
+        "numerator": "1057043228917861504"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 88119,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 88119 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 125,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 44,
+      "integer_realizable": true,
+      "landing": "1150784971",
+      "least_lift_size_ratio_upper": {
+        "denominator": "851471871",
+        "numerator": "1150784971"
+      },
+      "least_n": "851471871",
+      "least_positive_u": "1663031",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2899113093785501337",
+        "numerator": "2870469569805701248"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 90167,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 90167 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 115,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 45,
+      "integer_realizable": true,
+      "landing": "245209507",
+      "least_lift_size_ratio_upper": {
+        "denominator": "181431807",
+        "numerator": "245209507"
+      },
+      "least_n": "181431807",
+      "least_positive_u": "354359",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "617743633368792729",
+        "numerator": "611640267998041216"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 92215,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 92215 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 105,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 46,
+      "integer_realizable": true,
+      "landing": "972220795",
+      "least_lift_size_ratio_upper": {
+        "denominator": "11066943",
+        "numerator": "14957243"
+      },
+      "least_n": "719351295",
+      "least_positive_u": "1404983",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "37681009146898521",
+        "numerator": "37308717059782784"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 94263,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 94263 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 95,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 47,
+      "integer_realizable": true,
+      "landing": "66645331",
+      "least_lift_size_ratio_upper": {
+        "denominator": "49311231",
+        "numerator": "66645331"
+      },
+      "least_n": "49311231",
+      "least_positive_u": "96311",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "167896134131695257",
+        "numerator": "166237307078220928"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 96311,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 96311 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 85,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 48,
+      "integer_realizable": true,
+      "landing": "793656619",
+      "least_lift_size_ratio_upper": {
+        "denominator": "587230719",
+        "numerator": "793656619"
+      },
+      "least_n": "587230719",
+      "least_positive_u": "1146935",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1999418095311306393",
+        "numerator": "1979663647966060672"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 98359,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 98359 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 75,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 49,
+      "integer_realizable": true,
+      "landing": "1520667907",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1125150207",
+        "numerator": "1520667907"
+      },
+      "least_n": "1125150207",
+      "least_positive_u": "2197559",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3830940056490917529",
+        "numerator": "3793089988853900416"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 100407,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 100407 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 65,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 50,
+      "integer_realizable": true,
+      "landing": "615092443",
+      "least_lift_size_ratio_upper": {
+        "denominator": "455110143",
+        "numerator": "615092443"
+      },
+      "least_n": "455110143",
+      "least_positive_u": "888887",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1549570596074208921",
+        "numerator": "1534260687046240384"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 102455,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 102455 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 55,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 51,
+      "integer_realizable": true,
+      "landing": "1342103731",
+      "least_lift_size_ratio_upper": {
+        "denominator": "993029631",
+        "numerator": "1342103731"
+      },
+      "least_n": "993029631",
+      "least_positive_u": "1939511",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "307372050659438187",
+        "numerator": "304335184357643648"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 104503,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 104503 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 45,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 52,
+      "integer_realizable": true,
+      "landing": "436528267",
+      "least_lift_size_ratio_upper": {
+        "denominator": "322989567",
+        "numerator": "436528267"
+      },
+      "least_n": "322989567",
+      "least_positive_u": "630839",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1099723096837111449",
+        "numerator": "1088857726126420096"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 106551,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 106551 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 35,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 53,
+      "integer_realizable": true,
+      "landing": "1163539555",
+      "least_lift_size_ratio_upper": {
+        "denominator": "172181811",
+        "numerator": "232707911"
+      },
+      "least_n": "860909055",
+      "least_positive_u": "1681463",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "586249011603344517",
+        "numerator": "580456813402851968"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 108599,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 108599 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 25,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 54,
+      "integer_realizable": true,
+      "landing": "257964091",
+      "least_lift_size_ratio_upper": {
+        "denominator": "190868991",
+        "numerator": "257964091"
+      },
+      "least_n": "190868991",
+      "least_positive_u": "372791",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "649875597600013977",
+        "numerator": "643454765206599808"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 110647,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 110647 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 15,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 55,
+      "integer_realizable": true,
+      "landing": "984975379",
+      "least_lift_size_ratio_upper": {
+        "denominator": "728788479",
+        "numerator": "984975379"
+      },
+      "least_n": "728788479",
+      "least_positive_u": "1423415",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2481397558779625113",
+        "numerator": "2456881106094439552"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 112695,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 112695 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 5,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 56,
+      "integer_realizable": true,
+      "landing": "79399915",
+      "least_lift_size_ratio_upper": {
+        "denominator": "11749683",
+        "numerator": "15879983"
+      },
+      "least_n": "58748415",
+      "least_positive_u": "114743",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3636874515689391",
+        "numerator": "3600941896123264"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 114743,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 114743 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 251,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 57,
+      "integer_realizable": true,
+      "landing": "806411203",
+      "least_lift_size_ratio_upper": {
+        "denominator": "45897531",
+        "numerator": "62031631"
+      },
+      "least_n": "596667903",
+      "least_positive_u": "1165367",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "156273081503271357",
+        "numerator": "154729088090355328"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 116791,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 116791 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 241,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 58,
+      "integer_realizable": true,
+      "landing": "1533422491",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1134587391",
+        "numerator": "1533422491"
+      },
+      "least_n": "1134587391",
+      "least_positive_u": "2215991",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3863072020722138777",
+        "numerator": "3824904486062459008"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 118839,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 118839 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 231,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 59,
+      "integer_realizable": true,
+      "landing": "627847027",
+      "least_lift_size_ratio_upper": {
+        "denominator": "464547327",
+        "numerator": "627847027"
+      },
+      "least_n": "464547327",
+      "least_positive_u": "907319",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1581702560305430169",
+        "numerator": "1566075184254798976"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 120887,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 120887 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 221,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 60,
+      "integer_realizable": true,
+      "landing": "1354858315",
+      "least_lift_size_ratio_upper": {
+        "denominator": "200493363",
+        "numerator": "270971663"
+      },
+      "least_n": "1002466815",
+      "least_positive_u": "1957943",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "682644904297008261",
+        "numerator": "675900305028527744"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 122935,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 122935 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 211,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 61,
+      "integer_realizable": true,
+      "landing": "449282851",
+      "least_lift_size_ratio_upper": {
+        "denominator": "14453337",
+        "numerator": "19534037"
+      },
+      "least_n": "332426751",
+      "least_positive_u": "649271",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "49211089611666639",
+        "numerator": "48724879275433856"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 124983,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 124983 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 201,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 62,
+      "integer_realizable": true,
+      "landing": "1176294139",
+      "least_lift_size_ratio_upper": {
+        "denominator": "870346239",
+        "numerator": "1176294139"
+      },
+      "least_n": "870346239",
+      "least_positive_u": "1699895",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2963377022247943833",
+        "numerator": "2934098564222818432"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 127031,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 127031 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 191,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 63,
+      "integer_realizable": true,
+      "landing": "270718675",
+      "least_lift_size_ratio_upper": {
+        "denominator": "8012247",
+        "numerator": "10828747"
+      },
+      "least_n": "200306175",
+      "least_positive_u": "391223",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "27280302473249409",
+        "numerator": "27010770496606336"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 129079,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 129079 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 181,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 64,
+      "integer_realizable": true,
+      "landing": "997729963",
+      "least_lift_size_ratio_upper": {
+        "denominator": "738225663",
+        "numerator": "997729963"
+      },
+      "least_n": "738225663",
+      "least_positive_u": "1441847",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2513529523010846361",
+        "numerator": "2488695603302998144"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 131127,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 131127 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 171,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 65,
+      "integer_realizable": true,
+      "landing": "92154499",
+      "least_lift_size_ratio_upper": {
+        "denominator": "68185599",
+        "numerator": "92154499"
+      },
+      "least_n": "68185599",
+      "least_positive_u": "133175",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "232160062594137753",
+        "numerator": "229866301495338112"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 133175,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 133175 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 161,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 66,
+      "integer_realizable": true,
+      "landing": "819165787",
+      "least_lift_size_ratio_upper": {
+        "denominator": "606105087",
+        "numerator": "819165787"
+      },
+      "least_n": "606105087",
+      "least_positive_u": "1183799",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2063682023773748889",
+        "numerator": "2043292642383177856"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 135223,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 135223 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 151,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 67,
+      "integer_realizable": true,
+      "landing": "1546177075",
+      "least_lift_size_ratio_upper": {
+        "denominator": "45760983",
+        "numerator": "61847083"
+      },
+      "least_n": "1144024575",
+      "least_positive_u": "2234423",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "155808159398134401",
+        "numerator": "154268759330840704"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 137271,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 137271 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 141,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 68,
+      "integer_realizable": true,
+      "landing": "640601611",
+      "least_lift_size_ratio_upper": {
+        "denominator": "36460347",
+        "numerator": "49277047"
+      },
+      "least_n": "473984511",
+      "least_positive_u": "925751",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "11285556115640919",
+        "numerator": "11174053716526976"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 139319,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 139319 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 131,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 69,
+      "integer_realizable": true,
+      "landing": "1367612899",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1011903999",
+        "numerator": "1367612899"
+      },
+      "least_n": "1011903999",
+      "least_positive_u": "1976375",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3445356485716262553",
+        "numerator": "3411316022351197312"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 141367,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 141367 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 121,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 70,
+      "integer_realizable": true,
+      "landing": "462037435",
+      "least_lift_size_ratio_upper": {
+        "denominator": "68372787",
+        "numerator": "92407487"
+      },
+      "least_n": "341863935",
+      "least_positive_u": "667703",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "232797405059910789",
+        "numerator": "230497344108707456"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 143415,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 143415 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 111,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 71,
+      "integer_realizable": true,
+      "landing": "1189048723",
+      "least_lift_size_ratio_upper": {
+        "denominator": "879783423",
+        "numerator": "1189048723"
+      },
+      "least_n": "879783423",
+      "least_positive_u": "1718327",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2995508986479165081",
+        "numerator": "2965913061431377024"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 145463,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 145463 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 101,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 72,
+      "integer_realizable": true,
+      "landing": "283473259",
+      "least_lift_size_ratio_upper": {
+        "denominator": "209743359",
+        "numerator": "283473259"
+      },
+      "least_n": "209743359",
+      "least_positive_u": "409655",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "714139526062456473",
+        "numerator": "707083759623716992"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 147511,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 147511 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 91,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 73,
+      "integer_realizable": true,
+      "landing": "1010484547",
+      "least_lift_size_ratio_upper": {
+        "denominator": "747662847",
+        "numerator": "1010484547"
+      },
+      "least_n": "747662847",
+      "least_positive_u": "1460279",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2545661487242067609",
+        "numerator": "2520510100511556736"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 149559,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 149559 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 81,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 74,
+      "integer_realizable": true,
+      "landing": "104909083",
+      "least_lift_size_ratio_upper": {
+        "denominator": "77622783",
+        "numerator": "104909083"
+      },
+      "least_n": "77622783",
+      "least_positive_u": "151607",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "264292026825359001",
+        "numerator": "261680798703896704"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 151607,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 151607 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 71,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 75,
+      "integer_realizable": true,
+      "landing": "831920371",
+      "least_lift_size_ratio_upper": {
+        "denominator": "615542271",
+        "numerator": "831920371"
+      },
+      "least_n": "615542271",
+      "least_positive_u": "1202231",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2095813988004970137",
+        "numerator": "2075107139591736448"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 153655,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 153655 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 61,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 76,
+      "integer_realizable": true,
+      "landing": "1558931659",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1153461759",
+        "numerator": "1558931659"
+      },
+      "least_n": "1153461759",
+      "least_positive_u": "2252855",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3927335949184581273",
+        "numerator": "3888533480479576192"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 155703,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 155703 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 51,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 77,
+      "integer_realizable": true,
+      "landing": "653356195",
+      "least_lift_size_ratio_upper": {
+        "denominator": "96684339",
+        "numerator": "130671239"
+      },
+      "least_n": "483421695",
+      "least_positive_u": "944183",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "329193297753574533",
+        "numerator": "325940835734383232"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 157751,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 157751 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 41,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 78,
+      "integer_realizable": true,
+      "landing": "1380367483",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1021341183",
+        "numerator": "1380367483"
+      },
+      "least_n": "1021341183",
+      "least_positive_u": "1994807",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3477488449947483801",
+        "numerator": "3443130519559755904"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 159799,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 159799 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 31,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 79,
+      "integer_realizable": true,
+      "landing": "474792019",
+      "least_lift_size_ratio_upper": {
+        "denominator": "27023163",
+        "numerator": "36522463"
+      },
+      "least_n": "351301119",
+      "least_positive_u": "686135",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "92009153040828861",
+        "numerator": "91100093673238144"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 161847,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 161847 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 21,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 80,
+      "integer_realizable": true,
+      "landing": "1201803307",
+      "least_lift_size_ratio_upper": {
+        "denominator": "889220607",
+        "numerator": "1201803307"
+      },
+      "least_n": "889220607",
+      "least_positive_u": "1736759",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "275240086428216939",
+        "numerator": "272520687149085056"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 163895,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 163895 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 11,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 81,
+      "integer_realizable": true,
+      "landing": "296227843",
+      "least_lift_size_ratio_upper": {
+        "denominator": "219180543",
+        "numerator": "296227843"
+      },
+      "least_n": "219180543",
+      "least_positive_u": "428087",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "746271490293677721",
+        "numerator": "738898256832275584"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 165943,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 165943 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 1,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 82,
+      "integer_realizable": true,
+      "landing": "1023239131",
+      "least_lift_size_ratio_upper": {
+        "denominator": "757100031",
+        "numerator": "1023239131"
+      },
+      "least_n": "757100031",
+      "least_positive_u": "1478711",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2577793451473288857",
+        "numerator": "2552324597720115328"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 167991,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 167991 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 247,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 83,
+      "integer_realizable": true,
+      "landing": "117663667",
+      "least_lift_size_ratio_upper": {
+        "denominator": "87059967",
+        "numerator": "117663667"
+      },
+      "least_n": "87059967",
+      "least_positive_u": "170039",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "296423991056580249",
+        "numerator": "293495295912455296"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 170039,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 170039 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 237,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 84,
+      "integer_realizable": true,
+      "landing": "844674955",
+      "least_lift_size_ratio_upper": {
+        "denominator": "124995891",
+        "numerator": "168934991"
+      },
+      "least_n": "624979455",
+      "least_positive_u": "1220663",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "425589190447238277",
+        "numerator": "421384327360059008"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 172087,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 172087 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 227,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 85,
+      "integer_realizable": true,
+      "landing": "1571686243",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1162898943",
+        "numerator": "1571686243"
+      },
+      "least_n": "1162898943",
+      "least_positive_u": "2271287",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3959467913415802521",
+        "numerator": "3920347977688134784"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 174135,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 174135 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 217,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 86,
+      "integer_realizable": true,
+      "landing": "666110779",
+      "least_lift_size_ratio_upper": {
+        "denominator": "492858879",
+        "numerator": "666110779"
+      },
+      "least_n": "492858879",
+      "least_positive_u": "962615",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1678098452999093913",
+        "numerator": "1661518675880474752"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 176183,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 176183 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 207,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 87,
+      "integer_realizable": true,
+      "landing": "1393122067",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1030778367",
+        "numerator": "1393122067"
+      },
+      "least_n": "1030778367",
+      "least_positive_u": "2013239",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3509620414178705049",
+        "numerator": "3474945016768314496"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 178231,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 178231 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 197,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 88,
+      "integer_realizable": true,
+      "landing": "487546603",
+      "least_lift_size_ratio_upper": {
+        "denominator": "360738303",
+        "numerator": "487546603"
+      },
+      "least_n": "360738303",
+      "least_positive_u": "704567",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1228250953761996441",
+        "numerator": "1216115714960654464"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 180279,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 180279 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 187,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 89,
+      "integer_realizable": true,
+      "landing": "1214557891",
+      "least_lift_size_ratio_upper": {
+        "denominator": "898657791",
+        "numerator": "1214557891"
+      },
+      "least_n": "898657791",
+      "least_positive_u": "1755191",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3059772914941607577",
+        "numerator": "3029542055848494208"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 182327,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 182327 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 177,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 90,
+      "integer_realizable": true,
+      "landing": "308982427",
+      "least_lift_size_ratio_upper": {
+        "denominator": "17585979",
+        "numerator": "23767879"
+      },
+      "least_n": "228617727",
+      "least_positive_u": "446519",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "59877188809607613",
+        "numerator": "59285596464679552"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 184375,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 184375 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 167,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 91,
+      "integer_realizable": true,
+      "landing": "1035993715",
+      "least_lift_size_ratio_upper": {
+        "denominator": "6665541",
+        "numerator": "9008641"
+      },
+      "least_n": "766537215",
+      "least_positive_u": "1497143",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "22695003614821827",
+        "numerator": "22470774738510208"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 186423,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 186423 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 157,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 92,
+      "integer_realizable": true,
+      "landing": "130418251",
+      "least_lift_size_ratio_upper": {
+        "denominator": "96497151",
+        "numerator": "130418251"
+      },
+      "least_n": "96497151",
+      "least_positive_u": "188471",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "328555955287801497",
+        "numerator": "325309793121013888"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 188471,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 188471 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 147,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 93,
+      "integer_realizable": true,
+      "landing": "857429539",
+      "least_lift_size_ratio_upper": {
+        "denominator": "634416639",
+        "numerator": "857429539"
+      },
+      "least_n": "634416639",
+      "least_positive_u": "1239095",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2160077916467412633",
+        "numerator": "2138736134008853632"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 190519,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 190519 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 137,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 94,
+      "integer_realizable": true,
+      "landing": "1584440827",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1172336127",
+        "numerator": "1584440827"
+      },
+      "least_n": "1172336127",
+      "least_positive_u": "2289719",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3991599877647023769",
+        "numerator": "3952162474896693376"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 192567,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 192567 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 127,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 95,
+      "integer_realizable": true,
+      "landing": "678865363",
+      "least_lift_size_ratio_upper": {
+        "denominator": "502296063",
+        "numerator": "678865363"
+      },
+      "least_n": "502296063",
+      "least_positive_u": "981047",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1710230417230315161",
+        "numerator": "1693333173089033344"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 194615,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 194615 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 117,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 96,
+      "integer_realizable": true,
+      "landing": "1405876651",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1040215551",
+        "numerator": "1405876651"
+      },
+      "least_n": "1040215551",
+      "least_positive_u": "2031671",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3541752378409926297",
+        "numerator": "3506759513976873088"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 196663,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 196663 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 107,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 97,
+      "integer_realizable": true,
+      "landing": "500301187",
+      "least_lift_size_ratio_upper": {
+        "denominator": "370175487",
+        "numerator": "500301187"
+      },
+      "least_n": "370175487",
+      "least_positive_u": "722999",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "114580265272110699",
+        "numerator": "113448201106292096"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 198711,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 198711 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 97,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 98,
+      "integer_realizable": true,
+      "landing": "1227312475",
+      "least_lift_size_ratio_upper": {
+        "denominator": "36323799",
+        "numerator": "49092499"
+      },
+      "least_n": "908094975",
+      "least_positive_u": "1773623",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "123676195166913153",
+        "numerator": "122454262122282112"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 200759,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 200759 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 87,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 99,
+      "integer_realizable": true,
+      "landing": "321737011",
+      "least_lift_size_ratio_upper": {
+        "denominator": "238054911",
+        "numerator": "321737011"
+      },
+      "least_n": "238054911",
+      "least_positive_u": "464951",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "810535418756120217",
+        "numerator": "802527251249392768"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 202807,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 202807 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 77,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 100,
+      "integer_realizable": true,
+      "landing": "1048748299",
+      "least_lift_size_ratio_upper": {
+        "denominator": "775974399",
+        "numerator": "1048748299"
+      },
+      "least_n": "775974399",
+      "least_positive_u": "1515575",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2642057379935731353",
+        "numerator": "2615953592137232512"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 204855,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 204855 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 67,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 101,
+      "integer_realizable": true,
+      "landing": "143172835",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1629759",
+        "numerator": "2202659"
+      },
+      "least_n": "105934335",
+      "least_positive_u": "206903",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "5549044915677273",
+        "numerator": "5494219851224192"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 206903,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 206903 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 57,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 102,
+      "integer_realizable": true,
+      "landing": "870184123",
+      "least_lift_size_ratio_upper": {
+        "denominator": "643853823",
+        "numerator": "870184123"
+      },
+      "least_n": "643853823",
+      "least_positive_u": "1257527",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2192209880698633881",
+        "numerator": "2170550631217412224"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 208951,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 208951 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 47,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 103,
+      "integer_realizable": true,
+      "landing": "1597195411",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1181773311",
+        "numerator": "1597195411"
+      },
+      "least_n": "1181773311",
+      "least_positive_u": "2308151",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "4023731841878245017",
+        "numerator": "3983976972105251968"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 210999,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 210999 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 37,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 104,
+      "integer_realizable": true,
+      "landing": "691619947",
+      "least_lift_size_ratio_upper": {
+        "denominator": "511733247",
+        "numerator": "691619947"
+      },
+      "least_n": "511733247",
+      "least_positive_u": "999479",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1742362381461536409",
+        "numerator": "1725147670297591936"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 213047,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 213047 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 27,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 105,
+      "integer_realizable": true,
+      "landing": "1418631235",
+      "least_lift_size_ratio_upper": {
+        "denominator": "209930547",
+        "numerator": "283726247"
+      },
+      "least_n": "1049652735",
+      "least_positive_u": "2050103",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "714776868528229509",
+        "numerator": "707714802237086336"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 215095,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 215095 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 17,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 106,
+      "integer_realizable": true,
+      "landing": "513055771",
+      "least_lift_size_ratio_upper": {
+        "denominator": "379612671",
+        "numerator": "513055771"
+      },
+      "least_n": "379612671",
+      "least_positive_u": "741431",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1292514882224438937",
+        "numerator": "1279744709377771648"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 217143,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 217143 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 7,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 107,
+      "integer_realizable": true,
+      "landing": "1240067059",
+      "least_lift_size_ratio_upper": {
+        "denominator": "917532159",
+        "numerator": "1240067059"
+      },
+      "least_n": "917532159",
+      "least_positive_u": "1792055",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3124036843404050073",
+        "numerator": "3093171050265611392"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 219191,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 219191 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 253,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 108,
+      "integer_realizable": true,
+      "landing": "334491595",
+      "least_lift_size_ratio_upper": {
+        "denominator": "49498419",
+        "numerator": "66898319"
+      },
+      "least_n": "247492095",
+      "least_positive_u": "483383",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "168533476597468293",
+        "numerator": "166868349691590272"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 221239,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 221239 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 243,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 109,
+      "integer_realizable": true,
+      "landing": "1061502883",
+      "least_lift_size_ratio_upper": {
+        "denominator": "785411583",
+        "numerator": "1061502883"
+      },
+      "least_n": "785411583",
+      "least_positive_u": "1534007",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "243108122196995691",
+        "numerator": "240706189940526464"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 223287,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 223287 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 233,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 110,
+      "integer_realizable": true,
+      "landing": "155927419",
+      "least_lift_size_ratio_upper": {
+        "denominator": "5016153",
+        "numerator": "6779453"
+      },
+      "least_n": "115371519",
+      "least_positive_u": "225335",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "17079125380445391",
+        "numerator": "16910382066875264"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 225335,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 225335 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 223,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 111,
+      "integer_realizable": true,
+      "landing": "882938707",
+      "least_lift_size_ratio_upper": {
+        "denominator": "653291007",
+        "numerator": "882938707"
+      },
+      "least_n": "653291007",
+      "least_positive_u": "1275959",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2224341844929855129",
+        "numerator": "2202365128425970816"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 227383,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 227383 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 213,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 112,
+      "integer_realizable": true,
+      "landing": "1609949995",
+      "least_lift_size_ratio_upper": {
+        "denominator": "238242099",
+        "numerator": "321989999"
+      },
+      "least_n": "1191210495",
+      "least_positive_u": "2326583",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "811172761221893253",
+        "numerator": "803158293862762112"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 229431,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 229431 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 203,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 113,
+      "integer_realizable": true,
+      "landing": "704374531",
+      "least_lift_size_ratio_upper": {
+        "denominator": "521170431",
+        "numerator": "704374531"
+      },
+      "least_n": "521170431",
+      "least_positive_u": "1017911",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1774494345692757657",
+        "numerator": "1756962167506150528"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 231479,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 231479 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 193,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 114,
+      "integer_realizable": true,
+      "landing": "1431385819",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1059089919",
+        "numerator": "1431385819"
+      },
+      "least_n": "1059089919",
+      "least_positive_u": "2068535",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3606016306872368793",
+        "numerator": "3570388508393990272"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 233527,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 233527 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 183,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 115,
+      "integer_realizable": true,
+      "landing": "525810355",
+      "least_lift_size_ratio_upper": {
+        "denominator": "77809971",
+        "numerator": "105162071"
+      },
+      "least_n": "389049855",
+      "least_positive_u": "759863",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "264929369291132037",
+        "numerator": "262311841317266048"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 235575,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 235575 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 173,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 116,
+      "integer_realizable": true,
+      "landing": "1252821643",
+      "least_lift_size_ratio_upper": {
+        "denominator": "926969343",
+        "numerator": "1252821643"
+      },
+      "least_n": "926969343",
+      "least_positive_u": "1810487",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3156168807635271321",
+        "numerator": "3124985547474169984"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 237623,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 237623 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 163,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 117,
+      "integer_realizable": true,
+      "landing": "347246179",
+      "least_lift_size_ratio_upper": {
+        "denominator": "256929279",
+        "numerator": "347246179"
+      },
+      "least_n": "256929279",
+      "least_positive_u": "501815",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "874799347218562713",
+        "numerator": "866156245666509952"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 239671,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 239671 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 153,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 118,
+      "integer_realizable": true,
+      "landing": "1074257467",
+      "least_lift_size_ratio_upper": {
+        "denominator": "794848767",
+        "numerator": "1074257467"
+      },
+      "least_n": "794848767",
+      "least_positive_u": "1552439",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2706321308398173849",
+        "numerator": "2679582586554349696"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 241719,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 241719 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 143,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 119,
+      "integer_realizable": true,
+      "landing": "168682003",
+      "least_lift_size_ratio_upper": {
+        "denominator": "124808703",
+        "numerator": "168682003"
+      },
+      "least_n": "124808703",
+      "least_positive_u": "243767",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "424951847981465241",
+        "numerator": "420753284746689664"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 243767,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 243767 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 133,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 120,
+      "integer_realizable": true,
+      "landing": "895693291",
+      "least_lift_size_ratio_upper": {
+        "denominator": "662728191",
+        "numerator": "895693291"
+      },
+      "least_n": "662728191",
+      "least_positive_u": "1294391",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2256473809161076377",
+        "numerator": "2234179625634529408"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 245815,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 245815 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 123,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 121,
+      "integer_realizable": true,
+      "landing": "1622704579",
+      "least_lift_size_ratio_upper": {
+        "denominator": "52202073",
+        "numerator": "70552373"
+      },
+      "least_n": "1200647679",
+      "least_positive_u": "2345015",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "16158086048777421",
+        "numerator": "15998442555424384"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 247863,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 247863 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 113,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 122,
+      "integer_realizable": true,
+      "landing": "717129115",
+      "least_lift_size_ratio_upper": {
+        "denominator": "106121523",
+        "numerator": "143425823"
+      },
+      "least_n": "530607615",
+      "least_positive_u": "1036343",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "361325261984795781",
+        "numerator": "357755332942941824"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 249911,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 249911 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 103,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 123,
+      "integer_realizable": true,
+      "landing": "1444140403",
+      "least_lift_size_ratio_upper": {
+        "denominator": "1068527103",
+        "numerator": "1444140403"
+      },
+      "least_n": "1068527103",
+      "least_positive_u": "2086967",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3638148271103590041",
+        "numerator": "3602203005602548864"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 251959,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 251959 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 93,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 124,
+      "integer_realizable": true,
+      "landing": "538564939",
+      "least_lift_size_ratio_upper": {
+        "denominator": "398487039",
+        "numerator": "538564939"
+      },
+      "least_n": "398487039",
+      "least_positive_u": "778295",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "1356778810686881433",
+        "numerator": "1343373703794888832"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 254007,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 254007 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 83,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 125,
+      "integer_realizable": true,
+      "landing": "1265576227",
+      "least_lift_size_ratio_upper": {
+        "denominator": "936406527",
+        "numerator": "1265576227"
+      },
+      "least_n": "936406527",
+      "least_positive_u": "1828919",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "3188300771866492569",
+        "numerator": "3156800044682728576"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 256055,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 256055 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 73,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 126,
+      "integer_realizable": true,
+      "landing": "360000763",
+      "least_lift_size_ratio_upper": {
+        "denominator": "266366463",
+        "numerator": "360000763"
+      },
+      "least_n": "266366463",
+      "least_positive_u": "520247",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "82448301040889451",
+        "numerator": "81633703897733504"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 258103,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 258103 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 63,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "affine_slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "affine_slope_comparison_to_one": "greater_than_one",
+      "classification": "exact_expanding_tail_reentry_branch",
+      "edge_id": 127,
+      "integer_realizable": true,
+      "landing": "1087012051",
+      "least_lift_size_ratio_upper": {
+        "denominator": "804285951",
+        "numerator": "1087012051"
+      },
+      "least_n": "804285951",
+      "least_positive_u": "1570871",
+      "local_symbolic_ratio_below_one": true,
+      "local_symbolic_ratio_upper": {
+        "denominator": "2738453272629395097",
+        "numerator": "2711397083762908288"
+      },
+      "size_ratio_monotonicity": "strictly_decreasing_in_n_because_affine_B_is_positive",
+      "source": {
+        "R": 9,
+        "mod2_power": 18,
+        "mod3_power": 2,
+        "u_mod2": 260151,
+        "u_mod3": 2
+      },
+      "source_congruence": "u == 260151 mod 2^18; u == 2 mod 3^2",
+      "source_lift_modulus": "2359296",
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 53,
+        "u_mod3": 2
+      },
+      "valuation_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ]
+    }
+  ],
+  "frontier": {
+    "fixed_target_source_leaves": 128,
+    "fixed_word_source_leaves": 128,
+    "open_target_nodes": 128,
+    "reason": "The 128 exact retained targets at R=2, u mod 2^8, and u mod 3^2 in {2} have not yet been expanded into target-fixed outgoing branches.",
+    "status": "open",
+    "unresolved_source_leaves": 0
+  },
+  "max_plus": {
+    "cycles": [],
+    "exact_difference_solver_status": "not_run_open_frontier",
+    "float_log_weights_used_for_certificate": false,
+    "graph_closed": false,
+    "karp_status": "not_applicable_open_frontier",
+    "weight_model": "exact_multiplicative_branch_ratios"
+  },
+  "proof": {
+    "exact_branch_replay_verified": true,
+    "exact_global_symbolic_lyapunov_verified": false,
+    "exact_local_symbolic_lyapunov_verified": true,
+    "exact_transition_partition_verified": true,
+    "global_collatz_proof": false,
+    "proof_eligible": false,
+    "proof_ineligibility_reasons": [
+      "The default source root was historically selected from a finite sampled PECM diagnostic.",
+      "Only one source cylinder has been covered.",
+      "The 128 exact retained target nodes form an open outgoing frontier.",
+      "No closed exact branch graph or global exceptional set is available."
+    ]
+  },
+  "provenance": {
+    "artifact_records_argmax_value_but_not_witness": true,
+    "expected_input_artifact_sha256": "13f8bd222451582320c5fc7872b5a53846b5755c3f525efa95e310ec41038a05",
+    "expected_reported_max_live_target_ratio": "1.9956723465910398",
+    "input_artifact": "docs/reports/pecm_cross_resolution_consistency.json",
+    "input_artifact_reported_max_live_target_ratio": "1.9956723465910398",
+    "input_artifact_sha256": "13f8bd222451582320c5fc7872b5a53846b5755c3f525efa95e310ec41038a05",
+    "input_artifact_snapshot_match": true,
+    "replayed_witness": {
+      "landing": "2872411",
+      "sample_n": "2125311",
+      "sample_u": "4151",
+      "source": {
+        "R": 9,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 55,
+        "u_mod3": 2
+      },
+      "source_state_id": 8309,
+      "target": {
+        "R": 2,
+        "mod2_power": 8,
+        "mod3_power": 2,
+        "u_mod2": 23,
+        "u_mod3": 2
+      },
+      "target_state_id": 101
+    },
+    "reported_max_ratio_match": true,
+    "sampling_used_for_branch_coverage": false,
+    "sampling_used_for_root_selection": true,
+    "selection_kind": "hard_coded_exact_seed_from_prior_replayed_sample_argmax",
+    "witness_provenance_note": "The witness was replayed when the named artifact had the expected hash and metric above. This command verifies the snapshot metadata but does not recompute the numerical argmax."
+  },
+  "root": {
+    "cycle_fixed_point_audit": {
+      "classification": "noninteger_2adic_only",
+      "interpretation": "The one-word affine fixed-point equation has no integer solution. This excludes only a periodic integer orbit with this exact macro word; it does not remove an expanding itinerary through changing cylinders.",
+      "value": {
+        "denominator": "1843",
+        "numerator": "-7475"
+      }
+    },
+    "exact_word_cylinder": {
+      "extra_bit_used_to_fix_final_valuation": true,
+      "n_modulus_power": 18,
+      "n_residue": "28159",
+      "post_u_modulus_power": 9,
+      "post_u_residue": "55"
+    },
+    "full_affine": {
+      "A": 17,
+      "B": "186875",
+      "identity": "F(n) = (177147*n + 186875)/131072",
+      "m": 11,
+      "slope": {
+        "denominator": "131072",
+        "numerator": "177147"
+      },
+      "slope_comparison_to_one": "greater_than_one"
+    },
+    "least_n": "2125311",
+    "least_positive_u": "4151",
+    "partition": {
+      "actual_child_count": 128,
+      "coarse_mod2_power": 11,
+      "distinct_target_count": 128,
+      "expected_child_count": 128,
+      "expected_full_target_fiber_count": 128,
+      "full_odd_2adic_target_fiber_covered": true,
+      "partition_verified": true,
+      "refined_mod2_power": 18,
+      "source_residue_sha256": "0c18b8d82e77251106b2501122c3abcf3222e08ea9a385aae45be4af541acddd",
+      "unique_child_count": 128
+    },
+    "post_affine": {
+      "A": 9,
+      "B": "65",
+      "m": 3
+    },
+    "precision_proof": {
+      "available_target_mod3_power": 13,
+      "refined_source_power": 18,
+      "required_source_power_for_exact_post_word": 9,
+      "required_source_power_for_exact_reentry": 11,
+      "required_source_power_for_fixed_target": 18,
+      "retained_target_mod3_power": 2,
+      "root_source_power": 11,
+      "target_mod2_power": 8,
+      "target_precision_formula": "A_post + R_target + k_target - 1",
+      "worst_target_u_mod_available_3_power": "718103"
+    },
+    "source_congruence": "u == 55 mod 2^11; u == 2 mod 3^2",
+    "source_cylinder": {
+      "R": 9,
+      "mod2_power": 11,
+      "mod3_power": 2,
+      "u_mod2": 55,
+      "u_mod3": 2
+    },
+    "source_lift_modulus": "18432",
+    "trace": {
+      "R": 9,
+      "checkpoints": [
+        {
+          "accelerated_step_index": 1,
+          "cumulative_A": 1,
+          "phase": "forced_tail",
+          "tail_depth": 8,
+          "valuation": 1,
+          "value": "3187967"
+        },
+        {
+          "accelerated_step_index": 2,
+          "cumulative_A": 2,
+          "phase": "forced_tail",
+          "tail_depth": 7,
+          "valuation": 1,
+          "value": "4781951"
+        },
+        {
+          "accelerated_step_index": 3,
+          "cumulative_A": 3,
+          "phase": "forced_tail",
+          "tail_depth": 6,
+          "valuation": 1,
+          "value": "7172927"
+        },
+        {
+          "accelerated_step_index": 4,
+          "cumulative_A": 4,
+          "phase": "forced_tail",
+          "tail_depth": 5,
+          "valuation": 1,
+          "value": "10759391"
+        },
+        {
+          "accelerated_step_index": 5,
+          "cumulative_A": 5,
+          "phase": "forced_tail",
+          "tail_depth": 4,
+          "valuation": 1,
+          "value": "16139087"
+        },
+        {
+          "accelerated_step_index": 6,
+          "cumulative_A": 6,
+          "phase": "forced_tail",
+          "tail_depth": 3,
+          "valuation": 1,
+          "value": "24208631"
+        },
+        {
+          "accelerated_step_index": 7,
+          "cumulative_A": 7,
+          "phase": "forced_tail",
+          "tail_depth": 2,
+          "valuation": 1,
+          "value": "36312947"
+        },
+        {
+          "accelerated_step_index": 8,
+          "cumulative_A": 8,
+          "phase": "forced_tail",
+          "tail_depth": 1,
+          "valuation": 1,
+          "value": "54469421"
+        },
+        {
+          "accelerated_step_index": 9,
+          "cumulative_A": 11,
+          "phase": "post_exit",
+          "tail_depth": 1,
+          "valuation": 3,
+          "value": "20426033"
+        },
+        {
+          "accelerated_step_index": 10,
+          "cumulative_A": 13,
+          "phase": "post_exit",
+          "tail_depth": 1,
+          "valuation": 2,
+          "value": "15319525"
+        },
+        {
+          "accelerated_step_index": 11,
+          "cumulative_A": 17,
+          "phase": "post_exit",
+          "tail_depth": 2,
+          "valuation": 4,
+          "value": "2872411"
+        }
+      ],
+      "full_steps": 11,
+      "full_total_A": 17,
+      "full_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        4
+      ],
+      "landing": "2872411",
+      "landing_tail_depth": 2,
+      "n0": "2125311",
+      "post_start": "54469421",
+      "post_steps": 3,
+      "post_total_A": 9,
+      "post_word": [
+        3,
+        2,
+        4
+      ],
+      "status": "tail_reentry",
+      "u": "4151"
+    },
+    "uniform_stopping_proof": {
+      "all_checked_prefix_slopes_at_least_one": true,
+      "magnitude_interval_lift_index_max": null,
+      "magnitude_interval_lift_index_min": 0,
+      "prefixes": [
+        {
+          "A": 8,
+          "B": "6305",
+          "m": 8,
+          "prefix_length": 8,
+          "slope": {
+            "denominator": "256",
+            "numerator": "6561"
+          },
+          "slope_comparison_to_one": "greater_than_one",
+          "survival_n_upper_if_contracting": null
+        },
+        {
+          "A": 11,
+          "B": "19171",
+          "m": 9,
+          "prefix_length": 9,
+          "slope": {
+            "denominator": "2048",
+            "numerator": "19683"
+          },
+          "slope_comparison_to_one": "greater_than_one",
+          "survival_n_upper_if_contracting": null
+        },
+        {
+          "A": 13,
+          "B": "59561",
+          "m": 10,
+          "prefix_length": 10,
+          "slope": {
+            "denominator": "8192",
+            "numerator": "59049"
+          },
+          "slope_comparison_to_one": "greater_than_one",
+          "survival_n_upper_if_contracting": null
+        },
+        {
+          "A": 17,
+          "B": "186875",
+          "m": 11,
+          "prefix_length": 11,
+          "slope": {
+            "denominator": "131072",
+            "numerator": "177147"
+          },
+          "slope_comparison_to_one": "greater_than_one",
+          "survival_n_upper_if_contracting": null
+        }
+      ]
+    }
+  },
+  "scope": {
+    "exact_within_selected_roots": true,
+    "global_domain_coverage": false,
+    "max_leaves": 4096,
+    "max_post_steps": 32,
+    "root_cylinders": 1,
+    "target_mod2_power": 8,
+    "target_mod3_power": 2,
+    "transition_graph_closed": false
+  },
+  "status": "exact_selected_cylinder_partition_open_frontier_not_global_proof",
+  "symbolic_candidate": {
+    "alpha": {
+      "denominator": "1",
+      "numerator": "1"
+    },
+    "candidate_class": "tail_cusp_power",
+    "exact_scope_inequality_verified": true,
+    "formula": "H(n,R) = n * (23/22)^R",
+    "global_inequality_verified": false,
+    "interpretation": "The expanding size branch is absorbed locally by a positive tail-depth cusp correction. The open target frontier must be expanded before this formula can be assessed globally.",
+    "lambda_scope": {
+      "denominator": "7236312975589017",
+      "numerator": "7164821035427968"
+    },
+    "margin_to_one": {
+      "denominator": "7236312975589017",
+      "numerator": "71491940161049"
+    },
+    "scope": "all_positive_integers_in_the_selected_root_cylinder",
+    "selection_rule": "closest_to_one_consecutive_fraction_a_over_a_minus_one_within_a_at_most_64_that_contracts_this_scope",
+    "source_R": 9,
+    "tail_base": {
+      "denominator": "22",
+      "numerator": "23"
+    },
+    "tail_depth_drop": 7,
+    "target_R": 2,
+    "worst_landing": "2872411",
+    "worst_least_n": "2125311",
+    "worst_least_u": "4151",
+    "worst_size_ratio_upper": {
+      "denominator": "2125311",
+      "numerator": "2872411"
+    },
+    "worst_source": {
+      "R": 9,
+      "mod2_power": 18,
+      "mod3_power": 2,
+      "u_mod2": 4151,
+      "u_mod3": 2
+    },
+    "worst_target": {
+      "R": 2,
+      "mod2_power": 8,
+      "mod3_power": 2,
+      "u_mod2": 23,
+      "u_mod3": 2
+    }
+  },
+  "type": "pecm_exact_selected_cylinder_pilot"
+}

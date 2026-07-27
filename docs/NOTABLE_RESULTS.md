@@ -504,6 +504,56 @@ common-`alpha` resolvent and are not independent spectral estimates.
 
 ---
 
+### D.8 Exact tail-cusp inequality on the worst selected PECM cylinder
+
+**Statement.** The worst concrete branch from the cross-resolution diagnostic
+lies in the exact infinite cylinder
+
+```text
+(R, u mod 2^11, u mod 3^2) = (9,55,2).
+```
+
+Its complete accelerated word is `(1^8,3,2,4)`, with
+
+```text
+(m,A,B) = (11,17,186875)
+F(n) = (177147 n + 186875) / 131072.
+```
+
+This is an exact expanding branch because `177147 > 131072`. Refinement to
+`u mod 2^18` gives `128` disjoint children, all realizing the word and
+reentering at `R'=2`; their targets are exactly the `128` odd residues modulo
+`2^8` with `u mod 9 = 2`.
+
+**Local symbolic certificate.** Despite the size expansion, the tail-cusp
+candidate
+
+```text
+H(n,R) = n (23/22)^R
+```
+
+has exact worst ratio
+
+```text
+7164821035427968 / 7236312975589017
+    = 0.9901203913...
+```
+
+on every positive integer in the selected root cylinder. The proof uses the
+exact affine identity, the `R=9 -> 2` depth drop, and monotonicity of
+`F(n)/n`; no floating logarithm enters the inequality.
+
+**Status.** Exact within one sample-selected root, but not proof-eligible. Its
+`128` targets form an open outgoing frontier, so max-plus/Karp is not yet a
+valid global upper-bound calculation. The result is evidence that an
+unbounded positive tail principal part is structurally relevant, not evidence
+that the displayed base works globally.
+
+**Artifact:** `docs/reports/pecm_exact_selected_cylinder_pilot.json`; module
+`collatz_exp/symbolic_branch_certificate.py`.
+
+---
+
 ## E. Demoted hypotheses (honest record)
 
 ### E.1 ψ as "rich Lyapunov potential"

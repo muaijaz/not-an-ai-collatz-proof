@@ -1,24 +1,27 @@
 # STATE
 
 ## Goal
-Determine whether finite PECM positive super-eigenvectors survive mixed-adic
-refinement as one stable Lyapunov object, without confusing averaged finite
-contraction with pointwise orbit descent.
+Convert the strongest PECM branches into exact mixed-adic symbolic
+inequalities, without confusing sample-based branch selection or an open
+finite graph with pointwise global Collatz descent.
 
 ## Now
-Cross-resolution phases A-C implemented and the first Galerkin smoke ladder
-completed. Raw-vector stability is not supported at these tested levels:
-errors and lift spread grow at the second refinement, and expanding surviving
-branches remain.
+The worst concrete PECM branch has been promoted from a sampled lead into an
+exact `128`-child cylinder partition. Its ordinary size map expands, while
+the local tail-cusp formula `H(n,R)=n(23/22)^R` contracts exactly on the whole
+selected root. The `128` targets remain an open frontier.
 
 ## Next
-1. Implement arithmetic parent maps plus chunked/streaming Galerkin passes for
-   the production `(8,2) -> (10,3) -> (12,4)` ladder.
-2. Fit and subtract the tail/cusp principal part; then inspect mixed-adic
-   Haar/Walsh detail coefficients instead of raw vectors alone.
-3. Isolate the worst expanding sampled branches and determine whether they
-   form a persistent positive-integer-realizable cylinder grammar.
-4. Awaiting user: Chang/Siegel outreach emails and arXiv submission decision.
+1. Expand the complete `R=2, u mod 2^8, u mod 9=2` target frontier into exact
+   target-fixed outgoing branches at compatible precision.
+2. Test whether one rational cusp base (starting with `23/22`) survives every
+   new legal branch; route failures into explicit exceptional cylinders.
+3. Close any finite exact components and run the rational max-times
+   difference solver; classify every noncontracting witness as a realizable
+   itinerary or a quotient ghost.
+4. Retain chunked/streaming Galerkin and mixed-adic wavelet work as numerical
+   support, not the primary theorem-facing lane.
+5. Awaiting user: Chang/Siegel outreach emails and arXiv submission decision.
 
 ## Constraints
 - NEVER git push without asking in this conversation (CLAUDE.md hard rule 5).
@@ -34,10 +37,21 @@ branches remain.
 - DECISION: reject unresolved transition windows by default, label float64
   vectors as numerical rather than exact, and cap in-memory work at `250,000`
   states and `2,000,000` retained target entries.
+- DECISION: use numerical PECM data only to rank a seed; require the extra
+  `2`-adic bit for an exact valuation word and exact congruence coverage for
+  every reported branch.
+- DECISION: do not run or quote Karp on an open exact target frontier.
 
 ## Facts
-- Tests: `uv run python -m pytest -q` with host CUDA access -> 231 passed in
-  2.37s.
+- Tests: `uv run python -m pytest -q` -> 246 passed in 3.14s.
+- Exact selected root: `(R,u mod 2^11,u mod 9)=(9,55,2)`.
+- Full word `(1^8,3,2,4)` has `(m,A,B)=(11,17,186875)` and exact slope
+  `177147/131072 > 1`; its one-word affine fixed point is the noninteger
+  `-7475/1843`.
+- Refinement to `u mod 2^18` produces exactly `128` verified children and all
+  `128` odd target residues modulo `256` at `(R',u mod 9)=(2,2)`.
+- Exact local cusp bound:
+  `H(F(n),2)/H(n,9) <= 7164821035427968/7236312975589017 < 1`.
 - Galerkin smoke ladder: `(4,0) -> (6,1) -> (8,2)`,
   `R = 2..30`, common `alpha = 0.55`, 0 unresolved samples.
 - Numerical `max(Mh/h)`: `0.465489`, `0.502925`, `0.529990`.
@@ -51,12 +65,20 @@ branches remain.
   sampled adjacent pairs are non-compatible.
 - Artifact:
   `docs/reports/pecm_cross_resolution_consistency.json`.
+- Exact branch artifact:
+  `docs/reports/pecm_exact_selected_cylinder_pilot.json`.
 - GPU: RTX 3090 Ti 24564 MiB (~21.5 GB free), CuPy 14.0.1 OK.
 - (14,5) run completed 2026-06-18: 57.7M states, finite_ratio_max=0.5357, artifact docs/runs/pecm_14_5_scaled_gpu_20260618_015521/.
 - (16,6) estimate: ~692.7M states, ~2.77B transitions (docs/collatz_strategy.md).
 - CLI: `python -m collatz_exp.experiments --post-exit-scaled-perron --post-exit-configs K:L --post-exit-operator-mode {dense_target_cache,streaming,gpu_target_cache,auto} --post-exit-checkpoint <npz> --post-exit-scaled-perron-output <json>`.
 
 ## Done
+- Exact selected-cylinder branch pilot
+  (`collatz_exp/symbolic_branch_certificate.py`) — RESULT: correct
+  `2^(A+1)` exact-word cylinders, exact post-exit precision carry, exhaustive
+  `128`-leaf partition, exact affine/cycle audit, local rational tail-cusp
+  certificate, explicit open-frontier status, and a reusable exact rational
+  max-times feasibility/obstruction solver.
 - Common-alpha PECM vector export (`collatz_exp/pecm_vector_export.py`) —
   RESULT: deterministic state hashes and full per-state `h`, `Mh/h`, and graph
   role records; unresolved windows rejected by default; float output explicitly

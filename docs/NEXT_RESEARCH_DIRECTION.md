@@ -70,6 +70,66 @@ its target array and fibers into Python objects would require multiple
 gigabytes. A chunked arithmetic-parent-map implementation is now a concrete
 prerequisite rather than an optional optimization.
 
+## Implementation status: first exact branch cylinder
+
+The worst concrete live-target ratio in the smoke ladder was used only to
+*select* one adversarial seed. Its branch coverage was then rebuilt from exact
+arithmetic. The selected root is
+
+```text
+(R, u mod 2^11, u mod 3^2) = (9, 55, 2).
+```
+
+Every member of this infinite cylinder follows the full valuation word
+
+```text
+(1,1,1,1,1,1,1,1,3,2,4)
+```
+
+until reentry at `R' = 2`. The exact macro is
+
+```text
+F(n) = (177147 n + 186875) / 131072,
+```
+
+so it is genuinely expanding in ordinary size: `3^11 > 2^17`. Fixing the
+target modulo `2^8` requires source precision
+
+```text
+A_post + R' + 8 - 1 = 9 + 2 + 8 - 1 = 18.
+```
+
+The root therefore partitions into exactly `128` children modulo `2^18`.
+Exact replay verifies every child, and their targets cover all `128` odd
+classes modulo `2^8` at `(R', u mod 3^2) = (2,2)`.
+
+The same computation produces a small symbolic success. On the entire
+selected root,
+
+```text
+H(n,R) = n * (23/22)^R
+```
+
+satisfies
+
+```text
+H(F(n),2) / H(n,9)
+    <= 7164821035427968 / 7236312975589017
+    < 1.
+```
+
+This is an exact local cylinder inequality, not a global Lyapunov theorem. The
+`128` target nodes have not yet been expanded, so the transition graph is open
+and max-plus/Karp is correctly marked not applicable. The result identifies a
+concrete candidate principal part—positive tail depth can pay for an expanding
+size branch—and turns the next step into a sharp question: does one cusp base
+survive exact expansion of the full target frontier?
+
+Implementation and artifact:
+
+- `collatz_exp/symbolic_branch_certificate.py`
+- `docs/reports/pecm_exact_selected_cylinder_pilot.json`
+
 ## 0. Mathematical preflight
 
 Four issues must be handled before raw vector comparisons have proof-facing
