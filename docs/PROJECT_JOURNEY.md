@@ -34,8 +34,8 @@ present the *results*; this document presents the *path*.
 
 **Initial state:** one Python file `collatz_certificate_search.py`, ~5 KB.
 
-**Current state:** `collatz_exp/` package with 94 modules, 325 passing
-tests, 120 JSON artifact reports, seven integrated reference-paper threads, and
+**Current state:** `collatz_exp/` package with 95 modules, 460 passing
+tests, 121 JSON artifact reports, seven integrated reference-paper threads, and
 a complete renewal-theoretic / operator-theoretic framework.
 
 ---
@@ -1317,6 +1317,118 @@ successive resonances has been proved.
 
 Artifact: `docs/reports/pecm_affine_ghost_atlas.json`.
 
+### 19.5 The recursive atlas splits into a finite parser and an infinite ray
+
+The four open expanding exits were derived rather than sampled. At an
+exhausted source chart,
+
+```text
+D_W n+B_W=2^e z,  z odd,
+```
+
+the new source-relative first-free rule follows all valuations fixed by `e`
+and stops after the first valuation `offset+q` whose extra depth depends on
+`z`. The fixed valuation total before `q` is exactly `e`, so the target has
+`A_target=e+q`.
+
+This immediately changed the interpretation of resonance. Since the target
+word is exact,
+
+```text
+v2(L_target)>=A_target+1>e.
+```
+
+The same-point integer identity
+
+```text
+G=D_source L_target-D_target L_source
+```
+
+then forces `G!=0` and `v2(G)=e`. Every induced first-free edge is resonant
+by theorem. The four prior targets contribute `18` residual templates and
+`19` expanding edges; no nonresonant edge occurs.
+
+The cancellation can be arbitrarily deep. On any legal resonant edge, fixing
+an arbitrary target depth `S>=A_target+1` is one linear congruence modulo
+`2^(S+1)`. It has positive odd lifts, keeps the source residual at `e`, and
+gives target repeat count `floor((S-1)/A_target)`. This rules out a uniform
+resonance-depth cap and any proof based only on chart labels. The inherited
+post-source condition is `3^M_W | z`; CRT composes it with every binary
+branch, and the implementation records an actual positive exact `W`
+predecessor. The finite ladder cylinders are likewise explicitly composed
+with the prior `W112 -> J4` seed.
+
+An alternative shortest-divergence parser does close. Every reachable chart
+has the form
+
+```text
+P_(m,a)=(1^(m-1),a),
+```
+
+and the component from `(1,1,1,3)` contains seven nodes and `18` edges. All
+edges are resonant. The finite parser still cannot carry a static
+multiplicative Lyapunov weight: its two-node `P_(2,1)<->P_(2,2)` cycle has
+exit-word slope product `81/32`.
+
+The apparent finite/infinite discrepancy is a parsing identity:
+
+```text
+(P_(m,1))^r P_(m,a)=P_((r+1)m,a).
+```
+
+Writing
+
+```text
+J_m=(1^m),  K_m=(1^(m-1),2),
+```
+
+exposes the exact source-relative ray
+
+```text
+J_m -> K_m -> J_(m+1),
+J_m || K_m=K_(2m)  (valuation-word concatenation).
+```
+
+Every finite prefix has a positive exact cylinder and increasing
+chart-boundary values. The last block in a finite prefix is only known exact;
+its maximality is certified after adding the next block as look-ahead. A
+single edge cylinder does not force all later edges.
+
+The nested infinite word selects one explicit 2-adic point:
+
+```text
+xi_m0 = -1 - (1/2) sum_(m=m0+1)^infinity
+        2^(m^2-m0^2) / 3^(m(m-1)-m0(m0-1)),
+v2(xi_m0+1)=2m0.
+```
+
+After `r` paired blocks,
+
+```text
+M_r=r(2m0+r-1),  A_r=r(2m0+r),
+```
+
+and the finite truncation of the series reproduces the exact prefix residue
+modulo `2^(A_r+1)`. Writing
+
+```text
+T_q(z)=sum_(k>=0) z^k q^(-k(k-1)/2)
+```
+
+reduces the whole family to the single rationality problem
+`T_(9/4)(2) in Q_2`, through `T_q(z)=1+z T_q(z/q)`.
+
+For the branch reached from the prior `(1,1,2)` atlas, `m0=4` and
+`xi=767 mod 1024`. The next proof-facing question is exact and narrow:
+prove that this partial-theta-type 2-adic value is not an ordinary
+nonnegative integer, or construct an `m`- and depth-dependent coercive
+Lyapunov function controlling escape along the ray.
+
+This is a real structural signal, but it is not yet one positive infinite
+orbit. The Collatz conjecture remains open.
+
+Artifact: `docs/reports/pecm_recursive_ghost_atlas.json`.
+
 ---
 
 ## 20. Lessons learned
@@ -1362,7 +1474,7 @@ Artifact: `docs/reports/pecm_affine_ghost_atlas.json`.
 All results in this journey are reproducible:
 
 ```bash
-# Run the full test suite (currently 325 tests passing)
+# Run the full test suite (currently 460 tests passing)
 uv run python -m pytest -q
 
 # Reproduce any artifact in docs/reports/ via the corresponding CLI:
@@ -1375,6 +1487,7 @@ uv run python -m collatz_exp.experiments \
     docs/reports/pecm_cross_resolution_consistency.json
 uv run python -m collatz_exp.symbolic_higher_r_certificate --verbose
 uv run python -m collatz_exp.affine_ghost_atlas --verbose
+uv run python -m collatz_exp.recursive_ghost_atlas --verbose
 # ... see collatz_exp/experiments.py for the full flag list
 ```
 

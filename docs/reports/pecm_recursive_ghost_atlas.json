@@ -1,0 +1,4257 @@
+{
+  "finite_verification": {
+    "digest_sha256": "129aa5075c20f6273a97abcda77b0273a24752b985374c2bb6886ff092711308",
+    "ladder_edges_checked": 62,
+    "ladder_m_range": [
+      2,
+      32
+    ],
+    "partial_theta_prefix_residues_checked": 5,
+    "passed": true,
+    "prefix_rounds_checked": 5,
+    "renormalization_identities_checked": 972,
+    "role": "bounded_exact_formula_regression_not_orbit_stress_test",
+    "seed_branch_post_source_compositions_checked": 55,
+    "seed_q_branches_checked": 55,
+    "seed_template_count": 18,
+    "seeded_ladder_prefix_compositions_checked": 5,
+    "shortest_parser_edge_count": 18,
+    "shortest_parser_node_count": 7,
+    "unbounded_depth_witnesses_checked": 19
+  },
+  "frontier": {
+    "every_legal_parser_edge_resonant": true,
+    "finite_exceptional_set_derived": false,
+    "finite_literal_first_free_chart_list_closed": false,
+    "finite_parametric_ladder_schema_derived": true,
+    "four_seed_first_free_partitions_complete": true,
+    "full_recursive_grammar_derived": false,
+    "global_chart_lyapunov_derived": false,
+    "next_exact_task": "analyze the explicit nested 2-adic ladder boundary and add the resonance lift/cylinder depth to the symbolic state",
+    "node_only_lyapunov_can_contract_every_parser_cycle": false,
+    "positive_integer_infinite_ladder_realizability_derived": false,
+    "resonance_depth_uniformly_bounded": false,
+    "shortest_parser_component_closed": true,
+    "source_relative_first_free_selection_rule_complete": true
+  },
+  "infinite_boundary": {
+    "divergent_positive_collatz_orbit_constructed": false,
+    "exact_boundary_valuation": "v2(xi_m0+1)=2*m0",
+    "first_pair_cylinder": {
+      "general_modulus": "2^(2*m0+2)",
+      "general_residue": "3*2^(2*m0)-1",
+      "m0": 4,
+      "modulus": "1024",
+      "residue": "767",
+      "v2_residue_plus_one": 8
+    },
+    "if_positive_then": "the chart-boundary values would grow without bound",
+    "infinite_word": "product over m>=m0 of valuation-word concatenations (J_m || K_m), equivalently product over m>=m0 of K_(2m)",
+    "next_theorem_target": "prove the explicit 2-adic partial-theta value is not a nonnegative integer, or control the m-to-infinity escape with a coercive cylinder-depth-dependent Lyapunov function",
+    "paired_prefix_exponents": {
+      "after_r_pairs_A": "r*(2*m0+r)",
+      "after_r_pairs_M": "r*(2*m0+r-1)",
+      "finite_series_check": "terms m=m0+1,...,m0+r reproduce the exact prefix residue modulo 2^(A_r+1)"
+    },
+    "partial_theta_formula": "xi_m0 = -1 - (1/2)*sum_(m=m0+1)^infinity 2^(m^2-m0^2) / 3^(m*(m-1)-m0*(m0-1)) in Z_2",
+    "positive_integer_infinite_ladder_realizability_derived": false,
+    "positive_integer_realizability": "open",
+    "proof_of_boundary_valuation": "including the outer 1/2, the first term of xi+1 is -2^(2*m0)/3^(2*m0); the next valuation is 4*m0+3",
+    "status": "explicit_2_adic_point_positive_integer_status_open",
+    "tschakaloff_reduction": {
+      "definition": "T_q(z)=sum_(k>=0) z^k*q^(-k*(k-1)/2)",
+      "formula": "xi_m0=-1-(4/9)^m0*T_(9/4)(2*(4/9)^(m0+1))",
+      "functional_equation": "T_q(z)=1+z*T_q(z/q)",
+      "irrationality_derived": false,
+      "master_equivalence": "rationality of any ladder boundary reduces through the functional equation to Q_2-rationality of T_(9/4)(2)",
+      "q": {
+        "denominator": "4",
+        "numerator": "9"
+      },
+      "sufficient_exclusion_target": "prove T_(9/4)(2) is not rational in Q_2"
+    }
+  },
+  "max_plus": {
+    "finite_karp_proves_global_contraction": false,
+    "finite_parser_available": true,
+    "reason": "all parser charts expand, static node weights cancel around directed cycles, and renormalization exposes escape to unbounded macro complexity",
+    "required_extension": "an n-dependent, cylinder-depth-dependent, or bundled-exit weight",
+    "status": "finite_node_only_cycle_test_is_insufficient"
+  },
+  "parametric_ladder": {
+    "J_exit": {
+      "normal_form": "C_m*(n+1)=2^m*z",
+      "q": "v2(3^m*z-C_m)",
+      "q_equals_one_target": "K_m"
+    },
+    "K_exit": {
+      "normal_form": "E_m*n+C_m=2^m*z",
+      "q": "v2(3^(m+1)*z+E_m-6*C_m)",
+      "q_equals_one_target": "J_(m+1)"
+    },
+    "acyclic_escape": "m increases after each two-edge ladder segment",
+    "arbitrarily_long_finite_positive_paths_derived": true,
+    "each_edge_forces_the_next_edge_for_every_lift": false,
+    "families": {
+      "J_m": {
+        "A": "m",
+        "B": "C_m=3^m-2^m",
+        "D": "C_m",
+        "M": "m",
+        "ghost": "-1",
+        "word": "(1^m)"
+      },
+      "K_m": {
+        "A": "m+1",
+        "B": "C_m=3^m-2^m",
+        "D": "E_m=3^m-2^(m+1)",
+        "M": "m",
+        "ghost": "-C_m/E_m",
+        "word": "(1^(m-1),2)"
+      }
+    },
+    "finite_parametric_schema_derived": true,
+    "finite_prefix_certificates": [
+      {
+        "affine": {
+          "A": 9,
+          "B": "6305",
+          "D": "6049",
+          "M": 8,
+          "expanding": true
+        },
+        "block_count": 2,
+        "blocks": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            2
+          ]
+        ],
+        "concatenated_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "every_accelerated_step_is_increasing_claim": false,
+        "exact_cylinder": {
+          "modulus": "1024",
+          "parameterization": "n = 767 + 1024*t, t >= 0",
+          "residue": "767"
+        },
+        "final_block_post_exit_is_unconstrained": true,
+        "maximal_blocks_certified_by_a_successor": 1,
+        "paired_identity": "valuation-word concatenation J_m || K_m equals K_(2m)",
+        "representative_boundary_values": [
+          "767",
+          "3887",
+          "9841"
+        ],
+        "rounds": 1,
+        "start_m": 4,
+        "strictly_increasing_at_chart_boundaries": true
+      },
+      {
+        "affine": {
+          "A": 20,
+          "B": "402012745",
+          "D": "386371913",
+          "M": 18,
+          "expanding": true
+        },
+        "block_count": 4,
+        "blocks": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        ],
+        "concatenated_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "every_accelerated_step_is_increasing_claim": false,
+        "exact_cylinder": {
+          "modulus": "2097152",
+          "parameterization": "n = 892671 + 2097152*t, t >= 0",
+          "residue": "892671"
+        },
+        "final_block_post_exit_is_unconstrained": true,
+        "maximal_blocks_certified_by_a_successor": 3,
+        "paired_identity": "valuation-word concatenation J_m || K_m equals K_(2m)",
+        "representative_boundary_values": [
+          "892671",
+          "4519151",
+          "11439103",
+          "86865695",
+          "329818189"
+        ],
+        "rounds": 2,
+        "start_m": 4,
+        "strictly_increasing_at_chart_boundaries": true
+      },
+      {
+        "affine": {
+          "A": 33,
+          "B": "214199016526265",
+          "D": "205882542160057",
+          "M": 30,
+          "expanding": true
+        },
+        "block_count": 6,
+        "blocks": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        ],
+        "concatenated_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "every_accelerated_step_is_increasing_claim": false,
+        "exact_cylinder": {
+          "modulus": "17179869184",
+          "parameterization": "n = 9700220671 + 17179869184*t, t >= 0",
+          "residue": "9700220671"
+        },
+        "final_block_post_exit_is_unconstrained": true,
+        "maximal_blocks_certified_by_a_successor": 5,
+        "paired_identity": "valuation-word concatenation J_m || K_m equals K_(2m)",
+        "representative_boundary_values": [
+          "9700220671",
+          "49107367151",
+          "124303023103",
+          "943926081695",
+          "3583969341439",
+          "40823650779839",
+          "232503448582057"
+        ],
+        "rounds": 3,
+        "start_m": 4,
+        "strictly_increasing_at_chart_boundaries": true
+      },
+      {
+        "affine": {
+          "A": 48,
+          "B": "1024548200528990389105",
+          "D": "984770620708634522225",
+          "M": 44,
+          "expanding": true
+        },
+        "block_count": 8,
+        "blocks": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        ],
+        "concatenated_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "every_accelerated_step_is_increasing_claim": false,
+        "exact_cylinder": {
+          "modulus": "562949953421312",
+          "parameterization": "n = 184779193294591 + 562949953421312*t, t >= 0",
+          "residue": "184779193294591"
+        },
+        "final_block_post_exit_is_unconstrained": true,
+        "maximal_blocks_certified_by_a_successor": 7,
+        "paired_identity": "valuation-word concatenation J_m || K_m equals K_(2m)",
+        "representative_boundary_values": [
+          "184779193294591",
+          "935444666053871",
+          "2367844310948863",
+          "17980817736267935",
+          "68270917342392319",
+          "777648417853187519",
+          "4428950754804482047",
+          "75672775787167204991",
+          "646470158775526083271"
+        ],
+        "rounds": 4,
+        "start_m": 4,
+        "strictly_increasing_at_chart_boundaries": true
+      },
+      {
+        "affine": {
+          "A": 65,
+          "B": "44103452637351548562881382065",
+          "D": "42391158238322715366875329969",
+          "M": 60,
+          "expanding": true
+        },
+        "block_count": 10,
+        "blocks": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        ],
+        "concatenated_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "every_accelerated_step_is_increasing_claim": false,
+        "exact_cylinder": {
+          "modulus": "73786976294838206464",
+          "parameterization": "n = 40692459212299411199 + 73786976294838206464*t, t >= 0",
+          "residue": "40692459212299411199"
+        },
+        "final_block_post_exit_is_unconstrained": true,
+        "maximal_blocks_certified_by_a_successor": 9,
+        "paired_identity": "valuation-word concatenation J_m || K_m equals K_(2m)",
+        "representative_boundary_values": [
+          "40692459212299411199",
+          "206005574762265769199",
+          "521451611116985228287",
+          "3959773171919606577311",
+          "15034763762132256223231",
+          "171255355978037731042751",
+          "975352769593668015079423",
+          "16664816461729312101396095",
+          "142367006257039084241223679",
+          "3648710656454818092604174079",
+          "46756231673828245128078097927"
+        ],
+        "rounds": 5,
+        "start_m": 4,
+        "strictly_increasing_at_chart_boundaries": true
+      }
+    ],
+    "full_recursive_grammar_derived": false,
+    "literal_reachable_chart_labels_unbounded": true,
+    "sample_edges_m_2_through_8": [
+      {
+        "direction": "J_m_to_K_m",
+        "gap_G": "20",
+        "gap_formula": "(3^m - 2^m)*2^m",
+        "gap_v2": 2,
+        "m": 2,
+        "q": 1,
+        "residual_depth": 2,
+        "resonant": true,
+        "source_word": [
+          1,
+          1
+        ],
+        "target_exact_cylinder": {
+          "modulus": "16",
+          "residue": "11"
+        },
+        "target_word": [
+          1,
+          2
+        ]
+      },
+      {
+        "direction": "K_m_to_J_m_plus_1",
+        "gap_G": "-76",
+        "gap_formula": "-(3^(m+1) - 2^(m+1))*2^m",
+        "gap_v2": 2,
+        "m": 2,
+        "q": 1,
+        "residual_depth": 2,
+        "resonant": true,
+        "source_word": [
+          1,
+          2
+        ],
+        "target_exact_cylinder": {
+          "modulus": "16",
+          "residue": "15"
+        },
+        "target_word": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "direction": "J_m_to_K_m",
+        "gap_G": "152",
+        "gap_formula": "(3^m - 2^m)*2^m",
+        "gap_v2": 3,
+        "m": 3,
+        "q": 1,
+        "residual_depth": 3,
+        "resonant": true,
+        "source_word": [
+          1,
+          1,
+          1
+        ],
+        "target_exact_cylinder": {
+          "modulus": "32",
+          "residue": "7"
+        },
+        "target_word": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "direction": "K_m_to_J_m_plus_1",
+        "gap_G": "-520",
+        "gap_formula": "-(3^(m+1) - 2^(m+1))*2^m",
+        "gap_v2": 3,
+        "m": 3,
+        "q": 1,
+        "residual_depth": 3,
+        "resonant": true,
+        "source_word": [
+          1,
+          1,
+          2
+        ],
+        "target_exact_cylinder": {
+          "modulus": "32",
+          "residue": "31"
+        },
+        "target_word": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "direction": "J_m_to_K_m",
+        "gap_G": "1040",
+        "gap_formula": "(3^m - 2^m)*2^m",
+        "gap_v2": 4,
+        "m": 4,
+        "q": 1,
+        "residual_depth": 4,
+        "resonant": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_exact_cylinder": {
+          "modulus": "64",
+          "residue": "47"
+        },
+        "target_word": [
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "direction": "K_m_to_J_m_plus_1",
+        "gap_G": "-3376",
+        "gap_formula": "-(3^(m+1) - 2^(m+1))*2^m",
+        "gap_v2": 4,
+        "m": 4,
+        "q": 1,
+        "residual_depth": 4,
+        "resonant": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_exact_cylinder": {
+          "modulus": "64",
+          "residue": "63"
+        },
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "direction": "J_m_to_K_m",
+        "gap_G": "6752",
+        "gap_formula": "(3^m - 2^m)*2^m",
+        "gap_v2": 5,
+        "m": 5,
+        "q": 1,
+        "residual_depth": 5,
+        "resonant": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_exact_cylinder": {
+          "modulus": "128",
+          "residue": "31"
+        },
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "direction": "K_m_to_J_m_plus_1",
+        "gap_G": "-21280",
+        "gap_formula": "-(3^(m+1) - 2^(m+1))*2^m",
+        "gap_v2": 5,
+        "m": 5,
+        "q": 1,
+        "residual_depth": 5,
+        "resonant": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_exact_cylinder": {
+          "modulus": "128",
+          "residue": "127"
+        },
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "direction": "J_m_to_K_m",
+        "gap_G": "42560",
+        "gap_formula": "(3^m - 2^m)*2^m",
+        "gap_v2": 6,
+        "m": 6,
+        "q": 1,
+        "residual_depth": 6,
+        "resonant": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_exact_cylinder": {
+          "modulus": "256",
+          "residue": "191"
+        },
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "direction": "K_m_to_J_m_plus_1",
+        "gap_G": "-131776",
+        "gap_formula": "-(3^(m+1) - 2^(m+1))*2^m",
+        "gap_v2": 6,
+        "m": 6,
+        "q": 1,
+        "residual_depth": 6,
+        "resonant": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_exact_cylinder": {
+          "modulus": "256",
+          "residue": "255"
+        },
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "direction": "J_m_to_K_m",
+        "gap_G": "263552",
+        "gap_formula": "(3^m - 2^m)*2^m",
+        "gap_v2": 7,
+        "m": 7,
+        "q": 1,
+        "residual_depth": 7,
+        "resonant": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_exact_cylinder": {
+          "modulus": "512",
+          "residue": "127"
+        },
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "direction": "K_m_to_J_m_plus_1",
+        "gap_G": "-807040",
+        "gap_formula": "-(3^(m+1) - 2^(m+1))*2^m",
+        "gap_v2": 7,
+        "m": 7,
+        "q": 1,
+        "residual_depth": 7,
+        "resonant": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_exact_cylinder": {
+          "modulus": "512",
+          "residue": "511"
+        },
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "direction": "J_m_to_K_m",
+        "gap_G": "1614080",
+        "gap_formula": "(3^m - 2^m)*2^m",
+        "gap_v2": 8,
+        "m": 8,
+        "q": 1,
+        "residual_depth": 8,
+        "resonant": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_exact_cylinder": {
+          "modulus": "1024",
+          "residue": "767"
+        },
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "direction": "K_m_to_J_m_plus_1",
+        "gap_G": "-4907776",
+        "gap_formula": "-(3^(m+1) - 2^(m+1))*2^m",
+        "gap_v2": 8,
+        "m": 8,
+        "q": 1,
+        "residual_depth": 8,
+        "resonant": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_exact_cylinder": {
+          "modulus": "1024",
+          "residue": "1023"
+        },
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "seed_reachability": {
+      "finite_prefix_compositions": [
+        {
+          "W112_first_free_q": 1,
+          "W112_residual_at_landing": 3,
+          "composition": {
+            "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+            "positive_composed_subcylinder": {
+              "landing_residue": "27391",
+              "modulus": "27648",
+              "parameterization": "n = 27391 + 27648*t, t >= 0"
+            },
+            "positive_source_predecessor": "16231",
+            "required_landing_mod_3_power": {
+              "modulus": "27",
+              "residue": "13"
+            },
+            "required_two_adic_class": {
+              "modulus": "1024",
+              "residue": "767"
+            },
+            "source_word": [
+              1,
+              1,
+              2
+            ],
+            "source_word_exact_at_predecessor": true,
+            "source_word_lands_at_composed_residue": true
+          },
+          "ladder_prefix_modulus": "1024",
+          "ladder_prefix_residue": "767",
+          "rounds": 1
+        },
+        {
+          "W112_first_free_q": 1,
+          "W112_residual_at_landing": 3,
+          "composition": {
+            "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+            "positive_composed_subcylinder": {
+              "landing_residue": "5086975",
+              "modulus": "56623104",
+              "parameterization": "n = 5086975 + 56623104*t, t >= 0"
+            },
+            "positive_source_predecessor": "3014503",
+            "required_landing_mod_3_power": {
+              "modulus": "27",
+              "residue": "13"
+            },
+            "required_two_adic_class": {
+              "modulus": "2097152",
+              "residue": "892671"
+            },
+            "source_word": [
+              1,
+              1,
+              2
+            ],
+            "source_word_exact_at_predecessor": true,
+            "source_word_lands_at_composed_residue": true
+          },
+          "ladder_prefix_modulus": "2097152",
+          "ladder_prefix_residue": "892671",
+          "rounds": 2
+        },
+        {
+          "W112_first_free_q": 1,
+          "W112_residual_at_landing": 3,
+          "composition": {
+            "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+            "positive_composed_subcylinder": {
+              "landing_residue": "422017081087",
+              "modulus": "463856467968",
+              "parameterization": "n = 422017081087 + 463856467968*t, t >= 0"
+            },
+            "positive_source_predecessor": "250084196199",
+            "required_landing_mod_3_power": {
+              "modulus": "27",
+              "residue": "13"
+            },
+            "required_two_adic_class": {
+              "modulus": "17179869184",
+              "residue": "9700220671"
+            },
+            "source_word": [
+              1,
+              1,
+              2
+            ],
+            "source_word_exact_at_predecessor": true,
+            "source_word_lands_at_composed_residue": true
+          },
+          "ladder_prefix_modulus": "17179869184",
+          "ladder_prefix_residue": "9700220671",
+          "rounds": 3
+        },
+        {
+          "W112_first_free_q": 1,
+          "W112_residual_at_landing": 3,
+          "composition": {
+            "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+            "positive_composed_subcylinder": {
+              "landing_residue": "6940178634350335",
+              "modulus": "15199648742375424",
+              "parameterization": "n = 6940178634350335 + 15199648742375424*t, t >= 0"
+            },
+            "positive_source_predecessor": "4112698449985383",
+            "required_landing_mod_3_power": {
+              "modulus": "27",
+              "residue": "13"
+            },
+            "required_two_adic_class": {
+              "modulus": "562949953421312",
+              "residue": "184779193294591"
+            },
+            "source_word": [
+              1,
+              1,
+              2
+            ],
+            "source_word_exact_at_predecessor": true,
+            "source_word_lands_at_composed_residue": true
+          },
+          "ladder_prefix_modulus": "562949953421312",
+          "ladder_prefix_residue": "184779193294591",
+          "rounds": 4
+        },
+        {
+          "W112_first_free_q": 1,
+          "W112_residual_at_landing": 3,
+          "composition": {
+            "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+            "positive_composed_subcylinder": {
+              "landing_residue": "1073710127340034301695",
+              "modulus": "1992248359960631574528",
+              "parameterization": "n = 1073710127340034301695 + 1992248359960631574528*t, t >= 0"
+            },
+            "positive_source_predecessor": "636272668053353660263",
+            "required_landing_mod_3_power": {
+              "modulus": "27",
+              "residue": "13"
+            },
+            "required_two_adic_class": {
+              "modulus": "73786976294838206464",
+              "residue": "40692459212299411199"
+            },
+            "source_word": [
+              1,
+              1,
+              2
+            ],
+            "source_word_exact_at_predecessor": true,
+            "source_word_lands_at_composed_residue": true
+          },
+          "ladder_prefix_modulus": "73786976294838206464",
+          "ladder_prefix_residue": "40692459212299411199",
+          "rounds": 5
+        }
+      ],
+      "gap_G": "-520",
+      "gap_v2": 3,
+      "q": 1,
+      "residual_depth": 3,
+      "source": [
+        1,
+        1,
+        2
+      ],
+      "target": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "status": "exact_source_relative_first_free_subgrammar",
+    "transition_schema": "J_m -> K_m -> J_(m+1), for every m>=2"
+  },
+  "proof": {
+    "all_four_seed_partitions_derived": true,
+    "arbitrarily_long_finite_increasing_chart_paths_derived": true,
+    "canonical_input_frontier_link_verified": true,
+    "claim_kind": "exact_symbolic_grammar_and_parametric_obstruction_with_bounded_formula_regression",
+    "deterministic_source_relative_first_free_rule_derived": true,
+    "explicit_infinite_2_adic_boundary_derived": true,
+    "finite_shortest_parser_component_derived": true,
+    "global_collatz_proof": false,
+    "global_cross_chart_lyapunov_derived": false,
+    "global_recursive_grammar_closed": false,
+    "parametric_ladder_subgrammar_derived": true,
+    "positive_integer_infinite_path_derived": false,
+    "potential_signal": "yes: the obstruction has an exact finite-parser plus self-similar macro description and an explicit 2-adic boundary; no: its positive-integer exclusion is still open",
+    "universal_induced_resonance_theorem_derived": true
+  },
+  "provenance": {
+    "actual_sha256": "93fad5a48ad639d6ea7a778a2cea0976e569d226155edad71e64c89c22660eaf",
+    "artifact_content_validation": {
+      "chart_selection_left_open": true,
+      "errors": [],
+      "exists": true,
+      "fully_verified": true,
+      "global_proof_disclaimed": true,
+      "json_parsed": true,
+      "type_matches": true,
+      "w112_exit_partition_complete": true
+    },
+    "artifact_snapshot_match": true,
+    "canonical_prior_frontier_verified": true,
+    "expected_sha256": "93fad5a48ad639d6ea7a778a2cea0976e569d226155edad71e64c89c22660eaf",
+    "input_path": "docs/reports/pecm_affine_ghost_atlas.json",
+    "scope_relation": "canonical_prior_frontier_verified"
+  },
+  "seed_exit_grammar": {
+    "W112_seed_link": {
+      "classification": "expanding_chart",
+      "composed_source_copy_is_last_possible": true,
+      "contracting_non_descent": {
+        "count": null,
+        "first_source": null,
+        "last_source": null
+      },
+      "exact_two_adic_source_cylinder": {
+        "modulus": "32",
+        "parameterization": "n = 31 + 32*t, t >= 0",
+        "residue": "31"
+      },
+      "gap_G": "-520",
+      "gap_v2": 3,
+      "post_source_copy_reachability": {
+        "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+        "positive_composed_subcylinder": {
+          "landing_residue": "607",
+          "modulus": "864",
+          "parameterization": "n = 607 + 864*t, t >= 0"
+        },
+        "positive_source_predecessor": "359",
+        "required_landing_mod_3_power": {
+          "modulus": "27",
+          "residue": "13"
+        },
+        "required_two_adic_class": {
+          "modulus": "32",
+          "residue": "31"
+        },
+        "source_word": [
+          1,
+          1,
+          2
+        ],
+        "source_word_exact_at_predecessor": true,
+        "source_word_lands_at_composed_residue": true
+      },
+      "q": 1,
+      "residual_depth": 3,
+      "resonant_at_source_residual": true,
+      "source_word": [
+        1,
+        1,
+        2
+      ],
+      "target_affine": {
+        "A": 4,
+        "B": "65",
+        "D": "65",
+        "M": 4,
+        "ghost": {
+          "denominator": "1",
+          "numerator": "-1"
+        },
+        "slope": {
+          "denominator": "16",
+          "numerator": "81"
+        }
+      },
+      "target_linear_at_representative": "2080",
+      "target_linear_v2_at_representative": 5,
+      "target_word": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "all_omitted_q_are_contracting": true,
+    "contracting_branches_descend_except_terminal_one": true,
+    "expanding_edge_count": 19,
+    "expanding_edges": [
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "16",
+          "parameterization": "n = 15 + 16*t, t >= 0",
+          "residue": "15"
+        },
+        "gap_G": "-76",
+        "gap_v2": 2,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "31",
+            "modulus": "144",
+            "parameterization": "n = 31 + 144*t, t >= 0"
+          },
+          "positive_source_predecessor": "27",
+          "required_landing_mod_3_power": {
+            "modulus": "9",
+            "residue": "4"
+          },
+          "required_two_adic_class": {
+            "modulus": "16",
+            "residue": "15"
+          },
+          "source_word": [
+            1,
+            2
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 1,
+        "residual_depth": 2,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          2
+        ],
+        "target_affine": {
+          "A": 3,
+          "B": "19",
+          "D": "19",
+          "M": 3,
+          "ghost": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "slope": {
+            "denominator": "8",
+            "numerator": "27"
+          }
+        },
+        "target_linear_at_representative": "304",
+        "target_linear_v2_at_representative": 4,
+        "target_word": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "32",
+          "parameterization": "n = 7 + 32*t, t >= 0",
+          "residue": "7"
+        },
+        "gap_G": "-36",
+        "gap_v2": 2,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "103",
+            "modulus": "288",
+            "parameterization": "n = 103 + 288*t, t >= 0"
+          },
+          "positive_source_predecessor": "91",
+          "required_landing_mod_3_power": {
+            "modulus": "9",
+            "residue": "4"
+          },
+          "required_two_adic_class": {
+            "modulus": "32",
+            "residue": "7"
+          },
+          "source_word": [
+            1,
+            2
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 2,
+        "residual_depth": 2,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          2
+        ],
+        "target_affine": {
+          "A": 4,
+          "B": "19",
+          "D": "11",
+          "M": 3,
+          "ghost": {
+            "denominator": "11",
+            "numerator": "-19"
+          },
+          "slope": {
+            "denominator": "16",
+            "numerator": "27"
+          }
+        },
+        "target_linear_at_representative": "96",
+        "target_linear_v2_at_representative": 5,
+        "target_word": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "16",
+          "parameterization": "n = 11 + 16*t, t >= 0",
+          "residue": "11"
+        },
+        "gap_G": "260",
+        "gap_v2": 2,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "971",
+            "modulus": "1296",
+            "parameterization": "n = 971 + 1296*t, t >= 0"
+          },
+          "positive_source_predecessor": "191",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "80"
+          },
+          "required_two_adic_class": {
+            "modulus": "16",
+            "residue": "11"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 1,
+        "residual_depth": 2,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_affine": {
+          "A": 3,
+          "B": "5",
+          "D": "1",
+          "M": 2,
+          "ghost": {
+            "denominator": "1",
+            "numerator": "-5"
+          },
+          "slope": {
+            "denominator": "8",
+            "numerator": "9"
+          }
+        },
+        "target_linear_at_representative": "16",
+        "target_linear_v2_at_representative": 4,
+        "target_word": [
+          1,
+          2
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "32",
+          "parameterization": "n = 7 + 32*t, t >= 0",
+          "residue": "7"
+        },
+        "gap_G": "520",
+        "gap_v2": 3,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "647",
+            "modulus": "2592",
+            "parameterization": "n = 647 + 2592*t, t >= 0"
+          },
+          "positive_source_predecessor": "127",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "80"
+          },
+          "required_two_adic_class": {
+            "modulus": "32",
+            "residue": "7"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 1,
+        "residual_depth": 3,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_affine": {
+          "A": 4,
+          "B": "19",
+          "D": "11",
+          "M": 3,
+          "ghost": {
+            "denominator": "11",
+            "numerator": "-19"
+          },
+          "slope": {
+            "denominator": "16",
+            "numerator": "27"
+          }
+        },
+        "target_linear_at_representative": "96",
+        "target_linear_v2_at_representative": 5,
+        "target_word": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "64",
+          "parameterization": "n = 47 + 64*t, t >= 0",
+          "residue": "47"
+        },
+        "gap_G": "1040",
+        "gap_v2": 4,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "3887",
+            "modulus": "5184",
+            "parameterization": "n = 3887 + 5184*t, t >= 0"
+          },
+          "positive_source_predecessor": "767",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "80"
+          },
+          "required_two_adic_class": {
+            "modulus": "64",
+            "residue": "47"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 1,
+        "residual_depth": 4,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_affine": {
+          "A": 5,
+          "B": "65",
+          "D": "49",
+          "M": 4,
+          "ghost": {
+            "denominator": "49",
+            "numerator": "-65"
+          },
+          "slope": {
+            "denominator": "32",
+            "numerator": "81"
+          }
+        },
+        "target_linear_at_representative": "2368",
+        "target_linear_v2_at_representative": 6,
+        "target_word": [
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "128",
+          "parameterization": "n = 79 + 128*t, t >= 0",
+          "residue": "79"
+        },
+        "gap_G": "3120",
+        "gap_v2": 4,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "6479",
+            "modulus": "10368",
+            "parameterization": "n = 6479 + 10368*t, t >= 0"
+          },
+          "positive_source_predecessor": "1279",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "80"
+          },
+          "required_two_adic_class": {
+            "modulus": "128",
+            "residue": "79"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 2,
+        "residual_depth": 4,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_affine": {
+          "A": 6,
+          "B": "65",
+          "D": "17",
+          "M": 4,
+          "ghost": {
+            "denominator": "17",
+            "numerator": "-65"
+          },
+          "slope": {
+            "denominator": "64",
+            "numerator": "81"
+          }
+        },
+        "target_linear_at_representative": "1408",
+        "target_linear_v2_at_representative": 7,
+        "target_word": [
+          1,
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "16",
+          "parameterization": "n = 11 + 16*t, t >= 0",
+          "residue": "11"
+        },
+        "gap_G": "180",
+        "gap_v2": 2,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "283",
+            "modulus": "1296",
+            "parameterization": "n = 283 + 1296*t, t >= 0"
+          },
+          "positive_source_predecessor": "111",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "40"
+          },
+          "required_two_adic_class": {
+            "modulus": "16",
+            "residue": "11"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 1,
+        "residual_depth": 2,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_affine": {
+          "A": 3,
+          "B": "5",
+          "D": "1",
+          "M": 2,
+          "ghost": {
+            "denominator": "1",
+            "numerator": "-5"
+          },
+          "slope": {
+            "denominator": "8",
+            "numerator": "9"
+          }
+        },
+        "target_linear_at_representative": "16",
+        "target_linear_v2_at_representative": 4,
+        "target_word": [
+          1,
+          2
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "32",
+          "parameterization": "n = 7 + 32*t, t >= 0",
+          "residue": "7"
+        },
+        "gap_G": "216",
+        "gap_v2": 3,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "1255",
+            "modulus": "2592",
+            "parameterization": "n = 1255 + 2592*t, t >= 0"
+          },
+          "positive_source_predecessor": "495",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "40"
+          },
+          "required_two_adic_class": {
+            "modulus": "32",
+            "residue": "7"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 1,
+        "residual_depth": 3,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_affine": {
+          "A": 4,
+          "B": "19",
+          "D": "11",
+          "M": 3,
+          "ghost": {
+            "denominator": "11",
+            "numerator": "-19"
+          },
+          "slope": {
+            "denominator": "16",
+            "numerator": "27"
+          }
+        },
+        "target_linear_at_representative": "96",
+        "target_linear_v2_at_representative": 5,
+        "target_word": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "64",
+          "parameterization": "n = 63 + 64*t, t >= 0",
+          "residue": "63"
+        },
+        "gap_G": "-3376",
+        "gap_v2": 4,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "3199",
+            "modulus": "5184",
+            "parameterization": "n = 3199 + 5184*t, t >= 0"
+          },
+          "positive_source_predecessor": "1263",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "40"
+          },
+          "required_two_adic_class": {
+            "modulus": "64",
+            "residue": "63"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 1,
+        "residual_depth": 4,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_affine": {
+          "A": 5,
+          "B": "211",
+          "D": "211",
+          "M": 5,
+          "ghost": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "slope": {
+            "denominator": "32",
+            "numerator": "243"
+          }
+        },
+        "target_linear_at_representative": "13504",
+        "target_linear_v2_at_representative": 6,
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "128",
+          "parameterization": "n = 31 + 128*t, t >= 0",
+          "residue": "31"
+        },
+        "gap_G": "-1296",
+        "gap_v2": 4,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "5791",
+            "modulus": "10368",
+            "parameterization": "n = 5791 + 10368*t, t >= 0"
+          },
+          "positive_source_predecessor": "2287",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "40"
+          },
+          "required_two_adic_class": {
+            "modulus": "128",
+            "residue": "31"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 2,
+        "residual_depth": 4,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_affine": {
+          "A": 6,
+          "B": "211",
+          "D": "179",
+          "M": 5,
+          "ghost": {
+            "denominator": "179",
+            "numerator": "-211"
+          },
+          "slope": {
+            "denominator": "64",
+            "numerator": "243"
+          }
+        },
+        "target_linear_at_representative": "5760",
+        "target_linear_v2_at_representative": 7,
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "256",
+          "parameterization": "n = 223 + 256*t, t >= 0",
+          "residue": "223"
+        },
+        "gap_G": "2864",
+        "gap_v2": 4,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "10975",
+            "modulus": "20736",
+            "parameterization": "n = 10975 + 20736*t, t >= 0"
+          },
+          "positive_source_predecessor": "4335",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "40"
+          },
+          "required_two_adic_class": {
+            "modulus": "256",
+            "residue": "223"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 3,
+        "residual_depth": 4,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_affine": {
+          "A": 7,
+          "B": "211",
+          "D": "115",
+          "M": 5,
+          "ghost": {
+            "denominator": "115",
+            "numerator": "-211"
+          },
+          "slope": {
+            "denominator": "128",
+            "numerator": "243"
+          }
+        },
+        "target_linear_at_representative": "25856",
+        "target_linear_v2_at_representative": 8,
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "128",
+          "parameterization": "n = 79 + 128*t, t >= 0",
+          "residue": "79"
+        },
+        "gap_G": "2080",
+        "gap_v2": 5,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "9679",
+            "modulus": "10368",
+            "parameterization": "n = 9679 + 10368*t, t >= 0"
+          },
+          "positive_source_predecessor": "3823",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "40"
+          },
+          "required_two_adic_class": {
+            "modulus": "128",
+            "residue": "79"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 1,
+        "residual_depth": 5,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_affine": {
+          "A": 6,
+          "B": "65",
+          "D": "17",
+          "M": 4,
+          "ghost": {
+            "denominator": "17",
+            "numerator": "-65"
+          },
+          "slope": {
+            "denominator": "64",
+            "numerator": "81"
+          }
+        },
+        "target_linear_at_representative": "1408",
+        "target_linear_v2_at_representative": 7,
+        "target_word": [
+          1,
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "16",
+          "parameterization": "n = 11 + 16*t, t >= 0",
+          "residue": "11"
+        },
+        "gap_G": "20",
+        "gap_v2": 2,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "587",
+            "modulus": "1296",
+            "parameterization": "n = 587 + 1296*t, t >= 0"
+          },
+          "positive_source_predecessor": "463",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "20"
+          },
+          "required_two_adic_class": {
+            "modulus": "16",
+            "residue": "11"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            3
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 1,
+        "residual_depth": 2,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_affine": {
+          "A": 3,
+          "B": "5",
+          "D": "1",
+          "M": 2,
+          "ghost": {
+            "denominator": "1",
+            "numerator": "-5"
+          },
+          "slope": {
+            "denominator": "8",
+            "numerator": "9"
+          }
+        },
+        "target_linear_at_representative": "16",
+        "target_linear_v2_at_representative": 4,
+        "target_word": [
+          1,
+          2
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "32",
+          "parameterization": "n = 7 + 32*t, t >= 0",
+          "residue": "7"
+        },
+        "gap_G": "-392",
+        "gap_v2": 3,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "263",
+            "modulus": "2592",
+            "parameterization": "n = 263 + 2592*t, t >= 0"
+          },
+          "positive_source_predecessor": "207",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "20"
+          },
+          "required_two_adic_class": {
+            "modulus": "32",
+            "residue": "7"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            3
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 1,
+        "residual_depth": 3,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_affine": {
+          "A": 4,
+          "B": "19",
+          "D": "11",
+          "M": 3,
+          "ghost": {
+            "denominator": "11",
+            "numerator": "-19"
+          },
+          "slope": {
+            "denominator": "16",
+            "numerator": "27"
+          }
+        },
+        "target_linear_at_representative": "96",
+        "target_linear_v2_at_representative": 5,
+        "target_word": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "64",
+          "parameterization": "n = 63 + 64*t, t >= 0",
+          "residue": "63"
+        },
+        "gap_G": "-10128",
+        "gap_v2": 4,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "4799",
+            "modulus": "5184",
+            "parameterization": "n = 4799 + 5184*t, t >= 0"
+          },
+          "positive_source_predecessor": "3791",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "20"
+          },
+          "required_two_adic_class": {
+            "modulus": "64",
+            "residue": "63"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            3
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 1,
+        "residual_depth": 4,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_affine": {
+          "A": 5,
+          "B": "211",
+          "D": "211",
+          "M": 5,
+          "ghost": {
+            "denominator": "1",
+            "numerator": "-1"
+          },
+          "slope": {
+            "denominator": "32",
+            "numerator": "243"
+          }
+        },
+        "target_linear_at_representative": "13504",
+        "target_linear_v2_at_representative": 6,
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "128",
+          "parameterization": "n = 31 + 128*t, t >= 0",
+          "residue": "31"
+        },
+        "gap_G": "-8048",
+        "gap_v2": 4,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "2207",
+            "modulus": "10368",
+            "parameterization": "n = 2207 + 10368*t, t >= 0"
+          },
+          "positive_source_predecessor": "1743",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "20"
+          },
+          "required_two_adic_class": {
+            "modulus": "128",
+            "residue": "31"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            3
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 2,
+        "residual_depth": 4,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_affine": {
+          "A": 6,
+          "B": "211",
+          "D": "179",
+          "M": 5,
+          "ghost": {
+            "denominator": "179",
+            "numerator": "-211"
+          },
+          "slope": {
+            "denominator": "64",
+            "numerator": "243"
+          }
+        },
+        "target_linear_at_representative": "5760",
+        "target_linear_v2_at_representative": 7,
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "256",
+          "parameterization": "n = 223 + 256*t, t >= 0",
+          "residue": "223"
+        },
+        "gap_G": "-3888",
+        "gap_v2": 4,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "7391",
+            "modulus": "20736",
+            "parameterization": "n = 7391 + 20736*t, t >= 0"
+          },
+          "positive_source_predecessor": "5839",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "20"
+          },
+          "required_two_adic_class": {
+            "modulus": "256",
+            "residue": "223"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            3
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 3,
+        "residual_depth": 4,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_affine": {
+          "A": 7,
+          "B": "211",
+          "D": "115",
+          "M": 5,
+          "ghost": {
+            "denominator": "115",
+            "numerator": "-211"
+          },
+          "slope": {
+            "denominator": "128",
+            "numerator": "243"
+          }
+        },
+        "target_linear_at_representative": "25856",
+        "target_linear_v2_at_representative": 8,
+        "target_word": [
+          1,
+          1,
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "128",
+          "parameterization": "n = 111 + 128*t, t >= 0",
+          "residue": "111"
+        },
+        "gap_G": "-7776",
+        "gap_v2": 5,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "8687",
+            "modulus": "10368",
+            "parameterization": "n = 8687 + 10368*t, t >= 0"
+          },
+          "positive_source_predecessor": "6863",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "20"
+          },
+          "required_two_adic_class": {
+            "modulus": "128",
+            "residue": "111"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            3
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 1,
+        "residual_depth": 5,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_affine": {
+          "A": 6,
+          "B": "227",
+          "D": "179",
+          "M": 5,
+          "ghost": {
+            "denominator": "179",
+            "numerator": "-227"
+          },
+          "slope": {
+            "denominator": "64",
+            "numerator": "243"
+          }
+        },
+        "target_linear_at_representative": "20096",
+        "target_linear_v2_at_representative": 7,
+        "target_word": [
+          1,
+          1,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "classification": "expanding_chart",
+        "composed_source_copy_is_last_possible": true,
+        "contracting_non_descent": {
+          "count": null,
+          "first_source": null,
+          "last_source": null
+        },
+        "exact_two_adic_source_cylinder": {
+          "modulus": "256",
+          "parameterization": "n = 47 + 256*t, t >= 0",
+          "residue": "47"
+        },
+        "gap_G": "-3616",
+        "gap_v2": 5,
+        "post_source_copy_reachability": {
+          "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+          "positive_composed_subcylinder": {
+            "landing_residue": "13871",
+            "modulus": "20736",
+            "parameterization": "n = 13871 + 20736*t, t >= 0"
+          },
+          "positive_source_predecessor": "10959",
+          "required_landing_mod_3_power": {
+            "modulus": "81",
+            "residue": "20"
+          },
+          "required_two_adic_class": {
+            "modulus": "256",
+            "residue": "47"
+          },
+          "source_word": [
+            1,
+            1,
+            1,
+            3
+          ],
+          "source_word_exact_at_predecessor": true,
+          "source_word_lands_at_composed_residue": true
+        },
+        "q": 2,
+        "residual_depth": 5,
+        "resonant_at_source_residual": true,
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_affine": {
+          "A": 7,
+          "B": "227",
+          "D": "115",
+          "M": 5,
+          "ghost": {
+            "denominator": "115",
+            "numerator": "-227"
+          },
+          "slope": {
+            "denominator": "128",
+            "numerator": "243"
+          }
+        },
+        "target_linear_at_representative": "5632",
+        "target_linear_v2_at_representative": 9,
+        "target_word": [
+          1,
+          1,
+          1,
+          2,
+          2
+        ]
+      }
+    ],
+    "residual_template_count": 18,
+    "seed_words": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        1,
+        3
+      ]
+    ],
+    "status": "exact_complete_first_free_partition",
+    "templates": [
+      {
+        "expanding_q": [],
+        "first_contracting_q": 1,
+        "fixed_prefix": [],
+        "fixed_valuation_total_before_q": 1,
+        "free_valuation": {
+          "coefficient": "3",
+          "constant": "-7",
+          "formula": "q = v2(3*z - 7)",
+          "offset": 1,
+          "q_minimum": 1
+        },
+        "normal_form": "1*n + 5 = 2^1*z, z odd",
+        "residual_depth": 1,
+        "source_affine": {
+          "A": 3,
+          "B": "5",
+          "D": "1",
+          "M": 2,
+          "linear_form": "1*n + 5"
+        },
+        "source_word": [
+          1,
+          2
+        ],
+        "target_step_count": 1,
+        "target_total_valuation": "1 + q"
+      },
+      {
+        "expanding_q": [
+          1,
+          2
+        ],
+        "first_contracting_q": 3,
+        "fixed_prefix": [
+          1,
+          1
+        ],
+        "fixed_valuation_total_before_q": 2,
+        "free_valuation": {
+          "coefficient": "27",
+          "constant": "-29",
+          "formula": "q = v2(27*z - 29)",
+          "offset": 0,
+          "q_minimum": 1
+        },
+        "normal_form": "1*n + 5 = 2^2*z, z odd",
+        "residual_depth": 2,
+        "source_affine": {
+          "A": 3,
+          "B": "5",
+          "D": "1",
+          "M": 2,
+          "linear_form": "1*n + 5"
+        },
+        "source_word": [
+          1,
+          2
+        ],
+        "target_step_count": 3,
+        "target_total_valuation": "2 + q"
+      },
+      {
+        "expanding_q": [],
+        "first_contracting_q": 1,
+        "fixed_prefix": [
+          1
+        ],
+        "fixed_valuation_total_before_q": 3,
+        "free_valuation": {
+          "coefficient": "9",
+          "constant": "-5",
+          "formula": "q = v2(9*z - 5)",
+          "offset": 2,
+          "q_minimum": 1
+        },
+        "normal_form": "1*n + 5 = 2^3*z, z odd",
+        "residual_depth": 3,
+        "source_affine": {
+          "A": 3,
+          "B": "5",
+          "D": "1",
+          "M": 2,
+          "linear_form": "1*n + 5"
+        },
+        "source_word": [
+          1,
+          2
+        ],
+        "target_step_count": 2,
+        "target_total_valuation": "3 + q"
+      },
+      {
+        "expanding_q": [],
+        "first_contracting_q": 1,
+        "fixed_prefix": [],
+        "fixed_valuation_total_before_q": 1,
+        "free_valuation": {
+          "coefficient": "3",
+          "constant": "-65",
+          "formula": "q = v2(3*z - 65)",
+          "offset": 1,
+          "q_minimum": 1
+        },
+        "normal_form": "65*n + 65 = 2^1*z, z odd",
+        "residual_depth": 1,
+        "source_affine": {
+          "A": 4,
+          "B": "65",
+          "D": "65",
+          "M": 4,
+          "linear_form": "65*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_step_count": 1,
+        "target_total_valuation": "1 + q"
+      },
+      {
+        "expanding_q": [
+          1
+        ],
+        "first_contracting_q": 2,
+        "fixed_prefix": [
+          1
+        ],
+        "fixed_valuation_total_before_q": 2,
+        "free_valuation": {
+          "coefficient": "9",
+          "constant": "-65",
+          "formula": "q = v2(9*z - 65)",
+          "offset": 1,
+          "q_minimum": 1
+        },
+        "normal_form": "65*n + 65 = 2^2*z, z odd",
+        "residual_depth": 2,
+        "source_affine": {
+          "A": 4,
+          "B": "65",
+          "D": "65",
+          "M": 4,
+          "linear_form": "65*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_step_count": 2,
+        "target_total_valuation": "2 + q"
+      },
+      {
+        "expanding_q": [
+          1
+        ],
+        "first_contracting_q": 2,
+        "fixed_prefix": [
+          1,
+          1
+        ],
+        "fixed_valuation_total_before_q": 3,
+        "free_valuation": {
+          "coefficient": "27",
+          "constant": "-65",
+          "formula": "q = v2(27*z - 65)",
+          "offset": 1,
+          "q_minimum": 1
+        },
+        "normal_form": "65*n + 65 = 2^3*z, z odd",
+        "residual_depth": 3,
+        "source_affine": {
+          "A": 4,
+          "B": "65",
+          "D": "65",
+          "M": 4,
+          "linear_form": "65*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_step_count": 3,
+        "target_total_valuation": "3 + q"
+      },
+      {
+        "expanding_q": [
+          1,
+          2
+        ],
+        "first_contracting_q": 3,
+        "fixed_prefix": [
+          1,
+          1,
+          1
+        ],
+        "fixed_valuation_total_before_q": 4,
+        "free_valuation": {
+          "coefficient": "81",
+          "constant": "-65",
+          "formula": "q = v2(81*z - 65)",
+          "offset": 1,
+          "q_minimum": 1
+        },
+        "normal_form": "65*n + 65 = 2^4*z, z odd",
+        "residual_depth": 4,
+        "source_affine": {
+          "A": 4,
+          "B": "65",
+          "D": "65",
+          "M": 4,
+          "linear_form": "65*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "target_step_count": 4,
+        "target_total_valuation": "4 + q"
+      },
+      {
+        "expanding_q": [],
+        "first_contracting_q": 1,
+        "fixed_prefix": [],
+        "fixed_valuation_total_before_q": 1,
+        "free_valuation": {
+          "coefficient": "3",
+          "constant": "-73",
+          "formula": "q = v2(3*z - 73)",
+          "offset": 1,
+          "q_minimum": 1
+        },
+        "normal_form": "49*n + 65 = 2^1*z, z odd",
+        "residual_depth": 1,
+        "source_affine": {
+          "A": 5,
+          "B": "65",
+          "D": "49",
+          "M": 4,
+          "linear_form": "49*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_step_count": 1,
+        "target_total_valuation": "1 + q"
+      },
+      {
+        "expanding_q": [
+          1
+        ],
+        "first_contracting_q": 2,
+        "fixed_prefix": [
+          1
+        ],
+        "fixed_valuation_total_before_q": 2,
+        "free_valuation": {
+          "coefficient": "9",
+          "constant": "-85",
+          "formula": "q = v2(9*z - 85)",
+          "offset": 1,
+          "q_minimum": 1
+        },
+        "normal_form": "49*n + 65 = 2^2*z, z odd",
+        "residual_depth": 2,
+        "source_affine": {
+          "A": 5,
+          "B": "65",
+          "D": "49",
+          "M": 4,
+          "linear_form": "49*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_step_count": 2,
+        "target_total_valuation": "2 + q"
+      },
+      {
+        "expanding_q": [
+          1
+        ],
+        "first_contracting_q": 2,
+        "fixed_prefix": [
+          1,
+          1
+        ],
+        "fixed_valuation_total_before_q": 3,
+        "free_valuation": {
+          "coefficient": "27",
+          "constant": "-103",
+          "formula": "q = v2(27*z - 103)",
+          "offset": 1,
+          "q_minimum": 1
+        },
+        "normal_form": "49*n + 65 = 2^3*z, z odd",
+        "residual_depth": 3,
+        "source_affine": {
+          "A": 5,
+          "B": "65",
+          "D": "49",
+          "M": 4,
+          "linear_form": "49*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_step_count": 3,
+        "target_total_valuation": "3 + q"
+      },
+      {
+        "expanding_q": [
+          1,
+          2,
+          3
+        ],
+        "first_contracting_q": 4,
+        "fixed_prefix": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fixed_valuation_total_before_q": 4,
+        "free_valuation": {
+          "coefficient": "243",
+          "constant": "-341",
+          "formula": "q = v2(243*z - 341)",
+          "offset": 0,
+          "q_minimum": 1
+        },
+        "normal_form": "49*n + 65 = 2^4*z, z odd",
+        "residual_depth": 4,
+        "source_affine": {
+          "A": 5,
+          "B": "65",
+          "D": "49",
+          "M": 4,
+          "linear_form": "49*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_step_count": 5,
+        "target_total_valuation": "4 + q"
+      },
+      {
+        "expanding_q": [
+          1
+        ],
+        "first_contracting_q": 2,
+        "fixed_prefix": [
+          1,
+          1,
+          1
+        ],
+        "fixed_valuation_total_before_q": 5,
+        "free_valuation": {
+          "coefficient": "81",
+          "constant": "-65",
+          "formula": "q = v2(81*z - 65)",
+          "offset": 2,
+          "q_minimum": 1
+        },
+        "normal_form": "49*n + 65 = 2^5*z, z odd",
+        "residual_depth": 5,
+        "source_affine": {
+          "A": 5,
+          "B": "65",
+          "D": "49",
+          "M": 4,
+          "linear_form": "49*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "target_step_count": 4,
+        "target_total_valuation": "5 + q"
+      },
+      {
+        "expanding_q": [],
+        "first_contracting_q": 1,
+        "fixed_prefix": [],
+        "fixed_valuation_total_before_q": 1,
+        "free_valuation": {
+          "coefficient": "3",
+          "constant": "-89",
+          "formula": "q = v2(3*z - 89)",
+          "offset": 1,
+          "q_minimum": 1
+        },
+        "normal_form": "17*n + 65 = 2^1*z, z odd",
+        "residual_depth": 1,
+        "source_affine": {
+          "A": 6,
+          "B": "65",
+          "D": "17",
+          "M": 4,
+          "linear_form": "17*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_step_count": 1,
+        "target_total_valuation": "1 + q"
+      },
+      {
+        "expanding_q": [
+          1
+        ],
+        "first_contracting_q": 2,
+        "fixed_prefix": [
+          1
+        ],
+        "fixed_valuation_total_before_q": 2,
+        "free_valuation": {
+          "coefficient": "9",
+          "constant": "-125",
+          "formula": "q = v2(9*z - 125)",
+          "offset": 1,
+          "q_minimum": 1
+        },
+        "normal_form": "17*n + 65 = 2^2*z, z odd",
+        "residual_depth": 2,
+        "source_affine": {
+          "A": 6,
+          "B": "65",
+          "D": "17",
+          "M": 4,
+          "linear_form": "17*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_step_count": 2,
+        "target_total_valuation": "2 + q"
+      },
+      {
+        "expanding_q": [
+          1
+        ],
+        "first_contracting_q": 2,
+        "fixed_prefix": [
+          1,
+          1
+        ],
+        "fixed_valuation_total_before_q": 3,
+        "free_valuation": {
+          "coefficient": "27",
+          "constant": "-179",
+          "formula": "q = v2(27*z - 179)",
+          "offset": 1,
+          "q_minimum": 1
+        },
+        "normal_form": "17*n + 65 = 2^3*z, z odd",
+        "residual_depth": 3,
+        "source_affine": {
+          "A": 6,
+          "B": "65",
+          "D": "17",
+          "M": 4,
+          "linear_form": "17*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_step_count": 3,
+        "target_total_valuation": "3 + q"
+      },
+      {
+        "expanding_q": [
+          1,
+          2,
+          3
+        ],
+        "first_contracting_q": 4,
+        "fixed_prefix": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fixed_valuation_total_before_q": 4,
+        "free_valuation": {
+          "coefficient": "243",
+          "constant": "-763",
+          "formula": "q = v2(243*z - 763)",
+          "offset": 0,
+          "q_minimum": 1
+        },
+        "normal_form": "17*n + 65 = 2^4*z, z odd",
+        "residual_depth": 4,
+        "source_affine": {
+          "A": 6,
+          "B": "65",
+          "D": "17",
+          "M": 4,
+          "linear_form": "17*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_step_count": 5,
+        "target_total_valuation": "4 + q"
+      },
+      {
+        "expanding_q": [
+          1,
+          2
+        ],
+        "first_contracting_q": 3,
+        "fixed_prefix": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "fixed_valuation_total_before_q": 5,
+        "free_valuation": {
+          "coefficient": "243",
+          "constant": "-373",
+          "formula": "q = v2(243*z - 373)",
+          "offset": 0,
+          "q_minimum": 1
+        },
+        "normal_form": "17*n + 65 = 2^5*z, z odd",
+        "residual_depth": 5,
+        "source_affine": {
+          "A": 6,
+          "B": "65",
+          "D": "17",
+          "M": 4,
+          "linear_form": "17*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_step_count": 5,
+        "target_total_valuation": "5 + q"
+      },
+      {
+        "expanding_q": [],
+        "first_contracting_q": 1,
+        "fixed_prefix": [
+          1,
+          1,
+          1
+        ],
+        "fixed_valuation_total_before_q": 6,
+        "free_valuation": {
+          "coefficient": "81",
+          "constant": "-65",
+          "formula": "q = v2(81*z - 65)",
+          "offset": 3,
+          "q_minimum": 1
+        },
+        "normal_form": "17*n + 65 = 2^6*z, z odd",
+        "residual_depth": 6,
+        "source_affine": {
+          "A": 6,
+          "B": "65",
+          "D": "17",
+          "M": 4,
+          "linear_form": "17*n + 65"
+        },
+        "source_word": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "target_step_count": 4,
+        "target_total_valuation": "6 + q"
+      }
+    ]
+  },
+  "selection_rules": {
+    "normalization_dependence": {
+      "consequence": "a finite parser and an infinite macro family can encode the same valuation itinerary",
+      "dynamical_contradiction": false,
+      "identity": "valuation-word concatenation J_m || K_m equals K_(2m)"
+    },
+    "shortest_divergence": {
+      "definition": "stop at the first expanding P_(m,a) chart that differs from the exhausted source chart",
+      "finite_from_W1113": true,
+      "status": "exact_alternative_parser"
+    },
+    "source_relative_first_free": {
+      "definition": "follow every valuation forced by the exhausted residual e, then include the first valuation offset+q whose extra depth q depends on the odd lift z",
+      "fixed_valuation_total_before_q": "e",
+      "globally_intrinsic_parsing_claim": false,
+      "status": "exact_deterministic_after_source_chart_is_chosen",
+      "target_total_valuation": "A_target=e+q"
+    }
+  },
+  "shortest_parser": {
+    "adjacency": {
+      "P_2,1": [
+        {
+          "q": 1,
+          "residual_depth": 2,
+          "target": "P_2,2"
+        }
+      ],
+      "P_2,2": [
+        {
+          "q": null,
+          "residual_depth": 2,
+          "target": "P_2,1"
+        }
+      ],
+      "P_3,1": [
+        {
+          "q": 1,
+          "residual_depth": 2,
+          "target": "P_2,2"
+        },
+        {
+          "q": 1,
+          "residual_depth": 3,
+          "target": "P_3,2"
+        }
+      ],
+      "P_3,2": [
+        {
+          "q": 1,
+          "residual_depth": 2,
+          "target": "P_2,2"
+        },
+        {
+          "q": null,
+          "residual_depth": 3,
+          "target": "P_3,1"
+        }
+      ],
+      "P_4,1": [
+        {
+          "q": 1,
+          "residual_depth": 2,
+          "target": "P_2,2"
+        },
+        {
+          "q": 1,
+          "residual_depth": 3,
+          "target": "P_3,2"
+        },
+        {
+          "q": 1,
+          "residual_depth": 4,
+          "target": "P_4,2"
+        },
+        {
+          "q": 2,
+          "residual_depth": 4,
+          "target": "P_4,3"
+        }
+      ],
+      "P_4,2": [
+        {
+          "q": 1,
+          "residual_depth": 2,
+          "target": "P_2,2"
+        },
+        {
+          "q": 1,
+          "residual_depth": 3,
+          "target": "P_3,2"
+        },
+        {
+          "q": null,
+          "residual_depth": 4,
+          "target": "P_4,1"
+        },
+        {
+          "q": 1,
+          "residual_depth": 5,
+          "target": "P_4,3"
+        }
+      ],
+      "P_4,3": [
+        {
+          "q": 1,
+          "residual_depth": 2,
+          "target": "P_2,2"
+        },
+        {
+          "q": 1,
+          "residual_depth": 3,
+          "target": "P_3,2"
+        },
+        {
+          "q": null,
+          "residual_depth": 4,
+          "target": "P_4,1"
+        },
+        {
+          "q": null,
+          "residual_depth": 5,
+          "target": "P_4,2"
+        }
+      ]
+    },
+    "edge_count": 18,
+    "edges": [
+      {
+        "gap_G": "20",
+        "gap_v2": 2,
+        "kind": "terminal_same_row_first_free",
+        "q": 1,
+        "residual_depth": 2,
+        "resonant": true,
+        "source": {
+          "a": 1,
+          "m": 2,
+          "word": [
+            1,
+            1
+          ]
+        },
+        "target": {
+          "a": 2,
+          "m": 2,
+          "word": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "gap_G": "-20",
+        "gap_v2": 2,
+        "kind": "forced_same_row",
+        "q": null,
+        "residual_depth": 2,
+        "resonant": true,
+        "source": {
+          "a": 2,
+          "m": 2,
+          "word": [
+            1,
+            2
+          ]
+        },
+        "target": {
+          "a": 1,
+          "m": 2,
+          "word": [
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "gap_G": "76",
+        "gap_v2": 2,
+        "kind": "downward_first_free",
+        "q": 1,
+        "residual_depth": 2,
+        "resonant": true,
+        "source": {
+          "a": 1,
+          "m": 3,
+          "word": [
+            1,
+            1,
+            1
+          ]
+        },
+        "target": {
+          "a": 2,
+          "m": 2,
+          "word": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "gap_G": "152",
+        "gap_v2": 3,
+        "kind": "terminal_same_row_first_free",
+        "q": 1,
+        "residual_depth": 3,
+        "resonant": true,
+        "source": {
+          "a": 1,
+          "m": 3,
+          "word": [
+            1,
+            1,
+            1
+          ]
+        },
+        "target": {
+          "a": 2,
+          "m": 3,
+          "word": [
+            1,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "gap_G": "36",
+        "gap_v2": 2,
+        "kind": "downward_first_free",
+        "q": 1,
+        "residual_depth": 2,
+        "resonant": true,
+        "source": {
+          "a": 2,
+          "m": 3,
+          "word": [
+            1,
+            1,
+            2
+          ]
+        },
+        "target": {
+          "a": 2,
+          "m": 2,
+          "word": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "gap_G": "-152",
+        "gap_v2": 3,
+        "kind": "forced_same_row",
+        "q": null,
+        "residual_depth": 3,
+        "resonant": true,
+        "source": {
+          "a": 2,
+          "m": 3,
+          "word": [
+            1,
+            1,
+            2
+          ]
+        },
+        "target": {
+          "a": 1,
+          "m": 3,
+          "word": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "gap_G": "260",
+        "gap_v2": 2,
+        "kind": "downward_first_free",
+        "q": 1,
+        "residual_depth": 2,
+        "resonant": true,
+        "source": {
+          "a": 1,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "target": {
+          "a": 2,
+          "m": 2,
+          "word": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "gap_G": "520",
+        "gap_v2": 3,
+        "kind": "downward_first_free",
+        "q": 1,
+        "residual_depth": 3,
+        "resonant": true,
+        "source": {
+          "a": 1,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "target": {
+          "a": 2,
+          "m": 3,
+          "word": [
+            1,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "gap_G": "1040",
+        "gap_v2": 4,
+        "kind": "terminal_same_row_first_free",
+        "q": 1,
+        "residual_depth": 4,
+        "resonant": true,
+        "source": {
+          "a": 1,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "target": {
+          "a": 2,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "gap_G": "3120",
+        "gap_v2": 4,
+        "kind": "terminal_same_row_first_free",
+        "q": 2,
+        "residual_depth": 4,
+        "resonant": true,
+        "source": {
+          "a": 1,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "target": {
+          "a": 3,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "gap_G": "180",
+        "gap_v2": 2,
+        "kind": "downward_first_free",
+        "q": 1,
+        "residual_depth": 2,
+        "resonant": true,
+        "source": {
+          "a": 2,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        "target": {
+          "a": 2,
+          "m": 2,
+          "word": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "gap_G": "216",
+        "gap_v2": 3,
+        "kind": "downward_first_free",
+        "q": 1,
+        "residual_depth": 3,
+        "resonant": true,
+        "source": {
+          "a": 2,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        "target": {
+          "a": 2,
+          "m": 3,
+          "word": [
+            1,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "gap_G": "-1040",
+        "gap_v2": 4,
+        "kind": "forced_same_row",
+        "q": null,
+        "residual_depth": 4,
+        "resonant": true,
+        "source": {
+          "a": 2,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        "target": {
+          "a": 1,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "gap_G": "2080",
+        "gap_v2": 5,
+        "kind": "terminal_same_row_first_free",
+        "q": 1,
+        "residual_depth": 5,
+        "resonant": true,
+        "source": {
+          "a": 2,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        "target": {
+          "a": 3,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            3
+          ]
+        }
+      },
+      {
+        "gap_G": "20",
+        "gap_v2": 2,
+        "kind": "downward_first_free",
+        "q": 1,
+        "residual_depth": 2,
+        "resonant": true,
+        "source": {
+          "a": 3,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            3
+          ]
+        },
+        "target": {
+          "a": 2,
+          "m": 2,
+          "word": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "gap_G": "-392",
+        "gap_v2": 3,
+        "kind": "downward_first_free",
+        "q": 1,
+        "residual_depth": 3,
+        "resonant": true,
+        "source": {
+          "a": 3,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            3
+          ]
+        },
+        "target": {
+          "a": 2,
+          "m": 3,
+          "word": [
+            1,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "gap_G": "-3120",
+        "gap_v2": 4,
+        "kind": "forced_same_row",
+        "q": null,
+        "residual_depth": 4,
+        "resonant": true,
+        "source": {
+          "a": 3,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            3
+          ]
+        },
+        "target": {
+          "a": 1,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "gap_G": "-2080",
+        "gap_v2": 5,
+        "kind": "forced_same_row",
+        "q": null,
+        "residual_depth": 5,
+        "resonant": true,
+        "source": {
+          "a": 3,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            3
+          ]
+        },
+        "target": {
+          "a": 2,
+          "m": 4,
+          "word": [
+            1,
+            1,
+            1,
+            2
+          ]
+        }
+      }
+    ],
+    "every_edge_resonant": true,
+    "exit_theorem": {
+      "e=A": "P_(m,a+q), q>=1",
+      "e=j<=m-1": "P_(j,1+q), q>=1",
+      "e=m-1+k with 1<=k<a": "forced P_(m,k)",
+      "retain": "exactly the expanding targets"
+    },
+    "family": {
+      "A": "m-1+a",
+      "B": "3^m-2^m",
+      "D": "3^m-2^(m-1+a)",
+      "expanding_criterion": "1 <= a <= floor(m*log2(3))-m+1",
+      "word": "P_(m,a)=(1^(m-1),a)"
+    },
+    "finite_parser_is_global_lyapunov_certificate": false,
+    "m_never_increases_inside_this_parser": true,
+    "node_count": 7,
+    "nodes": [
+      {
+        "a": 1,
+        "m": 2,
+        "word": [
+          1,
+          1
+        ]
+      },
+      {
+        "a": 2,
+        "m": 2,
+        "word": [
+          1,
+          2
+        ]
+      },
+      {
+        "a": 1,
+        "m": 3,
+        "word": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "a": 2,
+        "m": 3,
+        "word": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "a": 1,
+        "m": 4,
+        "word": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "a": 2,
+        "m": 4,
+        "word": [
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "a": 3,
+        "m": 4,
+        "word": [
+          1,
+          1,
+          1,
+          3
+        ]
+      }
+    ],
+    "reason": "resonant directed cycles and the macro renormalization hide unbounded cylinder depth and chart complexity",
+    "static_node_weight_cycle_obstruction": {
+      "cycle": [
+        "P_2,1",
+        "P_2,2",
+        "P_2,1"
+      ],
+      "cycle_product": {
+        "denominator": "32",
+        "numerator": "81"
+      },
+      "exit_word_slopes": [
+        {
+          "denominator": "8",
+          "numerator": "9"
+        },
+        {
+          "denominator": "4",
+          "numerator": "9"
+        }
+      ],
+      "result": "positive static node weights cancel around the cycle, so they cannot make both expanding edge factors below one"
+    },
+    "status": "exact_finite_parametric_parser_component"
+  },
+  "status": "exact_source_relative_exit_grammar_with_finite_parser_and_infinite_parametric_resonant_ladder",
+  "type": "pecm_recursive_affine_ghost_atlas",
+  "universal_induced_resonance": {
+    "applies_to_contracting_targets_too": true,
+    "chart_resonance_is_exceptional_claim": false,
+    "every_seed_first_free_edge_resonant": true,
+    "gap_definition": "G_(V,W)=B_V*D_W-D_V*B_W",
+    "integer_identity": "G_(V,W)=D_W*L_V(n)-D_V*L_W(n)",
+    "proof": "target exactness gives v2(L_V)>=A_V+1>e, while v2(D_V*L_W)=e; therefore G is nonzero and v2(G)=e",
+    "setting": "an exhausted expanding source W with v2(L_W(n))=e and its source-relative first-free exact target V",
+    "status": "exact_theorem",
+    "target_total_valuation": "A_V=e+q with q>=1",
+    "unbounded_target_depth": {
+      "consequence": "the target repeat count floor((S-1)/A_V) is unbounded",
+      "construction": "for arbitrary S>=A_V+1 solve L_V(n)=2^S mod 2^(S+1); the gap identity forces v2(L_W(n))=v2(G)=e",
+      "sample_edge": "J_4_to_K_4",
+      "samples": [
+        {
+          "composed_source_copy_is_last_possible": true,
+          "exact_cylinder": {
+            "modulus": "128",
+            "parameterization": "n = 47 + 128*t, t >= 0",
+            "residue": "47"
+          },
+          "gap_G": "1040",
+          "gap_v2": 4,
+          "post_source_copy_reachability": {
+            "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+            "positive_composed_subcylinder": {
+              "landing_residue": "3887",
+              "modulus": "10368",
+              "parameterization": "n = 3887 + 10368*t, t >= 0"
+            },
+            "positive_source_predecessor": "767",
+            "required_landing_mod_3_power": {
+              "modulus": "81",
+              "residue": "80"
+            },
+            "required_two_adic_class": {
+              "modulus": "128",
+              "residue": "47"
+            },
+            "source_word": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "source_word_exact_at_predecessor": true,
+            "source_word_lands_at_composed_residue": true
+          },
+          "requested_target_depth": 6,
+          "source_is_exhausted": true,
+          "source_linear_v2": 4,
+          "source_residual_depth": 4,
+          "source_word": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "target_linear_v2": 6,
+          "target_maximal_repeat_count": 1,
+          "target_word": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "target_word_is_exact": true
+        },
+        {
+          "composed_source_copy_is_last_possible": true,
+          "exact_cylinder": {
+            "modulus": "4096",
+            "parameterization": "n = 2799 + 4096*t, t >= 0",
+            "residue": "2799"
+          },
+          "gap_G": "1040",
+          "gap_v2": 4,
+          "post_source_copy_reachability": {
+            "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+            "positive_composed_subcylinder": {
+              "landing_residue": "330479",
+              "modulus": "331776",
+              "parameterization": "n = 330479 + 331776*t, t >= 0"
+            },
+            "positive_source_predecessor": "65279",
+            "required_landing_mod_3_power": {
+              "modulus": "81",
+              "residue": "80"
+            },
+            "required_two_adic_class": {
+              "modulus": "4096",
+              "residue": "2799"
+            },
+            "source_word": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "source_word_exact_at_predecessor": true,
+            "source_word_lands_at_composed_residue": true
+          },
+          "requested_target_depth": 11,
+          "source_is_exhausted": true,
+          "source_linear_v2": 4,
+          "source_residual_depth": 4,
+          "source_word": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "target_linear_v2": 11,
+          "target_maximal_repeat_count": 2,
+          "target_word": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "target_word_is_exact": true
+        },
+        {
+          "composed_source_copy_is_last_possible": true,
+          "exact_cylinder": {
+            "modulus": "131072",
+            "parameterization": "n = 94959 + 131072*t, t >= 0",
+            "residue": "94959"
+          },
+          "gap_G": "1040",
+          "gap_v2": 4,
+          "post_source_copy_reachability": {
+            "inherited_source_condition": "for L_W(landing)=2^e*z, z is divisible by 3^M_W",
+            "positive_composed_subcylinder": {
+              "landing_residue": "10449647",
+              "modulus": "10616832",
+              "parameterization": "n = 10449647 + 10616832*t, t >= 0"
+            },
+            "positive_source_predecessor": "2064127",
+            "required_landing_mod_3_power": {
+              "modulus": "81",
+              "residue": "80"
+            },
+            "required_two_adic_class": {
+              "modulus": "131072",
+              "residue": "94959"
+            },
+            "source_word": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "source_word_exact_at_predecessor": true,
+            "source_word_lands_at_composed_residue": true
+          },
+          "requested_target_depth": 16,
+          "source_is_exhausted": true,
+          "source_linear_v2": 4,
+          "source_residual_depth": 4,
+          "source_word": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "target_linear_v2": 16,
+          "target_maximal_repeat_count": 3,
+          "target_word": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "target_word_is_exact": true
+        }
+      ],
+      "status": "exact_congruence_theorem_on_every_legal_edge",
+      "uniform_resonance_depth_cap_exists": false
+    }
+  }
+}

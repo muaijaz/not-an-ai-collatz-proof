@@ -1,32 +1,36 @@
 # STATE
 
 ## Goal
-Recursively close the four expanding exits of the exact exhausted
-`(1,1,2)` partition and determine whether valuation resonances have bounded
-complexity or admit one compatible Lyapunov inequality, without confusing an
-infinite descent cylinder with a global Collatz proof.
+Exclude the explicit infinite `J_m/K_m` resonance ladder from the ordinary
+nonnegative integers, or construct a coercive cylinder-depth-dependent
+Lyapunov function that controls its escape to `m=infinity`, without confusing
+finite positive prefix cylinders with one infinite positive Collatz orbit.
 
 ## Now
-Exact word membership and repeat counts are now controlled by one affine
-linear form. An expanding word `W` is exact iff
-`v2(L_W(n))>=A_W+1`, and it repeats exactly
-`floor((v2(L_W(n))-1)/A_W)` times. At a maximal chart exit, every legal
-nonresonant switch strictly lowers `A`; any chart cycle must contain a 2-adic
-cancellation resonance. The `W=(1,1,2)` exit partition is complete and has
-four expanding target charts. One resonant path gives first descent at step
-13 for every `n=38119 mod 2^22`. No bound on successive resonances has been
-derived, and the induced chart graph is still open.
+The four open `(1,1,2)` exit charts now have all `18` source-relative
+first-free residual templates and `19` expanding exits derived. Every induced
+edge is resonant by an exact gap identity, and every legal edge admits
+arbitrarily large target depth by a single congruence. The alternative
+shortest-divergence parser closes on seven `P_(m,a)` nodes and `18` resonant
+edges, but its `P_(2,1)<->P_(2,2)` cycle has slope product `81/32`, ruling out
+static node-only contraction. Renormalization exposes the acyclic parametric
+ray `J_m -> K_m -> J_(m+1)` with word concatenation
+`J_m || K_m=K_(2m)`. Every finite prefix has a
+positive exact cylinder; the infinite intersection is one explicit 2-adic
+partial-theta value with `v2(xi_m0+1)=2m0`. Its positive-integer status is
+open.
 
 ## Next
-1. Derive complete maximal-exit partitions for `(1,2)`, `(1,1,1,1)`,
-   `(1,1,1,2)`, and `(1,1,1,3)`.
-2. Store every integer ghost gap `G`, distinguish nonresonant strict
-   `A`-decrease from valuation resonance, and look for a second
-   well-founded quantity on resonance edges.
-3. Determine whether repeated resonance depth is bounded, eventually
-   periodic, or represented by an explicit infinite positive-integer family.
-4. On any exact finite closed component, solve rational weighted
-   chart-switch inequalities with explicit finite magnitude exceptions.
+1. Study the explicit nested boundary
+   `xi_m0=-1-(1/2)sum 2^(m^2-m0^2)/3^(m(m-1)-m0(m0-1))` and seek an exact
+   non-integrality/nonnegativity obstruction.
+2. Track canonical binary representatives of its finite cylinders and prove
+   a positive residue-height rate, or identify a known 2-adic partial-theta
+   irrationality theorem that applies.
+3. Extend the symbolic state by `(m, target depth)` and test coercive rational
+   weights that can control the acyclic `m -> m+1` escape.
+4. Bundle each resonant ray segment with its eventual contracting exit and
+   seek exact descent below the segment entry, with finite exceptions listed.
 5. Use cusp-renormalized PECM vectors only to rank candidate charts and
    edges, not as pointwise proof.
 6. Retain chunked/streaming Galerkin and mixed-adic wavelet work as numerical
@@ -79,9 +83,22 @@ derived, and the induced chart graph is still open.
 - DECISION: treat `n=38119 mod 2^22` as a full binary first-descent cylinder;
   its earlier mixed 3-adic subfamily is provenance, not a restriction on the
   local theorem.
+- DECISION: use "source-relative first-free" rather than "canonical" for the
+  recursive exit rule. It is deterministic only after a source chart is
+  chosen; `J_m || K_m=K_(2m)` gives an equally exact word regrouping.
+- DECISION: retain both the finite shortest-divergence parser and the
+  infinite macro layer. Finite parser closure does not imply bounded chart
+  complexity or a chart-only Lyapunov function.
+- DECISION: distinguish finite-path compatibility from one infinite orbit.
+  Every finite concatenated word has a positive cylinder, but a point on one
+  edge cylinder need not take the next edge without refinement.
+- DECISION: demote every uniform resonance-depth-cap strategy. Exact target
+  cylinders exist at arbitrary prescribed depth on every legal resonant edge.
+- DECISION: make non-integrality of the explicit nested 2-adic boundary, or a
+  coercive `(m,depth)` Lyapunov weight, the primary theorem-facing target.
 
 ## Facts
-- Tests: `uv run python -m pytest -q` -> 325 passed.
+- Tests: `uv run python -m pytest -q` -> 460 passed.
 - Exact selected root: `(R,u mod 2^11,u mod 9)=(9,55,2)`.
 - Full word `(1^8,3,2,4)` has `(m,A,B)=(11,17,186875)` and exact slope
   `177147/131072 > 1`; its one-word affine fixed point is the noninteger
@@ -146,6 +163,44 @@ derived, and the induced chart graph is still open.
 - The full 13-step word has `(M,A,B)=(13,21,3563675)` and is exact for
   every `n=38119+2^22*t`. Its first descent is
   `28981+2*3^13*t`, with gap `9138+1005658*t`.
+- Source-relative first-free rule: if an exhausted source has
+  `v2(L_W(n))=e`, its target word has `A_V=e+q`, `q>=1`, and the exact gap
+  theorem gives `v2(G_VW)=e`.
+- The four prior expanding targets have `18` complete residual templates and
+  `19` expanding first-free edges; every edge is resonant.
+- On every legal resonant edge and every `S>=A_V+1`, the congruence
+  `L_V(n)=2^S mod 2^(S+1)` gives positive odd lifts with source residual
+  `v2(G)` and exact target depth `S`. Target repeat depth is unbounded.
+- After an exact source copy the normalized coordinate satisfies
+  `3^M_W | z`. CRT composes this inherited condition with every binary branch
+  and depth cylinder; the artifact stores a positive exact source
+  predecessor for each.
+- Parametric parser family:
+  `P_(m,a)=(1^(m-1),a)`, `A=m-1+a`, `B=3^m-2^m`,
+  `D=3^m-2^(m-1+a)`.
+- The shortest parser component from `P_(4,3)` has seven nodes and `18`
+  edges, all resonant. Its `P_(2,1)<->P_(2,2)` exit slopes multiply to
+  `81/32>1`, excluding static positive node weights.
+- Parametric first-free ladder:
+  `J_m=(1^m) -> K_m=(1^(m-1),2) -> J_(m+1)` for every `m>=2`.
+  Its gaps are `(3^m-2^m)2^m` and
+  `-(3^(m+1)-2^(m+1))2^m`, both with valuation `m`.
+- Exact renormalization:
+  `(P_(m,1))^r P_(m,a)=P_((r+1)m,a)`, especially
+  `J_m || K_m=K_(2m)` as valuation-word concatenation.
+- Every finite ladder prefix has one positive exact cylinder and increasing
+  chart-boundary values. The nested infinite boundary satisfies
+  `xi_m0=-1-(1/2)sum_(m>m0)
+  2^(m^2-m0^2)/3^(m(m-1)-m0(m0-1))` in `Z_2` and
+  `v2(xi_m0+1)=2m0`. For `m0=4`, `xi=767 mod 1024`.
+- After `r` pairs, `M_r=r(2m0+r-1)` and `A_r=r(2m0+r)`; the finite
+  partial-theta truncation reproduces the exact prefix residue modulo
+  `2^(A_r+1)`.
+- With `T_q(z)=sum z^k q^(-k(k-1)/2)`, the boundary family reduces through
+  `T_q(z)=1+zT_q(z/q)` to the single `Q_2` rationality target
+  `T_(9/4)(2)`.
+- Positive-integer realizability of the infinite boundary is open; no
+  divergent positive orbit has been constructed.
 - Galerkin smoke ladder: `(4,0) -> (6,1) -> (8,2)`,
   `R = 2..30`, common `alpha = 0.55`, 0 unresolved samples.
 - Numerical `max(Mh/h)`: `0.465489`, `0.502925`, `0.529990`.
@@ -167,12 +222,22 @@ derived, and the induced chart graph is still open.
   `docs/reports/pecm_higher_r_affine_ghost.json`.
 - Exact repeat/resonance atlas artifact:
   `docs/reports/pecm_affine_ghost_atlas.json`.
+- Exact recursive parser/ladder artifact:
+  `docs/reports/pecm_recursive_ghost_atlas.json`.
 - GPU: RTX 3090 Ti 24564 MiB (~21.5 GB free), CuPy 14.0.1 OK.
 - (14,5) run completed 2026-06-18: 57.7M states, finite_ratio_max=0.5357, artifact docs/runs/pecm_14_5_scaled_gpu_20260618_015521/.
 - (16,6) estimate: ~692.7M states, ~2.77B transitions (docs/collatz_strategy.md).
 - CLI: `python -m collatz_exp.experiments --post-exit-scaled-perron --post-exit-configs K:L --post-exit-operator-mode {dense_target_cache,streaming,gpu_target_cache,auto} --post-exit-checkpoint <npz> --post-exit-scaled-perron-output <json>`.
 
 ## Done
+- Recursive affine-ghost parser and ladder
+  (`collatz_exp/recursive_ghost_atlas.py`) — RESULT: complete source-relative
+  first-free partitions for the four open charts, universal induced-resonance
+  theorem, exact unbounded target-depth witnesses, closed seven-node
+  shortest parser, static node-weight cycle obstruction, parametric
+  `J_m/K_m` ladder and renormalization, nested positive prefix cylinders,
+  explicit 2-adic partial-theta boundary, deterministic report, and explicit
+  open positive-integer/global-proof status.
 - Exact affine-ghost repeat/resonance atlas
   (`collatz_exp/affine_ghost_atlas.py`) — RESULT: universal exact-word
   cylinder theorem, exact maximal repeats, conditional Haar exit law,
@@ -233,3 +298,8 @@ derived, and the induced chart graph is still open.
   phases: the exact `1183 -> 4495` word preserves its cusp exponent and
   expands its shifted size by `125/33`. Word-specific affine ghosts replace
   it locally, but their chart-switch compatibility is not yet proved.
+- A uniform resonance-depth cap cannot hold: every legal resonant edge has
+  exact target cylinders at arbitrary prescribed depth.
+- A positive static weight on the finite parser nodes cannot make every edge
+  contract: weights cancel around the `P_(2,1)<->P_(2,2)` cycle while its
+  exit-word slopes multiply to `81/32>1`.

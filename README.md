@@ -6,11 +6,11 @@
 
 *Renewal Cramér rates · Joint Spectral Radius diagnostics · Five-projection operator synthesis*
 
-[![Tests](https://img.shields.io/badge/tests-284%20passing-brightgreen?style=flat-square)](.)
+[![Tests](https://img.shields.io/badge/tests-460%20passing-brightgreen?style=flat-square)](.)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-empirical-orange?style=flat-square)](.)
 [![Python](https://img.shields.io/badge/python-3.12-blue?style=flat-square)](.)
-[![Reproducible](https://img.shields.io/badge/artifacts-119%20JSON-success?style=flat-square)](docs/reports)
+[![Reproducible](https://img.shields.io/badge/artifacts-121%20JSON-success?style=flat-square)](docs/reports)
 
 </div>
 
@@ -208,6 +208,55 @@ It is a promising structural signal, but the reachable resonant atlas is not
 known to be finite or well founded, so it is not a global Collatz proof
 ([artifact](docs/reports/pecm_affine_ghost_atlas.json)).
 
+The four open charts have now been recursively derived under two explicit
+parsing rules. The source-relative first-free rule gives `18` complete
+residual templates and `19` expanding exits. Every one is resonant—not as a
+numerical pattern, but by the exact identity
+
+```text
+G_VW = D_W L_V(n) - D_V L_W(n),
+v2(G_VW) = e
+```
+
+whenever the exhausted source depth is `e`. Target resonance depth is
+unbounded on every legal edge: for any `S >= A_V+1`, one exact congruence
+produces a positive cylinder with `v2(L_V)=S`. CRT with the inherited
+condition `3^M_W | z` supplies an exact positive `W` predecessor, so these
+are composable post-source cylinders rather than isolated binary classes.
+
+The shortest-divergence parser closes on seven parametric charts and `18`
+resonant edges. That finite closure is not a chart-only Lyapunov proof: the
+two-edge parser cycle `P_(2,1) <-> P_(2,2)` has exact slope product
+`81/32 > 1`, so static positive node weights cannot contract both edges.
+Regrouping exposes the hidden self-similar macro family
+
+```text
+J_m = (1^m),
+K_m = (1^(m-1),2),
+J_m -> K_m -> J_(m+1),
+J_m || K_m = K_(2m)  (valuation-word concatenation).
+```
+
+Every finite prefix has a nonempty positive exact cylinder and strictly
+increasing chart-boundary values. The nested cylinders select one explicit
+`2`-adic point
+
+```text
+xi_m0 = -1 - (1/2) sum_(m=m0+1)^infinity
+        2^(m^2-m0^2) / 3^(m(m-1)-m0(m0-1)),
+v2(xi_m0+1) = 2m0.
+```
+
+Equivalently, with
+`T_q(z)=sum_(k>=0) z^k q^(-k(k-1)/2)`, the entire family reduces to the
+single `Q_2` rationality target `T_(9/4)(2)`. The report verifies the series
+against every stored finite prefix residue.
+
+Whether this point is an ordinary positive integer is open. Thus the result
+isolates a theorem-shaped non-integrality target; it does not construct a
+divergent positive orbit or prove Collatz
+([artifact](docs/reports/pecm_recursive_ghost_atlas.json)).
+
 The framework now has a qn+1 sidecar diagnostic. Within the odd `q>1` grid,
 the classical `q=3` case is the unique tested member below the
 `log₂(q) = 2` drift threshold; `q=5` is already marginally positive. The
@@ -259,7 +308,7 @@ Empirical bridges to published papers, all finite-resolution and caveated:
 # Install dependencies
 uv sync
 
-# Run all 325 tests
+# Run all 460 tests
 uv run python -m pytest -q
 
 # Smoke test the experimental pipeline
@@ -293,6 +342,9 @@ uv run python -m collatz_exp.symbolic_higher_r_certificate --verbose
 
 # Reproduce the exact repeat/resonance ghost-atlas slice
 uv run python -m collatz_exp.affine_ghost_atlas --verbose
+
+# Reproduce the recursive parser, resonance, and infinite-ladder atlas
+uv run python -m collatz_exp.recursive_ghost_atlas --verbose
 ```
 
 Every quoted number has a corresponding JSON artifact under
@@ -324,8 +376,8 @@ collatz-renewal-framework/
 ├── pyproject.toml
 ├── uv.lock
 ├── collatz_certificate_search.py   ← original CLI compatibility wrapper
-├── collatz_exp/                    ← main package, 94 modules
-├── tests/                          ← 325 passing tests
+├── collatz_exp/                    ← main package, 95 modules
+├── tests/                          ← 460 passing tests
 └── docs/
     ├── NOTABLE_RESULTS.md          ← running result catalog
     ├── PROJECT_JOURNEY.md          ← chronological narrative + audit log
@@ -334,7 +386,7 @@ collatz-renewal-framework/
     ├── UNIFIED_MODEL.md            ← 5-projection operator synthesis
     ├── collatz_strategy.md         ← working strategy notes
     ├── references/                 ← Tao, Mori, Hercher, Paparella, Chang PDFs
-    └── reports/                    ← 120 JSON artifacts (one per result)
+    └── reports/                    ← 121 JSON artifacts (one per result)
 ```
 
 ---
@@ -395,10 +447,12 @@ Named, not closed:
    renormalization, a streaming `(8,2) → (10,3) → (12,4)` ladder, and an
    exact branchwise replacement remain open. The latest exact lane contracts
    the full `R=2 -> R>=3` handoff and identifies word-specific affine-ghost
-   cusps. Its first atlas slice proves exact repeat counts, a chart-switch
-   resonance law, strict `A`-decrease on every nonresonant maximal edge, and
-   one infinite first-descent cylinder. Recursive control of resonance edges
-   remains open.
+   cusps. Its recursive atlas closes all four previously open exit
+   partitions, proves that every source-relative first-free edge is resonant
+   with unbounded target depth, and separates a finite seven-state parser
+   from the self-similar ladder `J_m -> K_m -> J_(m+1)`. The explicit nested
+   `2`-adic boundary must now be excluded from the nonnegative integers, or
+   controlled by a cylinder-depth-dependent Lyapunov function.
 6. **Symbolic representation of `J_renewal`** — the direct
    `Σ R(K) ≈ J_renewal` identity test is not supported at high precision;
    an explicit `h_K`-weighted reconciliation remains open.
@@ -419,7 +473,7 @@ statements.
   [`docs/reports/`](docs/reports).
 - Each artifact records method, parameters, sample size, and the relevant
   numerical or exact diagnostics; empirical CIs are included where applicable.
-- 325 passing tests cover core arithmetic, certificates, Mersenne tail
+- 460 passing tests cover core arithmetic, certificates, Mersenne tail
   dynamics, post-exit map, renewal Cramér computation, Tao verification,
   Hercher bounds, Paparella nilpotency, JSR variants, automaton-constrained
   Karp, upper-Christoffel slope filtering, tail-cycle realizability,
@@ -437,7 +491,11 @@ statements.
   exit grammar, and the exact higher-`R` phase transfer, first-post cutoff,
   mixed-residue transport, affine-ghost cusp identities, universal exact-word
   membership, exact maximal repeat counts, chart-switch resonance, the full
-  `(1,1,2)` exit partition, and the refined 13-step descent cylinder.
+  `(1,1,2)` exit partition, and the refined 13-step descent cylinder, plus
+  all 18 source-relative recursive exit templates, all 19 expanding
+  resonances, unbounded target-depth witnesses, the exact seven-state parser,
+  parametric `J_m/K_m` ladder identities, nested positive prefix cylinders,
+  and the explicit infinite `2`-adic boundary invariants.
 - Reference papers in [`docs/references/`](docs/references) for offline
   access.
 

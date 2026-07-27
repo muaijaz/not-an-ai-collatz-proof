@@ -892,6 +892,161 @@ proof has been derived.
 
 ---
 
+### D.12 Recursive resonant parser and explicit infinite 2-adic ladder
+
+**Source-relative exit theorem.** At an exhausted expanding chart `W`, write
+
+```text
+L_W(n)=D_W n+B_W=2^e z,  z odd,  1<=e<=A_W.
+```
+
+Following every valuation forced by `e` and then including the first
+lift-dependent valuation gives an exit word `V` with
+
+```text
+A_V=e+q,  q>=1.
+```
+
+This rule is deterministic after the source chart has been chosen. It is not
+an intrinsic parsing of the raw valuation itinerary. Target exactness and
+
+```text
+G_VW=D_W L_V(n)-D_V L_W(n)
+```
+
+give the universal induced-resonance identity
+
+```text
+G_VW != 0,  v2(G_VW)=e.
+```
+
+Thus resonance is forced on every source-relative first-free edge, including
+contracting exits; it is not a rare numerical exception. The four expanding
+children of the previous `(1,1,2)` partition have exactly `18` residual
+templates and `19` expanding first-free exits, all now derived.
+
+Resonance depth is unbounded on every legal edge. For any desired
+`S>=A_V+1`, solve
+
+```text
+L_V(n)=2^S (mod 2^(S+1)).
+```
+
+The odd coefficient `D_V` gives a positive odd cylinder with exact target
+depth `S`, while the gap identity forces the source depth to remain `e`.
+Consequently the target repeat count `floor((S-1)/A_V)` has no uniform
+edgewise bound. A landing produced by an exact source copy additionally has
+`3^M_W | z`. CRT combines that odd-modulus condition with every binary branch
+cylinder, and the artifact records a positive exact source predecessor for
+each branch and depth witness.
+
+**Finite parser versus macro renormalization.** All charts in the
+shortest-divergence parser belong to
+
+```text
+P_(m,a)=(1^(m-1),a),
+A=m-1+a,
+B=3^m-2^m,
+D=3^m-2^(m-1+a).
+```
+
+From `P_(4,3)=(1,1,1,3)`, the expanding component closes exactly on seven
+nodes and `18` resonant edges. This finite closure does not give a static
+chart Lyapunov function. The cycle
+
+```text
+P_(2,1) -> P_(2,2) -> P_(2,1)
+```
+
+uses exit-word slopes `9/8` and `9/4`, whose product is `81/32>1`; positive
+node weights cancel around the cycle.
+
+The same words have the exact renormalization
+
+```text
+(P_(m,1))^r P_(m,a)=P_((r+1)m,a).
+```
+
+In particular, with
+
+```text
+J_m=(1^m),
+K_m=(1^(m-1),2),
+```
+
+one gets the source-relative first-free ladder
+
+```text
+J_m -> K_m -> J_(m+1),  m>=2,
+J_m || K_m=K_(2m)  (valuation-word concatenation).
+```
+
+Its two gap families are
+
+```text
+G_(K_m,J_m)=(3^m-2^m)2^m,
+G_(J_(m+1),K_m)=-(3^(m+1)-2^(m+1))2^m,
+```
+
+both of exact 2-adic order `m`. Every finite ladder prefix is compatible:
+its concatenated valuation word has one positive exact cylinder. All chart
+boundaries in that prefix increase. A point on one edge cylinder need not
+take the next edge; continuation requires the nested refined cylinder.
+
+**Explicit infinite boundary.** The nested prefixes select one point
+`xi_m0` in `Z_2`. Pairing the word concatenation
+`J_m || K_m=K_(2m)` gives
+
+```text
+xi_m0 = -1 - (1/2) sum_(m=m0+1)^infinity
+        2^(m^2-m0^2) / 3^(m(m-1)-m0(m0-1)),
+v2(xi_m0+1)=2m0.
+```
+
+After `r` pairs the exact exponents are
+
+```text
+M_r=r(2m0+r-1),  A_r=r(2m0+r).
+```
+
+Truncating the displayed series through `m=m0+r` reproduces the exact prefix
+residue modulo `2^(A_r+1)`; this identity is checked directly in the artifact.
+With
+
+```text
+T_q(z)=sum_(k>=0) z^k q^(-k(k-1)/2),
+```
+
+the boundary is
+
+```text
+xi_m0=-1-(4/9)^m0 T_(9/4)(2(4/9)^(m0+1)).
+```
+
+The functional equation `T_q(z)=1+z T_q(z/q)` reduces rationality of every
+ladder boundary to the single `Q_2` target `T_(9/4)(2)`.
+
+For `m0=4`, every extension lies in
+
+```text
+xi=767 (mod 1024).
+```
+
+Whether `xi_m0` is an ordinary nonnegative integer is open. Proving it is not
+would exclude this entire infinite increasing ladder. If it were positive,
+it would yield an unbounded chart-boundary orbit, so no such claim is made.
+The obstruction has moved from a finite resonant cycle to escape at infinite
+macro complexity.
+
+**Status.** Exact symbolic grammar and parametric obstruction with bounded
+formula regression; no positive infinite itinerary, global Lyapunov
+function, or Collatz proof has been derived.
+
+**Artifact:** `docs/reports/pecm_recursive_ghost_atlas.json`; module
+`collatz_exp/recursive_ghost_atlas.py`.
+
+---
+
 ## E. Demoted hypotheses (honest record)
 
 ### E.1 ψ as "rich Lyapunov potential"

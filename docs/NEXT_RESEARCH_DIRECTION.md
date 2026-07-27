@@ -397,6 +397,102 @@ Implementation and artifact:
 - `collatz_exp/affine_ghost_atlas.py`
 - `docs/reports/pecm_affine_ghost_atlas.json`
 
+## Implementation status: recursive parser and infinite resonant boundary
+
+The four expanding targets left open above are now fully partitioned under a
+source-relative first-free rule. At an exhausted source
+
+```text
+L_W(n)=2^e z,  z odd,
+```
+
+the rule follows every valuation forced by `e`, then includes the first
+valuation `offset+q` whose extra depth depends on `z`. The target has
+`A_V=e+q`, and the exact same-point identity
+
+```text
+G_VW=D_W L_V(n)-D_V L_W(n)
+```
+
+proves
+
+```text
+G_VW != 0,  v2(G_VW)=e.
+```
+
+All `18` residual templates and all `19` expanding exits are derived. Every
+one is resonant. This is no longer a pattern inferred from finite data.
+
+There is also no uniform resonance-depth cap. For arbitrary
+`S>=A_V+1`, solving `L_V(n)=2^S mod 2^(S+1)` gives positive odd lifts with
+target depth exactly `S`; the gap identity keeps the source residual exactly
+`e`. A landing after an exact source copy also has `3^M_W | z`; CRT composes
+that inherited condition with every binary depth cylinder and supplies a
+positive exact source predecessor. A target repeat budget can therefore be
+made arbitrarily large on every legal edge.
+
+Two exact parsing layers must be kept distinct:
+
+1. The shortest-divergence parser closes on seven
+   `P_(m,a)=(1^(m-1),a)` charts and `18` resonant edges.
+2. The source-relative first-free macro layer contains
+
+   ```text
+   J_m=(1^m) -> K_m=(1^(m-1),2) -> J_(m+1),
+   J_m || K_m=K_(2m)  (valuation-word concatenation).
+   ```
+
+The finite parser is useful bookkeeping, but it cannot support a static
+node-only contraction. Its `P_(2,1)<->P_(2,2)` cycle has exit-word slope
+product `81/32>1`. The renormalization identity explains why finite parser
+closure can hide unbounded macro complexity.
+
+Every finite ladder prefix has one positive exact cylinder and increasing
+chart-boundary values. A single edge cylinder does not force the next edge;
+each longer path uses a refined subcylinder. The nested infinite path selects
+one explicit point in `Z_2`:
+
+```text
+xi_m0 = -1 - (1/2) sum_(m=m0+1)^infinity
+        2^(m^2-m0^2) / 3^(m(m-1)-m0(m0-1)),
+v2(xi_m0+1)=2m0.
+```
+
+After `r` pairs,
+`M_r=r(2m0+r-1)` and `A_r=r(2m0+r)`, and the corresponding finite series
+truncation reproduces the exact prefix residue modulo `2^(A_r+1)`. Equivalently,
+the functional equation for
+
+```text
+T_q(z)=sum_(k>=0) z^k q^(-k(k-1)/2)
+```
+
+reduces rationality of every boundary in this family to the single `Q_2`
+target `T_(9/4)(2)`.
+
+The classical real irrationality theorem for Tschakaloff values does not
+close this target. Zudilin's criterion for rational `q=q1/q2` assumes
+`log|q2|/log|q1| < (3-sqrt(5))/2`; for `q=9/4`, the left side is about
+`0.6309`, above the `0.3820` cutoff. More fundamentally, irrationality of the
+real limit would not automatically determine the value of the same rational
+partial sums in `Q_2`. A genuinely 2-adic argument or a stronger
+all-completions theorem is needed
+([Zudilin 2005](https://arxiv.org/abs/math/0506086)).
+
+Its status as an ordinary nonnegative integer is open. Proving non-integrality
+would exclude the infinite increasing ladder. If it is positive, it would be
+a divergent chart-boundary orbit, so no such claim is made without proof.
+
+Implementation and artifact:
+
+- `collatz_exp/recursive_ghost_atlas.py`
+- `docs/reports/pecm_recursive_ghost_atlas.json`
+
+The primary theorem-shaped target is now narrower than recursive chart
+enumeration: exclude this explicit 2-adic boundary from the nonnegative
+integers, or construct a coercive `(m,resonance depth)` Lyapunov term that
+controls escape along it.
+
 ## 0. Mathematical preflight
 
 Four issues must be handled before raw vector comparisons have proof-facing
@@ -918,6 +1014,8 @@ collatz_exp/pecm_refinement.py
 collatz_exp/pecm_consistency.py
 collatz_exp/symbolic_branch_certificate.py
 collatz_exp/symbolic_frontier_certificate.py
+collatz_exp/affine_ghost_atlas.py
+collatz_exp/recursive_ghost_atlas.py
 ```
 
 Planned modules:
@@ -935,6 +1033,8 @@ tests/test_pecm_refinement.py
 tests/test_pecm_consistency.py
 tests/test_symbolic_branch_certificate.py
 tests/test_symbolic_frontier_certificate.py
+tests/test_affine_ghost_atlas.py
+tests/test_recursive_ghost_atlas.py
 ```
 
 Planned tests:
@@ -991,18 +1091,18 @@ function.
 Recommended allocation within the Collatz project:
 
 ```text
-40% recursively partition the four expanding W112 exit charts
-25% bound or classify successive valuation resonances
-20% exact weighted inequalities on any finite closed atlas component
-10% cusp-renormalized PECM ranking of the next resonant charts
+40% exclude the explicit 2-adic ladder boundary from nonnegative integers
+25% construct coercive (m,resonance-depth) symbolic weights
+20% bundle ladder prefixes with their eventual contracting exits
+10% cusp-renormalized PECM ranking of competing exceptional rays
  5% unrelated diagnostics
 ```
 
 The next meaningful milestone is:
 
-> Recursively close the four expanding exits of the `(1,1,2)` chart and
-> establish either a bound on successive resonance depth, a finite closed
-> weighted component, or an explicit infinite resonant family.
+> Prove that the explicit `J_m/K_m` nested 2-adic boundary is not an ordinary
+> nonnegative integer, or derive a coercive exact inequality that controls its
+> escape to `m=infinity`.
 
 The cross-resolution vector lane remains useful for prioritizing charts and
 guessing edge weights, but exact branch identities and finite magnitude
